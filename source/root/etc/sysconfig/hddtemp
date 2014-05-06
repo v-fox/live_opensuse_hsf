@@ -1,0 +1,18 @@
+# program name
+HDDTEMP_NAME="hddtemp"
+
+# this file
+HDDTEMP_CFG="/etc/sysconfig/hddtemp"
+
+# hddtemp database of supported devices
+HDDTEMP_DB="/etc/hddtemp.db"
+
+# hddtemp port
+HDDTEMP_PORT="7634"
+
+# Put at least the disk(s) you want to monitor here.
+# default is /dev/sda
+DEVICE="/dev/sd?"
+
+# hddtemp command line options.
+HDDTEMP_ARGS="-d -f $HDDTEMP_DB -p $HDDTEMP_PORT $DEVICE"

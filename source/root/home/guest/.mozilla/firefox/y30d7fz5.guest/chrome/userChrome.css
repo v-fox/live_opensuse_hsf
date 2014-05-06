@@ -1,0 +1,18 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"); /* set default namespace to XUL */
+                                                                
+/* Taller bookmarks folder tree */
+#editBMPanel_folderTree                                                                                                 
+{                                                                                                                       
+	min-width: 720px !important;
+	min-height: 800px !important;
+}
+
+#editBookmarkPanelContent
+{
+	min-width: 600px !important;
+}
+
+#editBMPanel_folderTree
+{
+	min-height: 400px !important;
+}

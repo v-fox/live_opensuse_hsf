@@ -1,0 +1,26 @@
+#
+# This file is parsed by pam_env module
+#
+# Syntax: simple "KEY=VAL" pairs on seperate lines
+#
+# for hugetlbfs usage
+HUGETLB_PATH=/dev/hugepages
+# for enca/enconv
+DEFAULT_CHARSET=UTF-8
+# open radeon driver goodness
+R600_STREAMOUT=1
+R600_GLSL130=1
+R600_HYPERZ=1
+R600_TILING=1
+R600_SURF=1
+# for OpenCL support on pre-HD7xxx cards with LLVM backend (brakes rendering)
+#R600_DEBUG=llvm
+# for better shader rendering but without OpenCL
+R600_DEBUG=sb
+# for dual-GPU bullshit
+DRI_PRIME=1
+# hardware video decoding stuff
+#LIBVA_DRIVER_NAME=vdpau
+# steam crutches
+#STEAM_RUNTIME=0
+#STEAM_FRAME_FORCE_CLOSE=1

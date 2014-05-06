@@ -1,0 +1,53 @@
+## Path:	System/Kernel
+## Description:
+## Type:	string
+## Command:     /sbin/mkinitrd
+#
+# This variable contains the list of modules to be added to the initial
+# ramdisk by calling the script "mkinitrd"
+# (like drivers for scsi-controllers, for lvm or reiserfs)
+#
+INITRD_MODULES=""
+
+## Type:        yesno
+## Default:     ""
+## Command:     /sbin/mkinitrd
+#
+#
+# This variable disables the initialization of KMS in the initrd
+# by not including the modules required for KMS even though KMS is
+# supported on the underlying hardware.
+# After changing run mkinitrd again.
+#
+NO_KMS_IN_INITRD="yes"
+ 
+## Type:        string
+## Command:     /sbin/mkinitrd
+#
+# This variable contains the list of modules to be added to the initial
+# ramdisk that is created for unprivilegd Xen domains (domU); you may need
+# drivers for virtual block and network devices in addition to filesystem
+# and device-mapper modules.
+#
+DOMU_INITRD_MODULES="xennet xenblk"
+
+## Type:        string
+## Default:     ""
+#
+# The file name of a binary ACPI Differentiated System Description Table
+# (DSDT). This table is appended to the initial ram disk (initrd) that
+# the mkinitrd script creates. If the kernel finds that its initrd
+# contains a DSDT, this table replaces the DSDT of the bios. If the file
+# specified in ACPI_DSDT is not found or ACPI_DSDT is empty/not specified,
+# no DSDT will be appended to the initrd.
+# Example path /etc/acpi/DSDT.aml
+# You can also override Secondary System Description Tables (SSDTs).
+# Add DSDT and SSDT files separated by spaces, e.g. "DSDT.aml SSDT1.aml"
+# The files must be named DSDT.aml and/or SSDT[1-9]*.aml.
+# For compatiblity reasons, if only one file is added it is assumed it is
+# the DSDT and will be used as such, in future the above naming scheme
+# will be enforce.
+# Be aware that overriding these tables can harm your system.
+# Only do this if you know what you are doing and file a bug on
+# bugzilla.kernel.org so that the root cause of the issue will get fixed.
+ACPI_DSDT=""

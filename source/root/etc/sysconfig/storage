@@ -1,0 +1,32 @@
+## Path: System/Yast2/Storage
+## Type: string(id,path,device,uuid,label)
+# Default mount-by method.
+DEVICE_NAMES="uuid"
+
+## Type: string(ext2,ext3,ext4,xfs,btrfs)
+# Default filesystem type.
+DEFAULT_FS="ext4"
+
+## Type: string(optimal,cylinder)
+# Value for partition alignment
+PARTITION_ALIGN="optimal"
+## Path: System/Yast2/Storage
+## Type: string
+# List of used filesystem types.
+USED_FS_LIST="ext4 vfat xfs ntfs-3g tmpfs"
+
+## Type: integer(0:1)
+# Show warning at start of yast2 disk.
+WARN_EXPERT="1"
+
+## Type: string(id,path,device)
+# Display name in expert-partitioner.
+DISPLAY_NAME="device"
+
+## Type: string
+# List of hidden fields in expert-partitioner.
+# Allowed values are: label uuid mount_by used_by bios_id start_cyl 
+# end_cyl num_cyl cyl_size fc_wwpn fc_fcp_lun fc_port_id encrypted
+#
+# Separate individual values by single space
+HIDDEN_FIELDS="fc_fcp_lun fc_port_id fc_wwpn mount_by used_by"

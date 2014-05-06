@@ -1,0 +1,32 @@
+## Path:	System/Zeroconf
+## Description:	Zeroconf (Bonjour, Rendezvous) options
+## Type:        yesno
+## Default:	yes
+#
+# Enable or disable avahi implementation of IPv4LL. If you select
+# "yes", then it ignores AUTOIP keyword in the YaST network
+# configuration. You should disable autoip implementation by disabling
+# AUTOIP in the YaST network configuration of all devices.
+# For more see /usr/share/doc/packages/avahi-autoipd/README.SUSE.
+#
+AVAHI_AUTOIPD_ENABLE="yes"
+
+## Type:        yesno
+## Default:	no
+#
+# Force binding address from IPv4LL (link local) address, even if
+# standard IPv4 address exists. If you select "yes", alias interface
+# will be created. It may break some naive programs.  If you select
+# "no", IPv4LL will be usable only if no routable address is configured.
+# See http://avahi.org/wiki/AvahiAutoipd#ModesofOperation for more.
+#
+AVAHI_AUTOIPD_FORCE_BIND="no"
+## Path:	System/Zeroconf
+## Description:	Zeroconf (Bonjour, Rendezvous) options
+## Type:        yesno
+## Default:	yes
+#
+# Detect unicast DNS .local domain and temporarily disable avahi in such case.
+# For more read http://avahi.org/wiki/AvahiAndUnicastDotLocal
+#
+AVAHI_DAEMON_DETECT_LOCAL="yes"

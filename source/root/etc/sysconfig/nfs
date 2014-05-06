@@ -1,0 +1,180 @@
+## Path:		Network/File systems/NFS server
+## Description:		number of threads for kernel nfs server
+## Type:		integer
+## Default:		4
+## ServiceRestart:	nfsserver
+#
+# the kernel nfs-server supports multiple server threads
+#
+USE_KERNEL_NFSD_NUMBER="4"
+
+## Path:		Network/File systems/NFS server
+## Description:		use fixed port number for mountd
+## Type:		integer
+## Default:		""
+## ServiceRestart:	nfsserver
+#
+#  Only set this if you want to start mountd on a fixed
+#  port instead of the port assigned by rpc. Only for use
+#  to export nfs-filesystems through firewalls.
+#
+MOUNTD_PORT=""
+
+## Path:                Network/File systems/NFS server
+## Description:         GSS security for NFS
+## Type:                yesno
+## Default:             yes
+## ServiceRestart:      nfs nfsserver
+#
+# Enable RPCSEC_GSS security for NFS (yes/no)
+#
+NFS_SECURITY_GSS="no"
+
+## Path:                Network/File systems/NFS server
+## Description:         NFSv3 server support
+## Type:                yesno
+## Default:             yes
+## ServiceRestart:      nfsserver
+#
+# Enable NFSv3 server support (yes/no)
+# This causes the NFS server to respond to
+# NFSv2 and NFSv3 requests.  Only disable this
+# if you want to ensure only NFSv4 is used.
+#
+NFS3_SERVER_SUPPORT="yes"
+
+## Path:                Network/File systems/NFS server
+## Description:         NFSv4 protocol support
+## Type:                yesno
+## Default:             yes
+## ServiceRestart:      nfs nfsserver
+#
+# Enable NFSv4 support (server and/or client) (yes/no)
+#
+NFS4_SUPPORT="yes"
+
+## Path:                Network/File systems/NFS server
+## Description:         NFSv4 server minor version
+## Type:                integer
+## Default:             0
+## ServiceRestart:      nfsserver
+#
+# Select NFSv4 minor version for server to support (0, 1).
+# If '1' is selected, NFSv4.0 will also be supported.
+NFS4_SERVER_MINOR_VERSION="0"
+
+## Path:                Network/File systems/NFS server
+## Description:         Network Status Monitor options
+## Type:                string
+## Default:             ""
+#
+# If a fixed port should be used to send reboot notification
+# messages to other systems, that port should be given
+# here as "-p portnumber".
+#
+SM_NOTIFY_OPTIONS=""
+
+## Path:                Network/File systems/NFS server
+## Description:         Always start NFS services
+## Type:                yesno
+## Default:             yes
+## ServiceRestart       nfs
+#
+# Always start NFS services (gssd, idmapd), not only if
+# there are nfs mounts in /etc/fstab.  This is likely to be
+# needed if you use an automounter for NFS.
+# Note that the nfs service is no longer enabled by default
+# and the command "chkconfig nfs on" is needed to fully enable
+# NFS.
+#
+NFS_START_SERVICES="yes"
+
+## Path:                Network/File systems/NFS server
+## Description:         Command line parameters for rpc.statd
+## Type:                string
+## Default:             ""
+#
+# Custom parameters for rpc.statd daemon.  Typically this will
+#  be used to set the port number (-p).
+#
+STATD_OPTIONS=""
+
+## Path:                Network/File systems/NFS server
+## Description:         Lease time for NFSv4 leases
+## Type:                integer
+## Default:             ""
+#
+# Set the lease time for the NFSv4 server.  This allows new locks
+# to be taken sooner after a server restart, so it is useful for
+# servers which need to recover quickly after a failure, particularly
+# in fail-over configurations.  Reducing the lease time can be a
+# problem is some clients connect over high latency networks.
+# The default is 90 seconds.  A number like 15 might be appropriate
+# in a fail-over configuration with all clients on well connected
+# low latency links.
+NFSV4LEASETIME=""
+
+## Path:                Network/File systems/NFS server
+## Description:         Alternate mount point for rpc_pipefs filesystem
+## Type:                string
+## Default:             ""
+#
+# In a high-availabilty configuration it is possible that /var/lib/nfs
+# is redirected so some shared storage and so it is not convenient to
+# mount the rpc_pipefs filesystem at /var/lib/nfs/rpc_pipefs.  In that
+# case an alternate mount point can be given here.
+RPC_PIPEFS_DIR=""
+
+## Path:                Network/File systems/NFS server
+## Description:         Options for svcgssd
+## Type:                string
+## Default:             ""
+#
+# Normally svcgssd does not require any option.  However in a
+# high-availabilty configuration it can be useful to pass "-n"
+# to guide the choice of default credential.  To allow for that
+# case or any other requiring options ot svcgssd, they can
+# be specified here.
+SVCGSSD_OPTIONS=""
+
+## Path:                Network/File systems/NFS server
+## Description:         Extra options for nfsd
+## Type:                string
+## Default:             ""
+#
+# This setting allows extra options to be specified for NFSD, such as
+# -H <shared_hostname> in a high-availability configuration.
+NFSD_OPTIONS=""
+
+## Path:                Network/File systems/NFS server
+## Description:         Extra options for gssd
+## Type:                string
+## Default:             ""
+#
+# Normally gssd does not require any options.  In some circumstances,
+# -n, -l or other options might be useful. See "man 8 rpc.gssd" for
+# details.  Those options can be set here.
+GSSD_OPTIONS=""
+
+## Path:                Network/File systems/NFS server
+## Description:         Extra options for mountd
+## Type:                string
+## Default:             ""
+#
+# This setting allows extra options to be specified for rpc.mountd,
+# such as --manage-gids.
+MOUNTD_OPTIONS=""
+
+## Path:                Network/File systems/NFS server
+## Description:         Avoid DNS lookups for kerberos principal
+## Type:                yesno
+## Default:             no
+## ServiceRestart:      gssd
+#
+# Avoid DNS lookups when determining kerberos identity
+# of NFS server (yes/no)
+# "yes" is safest, but "no" might be needed to preserve
+# correct behaviour at sites that don't use
+# Fully Qualified Domain Names when mounting NFS Shares.
+#
+NFS_GSSD_AVOID_DNS="no"

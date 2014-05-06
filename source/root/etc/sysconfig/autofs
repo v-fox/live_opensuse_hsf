@@ -1,0 +1,167 @@
+## Path:           System/File systems/Autofs
+## Description:    General global options.
+## Type:           string
+## Default:        ""
+## ServiceReload:  autofs
+#
+AUTOFS_OPTIONS=""
+
+## Description:    Default mount options.
+## Type:           string
+## Default:        ""
+#
+# Default mount options which are appended or replaced to
+# each map entry (see also APPEND_OPTIONS).
+LOCAL_OPTIONS=""
+
+## Description:    Append or replace options.
+## Type:           string
+## Default:        "yes"
+#
+# Determine whether LOCAL_OPTIONS are appended to map entry options
+# or if the map entry options replace the global options
+# (program default "yes", append options).
+APPEND_OPTIONS="yes"
+
+## Description:    Use AutoFS miscellaneous device (/dev/autofs).
+## Type:           string
+## Default:        "yes"
+#
+# Determine whether the AutoFS misc device (/dev/autofs) will be used
+# for routing ioctl commands. Requires kernel support (2.6.28 and newer).
+USE_MISC_DEVICE="yes"
+
+## Description:    Default map name for the master map.
+## Type:           string
+## Default:        "auto.master"
+#
+DEFAULT_MASTER_MAP_NAME="auto.master"
+
+## Description:    Set the default mount timeout.
+## Type:           integer(0:)
+## Default:        600
+#
+DEFAULT_TIMEOUT=600
+
+## Description:    maps are browsable by default.
+## Type:           string
+## Default:        "yes"
+#
+DEFAULT_BROWSE_MODE="yes"
+
+## Description:    Set default log level.
+## Type:           string
+## Default:        "none"
+#
+# "none", "verbose" or "debug"
+#
+DEFAULT_LOGGING="none"
+
+## Description:    Define the default LDAP schema to use for lookups.
+## Type:           string
+## Default:        "auto.master"
+#
+# System default
+#
+DEFAULT_MAP_OBJECT_CLASS="nisMap"
+DEFAULT_ENTRY_OBJECT_CLASS="nisObject"
+DEFAULT_MAP_ATTRIBUTE="nisMapName"
+DEFAULT_ENTRY_ATTRIBUTE="cn"
+DEFAULT_VALUE_ATTRIBUTE="nisMapEntry"
+#
+# Other common LDAP nameing
+#
+#DEFAULT_MAP_OBJECT_CLASS="automountMap"
+#DEFAULT_ENTRY_OBJECT_CLASS="automount"
+#DEFAULT_MAP_ATTRIBUTE="ou"
+#DEFAULT_ENTRY_ATTRIBUTE="cn"
+#DEFAULT_VALUE_ATTRIBUTE="automountInformation"
+#
+#DEFAULT_MAP_OBJECT_CLASS="automountMap"
+#DEFAULT_ENTRY_OBJECT_CLASS="automount"
+#DEFAULT_MAP_ATTRIBUTE="automountMapName"
+#DEFAULT_ENTRY_ATTRIBUTE="automountKey"
+#DEFAULT_VALUE_ATTRIBUTE="automountInformation"
+
+## Description:    Set the default location for the SASL authentication configuration file.
+## Type:           string
+## Default:        "/etc/autofs_ldap_auth.conf"
+#
+DEFAULT_AUTH_CONF_FILE="etc/autofs_ldap_auth.conf"
+
+## Description:    Set the map cache hash table size.
+## Type:           integer
+## Default:        1024
+#
+# Should be a power of 2 with a ratio roughly between 1:10 and 1:20
+# for each map.
+MAP_HASH_TABLE_SIZE=1024
+
+## Description:    Set the default negative timeout for failed mount attempts.
+## Type:           integer(0:)
+## Default:        60
+#
+#DEFAULT_NEGATIVE_TIMEOUT=60
+
+## Description:    Time to wait for a response from mount(8).
+## Type:           integer(-1:)
+## Default:        -1
+#
+# Setting this timeout can cause problems when mount would otherwise
+# wait for a server that is temporarily unavailable, such as when
+# it's restarting. The default of waiting for mount(8) usually
+# results in a wait of around 3 minutes.
+#DEFAULT_MOUNT_WAIT=-1
+
+## Description:    Time to wait for a response from umount(8).
+## Type:           integer(0:)
+## Default:        12
+#
+#DEFAULT_UMOUNT_WAIT=12
+
+## Description:    The default protocol used by mount.nfs(8).
+## Type:           string
+## Default:        3
+#
+# Since we can't identify the default automatically we need to
+# set it in our configuration. This will only make a difference
+# for replicated map entries as availability probing isn't
+# used for single host map entries.
+#MOUNT_NFS_DEFAULT_PROTOCOL=3
+
+## Description:    List of LDAP server URIs.
+## Type:           string
+## Default:        ""
+#
+# Space seperated list of server URIs of the form <proto>://<server>[/]
+# where <proto> can be ldap or ldaps. The option can be given multiple
+# times. Map entries that include a server name override this option.
+#
+# This configuration option can also be used to request AutoFS lookup
+# SRV RRs for a domain of the form <proto>:///[<domain dn>]. Note that a
+# trailing "/" is not allowed when using this form. If the domain dn
+# is not specified the DNS domain name (if any) is used to construct
+# the domain dn for the SRV RR lookup. The server list returned from
+# an SRV RR lookup is refreshed according to the minimum ttl found in
+# the SRV RR records or after one hour, whichever is less.
+#LDAP_URI=""
+
+## Description:    Timeout value for the synchronous LDAP API calls.
+## Type:           integer
+## Default:        LDAP library default
+#
+#LDAP_TIMEOUT=-1
+
+## Description:    Set the network LDAP response timeout (default 8).
+## Type:           integer
+## Default:        8
+#
+#LDAP_NETWORK_TIMEOUT=8
+
+## Description:    Define the LDAP base dn for map dn lookup.
+## Type:           string
+## Default:        ""
+#
+# Multiple entries can be given and they are checked in the order
+# they appear here.
+#SEARCH_BASE=""

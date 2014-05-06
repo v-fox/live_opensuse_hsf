@@ -1,0 +1,30 @@
+## Path:        System/Kernel/IRQ Balancing
+## Description: IRQ Balancing configuration
+## Type:	string
+## Default:	""
+## ServiceRestart:	irq_balancer
+#
+# Bitmap of CPUs that are banned from IRQ balancing
+#
+IRQBALANCE_BANNED_CPUS=""
+
+## Type:	list(auto,enabled)
+## Default:	auto
+## ServiceRestart:	Iirq_balancer
+#
+# Instead of running as daemon, the IRQ balancer just does a setup
+# once and then exits. "auto" is the default behaviour which means that
+# the service is started as daemon.
+#
+IRQBALANCE_ONESHOT=auto
+
+## Type:	string
+## Default:	""
+## ServiceRestart:	Iirq_balancer
+#
+# Interrupt that don't get balanced as list (separation character doesn't
+# matter). For example broken chipsets don't allow the timer interrupt
+# to be set to another CPU than the first, and with this option that
+# policy can be applied.
+#
+IRQBALANCE_BANNED_INTERRUPTS=""
