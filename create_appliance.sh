@@ -124,7 +124,7 @@ echo
 echo "** Creating appliance..."
 rm -rf build/root
 
-run_cmd "$kiwi -v 2 --build $src/ -d $dst"
+run_cmd "$kiwi --build $src/ -d $dst"
 
 # And we're done!
 qemu_options='-snapshot'

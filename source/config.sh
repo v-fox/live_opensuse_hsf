@@ -86,6 +86,7 @@ systemctl enable tor
 systemctl enable polipo
 systemctl enable lightdm
 systemctl enable autofs
+systemctl enable acpid
 systemctl enable lm_sensors
 systemctl enable dkms_autoinstaller
 /usr/sbin/dkms autoinstall
