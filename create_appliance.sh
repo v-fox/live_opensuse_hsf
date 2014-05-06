@@ -9,11 +9,8 @@
 # Contact: feedback@susestudio.com
 # ============================================================================
 
-image_file='image/Hackers_Without_Borders.x86_64.iso'
 image_arch='x86_64'
-schema_ver='5.2'
 base_system='13.1'
-uefi_enabled='false'
 declare -a repos=()
 
 dir="$(dirname $0)"
@@ -79,23 +76,6 @@ fi
 
 echo "Note:  For a local build you will need a Kiwi version that supports building schemaversion $schema_ver or higher."
 
-if [ "$base_system" = "12.1" ] || [ "$base_system" = "12.2" ]; then
-  # Check system and it's version for 12.1 (it can't be built on SLES/SLED or
-  # earlier versions of openSUSE).
-  sys_name=`head -1 /etc/SuSE-release`
-  sys_ver=`grep VERSION /etc/SuSE-release | sed -e 's/^[^=]*= *//'`
-  if [ `echo "$sys_name" | grep -c openSUSE` -eq 0 -o `echo "$sys_ver < 12.1" | bc` -eq 1 ]; then
-    echo "This appliance should be built on openSUSE 12.1 or newer (you use '$sys_name')."
-    while true; do
-      read -p "Continue? [y/n] " yn
-      case $yn in
-        [Yy]* ) break;;
-        [Nn]* ) exit;;
-      esac
-    done
-  fi
-fi
-
 # Check architecture (i686, x86_64).
 sys_arch=`uname -m`
 linux32=`which linux32 2>/dev/null`
@@ -127,17 +107,3 @@ rm -rf build/root
 run_cmd "$kiwi --build $src/ -d $dst"
 
 # And we're done!
-qemu_options='-snapshot'
-[[ "$image_file" =~ \.iso$ ]] && qemu_options='-cdrom'
-[[ "$uefi_enabled" = "true" ]] && qemu_options="$qemu_options -bios /usr/share/qemu-ovmf/bios/bios.bin"
-
-echo
-echo "** Appliance created successfully! ($image_file)"
-echo "To boot the image using qemu-kvm, run the following command:"
-echo "  qemu-kvm -m 512 $qemu_options $image_file &"
-echo
-if [ "$uefi_enabled" = "true" ]
-then
-  echo "Note: You will need the OVMF package to run this command."
-fi
-echo
