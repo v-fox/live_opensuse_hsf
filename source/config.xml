@@ -375,7 +375,6 @@
     <package name='flashrom'/>
     <package name='kmscon'/>
     <package name='lightdm-gtk-greeter-lang'/>
-    <package name='lightdm-gtk-greeter-branding-opensuse'/>
     <package name='lightdm-gtk-greeter'/>
     <package name='lightdm-lang'/>
     <package name='lightdm'/>
@@ -596,6 +595,7 @@
     <package name='arpwatch'/>
     <package name='wireshark'/>
     <package name='reaver'/>
+    <package name='kwrite'/>
     <archive name='plymouth.tar' bootinclude='true'/>
   </packages>
   <packages type='bootstrap'>
@@ -613,17 +613,17 @@
 	  <file name="net"/>
 	  <file name="update"/>
   </drivers>
-  <repository type='rpm-md' imageinclude='true' priority='90' alias='openSUSE'>
-	  <source path='opensuse://openSUSE:13.1/standard'/>
+  <repository type='yast2' imageinclude='true' priority='90' alias='openSUSE'>
+	  <source path='http://download.opensuse.org/distribution/13.1/repo/oss/'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Update'>
-	  <source path='opensuse://openSUSE:13.1:Update/standard'/>
+	  <source path='http://download.opensuse.org/update/13.1/'/>
   </repository>
-  <repository type='rpm-md' imageinclude='true' priority='90' alias='openSUSE_NonFree'>
-	  <source path='opensuse://openSUSE:13.1:NonFree/standard'/>
+  <repository type='yast2' imageinclude='true' priority='90' alias='openSUSE_NonFree'>
+	  <source path='http://download.opensuse.org/distribution/13.1/repo/non-oss/'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_NonFree_Update'>
-	  <source path='opensuse://openSUSE:13.1:NonFree:Update/standard'/>
+	  <source path='http://download.opensuse.org/update/13.1-non-oss/'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='60' alias='Kernel_stable'>
 	  <source path='obs://Kernel:stable/standard'/>
@@ -658,7 +658,7 @@
   <repository type='rpm-md' imageinclude='true' priority='82' alias='network_utilities'>
 	  <source path='obs://network:utilities/openSUSE_13.1'/>
   </repository>
-  <repository type='rpm-md' imageinclude='true' priority='60' alias='X11-Utilities'>
+  <repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
 	  <source path='obs://X11:Utilities/openSUSE_13.1'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='80' alias='emulators'>
