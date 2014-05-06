@@ -1,5 +1,5 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<image name='Hackers_Without_Borders' displayname='Hackers_Without_Borders' schemaversion='5.2'>
+<image name='Hackers_Without_Borders' displayname='Hackers Without Borders' schemaversion='5.2'>
   <description type='system'>
     <author>Sergey Kondakov</author>
     <contact>virtuousfox@gmail.com</contact>
@@ -22,7 +22,7 @@
         </temporary>
       </split>
     </type>
-    <version>0.2.0</version>
+    <version>0.2.1</version>
     <packagemanager>zypper</packagemanager>
     <rpm-check-signatures>false</rpm-check-signatures>
     <rpm-force>false</rpm-force>
