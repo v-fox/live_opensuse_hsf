@@ -138,12 +138,19 @@
     <package name='traceroute'/>
     <package name='grub2-branding-openSUSE'/>
     <package name='yast2-qt-branding-openSUSE'/>
+    <package name='bundle-lang-common-en'/>
+    <package name='patterns-openSUSE-yast2_basis'/>
+    <package name='patterns-openSUSE-sw_management'/>
     <package name='patterns-openSUSE-enhanced_base'/>
     <package name='patterns-openSUSE-x11'/>
     <package name='patterns-openSUSE-x11_yast'/>
+    <package name='patterns-openSUSE-office'/>
     <package name='patterns-openSUSE-e17'/>
     <package name='patterns-openSUSE-fonts'/>
-    <package name='patterns-openSUSE-office'/>
+    <package name='patterns-openSUSE-apparmor'/>
+    <package name='patterns-openSUSE-enhanced_base_opt'/>
+    <package name='patterns-openSUSE-fonts_opt'/>
+    <package name='patterns-openSUSE-office_opt'/>
     <package name='snapper'/>
     <package name='irqbalance'/>
     <package name='gstreamer-0_10-libnice'/>
@@ -205,7 +212,6 @@
     <package name='pulseaudio-module-bluetooth'/>
     <package name='systemd-logger'/>
     <package name='systemd-ui'/>
-    <package name='yast2-trans-allpacks'/>
     <package name='yast2-trans-en_GB'/>
     <package name='yast2-dbus-server'/>
     <package name='yast2-snapper'/>
@@ -538,6 +544,7 @@
     <package name='kwrite'/>
     <package name='pam_ssh'/>
     <package name='acpid'/>
+    <package name='AdobeICCProfiles'/>
     <archive name='plymouth.tar' bootinclude='true'/>
   </packages>
   <packages type='bootstrap'>
