@@ -47,10 +47,9 @@ chkconfig SuSEfirewall2_setup on
 # Sysconfig Update
 #--------------------------------------
 echo '** Update sysconfig entries...'
-baseUpdateSysConfig /etc/sysconfig/keyboard KEYTABLE english-us
+#baseUpdateSysConfig /etc/sysconfig/keyboard KEYTABLE us
 baseUpdateSysConfig /etc/sysconfig/network/config FIREWALL yes
-baseUpdateSysConfig /etc/init.d/suse_studio_firstboot NETWORKMANAGER yes
-baseUpdateSysConfig /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP 22\ 80\ 443
+baseUpdateSysConfig /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP \21 22\ 80\ 443
 baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 
 #======================================
@@ -89,9 +88,9 @@ rm -f "${docfiles}"
 #======================================
 # Keep UTF-8 locale and delete all translations
 #--------------------------------------
-#baseStripLocales \
-#	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
-#baseStripTranslations kiwi.mo
+baseStripLocales \
+	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
+baseStripTranslations kiwi.mo
 
 #======================================
 # SSL Certificates Configuration

@@ -39,6 +39,24 @@
     <user name='root' pwd='$1$swBREFsk$22GzIU89QzoL7uMa9zzun1' home='/root' shell='/bin/bash'/>
   </users>
   <packages type='image' patternType='onlyRequired'>
+    <package name='kernel-desktop' replaces='kernel-default'/>
+    <package name='kernel-firmware'/>
+    <package name='technisat-usb2-firmware' bootinclude='true'/>
+    <package name='midisport-firmware' bootinclude='true'/>
+    <package name='b43legacy-firmware' bootinclude='true'/>
+    <package name='b43-firmware' bootinclude='true'/>
+    <package name='isight-firmware-tools'/>
+    <package name='zd1211-firmware' bootinclude='true'/>
+    <package name='crystalhd-firmware' bootinclude='true'/>
+    <package name='firmwarekit'/>
+    <package name='mpt-firmware' bootinclude='true'/>
+    <package name='adaptec-firmware' bootinclude='true'/>
+    <package name='atmel-firmware' bootinclude='true'/>
+    <package name='ipw-firmware' bootinclude='true'/>
+    <package name='alsa-firmware' bootinclude='true'/>
+    <package name='FirmwareUpdateKit'/>
+    <package name='bluez'/>
+    <package name='bluez-firmware' bootinclude='true'/>
     <package name='conky-doc'/>
     <package name='conky-imlib2'/>
     <package name='conky'/>
@@ -244,22 +262,6 @@
     <package name='yast2-metapackage-handler'/>
     <package name='ucode-intel'/>
     <package name='gstreamer-0_10-plugin-crystalhd'/>
-    <package name='technisat-usb2-firmware' bootinclude='true'/>
-    <package name='midisport-firmware' bootinclude='true'/>
-    <package name='b43legacy-firmware' bootinclude='true'/>
-    <package name='b43-firmware' bootinclude='true'/>
-    <package name='isight-firmware-tools'/>
-    <package name='zd1211-firmware' bootinclude='true'/>
-    <package name='crystalhd-firmware' bootinclude='true'/>
-    <package name='firmwarekit'/>
-    <package name='mpt-firmware' bootinclude='true'/>
-    <package name='adaptec-firmware' bootinclude='true'/>
-    <package name='atmel-firmware' bootinclude='true'/>
-    <package name='ipw-firmware' bootinclude='true'/>
-    <package name='alsa-firmware' bootinclude='true'/>
-    <package name='FirmwareUpdateKit'/>
-    <package name='bluez'/>
-    <package name='bluez-firmware' bootinclude='true'/>
     <package name='wpa_supplicant-gui'/>
     <package name='connman-plugin-l2tp'/>
     <package name='connman-plugin-tist'/>
@@ -539,35 +541,40 @@
     <package name='pam_ssh'/>
     <package name='acpid'/>
     <package name='AdobeICCProfiles'/>
+    <package name='p7zip-gui'/>
     <archive name='plymouth.tar' bootinclude='true'/>
   </packages>
   <packages type='bootstrap'>
-    <package name='filesystem'/>
-    <package name='glibc-locale'/>
-    <package name='module-init-tools'/>
-    <package name='udev'/>
-    <package name='openssl-certs'/>
-    <package name='cracklib-dict-full'/>
+	  <package name='file'/>
+	  <package name='filesystem'/>
+	  <package name='gfxboot'/>
+	  <package name='glibc'/>
+	  <package name='glibc-locale'/>
+	  <package name='udev'/>
+	  <package name='module-init-tools'/>
+	  <package name='which'/>
+	  <package name='plymouth'/>
+	  <package name='plymouth-scripts'/>
+	  <package name='openssl-certs'/>
+	  <package name='cracklib-dict-full'/>
+	  <package name='sysconfig'/>
+	  <package name='psmisc'/>
+	  <package name='sysfsutils'/>
+	  <package name='tar'/>
+	  <package name='timezone'/>
+	  <package name='netcfg'/>
+	  <package name='rpm'/>
   </packages>
-  <drivers>
-	  <file name="arch"/>
-	  <file name="crypto"/>
-	  <file name="drivers"/>
-	  <file name="fs"/>
-	  <file name="lib"/>
-	  <file name="net"/>
-	  <file name="update"/>
-  </drivers>
   <repository type='yast2' imageinclude='true' priority='90' alias='openSUSE'>
 	  <source path='http://download.opensuse.org/distribution/13.1/repo/oss/'/>
   </repository>
-  <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Update'>
+  <repository type='yast2' imageinclude='true' priority='85' alias='openSUSE_Update'>
 	  <source path='http://download.opensuse.org/update/13.1/'/>
   </repository>
   <repository type='yast2' imageinclude='true' priority='90' alias='openSUSE_NonFree'>
 	  <source path='http://download.opensuse.org/distribution/13.1/repo/non-oss/'/>
   </repository>
-  <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_NonFree_Update'>
+  <repository type='yast2' imageinclude='true' priority='85' alias='openSUSE_NonFree_Update'>
 	  <source path='http://download.opensuse.org/update/13.1-non-oss/'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='60' alias='Kernel_stable'>
@@ -648,13 +655,19 @@
   <repository type='rpm-md' imageinclude='true' priority='62' alias='home_seife_testing'>
 	  <source path='obs://home:seife:testing/openSUSE_13.1'/>
   </repository>
+  <repository type='rpm-md' imageinclude='true' priority='92' alias='home_lukho_copyq'>
+	  <source path='obs://home:lukho:copyq/openSUSE_13.1'/>
+  </repository>
+  <repository type='rpm-md' imageinclude='true' priority='99' alias='home_marec2000'>
+	  <source path='obs://home:marec2000/openSUSE_13.1'/>
+  </repository>
   <repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_emulators'>
 	  <source path='obs://home:X0F:branches:Emulators/openSUSE_13.1'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F_branches_network'>
 	  <source path='obs://home:X0F:branches:network/openSUSE_13.1'/>
   </repository>
-  <repository type='rpm-md' imageinclude='true' priority='2' alias='home_X0F_branches_openSUSE_Update'>
-	  <source path='obs://home:X0F:branches:openSUSE:13.1:Update/standard/'/>
+  <repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F'>
+	  <source path='obs://home:X0F/openSUSE_13.1'/>
   </repository>
 </image>
