@@ -4,7 +4,7 @@
 # Syntax: simple "KEY=VAL" pairs on seperate lines
 #
 # for hugetlbfs usage
-HUGETLB_PATH=/dev/hugepages
+#HUGETLB_PATH=/dev/hugepages
 # for enca/enconv
 DEFAULT_CHARSET=UTF-8
 # open radeon driver goodness
@@ -24,3 +24,5 @@ DRI_PRIME=1
 # steam crutches
 #STEAM_RUNTIME=0
 #STEAM_FRAME_FORCE_CLOSE=1
+# useful crutches
+DISPLAY=:0

@@ -36,20 +36,12 @@ baseSetRunlevel 5
 #--------------------------------------
 suseImportBuildKey
 
-
 #======================================
 # Firewall Configuration
 #--------------------------------------
 echo '** Configuring firewall...'
 chkconfig SuSEfirewall2_init on
 chkconfig SuSEfirewall2_setup on
-
-#======================================
-# RPM GPG Keys Configuration
-#--------------------------------------
-echo '** Importing GPG Keys...'
-rpm --import /studio/studio_rpm_key_0
-rm /studio/studio_rpm_key_0
 
 #======================================
 # Sysconfig Update
@@ -59,28 +51,19 @@ baseUpdateSysConfig /etc/sysconfig/keyboard KEYTABLE english-us
 baseUpdateSysConfig /etc/sysconfig/network/config FIREWALL yes
 baseUpdateSysConfig /etc/init.d/suse_studio_firstboot NETWORKMANAGER yes
 baseUpdateSysConfig /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP 22\ 80\ 443
-baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT lat9w-16.psfu
-
+baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 
 #======================================
 # CUSTOMIZATION
 #--------------------------------------
-
+suseGFXBoot studio isolinux
 baseSetupUserPermissions
 suseActivateDefaultServices
 suseRemoveService xdm
 suseInsertService boot.compcache
 suseInsertService irq_balancer
 suseInsertService gpm
-#ln -s '/usr/lib/systemd/system/bluetooth.service' '/etc/systemd/system/dbus-org.bluez.service'
-#ln -s '/usr/lib/systemd/system/bluetooth.service' '/etc/systemd/system/bluetooth.target.wants/bluetooth.service'
-#ln -s '/usr/lib/systemd/system/tor.service' '/etc/systemd/system/multi-user.target.wants/tor.service'
-#ln -s '/usr/lib/systemd/system/polipo.service' '/etc/systemd/system/multi-user.target.wants/polipo.service'
-# ln -s '/usr/lib/systemd/system/kmscon.service' '/etc/systemd/system/multi-user.target.wants/kmscon.service'
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
-#ln -s '/etc/systemd/system/lightdm.service' '/etc/systemd/system/displaymanager.service'
-#ln -s '/etc/systemd/system/lightdm.service' '/etc/systemd/system/graphical.target.wants/lightdm.service'
-#ln -s '/usr/lib/systemd/system/lm_sensors.service' '/etc/systemd/system/multi-user.target.wants/lm_sensors.service'
 systemctl enable bluetooth
 systemctl enable tor
 systemctl enable polipo
@@ -90,6 +73,9 @@ systemctl enable acpid
 systemctl enable lm_sensors
 systemctl enable dkms_autoinstaller
 /usr/sbin/dkms autoinstall
+systemctl enable NetworkManager
+systemctl enable YaST2-Firstboot
+systemctl enable HWB-firstboot
 
 #======================================
 # Prune extraneous files
@@ -99,6 +85,13 @@ docfiles=`find /usr/share/doc/packages -type f |grep -iv "copying\|license\|copy
 rm -f "${docfiles}"
 #rm -rf /usr/share/info
 #rm -rf /usr/share/man
+
+#======================================
+# Keep UTF-8 locale and delete all translations
+#--------------------------------------
+#baseStripLocales \
+#	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
+#baseStripTranslations kiwi.mo
 
 #======================================
 # SSL Certificates Configuration

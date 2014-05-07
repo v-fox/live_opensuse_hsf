@@ -1,16 +1,18 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
-<image name='Hackers_Without_Borders' displayname='Hackers Without Borders' schemaversion='5.2'>
+<image name='HWB' displayname='Hackers_Without_Borders' schemaversion='5.2'>
   <description type='system'>
     <author>Sergey Kondakov</author>
     <contact>virtuousfox@gmail.com</contact>
     <specification>Big, useful desktop appliance with slim DEs</specification>
   </description>
   <preferences>
-	  <type checkprebuilt='true' boot='isoboot/suse-13.1' fsnocheck='true' bootloader='grub2' flags='clic' hybrid='true' kernelcmdline='splash=verbose' image='iso'>
+	  <type checkprebuilt='true' boot='isoboot/suse-13.1' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='overlay' hybrid='true' hybridpersistent='true' kernelcmdline=' ro splash=verbose' image='iso'>
       <split>
         <temporary>
           <file name='/var'/>
           <file name='/var/*'/>
+	  <file name='/boot'/>
+	  <file name='/boot/*'/>
           <file name='/etc'/>
           <file name='/etc/*'/>
           <file name='/tmp'/>
@@ -26,7 +28,8 @@
     <packagemanager>zypper</packagemanager>
     <rpm-check-signatures>false</rpm-check-signatures>
     <rpm-force>false</rpm-force>
-    <boot-theme>studio</boot-theme>
+    <bootsplash-theme>studio</bootsplash-theme>
+    <bootloader-theme>studio</bootloader-theme>
     <locale>en_GB</locale>
   </preferences>
   <users group='users'>
@@ -45,18 +48,16 @@
     <package name='davfs2'/>
     <package name='libreoffice-help-en-GB'/>
     <package name='libreoffice-l10n-en-GB'/>
-    <package name='libreoffice-kde4'/>
     <package name='okular'/>
     <package name='kparts-plugin'/>
     <package name='zfsonlinux-zfs-dkms'/>
     <package name='grub'/>
     <package name='terminus-bitmap-fonts'/>
-    <package name='kernel-firmware-20140319git-36.1' bootinclude='true'/>
-    <package name='ucode-amd-20140319git-36.1' bootinclude='true'/>
+    <package name='ucode-amd' bootinclude='true'/>
     <package name='radeon-profile'/>
-    <package name='leechcraft-0.6.65-90.1'/>
-    <package name='leechcraft-azoth-standardstyles-0.6.65-90.1'/>
-    <package name='leechcraft-kinotify-0.6.65-90.1'/>
+    <package name='leechcraft'/>
+    <package name='leechcraft-azoth-standardstyles'/>
+    <package name='leechcraft-kinotify'/>
     <package name='gnome-icon-theme'/>
     <package name='wm-icons'/>
     <package name='kdeartwork4-icons'/>
@@ -136,7 +137,6 @@
     <package name='zypper-aptitude'/>
     <package name='snapper-zypp-plugin'/>
     <package name='traceroute'/>
-    <package name='grub2-branding-openSUSE'/>
     <package name='yast2-qt-branding-openSUSE'/>
     <package name='bundle-lang-common-en'/>
     <package name='patterns-openSUSE-yast2_basis'/>
@@ -165,7 +165,6 @@
     <package name='sox'/>
     <package name='smartmontools'/>
     <package name='pm-profiler'/>
-    <package name='gfxboot-branding-openSUSE'/>
     <package name='psmisc'/>
     <package name='nscd'/>
     <package name='command-not-found'/>
@@ -195,7 +194,6 @@
     <package name='wireless-regdb'/>
     <package name='dos2unix'/>
     <package name='tcpdump'/>
-    <package name='gfxboot'/>
     <package name='rsync'/>
     <package name='desktop-translations'/>
     <package name='nfs-client'/>
@@ -272,7 +270,6 @@
     <package name='connman-nmcompat'/>
     <package name='connman-plugin-polkit'/>
     <package name='econnman'/>
-    <package name='kernel-desktop'/>
     <package name='gparted'/>
     <package name='testdisk'/>
     <package name='polipo'/>
@@ -520,8 +517,6 @@
     <package name='yast2-firstboot'/>
     <package name='glibc-locale'/>
     <package name='aaa_base'/>
-    <package name='grub2'/>
-    <package name='grub2-x86_64-efi'/>
     <package name='hwinfo'/>
     <package name='iputils'/>
     <package name='netcfg'/>
@@ -537,7 +532,6 @@
     <package name='yast2-users'/>
     <package name='pin'/>
     <package name='btrfsprogs'/>
-    <package name='squashfs' bootinclude='true'/>
     <package name='arpwatch'/>
     <package name='wireshark'/>
     <package name='reaver'/>
@@ -557,6 +551,7 @@
   </packages>
   <drivers>
 	  <file name="arch"/>
+	  <file name="crypto"/>
 	  <file name="drivers"/>
 	  <file name="fs"/>
 	  <file name="lib"/>

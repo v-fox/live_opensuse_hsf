@@ -1,0 +1,9 @@
+﻿[Unit]
+Description=Execute user-provided boot script, if it exists
+ConditionFileIsExecutable=/usr/local/sbin/HWB-firstboot
+
+Before=lm_sensors.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/HWB-firstboot

@@ -1,0 +1,9 @@
+﻿#!/bin/bash
+
+# detecting sensors for lm_sensors
+yes | sudo sensors-detect
+
+# deleting itself
+rm -f /usr/local/sbin/HWB-firstboot
+
+exit 0
