@@ -542,6 +542,7 @@
     <package name='acpid'/>
     <package name='AdobeICCProfiles'/>
     <package name='p7zip-gui'/>
+    <package name='dnsmasq'/>
     <archive name='plymouth.tar' bootinclude='true'/>
   </packages>
   <packages type='bootstrap'>

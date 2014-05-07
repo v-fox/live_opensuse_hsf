@@ -32,5 +32,5 @@ I recommend to use smart SATA boxes with legacy (floppy, disk, virtual partition
 !Notes:
 -------
 ⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
-⊙ yakuake, bluedevil, okular, kwrite and dolphin KDE apps are included for the lack of adequate analogues
+⊙ yakuake, bluedevil, okular, kwrite, gwenview and dolphin KDE apps are included for the lack of adequate analogues
 ⊙ there is also nm-applet from Gnome for the lack _of any_ analogues (_the only_ alternative is plasma-nm and it's plasma plugin, thus not available outside of KDE)

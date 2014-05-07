@@ -64,6 +64,7 @@ suseInsertService irq_balancer
 suseInsertService gpm
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
 systemctl enable bluetooth
+systemctl enable dnsmasq
 systemctl enable tor
 systemctl enable polipo
 systemctl enable lightdm
