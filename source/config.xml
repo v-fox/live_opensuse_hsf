@@ -543,6 +543,7 @@
     <package name='AdobeICCProfiles'/>
     <package name='p7zip-gui'/>
     <package name='dnsmasq'/>
+    <package name='Mesa-demo-x'/>
     <archive name='plymouth.tar' bootinclude='true'/>
   </packages>
   <packages type='bootstrap'>
