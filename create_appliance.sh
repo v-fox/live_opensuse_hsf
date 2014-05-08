@@ -9,6 +9,18 @@
 # Contact: feedback@susestudio.com
 # ============================================================================
 
+BUILD_DATE="$(date +%Y%m%d)"
+VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
+VERSION_GIT_FULL="$(git describe | sed 's/v//')"
+read_dom () { local IFS=\> ; read -d \< E C ;}
+VERSION_CONFIG=$(
+while read_dom; do
+    if [[ "${E}" = version ]]; then
+        echo "${C}"
+        exit
+    fi
+done < source/config.xml)
+
 image_arch='x86_64'
 base_system='13.1'
 declare -a repos=()
@@ -16,6 +28,9 @@ declare -a repos=()
 dir="$(dirname $0)"
 src="$dir/source"
 dst="$dir/image"
+
+isofile="${dst}/Hackeurs_Sans_Frontieres.${image_arch}-${VERSION_CONFIG}.iso"
+isofile_proper="Linux Live - Hackers Without Borders - ${VERSION_GIT_FULL}.iso"
 
 if ! [ -d "$src/" ] || ! [ -f "$src/config.xml" ]; then
   printf "%s: %s\n" \
@@ -101,18 +116,6 @@ done
 
 # setting version
 
-
-BUILD_DATE="$(date +%Y%m%d)"
-VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
-read_dom () { local IFS=\> ; read -d \< E C ;}
-VERSION_CONFIG=$(
-while read_dom; do
-    if [[ "${E}" = version ]]; then
-        echo "${C}"
-        exit
-    fi
-done < source/config.xml)
-
 echo "Setting up build date to ${BUILD_DATE}"
 sed -i "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" source/root/etc/os-release
 echo "Setting up version to ${VERSION_CONFIG}"
@@ -126,3 +129,5 @@ rm -rf build/root
 run_cmd "$kiwi --build $src/ -d $dst"
 
 # And we're done!
+echo -n "** Moving iso-file: "
+mv -v "${isofile_proper}" "${isofile_proper}"
