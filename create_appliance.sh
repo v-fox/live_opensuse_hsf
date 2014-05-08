@@ -114,9 +114,9 @@ while read_dom; do
 done < source/config.xml)
 
 echo "Setting up build date to ${BUILD_DATE}"
-sed -i "BUILD_ID=/*$/\"${BUILD_DATE}\"/" source/root/etc/os-release
+sed -i "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" source/root/etc/os-release
 echo "Setting up version to ${VERSION_CONFIG}"
-sed -i "VERSION=/*$/\"${VERSION_CONFIG}\"/" source/root/etc/os-release
+sed -i "/VERSION=/s:=.*$:=\"${VERSION_CONFIG}\":" source/root/etc/os-release
 
 # Create appliance.
 echo
