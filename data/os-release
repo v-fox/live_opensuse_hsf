@@ -1,5 +1,5 @@
 NAME=HSF
-VERSION="SED_VERSION"
+VERSION="<TO_BE_REPLACED>"
 VERSION_ID="13.1"
 PRETTY_NAME="Hackeurs Sans Frontières"
 ID=opensuse
@@ -8,4 +8,4 @@ CPE_NAME="cpe:/o:opensuse:opensuse:13.1"
 BUG_REPORT_URL="https://bugs.opensuse.org"
 HOME_URL="https://opensuse.org/"
 ID_LIKE="suse"
-BUILD_ID=SED_BUILD
+BUILD_ID="<TO_BE_REPLACED>"

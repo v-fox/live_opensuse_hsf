@@ -30,7 +30,7 @@ src="$dir/source"
 dst="$dir/image"
 
 isofile="${dst}/Hackeurs_Sans_Frontieres.${image_arch}-${VERSION_CONFIG}.iso"
-isofile_proper="Linux Live - Hackers Without Borders - ${VERSION_GIT_FULL}.iso"
+isofile_proper="Linux Live - HSF - ${VERSION_GIT}_${BUILD_DATE}.iso"
 
 if ! [ -d "$src/" ] || ! [ -f "$src/config.xml" ]; then
   printf "%s: %s\n" \
@@ -116,10 +116,10 @@ done
 
 # setting version
 
-echo "Setting up build date to ${BUILD_DATE}"
-sed -i "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" source/root/etc/os-release
-echo "Setting up version to ${VERSION_CONFIG}"
-sed -i "/VERSION=/s:=.*$:=\"${VERSION_CONFIG}\":" source/root/etc/os-release
+echo "Setting up build date to \'${BUILD_DATE}\' and version to \'${VERSION_CONFIG}\'"
+sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
+	-e "/VERSION=/s:=.*$:=\"${VERSION_CONFIG}\":" data/os-release \
+	> source/root/etc/os-release
 
 # Create appliance.
 echo
