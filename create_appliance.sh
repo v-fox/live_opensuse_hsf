@@ -116,7 +116,7 @@ done
 
 # setting version
 
-echo "Setting up build date to \'${BUILD_DATE}\' and version to \'${VERSION_CONFIG}\'"
+echo "Setting up build date to '${BUILD_DATE}' and version to '${VERSION_CONFIG}'"
 sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
 	-e "/VERSION=/s:=.*$:=\"${VERSION_CONFIG}\":" data/os-release \
 	> source/root/etc/os-release
