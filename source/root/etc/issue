@@ -1,3 +1,2 @@
-\l: \e[01;39mHackers Without Borders\e[00m \e[01;32mopenSUSE\e[00m spin with kernel \e[01;34m\r\e[00m has loaded
-default passwords: \e[01;31mroot\e[00m=\e[01;31mlinux\e[00m, \e[01;31mguest\e[00m=\e[01;31m<empty>\e[00m
-have a nice day
+\l: Hackers Without Borders openSUSE spin with kernel \r has loaded
+default passwords: root=linux, guest=<empty>. have a nice day
