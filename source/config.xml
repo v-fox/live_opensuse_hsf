@@ -24,7 +24,7 @@
         </temporary>
       </split>
     </type>
-    <version>0.2.2</version>
+    <version>0.3.0</version>
     <packagemanager>zypper</packagemanager>
     <rpm-check-signatures>false</rpm-check-signatures>
     <rpm-force>false</rpm-force>
@@ -39,6 +39,7 @@
     <user name='root' pwd='$1$swBREFsk$22GzIU89QzoL7uMa9zzun1' home='/root' shell='/bin/bash'/>
   </users>
   <packages type='image' patternType='onlyRequired'>
+    <opensusePattern name='lxqt'/>
     <package name='kernel-desktop' replaces='kernel-default'/>
     <package name='kernel-firmware'/>
     <package name='technisat-usb2-firmware' bootinclude='true'/>
@@ -103,7 +104,6 @@
     <package name='apparmor-utils'/>
     <package name='gstreamer-0_10-utils'/>
     <package name='gstreamer-utils'/>
-    <package name='razorqt'/>
     <package name='e-module-forecasts'/>
     <package name='e-module-engage'/>
     <package name='e-module-moon'/>
@@ -332,8 +332,8 @@
     <package name='compcache'/>
     <package name='flashrom'/>
     <package name='kmscon'/>
-    <package name='lightdm-gtk-greeter'/>
     <package name='lightdm'/>
+    <package name='accountsservice'/>
     <package name='leechcraft-blasq-spegnersi'/>
     <package name='leechcraft-sysnotify'/>
     <package name='leechcraft-lmp-mtpsync'/>
@@ -668,6 +668,9 @@
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F_branches_network'>
 	  <source path='obs://home:X0F:branches:network/openSUSE_13.1'/>
+  </repository>
+  <repository type='rpm-md' imageinclude='true' priority='62' alias='home_X0F_branches_LXQt' >
+	  <source path='obs://home:X0F:branches:lxqt/openSUSE_13.1'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F'>
 	  <source path='obs://home:X0F/openSUSE_13.1'/>
