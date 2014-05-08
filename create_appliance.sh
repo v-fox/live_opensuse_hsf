@@ -99,6 +99,25 @@ for repo in "${repos[@]}"; do
   fi
 done
 
+# setting version
+
+
+BUILD_DATE="$(date +%Y%m%d)"
+VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
+read_dom () { local IFS=\> ; read -d \< E C ;}
+VERSION_CONFIG=$(
+while read_dom; do
+    if [[ "${E}" = version ]]; then
+        echo "${C}"
+        exit
+    fi
+done < source/config.xml)
+
+echo "Setting up build date to ${BUILD_DATE}"
+sed -i "BUILD_ID=/*$/\"${BUILD_DATE}\"/" source/root/etc/os-release
+echo "Setting up version to ${VERSION_CONFIG}"
+sed -i "VERSION=/*$/\"${VERSION_CONFIG}\"/" source/root/etc/os-release
+
 # Create appliance.
 echo
 echo "** Creating appliance..."
