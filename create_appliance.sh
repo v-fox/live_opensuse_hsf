@@ -1,4 +1,27 @@
-﻿#!/bin/bash
+#!/bin/bash
+
+# Variables.
+BUILD_DATE="$(date +%Y%m%d)"
+VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
+VERSION_GIT_FULL="$(git describe | sed 's/v//')"
+read_dom () { local IFS=\> ; read -d \< E C ;}
+VERSION_CONFIG=$(
+while read_dom; do
+    if [[ "${E}" = version ]]; then
+        echo "${C}"
+        exit
+    fi
+done < source/config.xml)
+
+image_arch='x86_64'
+declare -a repos=()
+
+dir="$(dirname $0)"
+src="$dir/source"
+dst="$dir/image"
+
+isofile="${dst}/Hackeurs_Sans_Frontieres.${image_arch}-${VERSION_CONFIG}.iso"
+isofile_proper="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
 
 # Check that we're root.
 if [ `whoami` != 'root' ]; then
@@ -24,29 +47,6 @@ if [ $? -ne 0 ]; then
   echo
   exit 1
 fi
-
-# Variables.
-BUILD_DATE="$(date +%Y%m%d)"
-VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
-VERSION_GIT_FULL="$(git describe | sed 's/v//')"
-read_dom () { local IFS=\> ; read -d \< E C ;}
-VERSION_CONFIG=$(
-while read_dom; do
-    if [[ "${E}" = version ]]; then
-        echo "${C}"
-        exit
-    fi
-done < source/config.xml)
-
-image_arch='x86_64'
-declare -a repos=()
-
-dir="$(dirname $0)"
-src="$dir/source"
-dst="$dir/image"
-
-isofile="${dst}/Hackeurs_Sans_Frontieres.${image_arch}-${VERSION_CONFIG}.iso"
-isofile_proper="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
 
 # Prints and runs the given command. Aborts if the command fails.
 function run_cmd {
