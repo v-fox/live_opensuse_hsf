@@ -26,3 +26,5 @@ DRI_PRIME=1
 #STEAM_FRAME_FORCE_CLOSE=1
 # useful crutches
 DISPLAY=:0
+# avoiding vi
+EDITOR=nano
