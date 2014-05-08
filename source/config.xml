@@ -650,6 +650,9 @@
   <repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Apps'>
 	  <source path='obs://GNOME:Apps/openSUSE_13.1'/>
   </repository>
+  <repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Stable_3.12'>
+	  <source path='obs://GNOME:STABLE:3.12/openSUSE_13.1'/>
+  </repository>
   <repository type='rpm-md' imageinclude='true' priority='55' alias='home_XRevan86'>
 	  <source path='obs://home:XRevan86/openSUSE_13.1'/>
   </repository>
@@ -659,7 +662,7 @@
   <repository type='rpm-md' imageinclude='true' priority='94' alias='home_aevseev'>
 	  <source path='obs://home:aevseev/openSUSE_13.1'/>
   </repository>
-  <repository type='rpm-md' imageinclude='true' priority='62' alias='home_seife_testing'>
+  <repository type='rpm-md' imageinclude='true' priority='99' alias='home_seife_testing'>
 	  <source path='obs://home:seife:testing/openSUSE_13.1'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='92' alias='home_lukho_copyq'>
