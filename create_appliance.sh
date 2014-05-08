@@ -1,14 +1,31 @@
 ﻿#!/bin/bash
-# ============================================================================
-# Script for creating appliances exported from SUSE Studio
-# (http://susestudio.com) on your local system.
-#
-# Requires kiwi (http://opensuse.github.com/kiwi/).
-#
-# Author:  James Tan <jatan@suse.de>
-# Contact: feedback@susestudio.com
-# ============================================================================
 
+# Check that we're root.
+if [ `whoami` != 'root' ]; then
+  echo "Please run this script as root."
+  exit 1
+fi
+
+if ! [ -d "$src/" ] || ! [ -f "$src/config.xml" ]; then
+  printf "%s: %s\n" \
+    "$0" "Cannot find appliance source." \
+    "$0" "cd into the appliance directory and run './create_appliance.sh'." \
+    >&2
+  exit 1
+fi
+
+# Check that kiwi is installed.
+kiwi=`which kiwi 2> /dev/null`
+if [ $? -ne 0 ]; then
+  echo "Kiwi is required but not found on your system."
+  echo "Run the following command to install kiwi:"
+  echo
+  echo "  zypper install kiwi kiwi-tools kiwi-desc-* kiwi-doc"
+  echo
+  exit 1
+fi
+
+# Variables.
 BUILD_DATE="$(date +%Y%m%d)"
 VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
 VERSION_GIT_FULL="$(git describe | sed 's/v//')"
@@ -22,7 +39,6 @@ while read_dom; do
 done < source/config.xml)
 
 image_arch='x86_64'
-base_system='13.1'
 declare -a repos=()
 
 dir="$(dirname $0)"
@@ -30,15 +46,7 @@ src="$dir/source"
 dst="$dir/image"
 
 isofile="${dst}/Hackeurs_Sans_Frontieres.${image_arch}-${VERSION_CONFIG}.iso"
-isofile_proper="Linux Live - HSF - ${VERSION_GIT}_${BUILD_DATE}.iso"
-
-if ! [ -d "$src/" ] || ! [ -f "$src/config.xml" ]; then
-  printf "%s: %s\n" \
-    "$0" "Cannot find appliance source." \
-    "$0" "cd into the appliance directory and run './create_appliance.sh'." \
-    >&2
-  exit 1
-fi
+isofile_proper="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
 
 # Prints and runs the given command. Aborts if the command fails.
 function run_cmd {
@@ -72,25 +80,6 @@ function add_repo_url {
   && echo "{$repo} $url alias added to /etc/kiwi/repoalias"
 }
 
-# Check that we're root.
-if [ `whoami` != 'root' ]; then
-  echo "Please run this script as root."
-  exit 1
-fi
-
-# Check that kiwi is installed.
-kiwi=`which kiwi 2> /dev/null`
-if [ $? -ne 0 ]; then
-  echo "Kiwi is required but not found on your system."
-  echo "Run the following command to install kiwi:"
-  echo
-  echo "  zypper install kiwi kiwi-tools kiwi-desc-* kiwi-doc"
-  echo
-  exit 1
-fi
-
-echo "Note:  For a local build you will need a Kiwi version that supports building schemaversion $schema_ver or higher."
-
 # Check architecture (i686, x86_64).
 sys_arch=`uname -m`
 linux32=`which linux32 2>/dev/null`
@@ -114,11 +103,10 @@ for repo in "${repos[@]}"; do
   fi
 done
 
-# setting version
-
-echo "Setting up build date to '${BUILD_DATE}' and version to '${VERSION_CONFIG}'"
+# Set up version.
+echo "** Setting up build date to '${BUILD_DATE}' and version to '${VERSION_GIT_FULL}'"
 sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
-	-e "/VERSION=/s:=.*$:=\"${VERSION_CONFIG}\":" data/os-release \
+	-e "/VERSION=/s:=.*$:=\"${VERSION_GIT_FULL}\":" data/os-release \
 	> source/root/etc/os-release
 
 # Create appliance.
@@ -130,4 +118,4 @@ run_cmd "$kiwi --build $src/ -d $dst"
 
 # And we're done!
 echo -n "** Moving iso-file: "
-mv -v "${isofile_proper}" "${isofile_proper}"
+mv -v "${isofile}" "${isofile_proper}"

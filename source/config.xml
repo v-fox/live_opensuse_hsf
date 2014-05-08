@@ -333,6 +333,7 @@
     <package name='flashrom'/>
     <package name='kmscon'/>
     <package name='lightdm'/>
+    <package name='lxqt-lightdm-greeter'/>
     <package name='accountsservice'/>
     <package name='leechcraft-blasq-spegnersi'/>
     <package name='leechcraft-sysnotify'/>
