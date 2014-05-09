@@ -13,12 +13,12 @@
         </temporary>
       </split>
     </type>
-    <version>0.3.1</version>
+    <version>0.4.0</version>
     <packagemanager>zypper</packagemanager>
     <rpm-check-signatures>false</rpm-check-signatures>
     <rpm-force>false</rpm-force>
-    <bootsplash-theme>studio</bootsplash-theme>
-    <bootloader-theme>studio</bootloader-theme>
+    <bootsplash-theme>HSF</bootsplash-theme>
+    <bootloader-theme>HSF</bootloader-theme>
     <locale>en_GB</locale>
   </preferences>
   <users group='users'>
@@ -531,9 +531,10 @@
     <package name='p7zip-gui'/>
     <package name='dnsmasq'/>
     <package name='Mesa-demo-x'/>
-    <package name='gfxboot'/>
     <package name='enca'/>
-    <archive name='plymouth.tar' bootinclude='true'/>
+    <package name='gfxboot-branding-HSF'/>
+    <package name='grub2-branding-HSF'/>
+    <archive name='plymouth-branding-HSF' bootinclude='true'/>
   </packages>
   <packages type='bootstrap'>
 	  <package name='file'/>
@@ -673,10 +674,13 @@
   <repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F_branches_network'>
 	  <source path='obs://home:X0F:branches:network/openSUSE_13.1'/>
   </repository>
-  <repository type='rpm-md' imageinclude='true' priority='62' alias='home_X0F_branches_LXQt' >
-	  <source path='obs://home:X0F:branches:lxqt/openSUSE_13.1'/>
+  <repository type='rpm-md' imageinclude='true' priority='62' alias='LXQt' >
+	  <source path='obs://home:X0F:LXQt/openSUSE_13.1'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F'>
 	  <source path='obs://home:X0F/openSUSE_13.1'/>
+  </repository>
+  <repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres'>
+	  <source path='obs://home:X0F:HSF/openSUSE_13.1'/>
   </repository>
 </image>

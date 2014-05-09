@@ -1,4 +1,4 @@
-﻿Hackers Without Borders - OpenSUSE-based live cd/usb aimed to be fully functional slim desktop system for advanced users
+﻿Hackeurs Sans Frontières - OpenSUSE-based live cd/usb aimed to be fully functional slim desktop system for advanced users
 ========================================================================================================================
 
 This is live/installation simplistic yet powerful OpenSUSE spin aimed for out-of-the-box desktop usage by advanced users in countries without software patent racket.
