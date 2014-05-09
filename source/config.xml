@@ -584,6 +584,12 @@
   <repository type='rpm-md' imageinclude='true' priority='60' alias='Kernel_stable'>
 	  <source path='obs://Kernel:stable/standard'/>
   </repository>
+  <repository type='rpm-md' imageinclude='true' priority='99' alias='Bumblebee_Nvidia_drivers'>
+	  <source path='obs://home:Bumblebee-Project:nVidia:latest/openSUSE_13.1'/>
+  </repository>
+  <repository type='rpm-md' imageinclude='true' priority='99' alias='Shitty_AMD_drivers'>
+	  <source path='http://geeko.ioda.net/mirror/amd-fglrx/openSUSE_13.1'/>
+  </repository>
   <repository type='rpm-md' imageinclude='true' priority='62' alias='Packman'>
 	  <source path='http://packman.inode.at/suse/13.1'/>
   </repository>
@@ -619,6 +625,9 @@
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='80' alias='emulators'>
 	  <source path='obs://Emulators/openSUSE_13.1'/>
+  </repository>
+  <repository type='rpm-md' imageinclude='true' priority='65' alias='emulators_wine'>
+	  <source path='obs://Emulators:Wine/openSUSE_13.1'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='99' alias='server_http'>
 	  <source path='obs://server:http/openSUSE_13.1'/>
