@@ -55,7 +55,7 @@ baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 #======================================
 # CUSTOMIZATION
 #--------------------------------------
-suseGFXBoot openSUSE isolinux
+suseGFXBoot HSF isolinux
 baseSetupUserPermissions
 suseActivateDefaultServices
 suseRemoveService xdm

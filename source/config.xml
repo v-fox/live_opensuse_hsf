@@ -532,6 +532,7 @@
     <package name='dnsmasq'/>
     <package name='Mesa-demo-x'/>
     <package name='enca'/>
+    <package name='wallpapers-branding-HSF'/>
     <package name='gfxboot-branding-HSF'/>
     <package name='grub2-branding-HSF'/>
     <archive name='plymouth-branding-HSF' bootinclude='true'/>
