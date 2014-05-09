@@ -1,7 +1,7 @@
 NAME=HSF
 VERSION="<TO_BE_REPLACED>"
 VERSION_ID="13.1"
-PRETTY_NAME="Hackeurs Sans Frontières"
+PRETTY_NAME="Hackeurs Sans Frontieres"
 ID=opensuse
 ANSI_COLOR="0;32"
 CPE_NAME="cpe:/o:opensuse:opensuse:13.1"
