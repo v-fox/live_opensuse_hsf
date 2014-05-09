@@ -3,6 +3,10 @@
 #
 # Syntax: simple "KEY=VAL" pairs on seperate lines
 #
+# Tor Proxy
+http_proxy=127.0.0.1:8080
+https_proxy=127.0.0.1:8080
+ftp_proxy=127.0.0.1:8080
 # for hugetlbfs usage
 #HUGETLB_PATH=/dev/hugepages
 # for enca/enconv
@@ -24,7 +28,5 @@ DRI_PRIME=1
 # steam crutches
 #STEAM_RUNTIME=0
 #STEAM_FRAME_FORCE_CLOSE=1
-# useful crutches
-DISPLAY=:0
 # avoiding vi
 EDITOR=nano

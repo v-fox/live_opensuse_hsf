@@ -9,22 +9,11 @@
 	  <type checkprebuilt='true' boot='isoboot/suse-13.1' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='overlay' hybrid='true' hybridpersistent='true' kernelcmdline=' ro splash=verbose' image='iso'>
       <split>
         <temporary>
-          <file name='/var'/>
-          <file name='/var/*'/>
-	  <file name='/boot'/>
-	  <file name='/boot/*'/>
-          <file name='/etc'/>
-          <file name='/etc/*'/>
-          <file name='/tmp'/>
-          <file name='/tmp/*'/>
-          <file name='/home'/>
-          <file name='/home/*'/>
-	  <file name='/lib/modules'/>
-	  <file name='/lib/modules/*'/>
+          <file name='/*'/>
         </temporary>
       </split>
     </type>
-    <version>0.3.0</version>
+    <version>0.3.1</version>
     <packagemanager>zypper</packagemanager>
     <rpm-check-signatures>false</rpm-check-signatures>
     <rpm-force>false</rpm-force>
@@ -543,6 +532,7 @@
     <package name='dnsmasq'/>
     <package name='Mesa-demo-x'/>
     <package name='gfxboot'/>
+    <package name='enca'/>
     <archive name='plymouth.tar' bootinclude='true'/>
   </packages>
   <packages type='bootstrap'>
