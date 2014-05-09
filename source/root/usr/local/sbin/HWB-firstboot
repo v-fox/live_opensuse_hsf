@@ -1,4 +1,4 @@
-﻿#!/bin/bash
+#!/bin/bash
 
 # detecting sensors for lm_sensors
 yes | sudo sensors-detect
