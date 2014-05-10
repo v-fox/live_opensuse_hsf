@@ -34,7 +34,7 @@ baseSetRunlevel 5
 #======================================
 # Add missing gpg keys to rpm
 #--------------------------------------
-suseImportBuildKey
+#suseImportBuildKey
 
 #======================================
 # Firewall Configuration
@@ -69,12 +69,10 @@ systemctl enable tor
 systemctl enable polipo
 systemctl enable lightdm
 systemctl enable autofs
-systemctl enable acpid
 systemctl enable lm_sensors
 systemctl enable dkms_autoinstaller
 /usr/sbin/dkms autoinstall
 systemctl enable NetworkManager
-systemctl enable YaST2-Firstboot
 systemctl enable HWB-firstboot
 
 #======================================
