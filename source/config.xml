@@ -30,7 +30,7 @@
   <packages type='image' patternType='onlyRequired'>
     <opensusePattern name='lxde-qt'/>
     <package name='plymouth-branding-HSF' bootinclude='true'/>
-    <package name='wallpapers-branding-HSF'/>
+    <package name='wallpaper-branding-HSF'/>
     <package name='gfxboot-branding-HSF'/>
     <package name='grub2-branding-HSF'/>
     <package name='kernel-desktop' replaces='kernel-default'/>
@@ -559,16 +559,16 @@
 	  <package name='rpm'/>
   </packages>
   <repository type='yast2' imageinclude='true' priority='90' alias='openSUSE'>
-	  <source path='http://download.opensuse.org/distribution/13.1/repo/oss/'/>
+	  <source path='http://download.opensuse.org/distribution/13.1/repo/oss'/>
   </repository>
-  <repository type='yast2' imageinclude='true' priority='85' alias='openSUSE_Update'>
-	  <source path='http://download.opensuse.org/update/13.1/'/>
+  <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Update'>
+	  <source path='http://download.opensuse.org/update/13.1'/>
   </repository>
   <repository type='yast2' imageinclude='true' priority='90' alias='openSUSE_NonFree'>
-	  <source path='http://download.opensuse.org/distribution/13.1/repo/non-oss/'/>
+	  <source path='http://download.opensuse.org/distribution/13.1/repo/non-oss'/>
   </repository>
-  <repository type='yast2' imageinclude='true' priority='85' alias='openSUSE_NonFree_Update'>
-	  <source path='http://download.opensuse.org/update/13.1-non-oss/'/>
+  <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_NonFree_Update'>
+	  <source path='http://download.opensuse.org/update/13.1-non-oss'/>
   </repository>
   <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Tools'>
 	  <source path='obs://openSUSE:Tools/openSUSE_13.1'/>
