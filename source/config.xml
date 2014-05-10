@@ -48,6 +48,7 @@
     <package name="gfxboot-devel" bootinclude="true"/>
     <package name='branding-HSF'/>
     <package name='kernel-desktop' replaces='kernel-default'/>
+    <package name='kernel-desktop-devel'/>
     <package name='kernel-firmware'/>
     <package name='technisat-usb2-firmware' bootinclude='true'/>
     <package name='midisport-firmware' bootinclude='true'/>
@@ -67,6 +68,7 @@
     <package name='bluez-firmware' bootinclude='true'/>
     <package name='sax3'/>
     <package name='upower'/>
+    <package name='udisks'/>
     <package name='udisks2'/>
     <package name='sudo'/>
     <package name='pulseaudio-esound-compat'/>
@@ -82,7 +84,6 @@
     <package name='yast2-support'/>
     <package name='yast2-nfs-server'/>
     <package name='yast2-online-update-configuration'/>
-    <package name='yast2-control-center-qt'/>
     <package name='yast2-apparmor'/>
     <package name='yast2-runlevel'/>
     <package name='yast2-nfs-client'/>
@@ -100,6 +101,8 @@
     <package name='yast2-users'/>
     <package name='yast2-theme-openSUSE-Oxygen'/>
     <package name='yast2-control-center-qt'/>
+    <package name='yast2-branding-basedonopensuse'/>
+    <package name='yast2-qt-branding-basedonopensuse'/>
     <package name='compcache'/>
     <package name='flashrom'/>
     <package name='kmscon'/>
@@ -356,7 +359,7 @@
     <package name='fsarchiver'/>
     <package name='gptfdisk-fixparts'/>
     <package name='exfat-nofuse-dkms'/>
-    <package name='xfsprogs-devel'/>
+    <package name='xfsprogs'/>
     <package name='libcap-progs'/>
     <package name='disktype'/>
     <package name='gstreamer-plugins-vaapi'/>

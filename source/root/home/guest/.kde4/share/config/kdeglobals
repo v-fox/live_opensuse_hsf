@@ -1,0 +1,13 @@
+[$Version]
+update_info=kded.upd:kde3.0
+
+[KDE]
+NaturalSorting=false
+ShowDeleteCommand=false
+SingleClick=false
+
+[KShortcutsDialog Settings]
+Dialog Size=600,480
+
+[PreviewSettings]
+MaximumRemoteSize=0

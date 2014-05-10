@@ -1,0 +1,6 @@
+[$Version]
+update_info=konsole_remove_background_mode.upd:2.11.0-remove-background-mode,kscreenlocker_locksession-shortcut.upd:4.9-locksession-shortcut,ksmserver_shortcuts.upd:kde4.10,ksmserver_shortcuts.upd:kde4.10-remove-group-kscreenlocker,plasma-to-plasmadesktop-shortcuts.upd:4.3plasma-desktop-shortcuts
+
+[yakuake]
+_k_friendly_name=Yakuake
+toggle-window-state=Ctrl+`,F12,Open/Retract Yakuake

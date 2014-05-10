@@ -58,10 +58,10 @@ baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 suseGFXBoot HSF isolinux
 baseSetupUserPermissions
 suseActivateDefaultServices
-suseRemoveService xdm
-suseInsertService compcache
-suseInsertService irq_balancer
-suseInsertService gpm
+systemctl disable  xdm
+systemctl enable compcache
+systemctl enable irq_balancer
+systemctl enable gpm
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
 systemctl enable bluetooth
 systemctl enable dnsmasq
@@ -72,6 +72,7 @@ systemctl enable autofs
 systemctl enable lm_sensors
 systemctl enable dkms_autoinstaller
 /usr/sbin/dkms autoinstall
+systemctl enable ModemManager
 systemctl enable NetworkManager
 systemctl enable HWB-firstboot
 
