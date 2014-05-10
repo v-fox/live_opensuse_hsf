@@ -3,7 +3,7 @@
 # detecting sensors for lm_sensors
 yes | sudo sensors-detect
 
-# deleting itself
-rm -f /usr/local/sbin/HWB-firstboot
+# self-destruction
+#rm -f /usr/share/firstboot/scripts/HWB-firstboot
 
 exit 0

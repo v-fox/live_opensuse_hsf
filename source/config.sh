@@ -55,7 +55,7 @@ baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 #======================================
 # CUSTOMIZATION
 #--------------------------------------
-suseGFXBoot HSF isolinux
+#suseGFXBoot HSF isolinux
 baseSetupUserPermissions
 suseActivateDefaultServices
 systemctl disable  xdm
@@ -74,7 +74,6 @@ systemctl enable dkms_autoinstaller
 /usr/sbin/dkms autoinstall
 systemctl enable ModemManager
 systemctl enable NetworkManager
-systemctl enable HWB-firstboot
 
 #======================================
 # Prune extraneous files
