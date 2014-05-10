@@ -6,7 +6,7 @@
     <specification>Big, useful desktop appliance with slim DEs</specification>
   </description>
   <preferences>
-	  <type checkprebuilt='true' boot='isoboot/suse-13.1' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='overlay' hybrid='true' hybridpersistent='true' kernelcmdline=' ro splash=verbose' image='iso'>
+	  <type checkprebuilt='true' boot='isoboot/suse-13.1' bootloader='grub2' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='seed' hybrid='true' hybridpersistent='true' kernelcmdline=' ro splash=verbose' image='iso'>
       <split>
         <temporary>
           <file name='/*'/>
