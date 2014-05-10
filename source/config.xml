@@ -30,6 +30,8 @@
   <packages type='image' patternType='onlyRequired'>
     <opensusePattern name='lxde-qt'/>
     <package name='plymouth-branding-HSF' bootinclude='true'/>
+    <package name="gfxboot-devel" bootinclude="true"/>
+    <package name='branding-basedonopensuse'/>
     <package name='wallpaper-branding-HSF'/>
     <package name='gfxboot-branding-HSF'/>
     <package name='grub2-branding-HSF'/>
@@ -51,10 +53,6 @@
     <package name='FirmwareUpdateKit'/>
     <package name='bluez'/>
     <package name='bluez-firmware' bootinclude='true'/>
-    <package name='conky-doc'/>
-    <package name='conky-imlib2'/>
-    <package name='conky'/>
-    <package name='conky-cairo'/>
     <package name='sax3'/>
     <package name='wdfs'/>
     <package name='davfs2'/>
@@ -80,8 +78,7 @@
     <package name='pullin-flash-player'/>
     <package name='flash-player'/>
     <package name='dejavu-fonts'/>
-    <package name='leechcraft-fenet-openbox'/>
-    <package name='leechcraft-fenet'/>
+    <package name='leechcraft-fenet-kwin'/>
     <package name='e2fsprogs-snapshots'/>
     <package name='dosfstools'/>
     <package name='gstreamer-0_10-plugins-vaapi'/>
@@ -92,7 +89,6 @@
     <package name='libcap-ng-utils'/>
     <package name='hostap-utils'/>
     <package name='avahi-utils'/>
-    <package name='caca-utils'/>
     <package name='apparmor-utils'/>
     <package name='gstreamer-0_10-utils'/>
     <package name='gstreamer-utils'/>
@@ -147,7 +143,6 @@
     <package name='zypper-aptitude'/>
     <package name='snapper-zypp-plugin'/>
     <package name='traceroute'/>
-    <package name='yast2-qt-branding-openSUSE'/>
     <package name='bundle-lang-common-en'/>
     <package name='patterns-openSUSE-yast2_basis'/>
     <package name='patterns-openSUSE-sw_management'/>
@@ -223,7 +218,6 @@
     <package name='yast2-trans-en_GB'/>
     <package name='yast2-dbus-server'/>
     <package name='yast2-snapper'/>
-    <package name='yast2-branding-openSUSE'/>
     <package name='yast2-ca-management'/>
     <package name='yast2-support'/>
     <package name='yast2-nfs-server'/>
@@ -330,8 +324,6 @@
     <package name='NetworkManager-openconnect'/>
     <package name='bluedevil'/>
     <package name='gwenview'/>
-    <package name='leechcraft-fenet-kwin'/>
-    <package name='kwin'/>
     <package name='dolphin-plugins'/>
     <package name='dolphin'/>
     <package name='modem-manager-gui'/>
@@ -349,7 +341,6 @@
     <package name='kde-oxygen-fonts'/>
     <package name='gtk3-theme-oxygen'/>
     <package name='gtk2-theme-oxygen'/>
-    <package name='conky-nano'/>
     <package name='nano'/>
     <package name='calibre'/>
     <package name='hddtemp'/>
@@ -536,27 +527,21 @@
     <package name='dnsmasq'/>
     <package name='Mesa-demo-x'/>
     <package name='enca'/>
+    <package name='conky'/>
+    <package name='conky-nano'/>
+    <package name='conky-cairo'/>
+    <package name='conky-imlib2'/>
+    <package name='caca-utils'/>
   </packages>
   <packages type='bootstrap'>
 	  <package name='file'/>
 	  <package name='filesystem'/>
-	  <package name='gfxboot'/>
-	  <package name='glibc'/>
 	  <package name='glibc-locale'/>
 	  <package name='udev'/>
 	  <package name='module-init-tools'/>
 	  <package name='which'/>
-	  <package name='plymouth'/>
-	  <package name='plymouth-scripts'/>
 	  <package name='openssl-certs'/>
 	  <package name='cracklib-dict-full'/>
-	  <package name='sysconfig'/>
-	  <package name='psmisc'/>
-	  <package name='sysfsutils'/>
-	  <package name='tar'/>
-	  <package name='timezone'/>
-	  <package name='netcfg'/>
-	  <package name='rpm'/>
   </packages>
   <repository type='yast2' imageinclude='true' priority='90' alias='openSUSE'>
 	  <source path='http://download.opensuse.org/distribution/13.1/repo/oss'/>
