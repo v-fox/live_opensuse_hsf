@@ -118,15 +118,12 @@ HSF branding for the plymouth bootsplash
 %setup -q -T -D -a 3
 
 %build
-cat >HSF-brand <<EOF
+cat > etc/HSF-brand <<EOF
 HSF
 VERSION = %{version}
 EOF
 
 %install
-mkdir -p %{buildroot}%{_sysconfdir}
-cp HSF-brand %{buildroot}%{_sysconfdir}/
-
 # gfxboot should use a link /etc/bootsplash/theme -> %{_datadir}/bootsplash
 install -d -m 755 %{buildroot}/etc/bootsplash/themes/HSF/{bootloader,cdrom}
 %{_datadir}/gfxboot/bin/unpack_bootlogo %{buildroot}/etc/bootsplash/themes/HSF/cdrom
@@ -135,11 +132,11 @@ mkdir %{buildroot}/boot
 touch %{buildroot}/boot/message
 
 # move everything into places
-mv -v * %{buildroot}/
+cp -avf * -t %{buildroot}
 %fdupes %{buildroot}%{_datadir}/backgrounds
 
-for i in %{buildroot}%{_datadir}/wallpapers/*.desktop; do
-    %suse_update_desktop_file "$i"
+for i in $(find %{buildroot}%{_datadir}/wallpapers -iname "*.desktop"); do
+    %suse_update_desktop_file "${i}"
 done
 %suse_update_desktop_file %{buildroot}%{_datadir}/wallpapers/HSF/metadata.desktop
 # Touch the file handled with update-alternatives
@@ -148,13 +145,11 @@ touch %{buildroot}%{_datadir}/wallpapers/HSF.xml
 # remove
 %if 0%{?package_grub2_theme} < 1
 rm -rf %{buildroot}/%{_datadir}/grub2
+%else
+install -d -m 755 %{buildroot}/boot/grub2/{backgrounds,themes}
 %endif
 
-%check
-make -C HSF check DESTDIR=%{buildroot}
-
 %if 0%{?package_gfxboot} > 0
-
 %post -n gfxboot-branding-HSF
 gfxboot --update-theme HSF
 %endif
@@ -214,7 +209,6 @@ fi
 
 %files -n wallpaper-branding-HSF
 %defattr(-,root,root)
-%doc COPYING
 %ghost %{_datadir}/wallpapers/HSF.xml
 %{_datadir}/wallpapers/
 
