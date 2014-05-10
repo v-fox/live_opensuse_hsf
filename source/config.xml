@@ -29,6 +29,7 @@
   </users>
   <packages type='image' patternType='onlyRequired'>
     <opensusePattern name='lxde-qt'/>
+    <package name='lxqt-appswitcher'/>
     <package name='patterns-openSUSE-yast2_basis'/>
     <package name='patterns-openSUSE-sw_management'/>
     <package name='patterns-openSUSE-enhanced_base'/>
@@ -104,6 +105,7 @@
     <package name='kmscon'/>
     <package name='lightdm'/>
     <package name='lightdm-gtk-greeter'/>
+    <package name='lxqt-lightdm-greeter'/>
     <package name='wdfs'/>
     <package name='davfs2'/>
     <package name='libreoffice-help-en-GB'/>
