@@ -59,7 +59,7 @@ suseGFXBoot HSF isolinux
 baseSetupUserPermissions
 suseActivateDefaultServices
 suseRemoveService xdm
-suseInsertService boot.compcache
+suseInsertService compcache
 suseInsertService irq_balancer
 suseInsertService gpm
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
