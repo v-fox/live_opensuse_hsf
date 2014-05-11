@@ -6,7 +6,7 @@
 		<specification>Big, useful desktop appliance with slim DEs</specification>
 	</description>
 	<preferences>
-		<type checkprebuilt='true' boot='isoboot/suse-13.1' bootloader='grub2' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='overlay' hybrid='true' hybridpersistent='true' kernelcmdline='ro splash=verbose' image='iso'>
+		<type checkprebuilt='true' boot='isoboot/suse-13.1' firmware='efi' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='clic' hybrid='true' hybridpersistent='true' kernelcmdline=' ro splash=verbose' image='iso' primary='true'>
 			<split>
 				<temporary>
 					<file name='/*'/>
@@ -41,9 +41,13 @@
 		<namedCollection name='office'/>
 		<namedCollection name='fonts_opt'/>
 		<namedCollection name='office_opt'/>
-		<namedCollection name='e17'/>
 		<namedCollection name='lxde-qt'/>
+		<package name='clicfs' bootinclude='true'/>
+		<package name='squashfs' bootinclude='true'/>
+		<package name='lvm2' bootinclude='true'/>
+		<package name='plymouth' bootinclude='true'/>
 		<package name='plymouth-branding-HSF' bootinclude='true'/>
+		<package name="gfxboot-devel" bootinclude='true' bootdelete='true'/>
 		<package name='gfxboot-branding-HSF' bootinclude='true' bootdelete='true'/>
 		<package name='grub2-branding-HSF' bootinclude='true'/>
 		<package name='adaptec-firmware' bootinclude='true'/>
@@ -79,7 +83,7 @@
 		<package name='bluedevil'/>
 		<package name='bluez'/>
 		<package name='branding-basedonopensuse'/>
-		<package name='btrfsprogs'/>
+		<package name='btrfsprogs' bootinclude='true'/>
 		<package name='bundle-lang-common-en'/>
 		<package name='caca-utils'/>
 		<package name='calibre'/>
@@ -116,18 +120,10 @@
 		<package name='e2fsprogs-snapshots'/>
 		<package name='econnman'/>
 		<package name='efont-unicode-bitmap-fonts'/>
-		<package name='e-module-engage'/>
-		<package name='e-module-forecasts'/>
-		<package name='e-module-moon'/>
 		<package name='enca'/>
-		<package name='e-theme-a-os-agust-v3'/>
-		<package name='e-theme-a-os-detour'/>
-		<package name='e-theme-a-os-green'/>
-		<package name='e-theme-a-os-miguel-v3'/>
-		<package name='e-theme-darkness'/>
-		<package name='e-theme-efenniht'/>
-		<package name='e-theme-klok'/>
-		<package name='e-theme-openSUSE'/>
+		<package name='enlightenment'/>
+		<package name='enlightenment-theme-dark'/>
+		<package name='enlightenment-theme-openSUSE'/>
 		<package name='ethtool'/>
 		<package name='ev'/>
 		<package name='exfat-nofuse-dkms'/>
@@ -332,6 +328,7 @@
 		<package name='leechcraft-vtyulc'/>
 		<package name='leechcraft-xproxy'/>
 		<package name='leechcraft-xtazy'/>
+		<package name='less' bootinclude='true'/>
 		<package name='lftp'/>
 		<package name='libcap-ng-utils'/>
 		<package name='libcap-progs'/>
@@ -379,7 +376,7 @@
 		<package name='mtd-utils'/>
 		<package name='mtp-tools'/>
 		<package name='mtr'/>
-		<package name='nano'/>
+		<package name='nano' bootinclude='true'/>
 		<package name='netlabel-tools'/>
 		<package name='NetworkManager-gnome'/>
 		<package name='NetworkManager-openconnect'/>

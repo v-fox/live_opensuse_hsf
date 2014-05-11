@@ -35,3 +35,25 @@ Notes:
 ⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
 ⊙ yakuake, bluedevil, okular, kwrite, gwenview and dolphin KDE apps are included for the lack of adequate analogues
 ⊙ there is also nm-applet from Gnome for the lack _of any_ analogues (_the only_ alternative is plasma-nm and it's plasma plugin, thus not available outside of KDE)
+
+Building:
+---------
+∀ every build comes with its building source in '/home/hacker/Hackeurs Sans Frontières - build code - ${VERSION_CONFIG}_${BUILD_DATE}.tar.xz'
+∀ you can build your own image by:
+	1) using openSUSE
+	2) having "kiwi" and "kiwi-desc-isoboot" packages installed
+	3) editing files, starting from 'source/config.xml', or not
+	4) running `create_appliance.sh`
+	5) waiting quite a bit
+∀ the process of development for this project is like this:
+	1) _future_ release version is set in 'source/config.xml'
+	2) desired changes are made
+	3) `git commit` issued
+	4) image is build via `create_appliance.sh`
+	5) image is booted on real hardware and tested, maybe in virtual hardware also
+	6) bugs and insufficiencies are noted/reported/filed
+	7) fixes made
+	8) new image is tested and steps 6-7-8 are repeated until condition is satisfactory
+	9) the image that deemed satisfactory is considered as current release, `git tag -a` is issued with "future", now current, version
+	10) everythin is repeated
+
