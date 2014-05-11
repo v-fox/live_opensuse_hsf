@@ -2,16 +2,28 @@
 
 # Variables.
 BUILD_DATE="$(date +%Y%m%d)"
-VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
-VERSION_GIT_FULL="$(git describe | sed 's/v//')"
+
 read_dom () { local IFS=\> ; read -d \< E C ;}
 VERSION_CONFIG=$(
 while read_dom; do
-    if [[ "${E}" = version ]]; then
-        echo "${C}"
-        exit
-    fi
+	if [[ "${E}" = version ]]; then
+	echo "${C}"
+	exit
+fi
 done < source/config.xml)
+
+if [ -d .git ]; then
+	echo "** Making this build environment's snapshot and putting it out for inclusion into your future image:"
+	VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
+	VERSION_GIT_FULL="$(git describe | sed 's/v//')"
+	# making snapshot of entire sources to put into built image
+	rm -fv "source/root/home/hacker/Hackeurs Sans Frontières - build code"*
+	git archive --format=tar --prefix=Hackeurs_Sans_Frontieres-${VERSION_CONFIG}/ HEAD | \
+	xz -c -vv -9 > "source/root/home/hacker/Hackeurs Sans Frontières - build code - ${VERSION_CONFIG}_${BUILD_DATE}.tar.xz"
+else
+	VERSION_GIT="${VERSION_CONFIG}"
+	VERSION_GIT_FULL="${VERSION_CONFIG}"
+fi
 
 image_arch='x86_64'
 declare -a repos=()
