@@ -1,0 +1,4 @@
+HSF Notes:
+	* 'solver.allowVendorChange' in zypp.conf were set tu 'true'
+	it should be safe due to strict prioritizing in repo list
+	but keep taht in mind.

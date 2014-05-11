@@ -17,12 +17,12 @@
 
 
 Name:           branding-HSF
-Version:        1
+Version:        13.1
 Release:        0
 Provides:       branding
 Conflicts:      otherproviders(branding)
 Url:            https://build.opensuse.org/package/show/home:X0F:HSF/branding
-Source0:        wallpapers-branding-HSF.tar.xz
+Source0:        wallpaper-branding-HSF.tar.xz
 Source1:        plymouth-branding-HSF.tar.xz
 Source2:        grub2-branding-HSF.tar.xz
 Source3:        gfxboot-branding-HSF.tar.xz
@@ -41,6 +41,9 @@ Group:          System/Fhs
 BuildRequires:  fdupes
 BuildRequires:  fribidi
 BuildRequires:  update-desktop-files
+BuildRequires:  branding-openSUSE
+Requires:  		desktop-data-openSUSE
+#Requires:  		wallpaper-%{name} plymouth-%{name} grub2-%{name}
 BuildArch:      noarch
 
 %description
@@ -73,6 +76,7 @@ Group:          System/Fhs
 Requires(post): update-alternatives
 Requires(postun): update-alternatives
 Provides:       wallpaper-branding = %{version}
+Supplements:    packageand(wallpaper:branding-HSF)
 Conflicts:      otherproviders(wallpaper-branding)
 BuildArch:      noarch
 
@@ -118,10 +122,10 @@ HSF branding for the plymouth bootsplash
 %setup -q -T -D -a 3
 
 %build
-cat > etc/HSF-brand <<EOF
-HSF
-VERSION = %{version}
-EOF
+echo "HSF" > etc/SuSE-brand
+v=$(rpm -q --queryformat %{VERSION} branding-openSUSE)
+echo "VERSION = $v" >> etc/SuSE-brand
+echo "CO-BRANDS = openSUSE SLED SLES SLE" >> etc/SuSE-brand
 
 %install
 # gfxboot should use a link /etc/bootsplash/theme -> %{_datadir}/bootsplash
@@ -139,8 +143,12 @@ for i in $(find %{buildroot}%{_datadir}/wallpapers -iname "*.desktop"); do
     %suse_update_desktop_file "${i}"
 done
 %suse_update_desktop_file %{buildroot}%{_datadir}/wallpapers/HSF/metadata.desktop
-# Touch the file handled with update-alternatives
-touch %{buildroot}%{_datadir}/wallpapers/HSF.xml
+# Actually make file for update-alternatives
+mkdir -p %{buildroot}/etc/alternatives
+ln -s %{_datadir}/wallpapers/HSF-static.xml %{buildroot}/etc/alternatives/openSUSE-default.xml
+ln -s /etc/alternatives/openSUSE-default.xml %{buildroot}/usr/share/wallpapers/openSUSE-default.xml
+# Touch the file handled with update-alternatives 
+#touch %{buildroot}/usr/share/wallpapers/openSUSE-default.xml
 
 # remove
 %if 0%{?package_grub2_theme} < 1
@@ -155,12 +163,12 @@ gfxboot --update-theme HSF
 %endif
 
 %post -n wallpaper-branding-HSF
-update-alternatives --install %{_datadir}/wallpapers/HSF.xml HSF.xml %{_datadir}/wallpapers/HSF-static.xml 5
+update-alternatives --install %{_datadir}/wallpapers/openSUSE-default.xml openSUSE-default.xml %{_datadir}/wallpapers/HSF-static.xml 5
 
 %postun -n wallpaper-branding-HSF
 # Note: we don't use "$1 -eq 0", to avoid issues if the package gets renamed
 if [ ! -f %{_datadir}/wallpapers/HSF-static.xml ]; then
-  update-alternatives --remove HSF.xml %{_datadir}/wallpapers/HSF-static.xml
+  update-alternatives --remove openSUSE-default.xml %{_datadir}/wallpapers/HSF-static.xml
 fi
 
 %if 0%{?package_grub2_theme} > 0
@@ -197,7 +205,7 @@ fi
 
 %files
 %defattr(-,root,root)
-%{_sysconfdir}/HSF-brand
+%config %{_sysconfdir}/SuSE-brand
 
 %if 0%{?package_gfxboot} > 0
 
@@ -209,7 +217,8 @@ fi
 
 %files -n wallpaper-branding-HSF
 %defattr(-,root,root)
-%ghost %{_datadir}/wallpapers/HSF.xml
+%ghost %{_sysconfdir}/alternatives/openSUSE-default.xml
+%ghost %{_datadir}/wallpapers/openSUSE-default.xml
 %{_datadir}/wallpapers/
 
 %if 0%{?package_grub2_theme} > 0
