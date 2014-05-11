@@ -1,679 +1,677 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <image name='Hackeurs_Sans_Frontieres' displayname='Hackeurs_Sans_Frontieres' schemaversion='5.2'>
-  <description type='system'>
-    <author>Sergey Kondakov</author>
-    <contact>virtuousfox@gmail.com</contact>
-    <specification>Big, useful desktop appliance with slim DEs</specification>
-  </description>
-  <preferences>
-    <type checkprebuilt='true' boot='isoboot/suse-13.1' bootloader='grub2' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='seed' hybrid='true' hybridpersistent='true' kernelcmdline=' ro splash=verbose' image='iso'>
-      <split>
-        <temporary>
-          <file name='/*'/>
-        </temporary>
-      </split>
-    </type>
-    <version>0.5.0</version>
-    <packagemanager>zypper</packagemanager>
-    <rpm-check-signatures>false</rpm-check-signatures>
-    <rpm-force>false</rpm-force>
-    <bootsplash-theme>HSF</bootsplash-theme>
-    <bootloader-theme>HSF</bootloader-theme>
-    <locale>en_GB</locale>
-  </preferences>
-  <users group='users'>
-    <user name='guest' pwd='$1$bt1tLGOm$gLnv3aIEyKN0gsj5T2BZp0' home='/home/guest' shell='/usr/bin/zsh'/>
-  </users>
-  <users group='root'>
-    <user name='root' pwd='$1$swBREFsk$22GzIU89QzoL7uMa9zzun1' home='/root' shell='/bin/bash'/>
-  </users>
-  <packages type='image' patternType='onlyRequired'>
-    <product name="openSUSE"/>
-    <namedCollection name="base"/>
-    <opensusePattern name='lxde-qt'/>
-    <package name='lxqt-appswitcher'/>
-    <package name='patterns-openSUSE-yast2_basis'/>
-    <package name='patterns-openSUSE-sw_management'/>
-    <package name='patterns-openSUSE-enhanced_base'/>
-    <package name='patterns-openSUSE-enhanced_base_opt'/>
-    <package name='patterns-openSUSE-apparmor'/>
-    <package name='patterns-openSUSE-fonts'/>
-    <package name='patterns-openSUSE-x11'/>
-    <package name='patterns-openSUSE-x11_yast'/>
-    <package name='patterns-openSUSE-yast2_install_wf'/>
-    <package name='patterns-openSUSE-office'/>
-    <package name='patterns-openSUSE-fonts_opt'/>
-    <package name='patterns-openSUSE-office_opt'/>
-    <package name='patterns-openSUSE-e17'/>
-    <package name='plymouth-branding-HSF' bootinclude='true'/>
-    <package name='grub2-branding-HSF' bootinclude='true'/>
-    <package name='gfxboot-branding-HSF' bootinclude='true' bootdelete='true'/>
-    <package name='wallpaper-branding-HSF'/>
-    <package name='branding-HSF'/>
-    <package name='grub2'/>
-    <package name='syslinux'/>
-    <package name='kernel-desktop' replaces='kernel-default'/>
-    <package name='kernel-desktop-devel'/>
-    <package name='kernel-firmware'/>
-    <package name='technisat-usb2-firmware' bootinclude='true'/>
-    <package name='midisport-firmware' bootinclude='true'/>
-    <package name='b43legacy-firmware' bootinclude='true'/>
-    <package name='b43-firmware' bootinclude='true'/>
-    <package name='isight-firmware-tools'/>
-    <package name='zd1211-firmware' bootinclude='true'/>
-    <package name='crystalhd-firmware' bootinclude='true'/>
-    <package name='firmwarekit'/>
-    <package name='mpt-firmware' bootinclude='true'/>
-    <package name='adaptec-firmware' bootinclude='true'/>
-    <package name='atmel-firmware' bootinclude='true'/>
-    <package name='ipw-firmware' bootinclude='true'/>
-    <package name='alsa-firmware' bootinclude='true'/>
-    <package name='FirmwareUpdateKit'/>
-    <package name='bluez'/>
-    <package name='bluez-firmware' bootinclude='true'/>
-    <package name='sax3'/>
-    <package name='upower'/>
-    <package name='udisks'/>
-    <package name='udisks2'/>
-    <package name='sudo'/>
-    <package name='pulseaudio-esound-compat'/>
-    <package name='pulseaudio-module-zeroconf'/>
-    <package name='pulseaudio-module-bluetooth'/>
-    <package name='systemd-logger'/>
-    <package name='systemd-ui'/>
-    <package name='yast2-trans-en_GB'/>
-    <package name='yast2-dbus-server'/>
-    <package name='yast2-snapper'/>
-    <package name='yast2-ca-management'/>
-    <package name='yast2-support'/>
-    <package name='yast2-nfs-server'/>
-    <package name='yast2-online-update-configuration'/>
-    <package name='yast2-firewall'/>
-    <package name='yast2-runlevel'/>
-    <package name='yast2-nfs-client'/>
-    <package name='yast2-ntp-client'/>
-    <package name='yast2-backup'/>
-    <package name='yast2-restore'/>
-    <package name='yast2-control-center'/>
-    <package name='yast2-samba-server'/>
-    <package name='yast2-samba-client'/>
-    <package name='yast2-sudo'/>
-    <package name='yast2-sound'/>
-    <package name='yast2-ncurses'/>
-    <package name='yast2-firstboot'/>
-    <package name='yast2-installation'/>
-    <package name='yast2-live-installer'/>
-    <package name='yast2-control-center-qt'/>
-    <package name='yast2-branding-basedonopensuse'/>
-    <package name='yast2-qt-branding-basedonopensuse'/>
-    <package name='compcache'/>
-    <package name='flashrom'/>
-    <package name='kmscon'/>
-    <package name='lightdm'/>
-    <package name='lightdm-gtk-greeter'/>
-    <package name='lxqt-lightdm-greeter'/>
-    <package name='wdfs'/>
-    <package name='davfs2'/>
-    <package name='libreoffice-help-en-GB'/>
-    <package name='libreoffice-l10n-en-GB'/>
-    <package name='okular'/>
-    <package name='kparts-plugin'/>
-    <package name='zfsonlinux-zfs-dkms'/>
-    <package name='terminus-bitmap-fonts'/>
-    <package name='ucode-amd' bootinclude='true'/>
-    <package name='radeon-profile'/>
-    <package name='leechcraft'/>
-    <package name='leechcraft-azoth-standardstyles'/>
-    <package name='leechcraft-kinotify'/>
-    <package name='gnome-icon-theme'/>
-    <package name='wm-icons'/>
-    <package name='kdeartwork4-icons'/>
-    <package name='openssh-helpers'/>
-    <package name='openssh-askpass'/>
-    <package name='mozilla-kde4-integration'/>
-    <package name='gnome-keyring-sharp'/>
-    <package name='gnome-keyring-pam'/>
-    <package name='pullin-flash-player'/>
-    <package name='flash-player'/>
-    <package name='dejavu-fonts'/>
-    <package name='leechcraft-fenet-kwin'/>
-    <package name='e2fsprogs-snapshots'/>
-    <package name='dosfstools'/>
-    <package name='gstreamer-0_10-plugins-vaapi'/>
-    <package name='vaapi-intel-driver'/>
-    <package name='vaapi-tools'/>
-    <package name='v4l-utils'/>
-    <package name='pax-utils'/>
-    <package name='libcap-ng-utils'/>
-    <package name='hostap-utils'/>
-    <package name='avahi-utils'/>
-    <package name='apparmor-utils'/>
-    <package name='gstreamer-0_10-utils'/>
-    <package name='gstreamer-utils'/>
-    <package name='e-module-forecasts'/>
-    <package name='e-module-engage'/>
-    <package name='e-module-moon'/>
-    <package name='ev'/>
-    <package name='connman-plugin-hh2serial-gps'/>
-    <package name='e-theme-openSUSE'/>
-    <package name='e-theme-a-os-agust-v3'/>
-    <package name='e-theme-efenniht'/>
-    <package name='e-theme-darkness'/>
-    <package name='e-theme-klok'/>
-    <package name='libvdpau_r300'/>
-    <package name='vdpau-video'/>
-    <package name='libvdpau_nouveau'/>
-    <package name='libomx_r600'/>
-    <package name='libomx_radeonsi'/>
-    <package name='libtxc_dxtn'/>
-    <package name='libvdpau_radeonsi'/>
-    <package name='avahi-autoipd'/>
-    <package name='libva-egl1'/>
-    <package name='e-theme-a-os-green'/>
-    <package name='e-theme-a-os-detour'/>
-    <package name='e-theme-a-os-miguel-v3'/>
-    <package name='gstreamer-libnice'/>
-    <package name='libvdpau_r600'/>
-    <package name='xev'/>
-    <package name='xcompmgr'/>
-    <package name='xgamma'/>
-    <package name='xkbevd'/>
-    <package name='xvinfo'/>
-    <package name='xsetmode'/>
-    <package name='xkbutils'/>
-    <package name='xsetpointer'/>
-    <package name='xfontsel'/>
-    <package name='xlsfonts'/>
-    <package name='xkill'/>
-    <package name='xinput'/>
-    <package name='gegl-0_2'/>
-    <package name='fslsfonts'/>
-    <package name='bitmap'/>
-    <package name='fonttosfnt'/>
-    <package name='xcursor-themes'/>
-    <package name='efont-unicode-bitmap-fonts'/>
-    <package name='intlfonts'/>
-    <package name='xrandr'/>
-    <package name='intlfonts-euro-bitmap-fonts'/>
-    <package name='zypper-aptitude'/>
-    <package name='snapper-zypp-plugin'/>
-    <package name='traceroute'/>
-    <package name='bundle-lang-common-en'/>
-    <package name='snapper'/>
-    <package name='irqbalance'/>
-    <package name='gstreamer-0_10-libnice'/>
-    <package name='usb_modeswitch-data'/>
-    <package name='poppler-tools'/>
-    <package name='PackageKit-browser-plugin'/>
-    <package name='sensors'/>
-    <package name='mtr'/>
-    <package name='poppler-data'/>
-    <package name='setserial'/>
-    <package name='providers'/>
-    <package name='sox'/>
-    <package name='smartmontools'/>
-    <package name='pm-profiler'/>
-    <package name='psmisc'/>
-    <package name='nscd'/>
-    <package name='command-not-found'/>
-    <package name='man-pages'/>
-    <package name='fuse'/>
-    <package name='translation-update'/>
-    <package name='deltarpm'/>
-    <package name='aaa_base-extras'/>
-    <package name='crda'/>
-    <package name='hdparm'/>
-    <package name='liberation-fonts'/>
-    <package name='pm-utils'/>
-    <package name='ifplugd'/>
-    <package name='lsof'/>
-    <package name='strace'/>
-    <package name='openldap2-client'/>
-    <package name='autofs'/>
-    <package name='screen'/>
-    <package name='alsa-oss'/>
-    <package name='alsa-plugins-pulse'/>
-    <package name='avahi'/>
-    <package name='whois'/>
-    <package name='gpart'/>
-    <package name='ethtool'/>
-    <package name='man'/>
-    <package name='nmap'/>
-    <package name='wireless-regdb'/>
-    <package name='dos2unix'/>
-    <package name='tcpdump'/>
-    <package name='rsync'/>
-    <package name='desktop-translations'/>
-    <package name='nfs-client'/>
-    <package name='samba-client'/>
-    <package name='usbutils'/>
-    <package name='alsa-plugins'/>
-    <package name='ntp'/>
-    <package name='ntfs-3g'/>
-    <package name='wireless-tools'/>
-    <package name='wget'/>
-    <package name='xorg-x11-libs'/>
-    <package name='xorg-x11-fonts'/>
-    <package name='xorg-x11-driver-input'/>
-    <package name='xorg-x11-server-extra'/>
-    <package name='xorg-x11-driver-video'/>
-    <package name='xorg-x11-libX11-ccache'/>
-    <package name='xorg-x11'/>
-    <package name='yast2-metapackage-handler'/>
-    <package name='ucode-intel'/>
-    <package name='gstreamer-0_10-plugin-crystalhd'/>
-    <package name='wpa_supplicant-gui'/>
-    <package name='connman-plugin-l2tp'/>
-    <package name='connman-plugin-tist'/>
-    <package name='connman-plugin-vpnc'/>
-    <package name='connman-plugin-pptp'/>
-    <package name='connman-plugin-openvpn'/>
-    <package name='connman-plugin-openconnect'/>
-    <package name='connman-nmcompat'/>
-    <package name='connman-plugin-polkit'/>
-    <package name='econnman'/>
-    <package name='gparted'/>
-    <package name='testdisk'/>
-    <package name='polipo'/>
-    <package name='tor'/>
-    <package name='ffmpeg-tools'/>
-    <package name='ffmpeg'/>
-    <package name='gstreamer-plugin-gnonlin'/>
-    <package name='gstreamer-plugins-bad-orig-addon'/>
-    <package name='gstreamer-plugins-ugly-orig-addon'/>
-    <package name='gstreamer-plugins-libav'/>
-    <package name='gstreamer-plugins-farstream'/>
-    <package name='gstreamer-plugin-gstclutter'/>
-    <package name='gstreamer-plugins-base'/>
-    <package name='gstreamer-plugins-good-extra'/>
-    <package name='gstreamer-plugins-ugly'/>
-    <package name='gstreamer-plugins-good'/>
-    <package name='gstreamer-plugins-bad'/>
-    <package name='PackageKit-gstreamer-plugin'/>
-    <package name='gstreamer-0_10-plugins-bad-orig-addon'/>
-    <package name='gstreamer-0_10-plugins-ugly-orig-addon'/>
-    <package name='gstreamer-0_10-plugins-ffmpeg'/>
-    <package name='gstreamer-0_10-plugins-qt'/>
-    <package name='gstreamer-0_10-plugins-gl'/>
-    <package name='gstreamer-0_10-plugins-ugly'/>
-    <package name='gstreamer-0_10-plugins-bad'/>
-    <package name='gstreamer-0_10-plugins-good-extra'/>
-    <package name='gnote'/>
-    <package name='libreoffice-thesaurus-en-GB'/>
-    <package name='libreoffice-languagetool-en'/>
-    <package name='libreoffice-thesaurus-en-US'/>
-    <package name='libreoffice-templates-en'/>
-    <package name='libreoffice-templates-labels-letter'/>
-    <package name='libreoffice-templates-labels-a4'/>
-    <package name='libreoffice-filters-optional'/>
-    <package name='libreoffice-hyphen'/>
-    <package name='libreoffice-templates-presentation-layouts'/>
-    <package name='libreoffice-openclipart'/>
-    <package name='libreoffice-converter'/>
-    <package name='gimp-gap'/>
-    <package name='gimp-plugin-dds'/>
-    <package name='gimp-plugin-lqr'/>
-    <package name='gimp-save-for-web'/>
-    <package name='gimp-ufraw'/>
-    <package name='gimp-plugins-python'/>
-    <package name='gimp'/>
-    <package name='MozillaFirefox'/>
-    <package name='MozillaThunderbird'/>
-    <package name='filezilla'/>
-    <package name='lftp'/>
-    <package name='smplayer'/>
-    <package name='copyq'/>
-    <package name='goldendict'/>
-    <package name='clementine'/>
-    <package name='vlc-codecs'/>
-    <package name='vlc'/>
-    <package name='accountsservice'/>
-    <package name='NetworkManager-gnome'/>
-    <package name='yakuake'/>
-    <package name='NetworkManager-openconnect'/>
-    <package name='bluedevil'/>
-    <package name='gwenview'/>
-    <package name='dolphin-plugins'/>
-    <package name='dolphin'/>
-    <package name='modem-manager-gui'/>
-    <package name='ModemManager'/>
-    <package name='minicom'/>
-    <package name='ext3grep'/>
-    <package name='NetworkManager-vpnc'/>
-    <package name='NetworkManager-pptp'/>
-    <package name='NetworkManager-openvpn'/>
-    <package name='tuxcursors'/>
-    <package name='Crystalcursors'/>
-    <package name='yast2-theme-openSUSE-Oxygen'/>
-    <package name='libreoffice-icon-theme-oxygen'/>
-    <package name='oxygen-icon-theme-large'/>
-    <package name='kde-oxygen-fonts'/>
-    <package name='gtk3-theme-oxygen'/>
-    <package name='gtk2-theme-oxygen'/>
-    <package name='nano'/>
-    <package name='calibre'/>
-    <package name='hddtemp'/>
-    <package name='photorec'/>
-    <package name='fsarchiver'/>
-    <package name='gptfdisk-fixparts'/>
-    <package name='exfat-nofuse-dkms'/>
-    <package name='xfsprogs'/>
-    <package name='libcap-progs'/>
-    <package name='disktype'/>
-    <package name='gstreamer-plugins-vaapi'/>
-    <package name='gst-omx'/>
-    <package name='libevdev-tools'/>
-    <package name='opus-tools'/>
-    <package name='netlabel-tools'/>
-    <package name='oggvideotools'/>
-    <package name='libsecret-tools'/>
-    <package name='libotr2-tools'/>
-    <package name='intel-gpu-tools'/>
-    <package name='setools-gui'/>
-    <package name='nfs4-acl-tools'/>
-    <package name='setools-console'/>
-    <package name='vorbis-tools'/>
-    <package name='vpx-tools'/>
-    <package name='selinux-tools'/>
-    <package name='conntrack-tools'/>
-    <package name='mtp-tools'/>
-    <package name='freetype-tools'/>
-    <package name='i2c-tools'/>
-    <package name='fonttools'/>
-    <package name='gettext-tools'/>
-    <package name='ipsec-tools'/>
-    <package name='nvidia-texture-tools'/>
-    <package name='v4l-tools'/>
-    <package name='laptop-mode-tools'/>
-    <package name='alsa-tools'/>
-    <package name='exfat-utils'/>
-    <package name='mtd-utils'/>
-    <package name='leechcraft-blasq-spegnersi'/>
-    <package name='leechcraft-sysnotify'/>
-    <package name='leechcraft-lmp-mtpsync'/>
-    <package name='leechcraft-textogroose'/>
-    <package name='leechcraft-scroblibre'/>
-    <package name='leechcraft-krigstask'/>
-    <package name='leechcraft-rosenthal'/>
-    <package name='leechcraft-monocle-dik'/>
-    <package name='leechcraft-azoth-murm'/>
-    <package name='leechcraft-imgaste'/>
-    <package name='leechcraft-cpuload'/>
-    <package name='leechcraft-devmon'/>
-    <package name='leechcraft-certmgr'/>
-    <package name='leechcraft-blasq-vangog'/>
-    <package name='leechcraft-blasq-deathnote'/>
-    <package name='leechcraft-azoth-woodpecker'/>
-    <package name='leechcraft-vtyulc'/>
-    <package name='leechcraft-htthare'/>
-    <package name='leechcraft-mellonetray'/>
-    <package name='leechcraft-harbinger'/>
-    <package name='leechcraft-xtazy'/>
-    <package name='leechcraft-blasq-rappor'/>
-    <package name='leechcraft-azoth-velvetbird'/>
-    <package name='leechcraft-touchstreams'/>
-    <package name='leechcraft-lmp-graffiti'/>
-    <package name='leechcraft-azoth-otroid'/>
-    <package name='leechcraft-blogique-hestia'/>
-    <package name='leechcraft-poshuku-autosearch'/>
-    <package name='leechcraft-poshuku-onlinebookmarks-readitlater'/>
-    <package name='leechcraft-poshuku-onlinebookmarks-delicious'/>
-    <package name='leechcraft-monocle-mu'/>
-    <package name='leechcraft-liznoo'/>
-    <package name='leechcraft-azoth-shx'/>
-    <package name='leechcraft-tpi'/>
-    <package name='leechcraft-hotstreams'/>
-    <package name='leechcraft-launchy'/>
-    <package name='leechcraft-lemon'/>
-    <package name='leechcraft-dumbeep'/>
-    <package name='leechcraft-blogique-metida'/>
-    <package name='leechcraft-blogique'/>
-    <package name='leechcraft-pogooglue'/>
-    <package name='leechcraft-monocle-seen'/>
-    <package name='leechcraft-musiczombie'/>
-    <package name='leechcraft-popishu-debuginfo'/>
-    <package name='leechcraft-azoth-birthdaynotifier'/>
-    <package name='leechcraft-otlozhu'/>
-    <package name='leechcraft-lmp-dumbsync'/>
-    <package name='leechcraft-lastfmscrobble'/>
-    <package name='leechcraft-vrooby'/>
-    <package name='leechcraft-monocle-fxb'/>
-    <package name='leechcraft-kbswitch'/>
-    <package name='leechcraft-monocle'/>
-    <package name='leechcraft-lmp-mp3tunes'/>
-    <package name='leechcraft-monocle-pdf'/>
-    <package name='leechcraft-xproxy'/>
-    <package name='leechcraft-dolozhee'/>
-    <package name='leechcraft-azoth-zheet'/>
-    <package name='leechcraft-gacts'/>
-    <package name='leechcraft-azoth-vader'/>
-    <package name='leechcraft-lhtr'/>
-    <package name='leechcraft-azoth-keeso'/>
-    <package name='leechcraft-tabsessionmanager'/>
-    <package name='leechcraft-netstoremanager'/>
-    <package name='leechcraft-pintab'/>
-    <package name='leechcraft-netstoremanager-googledrive'/>
-    <package name='leechcraft-azoth-acetamide'/>
-    <package name='leechcraft-glance'/>
-    <package name='leechcraft-anhero'/>
-    <package name='leechcraft-lackman'/>
-    <package name='leechcraft-seekthru'/>
-    <package name='leechcraft-popishu'/>
-    <package name='leechcraft-azoth-metacontacts'/>
-    <package name='leechcraft-azoth-rosenthal'/>
-    <package name='leechcraft-poshuku-fatape'/>
-    <package name='leechcraft-azoth-chathistory'/>
-    <package name='leechcraft-azoth-isterique'/>
-    <package name='leechcraft-azoth-lastseen'/>
-    <package name='leechcraft-gmailnotifier'/>
-    <package name='leechcraft-azoth-modnok'/>
-    <package name='leechcraft-poshuku-filescheme'/>
-    <package name='leechcraft-secman'/>
-    <package name='leechcraft-poshuku-onlinebookmarks'/>
-    <package name='leechcraft-knowhow'/>
-    <package name='leechcraft-deadlyrics'/>
-    <package name='leechcraft-azoth-juick'/>
-    <package name='leechcraft-azoth-p100q'/>
-    <package name='leechcraft-azoth-xoox'/>
-    <package name='leechcraft-historyholder'/>
-    <package name='leechcraft-aggregator-bodyfetch'/>
-    <package name='leechcraft-poshuku-keywords'/>
-    <package name='leechcraft-azoth-adiumstyles'/>
-    <package name='leechcraft-azoth-autoidler'/>
-    <package name='leechcraft-azoth-depester'/>
-    <package name='leechcraft-lmp'/>
-    <package name='leechcraft-summary'/>
-    <package name='leechcraft-azoth-herbicide'/>
-    <package name='leechcraft-azoth-hili'/>
-    <package name='leechcraft-aggregator'/>
-    <package name='leechcraft-azoth'/>
-    <package name='leechcraft-newlife'/>
-    <package name='leechcraft-tabslist'/>
-    <package name='leechcraft-secman-simplestorage'/>
-    <package name='leechcraft-auscrie'/>
-    <package name='leechcraft-azoth-xtazy'/>
-    <package name='leechcraft-azoth-autopaste'/>
-    <package name='leechcraft-azoth-nativeemoticons'/>
-    <package name='leechcraft-poshuku'/>
-    <package name='leechcraft-poshuku-fua'/>
-    <package name='leechcraft-vgrabber'/>
-    <package name='leechcraft-azoth-embedmedia'/>
-    <package name='leechcraft-poshuku-cleanweb'/>
-    <package name='leechcraft-dbusmanager'/>
-    <package name='leechcraft-advancednotifications'/>
-    <package name='leechcraft-bittorrent'/>
-    <package name='leechcraft-networkmonitor'/>
-    <package name='zsh'/>
-    <package name='hwinfo'/>
-    <package name='iputils'/>
-    <package name='openssh'/>
-    <package name='polkit-default-privs'/>
-    <package name='rpcbind'/>
-    <package name='vim'/>
-    <package name='zypper'/>
-    <package name='timezone'/>
-    <package name='pin'/>
-    <package name='webpin'/>
-    <package name='btrfsprogs'/>
-    <package name='arpwatch'/>
-    <package name='wireshark'/>
-    <package name='reaver'/>
-    <package name='kwrite'/>
-    <package name='pam_ssh'/>
-    <package name='acpid'/>
-    <package name='AdobeICCProfiles'/>
-    <package name='p7zip-gui'/>
-    <package name='dnsmasq'/>
-    <package name='Mesa-demo-x'/>
-    <package name='enca'/>
-    <package name='conky'/>
-    <package name='conky-nano'/>
-    <package name='conky-cairo'/>
-    <package name='conky-imlib2'/>
-    <package name='caca-utils'/>
-    <package name='mc'/>
-  </packages>
-  <packages type='bootstrap'>
-    <package name='file'/>
-    <package name='filesystem'/>
-    <package name='glibc-locale'/>
-    <package name='udev'/>
-    <package name='module-init-tools'/>
-    <package name='which'/>
-    <package name='openssl-certs'/>
-    <package name='cracklib-dict-full'/>
-    <package name='ca-certificates'/>
-  </packages>
-  <packages type="delete">
-    <package name="kernel-debug"/>
-  </packages>
-  <repository type='yast2' imageinclude='true' priority='90' alias='openSUSE'>
-    <source path='http://download.opensuse.org/distribution/13.1/repo/oss'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Update'>
-    <source path='http://download.opensuse.org/update/13.1'/>
-  </repository>
-  <repository type='yast2' imageinclude='true' priority='90' alias='openSUSE_NonFree'>
-    <source path='http://download.opensuse.org/distribution/13.1/repo/non-oss'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_NonFree_Update'>
-    <source path='http://download.opensuse.org/update/13.1-non-oss'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Tools'>
-    <source path='obs://openSUSE:Tools/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='60' alias='Kernel_stable'>
-    <source path='obs://Kernel:stable/standard'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='99' alias='Bumblebee_Nvidia_drivers'>
-    <source path='obs://home:Bumblebee-Project:nVidia:latest/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='99' alias='Shitty_AMD_drivers'>
-    <source path='http://geeko.ioda.net/mirror/amd-fglrx/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='62' alias='Packman'>
-    <source path='http://packman.inode.at/suse/13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='65' alias='RazorQt' >
-    <source path='obs://X11:QtDesktop/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='70' alias='Mozilla'>
-    <source path='obs://mozilla/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='62' alias='filesystems'>
-    <source path='obs://filesystems/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='50' alias='X11_XOrg'>
-    <source path='obs://X11:XOrg/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='95' alias='home_pontostroy_X11'>
-    <source path='obs://home:pontostroy:X11/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='80' alias='games'>
-    <source path='obs://games/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='80' alias='games_tools'>
-    <source path='obs://games:tools/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='44' alias='home_namtrac_subpixel'>
-    <source path='obs://home:namtrac:subpixel/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='82' alias='network'>
-    <source path='obs://network/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='82' alias='network_utilities'>
-    <source path='obs://network:utilities/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
-    <source path='obs://X11:Utilities/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='80' alias='emulators'>
-    <source path='obs://Emulators/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='65' alias='emulators_wine'>
-    <source path='obs://Emulators:Wine/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='99' alias='server_http'>
-    <source path='obs://server:http/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='82' alias='network_samba_STABLE'>
-    <source path='obs://network:samba:STABLE/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='65' alias='X11_Enlightenment_Factory'>
-    <source path='obs://X11:Enlightenment:Factory/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='65' alias='multimedia_apps'>
-    <source path='obs://multimedia:apps/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='65' alias='multimedia_libs'>
-    <source path='obs://multimedia:libs/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Extra'>
-    <source path='obs://KDE:Extra/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Current'>
-    <source path='obs://KDE:Current/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='48' alias='server_monitoring'>
-    <source path='obs://server:monitoring/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Apps'>
-    <source path='obs://GNOME:Apps/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Stable_3.12'>
-    <source path='obs://GNOME:STABLE:3.12/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='55' alias='home_XRevan86'>
-    <source path='obs://home:XRevan86/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='94' alias='home_XRevan86_non-free'>
-    <source path='obs://home:XRevan86:non-free/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='94' alias='home_aevseev'>
-    <source path='obs://home:aevseev/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='99' alias='home_seife_testing'>
-    <source path='obs://home:seife:testing/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='92' alias='home_lukho_copyq'>
-    <source path='obs://home:lukho:copyq/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='99' alias='home_marec2000'>
-    <source path='obs://home:marec2000/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_emulators'>
-    <source path='obs://home:X0F:branches:Emulators/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F_branches_network'>
-    <source path='obs://home:X0F:branches:network/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='62' alias='LXQt' >
-    <source path='obs://devel:cloverleaf:lxqt/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F'>
-    <source path='obs://home:X0F/openSUSE_13.1'/>
-  </repository>
-  <repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres'>
-    <source path='obs://home:X0F:HSF/openSUSE_13.1'/>
-  </repository>
+	<description type='system'>
+		<author>Sergey Kondakov</author>
+		<contact>virtuousfox@gmail.com</contact>
+		<specification>Big, useful desktop appliance with slim DEs</specification>
+	</description>
+	<preferences>
+		<type checkprebuilt='true' boot='isoboot/suse-13.1' bootloader='grub2' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='overlay' hybrid='true' hybridpersistent='true' kernelcmdline='ro splash=verbose' image='iso'>
+			<split>
+				<temporary>
+					<file name='/*'/>
+				</temporary>
+			</split>
+		</type>
+		<version>0.5.0</version>
+		<packagemanager>zypper</packagemanager>
+		<rpm-check-signatures>false</rpm-check-signatures>
+		<rpm-force>false</rpm-force>
+		<bootsplash-theme>HSF</bootsplash-theme>
+		<bootloader-theme>HSF</bootloader-theme>
+		<locale>en_GB</locale>
+	</preferences>
+	<users group='users'>
+		<user name='hacker' pwd='$1$bt1tLGOm$gLnv3aIEyKN0gsj5T2BZp0' home='/home/hacker' shell='/usr/bin/zsh'/>
+	</users>
+	<users group='root'>
+		<user name='root' pwd='$1$swBREFsk$22GzIU89QzoL7uMa9zzun1' home='/root' shell='/bin/bash'/>
+	</users>
+	<packages type='image' patternType='onlyRequired'>
+		<product name="openSUSE"/>
+		<namedCollection name='yast2_basis'/>
+		<namedCollection name='sw_management'/>
+		<namedCollection name='enhanced_base'/>
+		<namedCollection name='enhanced_base_opt'/>
+		<namedCollection name='apparmor'/>
+		<namedCollection name='fonts'/>
+		<namedCollection name='x11'/>
+		<namedCollection name='x11_yast'/>
+		<namedCollection name='yast2_install_wf'/>
+		<namedCollection name='office'/>
+		<namedCollection name='fonts_opt'/>
+		<namedCollection name='office_opt'/>
+		<namedCollection name='e17'/>
+		<namedCollection name='lxde-qt'/>
+		<package name='plymouth-branding-HSF' bootinclude='true'/>
+		<package name='gfxboot-branding-HSF' bootinclude='true' bootdelete='true'/>
+		<package name='grub2-branding-HSF' bootinclude='true'/>
+		<package name='adaptec-firmware' bootinclude='true'/>
+		<package name='alsa-firmware' bootinclude='true'/>
+		<package name='atmel-firmware' bootinclude='true'/>
+		<package name='b43-firmware' bootinclude='true'/>
+		<package name='b43legacy-firmware' bootinclude='true'/>
+		<package name='bluez-firmware' bootinclude='true'/>
+		<package name='crystalhd-firmware' bootinclude='true'/>
+		<package name='ipw-firmware' bootinclude='true'/>
+		<package name='midisport-firmware' bootinclude='true'/>
+		<package name='mpt-firmware' bootinclude='true'/>
+		<package name='technisat-usb2-firmware' bootinclude='true'/>
+		<package name='ucode-amd' bootinclude='true'/>
+		<package name='zd1211-firmware' bootinclude='true'/>
+		<package name='kernel-desktop-devel'/>
+		<package name='kernel-desktop' replaces='kernel-default'/>
+		<package name='kernel-firmware'/>
+		<package name='aaa_base-extras'/>
+		<package name='accountsservice'/>
+		<package name='AdobeICCProfiles'/>
+		<package name='alsa-oss'/>
+		<package name='alsa-plugins'/>
+		<package name='alsa-plugins-pulse'/>
+		<package name='alsa-tools'/>
+		<package name='apparmor-utils'/>
+		<package name='arpwatch'/>
+		<package name='autofs'/>
+		<package name='avahi'/>
+		<package name='avahi-autoipd'/>
+		<package name='avahi-utils'/>
+		<package name='bitmap'/>
+		<package name='bluedevil'/>
+		<package name='bluez'/>
+		<package name='branding-basedonopensuse'/>
+		<package name='btrfsprogs'/>
+		<package name='bundle-lang-common-en'/>
+		<package name='caca-utils'/>
+		<package name='calibre'/>
+		<package name='clementine'/>
+		<package name='command-not-found'/>
+		<package name='compcache'/>
+		<package name='conky'/>
+		<package name='conky-cairo'/>
+		<package name='conky-imlib2'/>
+		<package name='conky-nano'/>
+		<package name='connman-nmcompat'/>
+		<package name='connman-plugin-hh2serial-gps'/>
+		<package name='connman-plugin-l2tp'/>
+		<package name='connman-plugin-openconnect'/>
+		<package name='connman-plugin-openvpn'/>
+		<package name='connman-plugin-polkit'/>
+		<package name='connman-plugin-pptp'/>
+		<package name='connman-plugin-tist'/>
+		<package name='connman-plugin-vpnc'/>
+		<package name='conntrack-tools'/>
+		<package name='copyq'/>
+		<package name='crda'/>
+		<package name='Crystalcursors'/>
+		<package name='davfs2'/>
+		<package name='dejavu-fonts'/>
+		<package name='deltarpm'/>
+		<package name='desktop-translations'/>
+		<package name='disktype'/>
+		<package name='dnsmasq'/>
+		<package name='dolphin'/>
+		<package name='dolphin-plugins'/>
+		<package name='dos2unix'/>
+		<package name='dosfstools'/>
+		<package name='e2fsprogs-snapshots'/>
+		<package name='econnman'/>
+		<package name='efont-unicode-bitmap-fonts'/>
+		<package name='e-module-engage'/>
+		<package name='e-module-forecasts'/>
+		<package name='e-module-moon'/>
+		<package name='enca'/>
+		<package name='e-theme-a-os-agust-v3'/>
+		<package name='e-theme-a-os-detour'/>
+		<package name='e-theme-a-os-green'/>
+		<package name='e-theme-a-os-miguel-v3'/>
+		<package name='e-theme-darkness'/>
+		<package name='e-theme-efenniht'/>
+		<package name='e-theme-klok'/>
+		<package name='e-theme-openSUSE'/>
+		<package name='ethtool'/>
+		<package name='ev'/>
+		<package name='exfat-nofuse-dkms'/>
+		<package name='exfat-utils'/>
+		<package name='ext3grep'/>
+		<package name='ffmpeg'/>
+		<package name='ffmpeg-tools'/>
+		<package name='filezilla'/>
+		<package name='firmwarekit'/>
+		<package name='FirmwareUpdateKit'/>
+		<package name='flash-player'/>
+		<package name='flashrom'/>
+		<package name='fonttools'/>
+		<package name='fonttosfnt'/>
+		<package name='freetype-tools'/>
+		<package name='fsarchiver'/>
+		<package name='fslsfonts'/>
+		<package name='fuse'/>
+		<package name='gegl-0_2'/>
+		<package name='gettext-tools'/>
+		<package name='gimp'/>
+		<package name='gimp-gap'/>
+		<package name='gimp-plugin-dds'/>
+		<package name='gimp-plugin-lqr'/>
+		<package name='gimp-plugins-python'/>
+		<package name='gimp-save-for-web'/>
+		<package name='gimp-ufraw'/>
+		<package name='gnome-icon-theme'/>
+		<package name='gnome-keyring-pam'/>
+		<package name='gnome-keyring-sharp'/>
+		<package name='gnote'/>
+		<package name='goldendict'/>
+		<package name='gpart'/>
+		<package name='gparted'/>
+		<package name='gptfdisk-fixparts'/>
+		<package name='grub2'/>
+		<package name='gst-omx'/>
+		<package name='gstreamer-0_10-libnice'/>
+		<package name='gstreamer-0_10-plugin-crystalhd'/>
+		<package name='gstreamer-0_10-plugins-bad'/>
+		<package name='gstreamer-0_10-plugins-bad-orig-addon'/>
+		<package name='gstreamer-0_10-plugins-ffmpeg'/>
+		<package name='gstreamer-0_10-plugins-gl'/>
+		<package name='gstreamer-0_10-plugins-good-extra'/>
+		<package name='gstreamer-0_10-plugins-qt'/>
+		<package name='gstreamer-0_10-plugins-ugly'/>
+		<package name='gstreamer-0_10-plugins-ugly-orig-addon'/>
+		<package name='gstreamer-0_10-plugins-vaapi'/>
+		<package name='gstreamer-0_10-utils'/>
+		<package name='gstreamer-libnice'/>
+		<package name='gstreamer-plugin-gnonlin'/>
+		<package name='gstreamer-plugin-gstclutter'/>
+		<package name='gstreamer-plugins-bad'/>
+		<package name='gstreamer-plugins-bad-orig-addon'/>
+		<package name='gstreamer-plugins-base'/>
+		<package name='gstreamer-plugins-farstream'/>
+		<package name='gstreamer-plugins-good'/>
+		<package name='gstreamer-plugins-good-extra'/>
+		<package name='gstreamer-plugins-libav'/>
+		<package name='gstreamer-plugins-ugly'/>
+		<package name='gstreamer-plugins-ugly-orig-addon'/>
+		<package name='gstreamer-plugins-vaapi'/>
+		<package name='gstreamer-utils'/>
+		<package name='gtk2-theme-oxygen'/>
+		<package name='gtk3-theme-oxygen'/>
+		<package name='gwenview'/>
+		<package name='hddtemp'/>
+		<package name='hdparm'/>
+		<package name='hostap-utils'/>
+		<package name='hwinfo'/>
+		<package name='i2c-tools'/>
+		<package name='ifplugd'/>
+		<package name='intel-gpu-tools'/>
+		<package name='intlfonts'/>
+		<package name='intlfonts-euro-bitmap-fonts'/>
+		<package name='ipsec-tools'/>
+		<package name='iputils'/>
+		<package name='irqbalance'/>
+		<package name='isight-firmware-tools'/>
+		<package name='kdeartwork4-icons'/>
+		<package name='kde-oxygen-fonts'/>
+		<package name='kmscon'/>
+		<package name='kparts-plugin'/>
+		<package name='kwrite'/>
+		<package name='laptop-mode-tools'/>
+		<package name='leechcraft'/>
+		<package name='leechcraft-advancednotifications'/>
+		<package name='leechcraft-aggregator'/>
+		<package name='leechcraft-aggregator-bodyfetch'/>
+		<package name='leechcraft-anhero'/>
+		<package name='leechcraft-auscrie'/>
+		<package name='leechcraft-azoth'/>
+		<package name='leechcraft-azoth-acetamide'/>
+		<package name='leechcraft-azoth-adiumstyles'/>
+		<package name='leechcraft-azoth-autoidler'/>
+		<package name='leechcraft-azoth-autopaste'/>
+		<package name='leechcraft-azoth-birthdaynotifier'/>
+		<package name='leechcraft-azoth-chathistory'/>
+		<package name='leechcraft-azoth-depester'/>
+		<package name='leechcraft-azoth-embedmedia'/>
+		<package name='leechcraft-azoth-herbicide'/>
+		<package name='leechcraft-azoth-hili'/>
+		<package name='leechcraft-azoth-isterique'/>
+		<package name='leechcraft-azoth-juick'/>
+		<package name='leechcraft-azoth-keeso'/>
+		<package name='leechcraft-azoth-lastseen'/>
+		<package name='leechcraft-azoth-metacontacts'/>
+		<package name='leechcraft-azoth-modnok'/>
+		<package name='leechcraft-azoth-murm'/>
+		<package name='leechcraft-azoth-nativeemoticons'/>
+		<package name='leechcraft-azoth-otroid'/>
+		<package name='leechcraft-azoth-p100q'/>
+		<package name='leechcraft-azoth-rosenthal'/>
+		<package name='leechcraft-azoth-shx'/>
+		<package name='leechcraft-azoth-standardstyles'/>
+		<package name='leechcraft-azoth-vader'/>
+		<package name='leechcraft-azoth-velvetbird'/>
+		<package name='leechcraft-azoth-woodpecker'/>
+		<package name='leechcraft-azoth-xoox'/>
+		<package name='leechcraft-azoth-xtazy'/>
+		<package name='leechcraft-azoth-zheet'/>
+		<package name='leechcraft-bittorrent'/>
+		<package name='leechcraft-blasq-deathnote'/>
+		<package name='leechcraft-blasq-rappor'/>
+		<package name='leechcraft-blasq-spegnersi'/>
+		<package name='leechcraft-blasq-vangog'/>
+		<package name='leechcraft-blogique'/>
+		<package name='leechcraft-blogique-hestia'/>
+		<package name='leechcraft-blogique-metida'/>
+		<package name='leechcraft-certmgr'/>
+		<package name='leechcraft-cpuload'/>
+		<package name='leechcraft-dbusmanager'/>
+		<package name='leechcraft-deadlyrics'/>
+		<package name='leechcraft-devmon'/>
+		<package name='leechcraft-dolozhee'/>
+		<package name='leechcraft-dumbeep'/>
+		<package name='leechcraft-fenet-kwin'/>
+		<package name='leechcraft-gacts'/>
+		<package name='leechcraft-glance'/>
+		<package name='leechcraft-gmailnotifier'/>
+		<package name='leechcraft-harbinger'/>
+		<package name='leechcraft-historyholder'/>
+		<package name='leechcraft-hotstreams'/>
+		<package name='leechcraft-htthare'/>
+		<package name='leechcraft-imgaste'/>
+		<package name='leechcraft-kbswitch'/>
+		<package name='leechcraft-kinotify'/>
+		<package name='leechcraft-knowhow'/>
+		<package name='leechcraft-krigstask'/>
+		<package name='leechcraft-lackman'/>
+		<package name='leechcraft-lastfmscrobble'/>
+		<package name='leechcraft-launchy'/>
+		<package name='leechcraft-lemon'/>
+		<package name='leechcraft-lhtr'/>
+		<package name='leechcraft-liznoo'/>
+		<package name='leechcraft-lmp'/>
+		<package name='leechcraft-lmp-dumbsync'/>
+		<package name='leechcraft-lmp-graffiti'/>
+		<package name='leechcraft-lmp-mp3tunes'/>
+		<package name='leechcraft-lmp-mtpsync'/>
+		<package name='leechcraft-mellonetray'/>
+		<package name='leechcraft-monocle'/>
+		<package name='leechcraft-monocle-dik'/>
+		<package name='leechcraft-monocle-fxb'/>
+		<package name='leechcraft-monocle-mu'/>
+		<package name='leechcraft-monocle-pdf'/>
+		<package name='leechcraft-monocle-seen'/>
+		<package name='leechcraft-musiczombie'/>
+		<package name='leechcraft-netstoremanager'/>
+		<package name='leechcraft-netstoremanager-googledrive'/>
+		<package name='leechcraft-networkmonitor'/>
+		<package name='leechcraft-newlife'/>
+		<package name='leechcraft-otlozhu'/>
+		<package name='leechcraft-pintab'/>
+		<package name='leechcraft-pogooglue'/>
+		<package name='leechcraft-popishu'/>
+		<package name='leechcraft-popishu-debuginfo'/>
+		<package name='leechcraft-poshuku'/>
+		<package name='leechcraft-poshuku-autosearch'/>
+		<package name='leechcraft-poshuku-cleanweb'/>
+		<package name='leechcraft-poshuku-fatape'/>
+		<package name='leechcraft-poshuku-filescheme'/>
+		<package name='leechcraft-poshuku-fua'/>
+		<package name='leechcraft-poshuku-keywords'/>
+		<package name='leechcraft-poshuku-onlinebookmarks'/>
+		<package name='leechcraft-poshuku-onlinebookmarks-delicious'/>
+		<package name='leechcraft-poshuku-onlinebookmarks-readitlater'/>
+		<package name='leechcraft-rosenthal'/>
+		<package name='leechcraft-scroblibre'/>
+		<package name='leechcraft-secman'/>
+		<package name='leechcraft-secman-simplestorage'/>
+		<package name='leechcraft-seekthru'/>
+		<package name='leechcraft-summary'/>
+		<package name='leechcraft-sysnotify'/>
+		<package name='leechcraft-tabsessionmanager'/>
+		<package name='leechcraft-tabslist'/>
+		<package name='leechcraft-textogroose'/>
+		<package name='leechcraft-touchstreams'/>
+		<package name='leechcraft-tpi'/>
+		<package name='leechcraft-vgrabber'/>
+		<package name='leechcraft-vrooby'/>
+		<package name='leechcraft-vtyulc'/>
+		<package name='leechcraft-xproxy'/>
+		<package name='leechcraft-xtazy'/>
+		<package name='lftp'/>
+		<package name='libcap-ng-utils'/>
+		<package name='libcap-progs'/>
+		<package name='liberation-fonts'/>
+		<package name='libevdev-tools'/>
+		<package name='libomx_r600'/>
+		<package name='libomx_radeonsi'/>
+		<package name='libotr2-tools'/>
+		<package name='libreoffice-converter'/>
+		<package name='libreoffice-filters-optional'/>
+		<package name='libreoffice-help-en-GB'/>
+		<package name='libreoffice-hyphen'/>
+		<package name='libreoffice-icon-theme-oxygen'/>
+		<package name='libreoffice-l10n-en-GB'/>
+		<package name='libreoffice-languagetool-en'/>
+		<package name='libreoffice-openclipart'/>
+		<package name='libreoffice-templates-en'/>
+		<package name='libreoffice-templates-labels-a4'/>
+		<package name='libreoffice-templates-labels-letter'/>
+		<package name='libreoffice-templates-presentation-layouts'/>
+		<package name='libreoffice-thesaurus-en-GB'/>
+		<package name='libreoffice-thesaurus-en-US'/>
+		<package name='libsecret-tools'/>
+		<package name='libtxc_dxtn'/>
+		<package name='libva-egl1'/>
+		<package name='libvdpau_nouveau'/>
+		<package name='libvdpau_r300'/>
+		<package name='libvdpau_r600'/>
+		<package name='libvdpau_radeonsi'/>
+		<package name='lightdm'/>
+		<package name='lightdm-gtk-greeter'/>
+		<package name='lsof'/>
+		<package name='lxqt-appswitcher'/>
+		<package name='lxqt-lightdm-greeter'/>
+		<package name='man'/>
+		<package name='man-pages'/>
+		<package name='mc'/>
+		<package name='Mesa-demo-x'/>
+		<package name='minicom'/>
+		<package name='ModemManager'/>
+		<package name='modem-manager-gui'/>
+		<package name='MozillaFirefox'/>
+		<package name='mozilla-kde4-integration'/>
+		<package name='MozillaThunderbird'/>
+		<package name='mtd-utils'/>
+		<package name='mtp-tools'/>
+		<package name='mtr'/>
+		<package name='nano'/>
+		<package name='netlabel-tools'/>
+		<package name='NetworkManager-gnome'/>
+		<package name='NetworkManager-openconnect'/>
+		<package name='NetworkManager-openvpn'/>
+		<package name='NetworkManager-pptp'/>
+		<package name='NetworkManager-vpnc'/>
+		<package name='nfs4-acl-tools'/>
+		<package name='nfs-client'/>
+		<package name='nmap'/>
+		<package name='nscd'/>
+		<package name='ntfs-3g'/>
+		<package name='ntp'/>
+		<package name='nvidia-texture-tools'/>
+		<package name='oggvideotools'/>
+		<package name='okular'/>
+		<package name='openldap2-client'/>
+		<package name='openssh'/>
+		<package name='openssh-askpass'/>
+		<package name='openssh-helpers'/>
+		<package name='opus-tools'/>
+		<package name='oxygen-icon-theme-large'/>
+		<package name='p7zip-gui'/>
+		<package name='PackageKit-browser-plugin'/>
+		<package name='PackageKit-gstreamer-plugin'/>
+		<package name='pam_ssh'/>
+		<package name='pax-utils'/>
+		<package name='photorec'/>
+		<package name='pin'/>
+		<package name='pm-profiler'/>
+		<package name='pm-utils'/>
+		<package name='polipo'/>
+		<package name='polkit-default-privs'/>
+		<package name='poppler-data'/>
+		<package name='poppler-tools'/>
+		<package name='providers'/>
+		<package name='psmisc'/>
+		<package name='pullin-flash-player'/>
+		<package name='pulseaudio-esound-compat'/>
+		<package name='pulseaudio-module-bluetooth'/>
+		<package name='pulseaudio-module-zeroconf'/>
+		<package name='radeon-profile'/>
+		<package name='reaver'/>
+		<package name='rpcbind'/>
+		<package name='rsync'/>
+		<package name='samba-client'/>
+		<package name='sax3'/>
+		<package name='screen'/>
+		<package name='selinux-tools'/>
+		<package name='sensors'/>
+		<package name='setools-console'/>
+		<package name='setools-gui'/>
+		<package name='setserial'/>
+		<package name='smartmontools'/>
+		<package name='smplayer'/>
+		<package name='snapper'/>
+		<package name='snapper-zypp-plugin'/>
+		<package name='sox'/>
+		<package name='strace'/>
+		<package name='sudo'/>
+		<package name='syslinux'/>
+		<package name='systemd-logger'/>
+		<package name='systemd-ui'/>
+		<package name='tcpdump'/>
+		<package name='terminus-bitmap-fonts'/>
+		<package name='testdisk'/>
+		<package name='timezone'/>
+		<package name='tor'/>
+		<package name='traceroute'/>
+		<package name='translation-update'/>
+		<package name='tuxcursors'/>
+		<package name='ucode-intel'/>
+		<package name='udisks'/>
+		<package name='udisks2'/>
+		<package name='upower'/>
+		<package name='usb_modeswitch-data'/>
+		<package name='usbutils'/>
+		<package name='v4l-tools'/>
+		<package name='v4l-utils'/>
+		<package name='vaapi-intel-driver'/>
+		<package name='vaapi-tools'/>
+		<package name='vdpau-video'/>
+		<package name='vim'/>
+		<package name='vlc'/>
+		<package name='vlc-codecs'/>
+		<package name='vorbis-tools'/>
+		<package name='vpx-tools'/>
+		<package name='wallpaper-branding-HSF'/>
+		<package name='wdfs'/>
+		<package name='webpin'/>
+		<package name='wget'/>
+		<package name='whois'/>
+		<package name='wireless-regdb'/>
+		<package name='wireless-tools'/>
+		<package name='wireshark'/>
+		<package name='wm-icons'/>
+		<package name='wpa_supplicant-gui'/>
+		<package name='xcompmgr'/>
+		<package name='xcursor-themes'/>
+		<package name='xev'/>
+		<package name='xfontsel'/>
+		<package name='xfsprogs'/>
+		<package name='xgamma'/>
+		<package name='xinput'/>
+		<package name='xkbevd'/>
+		<package name='xkbutils'/>
+		<package name='xkill'/>
+		<package name='xlsfonts'/>
+		<package name='xorg-x11'/>
+		<package name='xorg-x11-driver-input'/>
+		<package name='xorg-x11-driver-video'/>
+		<package name='xorg-x11-fonts'/>
+		<package name='xorg-x11-libs'/>
+		<package name='xorg-x11-libX11-ccache'/>
+		<package name='xorg-x11-server-extra'/>
+		<package name='xrandr'/>
+		<package name='xsetmode'/>
+		<package name='xsetpointer'/>
+		<package name='xvinfo'/>
+		<package name='yakuake'/>
+		<package name='yast2-backup'/>
+		<package name='yast2-branding-basedonopensuse'/>
+		<package name='yast2-ca-management'/>
+		<package name='yast2-control-center'/>
+		<package name='yast2-control-center-qt'/>
+		<package name='yast2-dbus-server'/>
+		<package name='yast2-firewall'/>
+		<package name='yast2-firstboot'/>
+		<package name='yast2-installation'/>
+		<package name='yast2-live-installer'/>
+		<package name='yast2-metapackage-handler'/>
+		<package name='yast2-ncurses'/>
+		<package name='yast2-nfs-client'/>
+		<package name='yast2-nfs-server'/>
+		<package name='yast2-ntp-client'/>
+		<package name='yast2-online-update-configuration'/>
+		<package name='yast2-qt-branding-basedonopensuse'/>
+		<package name='yast2-restore'/>
+		<package name='yast2-runlevel'/>
+		<package name='yast2-samba-client'/>
+		<package name='yast2-samba-server'/>
+		<package name='yast2-snapper'/>
+		<package name='yast2-sound'/>
+		<package name='yast2-sudo'/>
+		<package name='yast2-support'/>
+		<package name='yast2-theme-openSUSE-Oxygen'/>
+		<package name='yast2-trans-en_GB'/>
+		<package name='zfsonlinux-zfs-dkms'/>
+		<package name='zsh'/>
+		<package name='zypper'/>
+		<package name='zypper-aptitude'/>
+	</packages>
+	<packages type='bootstrap'>
+		<package name='file'/>
+		<package name='filesystem'/>
+		<package name='glibc-locale'/>
+		<package name='udev'/>
+		<package name='module-init-tools'/>
+		<package name='which'/>
+		<package name='openssl-certs'/>
+		<package name='cracklib-dict-full'/>
+		<package name='ca-certificates'/>
+	</packages>
+	<packages type="delete">
+		<package name="kernel-debug"/>
+	</packages>
+	<repository type='yast2' imageinclude='true' priority='90' alias='openSUSE'>
+		<source path='http://download.opensuse.org/distribution/13.1/repo/oss'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Update'>
+		<source path='http://download.opensuse.org/update/13.1'/>
+	</repository>
+	<repository type='yast2' imageinclude='true' priority='90' alias='openSUSE_NonFree'>
+		<source path='http://download.opensuse.org/distribution/13.1/repo/non-oss'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_NonFree_Update'>
+		<source path='http://download.opensuse.org/update/13.1-non-oss'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Tools'>
+		<source path='obs://openSUSE:Tools/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='60' alias='Kernel_stable'>
+		<source path='obs://Kernel:stable/standard'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='99' alias='Bumblebee_Nvidia_drivers'>
+		<source path='obs://home:Bumblebee-Project:nVidia:latest/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='99' alias='Shitty_AMD_drivers'>
+		<source path='http://geeko.ioda.net/mirror/amd-fglrx/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='62' alias='Packman'>
+		<source path='http://packman.inode.at/suse/13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='65' alias='RazorQt' >
+		<source path='obs://X11:QtDesktop/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='70' alias='Mozilla'>
+		<source path='obs://mozilla/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='62' alias='filesystems'>
+		<source path='obs://filesystems/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='50' alias='X11_XOrg'>
+		<source path='obs://X11:XOrg/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='95' alias='home_pontostroy_X11'>
+		<source path='obs://home:pontostroy:X11/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='80' alias='games'>
+		<source path='obs://games/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='80' alias='games_tools'>
+		<source path='obs://games:tools/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='44' alias='home_namtrac_subpixel'>
+		<source path='obs://home:namtrac:subpixel/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='network'>
+		<source path='obs://network/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_utilities'>
+		<source path='obs://network:utilities/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
+		<source path='obs://X11:Utilities/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='80' alias='emulators'>
+		<source path='obs://Emulators/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='65' alias='emulators_wine'>
+		<source path='obs://Emulators:Wine/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='99' alias='server_http'>
+		<source path='obs://server:http/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_samba_STABLE'>
+		<source path='obs://network:samba:STABLE/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='65' alias='X11_Enlightenment_Factory'>
+		<source path='obs://X11:Enlightenment:Factory/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='65' alias='multimedia_apps'>
+		<source path='obs://multimedia:apps/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='65' alias='multimedia_libs'>
+		<source path='obs://multimedia:libs/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Extra'>
+		<source path='obs://KDE:Extra/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Current'>
+		<source path='obs://KDE:Current/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='48' alias='server_monitoring'>
+		<source path='obs://server:monitoring/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Apps'>
+		<source path='obs://GNOME:Apps/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Stable_3.12'>
+		<source path='obs://GNOME:STABLE:3.12/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_XRevan86'>
+		<source path='obs://home:XRevan86/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='94' alias='home_XRevan86_non-free'>
+		<source path='obs://home:XRevan86:non-free/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='94' alias='home_aevseev'>
+		<source path='obs://home:aevseev/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='99' alias='home_seife_testing'>
+		<source path='obs://home:seife:testing/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_lukho_copyq'>
+		<source path='obs://home:lukho:copyq/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='99' alias='home_marec2000'>
+		<source path='obs://home:marec2000/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_emulators'>
+		<source path='obs://home:X0F:branches:Emulators/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F_branches_network'>
+		<source path='obs://home:X0F:branches:network/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='62' alias='LXQt' >
+		<source path='obs://devel:cloverleaf:lxqt/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F'>
+		<source path='obs://home:X0F/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres'>
+		<source path='obs://home:X0F:HSF/openSUSE_13.1'/>
+	</repository>
 </image>

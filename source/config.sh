@@ -34,7 +34,7 @@ baseSetRunlevel 5
 #======================================
 # Add missing gpg keys to rpm
 #--------------------------------------
-#suseImportBuildKey
+suseImportBuildKey
 
 #======================================
 # Firewall Configuration

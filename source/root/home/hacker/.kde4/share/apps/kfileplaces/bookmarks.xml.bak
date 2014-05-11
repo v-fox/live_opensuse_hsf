@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xbel>
 <xbel xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" xmlns:kdepriv="http://www.kde.org/kdepriv" dbusName="kfilePlaces">
- <bookmark href="file:///home/guest">
+ <bookmark href="file:///home/hacker">
   <title>Home</title>
   <info>
    <metadata owner="http://freedesktop.org">
@@ -230,7 +230,7 @@
   </info>
   <title>FOX-ASS</title>
  </separator>
- <separator href="file:///var/run/media/guest/secondary">
+ <separator href="file:///var/run/media/hacker/secondary">
   <info>
    <metadata owner="http://www.kde.org">
     <UDI>/org/freedesktop/UDisks2/block_devices/sdf1</UDI>
