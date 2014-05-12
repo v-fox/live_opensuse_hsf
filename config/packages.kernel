@@ -1,0 +1,2 @@
+		<package name='kernel-desktop-devel'/>
+		<package name='kernel-desktop' replaces='kernel-default'/>

@@ -1,0 +1,27 @@
+	<description type='system'>
+		<author>Sergey Kondakov</author>
+		<contact>virtuousfox@gmail.com</contact>
+		<specification>Big, useful desktop appliance with slim DEs</specification>
+	</description>
+	<preferences>
+		<type image='iso' primary='true' checkprebuilt='false' boot='isoboot/suse-13.1' firmware='efi' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='clic' hybridpersistent='true' kernelcmdline='splash=verbose'>
+			<split>
+				<temporary>
+					<file name='/*'/>
+				</temporary>
+			</split>
+		</type>
+		<version>0.5.0</version>
+		<packagemanager>zypper</packagemanager>
+		<rpm-check-signatures>false</rpm-check-signatures>
+		<rpm-force>false</rpm-force>
+		<bootsplash-theme>HSF</bootsplash-theme>
+		<bootloader-theme>HSF</bootloader-theme>
+		<locale>en_GB</locale>
+	</preferences>
+	<users group='users'>
+		<user name='hacker' pwd='$1$bt1tLGOm$gLnv3aIEyKN0gsj5T2BZp0' home='/home/hacker' shell='/usr/bin/zsh'/>
+	</users>
+	<users group='root'>
+		<user name='root' pwd='$1$swBREFsk$22GzIU89QzoL7uMa9zzun1' home='/root' shell='/bin/bash'/>
+	</users>

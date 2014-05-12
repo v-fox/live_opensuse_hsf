@@ -1,0 +1,13 @@
+yast2_basis
+sw_management
+enhanced_base
+enhanced_base_opt
+apparmor
+fonts
+x11
+x11_yast
+yast2_install_wf
+office
+fonts_opt
+office_opt
+lxde-qt

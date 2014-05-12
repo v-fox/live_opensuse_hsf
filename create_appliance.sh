@@ -1,5 +1,63 @@
 #!/bin/bash
 
+## config.xml generation
+# header
+CONFIG="$(source/config.xml)"
+cat > "${CONFIG}" <<EOF
+<?xml version='1.0' encoding='UTF-8'?>
+<image name='Hackeurs_Sans_Frontieres' displayname='Hackeurs_Sans_Frontieres' schemaversion='5.2'>
+EOF
+# primary info
+cat config/head >> "${CONFIG}"
+# package selection definition
+CONFIG="$(source/config.xml)"
+cat >> "${CONFIG}" <<EOF
+	<packages type='image' patternType='onlyRequired'>
+		<product name="openSUSE"/>
+EOF
+# package patterns
+for i in read < config/packages.patterns; do
+	echo "		<namedCollection name='${i}'/>" >> "${CONFIG}"
+done
+# kernel package
+cat config/packages.kernel >> "${CONFIG}"
+# packages included only in initrd
+for i in read < config/packages.initrd; do
+	echo "		<package name='${i}' bootinclude='true' bootdelete='true'/>" >> "${CONFIG}"
+done
+# packages included in both initrd and root
+for i in read < config/packages.common; do
+	echo "		<package name='${i}' bootinclude='true'/>" >> "${CONFIG}"
+done
+# packages included only in root / actual system
+for i in read < config/packages.common; do
+	echo "		<package name='${i}'/>" >> "${CONFIG}"
+done
+# bootstrap packagesz
+cat >> "${CONFIG}" <<EOF
+	</packages>
+	<packages type='bootstrap'>
+EOF
+for i in read < config/packages.preliminary; do
+	echo "		<package name='${i}'/>" >> "${CONFIG}"
+done
+# packages to delete from system before image creation
+cat >> "${CONFIG}" <<EOF
+	</packages>
+	<packages type='bootstrap'>
+EOF
+for i in read < config/packages.unwanted; do
+	echo "		<package name='${i}'/>" >> "${CONFIG}"
+done
+cat >> "${CONFIG}" <<EOF
+	</packages>
+EOF
+# repositories
+cat config/repositories >> "${CONFIG}"
+cat >> "${CONFIG}" <<EOF
+</image>
+EOF
+
 # Variables.
 BUILD_DATE="$(date +%Y%m%d)"
 
@@ -10,14 +68,13 @@ while read_dom; do
 	echo "${C}"
 	exit
 fi
-done < source/config.xml)
+done < config.xml/head)
 
 if [ -d .git ]; then
 	echo "** Making this build environment's snapshot and putting it out for inclusion into your future image:"
 	VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
 	VERSION_GIT_FULL="$(git describe | sed 's/v//')"
 	# making snapshot of entire sources to put into built image
-	rm -fv "source/root/home/hacker/Hackeurs Sans Frontières - build code"*
 	git archive --format=tar --prefix=Hackeurs_Sans_Frontieres-${VERSION_CONFIG}/ HEAD | \
 	xz -c -vv -9 > "source/root/home/hacker/Hackeurs Sans Frontières - build code - ${VERSION_CONFIG}_${BUILD_DATE}.tar.xz"
 else
@@ -131,3 +188,7 @@ run_cmd "$kiwi --build $src/ -d $dst"
 # And we're done!
 echo -n "** Moving iso-file: "
 mv -v "${isofile}" "${isofile_proper}"
+
+# cleaning up
+echo "** CLeaning up auto-generated files..."
+rm -fv source/{config.xml,root/{etc/os-release,"home/hacker/Hackeurs Sans Frontières - build code"*}}
