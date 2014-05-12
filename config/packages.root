@@ -11,6 +11,7 @@ autofs
 avahi
 avahi-autoipd
 avahi-utils
+baobab
 bitmap
 bluedevil
 bluez
@@ -18,6 +19,7 @@ branding-basedonopensuse
 btrfsprogs
 bundle-lang-common-en
 caca-utils
+ca-certificates
 calibre
 clementine
 command-not-found
@@ -37,6 +39,7 @@ connman-plugin-tist
 connman-plugin-vpnc
 conntrack-tools
 copyq
+cracklib-dict-full
 crda
 Crystalcursors
 davfs2
@@ -62,6 +65,8 @@ exfat-utils
 ext3grep
 ffmpeg
 ffmpeg-tools
+file
+filesystem
 filezilla
 firmwarekit
 FirmwareUpdateKit
@@ -82,6 +87,7 @@ gimp-plugin-lqr
 gimp-plugins-python
 gimp-save-for-web
 gimp-ufraw
+glibc-locale
 gnome-icon-theme
 gnome-keyring-pam
 gnome-keyring-sharp
@@ -300,12 +306,14 @@ Mesa-demo-x
 minicom
 ModemManager
 modem-manager-gui
+module-init-tools
 MozillaFirefox
 mozilla-kde4-integration
 MozillaThunderbird
 mtd-utils
 mtp-tools
 mtr
+ncdu
 netlabel-tools
 NetworkManager-gnome
 NetworkManager-openconnect
@@ -325,6 +333,7 @@ openldap2-client
 openssh
 openssh-askpass
 openssh-helpers
+openssl-certs
 opus-tools
 oxygen-icon-theme-large
 p7zip-gui
@@ -377,6 +386,7 @@ traceroute
 translation-update
 tuxcursors
 ucode-intel
+udev
 udisks
 udisks2
 upower
@@ -396,6 +406,7 @@ wallpaper-branding-HSF
 wdfs
 webpin
 wget
+which
 whois
 wireless-regdb
 wireless-tools
@@ -456,12 +467,3 @@ zfsonlinux-zfs-dkms
 zsh
 zypper
 zypper-aptitude
-file
-filesystem
-glibc-locale
-udev
-module-init-tools
-which
-openssl-certs
-cracklib-dict-full
-ca-certificates

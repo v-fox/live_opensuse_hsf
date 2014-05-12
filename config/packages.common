@@ -1,5 +1,3 @@
-plymouth-branding-HSF
-grub2-branding-HSF
 adaptec-firmware
 alsa-firmware
 atmel-firmware
@@ -7,12 +5,14 @@ b43-firmware
 b43legacy-firmware
 bluez-firmware
 crystalhd-firmware
+disktype
+grub2-branding-HSF
 ipw-firmware
+less
 midisport-firmware
 mpt-firmware
+nano
+plymouth-branding-HSF
 technisat-usb2-firmware
 ucode-amd
 zd1211-firmware
-disktype
-less
-nano

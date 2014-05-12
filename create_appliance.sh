@@ -1,87 +1,6 @@
 #!/bin/bash
 
-## config.xml generation
-# header
-CONFIG="$(source/config.xml)"
-cat > "${CONFIG}" <<EOF
-<?xml version='1.0' encoding='UTF-8'?>
-<image name='Hackeurs_Sans_Frontieres' displayname='Hackeurs_Sans_Frontieres' schemaversion='5.2'>
-EOF
-# primary info
-cat config/head >> "${CONFIG}"
-# package selection definition
-CONFIG="$(source/config.xml)"
-cat >> "${CONFIG}" <<EOF
-	<packages type='image' patternType='onlyRequired'>
-		<product name="openSUSE"/>
-EOF
-# package patterns
-for i in read < config/packages.patterns; do
-	echo "		<namedCollection name='${i}'/>" >> "${CONFIG}"
-done
-# kernel package
-cat config/packages.kernel >> "${CONFIG}"
-# packages included only in initrd
-for i in read < config/packages.initrd; do
-	echo "		<package name='${i}' bootinclude='true' bootdelete='true'/>" >> "${CONFIG}"
-done
-# packages included in both initrd and root
-for i in read < config/packages.common; do
-	echo "		<package name='${i}' bootinclude='true'/>" >> "${CONFIG}"
-done
-# packages included only in root / actual system
-for i in read < config/packages.common; do
-	echo "		<package name='${i}'/>" >> "${CONFIG}"
-done
-# bootstrap packagesz
-cat >> "${CONFIG}" <<EOF
-	</packages>
-	<packages type='bootstrap'>
-EOF
-for i in read < config/packages.preliminary; do
-	echo "		<package name='${i}'/>" >> "${CONFIG}"
-done
-# packages to delete from system before image creation
-cat >> "${CONFIG}" <<EOF
-	</packages>
-	<packages type='bootstrap'>
-EOF
-for i in read < config/packages.unwanted; do
-	echo "		<package name='${i}'/>" >> "${CONFIG}"
-done
-cat >> "${CONFIG}" <<EOF
-	</packages>
-EOF
-# repositories
-cat config/repositories >> "${CONFIG}"
-cat >> "${CONFIG}" <<EOF
-</image>
-EOF
-
-# Variables.
-BUILD_DATE="$(date +%Y%m%d)"
-
-read_dom () { local IFS=\> ; read -d \< E C ;}
-VERSION_CONFIG=$(
-while read_dom; do
-	if [[ "${E}" = version ]]; then
-	echo "${C}"
-	exit
-fi
-done < config.xml/head)
-
-if [ -d .git ]; then
-	echo "** Making this build environment's snapshot and putting it out for inclusion into your future image:"
-	VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
-	VERSION_GIT_FULL="$(git describe | sed 's/v//')"
-	# making snapshot of entire sources to put into built image
-	git archive --format=tar --prefix=Hackeurs_Sans_Frontieres-${VERSION_CONFIG}/ HEAD | \
-	xz -c -vv -9 > "source/root/home/hacker/Hackeurs Sans Frontières - build code - ${VERSION_CONFIG}_${BUILD_DATE}.tar.xz"
-else
-	VERSION_GIT="${VERSION_CONFIG}"
-	VERSION_GIT_FULL="${VERSION_CONFIG}"
-fi
-
+# basic variables.
 image_arch='x86_64'
 declare -a repos=()
 
@@ -89,16 +8,13 @@ dir="$(dirname $0)"
 src="$dir/source"
 dst="$dir/image"
 
-isofile="${dst}/Hackeurs_Sans_Frontieres.${image_arch}-${VERSION_CONFIG}.iso"
-isofile_proper="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
-
 # Check that we're root.
 if [ `whoami` != 'root' ]; then
   echo "Please run this script as root."
   exit 1
 fi
 
-if ! [ -d "$src/" ] || ! [ -f "$src/config.xml" ]; then
+if ! [ -d "$src/" ] || ! [ -d "config" ]; then
   printf "%s: %s\n" \
     "$0" "Cannot find appliance source." \
     "$0" "cd into the appliance directory and run './create_appliance.sh'." \
@@ -107,47 +23,16 @@ if ! [ -d "$src/" ] || ! [ -f "$src/config.xml" ]; then
 fi
 
 # Check that kiwi is installed.
+echo "** Checking for internal repositories..."
 kiwi=`which kiwi 2> /dev/null`
 if [ $? -ne 0 ]; then
   echo "Kiwi is required but not found on your system."
   echo "Run the following command to install kiwi:"
   echo
-  echo "  zypper install kiwi kiwi-tools kiwi-desc-* kiwi-doc"
+  echo "  zypper install kiwi kiwi-tools kiwi-desc-isoboot kiwi-doc"
   echo
   exit 1
 fi
-
-# Prints and runs the given command. Aborts if the command fails.
-function run_cmd {
-  command=$1
-  echo $command
-  $command
-  if [ $? -ne 0 ]; then
-    echo
-    echo "** Appliance creation failed!"
-    exit 1
-  fi
-}
-
-# Display usage.
-function usage {
-  echo >&2 "Usage:"
-  echo >&2 "  create_appliance.sh"
-}
-
-function url_unknown {
-  local repo="${1?}"
-  [ -f /etc/kiwi/repoalias ] || return 0
-  ! grep -q "^{$repo}" /etc/kiwi/repoalias
-}
-
-function add_repo_url {
-  local repo="${1?}"
-  read -p "Enter repository URL for '$repo': " url
-  mkdir -p /etc/kiwi
-  echo "{$repo} $url" >> /etc/kiwi/repoalias \
-  && echo "{$repo} $url alias added to /etc/kiwi/repoalias"
-}
 
 # Check architecture (i686, x86_64).
 sys_arch=`uname -m`
@@ -164,6 +49,118 @@ elif [ "$image_arch" = 'x86_64' ] && [ "$sys_arch" = 'i686' ]; then
   exit 1
 fi
 
+# Variables.
+echo "** Setting up versioning variables..."
+read VERSION_CONFIG < config/version
+CONFIG="source/config.xml"
+BUILD_DATE="$(date +%Y%m%d)"
+NAME="Hackeurs_Sans_Frontieres"
+NAME_PREFIX="${NAME}-${VERSION_CONFIG}"
+SNAPSHOT_NAMEBASE="home/hacker/Hackeurs Sans Frontières - build sources"
+SNAPSHOT="source/root/${SNAPSHOT_NAMEBASE} - ${VERSION_CONFIG}_${BUILD_DATE}.tar"
+isofile="${dst}/${NAME}.${image_arch}-${VERSION_CONFIG}.iso"
+isofile_proper="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
+
+# Cleaning up.
+echo "** CLeaning up auto-generated files..."
+while read i; do
+	echo "	removing '${i}'"
+	rm -rf ${i}
+done < config/generated
+
+## config.xml generation.
+echo "** Generating ${CONFIG}..."
+# header
+cat > "${CONFIG}" <<EOF
+<?xml version='1.0' encoding='UTF-8'?>
+<image name='${NAME}' displayname='${NAME}' schemaversion='5.2'>
+EOF
+# primary info
+cat config/head >> "${CONFIG}"
+# build version
+cat >> "${CONFIG}" <<EOF
+		<version>${VERSION_CONFIG}</version>
+	</preferences>
+EOF
+# users
+cat config/users >> "${CONFIG}"
+# package selection definition
+cat >> "${CONFIG}" <<EOF
+	<packages type='image' patternType='onlyRequired'>
+		<product name="openSUSE"/>
+EOF
+# package patterns
+while read i; do
+	echo "		<namedCollection name='${i}'/>" >> "${CONFIG}"
+done < config/packages.patterns
+# kernel package
+cat config/packages.kernel >> "${CONFIG}"
+# packages included only in initrd
+while read i; do
+	echo "		<package name='${i}' bootinclude='true' bootdelete='true'/>" >> "${CONFIG}"
+done < config/packages.initrd
+# packages included in both initrd and root
+while read i; do
+	echo "		<package name='${i}' bootinclude='true'/>" >> "${CONFIG}"
+done < config/packages.common
+# packages included only in root / actual system
+while read i; do
+	echo "		<package name='${i}'/>" >> "${CONFIG}"
+done < config/packages.root
+# bootstrap packagesz
+cat >> "${CONFIG}" <<EOF
+	</packages>
+	<packages type='bootstrap'>
+EOF
+while read i; do
+	echo "		<package name='${i}'/>" >> "${CONFIG}"
+done < config/packages.preliminary
+# packages to delete from system before image creation
+cat >> "${CONFIG}" <<EOF
+	</packages>
+	<packages type='bootstrap'>
+EOF
+while read i; do
+	echo "		<package name='${i}'/>" >> "${CONFIG}"
+done < config/packages.unwanted
+cat >> "${CONFIG}" <<EOF
+	</packages>
+EOF
+# repositories
+cat config/repositories >> "${CONFIG}"
+cat >> "${CONFIG}" <<EOF
+</image>
+EOF
+
+# Build sources snapshot creation.
+echo "** Making this build environment's snapshot and putting it out for inclusion into your future image:"
+if [ -d .git ]; then
+	VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
+	VERSION_GIT_FULL="$(git describe | sed 's/v//')"
+	# making snapshot of entire sources to put into built image
+	git archive --format=tar --prefix="${NAME_PREFIX}"/ HEAD -o "${SNAPSHOT}"
+else
+	VERSION_GIT="${VERSION_CONFIG}"
+	VERSION_GIT_FULL="${VERSION_CONFIG}"
+	tar cpf "${SNAPSHOT}" --transform "s:.:./${NAME_PREFIX}/:" -X config/generated .
+fi
+# adding generated config.xml into snapshot too, just as example
+tar rpf "${SNAPSHOT}" --transform "s:^:/${NAME_PREFIX}/:" ${CONFIG}
+xz -vv -9 "${SNAPSHOT}" || exit 1
+
+# kiwi repo logic
+function url_unknown {
+  local repo="${1?}"
+  [ -f /etc/kiwi/repoalias ] || return 0
+  ! grep -q "^{$repo}" /etc/kiwi/repoalias
+}
+function add_repo_url {
+  local repo="${1?}"
+  read -p "Enter repository URL for '$repo': " url
+  mkdir -p /etc/kiwi
+  echo "{$repo} $url" >> /etc/kiwi/repoalias \
+  && echo "	{$repo} $url alias added to /etc/kiwi/repoalias"
+}
 # Replace internal repositories in config.xml.
 echo "** Checking for internal repositories..."
 for repo in "${repos[@]}"; do
@@ -179,16 +176,18 @@ sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
 	> source/root/etc/os-release
 
 # Create appliance.
-echo
-echo "** Creating appliance..."
-rm -rf build/root
+echo "** Removing root from previous build..."
+rm -rf image/build
 
-run_cmd "$kiwi --build $src/ -d $dst"
+echo "** Creating appliance..."
+command="$kiwi --build $src/ -d $dst"
+echo $command
+$command
+if [ $? -ne 0 ]; then
+	echo "** Appliance creation failed!"
+	exit 1
+fi
 
 # And we're done!
 echo -n "** Moving iso-file: "
 mv -v "${isofile}" "${isofile_proper}"
-
-# cleaning up
-echo "** CLeaning up auto-generated files..."
-rm -fv source/{config.xml,root/{etc/os-release,"home/hacker/Hackeurs Sans Frontières - build code"*}}

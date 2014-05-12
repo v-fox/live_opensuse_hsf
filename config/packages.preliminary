@@ -1,9 +1,9 @@
+ca-certificates
+cracklib-dict-full
 file
 filesystem
 glibc-locale
-udev
 module-init-tools
-which
 openssl-certs
-cracklib-dict-full
-ca-certificates
+udev
+which

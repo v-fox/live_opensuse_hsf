@@ -11,17 +11,9 @@
 				</temporary>
 			</split>
 		</type>
-		<version>0.5.0</version>
 		<packagemanager>zypper</packagemanager>
 		<rpm-check-signatures>false</rpm-check-signatures>
 		<rpm-force>false</rpm-force>
 		<bootsplash-theme>HSF</bootsplash-theme>
 		<bootloader-theme>HSF</bootloader-theme>
 		<locale>en_GB</locale>
-	</preferences>
-	<users group='users'>
-		<user name='hacker' pwd='$1$bt1tLGOm$gLnv3aIEyKN0gsj5T2BZp0' home='/home/hacker' shell='/usr/bin/zsh'/>
-	</users>
-	<users group='root'>
-		<user name='root' pwd='$1$swBREFsk$22GzIU89QzoL7uMa9zzun1' home='/root' shell='/bin/bash'/>
-	</users>
