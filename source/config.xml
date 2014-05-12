@@ -6,7 +6,7 @@
 		<specification>Big, useful desktop appliance with slim DEs</specification>
 	</description>
 	<preferences>
-		<type checkprebuilt='true' boot='isoboot/suse-13.1' firmware='efi' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='clic' hybrid='true' hybridpersistent='true' kernelcmdline=' ro splash=verbose' image='iso' primary='true'>
+		<type image='iso' primary='true' checkprebuilt='false' boot='isoboot/suse-13.1' firmware='efi' bootprofile='desktop' bootkernel='desktop' fsnocheck='true' flags='clic' hybridpersistent='true' kernelcmdline='splash=verbose'>
 			<split>
 				<temporary>
 					<file name='/*'/>
@@ -42,10 +42,6 @@
 		<namedCollection name='fonts_opt'/>
 		<namedCollection name='office_opt'/>
 		<namedCollection name='lxde-qt'/>
-		<package name='clicfs' bootinclude='true'/>
-		<package name='squashfs' bootinclude='true'/>
-		<package name='lvm2' bootinclude='true'/>
-		<package name='plymouth' bootinclude='true'/>
 		<package name='plymouth-branding-HSF' bootinclude='true'/>
 		<package name="gfxboot-devel" bootinclude='true' bootdelete='true'/>
 		<package name='gfxboot-branding-HSF' bootinclude='true' bootdelete='true'/>
@@ -83,7 +79,7 @@
 		<package name='bluedevil'/>
 		<package name='bluez'/>
 		<package name='branding-basedonopensuse'/>
-		<package name='btrfsprogs' bootinclude='true'/>
+		<package name='btrfsprogs'/>
 		<package name='bundle-lang-common-en'/>
 		<package name='caca-utils'/>
 		<package name='calibre'/>
@@ -111,7 +107,7 @@
 		<package name='dejavu-fonts'/>
 		<package name='deltarpm'/>
 		<package name='desktop-translations'/>
-		<package name='disktype'/>
+		<package name='disktype' bootinclude='true'/>
 		<package name='dnsmasq'/>
 		<package name='dolphin'/>
 		<package name='dolphin-plugins'/>
