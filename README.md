@@ -1,8 +1,8 @@
 ﻿Hackeurs Sans Frontières - OpenSUSE-based live cd/usb aimed to be fully functional slim desktop system for advanced users
-========================================================================================================================
+=========================================================================================================================
 
 This is live/installation simplistic yet powerful OpenSUSE spin aimed for out-of-the-box desktop usage by advanced users in countries without software patent racket.
-It DOES NOT provide encryption and best security defaults, so users with sensitive needs are advised to direct their attention to something like TAILS (https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
+It DOES NOT provide encryption and best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
 
 It provides:
 ------------
@@ -41,19 +41,19 @@ Building:
 ---------
 ∀ every build comes with its building source in '/home/hacker/Hackeurs Sans Frontières - build code - ${VERSION_CONFIG}_${BUILD_DATE}.tar.xz'
 ∀ you can build your own image by:
-	1) using openSUSE
-	2) having "kiwi" and "kiwi-desc-isoboot" packages installed
-	3) editing files, starting from 'source/' and 'create_appliance.sh', or not
-	4) running `create_appliance.sh`
-	5) waiting quite a bit
+	01) using openSUSE
+	02) having "kiwi" and "kiwi-desc-isoboot" packages installed
+	03) editing files, starting from 'source/' and 'create_appliance.sh', or not
+	04) running `create_appliance.sh`
+	05) waiting quite a bit
 ∀ the process of development for this project is like this:
-	1) _future_ release version is set in 'source/version'
-	2) desired changes are made and package lists are sorted via `config/sort.sh`
-	3) `git commit` issued
-	4) image is build via `create_appliance.sh`
-	5) image is booted on real hardware and tested, maybe in virtual hardware also
-	6) bugs and insufficiencies are noted/reported/filed
-	7) fixes made
-	8) new image is tested and steps 6-7-8 are repeated until condition is satisfactory
-	9) the image that deemed satisfactory is considered as current release, `git tag -a` is issued with "future", now current, version
-	10) everythin is repeated
+	01) _future_ release version is set in 'source/version'
+	02) desired changes are made and package lists are sorted via `config/sort.sh`
+	03) `git commit` issued
+	04) image is build via `create_appliance.sh`
+	05) image is booted on real hardware and tested, maybe in virtual hardware also
+	06) bugs and insufficiencies are noted/reported/filed
+	07) fixes made
+	08) new image is tested and steps 6-7-8 are repeated until condition is satisfactory
+	09) the image that deemed satisfactory is considered as current release, `git tag -a` is issued with "future", now current, version
+	10) everything is repeated
