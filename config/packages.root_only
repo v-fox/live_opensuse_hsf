@@ -308,7 +308,6 @@ ModemManager
 modem-manager-gui
 module-init-tools
 MozillaFirefox
-mozilla-kde4-integration
 MozillaThunderbird
 mtd-utils
 mtp-tools

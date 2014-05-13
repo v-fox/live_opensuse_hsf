@@ -4,3 +4,4 @@
 	<users group='root'>
 		<user name='root' pwd='$1$swBREFsk$22GzIU89QzoL7uMa9zzun1' home='/root' shell='/bin/bash'/>
 	</users>
+	

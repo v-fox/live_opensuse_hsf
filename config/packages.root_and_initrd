@@ -7,8 +7,8 @@ bluez-firmware
 crystalhd-firmware
 disktype
 gfxboot
-gfxboot-devel
 gfxboot-branding-HSF
+gfxboot-devel
 grub2-branding-HSF
 ipw-firmware
 less
