@@ -56,7 +56,9 @@ CONFIG="source/config.xml"
 BUILD_DATE="$(date +%Y%m%d)"
 NAME="Hackeurs_Sans_Frontieres"
 NAME_PREFIX="${NAME}-${VERSION_CONFIG}"
-SNAPSHOT_NAMEBASE="home/hacker/Hackeurs Sans Frontières - build sources"
+# we need avoid using variables like this, with non-latin symbols inside
+# bash loses it shit and spoils the name with escape-encoded bullshit
+SNAPSHOT_NAMEBASE="home/hacker/Hackeurs Sans Frontieres - build sources"
 SNAPSHOT="source/root/${SNAPSHOT_NAMEBASE} - ${VERSION_CONFIG}_${BUILD_DATE}.tar"
 isofile="${dst}/${NAME}.${image_arch}-${VERSION_CONFIG}.iso"
 isofile_proper="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
