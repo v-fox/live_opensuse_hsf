@@ -89,7 +89,7 @@ cat config/users >> "${CONFIG}"
 # package selection definition
 cat >> "${CONFIG}" <<EOF
 	<packages type='image' patternType='onlyRequired'>
-		<product name="openSUSE"/>
+		<opensuseProduct name="openSUSE"/>
 EOF
 # package patterns
 while read i; do

@@ -11,7 +11,6 @@ autofs
 avahi
 avahi-autoipd
 avahi-utils
-baobab
 bitmap
 bluedevil
 bluez
@@ -47,8 +46,8 @@ dejavu-fonts
 deltarpm
 desktop-translations
 dnsmasq
-dolphin
-dolphin-plugins
+konqueror
+konqueror-plugins
 dos2unix
 dosfstools
 e2fsprogs-snapshots
@@ -197,7 +196,7 @@ leechcraft-deadlyrics
 leechcraft-devmon
 leechcraft-dolozhee
 leechcraft-dumbeep
-leechcraft-fenet-kwin
+leechcraft-fenet-openbox
 leechcraft-gacts
 leechcraft-glance
 leechcraft-gmailnotifier

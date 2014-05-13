@@ -7,7 +7,7 @@ It DOES NOT provide encryption and best security defaults, so users with sensiti
 It provides:
 ------------
 * fresh Stable kernel from Kernel:stable repo, fresh OSS video stack from pontostroy
-* slim LXQt (default) and E17 desktop environments from their respective repos
+* slim LXQt (default) and Enlightenment desktop environments from their respective repos
 * LeechCraft modular system as a foundation of your basic-needs software kit
 * fresh Mozilla Firefox browser and Thunderbird e-mail client for your web-surfing needs
 * Clementine audio player, VLC and S/Mplayer video players for your multimedia needs
@@ -34,8 +34,13 @@ Notes:
 ------
 ⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
 ⊙ DE-specific apps are included for the lack of adequate analogues
-	KDE: dolphin, bluedevil, yakuake, kwrite, okular, gwenview
-	GNOME: nm-applet (this is _the only_ NM GUI that can launch in any DE), baobab
+	KDE: 	konqueror (feature-rich file manager), not dolphin because of its plasma & entire KDE4 workspace dependency
+		bluedevil (bluez control),
+		yakuake (handy console),
+		kwrite (good simple editor),
+		okular (useful doc viewer),
+		gwenview (useful image viewer)
+	GNOME: 	nm-applet (this is _the only_ NM GUI that can launch in any DE)
 
 Building:
 ---------
