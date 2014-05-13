@@ -67,7 +67,7 @@ isofile_proper="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
 echo "** CLeaning up auto-generated files..."
 while read i; do
 	echo "	removing '${i}'"
-	rm -rf ${i}
+	rm -fr ${i}
 done < config/generated
 
 ## config.xml generation.

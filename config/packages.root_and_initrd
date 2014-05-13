@@ -6,7 +6,9 @@ b43legacy-firmware
 bluez-firmware
 crystalhd-firmware
 disktype
+gfxboot
 gfxboot-devel
+gfxboot-branding-HSF
 grub2-branding-HSF
 ipw-firmware
 less

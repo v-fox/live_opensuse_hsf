@@ -1,4 +1,4 @@
 image/*
 source/root/etc/os-release
-source/root/home/hacker/Hackeurs Sans Frontieres - build sources*
+source/root/home/hacker/*.tar.xz
 source/config.xml
