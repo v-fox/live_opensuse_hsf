@@ -2,4 +2,4 @@ image/
 source/config.xml
 *.iso
 source/root/etc/os-release
-source/root/home/hacker/Hackeurs\ Sans\ Frontières\ -\ build\ code*
+source/root/home/hacker/*.tar.xz

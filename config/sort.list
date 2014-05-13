@@ -1,0 +1,6 @@
+packages.patterns
+packages.to_be_deleted_manually_in_scripts_or_some_shit
+packages.root_and_initrd
+packages.root_only
+packages.bootstrap
+packages.excluded_from_root

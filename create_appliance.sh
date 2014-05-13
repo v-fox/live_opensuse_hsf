@@ -73,7 +73,7 @@ echo "** Generating ${CONFIG}..."
 # header
 cat > "${CONFIG}" <<EOF
 <?xml version='1.0' encoding='UTF-8'?>
-<image name='${NAME}' displayname='${NAME}' schemaversion='5.2'>
+<image name='${NAME}' displayname='HSF' schemaversion='5.2'>
 EOF
 # primary info
 cat config/head >> "${CONFIG}"
@@ -98,15 +98,15 @@ cat config/packages.kernel >> "${CONFIG}"
 # packages included only in initrd
 while read i; do
 	echo "		<package name='${i}' bootinclude='true' bootdelete='true'/>" >> "${CONFIG}"
-done < config/packages.initrd
+done < config/packages.to_be_deleted_manually_in_scripts_or_some_shit
 # packages included in both initrd and root
 while read i; do
 	echo "		<package name='${i}' bootinclude='true'/>" >> "${CONFIG}"
-done < config/packages.common
+done < config/packages.root_and_initrd
 # packages included only in root / actual system
 while read i; do
 	echo "		<package name='${i}'/>" >> "${CONFIG}"
-done < config/packages.root
+done < config/packages.root_only
 # bootstrap packagesz
 cat >> "${CONFIG}" <<EOF
 	</packages>
@@ -114,15 +114,15 @@ cat >> "${CONFIG}" <<EOF
 EOF
 while read i; do
 	echo "		<package name='${i}'/>" >> "${CONFIG}"
-done < config/packages.preliminary
+done < config/packages.bootstrap
 # packages to delete from system before image creation
 cat >> "${CONFIG}" <<EOF
 	</packages>
-	<packages type='bootstrap'>
+	<packages type='delete'>
 EOF
 while read i; do
 	echo "		<package name='${i}'/>" >> "${CONFIG}"
-done < config/packages.unwanted
+done < config/packages.excluded_from_root
 cat >> "${CONFIG}" <<EOF
 	</packages>
 EOF
