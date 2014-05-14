@@ -55,7 +55,6 @@ baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 #======================================
 # CUSTOMIZATION
 #--------------------------------------
-suseGFXBoot HSF isolinux
 baseSetupUserPermissions
 suseActivateDefaultServices
 systemctl disable xdm

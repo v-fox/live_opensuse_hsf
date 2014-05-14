@@ -15,6 +15,8 @@ echo "Configure image: [$kiwi_iname]..."
 #------------------------------------------
 baseSetupBuildDay
 
+# isolinux graphical theme
+gfxboot --update-theme HSF
 #==========================================
 # umount
 #------------------------------------------

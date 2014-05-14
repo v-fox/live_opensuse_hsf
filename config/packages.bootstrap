@@ -1,16 +1,10 @@
 ca-certificates
-clicfs
 cracklib-dict-full
 file
 filesystem
 genisoimage
-gfxboot
 glibc-locale
-lvm2
 module-init-tools
 openssl-certs
-parted
-squashfs
-syslinux
 udev
 which
