@@ -13,7 +13,7 @@ SCRIPT_DIR="/usr/share/firstboot/scripts"
 # Path to firstboot workflow file. Change this to provide customized file
 # with a description of the workflow sequence.
 #
-FIRSTBOOT_CONTROL_FILE="/etc/YaST2/config-yast-firstboot.xml"
+FIRSTBOOT_CONTROL_FILE="/etc/YaST2/firstboot.xml"
 
 ## Type:        string
 ## Default:     ""

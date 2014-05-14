@@ -46,6 +46,8 @@ dejavu-fonts
 deltarpm
 desktop-translations
 dnsmasq
+dolphin
+dolphin-plugins
 dos2unix
 dosfstools
 e2fsprogs-snapshots
@@ -139,9 +141,11 @@ irqbalance
 isight-firmware-tools
 kdeartwork4-icons
 kde-oxygen-fonts
+kio_iso
+kio_kamera
+kio_mtp
+kio_sysinfo
 kmscon
-konqueror
-konqueror-plugins
 kparts-plugin
 kwrite
 laptop-mode-tools
@@ -298,6 +302,7 @@ lightdm-gtk-greeter
 lsof
 lxqt-appswitcher
 lxqt-lightdm-greeter
+make
 man
 man-pages
 mc
@@ -334,12 +339,13 @@ openssh-askpass
 openssh-helpers
 openssl-certs
 opus-tools
-oxygen-icon-theme-large
+oxygen-icon-theme
 p7zip-gui
 PackageKit-browser-plugin
 PackageKit-gstreamer-plugin
 pam_ssh
 pax-utils
+phonon-backend-vlc
 photorec
 pin
 pm-profiler
@@ -427,6 +433,7 @@ xlsfonts
 xorg-x11
 xorg-x11-driver-input
 xorg-x11-driver-video
+xorg-x11-essentials
 xorg-x11-fonts
 xorg-x11-libs
 xorg-x11-libX11-ccache

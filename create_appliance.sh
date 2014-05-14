@@ -75,7 +75,7 @@ echo "** Generating ${CONFIG}..."
 # header
 cat > "${CONFIG}" <<EOF
 <?xml version='1.0' encoding='UTF-8'?>
-<image name='${NAME}' displayname='HSF' schemaversion='5.2'>
+<image name='${NAME}' displayname='${NAME}' schemaversion='5.2'>
 EOF
 # primary info
 cat config/head >> "${CONFIG}"
