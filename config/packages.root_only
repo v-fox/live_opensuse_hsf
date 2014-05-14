@@ -46,8 +46,6 @@ dejavu-fonts
 deltarpm
 desktop-translations
 dnsmasq
-konqueror
-konqueror-plugins
 dos2unix
 dosfstools
 e2fsprogs-snapshots
@@ -142,6 +140,8 @@ isight-firmware-tools
 kdeartwork4-icons
 kde-oxygen-fonts
 kmscon
+konqueror
+konqueror-plugins
 kparts-plugin
 kwrite
 laptop-mode-tools
@@ -314,10 +314,10 @@ mtr
 ncdu
 netlabel-tools
 NetworkManager-gnome
-NetworkManager-openconnect
-NetworkManager-openvpn
-NetworkManager-pptp
-NetworkManager-vpnc
+NetworkManager-openconnect-gnome
+NetworkManager-openvpn-gnome
+NetworkManager-pptp-gnome
+NetworkManager-vpnc-gnome
 nfs4-acl-tools
 nfs-client
 nmap
