@@ -77,6 +77,7 @@ fslsfonts
 fuse
 gegl-0_2
 gettext-tools
+gfxboot-branding-HSF
 gimp
 gimp-gap
 gimp-plugin-dds
@@ -467,4 +468,3 @@ zfsonlinux-zfs-dkms
 zsh
 zypper
 zypper-aptitude
-gfxboot-branding-HSF
