@@ -88,25 +88,6 @@
                     <name>firstboot_keyboard</name>
                 </module>
                 <module>
-                    <label>Welcome</label>
-                    <name>firstboot_welcome</name>
-                </module>
-                <module>
-                    <label>License Agreements</label>
-                    <enabled config:type="boolean">false</enabled>
-                    <name>firstboot_licenses</name>
-                </module>
-                <module>
-                    <label>License Agreement</label>
-                    <enabled config:type="boolean">true</enabled>
-                    <name>firstboot_license_novell</name>
-                </module>
-                <module>
-                    <label>License Agreement</label>
-                    <enabled config:type="boolean">true</enabled>
-                    <name>firstboot_license</name>
-                </module>
-                <module>
                     <label>Host Name</label>
                     <enabled config:type="boolean">false</enabled>
                     <name>inst_hostname</name>
@@ -124,7 +105,7 @@
                 <module>
                     <label>Network</label>
                     <name>inst_proposal</name>
-                    <enabled config:type="boolean">false</enabled>
+                    <enabled config:type="boolean">true</enabled>
                     <proposal>firstboot_network</proposal>
                 </module>
                  <module>
@@ -139,19 +120,13 @@
                 </module>
                 <module>
                     <label>NTP Client</label>
-                    <enabled config:type="boolean">false</enabled>
+                    <enabled config:type="boolean">true</enabled>
                     <name>firstboot_ntp</name>
                 </module>
                 <module>
                     <label>Desktop</label>
                     <enabled config:type="boolean">false</enabled>
                     <name>firstboot_desktop</name>
-                </module>
-                <module>
-                    <label>Network</label>
-                    <name>inst_proposal</name>
-                    <enabled config:type="boolean">true</enabled>
-                    <proposal>firstboot_network</proposal>
                 </module>
                 <module>
                     <label>Root Password</label>
@@ -185,11 +160,6 @@
                     <enable_back>no</enable_back>
                     <enable_next>no</enable_next>
                 </module>
-                <module>
-                    <label>Finish Setup</label>
-                    <name>inst_congratulate</name>
-                </module>
-
             </modules>
         </workflow>
     </workflows>

@@ -12,15 +12,16 @@ It provides:
 * fresh Mozilla Firefox browser and Thunderbird e-mail client for your web-surfing needs
 * Clementine audio player, VLC and S/Mplayer video players for your multimedia needs
 * LibreOffice, Calibre and GIMP for your documentational needs
-* Tor and Polipo for your anti-censorship needs
-* zsh, kmscon, nmap and other various console & networking tools
+* Tor, Polipo and proxychains for your anti-censorship needs
+* nmap, reaver, hydra/-gtk, mtr, rancid, minicom, lftp for your networking needs
+* mc, zsh, kmscon, android-tools and other various console tools
 * gparted, testdisk, snapper, disktype and other filesystem tools
 * exfat and zfs kernel modules
 * bunch of useful repos pre-configured for games, emulators and recent, mostly stable updates
 
 It does NOT provide:
 --------------------
-— proprietary video drivers (because they suck and are pain in the ass) and video driver support for anything without KMS, for that matter
+— proprietary video drivers (because they suck and are pain in the ass), and video driver support for anything without KMS for that matter
 — KDE or Gnome pre-installed (because of how fat the former and how ugly the later are)
 — any language packages (for space conservation). add your language in yast after installation
 — Wayland packages (because it's too raw yet)
@@ -34,13 +35,15 @@ Notes:
 ------
 ⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
 ⊙ DE-specific apps are included for the lack of adequate analogues
-	KDE: 	konqueror (feature-rich file manager), not dolphin because of its plasma & entire KDE4 workspace dependency
+	KDE: 	krusader (dolphin+konqueror+mc in one package and more ? yes, please)
 		bluedevil (bluez control),
 		yakuake (handy console),
-		kwrite (good simple editor),
+		kate (great simple editor),
 		okular (useful doc viewer),
 		gwenview (useful image viewer)
 	GNOME: 	nm-applet (this is _the only_ NM GUI that can launch in any DE)
+		gparted (main F/OSS disk editor), even though can be substituted with YaST
+		pavucontrol (PulseAudio control) and paprefs (PA network configurator)
 
 Building:
 ---------

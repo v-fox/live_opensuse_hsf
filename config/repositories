@@ -55,6 +55,12 @@
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_utilities'>
 		<source path='obs://network:utilities/openSUSE_13.1'/>
 	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='99' alias='server_http'>
+		<source path='obs://server:http/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='92' alias='Archiving'>
+		<source path='obs://Archiving/openSUSE_13.1'/>
+	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
 		<source path='obs://X11:Utilities/openSUSE_13.1'/>
 	</repository>
@@ -63,9 +69,6 @@
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='65' alias='emulators_wine'>
 		<source path='obs://Emulators:Wine/openSUSE_13.1'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='99' alias='server_http'>
-		<source path='obs://server:http/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_samba_STABLE'>
 		<source path='obs://network:samba:STABLE/openSUSE_13.1'/>
@@ -111,6 +114,12 @@
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='99' alias='home_marec2000'>
 		<source path='obs://home:marec2000/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='99' alias='home_Lazy_Kent'>
+		<source path='obs://home:Lazy_Kent/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='99' alias='home_bkutil_crunch'>
+		<source path='obs://home:bkutil:crunch/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_emulators'>
 		<source path='obs://home:X0F:branches:Emulators/openSUSE_13.1'/>

@@ -94,15 +94,15 @@ ColorScheme=Current
 Name=openSUSE
 XftAntialias=true
 XftHintStyle=hintmedium
-dbfile=/home/fox/.mozilla/firefox/rc12trgo.default/places.sqlite
-desktopFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+dbfile=/home/hacker/.mozilla/firefox/y30d7fz5.hacker/places.sqlite
+desktopFont=DejaVu Sans,9,-1,5,50,0,0,0,0,0
 fixed=DejaVu Sans Mono,10,-1,5,50,0,0,0,0,0
-font=DejaVu Sans,10,-1,5,50,0,0,0,0,0
-menuFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+font=DejaVu Sans,9,-1,5,50,0,0,0,0,0
+menuFont=DejaVu Sans,9,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
 smallestReadableFont=DejaVu Sans,8,-1,5,50,0,0,0,0,0
 taskbarFont=DejaVu Sans,8,-1,5,75,0,0,0,0,0
-toolBarFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+toolBarFont=DejaVu Sans,9,-1,5,50,0,0,0,0,0
 widgetStyle=oxygen
 
 [K3Spell]

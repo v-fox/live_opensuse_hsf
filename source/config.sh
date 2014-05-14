@@ -97,6 +97,11 @@ echo '** Rehashing SSL Certificates...'
 c_rehash
 
 #======================================
+# Creating mlocate database
+#--------------------------------------
+/etc/cron.daily/mlocate.cron
+
+#======================================
 # Umount kernel filesystems
 #--------------------------------------
 baseCleanMount

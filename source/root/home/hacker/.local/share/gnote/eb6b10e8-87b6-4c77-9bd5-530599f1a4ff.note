@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>HSF Release Notes</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">HSF Release Notes
+
+<list><list-item dir="ltr">'solver.allowVendorChange' in zypp.conf was set to 'true'.
+<list><list-item dir="ltr">it should be safe due to strict prioritization in repo list, but keep that in mind.</list-item></list></list-item></list>
+
+<list><list-item dir="ltr">this spin contains only English language by default.
+<list><list-item dir="ltr">add your language in yast2 software manager.</list-item></list></list-item></list>
+
+<list><list-item dir="ltr">KDE's KIO
+<list><list-item dir="ltr">Dolphin file manager support variety of special protocols other than simple file management in form &lt;protocol&gt;://&lt;username&gt;:&lt;password&gt;@&lt;url&gt;
+<list><list-item dir="ltr">ftp:// - good old ftp 
+</list-item><list-item dir="ltr">webdavs:// - connecting to your webdav-folders
+</list-item><list-item dir="ltr">fish:// - accessing fs via ssh</list-item></list></list-item></list></list-item></list></note-content>
+</text><last-change-date>2014-05-14T17:35:14.592144Z</last-change-date><last-metadata-change-date>2014-05-14T17:35:14.592327Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>472</cursor-position><selection-bound-position>-1</selection-bound-position><width>686</width><height>535</height></note>
+
