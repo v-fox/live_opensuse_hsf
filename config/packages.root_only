@@ -100,6 +100,7 @@ gimp-plugin-lqr
 gimp-plugins-python
 gimp-save-for-web
 gimp-ufraw
+gio-branding-basedonopensuse
 git
 glibc-locale
 gnome-icon-theme
@@ -166,6 +167,7 @@ isight-firmware-tools
 kate
 kdeartwork4-icons
 kde-oxygen-fonts
+kdiff3
 kdnssd
 kio_iso
 kio_kamera
@@ -173,6 +175,7 @@ kio-locate
 kio_mtp
 kmscon
 kparts-plugin
+krename
 krusader
 laptop-mode-tools
 leechcraft
@@ -543,5 +546,3 @@ zfsonlinux-zfs-dkms
 zsh
 zypper
 zypper-aptitude
-kdiff3
-krename
