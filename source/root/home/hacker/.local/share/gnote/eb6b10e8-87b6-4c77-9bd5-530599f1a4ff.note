@@ -9,6 +9,8 @@
 <list><list-item dir="ltr">this spin contains only English language by default.
 <list><list-item dir="ltr">add your language in yast2 software manager.</list-item></list></list-item></list>
 
+<list><list-item dir="ltr"><link:url>/etc/environment</link:url> is the best place for it global variables.</list-item></list>
+
 <list><list-item dir="ltr">KDE's KIO
 <list><list-item dir="ltr">Dolphin file manager support variety of special protocols other than simple file management:
 <list><list-item dir="ltr"><highlight>remote:/</highlight> - listing of all local auto-found or known resources
@@ -25,8 +27,7 @@
 <list><list-item dir="ltr"><highlight>LIBVA_DRIVER_NAME=vdpau</highlight>
 </list-item></list></list-item><list-item dir="ltr">to enable VDPAU/GL acceleration on VA-API-hardware (intel):
 <list><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight></list-item></list></list-item></list></list-item></list>
-	[ <link:url>/etc/environment</link:url> is a good place for it ]
 
-</note-content>
-</text><last-change-date>2014-05-15T03:35:20.954005Z</last-change-date><last-metadata-change-date>2014-05-15T03:35:20.954005Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>1225</cursor-position><selection-bound-position>-1</selection-bound-position><width>756</width><height>658</height></note>
+<list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
+</text><last-change-date>2014-05-15T13:10:15.613175Z</last-change-date><last-metadata-change-date>2014-05-15T13:10:15.614373Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>1326</cursor-position><selection-bound-position>-1</selection-bound-position><width>756</width><height>658</height></note>
 
