@@ -128,7 +128,7 @@
 		<source path='obs://home:X0F:branches:network/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='62' alias='LXQt' >
-		<source path='obs://devel:cloverleaf:lxqt/openSUSE_13.1'/>
+		<source path='obs://home:X0F:LXQt:UNSTABLE/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F'>
 		<source path='obs://home:X0F/openSUSE_13.1'/>
