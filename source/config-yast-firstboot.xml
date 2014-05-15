@@ -37,29 +37,7 @@
 	Automatic Configuration, enable inst_automatic_configuration in the
 	workflow.
 	-->
-	<automatic_configuration config:type="list">
-	    <!-- Configure network -->
-	    <ac_step>
-		<text_id>ac_label_1</text_id>
-		<icon>yast-lan</icon>
-		<type>proposals</type>
-		<ac_items config:type="list">
-		    <ac_item>lan</ac_item>
-		</ac_items>
-	    </ac_step>
-	</automatic_configuration>
     </globals>
-    <proposals config:type="list">
-        <proposal>
-            <name>firstboot_network</name>
-            <mode>installation</mode>
-            <stage>firstboot</stage>
-            <label>Network Configuration</label>
-            <proposal_modules config:type="list">
-                <proposal_module>lan</proposal_module>
-            </proposal_modules>
-        </proposal>
-    </proposals>
     <workflows  config:type="list">
         <workflow>
             <defaults>
@@ -71,12 +49,6 @@
             <label>Configuration</label>
             <mode>installation</mode>
             <modules  config:type="list">
-                <module>
-                    <label>Language and Keyboard</label>
-                    <enabled config:type="boolean">true</enabled>
-		    <!-- step for configuration of both language and keyboard layout (fate#306296) -->
-                    <name>firstboot_language_keyboard</name>
-                </module>
                 <module>
                     <label>Language</label>
                     <enabled config:type="boolean">false</enabled>
@@ -92,38 +64,12 @@
                     <enabled config:type="boolean">false</enabled>
                     <name>inst_hostname</name>
                 </module>
-                <module>
-                    <label>Network</label>
-		    <!-- this step only restarts service 'network' -->
-                    <name>firstboot_network_write</name>
-                    <enabled config:type="boolean">false</enabled>
-                </module>
-                <module>
-                    <name>firstboot_ssh</name>
-                    <enabled config:type="boolean">false</enabled>
-                </module>
-                <module>
-                    <label>Network</label>
-                    <name>inst_proposal</name>
-                    <enabled config:type="boolean">true</enabled>
-                    <proposal>firstboot_network</proposal>
-                </module>
-                 <module>
-                    <label>Automatic Configuration</label>
-                    <name>inst_automatic_configuration</name>
-                    <enabled config:type="boolean">true</enabled>
-                 </module>
-                <module>
+               <module>
                     <label>Time and Date</label>
                     <enabled config:type="boolean">true</enabled>
                     <name>firstboot_timezone</name>
                 </module>
-                <module>
-                    <label>NTP Client</label>
-                    <enabled config:type="boolean">true</enabled>
-                    <name>firstboot_ntp</name>
-                </module>
-                <module>
+	         <module>
                     <label>Desktop</label>
                     <enabled config:type="boolean">false</enabled>
                     <name>firstboot_desktop</name>
@@ -163,11 +109,4 @@
             </modules>
         </workflow>
     </workflows>
-    <texts>
-	<!--
-	Labels used during Automatic Configuration: use "text_id" from "ac_step"
-	-->
-	<ac_label_1><label>Configuring network...</label></ac_label_1>
-	<ac_label_2><label>Configuring hardware...</label></ac_label_2>
-    </texts>
 </productDefines>
