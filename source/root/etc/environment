@@ -30,3 +30,5 @@ DRI_PRIME=1
 #STEAM_FRAME_FORCE_CLOSE=1
 # avoiding vi
 EDITOR=nano
+# for QT
+QT_GRAPHICSSYSTEM=native

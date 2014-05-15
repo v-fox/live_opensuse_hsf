@@ -87,6 +87,7 @@ freetype-tools
 fsarchiver
 fslsfonts
 fuse
+gconf2-branding-basedonopensuse
 gconf-editor
 gconf-polkit
 gegl-0_2
@@ -138,11 +139,17 @@ gstreamer-plugins-ugly
 gstreamer-plugins-ugly-orig-addon
 gstreamer-plugins-vaapi
 gstreamer-utils
+gtk2-branding-basedonopensuse
 gtk2-theme-oxygen
+gtk2-tools
+gtk3-branding-basedonopensuse
 gtk3-theme-oxygen
+gtk3-tools
+guvcview
 gwenview
 hddtemp
 hdparm
+hicolor-icon-theme-branding-basedonopensuse
 hostap-utils
 hwinfo
 hydra-gtk
@@ -372,6 +379,7 @@ openssh-helpers
 openssl-certs
 opus-tools
 oxygen-icon-theme
+oxygen-icon-theme-large
 p7zip-kde4
 PackageKit-browser-plugin
 PackageKit-gstreamer-plugin
@@ -418,6 +426,7 @@ smartmontools
 smplayer
 snapper
 snapper-zypp-plugin
+sonar-icon-theme
 sox
 strace
 subversion
@@ -534,3 +543,5 @@ zfsonlinux-zfs-dkms
 zsh
 zypper
 zypper-aptitude
+kdiff3
+krename
