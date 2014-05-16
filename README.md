@@ -7,13 +7,13 @@ It DOES NOT provide encryption and best security defaults, so users with sensiti
 It provides:
 ------------
 * fresh Stable kernel from Kernel:stable repo, fresh OSS video stack from pontostroy
-* slim LXQt (default) and Enlightenment desktop environments from their respective repos
+* slim RazorQt (default) and Enlightenment desktop environments from their respective repos
 * LeechCraft modular system as a foundation of your basic-needs software kit
 * fresh Mozilla Firefox browser and Thunderbird e-mail client for your web-surfing needs
 * Clementine audio player, VLC and S/Mplayer video players for your multimedia needs
 * LibreOffice, Calibre and GIMP for your documentational needs
-* Tor, Polipo and proxychains for your anti-censorship needs
-* nmap, reaver, hydra/-gtk, mtr, rancid, minicom, lftp for your networking needs
+* Tor, Polipo, miredo-client and proxychains for your anti-censorship needs
+* zen/nmap, hostapd, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, lftp, rancid, usbip, aircrack-ng, reaver, and a bunch more for your networking needs
 * mc, zsh, kmscon, android-tools and other various console tools
 * gparted, testdisk, snapper, disktype and other filesystem tools
 * exfat and zfs kernel modules
@@ -22,7 +22,7 @@ It provides:
 It does NOT provide:
 --------------------
 — proprietary video drivers (because they suck and are pain in the ass), and video driver support for anything without KMS for that matter
-— KDE or Gnome pre-installed (because of how fat the former and how ugly the later are)
+— whole KDE or Gnome pre-installed (because of how fat the former and how ugly the later are)
 — any language packages (for space conservation). add your language in yast after installation
 — Wayland packages (because it's too raw yet)
 — printer and scaner support (because that would require a lot of packages without much use on generic installation media)
@@ -33,17 +33,19 @@ I recommend to use smart SATA boxes with legacy (floppy, disk, virtual partition
 
 Notes:
 ------
+⊙ LXQt repo is configured but RazorQt installed instead due to its immaturity. will be replaced later
 ⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
 ⊙ DE-specific apps are included for the lack of adequate analogues
-	KDE: 	krusader (dolphin+konqueror+mc in one package and more ? yes, please)
+	KDE: 	krusader (dolphin + konqueror + mc in one package and more ? yes, please)
 		bluedevil (bluez control),
 		yakuake (handy console),
 		kate (great simple editor),
 		okular (useful doc viewer),
-		gwenview (useful image viewer)
+		gwenview + kipi-plugins (useful image viewer)
 	GNOME: 	nm-applet (this is _the only_ NM GUI that can launch in any DE)
 		gparted (main F/OSS disk editor), even though can be substituted with YaST
 		pavucontrol (PulseAudio control) and paprefs (PA network configurator)
+		ekiga (SIP & H.323 client)
 
 Building:
 ---------

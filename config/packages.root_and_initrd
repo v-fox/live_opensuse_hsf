@@ -6,9 +6,11 @@ b43legacy-firmware
 bluez-firmware
 crystalhd-firmware
 disktype
+efibootmgr
 gfxboot-branding-HSF
 grub2-branding-HSF
 ipw-firmware
+kernel-firmware
 less
 midisport-firmware
 mpt-firmware

@@ -177,10 +177,6 @@ sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
 	-e "/VERSION=/s:=.*$:=\"${VERSION_GIT_FULL}\":" data/os-release \
 	> source/root/etc/os-release
 
-# Create appliance.
-echo "** Removing root from previous build..."
-rm -rf image/build
-
 echo "** Creating appliance..."
 command="$kiwi --build $src/ -d $dst"
 echo $command

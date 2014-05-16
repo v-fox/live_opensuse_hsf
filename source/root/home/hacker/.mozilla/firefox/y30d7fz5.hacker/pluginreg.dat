@@ -5,6 +5,15 @@ Version:0.16:$
 Arch:x86_64-gcc3:$
 
 [PLUGINS]
+libflashplayer.so:$
+/usr/lib64/browser-plugins/libflashplayer.so:$
+11.2.202.359:$
+1398466633000:0:0:$
+Shockwave Flash 11.2 r202:$
+Shockwave Flash:$
+2
+0:application/x-shockwave-flash:Shockwave Flash:swf:$
+1:application/futuresplash:FutureSplash Player:spl:$
 packagekit-plugin.so:$
 /usr/lib64/browser-plugins/packagekit-plugin.so:$
 :$
@@ -13,15 +22,6 @@ Plugin for Installing Applications (new):$
 PackageKit:$
 1
 0:application/x-packagekit-plugin:PackageKit Plugin:bsc:$
-libflashplayer.so:$
-/usr/lib64/browser-plugins/libflashplayer.so:$
-11.2.202.356:$
-1397862956000:0:0:$
-Shockwave Flash 11.2 r202:$
-Shockwave Flash:$
-2
-0:application/x-shockwave-flash:Shockwave Flash:swf:$
-1:application/futuresplash:FutureSplash Player:spl:$
 libkpartsplugin.so:$
 /usr/lib64/browser-plugins/libkpartsplugin.so:$
 :$

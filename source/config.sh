@@ -73,6 +73,7 @@ systemctl enable dkms_autoinstaller
 /usr/sbin/dkms autoinstall
 systemctl enable ModemManager
 systemctl enable NetworkManager
+systemctl enable miredo-client
 
 #======================================
 # Prune extraneous files

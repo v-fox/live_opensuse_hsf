@@ -1,10 +1,16 @@
 <?xml version="1.0"?>
-<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>HSF Notes</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">HSF Notes
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>HSF *IMPORTANT* Notes</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">HSF *IMPORTANT* Notes
 
 <list><list-item dir="ltr">default credentials: <bold>root</bold>:<highlight>linux</highlight>, <bold>hacker</bold>:<highlight>&lt;empty&gt;</highlight></list-item></list>
 
-<list><list-item dir="ltr">'<highlight>solver.allowVendorChange</highlight>' in zypp.conf was set to 'true'.
-<list><list-item dir="ltr">it should be safe due to strict prioritization in repo list, but keep that in mind.</list-item></list></list-item></list>
+<list><list-item dir="ltr">before using package manager, first thing you NEED to do is:
+<list><list-item dir="ltr"><highlight>sudo zypper --gpg-auto-import-keys refresh</highlight> in terminal to get repo-caches _and import all their keys_</list-item></list></list-item></list>
+
+<list><list-item dir="ltr">important changes were made to <link:url>/etc/zypp/zypp.conf</link:url> 
+<list><list-item dir="ltr">'<highlight>solver.allowVendorChange</highlight>' was set to 'true'.
+<list><list-item dir="ltr">it should be safe due to strict prioritization in repo list, but keep that in mind anyway.
+</list-item></list></list-item><list-item dir="ltr">'<highlight>solver.onlyRequires</highlight>' was set to 'true'.
+<list><list-item dir="ltr">this forces zypper to install only the bare minimum and may leave some packages being useless in absence of non-compile-time dependencies, like some <link:url>/usr/share</link:url> data, for example.</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">this spin contains only English language by default.
 <list><list-item dir="ltr">add your language in yast2 software manager.</list-item></list></list-item></list>
@@ -28,6 +34,7 @@
 </list-item></list></list-item><list-item dir="ltr">to enable VDPAU/GL acceleration on VA-API-hardware (intel):
 <list><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight></list-item></list></list-item></list></list-item></list>
 
-<list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2014-05-15T13:10:15.613175Z</last-change-date><last-metadata-change-date>2014-05-15T13:10:15.614373Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>1326</cursor-position><selection-bound-position>-1</selection-bound-position><width>756</width><height>658</height></note>
+<list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list>
+</note-content>
+</text><last-change-date>2014-05-16T01:07:19.283568Z</last-change-date><last-metadata-change-date>2014-05-16T01:07:19.284744Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>126</cursor-position><selection-bound-position>-1</selection-bound-position><width>765</width><height>776</height></note>
 
