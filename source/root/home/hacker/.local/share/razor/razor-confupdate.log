@@ -1,0 +1,25 @@
+2014-05-16T23:10:16 Id=razor_0.4.1-0.5.0
+2014-05-16T23:10:16 razor-0.5.upd: Found new update 'razor_0.4.1-0.5.0'
+2014-05-16T23:10:16 
+2014-05-16T23:10:16 File=~/.razor/session.conf,razor/session.conf
+2014-05-16T23:10:16 razor-0.5.upd: File '~/.razor/session.conf' does not exist, skipping
+2014-05-16T23:10:16 Options=copy
+2014-05-16T23:10:16 Script=sesion_modules
+2014-05-16T23:10:16 
+2014-05-16T23:10:16 File=~/.razor/desktop.conf,razor/desktop.conf
+2014-05-16T23:10:16 razor-0.5.upd: File '~/.razor/desktop.conf' does not exist, skipping
+2014-05-16T23:10:16 Options=copy
+2014-05-16T23:10:16 Script=desktop-041-050.py,python
+2014-05-16T23:10:16 
+2014-05-16T23:10:16 File=~/.razor/razor.conf,razor/razor.conf
+2014-05-16T23:10:16 razor-0.5.upd: File '~/.razor/razor.conf' does not exist, skipping
+2014-05-16T23:10:16 Options=copy
+2014-05-16T23:10:16 AllKeys
+2014-05-16T23:10:16 
+2014-05-16T23:10:16 File=~/.razor/razor-runner.conf,razor/razor-runner.conf
+2014-05-16T23:10:16 razor-0.5.upd: File '~/.razor/razor-runner.conf' does not exist, skipping
+2014-05-16T23:10:16 Options=copy
+2014-05-16T23:10:16 AllKeys
+2014-05-16T23:10:16 
+2014-05-16T23:10:16 File=~/.razor/razor-panel/panel.conf,razor/razor-panel/panel.conf
+2014-05-16T23:10:16 razor-0.5.upd: File '~/.razor/razor-panel/panel.conf' does not exist, skipping

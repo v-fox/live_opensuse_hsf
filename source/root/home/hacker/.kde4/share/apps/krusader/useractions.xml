@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE KrusaderUserActions>
+<KrusaderUserActions>
+ <action name="sample_panesize">
+  <title>Equal panel-size</title>
+  <tooltip>Sets the ratio between the two panels to 50/50</tooltip>
+  <icon>view_left_right</icon>
+  <category>Samples</category>
+  <command>%aPanelSize("50")%</command>
+  <defaultshortcut>Ctrl+Alt+</defaultshortcut>
+ </action>
+ <action name="sample_edit_as_root">
+  <title>Edit as root</title>
+  <tooltip>Edit a file as root</tooltip>
+  <category>Samples</category>
+  <description>Edit a file with root permissions</description>
+  <command run_as="root">kate %aCurrent%</command>
+  <defaultshortcut>Ctrl+E</defaultshortcut>
+ </action>
+ <action name="sample_newmount">
+  <title>Mount</title>
+  <tooltip>Mount a new filesystem</tooltip>
+  <icon>hdd_mount</icon>
+  <category>Samples</category>
+  <command executionmode="collect_output" run_as="root">mount -t %_Ask("Filesystem Type?")% %_Ask("Device ?")% %_Ask("Mount Point ?")%</command>
+  <defaultshortcut>Ctrl+Alt+M</defaultshortcut>
+ </action>
+ <action name="sample_amarok_enqueue">
+  <title>Enqueue in SMplayer</title>
+  <tooltip>Append selected item(s) to SMplayer playlist</tooltip>
+  <category>Multimedia</category>
+  <command>smplayer -add-to-playlist %aList("Selected")%</command>
+  <defaultshortcut>Meta+A</defaultshortcut>
+ </action>
+ <action name="filename_to_clipboard">
+  <title>Copy current item to clipboard</title>
+  <tooltip>Copy current item to clipboard</tooltip>
+  <icon>editpaste</icon>
+  <category>Samples</category>
+  <command>%_Clipboard("%aCurrent%")%</command>
+  <defaultshortcut>Ctrl+Alt+C</defaultshortcut>
+ </action>
+ <action name="sort_by_name">
+  <title>Sort by Name</title>
+  <tooltip>Sort by Name</tooltip>
+  <icon>view_text</icon>
+  <category>User Interface</category>
+  <description>Sorts the active panel by Name</description>
+  <command>%aColSort("Name")%</command>
+  <defaultshortcut>Meta+1</defaultshortcut>
+ </action>
+ <action name="sort_by_extension">
+  <title>Sort by Extension</title>
+  <tooltip>Sort by Extension</tooltip>
+  <icon>view_text</icon>
+  <category>User Interface</category>
+  <description>Sorts the active panel by Extension</description>
+  <command>%aColSort("Ext")%</command>
+  <defaultshortcut>Meta+2</defaultshortcut>
+ </action>
+ <action name="sort_by_size">
+  <title>Sort by Size</title>
+  <tooltip>Sort by Size</tooltip>
+  <icon>view_text</icon>
+  <category>User Interface</category>
+  <description>Sorts the active panel by Size</description>
+  <command>%aColSort("Size")%</command>
+  <defaultshortcut>Meta+3</defaultshortcut>
+ </action>
+ <action name="sort_by_modified">
+  <title>Sort by Modified</title>
+  <tooltip>Sort by Modified</tooltip>
+  <icon>view_text</icon>
+  <category>User Interface</category>
+  <description>Sorts the active panel by Modified</description>
+  <command>%aColSort("Modified")%</command>
+  <defaultshortcut>Meta+4</defaultshortcut>
+ </action>
+ <action name="backup_current">
+  <title>Backup current</title>
+  <tooltip>Backup current file in current directory</tooltip>
+  <icon>filesaveas</icon>
+  <category>System</category>
+  <description>Backups current file in current directory and asks the user for a new filename. By default ".old" is appended to the original filename.</description>
+  <command>%_Copy("%aCurrent%", "%_Ask("New filename", "%aCurrent%.old")%")%</command>
+  <defaultshortcut>Meta+F5</defaultshortcut>
+ </action>
+</KrusaderUserActions>

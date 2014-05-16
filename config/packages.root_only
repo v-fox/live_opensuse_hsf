@@ -119,9 +119,9 @@ glibc-locale
 gnome-icon-theme
 gnome-icon-theme-extras
 gnome-icon-theme-symbolic
+gnome-colors-icon-theme
 gnome-keyring-pam
 gnome-keyring-sharp
-gnome-online-accounts
 gnote
 gnu-netcat
 goldendict
@@ -178,6 +178,7 @@ gvfs-fuse
 gwenview
 hddtemp
 hdparm
+hicolor-icon-theme
 hicolor-icon-theme-branding-basedonopensuse
 hostapd
 hostap-utils
@@ -235,7 +236,6 @@ irqbalance
 isight-firmware-tools
 ispell-american
 ispell-british
-ispell-russian
 java
 jre
 kate
@@ -255,7 +255,6 @@ kmscon
 kparts-plugin
 krename
 krusader
-kwin
 laptop-mode-tools
 leechcraft
 leechcraft-advancednotifications
@@ -308,7 +307,7 @@ leechcraft-deadlyrics
 leechcraft-devmon
 leechcraft-dolozhee
 leechcraft-dumbeep
-leechcraft-fenet-kwin
+leechcraft-fenet-openbox
 leechcraft-gacts
 leechcraft-glance
 leechcraft-gmailnotifier
@@ -456,7 +455,6 @@ mtr
 mtr-gtk
 myspell-american
 myspell-british
-myspell-russian
 ncat
 ncdu
 ndisc6
@@ -535,7 +533,6 @@ pulseaudio-module-zeroconf
 radeon-profile
 radvd
 rar
-razorqt
 reaver
 rfkill
 rpcbind
@@ -559,7 +556,7 @@ smplayer
 snapper
 snapper-zypp-plugin
 snmp-mibs
-sonar-icon-theme
+tango-icon-theme
 sox
 splashy-mkinitrd
 sssd
@@ -694,3 +691,6 @@ zsh
 zypper
 zypper-aptitude
 zypper-log
+xscreensaver
+xscreensaver-data
+pmount

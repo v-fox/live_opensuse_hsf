@@ -13,14 +13,15 @@
 <list><list-item dir="ltr">this forces zypper to install only the bare minimum and may leave some packages being useless in absence of non-compile-time dependencies, like some <link:url>/usr/share</link:url> data, for example.</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">this spin contains only English language by default.
-<list><list-item dir="ltr">add your language in yast2 software manager.</list-item></list></list-item></list>
+<list><list-item dir="ltr">add your language in yast2 software manager.
+</list-item><list-item dir="ltr"><highlight>ibus</highlight> input method daemon is lunched by default, you can access its preferences via system tray icon and <highlight>add your keyboard settings there</highlight>, by default only US English is set and switch hotkey is <highlight>&lt;shift&gt;+space</highlight></list-item></list></list-item></list>
 
 <list><list-item dir="ltr"><link:url>/etc/environment</link:url> is the best place for it global variables.</list-item></list>
 
 <list><list-item dir="ltr">KDE's KIO
 <list><list-item dir="ltr">Dolphin file manager support variety of special protocols other than simple file management:
 <list><list-item dir="ltr"><highlight>remote:/</highlight> - listing of all local auto-found or known resources
-</list-item><list-item dir="ltr"><highlight><link:url>ftp:/</link:url></highlight><link:url>/&lt;user&gt;@&lt;proxy_user&gt;:&lt;password&gt;@&lt;proxy_password&gt;@&lt;hostname&gt;:&lt;port&gt;/&lt;patht</link:url>&gt;
+</list-item><list-item dir="ltr"><highlight><link:url>ftp:/</link:url></highlight><link:url>/&lt;user&gt;@&lt;proxy_user&gt;:&lt;password&gt;@&lt;proxy_password&gt;@&lt;hostname&gt;:&lt;port&gt;/&lt;path</link:url>&gt;
 </list-item><list-item dir="ltr"><highlight>sftp</highlight>|<highlight>fish:/</highlight>/&lt;user&gt;@&lt;hostname&gt;/&lt;patht&gt;/
 </list-item><list-item dir="ltr"><highlight>smb:/</highlight>/&lt;user&gt;:&lt;password&gt;@&lt;hostname&gt;/&lt;share_path&gt;
 </list-item><list-item dir="ltr"><highlight>nfs:/</highlight>/&lt;hostname&gt;:&lt;port&gt;/&lt;patht&gt;
@@ -36,5 +37,5 @@
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list>
 </note-content>
-</text><last-change-date>2014-05-16T01:07:19.283568Z</last-change-date><last-metadata-change-date>2014-05-16T01:07:19.284744Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>126</cursor-position><selection-bound-position>-1</selection-bound-position><width>765</width><height>776</height></note>
+</text><last-change-date>2014-05-16T18:20:30.305204Z</last-change-date><last-metadata-change-date>2014-05-16T18:20:30.306422Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>912</cursor-position><selection-bound-position>-1</selection-bound-position><width>836</width><height>893</height></note>
 

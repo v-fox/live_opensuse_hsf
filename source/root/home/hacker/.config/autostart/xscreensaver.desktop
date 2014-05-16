@@ -1,0 +1,20 @@
+[Desktop Entry]
+Comment[en_GB]=
+Comment=
+Exec=xscreensaver -nosplash
+GenericName[en_GB]=launch xscreensaver daemon
+GenericName=launch xscreensaver daemon
+Hidden=true
+Icon=video-display
+MimeType=
+Name[en_GB]=xscreensaver
+Name=xscreensaver
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=

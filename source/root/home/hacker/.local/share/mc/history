@@ -1,0 +1,22 @@
+[cmdline]
+0=
+
+[input-def]
+0=*
+
+[Dir Hist New Right Panel]
+0=/home/hacker
+1=/home/hacker/.mozilla
+2=/home/hacker/.mozilla/firefox
+
+[Dir Hist New Left Panel]
+0=/mnt/BUILDings/opensuse_works
+1=/media/home
+2=/media/home/fox
+3=/media/home/fox/.mozilla/plugins
+4=/media/home/fox/.mozilla/firefox
+5=/media/home/fox/.mozilla
+
+[input2]
+0=/home/hacker/.mozilla/firefox/
+1=/mnt/BUILDings/opensuse_works/tmp/data/booted_system_files/home/

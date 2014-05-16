@@ -1,34 +1,39 @@
 updateInfoAdded=true
 
 [devicepreference.upd]
-ctime=1397117522
+ctime=1399422052
 done=DevicesMovedToPlatformPlugin,DevicesUIDsChanged
-mtime=1397117522
+mtime=1399422052
 
 [drkonqi-rename-config-section.upd]
-ctime=1397117522
+ctime=1399422052
 done=kde-4.11
-mtime=1397117522
+mtime=1399422052
+
+[kate-2.4.upd]
+ctime=1399625013
+done=kate2.4
+mtime=1399625013
 
 [kcookiescfg.upd]
-ctime=1397117505
+ctime=1399588782
 done=kde2.2/b1,kde3.1/cvs,kde4.10/git
-mtime=1397117505
+mtime=1399588782
 
 [kded.upd]
-ctime=1397117505
+ctime=1399588782
 done=kde3.0
-mtime=1397117505
+mtime=1399588782
 
 [kio_help.upd]
-ctime=1397117505
+ctime=1399588782
 done=kde3_2
-mtime=1397117505
+mtime=1399588782
 
 [kioslave.upd]
-ctime=1397117505
+ctime=1399588782
 done=kde2.2/r2,kde2.2/r3
-mtime=1397117505
+mtime=1399588782
 
 [klipper-kconfigxt.upd]
 ctime=1398382739
@@ -36,14 +41,14 @@ done=KlipperNoSpacesInKeyNames
 mtime=1398382739
 
 [konsole.upd]
-ctime=1396240421
+ctime=1399470247
 done=2.9.0-global-options,2.9.0-colorscheme-bold-key,2.10.0-remove-menuindex-from-profiles
-mtime=1396240421
+mtime=1399470247
 
 [konsole_remove_background_mode.upd]
-ctime=1396240421
+ctime=1399470247
 done=2.11.0-remove-background-mode
-mtime=1396240421
+mtime=1399470247
 
 [krdb_libpathwipe.upd]
 ctime=1398382739
@@ -61,19 +66,19 @@ done=kde4.10,kde4.10-remove-group-kscreenlocker
 mtime=1398382739
 
 [ksslcertificatemanager.upd]
-ctime=1397117505
+ctime=1399588782
 done=kde4.2
-mtime=1397117505
+mtime=1399588782
 
 [kuriikwsfilter.upd]
-ctime=1397117522
+ctime=1399422052
 done=post-kde3.1/cvs,pre-kde4.9
-mtime=1397117522
+mtime=1399422052
 
 [kwallet-4.13.upd]
-ctime=1397117522
+ctime=1399422052
 done=kde4.13
-mtime=1397117522
+mtime=1399422052
 
 [kwin_fsp_workarounds_1.upd]
 ctime=1398382739
@@ -126,9 +131,9 @@ done=Kwin-4.4
 mtime=1398382739
 
 [mailtransports.upd]
-ctime=1397038728
+ctime=1399534008
 done=initial-kmail-migration,initial-knode-migration
-mtime=1397038728
+mtime=1399534008
 
 [notifications-to-orgkdenotifications.upd]
 ctime=1398382739
@@ -136,9 +141,9 @@ done=4.10QmlNotifications
 mtime=1398382739
 
 [okular.upd]
-ctime=1397080899
+ctime=1399225424
 done=sep_settings
-mtime=1397080899
+mtime=1399225424
 
 [oxygen.upd]
 ctime=1398382739

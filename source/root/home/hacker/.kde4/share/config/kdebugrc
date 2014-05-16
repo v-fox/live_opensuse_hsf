@@ -4,6 +4,18 @@ InfoOutput=4
 [Oxygen ( style )]
 InfoOutput=2
 
+[Oxygen (decoration)]
+InfoOutput=2
+
+[kate]
+InfoOutput=4
+
+[kate-filetree]
+InfoOutput=2
+
+[kbuildsycoca4]
+InfoOutput=4
+
 [kdecore (KConfigSkeleton)]
 InfoOutput=2
 
@@ -16,8 +28,32 @@ InfoOutput=2
 [kdecore (services)]
 InfoOutput=2
 
+[kded]
+InfoOutput=4
+
 [kdesu (kdelibs)]
 InfoOutput=2
 
+[kfilemodule]
+InfoOutput=4
+
+[kglobalaccel]
+InfoOutput=4
+
+[kio (delegateanimationhandler)]
+InfoOutput=4
+
 [kio_trash]
+InfoOutput=4
+
+[knotify]
+InfoOutput=4
+
+[krusader]
+InfoOutput=4
+
+[kwin]
+InfoOutput=4
+
+[unnamed app]
 InfoOutput=4

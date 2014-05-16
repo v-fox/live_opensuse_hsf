@@ -1,2 +1,6 @@
 [Desktop]
-Session=razor
+Session=lxqt
+
+[User]
+XSession=lxqt
+SystemAccount=false

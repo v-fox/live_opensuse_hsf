@@ -5,6 +5,14 @@ Version:0.16:$
 Arch:x86_64-gcc3:$
 
 [PLUGINS]
+packagekit-plugin.so:$
+/usr/lib64/browser-plugins/packagekit-plugin.so:$
+:$
+1400199684000:0:0:$
+Plugin for Installing Applications (new):$
+PackageKit:$
+1
+0:application/x-packagekit-plugin:PackageKit Plugin:bsc:$
 libflashplayer.so:$
 /usr/lib64/browser-plugins/libflashplayer.so:$
 11.2.202.359:$
@@ -14,21 +22,13 @@ Shockwave Flash:$
 2
 0:application/x-shockwave-flash:Shockwave Flash:swf:$
 1:application/futuresplash:FutureSplash Player:spl:$
-packagekit-plugin.so:$
-/usr/lib64/browser-plugins/packagekit-plugin.so:$
-:$
-1398322558000:0:0:$
-Plugin for Installing Applications (new):$
-PackageKit:$
-1
-0:application/x-packagekit-plugin:PackageKit Plugin:bsc:$
 libkpartsplugin.so:$
 /usr/lib64/browser-plugins/libkpartsplugin.so:$
 :$
 1391518772000:0:0:$
 File viewer using KDE's KParts technology (2012-07-23):$
 KParts Plugin:$
-263
+264
 0:application/epub+zip:electronic book document:epub:$
 1:application/gml+xml:GML document:gml:$
 2:application/javascript:JavaScript program:js:$
@@ -182,115 +182,116 @@ KParts Plugin:$
 150:text/calendar:VCS/ICS calendar:vcs:$
 151:text/css:CSS stylesheet:css:$
 152:text/csv:CSV document:csv:$
-153:text/enriched:enriched text document::$
-154:text/html:HTML document:html:$
-155:text/htmlh:help page::$
-156:text/plain:plain text document:txt:$
-157:text/rfc822-headers:email headers::$
-158:text/richtext:rich text document:rtx:$
-159:text/sgml:SGML document:sgml:$
-160:text/spreadsheet:spreadsheet interchange document:sylk:$
-161:text/tab-separated-values:TSV document:tsv:$
-162:text/troff:Troff document:tr:$
-163:text/vcard:electronic business card:vcard:$
-164:text/vnd.abc:abc musical notation file:abc:$
-165:text/vnd.graphviz:Graphviz DOT graph:gv:$
-166:text/vnd.rn-realtext:RealText document:rt:$
-167:text/vnd.sun.j2me.app-descriptor:JAD document:jad:$
-168:text/vnd.trolltech.linguist:message catalog:ts:$
-169:text/vnd.wap.wml:WML document:wml:$
-170:text/vnd.wap.wmlscript:WMLScript program:wmls:$
-171:text/vtt:WebVTT subtitles:vtt:$
-172:text/x-adasrc:Ada source code:adb:$
-173:text/x-authors:author list::$
-174:text/x-bibtex:BibTeX document:bib:$
-175:text/x-c++hdr:C++ header:hh:$
-176:text/x-c++src:C++ source code:cpp:$
-177:text/x-changelog:ChangeLog document::$
-178:text/x-chdr:C header:h:$
-179:text/x-cmake:CMake source code:cmake:$
-180:text/x-cobol:COBOL source file:cbl:$
-181:text/x-copying:license terms::$
-182:text/x-credits:author credits::$
-183:text/x-csharp:C# source code:cs:$
-184:text/x-csrc:C source code:c:$
-185:text/x-dcl:DCL script:dcl:$
-186:text/x-dsl:DSSSL document:dsl:$
-187:text/x-dsrc:D source code:d:$
-188:text/x-eiffel:Eiffel source code:e:$
-189:text/x-emacs-lisp:Emacs Lisp source code:el:$
-190:text/x-erlang:Erlang source code:erl:$
-191:text/x-fortran:Fortran source code:f:$
-192:text/x-gettext-translation:translation file:po:$
-193:text/x-gettext-translation-template:translation template:pot:$
-194:text/x-go:Go source code:go:$
-195:text/x-google-video-pointer:Google Video Pointer:gvp:$
-196:text/x-haskell:Haskell source code:hs:$
-197:text/x-hex:Intel® hexadecimal object file:hex:$
-198:text/x-imelody:iMelody ringtone:imy:$
-199:text/x-idl:IDL document:idl:$
-200:text/x-install:installation instructions::$
-201:text/x-iptables:iptables configuration file:iptables:$
-202:text/x-java:Java source code:java:$
-203:text/x-katefilelist:Kate file list loader plugin list:katefl:$
-204:text/x-ldif:LDIF address book:ldif:$
-205:text/x-lilypond:Lilypond music sheet:ly:$
-206:text/x-literate-haskell:LHS source code:lhs:$
-207:text/x-log:application log:log:$
-208:text/x-lua:Lua script:lua:$
-209:text/x-makefile:Makefile:mk:$
-210:text/x-markdown:Markdown document:md:$
-211:text/x-matlab:MATLAB script/function:m:$
-212:text/x-microdvd:MicroDVD subtitles:sub:$
-213:text/x-moc:Qt MOC file:moc:$
-214:text/x-modelica:Modelica model:mo:$
-215:text/x-mof:Managed Object Format:mof:$
-216:text/x-mpsub:MPSub subtitles:sub:$
-217:text/x-mrml:MRML playlist:mrml:$
-218:text/x-ms-regedit:Windows Registry extract:reg:$
-219:text/x-mup:Mup publication:mup:$
-220:text/x-nfo:NFO document:nfo:$
-221:text/x-objchdr:Objective-C header::$
-222:text/x-objcsrc:Objective-C source code:m:$
-223:text/x-ocaml:OCaml source code:ml:$
-224:text/x-ocl:OCL file:ocl:$
-225:text/x-ooc:OOC source code:ooc:$
-226:text/x-opml+xml:OPML syndication feed:opml:$
-227:text/x-pascal:Pascal source code:p:$
-228:text/x-patch:differences between files:diff:$
-229:text/x-python:Python script:py:$
-230:text/x-qml:Qt Markup Language file:qml:$
-231:text/x-readme:README document::$
-232:text/x-reject:rejected patch:rej:$
-233:text/x-rpm-spec:RPM spec file:spec:$
-234:text/x-scala:Scala source code:scala:$
-235:text/x-scheme:Scheme source code:scm:$
-236:text/x-setext:Setext document:etx:$
-237:text/x-sql:SQL code:sql:$
-238:text/x-ssa:SSA subtitles:ssa:$
-239:text/x-subviewer:SubViewer subtitles:sub:$
-240:text/x-suse-ymp:YaST Meta Package:ymp:$
-241:text/x-suse-ymu:URL of a YaST Meta Package:ymu:$
-242:text/x-svhdr:SystemVerilog header:svh:$
-243:text/x-svsrc:SystemVerilog source code:sv:$
-244:text/x-tcl:Tcl script:tcl:$
-245:text/x-tex:TeX document:tex:$
-246:text/x-texinfo:TeXInfo document:texi:$
-247:text/x-troff-me:Troff ME input document:me:$
-248:text/x-troff-mm:Troff MM input document:mm:$
-249:text/x-troff-ms:Troff MS input document:ms:$
-250:text/x-txt2tags:txt2tags document:t2t:$
-251:text/x-uil:X-Motif UIL table:uil:$
-252:text/x-uri:resource location::$
-253:text/x-uuencode:uuencoded file:uue:$
-254:text/x-vala:Vala source code:vala:$
-255:text/x-verilog:Verilog source code:v:$
-256:text/x-vhdl:VHDL source code:vhd:$
-257:text/x-vnd.akonadi.socialfeeditem:Akonadi Social Feed Item::$
-258:text/x-xmi:XMI file:xmi:$
-259:text/x-xslfo:XSL FO file:fo:$
-260:text/xmcd:XMCD CD database::$
-261:video/vnd.mpegurl:MPEG video:m1u:$
-262:video/x-mng:MNG animation:mng:$
+153:text/edje:Edje source file:edc:$
+154:text/enriched:enriched text document::$
+155:text/html:HTML document:html:$
+156:text/htmlh:help page::$
+157:text/plain:plain text document:txt:$
+158:text/rfc822-headers:email headers::$
+159:text/richtext:rich text document:rtx:$
+160:text/sgml:SGML document:sgml:$
+161:text/spreadsheet:spreadsheet interchange document:sylk:$
+162:text/tab-separated-values:TSV document:tsv:$
+163:text/troff:Troff document:tr:$
+164:text/vcard:electronic business card:vcard:$
+165:text/vnd.abc:abc musical notation file:abc:$
+166:text/vnd.graphviz:Graphviz DOT graph:gv:$
+167:text/vnd.rn-realtext:RealText document:rt:$
+168:text/vnd.sun.j2me.app-descriptor:JAD document:jad:$
+169:text/vnd.trolltech.linguist:message catalog:ts:$
+170:text/vnd.wap.wml:WML document:wml:$
+171:text/vnd.wap.wmlscript:WMLScript program:wmls:$
+172:text/vtt:WebVTT subtitles:vtt:$
+173:text/x-adasrc:Ada source code:adb:$
+174:text/x-authors:author list::$
+175:text/x-bibtex:BibTeX document:bib:$
+176:text/x-c++hdr:C++ header:hh:$
+177:text/x-c++src:C++ source code:cpp:$
+178:text/x-changelog:ChangeLog document::$
+179:text/x-chdr:C header:h:$
+180:text/x-cmake:CMake source code:cmake:$
+181:text/x-cobol:COBOL source file:cbl:$
+182:text/x-copying:license terms::$
+183:text/x-credits:author credits::$
+184:text/x-csharp:C# source code:cs:$
+185:text/x-csrc:C source code:c:$
+186:text/x-dcl:DCL script:dcl:$
+187:text/x-dsl:DSSSL document:dsl:$
+188:text/x-dsrc:D source code:d:$
+189:text/x-eiffel:Eiffel source code:e:$
+190:text/x-emacs-lisp:Emacs Lisp source code:el:$
+191:text/x-erlang:Erlang source code:erl:$
+192:text/x-fortran:Fortran source code:f:$
+193:text/x-gettext-translation:translation file:po:$
+194:text/x-gettext-translation-template:translation template:pot:$
+195:text/x-go:Go source code:go:$
+196:text/x-google-video-pointer:Google Video Pointer:gvp:$
+197:text/x-haskell:Haskell source code:hs:$
+198:text/x-hex:Intel® hexadecimal object file:hex:$
+199:text/x-imelody:iMelody ringtone:imy:$
+200:text/x-idl:IDL document:idl:$
+201:text/x-install:installation instructions::$
+202:text/x-iptables:iptables configuration file:iptables:$
+203:text/x-java:Java source code:java:$
+204:text/x-katefilelist:Kate file list loader plugin list:katefl:$
+205:text/x-ldif:LDIF address book:ldif:$
+206:text/x-lilypond:Lilypond music sheet:ly:$
+207:text/x-literate-haskell:LHS source code:lhs:$
+208:text/x-log:application log:log:$
+209:text/x-lua:Lua script:lua:$
+210:text/x-makefile:Makefile:mk:$
+211:text/x-markdown:Markdown document:md:$
+212:text/x-matlab:MATLAB script/function:m:$
+213:text/x-microdvd:MicroDVD subtitles:sub:$
+214:text/x-moc:Qt MOC file:moc:$
+215:text/x-modelica:Modelica model:mo:$
+216:text/x-mof:Managed Object Format:mof:$
+217:text/x-mpsub:MPSub subtitles:sub:$
+218:text/x-mrml:MRML playlist:mrml:$
+219:text/x-ms-regedit:Windows Registry extract:reg:$
+220:text/x-mup:Mup publication:mup:$
+221:text/x-nfo:NFO document:nfo:$
+222:text/x-objchdr:Objective-C header::$
+223:text/x-objcsrc:Objective-C source code:m:$
+224:text/x-ocaml:OCaml source code:ml:$
+225:text/x-ocl:OCL file:ocl:$
+226:text/x-ooc:OOC source code:ooc:$
+227:text/x-opml+xml:OPML syndication feed:opml:$
+228:text/x-pascal:Pascal source code:p:$
+229:text/x-patch:differences between files:diff:$
+230:text/x-python:Python script:py:$
+231:text/x-qml:Qt Markup Language file:qml:$
+232:text/x-readme:README document::$
+233:text/x-reject:rejected patch:rej:$
+234:text/x-rpm-spec:RPM spec file:spec:$
+235:text/x-scala:Scala source code:scala:$
+236:text/x-scheme:Scheme source code:scm:$
+237:text/x-setext:Setext document:etx:$
+238:text/x-sql:SQL code:sql:$
+239:text/x-ssa:SSA subtitles:ssa:$
+240:text/x-subviewer:SubViewer subtitles:sub:$
+241:text/x-suse-ymp:YaST Meta Package:ymp:$
+242:text/x-suse-ymu:URL of a YaST Meta Package:ymu:$
+243:text/x-svhdr:SystemVerilog header:svh:$
+244:text/x-svsrc:SystemVerilog source code:sv:$
+245:text/x-tcl:Tcl script:tcl:$
+246:text/x-tex:TeX document:tex:$
+247:text/x-texinfo:TeXInfo document:texi:$
+248:text/x-troff-me:Troff ME input document:me:$
+249:text/x-troff-mm:Troff MM input document:mm:$
+250:text/x-troff-ms:Troff MS input document:ms:$
+251:text/x-txt2tags:txt2tags document:t2t:$
+252:text/x-uil:X-Motif UIL table:uil:$
+253:text/x-uri:resource location::$
+254:text/x-uuencode:uuencoded file:uue:$
+255:text/x-vala:Vala source code:vala:$
+256:text/x-verilog:Verilog source code:v:$
+257:text/x-vhdl:VHDL source code:vhd:$
+258:text/x-vnd.akonadi.socialfeeditem:Akonadi Social Feed Item::$
+259:text/x-xmi:XMI file:xmi:$
+260:text/x-xslfo:XSL FO file:fo:$
+261:text/xmcd:XMCD CD database::$
+262:video/vnd.mpegurl:MPEG video:m1u:$
+263:video/x-mng:MNG animation:mng:$
 
 [INVALID]
