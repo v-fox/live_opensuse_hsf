@@ -1,0 +1,7 @@
+[home_DarkSS]
+name=home_DarkSS
+enabled=0
+autorefresh=1
+baseurl=http://download.opensuse.org/repositories/home:/DarkSS/openSUSE_13.1
+type=rpm-md
+priority=95

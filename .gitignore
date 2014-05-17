@@ -1,5 +1,7 @@
 image/
 source/config.xml
 *.iso
+*.packages
 source/root/etc/os-release
 source/root/home/hacker/*.tar.xz
+source/root/home/hacker/*.packages

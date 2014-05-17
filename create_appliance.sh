@@ -56,12 +56,15 @@ CONFIG="source/config.xml"
 BUILD_DATE="$(date +%Y%m%d)"
 NAME="Hackeurs_Sans_Frontieres"
 NAME_PREFIX="${NAME}-${VERSION_CONFIG}"
+OUR_USER="hacker"
 # we need avoid using variables like this, with non-latin symbols inside
 # bash loses it shit and spoils the name with escape-encoded bullshit
-SNAPSHOT_NAMEBASE="home/hacker/Hackeurs Sans Frontieres - build sources"
+SNAPSHOT_NAMEBASE="home/${OUR_USER}/Hackeurs Sans Frontieres - build sources"
 SNAPSHOT="source/root/${SNAPSHOT_NAMEBASE} - ${VERSION_CONFIG}_${BUILD_DATE}.tar"
-isofile="${dst}/${NAME}.${image_arch}-${VERSION_CONFIG}.iso"
-isofile_proper="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
+IMAGE="${dst}/${NAME}.${image_arch}-${VERSION_CONFIG}.iso"
+IMAGE_PROPER="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
+PACKAGE_LIST="source/root/home/${OUR_USER}/${NAME} - ${VERSION_CONFIG}.packages"
+PACKAGE_LIST_PROPER=$(basename "${IMAGE_PROPER}" .iso).packages
 
 # Cleaning up.
 echo "** CLeaning up auto-generated files..."
@@ -134,7 +137,7 @@ cat >> "${CONFIG}" <<EOF
 </image>
 EOF
 
-# Build sources snapshot creation.
+# Build sources snapshot's creation.
 echo "** Making this build environment's snapshot and putting it out for inclusion into your future image:"
 if [ -d .git ]; then
 	VERSION_GIT="$(git describe --abbrev=0 | sed 's/v//')"
@@ -179,13 +182,16 @@ sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
 
 echo "** Creating appliance..."
 command="$kiwi --build $src/ -d $dst"
-echo $command
+echo "$command"
 $command
 if [ $? -ne 0 ]; then
 	echo "** Appliance creation failed!"
 	exit 1
+else
+	echo "** Moving package list to the top: "
+	mv -v "${PACKAGE_LIST}" "${PACKAGE_LIST_PROPER}"
 fi
 
 # And we're done!
 echo -n "** Moving iso-file: "
-mv -v "${isofile}" "${isofile_proper}"
+mv -v "${IMAGE}" "${IMAGE_PROPER}"

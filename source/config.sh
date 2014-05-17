@@ -75,6 +75,10 @@ systemctl enable ModemManager
 systemctl enable NetworkManager
 systemctl enable miredo-client
 
+# making list of installed packages from default user
+OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
+su -c 'rpm -qa | sort -fu > "/home/${OUR_USER}/${kiwi_iname} - ${kiwi_iversion}.packages"' "${OUR_USER}"
+
 #======================================
 # Prune extraneous files
 #--------------------------------------

@@ -40,14 +40,14 @@ Notes:
 ⊙ DE-specific apps are included for the lack of adequate analogues
 	KDE: 	krusader (dolphin + konqueror + mc in one package and more ? yes, please)
 		bluedevil (bluez control),
-		yakuake (handy console),
+		yakuake (handy console), will be replaced with qterminal once it matures
 		kate (great simple editor),
 		okular (useful doc viewer),
 		gwenview + kipi-plugins (useful image viewer)
 	GNOME: 	nm-applet (this is _the only_ NM GUI that can launch in any DE)
-		gparted (main F/OSS disk editor), even though can be substituted with YaST
+		gparted (The F/OSS disk editor), even though it can be substituted with YaST
 		pavucontrol (PulseAudio control) and paprefs (PA network configurator)
-		ekiga (SIP & H.323 client)
+		ekiga (The SIP & H.323 client)
 
 Building:
 ---------
