@@ -1,0 +1,6 @@
+[home_seife_testing]
+name=home_seife_testing
+enabled=0
+autorefresh=1
+baseurl=http://download.opensuse.org/repositories/home:seife:testing/openSUSE_13.1
+type=rpm-md

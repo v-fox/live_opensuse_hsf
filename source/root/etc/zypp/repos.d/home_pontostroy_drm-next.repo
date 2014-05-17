@@ -1,0 +1,7 @@
+[home_pontostroy_drm-next]
+name=home_pontostroy_drm-next
+enabled=0
+autorefresh=1
+baseurl=http://download.opensuse.org/repositories/home:/pontostroy:/drm-next/openSUSE_13.1
+type=rpm-md
+priority=95

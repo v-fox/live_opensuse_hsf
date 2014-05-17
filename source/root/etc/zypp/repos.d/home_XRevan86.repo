@@ -1,0 +1,7 @@
+[home_XRevan86]
+name=home_XRevan86
+enabled=0
+autorefresh=1
+baseurl=http://download.opensuse.org/repositories/home:XRevan86/openSUSE_13.1
+type=rpm-md
+priority=55

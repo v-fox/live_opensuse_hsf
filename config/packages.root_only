@@ -10,12 +10,15 @@ alsa-plugins
 alsa-plugins-pulse
 alsa-tools
 android-tools
+apcupsd
+apcupsd-gui
 apparmor-utils
 arj
 arping2
 arpwatch
 arpwatch-ethercodes
 at
+atop
 attr
 autofs
 avahi
@@ -36,7 +39,10 @@ ca-certificates
 cagibi
 calibre
 cfv
+clamav
 clementine
+colord
+colordiff
 command-not-found
 compcache
 conky
@@ -55,6 +61,7 @@ connman-plugin-vpnc
 conntrack-tools
 copyq
 cpupower
+cpupower-bench
 cracklib-dict-full
 crda
 Crystalcursors
@@ -65,6 +72,7 @@ dejavu-fonts
 delayacct-utils
 deltarpm
 desktop-translations
+dmidecode
 dnsmasq
 dos2unix
 dosfstools
@@ -116,10 +124,10 @@ gimp-save-for-web
 gimp-ufraw
 git
 glibc-locale
+gnome-colors-icon-theme
 gnome-icon-theme
 gnome-icon-theme-extras
 gnome-icon-theme-symbolic
-gnome-colors-icon-theme
 gnome-keyring-pam
 gnome-keyring-sharp
 gnote
@@ -251,6 +259,7 @@ kio-locate
 kio_mtp
 kipi-plugins
 kipi-plugins-geolocation
+kismet
 kmscon
 kparts-plugin
 krename
@@ -513,12 +522,14 @@ plymouth-scripts
 plymouth-utils
 plymouth-x11-renderer
 pmacct
+pmount
 pm-profiler
 pm-utils
 polipo
 polkit-default-privs
 poppler-data
 poppler-tools
+powertop
 ppp
 prctl
 procinfo
@@ -531,6 +542,7 @@ pulseaudio-module-bluetooth
 pulseaudio-module-gconf
 pulseaudio-module-zeroconf
 radeon-profile
+radeontop
 radvd
 rar
 reaver
@@ -556,7 +568,6 @@ smplayer
 snapper
 snapper-zypp-plugin
 snmp-mibs
-tango-icon-theme
 sox
 splashy-mkinitrd
 sssd
@@ -571,6 +582,7 @@ systemd-logger
 systemd-ui
 systemtap
 t6_client
+tango-icon-theme
 tcpdump
 tcpreen
 telnet
@@ -651,6 +663,8 @@ xorg-x11-libs
 xorg-x11-libX11-ccache
 xorg-x11-server-extra
 xrandr
+xscreensaver
+xscreensaver-data
 xsetmode
 xsetpointer
 xvinfo
@@ -691,6 +705,3 @@ zsh
 zypper
 zypper-aptitude
 zypper-log
-xscreensaver
-xscreensaver-data
-pmount

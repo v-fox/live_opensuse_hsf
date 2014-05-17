@@ -14,7 +14,7 @@
 
 <list><list-item dir="ltr">this spin contains only English language by default.
 <list><list-item dir="ltr">add your language in yast2 software manager.
-</list-item><list-item dir="ltr"><highlight>ibus</highlight> input method daemon is lunched by default, you can access its preferences via system tray icon and <highlight>add your keyboard settings there</highlight>, by default only US English is set and switch hotkey is <highlight>&lt;shift&gt;+space</highlight></list-item></list></list-item></list>
+</list-item><list-item dir="ltr"><highlight>ibus</highlight> input method daemon is launched for 'hacker' user, you can access its preferences via system tray icon and <highlight>add your keyboard settings there</highlight>, by default only US English is set and switch hotkey is <highlight>&lt;shift&gt;+space</highlight>.</list-item></list></list-item></list>
 
 <list><list-item dir="ltr"><link:url>/etc/environment</link:url> is the best place for it global variables.</list-item></list>
 
@@ -37,5 +37,5 @@
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list>
 </note-content>
-</text><last-change-date>2014-05-16T18:20:30.305204Z</last-change-date><last-metadata-change-date>2014-05-16T18:20:30.306422Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>912</cursor-position><selection-bound-position>-1</selection-bound-position><width>836</width><height>893</height></note>
+</text><last-change-date>2014-05-16T22:35:20.029534Z</last-change-date><last-metadata-change-date>2014-05-16T22:35:20.030702Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>688</cursor-position><selection-bound-position>-1</selection-bound-position><width>765</width><height>776</height></note>
 

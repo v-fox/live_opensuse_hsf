@@ -1,0 +1,6 @@
+[Shitty_AMD_drivers]
+name=Shitty_AMD_drivers
+enabled=0
+autorefresh=1
+baseurl=http://geeko.ioda.net/mirror/amd-fglrx/openSUSE_13.1
+type=rpm-md

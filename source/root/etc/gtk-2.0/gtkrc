@@ -6,6 +6,6 @@
 # gtk2-doc package, section GTK+ Core Reference -> Resource Files
 #
 # This is a default for openSUSE:
-gtk-theme-name = "oxygen-gtk"
-gtk-icon-theme-name = "oxygen"
-gtk-fallback-icon-theme = "Tango"
+gtk-theme-name = oxygen-gtk
+gtk-icon-theme-name = gnome-colors-common
+gtk-fallback-icon-theme = oxygen

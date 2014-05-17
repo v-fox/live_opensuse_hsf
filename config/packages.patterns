@@ -4,6 +4,7 @@ enhanced_base_opt
 Enlightenment_18
 fonts
 fonts_opt
+lxde-qt
 office
 office_opt
 sw_management
@@ -11,4 +12,3 @@ x11
 x11_yast
 yast2_basis
 yast2_install_wf
-lxde-qt

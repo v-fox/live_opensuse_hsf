@@ -16,17 +16,8 @@
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='Kernel_stable'>
 		<source path='obs://Kernel:stable/standard'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='99' alias='Bumblebee_Nvidia_drivers'>
-		<source path='obs://home:Bumblebee-Project:nVidia:latest/openSUSE_13.1'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='99' alias='Shitty_AMD_drivers'>
-		<source path='http://geeko.ioda.net/mirror/amd-fglrx/openSUSE_13.1'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='62' alias='Packman'>
 		<source path='http://packman.inode.at/suse/13.1'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='65' alias='RazorQt' >
-		<source path='obs://X11:QtDesktop/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='70' alias='Mozilla'>
 		<source path='obs://mozilla/openSUSE_13.1'/>
@@ -40,12 +31,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='95' alias='home_pontostroy_X11'>
 		<source path='obs://home:pontostroy:X11/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='80' alias='games'>
-		<source path='obs://games/openSUSE_13.1'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='80' alias='games_tools'>
-		<source path='obs://games:tools/openSUSE_13.1'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='44' alias='home_namtrac_subpixel'>
 		<source path='obs://home:namtrac:subpixel/openSUSE_13.1'/>
 	</repository>
@@ -55,7 +40,7 @@
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_utilities'>
 		<source path='obs://network:utilities/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='99' alias='server_http'>
+	<repository type='rpm-md' imageinclude='true' priority='98' alias='server_http'>
 		<source path='obs://server:http/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='Archiving'>
@@ -63,12 +48,6 @@
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
 		<source path='obs://X11:Utilities/openSUSE_13.1'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='80' alias='emulators'>
-		<source path='obs://Emulators/openSUSE_13.1'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='65' alias='emulators_wine'>
-		<source path='obs://Emulators:Wine/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_samba_STABLE'>
 		<source path='obs://network:samba:STABLE/openSUSE_13.1'/>
@@ -97,28 +76,19 @@
 	<repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Stable_3.12'>
 		<source path='obs://GNOME:STABLE:3.12/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_XRevan86'>
-		<source path='obs://home:XRevan86/openSUSE_13.1'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='94' alias='home_XRevan86_non-free'>
-		<source path='obs://home:XRevan86:non-free/openSUSE_13.1'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='94' alias='home_aevseev'>
 		<source path='obs://home:aevseev/openSUSE_13.1'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='99' alias='home_seife_testing'>
-		<source path='obs://home:seife:testing/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_lukho_copyq'>
 		<source path='obs://home:lukho:copyq/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='99' alias='home_marec2000'>
+	<repository type='rpm-md' imageinclude='true' priority='98' alias='home_marec2000'>
 		<source path='obs://home:marec2000/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='99' alias='home_Lazy_Kent'>
+	<repository type='rpm-md' imageinclude='true' priority='98' alias='home_Lazy_Kent'>
 		<source path='obs://home:Lazy_Kent/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='99' alias='home_bkutil_crunch'>
+	<repository type='rpm-md' imageinclude='true' priority='98' alias='home_bkutil_crunch'>
 		<source path='obs://home:bkutil:crunch/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_emulators'>
