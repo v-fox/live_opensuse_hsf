@@ -58,26 +58,37 @@ baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 baseSetupUserPermissions
 suseActivateDefaultServices
 systemctl disable xdm
+systemctl disable apparmor
+systemctl enable rtkit-daemon
 systemctl enable compcache
 systemctl enable irq_balancer
+systemctl enable upower
 systemctl enable gpm
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
-systemctl enable bluetooth
-systemctl enable dnsmasq
-systemctl enable tor
-systemctl enable polipo
-systemctl enable lightdm
 systemctl enable autofs
 systemctl enable lm_sensors
+systemctl enable hddtemp
 systemctl enable dkms_autoinstaller
-/usr/sbin/dkms autoinstall
+systemctl enable bluetooth
+systemctl enable dnsmasq
 systemctl enable ModemManager
 systemctl enable NetworkManager
+systemctl enable tor
+systemctl enable polipo
+systemctl enable avahi-daemon
 systemctl enable miredo-client
+systemctl enable colord
+systemctl enable lightdm
+
+# preemptively building our dkms kernel modules
+/usr/sbin/dkms autoinstall
 
 # making list of installed packages from default user
 OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
 su -c 'rpm -qa | sort -fu > "/home/${OUR_USER}/${kiwi_iname} - ${kiwi_iversion}.packages"' "${OUR_USER}"
+
+# adding group 'plugdev' to accomodate broken udev rules
+groupadd -f -g 100 -o plugdev
 
 #======================================
 # Prune extraneous files
