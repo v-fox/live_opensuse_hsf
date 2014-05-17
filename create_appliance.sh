@@ -188,8 +188,8 @@ if [ $? -ne 0 ]; then
 	echo "** Appliance creation failed!"
 	exit 1
 else
-	echo "** Moving package list to the top: "
-	mv -v "${PACKAGE_LIST}" "${PACKAGE_LIST_PROPER}"
+	echo "** Copying package list to the top: "
+	cp -v "${PACKAGE_LIST}" "${PACKAGE_LIST_PROPER}"
 fi
 
 # And we're done!
