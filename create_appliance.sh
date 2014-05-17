@@ -63,7 +63,7 @@ SNAPSHOT_NAMEBASE="home/${OUR_USER}/Hackeurs Sans Frontieres - build sources"
 SNAPSHOT="source/root/${SNAPSHOT_NAMEBASE} - ${VERSION_CONFIG}_${BUILD_DATE}.tar"
 IMAGE="${dst}/${NAME}.${image_arch}-${VERSION_CONFIG}.iso"
 IMAGE_PROPER="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
-PACKAGE_LIST="source/root/home/${OUR_USER}/${NAME} - ${VERSION_CONFIG}.packages"
+PACKAGE_LIST="image/build/image-root/home//${OUR_USER}/${NAME} - ${VERSION_CONFIG}.packages"
 PACKAGE_LIST_PROPER=$(basename "${IMAGE_PROPER}" .iso).packages
 
 # Cleaning up.

@@ -422,6 +422,7 @@ libreoffice-thesaurus-en-US
 libreoffice-writer-extensions
 libsecret-tools
 libtxc_dxtn
+libtxc_dxtn0
 libva-egl1
 libvdpau_nouveau
 libvdpau_r300
@@ -609,6 +610,7 @@ upower
 usbip
 usb_modeswitch-data
 usbutils
+util-linux
 v4l-tools
 v4l-utils
 vaapi-dummy-driver
