@@ -49,7 +49,7 @@ chkconfig SuSEfirewall2_setup on
 echo '** Update sysconfig entries...'
 #baseUpdateSysConfig /etc/sysconfig/keyboard KEYTABLE us
 baseUpdateSysConfig /etc/sysconfig/network/config FIREWALL yes
-baseUpdateSysConfig /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP \21 22\ 80\ 443
+baseUpdateSysConfig /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP \21\ 22\ 80\ 443
 baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 
 #======================================
@@ -87,7 +87,7 @@ systemctl enable lightdm
 # making list of installed packages from default user
 OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
 rpm -qa | sort -fu > "/home/${OUR_USER}/${kiwi_iname} - ${kiwi_iversion}.packages"
-chmod ${OUR_USER}:users "/home/${OUR_USER}/${kiwi_iname} - ${kiwi_iversion}.packages"
+chown ${OUR_USER}:users "/home/${OUR_USER}/${kiwi_iname} - ${kiwi_iversion}.packages"
 
 # adding group 'plugdev' to accomodate broken udev rules
 groupadd -f -g 100 -o plugdev
@@ -98,11 +98,8 @@ find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cach
 #======================================
 # Prune extraneous files
 #--------------------------------------
-# Remove all documentation
-docfiles=`find /usr/share/doc/packages -type f |grep -iv "copying\|license\|copyright"`
-rm -f "${docfiles}"
-#rm -rf /usr/share/info
-#rm -rf /usr/share/man
+# Remove all license files
+find /usr/share/doc/packages -type f -iregex ".*copying*\|.*license*\|.*copyright*" -exec rm -fv "{}" \;
 
 #======================================
 # Keep UTF-8 locale and delete all translations
