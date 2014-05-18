@@ -215,6 +215,7 @@ gtk3-branding-basedonopensuse
 gtk3-data
 gtk3-theme-oxygen
 gtk3-tools
+gtk-recordMyDesktop
 gupnp-tools
 guvcview
 gvfs-backends
@@ -307,6 +308,7 @@ kmscon
 kparts-plugin
 krename
 krusader
+kwin
 laptop-mode-tools
 ldapfuse
 leechcraft
@@ -360,6 +362,7 @@ leechcraft-deadlyrics
 leechcraft-devmon
 leechcraft-dolozhee
 leechcraft-dumbeep
+leechcraft-fenet-kwin
 leechcraft-fenet-openbox
 leechcraft-gacts
 leechcraft-glance
@@ -578,7 +581,6 @@ plymouth-scripts
 plymouth-utils
 plymouth-x11-renderer
 pmacct
-pmount
 pm-profiler
 pm-utils
 polipo
@@ -599,13 +601,13 @@ pulseaudio-module-bluetooth
 pulseaudio-module-gconf
 pulseaudio-module-lirc
 pulseaudio-module-zeroconf
-qx11grab
 radeon-profile
 radeontop
 radvd
 rar
 realcrypt
 reaver
+recordmydesktop
 reiser4progs
 rfkill
 rpcbind
