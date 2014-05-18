@@ -36,7 +36,8 @@ I recommend to use smart SATA boxes with legacy (floppy, disk, virtual partition
 
 Notes:
 ------
-⊙ first thing you should do on freshly loaded system is to look at gnote's HSF note
+⊙ can be put on flash USB sticks and such by simple `dd bs=64K if=<image> of=/dev/<target_device>` or glamorous GUI tool `kdesu imagewriter` from within itself
+⊙ *first thing you should do on freshly loaded system is to look at gnote's HSF note*
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description
 ⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
 ⊙ DE-specific apps are included for the lack of adequate analogues

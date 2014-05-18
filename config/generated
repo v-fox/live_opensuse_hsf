@@ -2,4 +2,5 @@ image/*
 source/root/etc/os-release
 source/root/home/hacker/*.tar.xz
 source/root/home/hacker/*.packages
+source/root/home/hacker/README.md
 source/config.xml

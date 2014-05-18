@@ -153,6 +153,10 @@ fi
 tar rpf "${SNAPSHOT}" --transform "s:^:/${NAME_PREFIX}/:" ${CONFIG}
 xz -vv -9 "${SNAPSHOT}" || exit 1
 
+# putting README into image
+echo -n "** Making copy of README.md in user's home: "
+cp -v README.md "source/root/home/${OUR_USER}/"
+
 # kiwi repo logic
 function url_unknown {
   local repo="${1?}"

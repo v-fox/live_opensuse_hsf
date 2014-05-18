@@ -4,3 +4,4 @@ source/config.xml
 *.packages
 source/root/etc/os-release
 source/root/home/hacker/*.tar.xz
+source/root/home/hacker/README.md

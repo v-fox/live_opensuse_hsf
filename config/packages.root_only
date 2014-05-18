@@ -271,6 +271,7 @@ ibus-unikey
 ifplugd
 ifuse
 ImageMagick
+imagewriter
 innoextract
 input-utils
 intel-gpu-tools
@@ -675,7 +676,6 @@ udisks
 udisks2
 ulogd
 unace
-unetbootin
 unrar
 upnp-inspector
 upower
