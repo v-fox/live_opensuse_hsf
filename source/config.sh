@@ -58,7 +58,7 @@ baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 baseSetupUserPermissions
 suseActivateDefaultServices
 systemctl disable xdm
-systemctl disable apparmor
+systemctl enable apparmor
 systemctl enable rtkit-daemon
 systemctl enable compcache
 systemctl enable irq_balancer

@@ -231,6 +231,7 @@ ibus-table-viqr
 ibus-table-yawerty
 ibus-unikey
 ifplugd
+ImageMagick
 innoextract
 input-utils
 intel-gpu-tools
@@ -247,6 +248,7 @@ ispell-british
 java
 jre
 kate
+kbd
 kcharselect
 kdeartwork4-icons
 kde-oxygen-fonts
@@ -452,6 +454,7 @@ Mesa-demo-egl
 Mesa-demo-x
 minicom
 miredo-client
+mjpegtools
 mkcomposecache
 mlocate
 ModemManager
