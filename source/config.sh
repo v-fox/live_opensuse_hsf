@@ -73,6 +73,7 @@ systemctl enable bluetooth
 systemctl enable dnsmasq
 systemctl enable ModemManager
 systemctl enable NetworkManager
+systemctl enable ntp
 systemctl enable tor
 systemctl enable polipo
 systemctl enable avahi-daemon
@@ -90,6 +91,9 @@ chmod ${OUR_USER}:users "/home/${OUR_USER}/${kiwi_iname} - ${kiwi_iversion}.pack
 
 # adding group 'plugdev' to accomodate broken udev rules
 groupadd -f -g 100 -o plugdev
+
+# updating gtk icon cache in hopes that it'll help with missing icons
+find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -q -t -f "{}" \;
 
 #======================================
 # Prune extraneous files

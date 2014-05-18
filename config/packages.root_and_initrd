@@ -4,6 +4,8 @@ atmel-firmware
 b43-firmware
 b43legacy-firmware
 bluez-firmware
+cryptsetup
+cryptsetup-mkinitrd
 crystalhd-firmware
 disktype
 efibootmgr
@@ -16,6 +18,7 @@ midisport-firmware
 mpt-firmware
 nano
 plymouth-branding-HSF
+pngcrush
 technisat-usb2-firmware
 ucode-amd
 zd1211-firmware

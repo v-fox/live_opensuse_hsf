@@ -16,6 +16,7 @@ dpkg=/usr/bin/dpkg
 gzip=/usr/bin/gzip
 kdesu=/usr/lib64/kde4/libexec/kdesu
 kdiff3=/usr/bin/kdiff3
+kget=/usr/bin/aria2fe
 krename=/usr/bin/krename
 krusader=/usr/bin/krusader
 lha=/usr/bin/lha

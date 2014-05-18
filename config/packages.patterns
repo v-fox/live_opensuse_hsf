@@ -1,5 +1,6 @@
 apparmor
 devel_basis
+devel_rpm_build
 enhanced_base
 enhanced_base_opt
 Enlightenment_18
@@ -8,7 +9,6 @@ fonts_opt
 lxde-qt
 office
 office_opt
-rpm_build
 sw_management
 x11
 x11_yast

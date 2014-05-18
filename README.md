@@ -2,7 +2,7 @@
 =========================================================================================================================
 
 This is live/installation simplistic yet powerful OpenSUSE spin aimed for out-of-the-box desktop usage by advanced users in countries without software patent racket.
-It DOES NOT provide encryption and best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
+It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
 
 It provides:
 ------------
@@ -14,11 +14,13 @@ It provides:
 * Clementine audio player, VLC and S/Mplayer video players for your multimedia needs
 * LibreOffice, Calibre and GIMP for your documentational needs
 * Tor, Polipo, miredo-client and proxychains for your anti-censorship needs
-* ze/nmap, hostapd, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, lftp, rancid, usbip, aircrack-ng, reaver, kismet and a bunch more for your networking needs
-* mc, zsh, kmscon, android-tools and other various console tools
+* ze/nmap, hostapd, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, lftp, rancid, usbip and a bunch for your networking needs
+* mc, zsh, kmscon, android-tools, wgetpaste and other various console tools
 * gparted, testdisk, snapper, disktype and other filesystem tools
-* exfat and zfs kernel modules
-* bunch of useful repos pre-configured for games, emulators and recent, mostly stable updates
+* exfat and zfs kernel modules, reiser4progs and general FS management & recovery tools like fsarchiver, ddrescue, testdisk, photorec, ext4magic
+* autopsy/sleuthkit, scalpel, chkrootkit, ntpassw/dchntpw, lynis, aircrack-ng, kismet, reaver and more security tools
+* {real/true}crypt, aespipe, emount/cryptsetup, seahorse/gnome-keyring, keepassx encryption utilities
+* bunch of useful repos pre-configured for games, emulators and recent but mostly stable updates
 
 It does NOT provide:
 --------------------
@@ -27,7 +29,7 @@ It does NOT provide:
 — any language packages (for space conservation)
 — Wayland packages (because it's too raw yet)
 — printer and scaner support (because that would require a lot of packages without much use on generic installation media)
-— cd/dvd/bluray and whatever disk rom utilities (because spinning media must die)
+— many cd/dvd/bluray and whatever disk rom utilities (because spinning media must die). mkisofs, cdrecord and acetoneiso2 are included though
 — accessibility features (because i have no idea how to setup them right)
 
 I recommend to use smart SATA boxes with legacy (floppy, disk, virtual partition) emulation like [IODD](www.iodd.co.kr) / [Zalman ZM-*](www.zalman.com/global/product/CategorySecond_Pic.php) series as the replacement for disks and usb drives.
@@ -42,12 +44,16 @@ Notes:
 		bluedevil (bluez control),
 		yakuake (handy console), will be replaced with qterminal once it matures
 		kate (great simple editor),
-		okular (useful doc viewer),
-		gwenview + kipi-plugins (useful image viewer)
+		okular (useful doc viewer, integrated in Firefox via kparts-plugin)
+		kchmviewer (MS chm viewer, because sometimes okular screws up)
+		gwenview + kipi-plugins (highly-capable image viewer)
 	GNOME: 	nm-applet (this is _the only_ NM GUI that can launch in any DE)
 		gparted (The F/OSS disk editor), even though it can be substituted with YaST
 		pavucontrol (PulseAudio control) and paprefs (PA network configurator)
 		ekiga (The SIP & H.323 client)
+		easytag (The audio file tag editor)
+		seahorse (gpg GUI)
+		gcr-viewer (crypto fiels viewer)
 
 Building:
 ---------
