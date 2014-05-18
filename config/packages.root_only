@@ -271,7 +271,6 @@ ibus-unikey
 ifplugd
 ifuse
 ImageMagick
-imagewriter
 innoextract
 input-utils
 intel-gpu-tools
@@ -602,6 +601,7 @@ pulseaudio-module-bluetooth
 pulseaudio-module-gconf
 pulseaudio-module-lirc
 pulseaudio-module-zeroconf
+pwgen
 radeon-profile
 radeontop
 radvd
@@ -676,6 +676,7 @@ udisks
 udisks2
 ulogd
 unace
+unetbootin
 unrar
 upnp-inspector
 upower

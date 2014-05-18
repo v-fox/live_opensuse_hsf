@@ -86,8 +86,9 @@ systemctl enable lightdm
 
 # making list of installed packages from default user
 OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
-rpm -qa | sort -fu > "/home/${OUR_USER}/${kiwi_iname} - ${kiwi_iversion}.packages"
-chown ${OUR_USER}:users "/home/${OUR_USER}/${kiwi_iname} - ${kiwi_iversion}.packages"
+NAME_PRETTY=$(echo "${kiwi_iname}" | sed 's:_: :g')
+rpm -qa | sort -fu > "/home/${OUR_USER}/${NAME_PRETTY} - ${kiwi_iversion}.packages"
+chown ${OUR_USER}:users "/home/${OUR_USER}/${NAME_PRETTY} - ${kiwi_iversion}.packages"
 
 # adding group 'plugdev' to accomodate broken udev rules
 groupadd -f -g 100 -o plugdev

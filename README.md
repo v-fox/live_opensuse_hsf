@@ -1,5 +1,5 @@
-﻿Hackeurs Sans Frontières - OpenSUSE-based live cd/usb aimed to be fully functional slim desktop system for advanced users
-=========================================================================================================================
+﻿Hackeurs Sans Frontières - OpenSUSE-based hybrid live cd/usb aimed to be fully functional slim desktop system for advanced users
+================================================================================================================================
 
 This is live/installation simplistic yet powerful OpenSUSE spin aimed for out-of-the-box desktop usage by advanced users in countries without software patent racket.
 It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
@@ -32,7 +32,10 @@ It does NOT provide:
 — many cd/dvd/bluray and whatever disk rom utilities (because spinning media must die). mkisofs, cdrecord and acetoneiso2 are included though
 — accessibility features (because i have no idea how to setup them right)
 
-I recommend to use smart SATA boxes with legacy (floppy, disk, virtual partition) emulation like [IODD](www.iodd.co.kr) / [Zalman ZM-*](www.zalman.com/global/product/CategorySecond_Pic.php) series as the replacement for disks and usb drives.
+I recommend to use smart SATA boxes and usb drives with legacy (floppy, disk, virtual partition) emulation as the replacement for disks like:
+⊘ [IODD](www.iodd.co.kr) / [Zalman ZM-*](www.zalman.com/global/product/CategorySecond_Pic.php) series
+⊘ [The IsoStick](isostick.com)
+⊘ or just using it on any USB stick
 
 Notes:
 ------
@@ -55,6 +58,16 @@ Notes:
 		easytag (The audio file tag editor)
 		seahorse (gpg GUI)
 		gcr-viewer (crypto fiels viewer)
+
+KNOWN ISSUES:
+-------------
+❕ YaST2-Firstboot's background missing its picture. it's also wants '/etc/init.d/kbd' which was removed by upstream
+❕ YaST2-Firstboot doesn't seem to configure X's keyboard layouts. better just use iBuss configuration, make it yourself or try sucky `sax3` utility
+❕ Plymouth doesn't want to show itself after initrd and before DM loading, so it's disabled for now with 'splash=verbose' option
+❕ Firefox's NoScript likes to use random colours for its tooltip, mostly ugly black
+❕ Krusader may hang something and start raping CPU while not freezing itself. check suspicion for that with a/top
+❕ Conky's desktop-mode is broken and i not bothered to make good config for it
+❕ KDE's `systemsettings` configurator may be useful for KDE apps, but it's missing due to it residing in superfat package, "kdebase4-workspace"
 
 Building:
 ---------
