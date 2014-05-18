@@ -614,6 +614,7 @@ rsync
 samba-client
 sax3
 sbc
+sbl
 scalpel
 screen
 seahorse
@@ -631,6 +632,7 @@ sipcalc
 siproxd
 smartmontools
 smplayer
+smpppd
 snapper
 snapper-zypp-plugin
 snmp-mibs
@@ -657,6 +659,7 @@ terminology-theme-openSUSE
 terminus-bitmap-fonts
 testdisk
 timezone
+tmpwatch
 tor
 traceroute
 translation-update
