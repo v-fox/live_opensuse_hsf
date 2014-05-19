@@ -46,13 +46,17 @@ Notes:
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description
 ⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
 ⊙ DE-specific apps are included for the lack of adequate analogues
-	KDE: 	krusader (dolphin + konqueror + mc in one package and more ? yes, please)
+	KDE: 	kwin (The WM)
+		systemsettings (large-scope cosmetics configurator)
+		kinfocenter (system informant)
+		krusader (dolphin + konqueror + mc in one package and more ? yes, please)
 		bluedevil (bluez control),
 		yakuake (handy console), will be replaced with qterminal once it matures
 		kate (great simple editor),
 		okular (useful doc viewer, integrated in Firefox via kparts-plugin)
 		kchmviewer (MS chm viewer, because sometimes okular screws up)
 		gwenview + kipi-plugins (highly-capable image viewer)
+
 	GNOME: 	nm-applet (this is _the only_ NM GUI that can launch in any DE)
 		gparted (The F/OSS disk editor), even though it can be substituted with YaST
 		pavucontrol (PulseAudio control) and paprefs (PA network configurator)

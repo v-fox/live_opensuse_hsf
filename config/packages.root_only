@@ -292,11 +292,15 @@ kbd
 kcharselect
 kchmviewer
 kdeartwork4-icons
+kdebase4-systemsettings
+kdebase4-workspace-liboxygenstyle
+kde-gtk-config
 kde-oxygen-fonts
 kdiff3
 kdnssd
 keepassx
 kfilemetadata
+kinfocenter
 kio_iso
 kio_kamera
 kio-locate
@@ -556,8 +560,7 @@ openssh-askpass
 openssh-helpers
 openssl-certs
 opus-tools
-oxygen-icon-theme
-oxygen-icon-theme-large
+oxygen-ionized-icon-theme
 p7zip-kde4
 PackageKit-browser-plugin
 PackageKit-gstreamer-plugin
@@ -654,7 +657,6 @@ systemd-logger
 systemd-ui
 systemtap
 t6_client
-tango-icon-theme
 tcpdump
 tcpreen
 telnet
