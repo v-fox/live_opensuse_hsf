@@ -12,6 +12,11 @@ test -f /.profile && . /.profile
 echo "Configure image: [$name]..."
 
 #======================================
+# Fixing permissions safely for host system
+#--------------------------------------
+baseSetupUserPermissions
+
+#======================================
 # Mount system filesystems
 #--------------------------------------
 baseMount
@@ -55,7 +60,6 @@ baseUpdateSysConfig /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP \21\ 22\ 80
 #======================================
 # CUSTOMIZATION
 #--------------------------------------
-baseSetupUserPermissions
 suseActivateDefaultServices
 systemctl disable xdm
 systemctl enable apparmor
