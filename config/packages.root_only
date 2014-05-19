@@ -172,10 +172,10 @@ gpa
 gpart
 gparted
 gpg-offline
+gptfdisk
 gptfdisk-fixparts
 grub
 grub2
-grub2-x86_64-efi
 gsettings-backend-dconf
 gsettings-desktop-schemas
 gst-omx
@@ -216,6 +216,7 @@ gtk3-data
 gtk3-theme-oxygen
 gtk3-tools
 gtk-recordMyDesktop
+guestfs-tools
 gupnp-tools
 guvcview
 gvfs-backends
@@ -683,7 +684,6 @@ upower
 usbip
 usb_modeswitch-data
 usbutils
-util-linux
 v4l-tools
 v4l-utils
 vaapi-dummy-driver

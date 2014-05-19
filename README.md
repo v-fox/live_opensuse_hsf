@@ -16,7 +16,7 @@ It provides:
 * Tor, Polipo, miredo-client and proxychains for your anti-censorship needs
 * ze/nmap, hostapd, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, lftp, rancid, usbip and a bunch for your networking needs
 * mc, zsh, kmscon, android-tools, wgetpaste and other various console tools
-* gparted, testdisk, snapper, disktype and other filesystem tools
+* gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
 * exfat and zfs kernel modules, reiser4progs and general FS management & recovery tools like fsarchiver, ddrescue, testdisk, photorec, ext4magic
 * autopsy/sleuthkit, scalpel, chkrootkit, ntpassw/dchntpw, lynis, aircrack-ng, kismet, reaver and more security tools
 * {real/true}crypt, aespipe, emount/cryptsetup, seahorse/gnome-keyring, keepassx encryption utilities
@@ -39,7 +39,9 @@ I recommend to use smart SATA boxes and usb drives with legacy (floppy, disk, vi
 
 Notes:
 ------
-⊙ can be put on flash USB sticks and such by simple `dd bs=64K if=<image> of=/dev/<target_device>` or glamorous GUI tool `kdesu imagewriter` from within itself
+⊙ can be put on flash USB sticks and such from within itself by
+	simple `dd bs=<something near your flash's write block size, like 64K> if=<image or even cdrom device that you booted it on> of=/dev/<target_device>`
+	or glamorous GUI tool like `unetbootin` (included), Suse's `imagewriter` or Ubuntu's win32diskimager
 ⊙ *first thing you should do on freshly loaded system is to look at gnote's HSF note*
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description
 ⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
