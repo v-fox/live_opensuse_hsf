@@ -165,7 +165,6 @@ gnome-keyring-pam
 gnome-keyring-sharp
 gnote
 gnu_ddrescue
-gnu-netcat
 goldendict
 google-droid-fonts
 gpa
@@ -525,6 +524,7 @@ ncat
 ncdu
 ndisc6
 nepim
+netcat-openbsd
 netlabel-tools
 netperf
 net-snmp

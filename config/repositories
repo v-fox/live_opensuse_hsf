@@ -49,6 +49,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='Archiving'>
 		<source path='obs://Archiving/openSUSE_13.1'/>
 	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='Virtualization'>
+		<source path='obs://Virtualization/openSUSE_13.1'/>
+	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
 		<source path='obs://X11:Utilities/openSUSE_13.1'/>
 	</repository>

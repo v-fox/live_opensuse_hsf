@@ -6,7 +6,7 @@ declare -a repos=()
 
 dir="$(dirname $0)"
 src="$dir/source"
-dst="$dir/image"
+dst="$dir/pan"
 
 # Check that we're root.
 if [ `whoami` != 'root' ]; then
@@ -64,7 +64,7 @@ SNAPSHOT_NAMEBASE="home/${OUR_USER}/${NAME_PRETTY} - build sources"
 SNAPSHOT="source/root/${SNAPSHOT_NAMEBASE} - ${VERSION_CONFIG}_${BUILD_DATE}.tar"
 IMAGE="${dst}/${NAME}.${image_arch}-${VERSION_CONFIG}.iso"
 IMAGE_PROPER="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
-PACKAGE_LIST="image/build/image-root/home/${OUR_USER}/${NAME_PRETTY} - ${VERSION_CONFIG}.packages"
+PACKAGE_LIST="${dst}/build/image-root/home/${OUR_USER}/${NAME_PRETTY} - package list - ${VERSION_CONFIG}.txt"
 PACKAGE_LIST_PROPER=$(basename "${IMAGE_PROPER}" .iso).packages
 
 # Cleaning up.
@@ -200,3 +200,6 @@ fi
 # And we're done!
 echo -n "** Moving iso-file: "
 mv -v "${IMAGE}" "${IMAGE_PROPER}"
+
+echo -n "** Creating sha256 checksum: "
+sha256sum -b "${IMAGE_PROPER}" > "$(basename ${IMAGE_PROPER} .iso).sha256"

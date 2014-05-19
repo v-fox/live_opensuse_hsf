@@ -1,4 +1,4 @@
-image/*
+pan/*
 source/root/etc/os-release
 source/root/home/hacker/*.tar.xz
 source/root/home/hacker/*.packages
