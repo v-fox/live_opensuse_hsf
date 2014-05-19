@@ -1,0 +1,14 @@
+[Show]
+Benchmark=true
+Compress7z=true
+CompressDialog=true
+CompressZip=true
+ExtractSubdir=true
+ExtractTo=true
+bluedevilsendfile=true
+extractHere=true
+installFont=true
+openTerminalHere=false
+runInKonsole=false
+slideshow=true
+test=true

@@ -50,7 +50,7 @@ echo '** Update sysconfig entries...'
 #baseUpdateSysConfig /etc/sysconfig/keyboard KEYTABLE us
 baseUpdateSysConfig /etc/sysconfig/network/config FIREWALL yes
 baseUpdateSysConfig /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP \21\ 22\ 80\ 443
-baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
+#baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
 
 #======================================
 # CUSTOMIZATION

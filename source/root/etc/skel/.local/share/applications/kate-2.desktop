@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=kate
+MimeType=application/x-zerosize;
+Name=kate
+NoDisplay=true
+Type=Application

@@ -1,0 +1,4 @@
+ORIGIN=$BUNDLED_EXTENSIONS_USER/registry/com.sun.star.comp.deployment.component.PackageRegistryBackend
+UNO_JAVA_CLASSPATH=$BUNDLED_EXTENSIONS/languagetool-2.0/LanguageTool.uno.jar
+UNO_TYPES=?$BUNDLED_EXTENSIONS/numbertext/rdb/sample.rdb
+UNO_SERVICES=?$ORIGIN/common_.rdb ${$ORIGIN/${_OS}_${_ARCH}rc:UNO_SERVICES} ?$BUNDLED_EXTENSIONS/wiki-publisher/components.rdb ?$BUNDLED_EXTENSIONS/nlpsolver/components.rdb ?$BUNDLED_EXTENSIONS/presentation-minimizer/components.rdb ?$BUNDLED_EXTENSIONS/gdocs/components.rdb

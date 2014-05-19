@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>Start Here</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">Start Here
+
+<bold>Welcome to Gnote!</bold>
+
+Use this &quot;Start Here&quot; note to begin organizing your ideas and thoughts.
+
+You can create new notes to hold your ideas by selecting the &quot;Create New Note&quot; item from the Gnote menu in your GNOME Panel. Your note will be saved automatically.
+
+Then organize the notes you create by linking related notes and ideas together!
+
+We've created a note called <link:internal>Using Links in Gnote</link:internal>.  Notice how each time we type <link:internal>Using Links in Gnote</link:internal> it automatically gets underlined?  Click on the link to open the note.</note-content>
+</text><last-change-date>2014-05-14T17:12:29.466554Z</last-change-date><last-metadata-change-date>2014-05-14T17:12:29.466554Z</last-metadata-change-date><create-date>2014-05-14T17:12:29.460325Z</create-date><cursor-position>-1</cursor-position><selection-bound-position>-1</selection-bound-position><width>629</width><height>384</height></note>
+

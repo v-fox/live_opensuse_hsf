@@ -1,0 +1,6 @@
+[Desktop]
+Session=lxqt
+
+[User]
+XSession=lxqt
+SystemAccount=false

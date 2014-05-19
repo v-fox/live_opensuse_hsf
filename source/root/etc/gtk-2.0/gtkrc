@@ -7,5 +7,5 @@
 #
 # This is a default for openSUSE:
 gtk-theme-name = oxygen-gtk
-gtk-icon-theme-name = oxygen
-gtk-fallback-icon-theme = tango
+gtk-icon-theme-name = gnome-wise
+gtk-fallback-icon-theme = oxygen

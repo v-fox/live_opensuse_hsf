@@ -16,7 +16,7 @@ PROXY_ENABLED="yes"
 # Some programs (e.g. lynx, arena and wget) support proxies, if set in
 # the environment. 
 # Example: HTTP_PROXY="http://proxy.provider.de:3128/"
-HTTP_PROXY="127.0.0.1:8080"
+HTTP_PROXY="localhost:8080"
 
 ## Type:	string
 ## Default:	""
@@ -24,14 +24,14 @@ HTTP_PROXY="127.0.0.1:8080"
 # Some programs (e.g. lynx, arena and wget) support proxies, if set in
 # the environment. 
 # This setting is for https connections
-HTTPS_PROXY="127.0.0.1:8080"
+HTTPS_PROXY="localhost:8080"
 
 ## Type:	string
 ## Default:	""
 #
 # Example: FTP_PROXY="http://proxy.provider.de:3128/"
 #
-FTP_PROXY="127.0.0.1:8080"
+FTP_PROXY="localhost:8080"
 
 ## Type:	string
 ## Default:	""
