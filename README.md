@@ -46,6 +46,7 @@ Notes:
 ⊙ *first thing you should do on freshly loaded system is to look at gnote's HSF note*
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description
 ⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
+⊙ popular MicroSoft fonts are included for web & document compatibility. they may be removed in future
 ⊙ DE-specific apps are included for the lack of adequate analogues
 	KDE: 	kwin (The WM)
 		systemsettings (large-scope cosmetics configurator)

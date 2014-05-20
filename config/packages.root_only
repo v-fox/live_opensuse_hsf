@@ -118,6 +118,7 @@ f2fs-tools
 farsi-fonts
 fatattr
 fatsort
+fetchmsttfonts
 ffmpeg
 ffmpeg-tools
 file
@@ -524,6 +525,7 @@ module-init-tools
 monapo-fonts
 MozillaFirefox
 MozillaThunderbird
+mso2010-fonts
 mtd-utils
 mtpfs
 mtp-tools
@@ -715,6 +717,8 @@ vorbis-tools
 vpx-tools
 wallpaper-branding-HSF
 wdfs
+webcore-fonts
+webcore-fonts-vista
 webpin
 wget
 which
