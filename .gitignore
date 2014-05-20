@@ -1,8 +1,9 @@
-pan/
+pan/**
+plate/**
 source/config.xml
 *.iso
 *.sha256
-*package*.txt
+*.packages
 source/root/etc/os-release
 source/root/home/hacker/*.tar.xz
 source/root/home/hacker/README.md

@@ -7,6 +7,7 @@ declare -a repos=()
 dir="$(dirname $0)"
 src="$dir/source"
 dst="$dir/pan"
+img="$dir/plate"
 
 # Check that we're root.
 if [ `whoami` != 'root' ]; then
@@ -55,17 +56,18 @@ read VERSION_CONFIG < config/version
 CONFIG="source/config.xml"
 BUILD_DATE="$(date +%Y%m%d)"
 NAME="Hackeurs_Sans_Frontieres"
+# we need avoid using variables with non-latin symbols inside
+# bash loses it shit and spoils the name with escape-encoded crap
 NAME_PRETTY=$(echo "${NAME}" | sed 's:_: :g')
 NAME_PREFIX="${NAME}-${VERSION_CONFIG}"
 OUR_USER="hacker"
-# we need avoid using variables like this, with non-latin symbols inside
-# bash loses it shit and spoils the name with escape-encoded bullshit
 SNAPSHOT_NAMEBASE="home/${OUR_USER}/${NAME_PRETTY} - build sources"
 SNAPSHOT="source/root/${SNAPSHOT_NAMEBASE} - ${VERSION_CONFIG}_${BUILD_DATE}.tar"
 IMAGE="${dst}/${NAME}.${image_arch}-${VERSION_CONFIG}.iso"
-IMAGE_PROPER="Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
-PACKAGE_LIST="${dst}/build/image-root/home/${OUR_USER}/${NAME_PRETTY} - package list - ${VERSION_CONFIG}.txt"
-PACKAGE_LIST_PROPER=$(basename "${IMAGE_PROPER}" .iso).packages
+IMAGE_PROPER="${img}/Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
+PACKAGE_LIST="${dst}/build/image-root/home/${OUR_USER}/${NAME_PRETTY} - package list - ${VERSION_CONFIG}_${BUILD_DATE}.txt"
+PACKAGE_LIST_PROPER=${img}/$(basename "${IMAGE_PROPER}" .iso).packages
+HASHFILE=${img}/$(basename "${IMAGE_PROPER}" .iso).sha256
 
 # Cleaning up.
 echo "** CLeaning up auto-generated files..."
@@ -202,4 +204,6 @@ echo -n "** Moving iso-file: "
 mv -v "${IMAGE}" "${IMAGE_PROPER}"
 
 echo -n "** Creating sha256 checksum: "
-sha256sum -b "${IMAGE_PROPER}" > "$(basename ${IMAGE_PROPER} .iso).sha256"
+sha256sum -b "${IMAGE_PROPER}" > "${HASHFILE}"
+
+echo "** Everything is done, now look into '${img}' !"

@@ -86,7 +86,8 @@ systemctl enable lightdm
 # making list of installed packages from default user
 OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
 NAME_PRETTY=$(echo "${kiwi_iname}" | sed 's:_: :g')
-PACKAGE_LIST="/home/${OUR_USER}/${NAME_PRETTY} - package list - ${VERSION_CONFIG}.txt"
+eval $(grep --color=no BUILD_ID /etc/os-release)
+PACKAGE_LIST="/home/${OUR_USER}/${NAME_PRETTY} - package list - ${kiwi_iversion}_${BUILD_ID}.txt"
 rpm -qa | sort -fu > "${PACKAGE_LIST}"
 chown ${OUR_USER}:users "${PACKAGE_LIST}"
 

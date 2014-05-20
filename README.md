@@ -48,13 +48,13 @@ Notes:
 ⊙ DE-specific apps are included for the lack of adequate analogues
 	KDE: 	kwin (The WM)
 		systemsettings (large-scope cosmetics configurator)
-		kinfocenter (system informant)
+		kinfocenter (system informant)¹
 		krusader (dolphin + konqueror + mc in one package and more ? yes, please)
-		bluedevil (bluez control),
+		bluedevil (bluez control)
 		yakuake (handy console), will be replaced with qterminal once it matures
-		kate (great simple editor),
+		kate (great simple editor)
 		okular (useful doc viewer, integrated in Firefox via kparts-plugin)
-		kchmviewer (MS chm viewer, because sometimes okular screws up)
+		kchmviewer (MS chm viewer), because sometimes okular screws up
 		gwenview + kipi-plugins (highly-capable image viewer)
 
 	GNOME: 	nm-applet (this is _the only_ NM GUI that can launch in any DE)
