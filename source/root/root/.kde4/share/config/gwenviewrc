@@ -1,0 +1,12 @@
+[MainWindow]
+Height 1080=500
+State=AAAA/wAAAAD9AAAAAAAAAu4AAAHCAAAABAAAAAQAAAAIAAAACPwAAAABAAAAAgAAAAEAAAAWAG0AYQBpAG4AVABvAG8AbABCAGEAcgEAAAAA/////wAAAAAAAAAA
+ToolBarsMovable=Disabled
+Width 1920=750
+
+[Recent Files]
+File1[$e]=$HOME/.face
+Name1[$e]=.face
+
+[SideBar-ViewMode]
+IsVisible=true

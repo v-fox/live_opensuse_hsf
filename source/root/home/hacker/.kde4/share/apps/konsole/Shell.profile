@@ -10,7 +10,7 @@ OpenLinksByDirectClickEnabled=true
 TrimTrailingSpacesInSelectedText=true
 
 [Scrolling]
-ScrollFullPage=1
+ScrollFullPage=true
 
 [Terminal Features]
 BlinkingCursorEnabled=true

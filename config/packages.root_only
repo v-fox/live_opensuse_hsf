@@ -63,15 +63,6 @@ conky-clementine
 conky-imlib2
 conky-keyring
 conky-nano
-connman-nmcompat
-connman-plugin-hh2serial-gps
-connman-plugin-l2tp
-connman-plugin-openconnect
-connman-plugin-openvpn
-connman-plugin-polkit
-connman-plugin-pptp
-connman-plugin-tist
-connman-plugin-vpnc
 conntrack-tools
 copyq
 cpupower
@@ -97,7 +88,6 @@ dpkg
 e2fsprogs-snapshots
 easytag
 ebtables
-econnman
 ecryptfs-utils
 efont-unicode-bitmap-fonts
 ekiga
@@ -304,15 +294,11 @@ kbd
 kcharselect
 kchmviewer
 kdeartwork4-icons
-kdebase4-systemsettings
-kdebase4-workspace-liboxygenstyle
-kde-gtk-config
 kde-oxygen-fonts
 kdiff3
 kdnssd
 keepassx
 kfilemetadata
-kinfocenter
 kio_iso
 kio_kamera
 kio-locate
@@ -324,7 +310,6 @@ kmscon
 kparts-plugin
 krename
 krusader
-kwin
 laptop-mode-tools
 latencytop
 lcdf-typetools
@@ -380,7 +365,6 @@ leechcraft-deadlyrics
 leechcraft-devmon
 leechcraft-dolozhee
 leechcraft-dumbeep
-leechcraft-fenet-kwin
 leechcraft-fenet-openbox
 leechcraft-gacts
 leechcraft-glance
@@ -509,6 +493,7 @@ lsb-release
 lsof
 lxappearance
 lxappearance-obconf
+lxqt-appswitcher
 lynis
 make
 man

@@ -1,0 +1,25 @@
+[$Version]
+update_info=yakuake.upd:2.9.9-startupnotification
+
+[Appearance]
+BackgroundColorOpacity=80
+TerminalHighlightOnManualActivation=true
+Translucency=true
+
+[Behavior]
+FocusFollowsMouse=true
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[Dialogs]
+FirstRun=false
+
+[Favorite Profiles]
+Favorites=Shell.profile
+
+[Window]
+DynamicTabTitles=true
+Height=60
+KeepOpen=false
+KeepOpenAfterLastSessionCloses=true
