@@ -13,7 +13,7 @@ It provides:
 * LeechCraft modular system as a foundation of your basic-needs software kit
 * fresh Mozilla Firefox browser and Thunderbird e-mail client for your web-surfing needs
 * Clementine audio player, VLC and S/Mplayer video players for your multimedia needs
-* LibreOffice, Calibre and GIMP for your documentational needs
+* LibreOffice, Calibre, pdfcrack and GIMP for your documentational needs
 * Tor, Polipo, miredo-client, proxychains and dnscrypt (not enabled by default) for your anti-censorship needs
 * ze/nmap, hostapd, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, lftp, rancid, usbip and a bunch for your networking needs
 * mc, zsh, kmscon, android-tools, wgetpaste and other various console tools

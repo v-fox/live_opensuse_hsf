@@ -35,6 +35,7 @@ bitmap
 bitstream-vera-fonts
 bluedevil
 bluez
+bonnie++
 bootcycle
 branding-basedonopensuse
 bridge-utils
@@ -66,7 +67,6 @@ conky-nano
 conntrack-tools
 copyq
 cpupower
-cpupower-bench
 cracklib-dict-full
 crda
 cromfs
@@ -85,6 +85,7 @@ dnstop
 dos2unix
 dosfstools
 dpkg
+dstat
 e2fsprogs-snapshots
 easytag
 ebtables
@@ -545,6 +546,7 @@ nfs4-acl-tools
 nfs-client
 nmap
 nmap-ndiff
+nmon
 nping
 nscd
 ntfs-3g
@@ -575,6 +577,7 @@ paprefs
 pavucontrol
 pax
 pax-utils
+pdfcrack-multithread
 phonon-backend-vlc
 photorec
 pin
@@ -656,6 +659,7 @@ sssd
 stix-fonts
 stix-integrals-fonts
 strace
+stress
 subversion
 sudo
 SuSEfirewall2
