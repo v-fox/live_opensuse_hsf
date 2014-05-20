@@ -88,7 +88,9 @@ delayacct-utils
 deltarpm
 desktop-translations
 dmidecode
+dnscrypt
 dnsmasq
+dnstop
 dos2unix
 dosfstools
 dpkg
@@ -135,6 +137,7 @@ freetype-tools
 fsarchiver
 fslint
 fslsfonts
+ftop
 fusecompress
 fuse-funionfs
 gconf2-branding-basedonopensuse
@@ -233,6 +236,7 @@ hicolor-icon-theme
 hicolor-icon-theme-branding-basedonopensuse
 hostapd
 hostap-utils
+htop
 hunspell
 hunspell-tools
 hwinfo
@@ -274,6 +278,7 @@ ibus-table-viqr
 ibus-table-yawerty
 ibus-unikey
 ifplugd
+iftop
 ifuse
 ImageMagick
 indic-fonts
@@ -282,6 +287,7 @@ input-utils
 intel-gpu-tools
 intlfonts
 intlfonts-ttf-fonts
+iotop
 ipsec-tools
 ipset
 iptraf-ng
@@ -320,6 +326,7 @@ krename
 krusader
 kwin
 laptop-mode-tools
+latencytop
 lcdf-typetools
 ldapfuse
 leechcraft
@@ -533,7 +540,7 @@ mtr
 mtr-gtk
 myspell-american
 myspell-british
-nanum-font
+nanum-fonts
 ncat
 ncdu
 ndisc6
@@ -607,6 +614,7 @@ powertop
 ppp
 prctl
 procinfo
+proctail
 proxychains
 psmisc
 ptools
@@ -617,6 +625,7 @@ pulseaudio-module-gconf
 pulseaudio-module-lirc
 pulseaudio-module-zeroconf
 pwgen
+qps
 radeon-profile
 radeontop
 radvd
@@ -635,6 +644,7 @@ sazanami-fonts
 sbc
 sbl
 scalpel
+schedtop
 screen
 seahorse
 seahorse-daemon

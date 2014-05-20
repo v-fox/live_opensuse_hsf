@@ -73,6 +73,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Current'>
 		<source path='obs://KDE:Current/openSUSE_13.1'/>
 	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='48' alias='server_mdns'>
+		<source path='obs://server:dns/openSUSE_13.1'/>
+	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='48' alias='server_monitoring'>
 		<source path='obs://server:monitoring/openSUSE_13.1'/>
 	</repository>
