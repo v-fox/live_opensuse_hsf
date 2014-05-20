@@ -12,11 +12,6 @@ test -f /.profile && . /.profile
 echo "Configure image: [$name]..."
 
 #======================================
-# Fixing permissions safely for host system
-#--------------------------------------
-baseSetupUserPermissions
-
-#======================================
 # Mount system filesystems
 #--------------------------------------
 baseMount
