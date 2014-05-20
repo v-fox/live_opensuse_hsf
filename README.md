@@ -9,6 +9,7 @@ It provides:
 * fresh Stable kernel from Kernel:stable repo
 * fresh (default) or bleeding edge OSS video stack from X11 repo (rc's) and pontostroy (git & kernel rc's)
 * slim LXQt (default) and Enlightenment desktop environments from their respective repos
+* international collection of fonts and universal iBus input method by default
 * LeechCraft modular system as a foundation of your basic-needs software kit
 * fresh Mozilla Firefox browser and Thunderbird e-mail client for your web-surfing needs
 * Clementine audio player, VLC and S/Mplayer video players for your multimedia needs

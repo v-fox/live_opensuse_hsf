@@ -4,6 +4,7 @@ acetoneiso2
 acl
 acpid
 AdobeICCProfiles
+adobe-sourcecodepro-fonts
 aespipe
 aiccu
 aircrack-ng
@@ -15,6 +16,7 @@ android-tools
 apcupsd
 apcupsd-gui
 apparmor-utils
+arabic-fonts
 aria2fe
 arj
 arping2
@@ -113,6 +115,7 @@ exfat-utils
 ext3grep
 ext4magic
 f2fs-tools
+farsi-fonts
 fatattr
 fatsort
 ffmpeg
@@ -272,11 +275,12 @@ ibus-unikey
 ifplugd
 ifuse
 ImageMagick
+indic-fonts
 innoextract
 input-utils
 intel-gpu-tools
 intlfonts
-intlfonts-euro-bitmap-fonts
+intlfonts-ttf-fonts
 ipsec-tools
 ipset
 iptraf-ng
@@ -315,6 +319,7 @@ krename
 krusader
 kwin
 laptop-mode-tools
+lcdf-typetools
 ldapfuse
 leechcraft
 leechcraft-advancednotifications
@@ -516,6 +521,7 @@ mlocate
 ModemManager
 modem-manager-gui
 module-init-tools
+monapo-fonts
 MozillaFirefox
 MozillaThunderbird
 mtd-utils
@@ -525,6 +531,7 @@ mtr
 mtr-gtk
 myspell-american
 myspell-british
+nanum-font
 ncat
 ncdu
 ndisc6
@@ -555,6 +562,7 @@ ocfs2console
 oggvideotools
 okular
 openal-soft
+opengost-otf-fonts
 openldap2-client
 openssh
 openssh-askpass
@@ -621,6 +629,7 @@ rpm
 rsync
 samba-client
 sax3
+sazanami-fonts
 sbc
 sbl
 scalpel
@@ -647,6 +656,8 @@ snmp-mibs
 sox
 splashy-mkinitrd
 sssd
+stix-fonts
+stix-integrals-fonts
 strace
 subversion
 sudo
@@ -665,6 +676,8 @@ terminfo
 terminology-theme-openSUSE
 terminus-bitmap-fonts
 testdisk
+thai-fonts
+thessalonica-oldstandard-otf-fonts
 timezone
 tmpwatch
 tor
@@ -712,6 +725,7 @@ wireshark
 wm-icons
 wol
 wpa_supplicant-gui
+wqy-zenhei-fonts
 xcompmgr
 xcursor-themes
 xdmbgrd
