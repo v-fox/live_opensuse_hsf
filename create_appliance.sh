@@ -203,7 +203,7 @@ fi
 echo -n "** Moving iso-file: "
 mv -v "${IMAGE}" "${IMAGE_PROPER}"
 
-echo -n "** Creating sha256 checksum: "
+echo "** Creating sha256 checksum..."
 sha256sum -b "${IMAGE_PROPER}" > "${HASHFILE}"
 
 echo "** Everything is done, now look into '${img}' !"
