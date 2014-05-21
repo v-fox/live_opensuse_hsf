@@ -1,7 +1,7 @@
 Hackeurs Sans Frontières
 ========================
-### download built images at [SourceForge](https://sourceforge.net/p/hackeurs-sans-frontieres), forums are there too
-This is hybrid live cd/usb openSUSE spin aimed to be fully functional out-of-the-box yet slim desktop system for advanced users in countries without software patent racket.
+### download built images at [SourceForge](https://sourceforge.net/p/hackeurs-sans-frontieres), forums are there too  
+This is hybrid live cd/usb openSUSE spin aimed to be fully functional out-of-the-box yet slim desktop system for advanced users in countries without software patent racket.  
 It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
 
 It provides:
@@ -25,13 +25,13 @@ It provides:
 
 It does NOT provide:
 --------------------
-— proprietary video drivers (because they suck and are pain in the ass), and video driver support for anything without KMS for that matter
-— whole KDE or Gnome pre-installed (because of how fat the former and how ugly the later are)
-— any language packages (for space conservation)
-— Wayland packages (because it's too raw yet)
-— printer and scaner support (because that would require a lot of packages without much use on generic installation media)
-— many cd/dvd/bluray and whatever disk rom utilities (because spinning media must die). mkisofs, cdrecord and acetoneiso2 are included though
-— accessibility features (because i have no idea how to setup them right)
+— proprietary video drivers (because they suck and are pain in the ass), and video driver support for anything without KMS for that matter  
+— whole KDE or Gnome pre-installed (because of how fat the former and how ugly the later are)  
+— any language packages (for space conservation)  
+— Wayland packages (because it's too raw yet)  
+— printer and scaner support (because that would require a lot of packages without much use on generic installation media)  
+— many cd/dvd/bluray and whatever disk rom utilities (because spinning media must die). mkisofs, cdrecord and acetoneiso2 are included though  
+— accessibility features (because i have no idea how to setup them right)  
 
 * I recommend to use smart SATA boxes and usb drives with legacy (floppy, disk, virtual partition) emulation as the replacement for disks like:
  	* ⊘ [IODD](https://iodd.co.kr) / [Zalman ZM-\*](https://www.zalman.com/global/product/CategorySecond_Pic.php) series
@@ -40,11 +40,11 @@ It does NOT provide:
 
 Notes:
 ------
-⊙  **first thing you should do on freshly loaded system is to look at gnote's HSF note**
-⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description
-⊙ Firefox and LeechCraft are set up to use Tor by default, *_proxy variables are also globally set
-⊙ popular Microsoft fonts are included for web & document compatibility. they may be removed in future
-⊙ Bitcoin support is wanted but Qt5 dependency of official client makes it unfeasible for now
+⊙  **first thing you should do on freshly loaded system is to look at gnote's HSF note**  
+⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description  
+⊙ Firefox and LeechCraft are set up to use Tor by default, *_proxy variables are also globally set  
+⊙ popular Microsoft fonts are included for web & document compatibility. they may be removed in future  
+⊙ Bitcoin support is wanted but Qt5 dependency of official client makes it unfeasible for now  
 
 * ⊙ can be put on flash USB sticks and such from within itself by
   * simple `dd bs=<your flash's write block size, like 64K> if=<image or even cdrom device that you have booted it on> of=/dev/<target_device>`
@@ -70,12 +70,12 @@ Notes:
 
 KNOWN ISSUES:
 -------------
-❕ YaST2-Firstboot's background missing its picture. it also wants '/etc/init.d/kbd' which was removed by upstream
-❕ YaST2-Firstboot doesn't seem to configure X's keyboard layouts. better just to use iBuss configuration, make it yourself or try sucky `sax3` utility
-❕ Plymouth doesn't want to show itself after initrd and before DM loading, so it's disabled for now with 'splash=verbose' option
-❕ Krusader may hang something and start raping CPU while not freezing itself. check for that with a/top, qps or something like that
-❕ Conky's desktop-mode is broken and i haven't bothered to make good config for it
-❕ KDE's `systemsettings` configurator may be useful for KDE apps, but it's missing due to it residing in superfat package, "kdebase4-workspace"
+❕ YaST2-Firstboot's background missing its picture. it also wants '/etc/init.d/kbd' which was removed by upstream  
+❕ YaST2-Firstboot doesn't seem to configure X's keyboard layouts. better just to use iBuss configuration, make it yourself or try sucky `sax3` utility  
+❕ Plymouth doesn't want to show itself after initrd and before DM loading, so it's disabled for now with 'splash=verbose' option  
+❕ Krusader may hang something and start raping CPU while not freezing itself. check for that with a/top, qps or something like that  
+❕ Conky's desktop-mode is broken and i haven't bothered to make good config for it  
+❕ KDE's `systemsettings` configurator may be useful for KDE apps, but it's missing due to it residing in superfat package, "kdebase4-workspace"  
 
 Building:
 ---------
