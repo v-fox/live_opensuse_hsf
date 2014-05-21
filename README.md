@@ -1,6 +1,6 @@
 Hackeurs Sans Frontières
 ========================
-### download built images at [SourceForge](sourceforge.net/p/hackeurs-sans-frontieres), forums are there too  
+### download built images at [SourceForge](https://sourceforge.net/p/hackeurs-sans-frontieres), forums are there too  
 This is hybrid live cd/usb openSUSE spin aimed to be fully functional out-of-the-box yet slim desktop system for advanced users in countries without software patent racket.  
 It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.  
 
@@ -34,22 +34,21 @@ It does NOT provide:
 — accessibility features (because i have no idea how to setup them right)  
 
 * I recommend to use smart SATA boxes and usb drives with legacy (floppy, disk, virtual partition) emulation as the replacement for disks like:  
- 	* ⊘ [IODD](www.iodd.co.kr) / [Zalman ZM-\*](www.zalman.com/global/product/CategorySecond_Pic.php) series  
- 	* ⊘ [The IsoStick](isostick.com)  
+ 	* ⊘ [IODD](https://iodd.co.kr) / [Zalman ZM-\*](https://www.zalman.com/global/product/CategorySecond_Pic.php) series  
+ 	* ⊘ [The IsoStick](https://isostick.com)  
  	* ⊘ or just using it on any USB stick  
 
 Notes:
 ------
-  
-* ⊙ can be put on flash USB sticks and such from within itself by  
-  * simple `dd bs=<your flash's write block size, like 64K> if=<image or even cdrom device that you have booted it on> of=/dev/<target_device>`  
-  * or glamorous GUI tool like `unetbootin` (included), SUSE's `imagewriter` or Ubuntu's `win32diskimager`  
-
 ⊙  **first thing you should do on freshly loaded system is to look at gnote's HSF note**  
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description  
 ⊙ Firefox is set up to use Tor by default. look for nice indicator in top right corner to toggle proxy state  
 ⊙ popular Microsoft fonts are included for web & document compatibility. they may be removed in future  
 ⊙ Bitcoin support is wanted but Qt5 dependency of official client makes it unfeasible for now  
+
+* ⊙ can be put on flash USB sticks and such from within itself by  
+  * simple `dd bs=<your flash's write block size, like 64K> if=<image or even cdrom device that you have booted it on> of=/dev/<target_device>`  
+  * or glamorous GUI tool like `unetbootin` (included), SUSE's `imagewriter` or Ubuntu's `win32diskimager`  
   
 * ⊙ DE-specific apps are included for the lack of adequate analogues  
  	* KDE:
@@ -81,7 +80,7 @@ KNOWN ISSUES:
 Building:
 ---------
   
-∀ every build comes with its building source in '/home/hacker/Hackeurs Sans Frontières - build code - ${VERSION_CONFIG}_${BUILD_DATE}.tar.xz'  
+* ∀ every build comes with its building source in '/home/hacker/Hackeurs Sans Frontières - build code - ${VERSION_CONFIG}_${BUILD_DATE}.tar.xz'  
 * ∀ you can build your own image by:  
  	1. using openSUSE  
  	2. having "kiwi" and "kiwi-desc-isoboot" packages installed  
