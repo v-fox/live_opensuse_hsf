@@ -10,13 +10,13 @@ It provides:
 * fresh (default) or bleeding edge OSS video stack from X11 repo (rc's) and pontostroy (git & kernel rc's)
 * slim LXQt (default) and Enlightenment desktop environments from their respective repos
 * international collection of fonts and universal iBus input method by default
-* LeechCraft modular system as a foundation of your basic-needs software kit
-* fresh Mozilla Firefox browser and Thunderbird e-mail client for your web-surfing needs
-* Clementine audio player, VLC and S/Mplayer video players for your multimedia needs
-* LibreOffice, Calibre, pdfcrack and GIMP for your documentational needs
-* Tor, Polipo, miredo-client, proxychains and dnscrypt (not enabled by default) for your anti-censorship needs
-* ze/nmap, hostapd, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, lftp, rancid, usbip and a bunch for your networking needs
+* LeechCraft modular system stripped for only IM, Socializing and P2P functionality
+* fresh Mozilla Firefox browser and Thunderbird e-mail client
+* Clementine audio player, VLC and S/Mplayer video players
+* LibreOffice, Calibre, pdfcrack and GIMP
 * mc, zsh, kmscon, android-tools, wgetpaste and other various console tools
+* anti-censorship kit: Tor, Polipo, proxychains, dnscrypt (not enabled by default) and miredo-client
+* networking: ze/nmap, hostapd, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, lftp, rancid, usbip and a bunch
 * gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
 * exfat and zfs kernel modules, reiser4progs and general FS management & recovery tools like fsarchiver, ddrescue, testdisk, photorec, ext4magic
 * autopsy/sleuthkit, scalpel, chkrootkit, ntpassw/dchntpw, lynis, aircrack-ng, kismet, reaver and more security tools
@@ -45,7 +45,7 @@ Notes:
 	or glamorous GUI tool like `unetbootin` (included), Suse's `imagewriter` or Ubuntu's win32diskimager
 ⊙ *first thing you should do on freshly loaded system is to look at gnote's HSF note*
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description
-⊙ Firefox is set up to use Tor by default. you can change that in its proxy settings or use Leechcraft's own webkit browser
+⊙ Firefox is set up to use Tor by default. look for nice indicator in top right corner to toggle proxy state
 ⊙ popular MicroSoft fonts are included for web & document compatibility. they may be removed in future
 ⊙ DE-specific apps are included for the lack of adequate analogues
 	KDE: 	kwin (The WM)
