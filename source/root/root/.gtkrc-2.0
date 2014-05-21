@@ -13,4 +13,4 @@ gtk-button-images=1
 gtk-menu-images=1
 gtk-enable-event-sounds=1
 gtk-enable-input-feedback-sounds=1
-include "/home/hacker/.gtkrc-2.0.mine"
+include "${HOME}/.gtkrc-2.0.mine"

@@ -1,6 +1,0 @@
-[Desktop Entry]
-Exec=compton
-Name=compton compositor
-Type=Application
-Version=1.0
-X-LxQt-Need-Tray=true

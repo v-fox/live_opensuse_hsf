@@ -69,7 +69,7 @@ History=kate
 
 [Private]
 Maximized=false
-PopularUrls=file:///home/hacker/
+PopularUrls=file://${HOME}/
 PopularUrlsRank=27
 Start Position=311,207
 Start Size=1305,812
@@ -104,12 +104,12 @@ ActiveTab=0
 [Startup][Left Tab Bar][Tabs][Tab0]
 Properties=0
 Type=0
-Url=/home/hacker
+Url=${HOME}
 
 [Startup][Left Tab Bar][Tabs][Tab0][History]
 CurrentIndex=0
 CurrentItems=READ gnote NOTE from system tray now !
-Entrys=file:///home/hacker
+Entrys=file://${HOME}
 
 [Startup][Left Tab Bar][Tabs][Tab0][View]
 AutoResizeColumns=true
@@ -127,12 +127,12 @@ ActiveTab=0
 [Startup][Right Tab Bar][Tabs][Tab0]
 Properties=0
 Type=0
-Url=/home/hacker
+Url=${HOME}
 
 [Startup][Right Tab Bar][Tabs][Tab0][History]
 CurrentIndex=0
 CurrentItems=..
-Entrys=file:///home/hacker
+Entrys=file://${HOME}
 
 [Startup][Right Tab Bar][Tabs][Tab0][View]
 AutoResizeColumns=true
