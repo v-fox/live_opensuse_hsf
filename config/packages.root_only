@@ -401,6 +401,14 @@ libOSMesa9
 libotr2-tools
 libpoppler-glib8
 libpoppler-qt4-4
+libpurple-meanwhile
+libpurple-plugin-facebookchat
+libpurple-plugin-mrim
+libpurple-plugin-openfetion
+libpurple-plugin-pack
+libpurple-plugin-pack-extras
+libpurple-plugin-sipe
+libpurple-plugin-whatsapp
 libreoffice-base-extensions
 libreoffice-calc-extensions
 libreoffice-converter
