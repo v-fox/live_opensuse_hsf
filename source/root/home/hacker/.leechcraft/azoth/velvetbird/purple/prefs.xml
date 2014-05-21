@@ -1,0 +1,169 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<pref version='1' name='/'>
+	<pref name='purple'>
+		<pref name='away'>
+			<pref name='idle_reporting' type='string' value='system'/>
+			<pref name='away_when_idle' type='bool' value='1'/>
+			<pref name='mins_before_away' type='int' value='5'/>
+			<pref name='auto_reply' type='string' value='awayidle'/>
+		</pref>
+		<pref name='buddies'/>
+		<pref name='contact'>
+			<pref name='last_match' type='bool' value='0'/>
+		</pref>
+		<pref name='debug'>
+			<pref name='timestamps' type='bool' value='1'/>
+		</pref>
+		<pref name='status'>
+			<pref name='scores'>
+				<pref name='offline' type='int' value='-500'/>
+				<pref name='available' type='int' value='100'/>
+				<pref name='invisible' type='int' value='-50'/>
+				<pref name='away' type='int' value='-100'/>
+				<pref name='extended_away' type='int' value='-200'/>
+				<pref name='idle' type='int' value='0'/>
+				<pref name='offline_msg' type='int' value='-5'/>
+			</pref>
+		</pref>
+		<pref name='savedstatus'>
+			<pref name='default' type='int' value='1400711355'/>
+			<pref name='startup' type='int' value='0'/>
+			<pref name='startup_current_status' type='bool' value='1'/>
+			<pref name='idleaway' type='int' value='0'/>
+			<pref name='isidleaway' type='bool' value='0'/>
+		</pref>
+		<pref name='conversations'>
+			<pref name='chat'>
+				<pref name='show_nick_change' type='bool' value='1'/>
+			</pref>
+			<pref name='im'>
+				<pref name='send_typing' type='bool' value='1'/>
+			</pref>
+		</pref>
+		<pref name='logging'>
+			<pref name='log_ims' type='bool' value='1'/>
+			<pref name='log_chats' type='bool' value='1'/>
+			<pref name='log_system' type='bool' value='0'/>
+			<pref name='format' type='string' value='html'/>
+		</pref>
+		<pref name='network'>
+			<pref name='stun_server' type='string' value=''/>
+			<pref name='turn_server' type='string' value=''/>
+			<pref name='turn_port' type='int' value='3478'/>
+			<pref name='turn_port_tcp' type='int' value='3478'/>
+			<pref name='turn_username' type='string' value=''/>
+			<pref name='turn_password' type='string' value=''/>
+			<pref name='auto_ip' type='bool' value='1'/>
+			<pref name='public_ip' type='string' value=''/>
+			<pref name='map_ports' type='bool' value='1'/>
+			<pref name='ports_range_use' type='bool' value='0'/>
+			<pref name='ports_range_start' type='int' value='1024'/>
+			<pref name='ports_range_end' type='int' value='2048'/>
+		</pref>
+		<pref name='proxy'>
+			<pref name='type' type='string' value='none'/>
+			<pref name='host' type='string' value=''/>
+			<pref name='port' type='int' value='0'/>
+			<pref name='username' type='string' value=''/>
+			<pref name='password' type='string' value=''/>
+			<pref name='socks4_remotedns' type='bool' value='0'/>
+		</pref>
+		<pref name='sound'>
+			<pref name='while_status' type='int' value='1'/>
+		</pref>
+	</pref>
+	<pref name='plugins'>
+		<pref name='core'>
+			<pref name='core-plugin_pack-autoaccept'>
+				<pref name='path' type='string' value='/home/hacker/.leechcraft/azoth/velvetbird/purple/autoaccept'/>
+				<pref name='notify' type='bool' value='1'/>
+				<pref name='newdir' type='bool' value='1'/>
+				<pref name='escape' type='bool' value='1'/>
+			</pref>
+			<pref name='core-plugin_pack-autoreply'>
+				<pref name='idle' type='bool' value='1'/>
+				<pref name='away' type='bool' value='1'/>
+				<pref name='global' type='string' value='I am currently not available. Please leave your message, and I will get back to you as soon as possible.'/>
+				<pref name='mintime' type='int' value='10'/>
+				<pref name='maxsend' type='int' value='10'/>
+				<pref name='usestatus' type='int' value='0'/>
+				<pref name='prefix' type='string' value='This is an autoreply: '/>
+				<pref name='invisible' type='bool' value='1'/>
+			</pref>
+			<pref name='eionrobb-capsnot'>
+				<pref name='im' type='string' value='always'/>
+				<pref name='chat' type='string' value='nick'/>
+				<pref name='numlock' type='bool' value='0'/>
+				<pref name='capslock' type='bool' value='0'/>
+				<pref name='scrolllock' type='bool' value='1'/>
+				<pref name='flashcount' type='int' value='8'/>
+				<pref name='flashseconds' type='int' value='2'/>
+			</pref>
+			<pref name='core-plugin_pack-colorize'>
+				<pref name='initial_r' type='int' value='255'/>
+				<pref name='initial_g' type='int' value='0'/>
+				<pref name='initial_b' type='int' value='0'/>
+				<pref name='target_r' type='int' value='0'/>
+				<pref name='target_g' type='int' value='0'/>
+				<pref name='target_b' type='int' value='0'/>
+			</pref>
+			<pref name='highlight'>
+				<pref name='words' type='string' value=''/>
+			</pref>
+			<pref name='joinpart'>
+				<pref name='delay' type='int' value='10'/>
+				<pref name='threshold' type='int' value='20'/>
+				<pref name='hide_buddies' type='bool' value='0'/>
+			</pref>
+			<pref name='newline'>
+				<pref name='im' type='bool' value='1'/>
+				<pref name='chat' type='bool' value='1'/>
+			</pref>
+			<pref name='core-plugin_pack-offlinemsg'>
+				<pref name='always' type='bool' value='0'/>
+			</pref>
+			<pref name='psychic'>
+				<pref name='buddies_only' type='bool' value='0'/>
+				<pref name='show_notice' type='bool' value='1'/>
+				<pref name='activate_online' type='bool' value='1'/>
+			</pref>
+			<pref name='slashexec'>
+				<pref name='slash' type='bool' value='1'/>
+				<pref name='bang' type='bool' value='0'/>
+			</pref>
+			<pref name='splitter'>
+				<pref name='split_size' type='int' value='786'/>
+				<pref name='delay_ms' type='int' value='500'/>
+			</pref>
+			<pref name='statenotify'>
+				<pref name='notify_away' type='bool' value='1'/>
+				<pref name='notify_idle' type='bool' value='1'/>
+				<pref name='notify_signon' type='bool' value='1'/>
+			</pref>
+			<pref name='eionrobb-libpurple-translate'>
+				<pref name='locale' type='string' value='en'/>
+				<pref name='service' type='string' value='google'/>
+			</pref>
+		</pref>
+		<pref name='lopl'/>
+		<pref name='prpl'>
+			<pref name='oscar'>
+				<pref name='recent_buddies' type='bool' value='0'/>
+			</pref>
+			<pref name='meanwhile'>
+				<pref name='blist_action' type='int' value='4'/>
+			</pref>
+		</pref>
+		<pref name='ignore'>
+			<pref name='rules' type='stringlist'/>
+		</pref>
+	</pref>
+	<pref name='core'>
+		<pref name='plugins'>
+			<pref name='core-plugin_pack-google'>
+				<pref name='domain' type='string' value='www.google.com'/>
+			</pref>
+		</pref>
+	</pref>
+</pref>
