@@ -42,17 +42,14 @@ Notes:
 ------
 ⊙ can be put on flash USB sticks and such from within itself by
 	simple `dd bs=<something near your flash's write block size, like 64K> if=<image or even cdrom device that you booted it on> of=/dev/<target_device>`
-	or glamorous GUI tool like `unetbootin` (included), Suse's `imagewriter` or Ubuntu's win32diskimager
+	or glamorous GUI tool like `unetbootin` (included), SUSE's `imagewriter` or Ubuntu's win32diskimager
 ⊙ *first thing you should do on freshly loaded system is to look at gnote's HSF note*
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description
 ⊙ Firefox is set up to use Tor by default. look for nice indicator in top right corner to toggle proxy state
 ⊙ popular Microsoft fonts are included for web & document compatibility. they may be removed in future
 ⊙ Bitcoin support is wanted but Qt5 dependency of official client makes it unfeasible for now
 ⊙ DE-specific apps are included for the lack of adequate analogues
-	KDE: 	kwin (The WM)
-		systemsettings (large-scope cosmetics configurator)
-		kinfocenter (system informant)¹
-		krusader (dolphin + konqueror + mc in one package and more ? yes, please)
+	KDE: 	krusader (dolphin + konqueror + mc in one package and more ? yes, please)
 		bluedevil (bluez control)
 		yakuake (handy console), will be replaced with qterminal once it matures
 		kate (great simple editor)
@@ -70,12 +67,11 @@ Notes:
 
 KNOWN ISSUES:
 -------------
-❕ YaST2-Firstboot's background missing its picture. it's also wants '/etc/init.d/kbd' which was removed by upstream
-❕ YaST2-Firstboot doesn't seem to configure X's keyboard layouts. better just use iBuss configuration, make it yourself or try sucky `sax3` utility
+❕ YaST2-Firstboot's background missing its picture. it also wants '/etc/init.d/kbd' which was removed by upstream
+❕ YaST2-Firstboot doesn't seem to configure X's keyboard layouts. better just to use iBuss configuration, make it yourself or try sucky `sax3` utility
 ❕ Plymouth doesn't want to show itself after initrd and before DM loading, so it's disabled for now with 'splash=verbose' option
-❕ Firefox's NoScript likes to use random colours for its tooltip, mostly ugly black
-❕ Krusader may hang something and start raping CPU while not freezing itself. check suspicion for that with a/top
-❕ Conky's desktop-mode is broken and i not bothered to make good config for it
+❕ Krusader may hang something and start raping CPU while not freezing itself. check for that with a/top, qps or something like that
+❕ Conky's desktop-mode is broken and i haven't bothered to make good config for it
 ❕ KDE's `systemsettings` configurator may be useful for KDE apps, but it's missing due to it residing in superfat package, "kdebase4-workspace"
 
 Building:
@@ -84,7 +80,7 @@ Building:
 ∀ you can build your own image by:
 	01) using openSUSE
 	02) having "kiwi" and "kiwi-desc-isoboot" packages installed
-	03) editing files, starting from 'source/' and 'create_appliance.sh', or not
+	03) editing files, starting from 'source/*' and 'create_appliance.sh'. or not
 	04) running `create_appliance.sh`
 	05) waiting quite a bit
 ∀ the process of development for this project is like this:
