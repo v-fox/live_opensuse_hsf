@@ -40,6 +40,7 @@ I recommend to use smart SATA boxes and usb drives with legacy (floppy, disk, vi
 
 Notes:
 ------
+⊙ download built images at [SourceForge](sourceforge.net/p/hackeurs-sans-frontieres), there forums too
 ⊙ can be put on flash USB sticks and such from within itself by
 	simple `dd bs=<something near your flash's write block size, like 64K> if=<image or even cdrom device that you booted it on> of=/dev/<target_device>`
 	or glamorous GUI tool like `unetbootin` (included), SUSE's `imagewriter` or Ubuntu's win32diskimager

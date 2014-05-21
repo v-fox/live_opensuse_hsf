@@ -382,7 +382,6 @@ leechcraft-rosenthal
 leechcraft-secman
 leechcraft-secman-simplestorage
 leechcraft-summary
-leechcraft-syncer
 leechcraft-tabsessionmanager
 leechcraft-tabslist
 leechcraft-vgrabber
@@ -650,6 +649,7 @@ translation-update
 tree
 tunctl
 tuxcursors
+ubuntu-font-family
 ucode-intel
 udev
 udftools

@@ -91,6 +91,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_lukho_copyq'>
 		<source path='obs://home:lukho:copyq/openSUSE_13.1'/>
 	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='85' alias='home_XRevan86 '>
+		<source path='obs://home:XRevan86/openSUSE_13.1'/>
+	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='98' alias='home_marec2000'>
 		<source path='obs://home:marec2000/openSUSE_13.1'/>
 	</repository>
