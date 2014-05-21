@@ -14,9 +14,9 @@ It provides:
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
 * LibreOffice, Calibre, pdfcrack and GIMP
-* mc, zsh, kmscon, android-tools, wgetpaste and other various console tools
+* mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other various console tools
 * anti-censorship kit: Tor, Polipo, proxychains, dnscrypt (not enabled by default) and miredo-client
-* networking: ze/nmap, hostapd, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, lftp, rancid, usbip and a bunch
+* networking: ze/nmap, hostapd, usbip, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, rancid, aria2, aMule, lftp, irssi and a bunch
 * gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
 * exfat and zfs kernel modules, reiser4progs and general FS management & recovery tools like fsarchiver, ddrescue, testdisk, photorec, ext4magic
 * autopsy/sleuthkit, scalpel, chkrootkit, ntpassw/dchntpw, lynis, aircrack-ng, kismet, reaver and more security tools
@@ -46,7 +46,8 @@ Notes:
 ⊙ *first thing you should do on freshly loaded system is to look at gnote's HSF note*
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description
 ⊙ Firefox is set up to use Tor by default. look for nice indicator in top right corner to toggle proxy state
-⊙ popular MicroSoft fonts are included for web & document compatibility. they may be removed in future
+⊙ popular Microsoft fonts are included for web & document compatibility. they may be removed in future
+⊙ Bitcoin support is wanted but Qt5 dependency of official client makes it unfeasible for now
 ⊙ DE-specific apps are included for the lack of adequate analogues
 	KDE: 	kwin (The WM)
 		systemsettings (large-scope cosmetics configurator)

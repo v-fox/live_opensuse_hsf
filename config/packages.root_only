@@ -12,6 +12,7 @@ alsa-oss
 alsa-plugins
 alsa-plugins-pulse
 alsa-tools
+aMule
 android-tools
 apcupsd
 apcupsd-gui
@@ -285,6 +286,9 @@ iptraf-ng
 iputils
 irda
 irqbalance
+irssi
+irssi-extra
+irssi-otr
 isight-firmware-tools
 ispell-american
 ispell-british
@@ -532,6 +536,7 @@ pam_cifscreds
 pam_mount
 pam_ssh
 paprefs
+pastebinit
 pavucontrol
 pax
 pax-utils
