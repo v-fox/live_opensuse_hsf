@@ -4,6 +4,11 @@ Hackeurs Sans Frontières
 This is hybrid live cd/usb openSUSE spin aimed to be fully functional out-of-the-box yet slim desktop system for advanced users in countries without software patent racket.  
 It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
 
+* I recommend using smart SATA boxes and usb drives with legacy (floppy / CD / virtual partition) emulation as the replacement for disks, like:
+ 	* ⊘ [IODD](https://iodd.co.kr) / [Zalman ZM-\*](https://www.zalman.com/global/product/CategorySecond_Pic.php) series
+ 	* ⊘ [The IsoStick](https://isostick.com)
+ 	* ⊘ or just using it on any fast USB stick
+
 It provides:
 ------------
 * fresh Stable kernel from Kernel:stable repo
@@ -32,11 +37,6 @@ It does NOT provide:
 — printer and scaner support (because that would require a lot of packages without much use on generic installation media)  
 — many cd/dvd/bluray and whatever disk rom utilities (because spinning media must die). mkisofs, cdrecord and acetoneiso2 are included though  
 — accessibility features (because i have no idea how to setup them right)  
-
-* I recommend to use smart SATA boxes and usb drives with legacy (floppy, disk, virtual partition) emulation as the replacement for disks like:
- 	* ⊘ [IODD](https://iodd.co.kr) / [Zalman ZM-\*](https://www.zalman.com/global/product/CategorySecond_Pic.php) series
- 	* ⊘ [The IsoStick](https://isostick.com)
- 	* ⊘ or just using it on any USB stick
 
 Notes:
 ------
