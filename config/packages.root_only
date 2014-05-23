@@ -80,8 +80,8 @@ delayacct-utils
 deltarpm
 desktop-translations
 dmidecode
-dnscrypt
-dnsmasq
+dnscrypt-proxy
+unbound
 dnstop
 dos2unix
 dosfstools
@@ -763,3 +763,4 @@ zsh
 zypper
 zypper-aptitude
 zypper-log
+bind-utils

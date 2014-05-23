@@ -85,7 +85,7 @@
 	<repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Stable_3.12'>
 		<source path='obs://GNOME:STABLE:3.12/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='94' alias='home_aevseev'>
+	<repository type='rpm-md' imageinclude='true' priority='80' alias='home_aevseev'>
 		<source path='obs://home:aevseev/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_lukho_copyq'>

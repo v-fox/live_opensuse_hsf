@@ -6,6 +6,10 @@
 <list><list-item dir="ltr">before using package manager, first thing you NEED to do is:
 <list><list-item dir="ltr"><highlight>sudo zypper --gpg-auto-import-keys refresh</highlight> in terminal to get repo-caches _and import all their keys_</list-item></list></list-item></list>
 
+<list><list-item dir="ltr">encryption and security tips:
+<list><list-item dir="ltr">all DNS queries are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them to OpenDNS via encrypted connection. if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<highlight>network.proxy.socks_remote_dns</highlight>' parameter in Firefox, Thunderbird and all Mozilla apps
+</list-item><list-item dir="ltr">for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)</list-item></list></list-item></list>
+
 <list><list-item dir="ltr">important changes were made to <link:url>/etc/zypp/zypp.conf</link:url> 
 <list><list-item dir="ltr">'<highlight>solver.allowVendorChange</highlight>' was set to 'true'.
 <list><list-item dir="ltr">it should be safe due to strict prioritization in repo list, but keep that in mind anyway.
@@ -39,10 +43,6 @@
 </list-item></list></list-item><list-item dir="ltr">to enable VDPAU/GL acceleration on VA-API-hardware (intel):
 <list><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight></list-item></list></list-item></list></list-item></list>
 
-<list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list>
-
-<list><list-item dir="ltr">encryption and security tips:
-<list><list-item dir="ltr">for <highlight>gnome-keyring</highlight> auto-unlock via PAM <underline>its password should be the same as your login password</underline></list-item></list></list-item></list>
-</note-content>
-</text><last-change-date>2014-05-20T13:32:46.682199Z</last-change-date><last-metadata-change-date>2014-05-20T13:32:46.683357Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>817</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+<list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
+</text><last-change-date>2014-05-23T04:38:11.707689Z</last-change-date><last-metadata-change-date>2014-05-23T04:38:11.709100Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>481</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 

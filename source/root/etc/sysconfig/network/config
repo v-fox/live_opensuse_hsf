@@ -14,7 +14,7 @@ DEFAULT_BROADCAST="+"
 ## Type:	yesno
 ## Default:	yes
 # sometimes we want some script to be executed after an interface has been
-# brought up, or before an interface is taken down. 
+# brought up, or before an interface is taken down.
 # default dir is /etc/sysconfig/network/if-up.d for POST_UP and
 # /etc/sysconfig/network/if-down.d for PRE_DOWN
 GLOBAL_POST_UP_EXEC="yes"
@@ -26,7 +26,7 @@ GLOBAL_PRE_DOWN_EXEC="yes"
 # Make sure that packet sockets (CONFIG_PACKET) are supported in the kernel,
 # since this feature uses arping, which depends on that.
 # Also be aware that this takes one second per interface; consider that when
-# setting up a lot of interfaces. 
+# setting up a lot of interfaces.
 CHECK_DUPLICATE_IP="yes"
 
 ## Type:        yesno
@@ -215,7 +215,7 @@ IFPLUGD_OPTIONS="-f -I -b"
 # When using NetworkManager you may define a timeout to wait for NetworkManager
 # to connect in /etc/init.d/network(-remotefs) script.  Other network services
 # may require the system to have a valid network setup in order to succeed.
-# 
+#
 # This variable has no effect if NetworkManager is disabled.
 #
 NM_ONLINE_TIMEOUT="0"
@@ -229,7 +229,7 @@ NM_ONLINE_TIMEOUT="0"
 # To disable the execution of a module, don't remove it from the list
 # but prepend it with a minus sign, "-ntp-runtime".
 #
-NETCONFIG_MODULES_ORDER="dns-resolver dns-bind dns-dnsmasq nis ntp-runtime"
+NETCONFIG_MODULES_ORDER="dns-resolver dns-dnsmasq dns-bind nis ntp-runtime"
 
 ## Type:        string
 ## Default:     "auto"
@@ -247,7 +247,7 @@ NETCONFIG_DNS_POLICY="auto"
 # causes to write the name server IP addresses to /etc/resolv.conf
 # only (no forwarder). Empty string defaults to "resolver".
 #
-NETCONFIG_DNS_FORWARDER="dnsmasq"
+NETCONFIG_DNS_FORWARDER="resolver"
 
 ## Type:        yesno
 ## Default:     yes
@@ -278,7 +278,7 @@ NETCONFIG_DNS_STATIC_SEARCHLIST="local"
 # nameservers causing the glibc to use the name server on the local
 # machine (the forwarder). See also netconfig(8) manual page.
 #
-NETCONFIG_DNS_STATIC_SERVERS="127.0.0.1 8.8.8.8 4.2.2.5"
+NETCONFIG_DNS_STATIC_SERVERS="127.0.0.1 4.2.2.5 8.8.8.8"
 
 ## Type:        string
 ## Default:     "auto"
@@ -301,7 +301,7 @@ NETCONFIG_DNS_RANKING="auto"
 # 	"debug attempts:1 timeout:10"
 # See resolv.conf(5) manual page for details.
 #
-NETCONFIG_DNS_RESOLVER_OPTIONS=""
+NETCONFIG_DNS_RESOLVER_OPTIONS="edns0"
 
 ## Type:        string
 ## Default:     ""
