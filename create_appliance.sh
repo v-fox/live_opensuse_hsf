@@ -188,7 +188,7 @@ sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
 	> source/root/etc/os-release
 
 echo "** Creating appliance..."
-command="$kiwi --build $src/ -d $dst"
+command="$kiwi --verbose 3 --build $src/ -d $dst"
 echo "$command"
 $command
 if [ $? -ne 0 ]; then
