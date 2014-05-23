@@ -4,6 +4,11 @@ Hackeurs Sans Frontières
 This is hybrid live cd/usb openSUSE spin aimed to be fully functional out-of-the-box yet slim desktop system for advanced users in countries without software patent racket.  
 It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
 
+* I recommend using smart SATA boxes and usb drives with legacy (floppy / CD / virtual partition) emulation as the replacement for disks, like:
+ 	* ⊘ [IODD](https://iodd.co.kr) / [Zalman ZM-\*](https://www.zalman.com/global/product/CategorySecond_Pic.php) series
+ 	* ⊘ [The IsoStick](https://isostick.com)
+ 	* ⊘ or just using it on any fast USB stick
+
 It provides:
 ------------
 * fresh Stable kernel from Kernel:stable repo
@@ -15,7 +20,7 @@ It provides:
 * Clementine audio player, VLC and S/Mplayer video players
 * LibreOffice, Calibre, pdfcrack and GIMP
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other various console tools
-* anti-censorship kit: Tor, Polipo, proxychains, dnscrypt (not enabled by default) and miredo-client
+* anti-censorship kit: Tor, Polipo, dnscrypt-proxy, proxychains and miredo-client
 * networking: ze/nmap, hostapd, usbip, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, rancid, aria2, aMule, irssi and a bunch
 * gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
 * exfat and zfs kernel modules and general FS management & recovery tools like fsarchiver, ddrescue, testdisk, photorec, ext4magic
@@ -33,16 +38,11 @@ It does NOT provide:
 — many cd/dvd/bluray and whatever disk rom utilities (because spinning media must die). mkisofs, cdrecord and acetoneiso2 are included though  
 — accessibility features (because i have no idea how to setup them right)  
 
-* I recommend to use smart SATA boxes and usb drives with legacy (floppy, disk, virtual partition) emulation as the replacement for disks like:
- 	* ⊘ [IODD](https://iodd.co.kr) / [Zalman ZM-\*](https://www.zalman.com/global/product/CategorySecond_Pic.php) series
- 	* ⊘ [The IsoStick](https://isostick.com)
- 	* ⊘ or just using it on any USB stick
-
 Notes:
 ------
 ⊙  **first thing you should do on freshly loaded system is to look at gnote's HSF note**  
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description  
-⊙ Firefox and LeechCraft are set up to use Tor by default, *_proxy variables are also globally set  
+⊙ Firefox and Thunderbird are set up to use Tor by default, *_proxy variables are also globally set, DNS queries are encrypted and funneled to OpenDNS by default  
 ⊙ popular Microsoft fonts are included for web & document compatibility. they may be removed in future  
 ⊙ Bitcoin support is wanted but Qt5 dependency of official client makes it unfeasible for now  
 
