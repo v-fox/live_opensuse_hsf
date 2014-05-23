@@ -1,0 +1,9 @@
+devtmpfs 	/dev 		devtmpfs 	rw,relatime,size=1Mi,mode=755 			0 0
+devpts 		/dev/pts 	devpts 		rw,mode=0620,gid=5 				0 0
+tmpfs 		/dev/shm 	tmpfs 		rw,relatime,size=20% 				0 0
+tmpfs 		/run 		tmpfs 		rw,relatime,size=32Mi,mode=755 			0 0
+tmpfs 		/sys/fs/cgroup 	tmpfs 		rw,size=1Mi,nosuid,nodev,noexec,mode=755 	0 0
+tmpfs 		/var/lock 	tmpfs 		rw,relatime,size=32Mi,mode=755 			0 0
+tmpfs 		/var/run 	tmpfs 		rw,relatime,size=32Mi,mode=755 			0 0
+tmpfs 		/tmp 		tmpfs 		rw,size=10%,mode=755 				0 0
+proc 		/proc    	proc   		defaults        				0 0

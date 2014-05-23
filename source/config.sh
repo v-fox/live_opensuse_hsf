@@ -69,10 +69,11 @@ systemctl enable lm_sensors
 systemctl enable hddtemp
 systemctl enable dkms_autoinstaller
 systemctl enable bluetooth
-systemctl enable dnsmasq
 systemctl enable ModemManager
 systemctl enable NetworkManager
 systemctl enable ntp
+systemctl enable dnscrypt-proxy
+systemctl enable unbound
 systemctl enable tor
 systemctl enable polipo
 systemctl enable avahi-daemon
@@ -120,6 +121,11 @@ c_rehash
 # Creating mlocate database
 #--------------------------------------
 /etc/cron.daily/mlocate.cron
+
+#======================================
+# Creating manual database
+#--------------------------------------
+/etc/cron.daily/suse-do_mandb
 
 #======================================
 # Umount kernel filesystems

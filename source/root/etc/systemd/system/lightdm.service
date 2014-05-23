@@ -1,7 +1,7 @@
 [Unit]
 Description=Display Manager
 Documentation=man:lightdm(1)
-After=systemd-user-sessions.service network.target YaST2-Firstboot.service
+After=systemd-user-sessions.service network.target udisks2.service upower.service polkit.service YaST2-Firstboot.service
 Conflicts=xdm.service gdm.service kdm.service lxdm.service slim.service
 
 [Service]
