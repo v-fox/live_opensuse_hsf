@@ -20,8 +20,21 @@ echo "Configure image: [$kiwi_iname]..."
 #--------------------------------------
 baseSetupBuildDay
 
-# isolinux graphical theme
+#==========================================
+# {iso/sys}linux graphical theme
+#------------------------------------------
 gfxboot --update-theme HSF
+
+#==========================================
+# remove unneded kernel files
+#------------------------------------------
+suseStripKernel
+
+#==========================================
+# remove unneeded files
+#------------------------------------------
+suseStripInitrd
+
 #======================================
 # umount
 #--------------------------------------
