@@ -10,9 +10,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_NonFree_Update'>
 		<source path='http://download.opensuse.org/update/13.1-non-oss'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Tools'>
-		<source path='obs://openSUSE:Tools/openSUSE_13.1'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='Kernel_stable'>
 		<source path='obs://Kernel:stable/standard'/>
 	</repository>

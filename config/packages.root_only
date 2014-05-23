@@ -32,6 +32,7 @@ avahi
 avahi-autoipd
 avahi-utils
 bc
+bind-utils
 bitmap
 bitstream-vera-fonts
 bluedevil
@@ -81,7 +82,6 @@ deltarpm
 desktop-translations
 dmidecode
 dnscrypt-proxy
-unbound
 dnstop
 dos2unix
 dosfstools
@@ -541,7 +541,6 @@ pax-utils
 pdfcrack-multithread
 phonon-backend-vlc
 photorec
-pin
 plymouth-plugin-fade-throbber
 plymouth-plugin-label
 plymouth-plugin-script
@@ -655,6 +654,7 @@ udftools
 udisks2
 ulogd
 unace
+unbound
 unetbootin
 unrar
 upnp-inspector
@@ -763,4 +763,3 @@ zsh
 zypper
 zypper-aptitude
 zypper-log
-bind-utils
