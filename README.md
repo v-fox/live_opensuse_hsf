@@ -1,6 +1,6 @@
 Hackeurs Sans Frontières
 ========================
-### download built images at [SourceForge](https://sourceforge.net/p/hackeurs-sans-frontieres), forums are there too
+### [download built images at SourceForge](https://sourceforge.net/p/hackeurs-sans-frontieres), forums are there too
 This is hybrid live cd/usb openSUSE spin aimed to be fully functional out-of-the-box yet slim desktop system for advanced users in countries without software patent racket.  
 It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
 
@@ -11,7 +11,7 @@ I recommend using smart SATA boxes and usb drives with legacy (floppy / CD / vir
 
 It provides:
 ------------
-* fresh Stable kernel from Kernel:stable repo
+* fresh stable kernel from Kernel:stable repo
 * fresh (default) or bleeding edge OSS video stack from X11 repo (rc's) and pontostroy (git & kernel rc's)
 * codecs, font antialiasing and texture compression support without artificial restrictions
 * slim LXQt (default) and Enlightenment desktop environments from their respective repos
