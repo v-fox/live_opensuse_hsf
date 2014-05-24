@@ -1,6 +1,7 @@
 Hackeurs Sans Frontières
 ========================
 ### [download built images at SourceForge](https://sourceforge.net/p/hackeurs-sans-frontieres), forums are there too
+![LXQt desktop](https://sourceforge.net/p/hackeurs-sans-frontieres/screenshot/screenshot_4.png)  
 This is hybrid live cd/usb openSUSE spin aimed to be fully functional out-of-the-box yet slim desktop system for advanced users in countries without software patent racket.  
 It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), however it should be quite adequate as an installation basis for everyday use.
 
