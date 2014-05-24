@@ -57,7 +57,7 @@ baseUpdateSysConfig /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP \21\ 22\ 80
 #--------------------------------------
 suseActivateDefaultServices
 systemctl disable xdm
-systemctl enable apparmor
+systemctl disable apparmor
 systemctl enable rtkit-daemon
 systemctl enable compcache
 systemctl enable irq_balancer
