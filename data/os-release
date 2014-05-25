@@ -1,10 +1,10 @@
 NAME=HSF
 VERSION="<TO_BE_REPLACED>"
-VERSION_ID="13.1"
-PRETTY_NAME="Hackeurs Sans Frontieres"
+VERSION_ID="<TO_BE_REPLACED>"
+PRETTY_NAME="<TO_BE_REPLACED>"
 ID=opensuse
 ANSI_COLOR="0;32"
-CPE_NAME="cpe:/o:opensuse:opensuse:13.1"
+CPE_NAME="cpe:/o:opensuse:opensuse:<TO_BE_REPLACED>"
 BUG_REPORT_URL="https://bugs.opensuse.org"
 HOME_URL="https://opensuse.org/"
 ID_LIKE="suse"

@@ -52,6 +52,7 @@ fi
 
 # Variables.
 echo "** Setting up versioning variables..."
+VERSION_DIST="13.1"
 read VERSION_CONFIG < config/version
 CONFIG="source/config.xml"
 BUILD_DATE="$(date +%Y%m%d)"
@@ -184,8 +185,11 @@ done
 # Set up version.
 echo "** Setting up build date to '${BUILD_DATE}' and version to '${VERSION_GIT_FULL}'"
 sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
-	-e "/VERSION=/s:=.*$:=\"${VERSION_GIT_FULL}\":" data/os-release \
-	> source/root/etc/os-release
+	-e "/VERSION=/s:=.*$:=\"${VERSION_GIT_FULL}\":" \
+	-e "/PRETTY_NAME=/s:=.*$:=\"${NAME_PRETTY}\":" \
+	-e "/VERSION_ID=/s:=.*$:=\"${VERSION_DIST}\":" \
+	-e "/CPE_NAME=/s:=.*$:=\"cpe\:/o\:opensuse\:opensuse\:${VERSION_DIST}\":" \
+	data/os-release > source/root/etc/os-release
 
 echo "** Creating appliance..."
 command="$kiwi --verbose 3 --build $src/ -d $dst"
@@ -204,6 +208,7 @@ echo -n "** Moving iso-file: "
 mv -v "${IMAGE}" "${IMAGE_PROPER}"
 
 echo "** Creating sha256 checksum..."
-sha256sum -b "${IMAGE_PROPER}" > "${HASHFILE}"
+cd "${img}"
+sha256sum -b $(basename "${IMAGE_PROPER}") > $(basename ${HASHFILE})
 
 echo "** Everything is done, now look into '${img}' !"
