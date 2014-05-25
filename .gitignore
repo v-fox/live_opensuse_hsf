@@ -1,5 +1,4 @@
-pan/**
-plate/**
+!.gitignore
 source/config.xml
 *.iso
 *.sha256
