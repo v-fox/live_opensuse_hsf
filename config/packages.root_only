@@ -389,6 +389,7 @@ leechcraft-xtazy
 lft
 lftp
 lhasa
+libatk-bridge
 libcanberra-gtk2-module
 libcanberra-gtk3-module
 libcanberra-gtk-module-common
@@ -642,6 +643,7 @@ thessalonica-oldstandard-otf-fonts
 timezone
 tmpwatch
 tor
+tox-gui-gtk-git
 traceroute
 translation-update
 tree
@@ -762,4 +764,3 @@ zsh
 zypper
 zypper-aptitude
 zypper-log
-libatk-bridge
