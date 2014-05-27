@@ -14,7 +14,7 @@ It provides:
 * fresh stable kernel from Kernel:stable repo
 * fresh (default) or bleeding edge OSS video stack from X11 repo (rc's) and pontostroy (git & kernel rc's)
 * codecs, font antialiasing and texture compression support without artificial restrictions
-* slim LXQt (default) and Enlightenment desktop environments from their respective repos
+* LXQt slim desktop environment
 * international collection of fonts and universal iBus input method by default
 * LeechCraft modular system stripped for only IM, Socializing and P2P functionality
 * fresh Mozilla Firefox browser and Thunderbird e-mail client

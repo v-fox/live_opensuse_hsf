@@ -55,9 +55,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_samba_STABLE'>
 		<source path='obs://network:samba:STABLE/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='65' alias='X11_Enlightenment_Factory'>
-		<source path='obs://X11:Enlightenment:Factory/openSUSE_13.1'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='65' alias='multimedia_apps'>
 		<source path='obs://multimedia:apps/openSUSE_13.1'/>
 	</repository>

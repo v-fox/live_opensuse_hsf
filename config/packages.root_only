@@ -94,14 +94,8 @@ ecryptfs-utils
 efont-unicode-bitmap-fonts
 ekiga
 ekiga-plugins-gstreamer
-elementary
 emount
 enca
-enlightenment
-enlightenment-branding-openSUSE
-enlightenment-profiles-openSUSE
-enlightenment-theme-openSUSE
-enventor
 ethtool
 ev
 exfat-nofuse-dkms
@@ -635,7 +629,6 @@ tcpdump
 tcpreen
 telnet
 terminfo
-terminology-theme-openSUSE
 terminus-bitmap-fonts
 testdisk
 thai-fonts
