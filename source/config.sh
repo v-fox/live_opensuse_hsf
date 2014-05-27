@@ -37,27 +37,12 @@ baseSetRunlevel 5
 suseImportBuildKey
 
 #======================================
-# Firewall Configuration
-#--------------------------------------
-echo '** Configuring firewall...'
-chkconfig SuSEfirewall2_init on
-chkconfig SuSEfirewall2_setup on
-
-#======================================
-# Sysconfig Update
-#--------------------------------------
-echo '** Update sysconfig entries...'
-#baseUpdateSysConfig /etc/sysconfig/keyboard KEYTABLE us
-baseUpdateSysConfig /etc/sysconfig/network/config FIREWALL yes
-baseUpdateSysConfig /etc/sysconfig/SuSEfirewall2 FW_SERVICES_EXT_TCP \21\ 22\ 80\ 443
-#baseUpdateSysConfig /etc/sysconfig/console CONSOLE_FONT ter-u16n.psfu
-
-#======================================
 # CUSTOMIZATION
 #--------------------------------------
 suseActivateDefaultServices
 systemctl disable xdm
 systemctl disable apparmor
+systemctl disable SuSEfirewall2
 systemctl enable rtkit-daemon
 systemctl enable compcache
 systemctl enable irq_balancer

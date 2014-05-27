@@ -177,7 +177,7 @@ IPV6_DAD_WAIT=""
 #
 # With this variable you can determine if the SuSEfirewall when enabled
 # should get started when network interfaces are started.
-FIREWALL="yes"
+FIREWALL="no"
 
 ## Type:	yesno
 ## Default:	no
