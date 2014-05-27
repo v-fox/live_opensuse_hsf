@@ -10,6 +10,7 @@ aiccu
 aircrack-ng
 alsa-oss
 alsa-plugins
+alsa-plugins-jack
 alsa-plugins-pulse
 alsa-tools
 aMule
@@ -26,6 +27,7 @@ arpwatch-ethercodes
 at
 atop
 attr
+audacity
 autofs
 autopsy
 avahi
@@ -286,6 +288,8 @@ irssi-otr
 isight-firmware-tools
 ispell-american
 ispell-british
+jack
+jack-stdio
 java
 jre
 kate
@@ -559,6 +563,7 @@ ppp
 prctl
 procinfo
 proctail
+projectM-jack
 proxychains
 psmisc
 ptools
@@ -566,9 +571,11 @@ pullin-flash-player
 pulseaudio-esound-compat
 pulseaudio-module-bluetooth
 pulseaudio-module-gconf
+pulseaudio-module-jack
 pulseaudio-module-lirc
 pulseaudio-module-zeroconf
 pwgen
+qjackctl
 qps
 radeon-profile
 radeontop
@@ -635,6 +642,7 @@ testdisk
 thai-fonts
 thessalonica-oldstandard-otf-fonts
 timezone
+timidity
 tmpwatch
 tor
 tox-gui-gtk-git
@@ -668,6 +676,7 @@ vim
 vlan
 vlc
 vlc-codecs
+vlc`-qt
 vmfs-tools
 vorbis-tools
 vpx-tools
