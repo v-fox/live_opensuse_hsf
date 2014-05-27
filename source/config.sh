@@ -83,6 +83,12 @@ groupadd -f -g 100 -o plugdev
 # updating gtk icon cache in hopes that it'll help with missing icons
 find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -q -t -f "{}" \;
 
+# staying fresh even in deeper places
+update-ca-certificates
+update-pciids
+update-usbids.sh
+update-smart-drivedb
+
 #======================================
 # Prune extraneous files
 #--------------------------------------
