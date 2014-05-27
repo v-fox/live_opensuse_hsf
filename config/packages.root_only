@@ -369,12 +369,12 @@ leechcraft-dolozhee
 leechcraft-dumbeep
 leechcraft-gacts
 leechcraft-glance
+leechcraft-harbinger
 leechcraft-historyholder
 leechcraft-imgaste
 leechcraft-kinotify
 leechcraft-lackman
 leechcraft-lhtr
-leechcraft-liznoo
 leechcraft-newlife
 leechcraft-otlozhu
 leechcraft-pintab
@@ -382,7 +382,6 @@ leechcraft-rosenthal
 leechcraft-secman
 leechcraft-secman-simplestorage
 leechcraft-summary
-leechcraft-tabsessionmanager
 leechcraft-tabslist
 leechcraft-vgrabber
 leechcraft-xproxy
@@ -763,3 +762,4 @@ zsh
 zypper
 zypper-aptitude
 zypper-log
+libatk-bridge
