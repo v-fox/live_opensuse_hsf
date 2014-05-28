@@ -77,11 +77,6 @@ PACKAGE_LIST="/home/${OUR_USER}/${NAME_PRETTY} - package list - ${kiwi_iversion}
 rpm -qa | sort -fu > "${PACKAGE_LIST}"
 chown ${OUR_USER}:users "${PACKAGE_LIST}"
 
-# adding group 'plugdev' to accomodate broken udev rules
-groupadd -f -g 100 -o plugdev
-# and add our default user to proper groups
-usermod -a -G audio,video,plugdev ${OUR_USER}
-
 # updating gtk icon cache in hopes that it'll help with missing icons
 find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -q -t -f "{}" \;
 
