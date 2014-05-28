@@ -1,0 +1,10 @@
+0.8.0:
+	* Enlightenment removed due to inability to fucking login
+	* YaST firewall is disabled by default
+	* almost all audio i/o defaults to JACK now, default user is allowed realtime
+	* LeechCraft-Azoth now supports audio calls
+	* Tox P2P IM audio/video protocol is fully supported
+	(native GTK Tox client + libpurple-plugin for LC-Azoth)
+	* all logging directed completely into systemd-journal
+	and making it shit less into console
+	* PCI & USB ids, smartdb and CAs always updated before creating image
