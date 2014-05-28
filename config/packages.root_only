@@ -179,8 +179,10 @@ gstreamer-0_10-libnice
 gstreamer-0_10-plugin-crystalhd
 gstreamer-0_10-plugins-bad
 gstreamer-0_10-plugins-bad-orig-addon
+gstreamer-0_10-plugins-base
+gstreamer-0_10-plugins-buzztard
+gstreamer-0_10-plugins-farstream
 gstreamer-0_10-plugins-ffmpeg
-gstreamer-0_10-plugins-fluendo_mp3
 gstreamer-0_10-plugins-gl
 gstreamer-0_10-plugins-good-extra
 gstreamer-0_10-plugins-qt
@@ -188,9 +190,7 @@ gstreamer-0_10-plugins-ugly
 gstreamer-0_10-plugins-ugly-orig-addon
 gstreamer-0_10-plugins-vaapi
 gstreamer-0_10-utils
-gstreamer-fluendo-mp3
 gstreamer-libnice
-gstreamer-plugin-gnonlin
 gstreamer-plugin-gstclutter
 gstreamer-plugins-bad
 gstreamer-plugins-bad-orig-addon
@@ -541,7 +541,7 @@ pavucontrol
 pax
 pax-utils
 pdfcrack-multithread
-phonon-backend-vlc
+phonon-backend-gstreamer-0_10
 photorec
 plymouth-plugin-fade-throbber
 plymouth-plugin-label
