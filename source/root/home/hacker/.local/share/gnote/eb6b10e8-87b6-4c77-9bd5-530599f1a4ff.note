@@ -14,7 +14,11 @@
 <list><list-item dir="ltr">'<highlight>solver.allowVendorChange</highlight>' was set to 'true'.
 <list><list-item dir="ltr">it should be safe due to strict prioritization in repo list, but keep that in mind anyway.
 </list-item></list></list-item><list-item dir="ltr">'<highlight>solver.onlyRequires</highlight>' was set to 'true'.
-<list><list-item dir="ltr">this forces zypper to install only the bare minimum and may leave some packages being useless in absence of non-compile-time dependencies, like some <link:url>/usr/share</link:url> data, for example.</list-item></list></list-item></list></list-item></list>
+<list><list-item dir="ltr">this forces zypper to install only the bare minimum and may leave some packages being useless in absence of non-compile-time dependencies, like some <link:url>/usr/share</link:url> data, for example.
+</list-item></list></list-item><list-item dir="ltr">you might want to also check Options-&gt;'<highlight>Ignore recommended packages for already installed packages</highlight>' in YaST Package Manager to achieve same effect as with 'solver.onlyRequires' for zypper and prevent it from installing loads of unnecessary crap
+</list-item></list></list-item><list-item dir="ltr">sound I/O is routed to JACK by default but PulseAudio is still active. please, set all your multimedia apps to use JACK or disable it (look for QJackCtl in tray) and then use naked PA</list-item></list>
+
+<list><list-item dir="ltr">in <link:url>/etc/systemd/logind.conf</link:url> value of '<highlight>KillUserProcesses</highlight>' was set to 'yes'. this will ensure that all processes are killed when they should and helps to prevent system hangs, but will break programs like `screen` which act daemon-like</list-item></list>
 
 <list><list-item dir="ltr">'Infinality' scripts are used for font antialiasing.
 <list><list-item dir="ltr">so select &quot;system defaults / don't change&quot; in your DE's font settings
@@ -27,7 +31,7 @@
 <list><list-item dir="ltr"><link:url>/etc/environment</link:url> is the best place for it global variables.</list-item></list>
 
 <list><list-item dir="ltr">KDE's KIO
-<list><list-item dir="ltr">Dolphin file manager support variety of special protocols other than simple file management:
+<list><list-item dir="ltr">KDE file management apps (Dolphin, Konqueror, Krusader, etc.) support variety of special protocols other than simple file management:
 <list><list-item dir="ltr"><highlight>remote:/</highlight> - listing of all local auto-found or known resources
 </list-item><list-item dir="ltr"><highlight><link:url>ftp:/</link:url></highlight><link:url>/&lt;user&gt;@&lt;proxy_user&gt;:&lt;password&gt;@&lt;proxy_password&gt;@&lt;hostname&gt;:&lt;port&gt;/&lt;path</link:url>&gt;
 </list-item><list-item dir="ltr"><highlight>sftp</highlight>|<highlight>fish:/</highlight>/&lt;user&gt;@&lt;hostname&gt;/&lt;patht&gt;/
@@ -43,6 +47,6 @@
 </list-item></list></list-item><list-item dir="ltr">to enable VDPAU/GL acceleration on VA-API-hardware (intel):
 <list><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight></list-item></list></list-item></list></list-item></list>
 
-<list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2014-05-23T04:38:11.707689Z</last-change-date><last-metadata-change-date>2014-05-23T04:38:11.709100Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>481</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+<list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary driversset </list-item></list></note-content>
+</text><last-change-date>2014-05-28T08:48:47.612539Z</last-change-date><last-metadata-change-date>2014-05-28T08:48:47.612728Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>1556</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 
