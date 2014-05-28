@@ -68,7 +68,7 @@ IMAGE="${dst}/${NAME}.${image_arch}-${VERSION_CONFIG}.iso"
 IMAGE_PROPER="${img}/Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
 PACKAGE_LIST="${dst}/build/image-root/home/${OUR_USER}/${NAME_PRETTY} - package list - ${VERSION_CONFIG}_${BUILD_DATE}.txt"
 PACKAGE_LIST_PROPER=${img}/$(basename "${IMAGE_PROPER}" .iso).packages
-HASHFILE=${img}/$(basename "${IMAGE_PROPER}" .iso).sha256
+HASHFILE=$(basename "${IMAGE_PROPER}" .iso).sha256
 
 # Cleaning up.
 echo "** CLeaning up auto-generated files..."
@@ -209,6 +209,6 @@ mv -v "${IMAGE}" "${IMAGE_PROPER}"
 
 echo "** Creating sha256 checksum..."
 cd "${img}"
-sha256sum -b $(basename "${IMAGE_PROPER}") > ./$(basename "${HASHFILE}")
+sha256sum -b $(basename "${IMAGE_PROPER}") > "${HASHFILE}"
 
 echo "** Everything is done, now look into '${img}' !"
