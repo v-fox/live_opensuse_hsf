@@ -174,8 +174,8 @@ grub
 grub2
 gsettings-backend-dconf
 gsettings-desktop-schemas
-gst-omx
 gst123
+gst-omx
 gstreamer-0_10-libnice
 gstreamer-0_10-plugin-crystalhd
 gstreamer-0_10-plugins-bad
@@ -679,7 +679,7 @@ vim
 vlan
 vlc
 vlc-codecs
-vlc`-qt
+vlc-qt
 vmfs-tools
 vorbis-tools
 vpx-tools
