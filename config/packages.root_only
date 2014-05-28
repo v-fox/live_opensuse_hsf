@@ -99,7 +99,6 @@ ekiga-plugins-gstreamer
 emount
 enca
 ethtool
-ev
 exfat-nofuse-dkms
 exfat-utils
 ext3grep
