@@ -159,6 +159,7 @@ gnome-icon-theme-symbolic
 gnome-keyring
 gnome-keyring-pam
 gnome-keyring-sharp
+gnome-media
 gnote
 gnu_ddrescue
 goldendict
@@ -395,6 +396,7 @@ libcap-ng-utils
 libcap-progs
 liberation-fonts
 libevdev-tools
+libflashsupport-jack
 libomx_nouveau
 libomx_r600
 libomx_radeonsi

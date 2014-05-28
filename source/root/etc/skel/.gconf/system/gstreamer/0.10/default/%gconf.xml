@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="videosrc" mtime="1401259821" type="string">
+		<stringvalue>v4l2src</stringvalue>
+	</entry>
+	<entry name="videosink" mtime="1401259967" type="string">
+		<stringvalue>glimagesink</stringvalue>
+	</entry>
+	<entry name="musicaudiosink_description" mtime="1401259129" type="string">
+		<stringvalue>Jack</stringvalue>
+	</entry>
+	<entry name="musicaudiosink" mtime="1401259127" type="string">
+		<stringvalue>jackaudiosink buffer-time=2000000</stringvalue>
+	</entry>
+	<entry name="chataudiosink_description" mtime="1401259122" type="string">
+		<stringvalue>Jack</stringvalue>
+	</entry>
+	<entry name="chataudiosink" mtime="1401259119" type="string">
+		<stringvalue>jackaudiosink buffer-time=2000000</stringvalue>
+	</entry>
+	<entry name="audiosink_description" mtime="1401259086" type="string">
+		<stringvalue>Jack</stringvalue>
+	</entry>
+	<entry name="audiosrc" mtime="1401259897" type="string">
+		<stringvalue>jackaudiosrc</stringvalue>
+	</entry>
+	<entry name="audiosink" mtime="1401259821" type="string">
+		<stringvalue>jackaudiosink buffer-time=2000000</stringvalue>
+	</entry>
+</gconf>
