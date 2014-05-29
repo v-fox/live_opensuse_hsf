@@ -19,7 +19,7 @@ It provides:
 * LeechCraft modular system stripped for only IM, Socializing and P2P functionality
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
-* LibreOffice, Calibre, pdfcrack and GIMP
+* LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other various console tools
 * anti-censorship kit: Tor, Polipo, dnscrypt-proxy, proxychains and miredo-client
 * networking: ze/nmap, hostapd, usbip, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, rancid, aria2, aMule, irssi and a bunch
