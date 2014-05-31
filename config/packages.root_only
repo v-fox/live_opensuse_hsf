@@ -582,7 +582,6 @@ radeon-profile
 radeontop
 radvd
 rar
-realcrypt
 reaver
 recordmydesktop
 reiser4progs
@@ -635,6 +634,7 @@ systemd-ui
 systemtap
 t6_client
 tcpdump
+tc-play
 tcpreen
 telnet
 terminfo
@@ -765,6 +765,7 @@ zenmap
 zerofree
 zfsonlinux-zfs-dkms
 zsh
+zuluCrypt
 zypper
 zypper-aptitude
 zypper-log

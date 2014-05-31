@@ -26,7 +26,7 @@ It provides:
 * gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
 * exfat and zfs kernel modules and general FS management & recovery tools like fsarchiver, ddrescue, testdisk, photorec, ext4magic
 * autopsy/sleuthkit, scalpel, chkrootkit, ntpassw/dchntpw, lynis, aircrack-ng, kismet, reaver and more security tools
-* {real/true}crypt, aespipe, emount/cryptsetup, seahorse/gnome-keyring, keepassx encryption utilities
+* tc-play (truecrypt remake), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx encryption utilities
 * bunch of useful repos pre-configured for games, emulators and recent but mostly stable updates
 
 It does NOT provide:
