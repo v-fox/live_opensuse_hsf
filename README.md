@@ -20,7 +20,7 @@ It provides:
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
 * LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
-* mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other various console tools
+* FinalTerm, mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other various console tools
 * anti-censorship kit: Tor, Polipo, dnscrypt-proxy, proxychains and miredo-client
 * networking: ze/nmap, hostapd, usbip, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, rancid, aria2, aMule, irssi and a bunch
 * gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
@@ -55,7 +55,6 @@ Notes:
 * KDE:  
   * krusader (dolphin + konqueror + mc in one package and more ? yes, please)  
   * bluedevil (bluez control)  
-  * yakuake (handy console), will be replaced with qterminal once it matures  
   * kate (great simple editor)  
   * okular (useful doc viewer, integrated in Firefox via kparts-plugin)  
   * kchmviewer (MS chm viewer), because sometimes okular screws up  
