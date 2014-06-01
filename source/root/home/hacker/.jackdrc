@@ -1,1 +1,1 @@
-/usr/bin/jackd -u -dalsa -p96 -n32 -H -M -Xseq -zs
+/usr/bin/jackd -u -dalsa -p128 -n24 -H -M -Xseq -zs
