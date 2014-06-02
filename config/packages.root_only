@@ -113,7 +113,6 @@ ffmpeg-tools
 file
 filesystem
 filezilla
-finalterm
 firmwarekit
 FirmwareUpdateKit
 flash-player
@@ -731,6 +730,7 @@ xscreensaver-data
 xsetmode
 xsetpointer
 xvinfo
+yakuake
 yast2-apparmor
 yast2-backup
 yast2-branding-basedonopensuse
