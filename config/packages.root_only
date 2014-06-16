@@ -527,6 +527,7 @@ openssh-askpass
 openssh-helpers
 openssl-certs
 opus-tools
+oxygen-cursors4
 oxygen-ionized-icon-theme
 p7zip-kde4
 PackageKit-browser-plugin
@@ -537,6 +538,7 @@ pam_mount
 pam_ssh
 paprefs
 pastebinit
+pasystray
 pavucontrol
 pax
 pax-utils
