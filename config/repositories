@@ -79,13 +79,13 @@
 	<repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Stable_3.12'>
 		<source path='obs://GNOME:STABLE:3.12/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='80' alias='home_aevseev'>
+	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_aevseev'>
 		<source path='obs://home:aevseev/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_lukho_copyq'>
 		<source path='obs://home:lukho:copyq/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='85' alias='home_XRevan86 '>
+	<repository type='rpm-md' imageinclude='true' priority='85' alias='home_XRevan86'>
 		<source path='obs://home:XRevan86/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='98' alias='home_marec2000'>
@@ -99,6 +99,9 @@
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_emulators'>
 		<source path='obs://home:X0F:branches:Emulators/openSUSE_13.1'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_multimedia'>
+		<source path='obs://home:X0F:branches:multimedia/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F_branches_network'>
 		<source path='obs://home:X0F:branches:network/openSUSE_13.1'/>
