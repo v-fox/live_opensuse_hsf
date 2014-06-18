@@ -43,6 +43,7 @@ suseActivateDefaultServices
 systemctl disable xdm
 systemctl disable apparmor
 systemctl disable SuSEfirewall2
+systemctl enable pm-profiler
 systemctl enable rtkit-daemon
 systemctl enable compcache
 systemctl enable irq_balancer

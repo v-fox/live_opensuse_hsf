@@ -1,0 +1,15 @@
+## Path:	 Hardware/Power
+## Description:	 Defines a Power Management profile to use
+## Type:	 string
+## Default:	 ""
+#
+# Defines the profile which gets activated on system start or
+# when the pm-profile service gets restarted
+# pm-profiler, and thus this file, is not intended to be used on desktop
+# systems where power management policy managers like gnome-power-manager,
+# power-devil, etc. exist. pm-profiler is only intended for servers
+# with dedicated use cases
+# If empty, the default system/kernel settings will be used.
+# Possible values: 1. Profile name
+# 	   	   2. Empty
+PM_PROFILER_PROFILE="low_latency"

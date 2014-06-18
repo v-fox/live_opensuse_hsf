@@ -70,7 +70,10 @@ conky-keyring
 conky-nano
 conntrack-tools
 copyq
+cpufrequtils
+cpufrequtils-bench
 cpupower
+cpupower-bench
 cracklib-dict-full
 crda
 cromfs
