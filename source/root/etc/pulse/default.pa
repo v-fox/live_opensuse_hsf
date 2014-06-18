@@ -48,23 +48,23 @@ load-module module-switch-on-port-available
 #load-module module-alsa-source device=hw:1,0
 #load-module module-oss device="/dev/dsp" sink_name=output source_name=input
 #load-module module-oss-mmap device="/dev/dsp" sink_name=output source_name=input
-#load-module module-null-sink
+load-module module-null-sink
 #load-module module-pipe-sink
 
 ### Automatically load driver modules depending on the hardware available
-.ifexists module-udev-detect.so
-load-module module-udev-detect
-.else
+#.ifexists module-udev-detect.so
+#load-module module-udev-detect
+#.else
 ### Use the static hardware detection module (for systems that lack udev support)
-load-module module-detect
-.endif
+#load-module module-detect
+#.endif
 
 ### Automatically connect sink and source if JACK server is present
-.ifexists module-jackdbus-detect.so
-.nofail
-load-module module-jackdbus-detect
-.fail
-.endif
+#.ifexists module-jackdbus-detect.so
+#.nofail
+#load-module module-jackdbus-detect
+#.fail
+#.endif
 
 ### Automatically load driver modules for Bluetooth hardware
 .ifexists module-bluetooth-policy.so
@@ -114,13 +114,13 @@ load-module module-default-device-restore
 load-module module-rescue-streams
 
 ### Make sure we always have a sink around, even if it is a null sink.
-#load-module module-always-sink
+load-module module-always-sink
 
 ### Honour intended role device property
 load-module module-intended-roles
 
 ### Automatically suspend sinks/sources that become idle for too long
-load-module module-suspend-on-idle
+#load-module module-suspend-on-idle
 
 ### If autoexit on idle is enabled we want to make sure we only quit
 ### when no local session needs us anymore.
@@ -160,6 +160,11 @@ load-module module-filter-apply
 #.fail
 #.endif
 
-### Make some devices default
-#set-default-sink output
-#set-default-source input
+# needed for PA equalizer and such, unnecessary here
+load-module module-dbus-protocol
+
+## JACK/ALSA domination config
+load-module module-jack-sink
+load-module module-jack-source
+set-default-sink jack_out
+set-default-source jack_in
