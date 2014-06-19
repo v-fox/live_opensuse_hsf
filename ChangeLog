@@ -1,13 +1,14 @@
 0.8.0:
 	* Enlightenment removed due to inability to fucking login
 	* YaST firewall is disabled by default to ensure connectivity
-	* all audio I/O from the first sound card goes to JACK now, default user is allowed realtime.
-		PA runs as JACK client on the first card, everything else is under full PA control
-	* LeechCraft-Azoth now supports audio calls.
+	* all audio I/O goes to JACK now, default user is allowed realtime
+		PA runs as JACK client, JAMin is used before output to enhance sound
+		QJackCtl, QasMixer and PASysTray are used for control and configuration
+	* LeechCraft-Azoth now supports audio calls
 		only with direct ALSA access, for now, so disable JACK and PA before using it
-	* Tox P2P IM audio/video protocol is fully supported.
+	* Tox P2P IM audio/video protocol is fully supported
 		(native GTK Tox client + libpurple-plugin for LC-Azoth)
-	* all logging completely directed into systemd-journal.
+	* all logging completely directed into systemd-journal
 		and it should shit less into console
 	* GoldenDict, the ultimate dictionary, is updated from its ancient version
 	* PCI & USB ids, smartdb and CAs always updated before creating image

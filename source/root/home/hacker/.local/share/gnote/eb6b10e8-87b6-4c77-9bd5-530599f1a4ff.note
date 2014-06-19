@@ -8,7 +8,8 @@
 
 <list><list-item dir="ltr">encryption and security tips:
 <list><list-item dir="ltr">all DNS queries are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them to OpenDNS via encrypted connection. if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<highlight>network.proxy.socks_remote_dns</highlight>' parameter in Firefox, Thunderbird and all Mozilla apps
-</list-item><list-item dir="ltr">for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)</list-item></list></list-item></list>
+</list-item><list-item dir="ltr">for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)
+</list-item><list-item dir="ltr">try not to use Google products</list-item></list></list-item></list>
 
 <list><list-item dir="ltr">important changes were made to <link:url>/etc/zypp/zypp.conf</link:url> 
 <list><list-item dir="ltr">'<highlight>solver.allowVendorChange</highlight>' was set to 'true'.
@@ -17,8 +18,10 @@
 <list><list-item dir="ltr">this forces zypper to install only the bare minimum and may leave some packages being useless in absence of non-compile-time dependencies, like some <link:url>/usr/share</link:url> data, for example.
 </list-item></list></list-item><list-item dir="ltr">you might want to also check Options-&gt;'<highlight>Ignore recommended packages for already installed packages</highlight>' in YaST Package Manager to achieve same effect as with 'solver.onlyRequires' for zypper and prevent it from installing loads of unnecessary crap</list-item></list></list-item></list>
 
-<list><list-item dir="ltr"><highlight>JACK and PulseAudio are activated simultaneously</highlight>. first sound card in the system can be accessed directly via JACK <underline>and</underline> indirectly via PA's jack-sink, in small expense of latency in later case. all other cards (like video card's HDMI audio output) are under direct PA control.
-<list><list-item dir="ltr">please, set all your multimedia apps to use JACK or disable it (look for QJackCtl in tray) and then use naked PA</list-item></list></list-item></list>
+<list><list-item dir="ltr"><highlight>JACK</highlight> is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality
+<list><list-item dir="ltr">note <highlight>QJackCtl</highlight>, JACK configurator, <highlight>QasMixer</highlight>, ALSA volume configurator and <highlight>PASysTray</highlight>, advanced PA configurator, and in your tray
+</list-item><list-item dir="ltr">please, set all your multimedia apps to use JACK with '<highlight>jamin</highlight>' port by default or disable it and then use naked PA (see <link:url>/etc/pulse</link:url>)
+</list-item><list-item dir="ltr">tired of volume jumps (especially in flash videos and alike) and muffled sound ? well, i fucking do. this is why QJackCtl has custom patchbay for automatic output redirection to JAMin where its normalized, compressed and limited from exceeding 0dB. if your app is outputting directly to JACK playback, you should add redirection to it there. DO NOT CLOSE IT, or all sound redirected to it will be lost</list-item></list></list-item></list>
 
 <list><list-item dir="ltr">in <link:url>/etc/systemd/logind.conf</link:url> value of '<highlight>KillUserProcesses</highlight>' was set to 'yes'. this will ensure that all processes are killed when they should and helps to prevent system hangs, but will break programs like `screen` which act daemon-like</list-item></list>
 
@@ -49,6 +52,6 @@
 </list-item></list></list-item><list-item dir="ltr">to enable VDPAU/GL acceleration on VA-API-hardware (intel):
 <list><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight></list-item></list></list-item></list></list-item></list>
 
-<list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary driversset </list-item></list></note-content>
-</text><last-change-date>2014-05-28T15:51:38.842022Z</last-change-date><last-metadata-change-date>2014-05-28T15:51:38.843482Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>1566</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+<list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
+</text><last-change-date>2014-06-19T19:31:57.134181Z</last-change-date><last-metadata-change-date>2014-06-19T19:31:57.134734Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>188</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 
