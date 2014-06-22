@@ -12,4 +12,4 @@
 # If empty, the default system/kernel settings will be used.
 # Possible values: 1. Profile name
 # 	   	   2. Empty
-PM_PROFILER_PROFILE="low_latency"
+PM_PROFILER_PROFILE="balanced_low_latency"
