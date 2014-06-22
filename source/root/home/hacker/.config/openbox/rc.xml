@@ -777,5 +777,9 @@
 
   # end of the example
 -->
+	  <!-- for JAMin to not get in the way -->
+	   <application name="jamin">
+		   <desktop>2</desktop>
+	   </application>
   </applications>
 </openbox_config>
