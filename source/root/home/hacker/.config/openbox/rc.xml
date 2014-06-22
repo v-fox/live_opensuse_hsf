@@ -778,8 +778,10 @@
   # end of the example
 -->
 	  <!-- for JAMin to not get in the way -->
-	   <application name="jamin">
+	   <application class="jamin">
 		   <desktop>2</desktop>
+		   <focus>no</focus>
+		   <maximized>true</maximized>
 	   </application>
   </applications>
 </openbox_config>
