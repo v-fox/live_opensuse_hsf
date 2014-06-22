@@ -5,7 +5,6 @@
 		PA runs as JACK client, JAMin is used before output to enhance sound
 		QJackCtl, QasMixer and PASysTray are used for control and configuration
 	* LeechCraft-Azoth now supports audio calls
-		only with direct ALSA access, for now, so disable JACK and PA before using it
 	* Tox P2P IM audio/video protocol is fully supported
 		(native GTK Tox client + libpurple-plugin for LC-Azoth)
 	* all logging completely directed into systemd-journal

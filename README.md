@@ -16,6 +16,7 @@ It provides:
 * codecs, font antialiasing and texture compression support without artificial restrictions
 * LXQt slim desktop environment
 * international collection of fonts and universal iBus input method by default
+* professional sound handling with JACK (Ardour3 and its friends are available in repositories)
 * LeechCraft modular system stripped for only IM, Socializing and P2P functionality
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
