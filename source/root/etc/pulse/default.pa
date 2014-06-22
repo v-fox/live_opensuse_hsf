@@ -141,8 +141,9 @@ load-module module-role-cork
 ### on demand. module-filter-heuristics tries to determine what filters
 ### make sense, and module-filter-apply does the heavy-lifting of
 ### loading modules and rerouting streams.
-load-module module-filter-heuristics
-load-module module-filter-apply
+# these appear to suck
+#load-module module-filter-heuristics
+#load-module module-filter-apply
 
 # X11 modules should not be started from default.pa so that one daemon
 # can be shared by multiple sessions.
@@ -163,8 +164,11 @@ load-module module-filter-apply
 # needed for PA equalizer and such. unnecessary here, but may be useful
 load-module module-dbus-protocol
 
+# setting up echo cancellation
+load-module module-echo-cancel source_master=jack_in use_volume_sharing=true format=float32le rate=48000 channels=2 aec_method=webrtc
+
 ## JACK/ALSA domination config
 load-module module-jack-sink
 load-module module-jack-source
 set-default-sink jack_out
-set-default-source jack_in
+set-default-source jack_in.echo-cancel
