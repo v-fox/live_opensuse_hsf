@@ -164,11 +164,12 @@ load-module module-role-cork
 # needed for PA equalizer and such. unnecessary here, but may be useful
 load-module module-dbus-protocol
 
-# setting up echo cancellation
-load-module module-echo-cancel source_master=jack_in use_volume_sharing=true format=float32le rate=48000 channels=2 aec_method=webrtc
-
 ## JACK/ALSA domination config
+# initializing
 load-module module-jack-sink
 load-module module-jack-source
-set-default-sink jack_out
+# setting up echo cancellation
+load-module module-echo-cancel sink_master=jack_out source_master=jack_in aec_method=webrtc use_volume_sharing=true format=float32le rate=48000 channels=2
+# enabling
+set-default-sink jack_out.echo-cancel
 set-default-source jack_in.echo-cancel
