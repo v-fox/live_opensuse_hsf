@@ -1,9 +1,0 @@
-[Dolphin]
-PreviewsShown=true
-Timestamp=2014,5,10,17,53,55
-Version=3
-ViewMode=1
-VisibleRoles=Details_text,Details_size,Details_date,Details_owner,Details_group,Details_permissions,CustomizedDetails
-
-[Settings]
-HiddenFilesShown=true

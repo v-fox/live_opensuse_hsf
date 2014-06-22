@@ -1,5 +1,0 @@
-[Passwords]
-Keep=true
-
-[super-user-command]
-super-user-command=sudo

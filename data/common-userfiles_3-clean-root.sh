@@ -3,10 +3,10 @@
 FILE_OVERLAY="source/root"
 DIRECTORY="common-userfiles"
 
-cd "${DIRECTORY}"
+cd "${DIRECTORY}" || exit 1
 # removing common files after building, just for tidiness
-for i  $(find * -type f); do
-	for f in etc/skel root hacker; do
+for i in $(find . -mindepth 1 -printf '%f\n'); do
+	for f in etc/skel root home/hacker; do
 		rm -rf "../../${FILE_OVERLAY}/${f}/${i}"
 	done
 done

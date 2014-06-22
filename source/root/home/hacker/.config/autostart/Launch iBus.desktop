@@ -1,6 +1,0 @@
-[Desktop Entry]
-Exec=ibus-daemon --xim -d -r -R --desktop=razor
-Name=iBus input method
-Type=Application
-Version=1.0
-X-Razor-Need-Tray=true
