@@ -10,7 +10,7 @@ http_proxy=127.0.0.1:8080
 https_proxy=127.0.0.1:8080
 ftp_proxy=127.0.0.1:8080
 # for hugetlbfs usage
-#HUGETLB_PATH=/dev/hugepages
+HUGETLB_PATH=/dev/hugepages
 # for enca/enconv
 DEFAULT_CHARSET=UTF-8
 # input method
@@ -23,6 +23,8 @@ QT_GRAPHICSSYSTEM=native
 OOO_FORCE_DESKTOP="kde4"
 # atk/gtk missing accessibility crutch. http://debbugs.gnu.org/cgi/bugreport.cgi?bug=15154#11
 NO_AT_BRIDGE=1
+# for PA echo cancellation
+PULSE_PROP="filter.want=echo-cancel"
 # open radeon driver goodness
 R600_STREAMOUT=1
 R600_GLSL130=1

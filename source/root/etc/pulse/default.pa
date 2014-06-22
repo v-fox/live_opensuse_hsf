@@ -160,7 +160,7 @@ load-module module-filter-apply
 #.fail
 #.endif
 
-# needed for PA equalizer and such, unnecessary here
+# needed for PA equalizer and such. unnecessary here, but may be useful
 load-module module-dbus-protocol
 
 ## JACK/ALSA domination config
