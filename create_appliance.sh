@@ -5,9 +5,9 @@ image_arch='x86_64'
 declare -a repos=()
 
 dir="$(dirname $0)"
-src="$dir/source"
-dst="$dir/pan"
-img="$dir/plate"
+src="${dir}/source"
+dst="${dir}/pan"
+img="${dir}/plate"
 
 # Check that we're root.
 if [ `whoami` != 'root' ]; then
@@ -15,10 +15,9 @@ if [ `whoami` != 'root' ]; then
   exit 1
 fi
 
-if ! [ -d "$src/" ] || ! [ -d "config" ]; then
+if ! [ -d "${src}/" ] || ! [ -d "config" ]; then
   printf "%s: %s\n" \
     "$0" "Cannot find appliance source." \
-    "$0" "cd into the appliance directory and run './create_appliance.sh'." \
     >&2
   exit 1
 fi
@@ -36,17 +35,17 @@ if [ $? -ne 0 ]; then
 fi
 
 # Check architecture (i686, x86_64).
-sys_arch=`uname -m`
-linux32=`which linux32 2>/dev/null`
-if [ "$image_arch" = 'i686' ] && [ "$sys_arch" = 'x86_64' ]; then
-  if [ "$linux32" = '' ]; then
+sys_arch=$(uname -m)
+linux32=$(which linux32 2>/dev/null)
+if [ "${image_arch}" = 'i686' ] && [ "${sys_arch}" = 'x86_64' ]; then
+  if [ "${linux32}" = '' ]; then
     echo "'linux32' is required but not found."
     exit 1
   else
-    kiwi="$linux32 $kiwi"
+    kiwi="${linux32} ${kiwi}"
   fi
-elif [ "$image_arch" = 'x86_64' ] && [ "$sys_arch" = 'i686' ]; then
-  echo "Cannot build $image_arch image on a $sys_arch machine."
+elif [ "${image_arch}" = 'x86_64' ] && [ "${sys_arch}" = 'i686' ]; then
+  echo "Cannot build ${image_arch} image on a ${sys_arch} machine."
   exit 1
 fi
 
@@ -70,12 +69,11 @@ PACKAGE_LIST="${dst}/build/image-root/home/${OUR_USER}/${NAME_PRETTY} - package 
 PACKAGE_LIST_PROPER=${img}/$(basename "${IMAGE_PROPER}" .iso).packages
 HASHFILE=$(basename "${IMAGE_PROPER}" .iso).sha256
 
-# Cleaning up.
-echo "** CLeaning up auto-generated files..."
-while read i; do
-	echo "	removing '${i}'"
-	rm -fr ${i}
-done < config/generated
+# putting userfiles in their places
+cd "${dir}/data"
+./common-userfiles_1-generate-gitignore.sh
+./common-userfiles_2-populate-root.sh
+cd "${dir}"
 
 ## config.xml generation.
 echo "** Generating ${CONFIG}..."
@@ -169,16 +167,16 @@ function url_unknown {
 }
 function add_repo_url {
   local repo="${1?}"
-  read -p "Enter repository URL for '$repo': " url
+  read -p "Enter repository URL for '${repo}': " url
   mkdir -p /etc/kiwi
-  echo "{$repo} $url" >> /etc/kiwi/repoalias \
-  && echo "	{$repo} $url alias added to /etc/kiwi/repoalias"
+  echo "{$repo} ${url}" >> /etc/kiwi/repoalias \
+  && echo "	{$repo} ${url} alias added to /etc/kiwi/repoalias"
 }
 # Replace internal repositories in config.xml.
 echo "** Checking for internal repositories..."
 for repo in "${repos[@]}"; do
-  if grep -q "{$repo}" $src/config.xml && url_unknown "$repo"; then
-    add_repo_url "$repo"
+  if grep -q "{$repo}" ${src}/config.xml && url_unknown "${repo}"; then
+    add_repo_url "${repo}"
   fi
 done
 
@@ -210,5 +208,15 @@ mv -v "${IMAGE}" "${IMAGE_PROPER}"
 echo "** Creating sha256 checksum..."
 cd "${img}"
 sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
+
+# Cleaning up.
+echo "** CLeaning up auto-generated files..."
+while read i; do
+	echo "	removing '${i}'"
+	rm -rf ${i}
+done < config/generated
+
+cd "${dir}/data"
+./common-userfiles_3-clean-root.sh
 
 echo "** Everything is done, now look into '${img}' !"
