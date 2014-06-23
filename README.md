@@ -16,7 +16,7 @@ It provides:
 * codecs, font antialiasing and texture compression support without artificial restrictions
 * LXQt slim desktop environment
 * international collection of fonts and universal iBus input method by default
-* professional sound handling with JACK (Ardour3 and its friends are available in repositories)
+* professional sound handling with JACK (Ardour3 and its friends are available in repositories, PA runs as JACK's client)
 * LeechCraft modular system stripped for only IM, Socializing and P2P functionality
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
@@ -27,7 +27,7 @@ It provides:
 * gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
 * exfat and zfs kernel modules and general FS management & recovery tools like fsarchiver, ddrescue, testdisk, photorec, ext4magic
 * autopsy/sleuthkit, scalpel, chkrootkit, ntpassw/dchntpw, lynis, aircrack-ng, kismet, reaver and more security tools
-* tc-play (truecrypt remake), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx encryption utilities
+* tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx encryption utilities
 * bunch of useful repos pre-configured for games, emulators and recent but mostly stable updates
 
 It does NOT provide:
@@ -72,7 +72,7 @@ Notes:
 
 Building:
 ---------
-* ∀ every build comes with its building source in '/home/hacker/Hackeurs Sans Frontières - build code - ${VERSION_CONFIG}_${BUILD_DATE}.tar.xz'
+* ∀ every build comes with its building source in '/home/hacker/Hackeurs Sans Frontieres - build sources - ${VERSION_CONFIG}_${BUILD_DATE}.tar.xz'
 * ∀ you can build your own image by:
  	1. using openSUSE
  	2. having "kiwi" and "kiwi-desc-isoboot" packages installed
