@@ -100,7 +100,7 @@
 	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_emulators'>
 		<source path='obs://home:X0F:branches:Emulators/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_multimedia'>
+	<repository type='rpm-md' imageinclude='true' priority='2' alias='home_X0F_branches_multimedia'>
 		<source path='obs://home:X0F:branches:multimedia/openSUSE_13.1'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F_branches_network'>
