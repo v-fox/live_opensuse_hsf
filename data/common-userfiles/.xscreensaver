@@ -200,4 +200,4 @@ GetViewPortIsFullOfLies:False
 procInterrupts:	True
 xinputExtensionDev: False
 overlayStderr:	True
-
+newLoginCommand: dm-tool switch-to-greeter
