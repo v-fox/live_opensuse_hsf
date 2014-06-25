@@ -28,6 +28,7 @@ It provides:
 * exfat and zfs kernel modules and general FS management & recovery tools like fsarchiver, ddrescue, testdisk, photorec, ext4magic
 * autopsy/sleuthkit, scalpel, chkrootkit, ntpassw/dchntpw, lynis, aircrack-ng, kismet, reaver and more security tools
 * tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx encryption utilities
+* BiTCoin support: bitcoin core wallet (needs to download >20Gb of data to work) and QtBitcoinTrader
 * bunch of useful repos pre-configured for games, emulators and recent but mostly stable updates
 
 It does NOT provide:
