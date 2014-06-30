@@ -141,6 +141,8 @@ gcr-viewer
 gdk-pixbuf-loader-libopenraw
 gdk-pixbuf-loader-rsvg
 gdk-pixbuf-query-loaders
+gdouros-musica-fonts
+gdouros-symbola-fonts
 gegl-0_2
 GeoIP
 gettext-tools
@@ -668,6 +670,7 @@ ulogd
 unace
 unbound
 unetbootin
+unidings-fonts
 unrar
 upnp-inspector
 upower
