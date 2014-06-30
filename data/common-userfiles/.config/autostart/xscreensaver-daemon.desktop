@@ -1,0 +1,10 @@
+[Desktop Entry]
+GenericName=X Screensaver
+Exec=xscreensaver -no-splash &
+Icon=xscreensaver
+Terminal=false
+Name=X Screensaver
+Type=Application
+Categories=Settings;DesktopSettings;Security;X-XFCE;
+NotShowIn=KDE;GNOME;
+
