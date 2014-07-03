@@ -102,7 +102,7 @@ ekiga-plugins-gstreamer
 emount
 enca
 ethtool
-exfat-nofuse-dkms
+exfat-nofuse-dkms-git
 exfat-utils
 ext3grep
 ext4magic
