@@ -1,0 +1,69 @@
+## Path: 	Network/DNS/DNSCrypt
+## Description: Configuration for encrypted DNS proxy daemon
+## Type:	string
+## Default:	""
+## ServiceRestart: dnscrypt-proxy
+
+## Type:        string
+## Default:     "--edns-payload-size=4096"
+#
+# Some other options
+#
+DNSCRYPT_OPTIONS="--edns-payload-size=4096 --plugin libdcplugin_example_ldns_aaaa_blocking.la"
+
+## Type:        string
+## Default:     "127.0.0.1"
+#
+# Listening address
+#
+DNSCRYPT_LOCALIP="[::1]"
+
+## Type: 	integer(0:65535)
+## Default:     "40"
+#
+# Listening port
+#
+DNSCRYPT_LOCALPORT="40"
+
+## Type:        string
+## Default:     "nobody"
+#
+# Process's user
+#
+DNSCRYPT_USER="nobody"
+
+## Type:        string
+## Default:     "2.dnscrypt-cert.opendns.com"
+#
+# your actual DNS settings
+# consult with https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv
+# or local, possibly obsolete, /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv !
+#
+DNSCRYPT_PROVIDER_NAME="2.dnscrypt-cert.opendns.com"
+
+## Type:        string
+## Default:     "B735:1140:206F:225D:3E2B:D822:D7FD:691E:A1C3:3CC8:D666:8D0C:BE04:BFAB:CA43:FB79"
+#
+# your actual DNS settings
+# consult with https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv
+# or local, possibly obsolete, /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv !
+#
+DNSCRYPT_PROVIDER_KEY="B735:1140:206F:225D:3E2B:D822:D7FD:691E:A1C3:3CC8:D666:8D0C:BE04:BFAB:CA43:FB79"
+
+## Type:        string
+## Default:     "208.67.220.220"
+#
+# your actual DNS settings
+# consult with https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv
+# or local, possibly obsolete, /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv !
+#
+DNSCRYPT_RESOLVERIP="208.67.220.220"
+
+## Type: 	integer(0:65535)
+## Default: 	"443"
+#
+# your actual DNS settings
+# consult with https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv
+# or local, possibly obsolete, /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv !
+#
+DNSCRYPT_RESOLVERPORT="443"
