@@ -40,6 +40,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='98' alias='server_http'>
 		<source path='obs://server:http/openSUSE_13.1'/>
 	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='98' alias='server_http'>
+		<source path='obs://server:database/openSUSE_13.1'/>
+	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='Archiving'>
 		<source path='obs://Archiving/openSUSE_13.1'/>
 	</repository>
