@@ -1,0 +1,7 @@
+[home_namtrac_subpixel]
+name=home_namtrac_subpixel
+enabled=1
+autorefresh=1
+baseurl=http://download.opensuse.org/repositories/home:namtrac:subpixel/openSUSE_13.1
+type=rpm-md
+priority=44

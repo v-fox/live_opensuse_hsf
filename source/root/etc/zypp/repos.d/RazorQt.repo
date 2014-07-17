@@ -1,7 +1,0 @@
-[RazorQt]
-name=RazorQt
-enabled=0
-autorefresh=1
-baseurl=http://download.opensuse.org/repositories/X11:QtDesktop/openSUSE_13.1
-type=rpm-md
-priority=65

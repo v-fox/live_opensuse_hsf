@@ -28,9 +28,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='95' alias='home_pontostroy_X11'>
 		<source path='obs://home:pontostroy:X11/openSUSE_13.1'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='44' alias='home_namtrac_subpixel'>
-		<source path='obs://home:namtrac:subpixel/openSUSE_13.1'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network'>
 		<source path='obs://network/openSUSE_13.1'/>
 	</repository>

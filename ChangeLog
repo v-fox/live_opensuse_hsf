@@ -12,3 +12,10 @@
 	* GoldenDict, the ultimate dictionary, is updated from its ancient version
 	* BiTCoin support
 	* PCI & USB ids, smartdb and CAs always updated before creating image
+	* Custom build of Firefox with:
+		system libjpeg-turbo, libpng, cairo, pixman, libvpx,
+			sqlite, libevent, hunspell, icu, ffi, bz2
+		-O3 and SSE 2 & 3 optimisations
+		GStreamer 1.0
+		disabled startup notification, crash reporting, accessibility
+		enabled stripping and freetype2
