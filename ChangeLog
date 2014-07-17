@@ -15,7 +15,7 @@
 	* Custom build of Firefox with:
 		system libjpeg-turbo, libpng, cairo, pixman, libvpx,
 			sqlite, libevent, hunspell, icu, ffi, bz2
-		-O3 and SSE 2 & 3 optimisations and PGO
+		-O2 and SSE 2 & 3 optimisations and PGO
 		GStreamer 1.0
 		disabled startup notification, crash reporting, accessibility
 		enabled stripping
