@@ -1,10 +1,21 @@
 [Desktop Entry]
-GenericName=X Screensaver
-Exec=xscreensaver -no-splash &
-Icon=xscreensaver
-Terminal=false
-Name=X Screensaver
-Type=Application
 Categories=Settings;DesktopSettings;Security;X-XFCE;
-NotShowIn=KDE;GNOME;
-
+Comment[en_GB]=Draws pretty images while user is idle
+Comment=Draws pretty images while user is idle
+Encoding=UTF-8
+Exec=xscreensaver -no-splash &
+GenericName[en_GB]=X Screensaver daemon
+GenericName=X Screensaver daemon
+Icon=xscreensaver
+MimeType=
+Name[en_GB]=XScreensaver
+Name=XScreensaver
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
