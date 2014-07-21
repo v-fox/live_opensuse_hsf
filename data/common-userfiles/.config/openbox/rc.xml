@@ -780,5 +780,11 @@
 		   <focus>no</focus>
 		   <maximized>true</maximized>
 	   </application>
+
+	   <!-- for Firefox to be borderless (and "maximize vertical space") -->
+	   <application class="Firefox">
+		   <decor>no</decor>
+		   <maximized>true</maximized>
+	   </application>
   </applications>
 </openbox_config>
