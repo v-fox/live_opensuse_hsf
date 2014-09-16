@@ -4,7 +4,7 @@
 image_arch='x86_64'
 declare -a repos=()
 
-dir="$(dirname $0)"
+dir="$(pwd)"
 src="${dir}/source"
 dst="${dir}/pan"
 img="${dir}/plate"
@@ -153,10 +153,10 @@ else
 fi
 # adding generated config.xml into snapshot too, just as example
 tar rpf "${SNAPSHOT}" --transform "s:^:/${NAME_PREFIX}/:" ${CONFIG}
-xz -vv -9 "${SNAPSHOT}" || exit 1
+xz -vv -9 -f "${SNAPSHOT}" || exit 1
 
 # putting README into image
-echo -n "** Making copies of README.md and ChangeLog in user's home: "
+echo "** Making copies of README.md and ChangeLog in user's home: "
 cp -v README.md ChangeLog* -t "source/root/home/${OUR_USER}/"
 
 # kiwi repo logic
@@ -211,6 +211,7 @@ sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
 
 # Cleaning up.
 echo "** CLeaning up auto-generated files..."
+cd "${dir}"
 while read i; do
 	echo "	removing '${i}'"
 	rm -rf ${i}

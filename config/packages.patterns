@@ -5,7 +5,7 @@ enhanced_base
 enhanced_base_opt
 fonts
 fonts_opt
-lxde-qt
+LXQT
 office
 office_opt
 sw_management

@@ -440,7 +440,6 @@ libreoffice-thesaurus-en-US
 libreoffice-writer-extensions
 libsecret-tools
 libtxc_dxtn
-libtxc_dxtn0
 libva-egl1
 libvdpau_nouveau
 libvdpau_r300
@@ -462,7 +461,6 @@ lsb-release
 lsof
 lxappearance
 lxappearance-obconf
-lxqt-appswitcher
 lynis
 make
 man
@@ -588,7 +586,6 @@ pulseaudio-module-zeroconf
 pwgen
 qjackctl
 qps
-QtBitcoinTrader
 radeon-profile
 radeontop
 radvd
@@ -624,8 +621,6 @@ siproxd
 smartmontools
 smplayer
 smpppd
-snapper
-snapper-zypp-plugin
 snmp-mibs
 sox
 splashy-mkinitrd

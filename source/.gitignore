@@ -461,6 +461,9 @@ root/home/hacker/qjackctl.desktop
 root/etc/skel/yakuake.desktop
 root/root/yakuake.desktop
 root/home/hacker/yakuake.desktop
+root/etc/skel/xscreensaver-daemon.desktop
+root/root/xscreensaver-daemon.desktop
+root/home/hacker/xscreensaver-daemon.desktop
 root/etc/skel/nm-applet.desktop
 root/root/nm-applet.desktop
 root/home/hacker/nm-applet.desktop
@@ -758,9 +761,15 @@ root/home/hacker/vlcrc
 root/etc/skel/Trolltech.conf
 root/root/Trolltech.conf
 root/home/hacker/Trolltech.conf
+root/etc/skel/qBittorrent.conf
+root/root/qBittorrent.conf
+root/home/hacker/qBittorrent.conf
 root/etc/skel/compton.conf
 root/root/compton.conf
 root/home/hacker/compton.conf
+root/etc/skel/.Xresources
+root/root/.Xresources
+root/home/hacker/.Xresources
 root/etc/skel/.directory
 root/root/.directory
 root/home/hacker/.directory
