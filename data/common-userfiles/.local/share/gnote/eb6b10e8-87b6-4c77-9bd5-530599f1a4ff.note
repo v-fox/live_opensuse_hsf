@@ -9,7 +9,7 @@
 <list><list-item dir="ltr">encryption and security tips:
 <list><list-item dir="ltr">all DNS queries are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them to OpenDNS via encrypted connection. if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<highlight>network.proxy.socks_remote_dns</highlight>' parameter in Firefox, Thunderbird and all Mozilla apps
 </list-item><list-item dir="ltr">for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)
-</list-item><list-item dir="ltr">try not to use Google products</list-item></list></list-item></list>
+</list-item><list-item dir="ltr">try not to use Google products and Facebook</list-item></list></list-item></list>
 
 <list><list-item dir="ltr">important changes were made to <link:url>/etc/zypp/zypp.conf</link:url> 
 <list><list-item dir="ltr">'<highlight>solver.allowVendorChange</highlight>' was set to 'true'.
@@ -25,7 +25,10 @@
 <list><list-item dir="ltr">JAMin is started on the second desktop for not to mess with your primary activities
 </list-item><list-item dir="ltr">if you have good, expensive output setup with granular hardware control, then you should probably disable some or all JAMIn's features. or just not directing audio players to it would be a good idea (GStreamer's output is directed by default)
 </list-item><list-item dir="ltr">you should put bass &amp; treble and such switches on your speakers on &quot;zero change&quot; position (min, max or neutral, depending on implementation) and set hardware volume as high as you can tolerate. then control volume and wave form with JAMin
-</list-item><list-item dir="ltr">if sound has too much distortion, first try decreasing &quot;limiter, input&quot; in range from 20 to 0. then fiddle with the equalizer</list-item></list></list-item></list></list-item></list>
+</list-item><list-item dir="ltr">if sound has too much distortion, first try decreasing &quot;limiter, input&quot; in range from 20 to 0. then fiddle with the equalizer
+</list-item></list></list-item><list-item dir="ltr">for <highlight>better realtime</highlight> it's recommended to:
+<list><list-item dir="ltr">set <highlight>PM_PROFILER_PROFILE</highlight> in <link:url>/etc/sysconfig/pm-profiler</link:url> to &quot;low_latency&quot; which will change default CPU governor from &quot;ondemand&quot; to &quot;performance&quot;
+</list-item><list-item dir="ltr">set <highlight>CPUAffinity</highlight> in <link:url>/etc/systemd/system.conf</link:url> to the consecutive list of all your CPUs except the last one, so processes would be forbidden from automatically using it, therefore making it dedicated for jackd and jamin</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">in <link:url>/etc/systemd/logind.conf</link:url> value of '<highlight>KillUserProcesses</highlight>' was set to 'yes'. this will ensure that all processes are killed when they should and helps to prevent system hangs, but will break programs like `screen` which act daemon-like</list-item></list>
 
@@ -57,5 +60,5 @@
 <list><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight></list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2014-09-03T02:59:28.261749Z</last-change-date><last-metadata-change-date>2014-09-03T02:59:28.262531Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>2613</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+</text><last-change-date>2014-09-20T00:29:22.419523Z</last-change-date><last-metadata-change-date>2014-09-20T00:29:22.420554Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>751</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 
