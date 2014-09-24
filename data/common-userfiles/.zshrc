@@ -1,6 +1,7 @@
 #!/bin/zsh
 
 # for keeping larger history
+HIST_EXPIRE_DUPS_FIRST
 HISTSIZE=10000
 SAVEHIST=1000
 
