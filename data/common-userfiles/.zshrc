@@ -1,10 +1,13 @@
 #!/bin/zsh
 
-# Failure Prompt
+# for keeping larger history
+HISTSIZE=10000
+SAVEHIST=1000
+
+# failure prompt
 SPROMPT=$'%BError!%b Correct %{\e[31m%}%R%{ \e[0m%}to%{ \e[36m%}%r%{ \e[0m%}? [No/Yes/Abort/Edit]: '
 
 # fancy prompt
-
 export BLACK="%{"$'\033[01;30m'"%}"
 export GREEN="%{"$'\033[01;32m'"%}"
 export RED="%{"$'\033[01;31m'"%}"
