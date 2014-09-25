@@ -1,5 +1,5 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.3.11" name="redirection-to-jamin">
+<patchbay version="0.3.11.11svn786" name="redirection-to-jamin">
  <output-sockets>
   <socket exclusive="on" client="jamin" type="jack-audio" name="Jamin output">
    <plug>a\.master\.out_L|out_L</plug>
@@ -12,10 +12,6 @@
   <socket exclusive="on" client=".*" type="jack-audio" name="all GStreamer players">
    <plug>out_jackaudiosink.*_1</plug>
    <plug>out_jackaudiosink.*_2</plug>
-  </socket>
-  <socket exclusive="off" client="MPlayer \[[0-9]+\]" type="jack-audio" name="MPlayer">
-   <plug>out_0</plug>
-   <plug>out_1</plug>
   </socket>
   <socket exclusive="on" client="flash" type="jack-audio" name="Adobe Flash">
    <plug>out1</plug>
@@ -34,11 +30,10 @@
  </input-sockets>
  <slots/>
  <cables>
+  <cable output="Jamin output" input="main output" type="jack-audio"/>
   <cable output="PA stereo output" input="jamin volume boost" type="jack-audio"/>
   <cable output="all GStreamer players" input="jamin volume boost" type="jack-audio"/>
-  <cable output="MPlayer" input="jamin volume boost" type="jack-audio"/>
   <cable output="Adobe Flash" input="jamin volume boost" type="jack-audio"/>
-  <cable output="Jamin output" input="main output" type="jack-audio"/>
  </cables>
 </patchbay>
 
