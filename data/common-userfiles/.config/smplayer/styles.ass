@@ -4,4 +4,4 @@ Collisions: Normal
 
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, BackColour, OutlineColour, Bold, Italic, Alignment, BorderStyle, Outline, Shadow, MarginL, MarginR, MarginV
-Style: Default,Liberation Sans,16,&H0000dddd,&H00360036,&H00000000,-1,0,2,1,2,0,4,4,4
+Style: Default,Liberation Sans,18,&H2F00dddd,&HA0360036,&H70000000,-1,0,2,1,2,0,4,4,4
