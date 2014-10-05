@@ -445,7 +445,6 @@ libvdpau_nouveau
 libvdpau_r300
 libvdpau_r600
 libvdpau_radeonsi
-libvdpau_va_gl1
 libXaw3d8
 libXRes1
 libXTrap6
