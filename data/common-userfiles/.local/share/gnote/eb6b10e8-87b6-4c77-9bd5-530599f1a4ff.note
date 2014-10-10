@@ -57,8 +57,9 @@
 <list><list-item dir="ltr">to enable VA-API acceleration on VDPAU-hardware (amd, nvidia) set this environmental variable:
 <list><list-item dir="ltr"><highlight>LIBVA_DRIVER_NAME=vdpau</highlight>
 </list-item></list></list-item><list-item dir="ltr">to enable VDPAU/GL acceleration on VA-API-hardware (intel):
-<list><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight></list-item></list></list-item></list></list-item></list>
+<list><list-item dir="ltr">install 'libvdpau_va_gl1'
+</list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2014-09-20T00:29:22.419523Z</last-change-date><last-metadata-change-date>2014-09-20T00:29:22.420554Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>751</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+</text><last-change-date>2014-10-05T15:57:10.953174Z</last-change-date><last-metadata-change-date>2014-10-05T15:57:10.954166Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>5286</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 
