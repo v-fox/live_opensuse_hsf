@@ -1,0 +1,13 @@
+[Desktop Entry]
+X-SuSE-translate=true
+Version=1.0
+Name=Killswitch Applet
+GenericName=Killswitch Applet
+Comment=Manage Killswitches
+Exec=killswitch-applet
+Icon=killswitch-applet
+Terminal=false
+Type=Application
+Categories=GNOME;Utility;Applet;
+OnlyShowIn=GNOME;XFCE;
+X-GNOME-Autostart-enabled=true

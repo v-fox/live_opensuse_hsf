@@ -47,6 +47,7 @@ btrfsprogs
 bundle-lang-common-en
 cabextract
 ca-certificates
+caffeine
 cagibi
 calibre
 ccgfs
@@ -312,6 +313,7 @@ kdiff3
 kdnssd
 keepassx
 kfilemetadata
+killswitch-applet
 kio_iso
 kio_kamera
 kio-locate
