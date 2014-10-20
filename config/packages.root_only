@@ -617,6 +617,7 @@ sensors
 setools-console
 setools-gui
 setserial
+sg3_utils
 shellementary
 shim
 signing-party
