@@ -243,6 +243,7 @@ user_pref("media.peerconnection.noise_enabled", true);
 user_pref("media.peerconnection.video.h264_enabled", true);
 user_pref("media.tabstreaming.height", 480);
 user_pref("media.tabstreaming.width", 640);
+user_pref("media.use_cubeb", true);
 user_pref("media.webvtt.regions.enabled", true);
 user_pref("network.cookie.prefsMigrated", true);
 user_pref("network.proxy.http", "localhost");

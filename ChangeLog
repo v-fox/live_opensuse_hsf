@@ -19,6 +19,6 @@
 			sqlite, libevent, hunspell, icu, ffi, bz2
 		No compile optimisations:
 			 (O3 breaks png rendering, LTO is still flacky and PGO needs X on building for correct results)
-		GStreamer 1.0
+		GStreamer 1.0 and JACK support
 		disabled crash reporting, accessibility
 		enabled stripping, disabled '-g' flag
