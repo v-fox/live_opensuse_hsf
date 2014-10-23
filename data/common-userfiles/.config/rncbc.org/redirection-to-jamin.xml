@@ -1,9 +1,13 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.3.11.11svn786" name="redirection-to-jamin">
+<patchbay version="0.3.12svn801" name="redirection-to-jamin">
  <output-sockets>
   <socket exclusive="on" client="jamin" type="jack-audio" name="Jamin output">
    <plug>a\.master\.out_L|out_L</plug>
    <plug>a\.master\.out_R|out_R</plug>
+  </socket>
+  <socket exclusive="on" client="AudioStream|cubeb" type="jack-audio" name="FIrefox (cubeb)">
+   <plug>AudioStream_.*_0</plug>
+   <plug>AudioStream_.*_1</plug>
   </socket>
   <socket exclusive="on" client="PulseAudio JACK Sink" type="jack-audio" name="PA stereo output">
    <plug>front-left</plug>
@@ -34,6 +38,7 @@
   <cable output="PA stereo output" input="jamin volume boost" type="jack-audio"/>
   <cable output="all GStreamer players" input="jamin volume boost" type="jack-audio"/>
   <cable output="Adobe Flash" input="jamin volume boost" type="jack-audio"/>
+  <cable output="FIrefox (cubeb)" input="jamin volume boost" type="jack-audio"/>
  </cables>
 </patchbay>
 
