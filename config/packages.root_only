@@ -82,6 +82,7 @@ Crystalcursors
 davfs2
 dconf
 dconf-editor
+ddccontrol
 dejavu-fonts
 delayacct-utils
 deltarpm
@@ -708,6 +709,7 @@ wm-icons
 wol
 wpa_supplicant-gui
 wqy-zenhei-fonts
+xbacklight
 xcompmgr
 xcursor-themes
 xdmbgrd
