@@ -20,7 +20,7 @@
 
 <list><list-item dir="ltr"><highlight>JACK</highlight> is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality
 <list><list-item dir="ltr">note <highlight>QJackCtl</highlight>, JACK configurator, <highlight>QasMixer</highlight>, ALSA volume configurator and <highlight>PASysTray</highlight>, advanced PA configurator, and in your tray
-</list-item><list-item dir="ltr">please, set all your multimedia apps to use JACK with '<highlight>jamin</highlight>' port by default or disable it and then use naked PA (see <link:url>/etc/pulse</link:url>)
+</list-item><list-item dir="ltr">please, set all your multimedia apps to use JACK with '<highlight>jamin</highlight>' port by default or disable it and then use naked PA (see <link:url>/etc/pulse</link:url>). note that Firefox build has ALSA and PA completely disabled to force its JACK support.
 </list-item><list-item dir="ltr">tired of volume jumps (especially in flash videos and alike) and muffled sound ? well, i sure do. this is why QJackCtl has custom patchbay for automatic output redirection to JAMin where it's equalized, compressed and limited from exceeding 0dB. if your app is outputting directly to JACK playback, you should add redirection to it there. DO NOT CLOSE IT, or all sound redirected to it will be lost, instead disable the patchbay and change Mplayer's and VLC's settings to default ports.
 <list><list-item dir="ltr">JAMin is started on the second desktop for not to mess with your primary activities
 </list-item><list-item dir="ltr">if you have good, expensive output setup with granular hardware control, then you should probably disable some or all JAMIn's features. or just not directing audio players to it would be a good idea (GStreamer's output is directed by default)
@@ -61,5 +61,5 @@
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2014-10-05T15:57:10.953174Z</last-change-date><last-metadata-change-date>2014-10-05T15:57:10.954166Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>5286</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+</text><last-change-date>2014-10-23T04:55:34.307100Z</last-change-date><last-metadata-change-date>2014-10-23T04:55:34.307721Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>1871</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 
