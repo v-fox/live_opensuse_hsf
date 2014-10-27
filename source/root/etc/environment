@@ -28,6 +28,8 @@ QT_GRAPHICSSYSTEM=native
 OOO_FORCE_DESKTOP="kde4"
 # atk/gtk missing accessibility crutch. http://debbugs.gnu.org/cgi/bugreport.cgi?bug=15154#11
 NO_AT_BRIDGE=1
+# enabling compression support
+force_s3tc_enable=true
 # open radeon driver goodness
 R600_STREAMOUT=1
 R600_GLSL130=1
@@ -40,6 +42,12 @@ R600_SURF=1
 R600_DEBUG=sb
 # for dual-GPU bullshit
 DRI_PRIME=1
+# Firefox acceleration
+MOZ_USE_OMTC=1
+# SDL tuning
+SDL_VIDEO_YUV_HWACCEL=1
+# kmix crutch to prevent it from fiddling with PA
+KMIX_PULSEAUDIO_DISABLE=1
 # hardware video decoding stuff. READ gnote NOTES before changing !
 #LIBVA_DRIVER_NAME=vdpau
 #VDPAU_DRIVER=va_gl
