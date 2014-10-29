@@ -223,7 +223,7 @@ user_pref("layers.async-pan-zoom.enabled", true);
 user_pref("layers.enable-tiles", true);
 user_pref("layers.offmainthreadcomposition.animate-opacity", true);
 user_pref("layers.offmainthreadcomposition.animate-transform", true);
-user_pref("layers.offmainthreadcomposition.async-animations", true);
+user_pref("layers.offmainthreadcomposition.async-animations", false);
 user_pref("layers.offmainthreadcomposition.enabled", true);
 user_pref("layout.animated-image-layers.enabled", true);
 user_pref("layout.css.filters.enabled", true);
