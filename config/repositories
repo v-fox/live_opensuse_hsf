@@ -37,6 +37,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='security'>
 		<source path='obs://security/openSUSE_13.1'/>
 	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='security_forensics'>
+		<source path='obs://security:forensics/openSUSE_13.1'/>
+	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='98' alias='server_http'>
 		<source path='obs://server:http/openSUSE_13.1'/>
 	</repository>
