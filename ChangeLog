@@ -12,7 +12,6 @@
 	* all logging completely directed into systemd-journal
 		and it should shit less into console
 	* GoldenDict, the ultimate dictionary, is updated from its ancient version
-	* BiTCoin support
 	* PCI & USB ids, smartdb and CAs always updated before creating image
 	* Custom build of Firefox with:
 		system libjpeg-turbo, libpng, cairo, pixman, libvpx,
