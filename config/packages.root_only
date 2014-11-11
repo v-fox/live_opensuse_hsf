@@ -726,6 +726,7 @@ xf86-video-v4l
 xfontsel
 xfsprogs
 xgamma
+xiccd
 xinput
 xkbevd
 xkbutils
