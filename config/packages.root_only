@@ -298,6 +298,7 @@ irssi-otr
 isight-firmware-tools
 ispell-american
 ispell-british
+iw
 jack
 jack-stdio
 jamin
@@ -457,6 +458,7 @@ libyui-qt-graph5
 libyui-qt-pkg5
 lightdm
 lightdm-gtk-greeter
+linssid
 linuxconsoletools
 lirc
 lirc-remotes
@@ -646,6 +648,7 @@ systemd-logger
 systemd-ui
 systemtap
 t6_client
+tano
 tcpdump
 tc-play
 tcpreen
@@ -666,6 +669,7 @@ translation-update
 tree
 tunctl
 tuxcursors
+tvtime
 ubuntu-font-family
 ucode-intel
 udev
@@ -706,7 +710,9 @@ whois
 wireless-regdb
 wireless-tools
 wireshark
+wireshark-ui-qt
 wm-icons
+wminput
 wol
 wpa_supplicant-gui
 wqy-zenhei-fonts
