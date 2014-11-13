@@ -1,11 +1,10 @@
 [Desktop Entry]
+Categories=Utility;X-SuSE-DesktopUtility;
+Comment=Temporarily deactivate the screensaver and sleep mode
 Encoding=UTF-8
+Exec=/usr/bin/caffeine
 Icon=caffeine
 Name=Caffeine
-Comment=Temporarily deactivate the screensaver and sleep mode
-Exec=/usr/bin/caffeine
+StartupNotify=false
 Terminal=false
 Type=Application
-Categories=Utility;X-SuSE-DesktopUtility;
-StartupNotify=false
-

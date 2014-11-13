@@ -9,5 +9,4 @@ Icon=killswitch-applet
 Terminal=false
 Type=Application
 Categories=GNOME;Utility;Applet;
-OnlyShowIn=GNOME;XFCE;
 X-GNOME-Autostart-enabled=true

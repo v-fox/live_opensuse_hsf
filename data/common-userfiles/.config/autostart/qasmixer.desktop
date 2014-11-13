@@ -1,16 +1,16 @@
 [Desktop Entry]
-Type=Application
-Name=QasMixer
-GenericName=Sound volume mixer
-GenericName[de]=Klanglautstärkenregler
-Exec=qasmixer
-Icon=qasmixer
-StartupNotify=false
-Terminal=false
 Categories=AudioVideo;Mixer;
 Comment=Graphical mixer application for the ALSA
 Comment[cs]=Grafický směšovač pro ALSA
 Comment[de]=Graphische Mixeranwendung für ALSA
 Comment[es]=Mezclador gráfico para ALSA
 Comment[ru]=Графический микшер для звуковой системы ALSA
-
+Exec=qasmixer
+GenericName=Sound volume mixer
+GenericName[de]=Klanglautstärkenregler
+Icon=qasmixer
+Name=QasMixer
+StartupNotify=false
+Terminal=false
+Type=Application
+X-LXQt-Need-Tray=true
