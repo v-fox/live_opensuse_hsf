@@ -16,7 +16,15 @@ gtk-enable-input-feedback-sounds=0
 gtk-alternative-button-order = 1
 
 # customization
-include "/usr/share/themes/oxygen-gtk/gtk-2.0/gtkrc"
+style "oxygen-gimp-scale"
+ {
+     # this ensures that toolpanels fonts in gimp is identical
+     # to default font (which otherwise is ugly
+     GimpDock::font-scale = 1.01
+ }
+
+class "*" style "oxygen-gimp-scale"
+
 style "default"
 {
   bg[NORMAL] = { 0.835, 0.820, 0.812 }

@@ -313,7 +313,7 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-<!-- Screenshot -->
+    <!-- Screenshot -->
     <keybind key="Print">
       <action name="Execute">
         <command>sh -c "import -window root ~/ScreenShots/$(date '+%Y%m%d-%H%M%S').png"</command>
@@ -774,17 +774,17 @@
 
   # end of the example
 -->
-	  <!-- for JAMin to not get in the way -->
-	   <application class="jamin">
-		   <desktop>2</desktop>
-		   <focus>no</focus>
-		   <maximized>true</maximized>
-	   </application>
-
-	   <!-- for Firefox to be borderless (and "maximize vertical space") -->
-	   <application class="Firefox">
-		   <decor>no</decor>
-		   <maximized>true</maximized>
-	   </application>
+    <!-- for JAMin to not get in the way -->
+    <application class="Jamin">
+      <desktop>2</desktop>
+      <focus>no</focus>
+      <maximized>true</maximized>
+    </application>
+    <!-- for Firefox to be borderless (and "maximize vertical space") -->
+    <application role="browser"
+    		 name="Navigator">
+      <decor>no</decor>
+      <maximized>true</maximized>
+    </application>
   </applications>
 </openbox_config>
