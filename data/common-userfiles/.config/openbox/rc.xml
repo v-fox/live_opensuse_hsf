@@ -775,7 +775,8 @@
   # end of the example
 -->
     <!-- for JAMin to not get in the way -->
-    <application class="Jamin">
+    <application class="Jamin"
+    		 type="normal">
       <desktop>2</desktop>
       <focus>no</focus>
       <maximized>true</maximized>
