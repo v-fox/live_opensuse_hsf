@@ -40,6 +40,7 @@ suseImportBuildKey
 # CUSTOMIZATION
 #--------------------------------------
 suseActivateDefaultServices
+systemctl disable rsyslog
 systemctl disable xdm
 systemctl disable apparmor
 systemctl disable SuSEfirewall2
