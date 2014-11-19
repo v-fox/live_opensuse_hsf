@@ -1,7 +1,7 @@
 #!/bin/sh
 # Universal (ImageMagick+xdotool) PrintScreen for focused window
 
-SS_PATH="$1"
+SS_PATH="~/ScreenShots"
 FWINDOW_ID="$(xdotool getwindowfocus -f)"
 FWINDOW_NAME="$(xdotool getwindowname ${FWINDOW_ID})"
 import -window "${FWINDOW_ID}" "${SS_PATH}/Window - ${FWINDOW_NAME} - $(date +%Y-%m-%d_%T)".jpg
