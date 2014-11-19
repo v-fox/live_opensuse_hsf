@@ -2,4 +2,4 @@
 # Universal (ImageMagick+xdotool) PrintScreen for entire screen
 
 SS_PATH="$1"
-import -window root "${SS_PATH}/Screen - ${date +%Y-%m-%d_%T}".jpg
+import -window root "${SS_PATH}/Screen - $(date +%Y-%m-%d_%T)".jpg
