@@ -720,6 +720,7 @@ xbacklight
 xcompmgr
 xcursor-themes
 xdmbgrd
+xdotool
 xev
 xf86-input-evdev
 xf86-input-synaptics
