@@ -116,6 +116,9 @@ root/home/hacker/.Xdefaults
 root/etc/skel/.zshrc
 root/root/.zshrc
 root/home/hacker/.zshrc
+root/etc/skel/OpenSUSElightHSF.colors
+root/root/OpenSUSElightHSF.colors
+root/home/hacker/OpenSUSElightHSF.colors
 root/etc/skel/cookies
 root/root/cookies
 root/home/hacker/cookies
