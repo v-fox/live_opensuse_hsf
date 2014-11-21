@@ -1,5 +1,5 @@
 #!/bin/sh
 # Universal (ImageMagick+xdotool) PrintScreen for entire screen
 
-SS_PATH="~/ScreenShots"
+SS_PATH="${HOME}/ScreenShots"
 import -window root "${SS_PATH}/Screen - $(date +%Y-%m-%d_%T)".jpg
