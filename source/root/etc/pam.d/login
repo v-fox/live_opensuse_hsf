@@ -9,4 +9,4 @@ session  required	pam_loginuid.so
 session	 include	common-session
 #session  optional       pam_lastlog.so nowtmp showfailed
 session  optional       pam_mail.so standard
-session optional	pam_gnome_keyring.so auto_start
+session  optional	pam_gnome_keyring.so auto_start

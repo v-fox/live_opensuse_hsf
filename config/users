@@ -1,7 +1,7 @@
 	<users group='users'>
-		<user name='hacker' pwd='$1$bt1tLGOm$gLnv3aIEyKN0gsj5T2BZp0' home='/home/hacker' shell='/usr/bin/zsh'/>
+		<user name='hacker' pwd="" pwdformat="plain" home='/home/hacker' shell='/usr/bin/zsh'/>
 	</users>
 	<users group='root'>
-		<user name='root' pwd='$1$swBREFsk$22GzIU89QzoL7uMa9zzun1' home='/root' shell='/bin/bash'/>
+		<user name='root' pwd="linux" pwdformat="plain" home='/root' shell='/bin/bash'/>
 	</users>
 	

@@ -157,6 +157,7 @@ gimp-plugins-python
 gimp-save-for-web
 gimp-ufraw
 git
+git-credential-gnome-keyring
 git-cvs
 git-merge-changelog
 git-svn
