@@ -1,5 +1,6 @@
 0.8.0:
 	* LXQt 0.8 update
+		be wary, nitrogen is used to control desktop wallpapers instead of pcmanfm-qt
 	* Enlightenment removed due to inability to login
 	* YaST firewall is disabled by default to ensure connectivity
 	* all audio I/O goes to JACK now, default user is allowed realtime
