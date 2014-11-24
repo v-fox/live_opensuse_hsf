@@ -189,8 +189,11 @@ sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
 	-e "/CPE_NAME=/s:=.*$:=\"cpe\:/o\:opensuse\:opensuse\:${VERSION_DIST}\":" \
 	data/os-release > source/root/etc/os-release
 
+echo "** Cleaning up building directory..."
+rm -rf "${dst}"/*
+	
 echo "** Creating appliance..."
-command="$kiwi --verbose 3 --build $src/ -d $dst"
+command="$kiwi --verbose 3 --build ${src}/ -d ${dst}"
 echo "$command"
 $command
 if [ $? -ne 0 ]; then
@@ -210,7 +213,7 @@ cd "${img}"
 sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
 
 # Cleaning up.
-echo "** CLeaning up auto-generated files..."
+echo "** Cleaning up auto-generated files..."
 cd "${dir}"
 while read i; do
 	echo "	removing '${i}'"
