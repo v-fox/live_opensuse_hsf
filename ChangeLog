@@ -22,3 +22,4 @@
 		GStreamer 1.0 and JACK support (PA support is disabled)
 		disabled crash reporting, accessibility
 		enabled stripping, disabled '-g' flag
+	* sudo now handles GUI apps and can replace xdg-su/kdesu/gksu

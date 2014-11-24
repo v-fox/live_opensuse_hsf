@@ -1,0 +1,9 @@
+[Desktop Entry]
+X-SuSE-translate=true
+Type=Application
+Categories=Settings;System;X-SuSE-Core-System;X-SuSE-ControlCenter-System;X-GNOME-SystemSettings;
+Name=YaST
+Icon=yast
+GenericName=System Control Center
+Exec=sudo -A /sbin/yast2
+Comment=Manage system-wide settings
