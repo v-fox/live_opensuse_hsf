@@ -547,9 +547,17 @@ p7zip-kde4
 PackageKit-browser-plugin
 PackageKit-gstreamer-plugin
 pam_apparmor
+pam_ccreds
+pam_chroot
 pam_cifscreds
+pam_fprint
+pam_krb5
+pam_mktemp
 pam_mount
+pam_p11
+pam_pkcs11
 pam_ssh
+pam_userpass
 paprefs
 pastebinit
 pasystray
