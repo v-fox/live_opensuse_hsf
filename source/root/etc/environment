@@ -28,7 +28,12 @@ QT_GRAPHICSSYSTEM=native
 OOO_FORCE_DESKTOP="kde4"
 # atk/gtk missing accessibility crutch. http://debbugs.gnu.org/cgi/bugreport.cgi?bug=15154#11
 NO_AT_BRIDGE=1
-# enabling compression support
+# enabling pretty password prompter
+# LXQt:'/usr/bin/lxqt-openssh-askpass', GNOME:'/usr/lib64/seahorse/seahorse-ssh-askpass', KDE:'/usr/lib/ssh/ksshaskpass'
+SUDO_ASKPASS=/usr/bin/lxqt-openssh-askpass
+SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
+GIT_ASKPASS=/usr/bin/lxqt-openssh-askpass
+# enabling texture compression support
 force_s3tc_enable=true
 # open radeon driver goodness
 R600_STREAMOUT=1
@@ -48,9 +53,13 @@ MOZ_USE_OMTC=1
 SDL_VIDEO_YUV_HWACCEL=1
 # kmix crutch to prevent it from fiddling with PA
 KMIX_PULSEAUDIO_DISABLE=1
+# PA echo cancellation
+#PULSE_PROP="filter.want=echo-cancel"
 # hardware video decoding stuff. READ gnote NOTES before changing !
 #LIBVA_DRIVER_NAME=vdpau
 #VDPAU_DRIVER=va_gl
+# needed for LADSPA-using programs
+#LADSPA_PATH=/usr/lib64/ladspa
 # steam crutches. read up on http://en.opensuse.org/Steam
 #STEAM_RUNTIME=0
 #STEAM_FRAME_FORCE_CLOSE=1
