@@ -64,6 +64,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='65' alias='multimedia_libs'>
 		<source path='obs://multimedia:libs/openSUSE_13.1'/>
 	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='65' alias=' multimedia_color_management'>
+		<source path='obs://multimedia:color_management/openSUSE_13.1'/>
+	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Extra'>
 		<source path='obs://KDE:Extra/openSUSE_13.1'/>
 	</repository>
