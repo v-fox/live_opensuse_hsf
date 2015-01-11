@@ -7,5 +7,5 @@
 #
 # This is a default for openSUSE:
 gtk-theme-name = oxygen-gtk
-gtk-icon-theme-name = xygen-ionized_v1
+gtk-icon-theme-name = oxygen-ionized_v1
 gtk-fallback-icon-theme = gnome-wise
