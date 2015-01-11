@@ -9,7 +9,14 @@
 #
 # Some other options
 #
-DNSCRYPT_OPTIONS="--edns-payload-size=4096 --plugin libdcplugin_example_ldns_aaaa_blocking.la"
+DNSCRYPT_OPTIONS="--edns-payload-size=4096"
+
+## Type:        string
+## Default:     ""
+#
+# Some other options
+#
+DNSCRYPT_PLUGINS=""
 
 ## Type:        string
 ## Default:     "127.0.0.1"
