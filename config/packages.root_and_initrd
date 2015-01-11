@@ -1,11 +1,8 @@
 adaptec-firmware
 alsa-firmware
 atmel-firmware
-b43-firmware
-b43legacy-firmware
 bluez-firmware
 cryptsetup
-cryptsetup-mkinitrd
 crystalhd-firmware
 disktype
 efibootmgr

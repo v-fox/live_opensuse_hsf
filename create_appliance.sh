@@ -51,7 +51,7 @@ fi
 
 # Variables.
 echo "** Setting up versioning variables..."
-VERSION_DIST="13.1"
+VERSION_DIST="13.2"
 read VERSION_CONFIG < config/version
 CONFIG="source/config.xml"
 BUILD_DATE="$(date +%Y%m%d)"

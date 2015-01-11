@@ -1,4 +1,5 @@
 0.8.0:
+	* Transition to OpenSUSE 13.2
 	* LXQt 0.8 update
 		be wary, nitrogen is used to control desktop wallpapers instead of pcmanfm-qt
 	* Enlightenment removed due to inability to login

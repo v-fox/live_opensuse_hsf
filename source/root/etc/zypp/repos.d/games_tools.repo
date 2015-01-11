@@ -2,6 +2,6 @@
 name=games_tools
 enabled=0
 autorefresh=1
-baseurl=http://download.opensuse.org/repositories/games:tools/openSUSE_13.1
+baseurl=http://download.opensuse.org/repositories/games:tools/openSUSE_13.2
 type=rpm-md
 priority=80

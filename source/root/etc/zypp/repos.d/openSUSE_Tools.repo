@@ -2,6 +2,6 @@
 name=openSUSE_Tools
 enabled=0
 autorefresh=1
-baseurl=http://download.opensuse.org/repositories/openSUSE:Tools/openSUSE_13.1
+baseurl=http://download.opensuse.org/repositories/openSUSE:Tools/openSUSE_13.2
 type=rpm-md
 priority=85

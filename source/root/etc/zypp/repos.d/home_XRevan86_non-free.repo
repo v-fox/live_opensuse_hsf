@@ -2,6 +2,6 @@
 name=home_XRevan86_non-free
 enabled=0
 autorefresh=1
-baseurl=http://download.opensuse.org/repositories/home:XRevan86:non-free/openSUSE_13.1
+baseurl=http://download.opensuse.org/repositories/home:XRevan86:non-free/openSUSE_13.2
 type=rpm-md
 priority=94

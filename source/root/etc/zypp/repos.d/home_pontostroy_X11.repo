@@ -1,0 +1,7 @@
+[home_pontostroy_X11]
+name=home_pontostroy_X11
+enabled=1
+autorefresh=1
+baseurl=http://download.opensuse.org/repositories/home:pontostroy:X11/openSUSE_13.2
+type=rpm-md
+priority=95

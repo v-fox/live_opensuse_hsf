@@ -2,6 +2,6 @@
 name=X11_Enlightenment_Factory
 enabled=0
 autorefresh=1
-baseurl=http://download.opensuse.org/repositories/X11:Enlightenment:Factory/openSUSE_13.1
+baseurl=http://download.opensuse.org/repositories/X11:Enlightenment:Factory/openSUSE_13.2
 type=rpm-md
 priority=65

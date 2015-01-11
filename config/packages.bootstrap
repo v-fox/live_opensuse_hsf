@@ -4,7 +4,5 @@ file
 filesystem
 genisoimage
 glibc-locale
-module-init-tools
-openssl-certs
 udev
 which
