@@ -445,6 +445,8 @@ libvdpau_radeonsi
 libXaw3d8
 libXRes1
 libXTrap6
+libyui-ncurses6
+libyui-qt6
 lightdm
 lightdm-gtk-greeter
 linssid
@@ -767,6 +769,7 @@ yast2-snapper
 yast2-sound
 yast2-sudo
 yast2-support
+yast2-tftp-server
 yast2-trans-en_GB
 zenmap
 zerofree
