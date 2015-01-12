@@ -83,10 +83,10 @@ Building:
 
 * ∀ the process of development for this project is like this:
  	01. _future_ release version is set in 'source/version'
- 	02. desired changes are made and package lists are sorted via `config/sort.sh`
- 	03. `git commit` issued
+ 	02. desired functional changes are made
+ 	03. package lists are sorted via `config/sort.sh`, gitignore is generated via `data/common-userfiles_1-generate-gitignore.sh` and then changes are committed
  	04. image is build via `create_appliance.sh`
- 	05. image is booted on real hardware and tested, maybe in virtual hardware also
+ 	05. image is booted on real hardware and tested, maybe also in virtual hardware
  	06. bugs and insufficiencies are noted/reported/filed
  	07. fixes made
  	08. new image is tested and steps 6-7-8 are repeated until condition is satisfactory
