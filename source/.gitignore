@@ -494,6 +494,9 @@ root/home/hacker/.config/gtk-3.0/settings.ini
 root/etc/skel/.config/gtk-2.0/gtkfilechooser.ini
 root/root/.config/gtk-2.0/gtkfilechooser.ini
 root/home/hacker/.config/gtk-2.0/gtkfilechooser.ini
+root/etc/skel/.config/fontconfig/fonts.conf
+root/root/.config/fontconfig/fonts.conf
+root/home/hacker/.config/fontconfig/fonts.conf
 root/etc/skel/.config/dconf/user
 root/root/.config/dconf/user
 root/home/hacker/.config/dconf/user

@@ -78,6 +78,7 @@ crda
 cromfs
 Crystalcursors
 davfs2
+dc3dd
 dconf
 dconf-editor
 ddccontrol
@@ -124,6 +125,7 @@ flash-player
 flashrom
 fonttools
 fonttosfnt
+foremost
 freetype-tools
 fsarchiver
 fslint
@@ -615,6 +617,7 @@ seahorse-daemon
 seahorse-sharing
 selinux-tools
 sensors
+sentinella
 setools-console
 setools-gui
 setserial
@@ -629,6 +632,7 @@ smplayer-qt5
 snmp-mibs
 sox
 splashy-mkinitrd
+ssdeep
 sssd
 stix-fonts
 stix-integrals-fonts
