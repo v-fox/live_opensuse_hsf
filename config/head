@@ -16,4 +16,4 @@
 		<rpm-force>false</rpm-force>
 		<bootsplash-theme>HSF</bootsplash-theme>
 		<bootloader-theme>HSF</bootloader-theme>
-		<locale>en_GB</locale>
+		<locale>en_GB,en_US</locale>
