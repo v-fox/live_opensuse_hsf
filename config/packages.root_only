@@ -448,8 +448,8 @@ libvdpau_radeonsi
 libXaw3d8
 libXRes1
 libXTrap6
-libyui-ncurses6
-libyui-qt6
+libyui-ncurses6-pkg
+libyui-qt6-pkg
 lightdm
 lightdm-gtk-greeter
 linssid
