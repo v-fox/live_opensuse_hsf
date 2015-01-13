@@ -28,6 +28,7 @@ arpwatch-ethercodes
 at
 atop
 attr
+audacity
 autofs
 autopsy
 avahi
@@ -536,6 +537,7 @@ oxygen-ionized-icon-theme
 p7zip-kde4
 PackageKit-browser-plugin
 PackageKit-gstreamer-plugin
+paman
 pam_apparmor
 pam_ccreds
 pam_chroot
