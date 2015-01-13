@@ -336,6 +336,8 @@ kmscon
 kparts-plugin
 krename
 krusader
+ladspa
+ladspa-swh-plugins
 laptop-mode-tools
 latencytop
 lcdf-typetools
