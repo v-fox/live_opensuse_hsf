@@ -594,6 +594,7 @@ pulseaudio-module-gconf
 pulseaudio-module-jack
 pulseaudio-module-lirc
 pulseaudio-module-zeroconf
+pulseaudio-utils
 pwgen
 qasmixer
 qjackctl
