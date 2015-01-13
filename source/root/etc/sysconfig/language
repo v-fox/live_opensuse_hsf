@@ -16,7 +16,7 @@
 INPUT_METHOD=""
 ## Path:	System/Environment/Language
 ## Description:	
-## Type:	string(POSIX,ca_ES.ISO-8859-1,ca_ES.UTF-8,cs_CZ.ISO-8859-2,cs_CZ.UTF-8,da_DE@euro,da_DK.ISO-8859-1,da_DK.UTF-8,de_DE@euro,de_DE.ISO-8859-1,de_DE.UTF-8,el_GR.ISO-8859-7,el_GR.UTF-8,en_GB.ISO-8859-1,en_GB.UTF-8,en_IE@euro,en_IE.ISO-8859-1,en_US.ISO-8859-1,es_ES@euro,es_ES.ISO-8859-1,es_ES.UTF-8,fr_FR@euro,fr_FR.ISO-8859-1,fr_FR.UTF-8,gl_ES@euro,gl_ES.ISO-8859-1,gl_ES.utf-8,hr_HR.ISO-8859-2,hu_HU.ISO-8859-2,hu_HU.UTF-8,it_IT@euro,it_IT.ISO-8859-1,it_IT.UTF-8,ja_JP.eucJP,ja_JP.UTF-8,lt_LT.ISO-8859-13,lt_LT.UTF-8,nl_NL@euro,nl_NL.ISO-8859-1,nl_NL.UTF-8,ru_RU.ISO-8859-5,ru_RU.KOI8-R,en_GB.UTF-8,sk_SK.ISO-8859-2,sk_SK.UTF-8,tr_TR.ISO-8859-9,tr_TR.UTF-8,ko_KR.eucKR,ko_KR.UTF-8,zh_TW.Big5,zh_TW.UTF-8,zh_CN.GB2312,zh_CN.UTF-8)
+## Type:	string(POSIX,ca_ES.ISO-8859-1,ca_ES.UTF-8,cs_CZ.ISO-8859-2,cs_CZ.UTF-8,da_DE@euro,da_DK.ISO-8859-1,da_DK.UTF-8,de_DE@euro,de_DE.ISO-8859-1,de_DE.UTF-8,el_GR.ISO-8859-7,el_GR.UTF-8,en_GB.ISO-8859-1,en_GB.UTF-8,en_IE@euro,en_IE.ISO-8859-1,en_US.ISO-8859-1,es_ES@euro,es_ES.ISO-8859-1,es_ES.UTF-8,fr_FR@euro,fr_FR.ISO-8859-1,fr_FR.UTF-8,gl_ES@euro,gl_ES.ISO-8859-1,gl_ES.utf-8,hr_HR.ISO-8859-2,hu_HU.ISO-8859-2,hu_HU.UTF-8,it_IT@euro,it_IT.ISO-8859-1,it_IT.UTF-8,ja_JP.eucJP,ja_JP.UTF-8,lt_LT.ISO-8859-13,lt_LT.UTF-8,nl_NL@euro,nl_NL.ISO-8859-1,nl_NL.UTF-8,en_GB.ISO-8859-5,en_GB.KOI8-R,en_GB.UTF-8,sk_SK.ISO-8859-2,sk_SK.UTF-8,tr_TR.ISO-8859-9,tr_TR.UTF-8,ko_KR.eucKR,ko_KR.UTF-8,zh_TW.Big5,zh_TW.UTF-8,zh_CN.GB2312,zh_CN.UTF-8)
 ## Default:	""
 ## Config:      OpenOffice.org,groff,ispell,kde,kdm,profiles,susehelp,susewm,tetex,wdm
 #
@@ -117,9 +117,4 @@ AUTO_DETECT_UTF8="yes"
 #
 # List of installed language supports, use by YaST2
 #
-INSTALLED_LANGUAGES="en"
-RC_LC_NAME="en_GB.UTF-8"
-RC_LC_ADDRESS="en_GB.UTF-8"
-RC_LC_TELEPHONE="en_GB.UTF-8"
-RC_LC_MEASUREMENT="en_GB.UTF-8"
-RC_LC_IDENTIFICATION="en_GB.UTF-8"
+INSTALLED_LANGUAGES="en_US,en_GB"

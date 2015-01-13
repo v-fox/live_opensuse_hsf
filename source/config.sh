@@ -87,6 +87,9 @@ update-pciids
 update-usbids.sh
 update-smart-drivedb
 
+# making sure that en_US locale packages are present (otherwise programs like iBus are shitting themselves)
+yast2 language set lang=en_GB languages=en_US
+
 #======================================
 # Prune extraneous files
 #--------------------------------------
