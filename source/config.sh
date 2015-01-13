@@ -41,7 +41,6 @@ suseImportBuildKey
 #--------------------------------------
 suseActivateDefaultServices
 systemctl disable rsyslog
-systemctl disable xdm
 systemctl disable apparmor
 systemctl disable SuSEfirewall2
 systemctl enable pm-profiler
@@ -66,7 +65,7 @@ systemctl enable polipo
 systemctl enable avahi-daemon
 systemctl enable miredo-client
 systemctl enable colord
-systemctl enable lightdm
+systemctl enable xdm
 
 # preemptively building our dkms kernel modules
 /usr/sbin/dkms autoinstall
