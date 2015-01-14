@@ -37,7 +37,7 @@
 </list-item><list-item dir="ltr">or, at least, set 'aa: enable, hinting: slight, subpixel geometry: rgb, dpi: 96' for output not to be garbled</list-item></list></list-item></list>
 
 <list><list-item dir="ltr">this spin contains only English language by default.
-<list><list-item dir="ltr">add your language in yast2 software manager.
+<list><list-item dir="ltr">add your language in <highlight>yast2 language</highlight> and <highlight>yast2 sw_single</highlight> (you may have to allow installing 'recommended' packages for that to work)
 </list-item><list-item dir="ltr"><highlight>ibus</highlight> input method daemon is launched for 'hacker' user, you can access its preferences via system tray icon and <underline>add your keyboard settings there</underline>, by default only US English is set and switch hotkey is <underline>&lt;shift&gt;+space</underline>.</list-item></list></list-item></list>
 
 <list><list-item dir="ltr"><link:url>/etc/environment</link:url> is the best place for it global variables.</list-item></list>
@@ -61,5 +61,5 @@
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2014-10-23T04:55:34.307100Z</last-change-date><last-metadata-change-date>2014-10-23T04:55:34.307721Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>1871</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+</text><last-change-date>2015-01-14T15:48:49.462583Z</last-change-date><last-metadata-change-date>2015-01-14T15:48:49.462826Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>4187</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 
