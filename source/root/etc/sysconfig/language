@@ -35,7 +35,7 @@ RC_LANG="en_GB.UTF-8"
 # Again, ROOT_USES_LANG must be set to "yes", if an effect on the superuser
 # account is desired.
 #
-RC_LC_ALL="en_GB.UTF-8"
+RC_LC_ALL=""
 
 ## Type:	string
 ## Default:	""
@@ -102,7 +102,7 @@ RC_LC_PAPER=""
 # which are defined here.
 # Value "ctype" means that root uses just LC_CTYPE. 
 #
-ROOT_USES_LANG=""
+ROOT_USES_LANG="yes"
 
 ## Type:        yesno
 ## Default:     no
