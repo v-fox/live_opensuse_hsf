@@ -34,6 +34,7 @@ autopsy
 avahi
 avahi-autoipd
 avahi-utils
+bash-completion
 bc
 bind-utils
 bitmap
@@ -285,6 +286,7 @@ ibus-table-translit-ua
 ibus-table-viqr
 ibus-table-yawerty
 ibus-unikey
+icc-profiles-all
 ifplugd
 iftop
 ifuse
@@ -588,6 +590,7 @@ proxychains
 psmisc
 ptools
 pullin-flash-player
+pulseaudio-bash-completion
 pulseaudio-esound-compat
 pulseaudio-module-bluetooth
 pulseaudio-module-gconf
@@ -648,6 +651,7 @@ sudo
 SuSEfirewall2
 sysconfig-netconfig
 syslinux
+systemd-bash-completion
 systemd-logger
 systemd-ui
 systemtap
@@ -774,6 +778,7 @@ yast2-nfs-client
 yast2-nfs-server
 yast2-ntp-client
 yast2-online-update-configuration
+yast2-qt-branding-openSUSE
 yast2-samba-client
 yast2-samba-server
 yast2-snapper
