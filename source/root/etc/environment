@@ -59,7 +59,7 @@ KMIX_PULSEAUDIO_DISABLE=1
 #LIBVA_DRIVER_NAME=vdpau
 #VDPAU_DRIVER=va_gl
 # needed for LADSPA-using programs
-#LADSPA_PATH=/usr/lib64/ladspa
+LADSPA_PATH=/usr/lib64/ladspa
 # steam crutches. read up on http://en.opensuse.org/Steam
 #STEAM_RUNTIME=0
 #STEAM_FRAME_FORCE_CLOSE=1
