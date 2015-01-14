@@ -263,6 +263,7 @@ user_pref("network.proxy.socks_port", 9050);
 user_pref("network.proxy.ssl", "localhost");
 user_pref("network.proxy.ssl_port", 8080);
 user_pref("network.proxy.type", 1);
+user_pref("noscript.ABE.enabled", false);
 user_pref("noscript.ABE.migration", 1);
 user_pref("noscript.ABE.siteEnabled", true);
 user_pref("noscript.allowHttpsOnly", 1);
