@@ -70,7 +70,7 @@
 	<repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Extra'>
 		<source path='obs://KDE:Extra/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='48' alias='server_mdns'>
+	<repository type='rpm-md' imageinclude='true' priority='48' alias='server_dns'>
 		<source path='obs://server:dns/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='48' alias='server_monitoring'>
