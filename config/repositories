@@ -64,7 +64,7 @@
 	<repository type='rpm-md' imageinclude='true' priority='65' alias='multimedia_libs'>
 		<source path='obs://multimedia:libs/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='65' alias=' multimedia_color_management'>
+	<repository type='rpm-md' imageinclude='true' priority='65' alias='multimedia_color_management'>
 		<source path='obs://multimedia:color_management/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Extra'>
@@ -87,6 +87,9 @@
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='98' alias='home_Lazy_Kent'>
 		<source path='obs://home:Lazy_Kent/openSUSE_13.2'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='emulators'>
+		<source path='obs://Emulators/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_emulators'>
 		<source path='obs://home:X0F:branches:Emulators/openSUSE_13.2'/>
