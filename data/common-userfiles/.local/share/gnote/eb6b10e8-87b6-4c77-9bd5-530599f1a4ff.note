@@ -31,7 +31,8 @@
 </list-item><list-item dir="ltr">if sound has too much distortion, first try decreasing &quot;limiter, input&quot; in range from 20 to 0. then fiddle with the equalizer
 </list-item></list></list-item><list-item dir="ltr">for <highlight>better realtime</highlight> it's recommended to:
 <list><list-item dir="ltr">set <highlight>PM_PROFILER_PROFILE</highlight> in <link:url>/etc/sysconfig/pm-profiler</link:url> to &quot;low_latency&quot; which will change default CPU governor from &quot;ondemand&quot; to &quot;performance&quot;
-</list-item><list-item dir="ltr">set <highlight>CPUAffinity</highlight> in <link:url>/etc/systemd/system.conf</link:url> to the consecutive list of all your CPUs except the last one, so processes would be forbidden from automatically using it, therefore making it dedicated for jackd and jamin</list-item></list></list-item></list></list-item></list>
+</list-item><list-item dir="ltr">set <highlight>CPUAffinity</highlight> in <link:url>/etc/systemd/system.conf</link:url> to the consecutive list of all your CPUs except the last one, so processes would be forbidden from automatically using it, therefore making it dedicated for jackd and jamin
+</list-item></list></list-item><list-item dir="ltr">on systems with HDMI a sound driver for it can load before your main one and QJackCtl will fail. to fix that simply open its settings and select proper card manually</list-item></list></list-item></list>
 
 <list><list-item dir="ltr">in <link:url>/etc/systemd/logind.conf</link:url> value of '<highlight>KillUserProcesses</highlight>' was set to 'yes'. this will ensure that all processes are killed when they should and helps to prevent system hangs, but will break programs like `screen` which act daemon-like</list-item></list>
 
@@ -64,5 +65,5 @@
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2015-01-18T20:53:56.173774Z</last-change-date><last-metadata-change-date>2015-01-18T20:54:24.397197Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>880</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height><tags><tag>spellchecklang:disabled</tag></tags></note>
+</text><last-change-date>2015-01-18T21:11:13.050905Z</last-change-date><last-metadata-change-date>2015-01-18T21:11:13.050905Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>3727</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 
