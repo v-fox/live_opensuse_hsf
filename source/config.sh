@@ -88,7 +88,7 @@ update-usbids.sh
 update-smart-drivedb
 
 # making sure that en_US locale packages are present (otherwise programs like iBus are shitting themselves)
-yast2 language set lang=en_GB languages=en_US
+#yast2 language set lang=en_GB languages=en_US
 
 #======================================
 # Prune extraneous files
@@ -99,9 +99,9 @@ find /usr/share/doc/packages -type f -iregex ".*copying*\|.*license*\|.*copyrigh
 #======================================
 # Keep UTF-8 locale and delete all translations
 #--------------------------------------
-baseStripLocales \
-	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
-baseStripTranslations kiwi.mo
+#baseStripLocales \
+#	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
+#baseStripTranslations kiwi.mo
 
 #======================================
 # SSL Certificates Configuration

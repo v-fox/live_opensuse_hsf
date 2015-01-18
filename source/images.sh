@@ -13,7 +13,7 @@ echo "Configure image: [$kiwi_iname]..."
 #======================================
 # Fixing permissions
 #--------------------------------------
-#baseSetupUserPermissions
+baseSetupUserPermissions
 
 #======================================
 # setup build day
