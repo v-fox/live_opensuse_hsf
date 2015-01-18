@@ -190,7 +190,9 @@ sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
 	data/os-release > source/root/etc/os-release
 
 echo "** Cleaning up building directory..."
-rm -rf "${dst}"/*
+if [ -d "${dst}" ]; then
+	rm -rf "${dst}"/*
+fi
 	
 echo "** Creating appliance..."
 command="$kiwi --verbose 3 --build ${src}/ -d ${dst}"
@@ -217,7 +219,9 @@ echo "** Cleaning up auto-generated files..."
 cd "${dir}"
 while read i; do
 	echo "	removing '${i}'"
-	rm -rf ${i}
+	if [ -e "${i}" ]; then
+		rm -rf "${i}"
+	fi
 done < config/generated
 
 cd "${dir}/data"
