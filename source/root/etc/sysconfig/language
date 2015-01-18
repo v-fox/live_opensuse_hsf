@@ -117,4 +117,4 @@ AUTO_DETECT_UTF8="yes"
 #
 # List of installed language supports, use by YaST2
 #
-INSTALLED_LANGUAGES="en_US,en_GB"
+INSTALLED_LANGUAGES="en_GB"
