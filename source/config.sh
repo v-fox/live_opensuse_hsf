@@ -53,7 +53,7 @@ ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.s
 systemctl enable autofs
 systemctl enable lm_sensors
 systemctl enable hddtemp
-systemctl enable dkms_autoinstaller
+systemctl enable dkms
 systemctl enable bluetooth
 systemctl enable ModemManager
 systemctl enable NetworkManager
