@@ -9,7 +9,10 @@
 <list><list-item dir="ltr">encryption and security tips:
 <list><list-item dir="ltr">all DNS queries are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them to OpenDNS via encrypted connection. if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<highlight>network.proxy.socks_remote_dns</highlight>' parameter in Firefox, Thunderbird and all Mozilla apps
 </list-item><list-item dir="ltr">for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)
-</list-item><list-item dir="ltr">try not to use Google products and Facebook</list-item></list></list-item></list>
+</list-item><list-item dir="ltr">try not to use Google products and Facebook
+</list-item><list-item dir="ltr">AppArmor is disabled by default, to enable it:
+<list><list-item dir="ltr">uncomment <highlight>pam_apparmor.so</highlight> in <link:url>/etc/pam.d/common-session-pc</link:url>
+</list-item><list-item dir="ltr">enable its service</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">important changes were made to <link:url>/etc/zypp/zypp.conf</link:url> 
 <list><list-item dir="ltr">'<highlight>solver.allowVendorChange</highlight>' was set to 'true'.
@@ -61,5 +64,5 @@
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2015-01-14T15:48:49.462583Z</last-change-date><last-metadata-change-date>2015-01-14T15:48:49.462826Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>4187</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+</text><last-change-date>2015-01-18T20:53:56.173774Z</last-change-date><last-metadata-change-date>2015-01-18T20:54:24.397197Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>880</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height><tags><tag>spellchecklang:disabled</tag></tags></note>
 
