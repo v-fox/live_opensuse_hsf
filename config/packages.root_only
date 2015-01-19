@@ -45,6 +45,7 @@ bonnie++
 bootcycle
 branding-openSUSE
 bridge-utils
+btrfsmaintenance
 btrfsprogs
 bundle-lang-common-en
 cabextract
@@ -226,6 +227,7 @@ gtk-recordMyDesktop
 guestfs-tools
 gupnp-tools
 guvcview
+guymager
 gvfs-backends
 gvfs-fuse
 gwenview
@@ -461,6 +463,7 @@ lightdm
 lightdm-gtk-greeter
 linssid
 linuxconsoletools
+linux-ftools
 lirc
 lirc-remotes
 lsb-invalid-mta
@@ -554,9 +557,11 @@ pam_mktemp
 pam_mount
 pam_p11
 pam_pkcs11
+pam_snapper
 pam_ssh
 pam_userpass
 paprefs
+partclone
 pastebinit
 pasystray
 pavucontrol
@@ -579,6 +584,7 @@ pm-profiler
 pm-utils
 polipo
 polkit-default-privs
+polkit-gnome
 poppler-data
 poppler-tools
 posixovl
@@ -639,6 +645,8 @@ sipcalc
 siproxd
 smartmontools
 smplayer-qt5
+snapper
+snapper-zypp-plugin
 snmp-mibs
 sox
 splashy-mkinitrd

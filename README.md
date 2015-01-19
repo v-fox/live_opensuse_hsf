@@ -25,8 +25,8 @@ It provides:
 * anti-censorship kit: Tor, Polipo, dnscrypt-proxy, proxychains and miredo-client
 * networking: ze/nmap, hostapd, usbip, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, rancid, aria2, aMule, irssi and a bunch
 * gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
-* exfat and zfs kernel modules and general FS management & recovery tools like fsarchiver, ddrescue, testdisk, photorec, ext4magic
-* autopsy/sleuthkit, scalpel, foremost, chkrootkit, ntpassw/dchntpw & ophcrack, lynis, aircrack-ng, kismet, reaver and more security tools
+* exfat and zfs kernel modules and general FS management & recovery tools like fsarchiver/guymager, ddrescue, testdisk, photorec, ext4magic
+* autopsy/sleuthkit, scalpel, foremost, chkrootkit, ntpassw/dchntpw/ophcrack, lynis, aircrack-ng, kismet, reaver and more security tools
 * tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx encryption utilities
 * bunch of useful repos pre-configured for games, emulators and recent but mostly stable updates
 
