@@ -6,7 +6,7 @@
 #
 # Here you can set the default window manager (kde, fvwm, ...)
 # changes here require at least a re-login
-DEFAULT_WM="openbox"
+DEFAULT_WM="lxqt"
 
 ## Type:	yesno
 ## Default:	yes
@@ -23,4 +23,4 @@ INSTALL_DESKTOP_EXTENSIONS="yes"
 # Name of mouse cursor theme for X11. Possible themes can be found
 # in /usr/share/icons/
 #
-X_MOUSE_CURSOR="Crystal Green"
+X_MOUSE_CURSOR="crystalgreen"
