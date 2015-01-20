@@ -217,14 +217,16 @@ sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
 # Cleaning up.
 echo "** Cleaning up auto-generated files..."
 cd "${dir}"
+IFS=$'\n'
 while read i; do
-	for f in $(eval "echo ${i}"); do
+	for f in $(eval "ls -1 ${i}"); do
 		echo "	removing '${f}'"
 		if [ -e "${f}" ]; then
 			rm -rf "${f}"
 		fi
 	done
 done < config/generated
+unset IFS
 
 cd "${dir}/data"
 ./common-userfiles_3-clean-root.sh
