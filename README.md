@@ -21,6 +21,7 @@ It provides:
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
 * LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
+* printer and scanner support
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other various console tools
 * anti-censorship kit: Tor, Polipo, dnscrypt-proxy, proxychains and miredo-client
 * networking: ze/nmap, hostapd, usbip, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, rancid, aria2, aMule, irssi and a bunch
@@ -36,8 +37,7 @@ It does NOT provide:
 — proprietary video drivers (because they suck and are pain in the ass), and video driver support for anything without KMS for that matter  
 — whole KDE or Gnome pre-installed (because of how fat the former and how ugly the later are)  
 — any language packages (for space conservation)  
-— Wayland packages (because it's too raw yet)  
-— printer and scaner support (because that would require a lot of packages without much use on generic installation media)  
+— Wayland packages (because it's too raw yet)   
 — many cd/dvd/bluray and whatever disk rom utilities (because spinning media must die). mkisofs, cdrecord and acetoneiso2 are included though  
 — accessibility features (because i have no idea how to setup them right)  
 

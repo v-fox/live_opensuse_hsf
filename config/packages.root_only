@@ -41,7 +41,9 @@ bitmap
 bitstream-vera-fonts
 blueman
 bluez
+bluez-cups
 bonnie++
+boomaga
 bootcycle
 branding-openSUSE
 bridge-utils
@@ -106,6 +108,7 @@ ekiga
 emount
 enca
 enigmail
+epson-inkjet-printer-escpr
 ethtool
 evtest
 exfat-nofuse-dkms-git
@@ -129,6 +132,7 @@ flash-player
 flashrom
 fonttools
 fonttosfnt
+foo2zjs
 foremost
 freetype-tools
 fsarchiver
@@ -226,6 +230,7 @@ gtk3-tools
 gtk-recordMyDesktop
 guestfs-tools
 gupnp-tools
+gutenprint
 guvcview
 guymager
 gvfs-backends
@@ -238,6 +243,7 @@ hicolor-icon-theme
 hicolor-icon-theme-branding-openSUSE
 hostapd
 hostap-utils
+hplip-hpijs
 htop
 hunspell
 hunspell-tools
@@ -475,6 +481,7 @@ lynis
 make
 man
 man-pages
+manufacturer-PPDs
 mc
 media-player-info
 mercurial
@@ -537,6 +544,7 @@ openal-soft
 openclipart-png
 opengost-otf-fonts
 openldap2-client
+OpenPrintingPPDs-postscript
 openssh
 openssh-askpass
 openssh-helpers
@@ -567,6 +575,7 @@ pasystray
 pavucontrol
 pax
 pax-utils
+pbm2l7k
 pdfcrack-multithread
 phonon-backend-gstreamer-0_10
 photorec
@@ -620,6 +629,8 @@ rpcbind
 rpm
 rsync
 samba-client
+sane-backends
+sane-backends-autoconfig
 sax3
 sazanami-fonts
 sbc
@@ -643,6 +654,7 @@ shim
 signing-party
 sipcalc
 siproxd
+skanlite
 smartmontools
 smplayer-qt5
 snapper
@@ -650,6 +662,7 @@ snapper-zypp-plugin
 snmp-mibs
 sox
 splashy-mkinitrd
+splix
 ssdeep
 sssd
 stix-fonts
@@ -661,6 +674,7 @@ sudo
 SuSEfirewall2
 sysconfig-netconfig
 syslinux
+system-config-printer-applet
 systemd-bash-completion
 systemd-logger
 systemd-ui
@@ -767,7 +781,10 @@ xorg-x11-fonts
 xorg-x11-libs
 xorg-x11-libX11-ccache
 xorg-x11-server-extra
+xplsprinters
+xprehashprinterlist
 xrandr
+xsane
 xscreensaver
 xscreensaver-data
 xsetmode
@@ -789,9 +806,11 @@ yast2-nfs-client
 yast2-nfs-server
 yast2-ntp-client
 yast2-online-update-configuration
+yast2-printer
 yast2-qt-branding-openSUSE
 yast2-samba-client
 yast2-samba-server
+yast2-scanner
 yast2-snapper
 yast2-sound
 yast2-sudo
