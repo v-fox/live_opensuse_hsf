@@ -8,11 +8,71 @@ Arch:x86_64-gcc3:$
 skypebuttons.so:$
 /usr/lib64/browser-plugins/skypebuttons.so:$
 :$
-1418705320000:0:0:0:$
+1420087136000:0:0:0:$
 Mime Type x-skype for Skype Buttons:$
 Skype Buttons for Kopete:$
 1
 0:application/x-skype:Skype Buttons::$
+libnpsoplugin.so:$
+/usr/lib64/libreoffice/program/libnpsoplugin.so:$
+:$
+1419012435000:0:0:0:$
+LibreOffice Plug-in handles all its documents:$
+LibreOffice Plug-in:$
+44
+0:application/msword:MS Word 97-2003 document:doc:$
+1:application/msword:MS Word 97-2003 document template:dot:$
+2:application/vnd.openxmlformats-officedocument.wordprocessingml.document:MS Word document:docx:$
+3:application/vnd.ms-word.document.macroenabled.12:MS Word document with macros:docm:$
+4:application/vnd.openxmlformats-officedocument.wordprocessingml.template:MS Word document template:dotx:$
+5:application/vnd.ms-word.template.macroenabled.12:MS Word document template with macros:dotm:$
+6:application/rtf:Rich Text Format:rtf:$
+7:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet:xls:$
+8:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet template:xlt:$
+9:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet:xla:$
+10:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:MS Excel spreadsheet:xlsx:$
+11:application/vnd.ms-excel.sheet.macroenabled.12:MS Excel spreadsheet with macros:xlsm:$
+12:application/vnd.openxmlformats-officedocument.spreadsheetml.template:MS Excel spreadsheet template:xltx:$
+13:application/vnd.ms-excel.template.macroenabled.12:MS Excel spreadsheet template with macros:xltm:$
+14:application/vnd.ms-powerpoint:MS PowerPoint 97-2003 presentation:ppt:$
+15:application/vnd.openxmlformats-officedocument.presentationml.presentation:MS PowerPoint presentation:pptx:$
+16:application/vnd.ms-powerpoint.presentation.macroenabled.12:MS PowerPoint presentation with macros:pptm:$
+17:application/vnd.openxmlformats-officedocument.presentationml.template:MS PowerPoint presentation template:potx:$
+18:application/vnd.ms-powerpoint.template.macroenabled.12:MS PowerPoint presentation template with macros:potm:$
+19:application/vnd.sun.xml.calc:StarOffice 6.0/7 Spreadsheet:sxc:$
+20:application/vnd.sun.xml.calc.template:StarOffice 6.0/7 Spreadsheet Template:stc:$
+21:application/vnd.sun.xml.draw:StarOffice 6.0/7 Drawing:sxd:$
+22:application/vnd.sun.xml.draw.template:StarOffice 6.0/7 Drawing Template:std:$
+23:application/vnd.sun.xml.impress:StarOffice 6.0/7 Presentation:sxi:$
+24:application/vnd.sun.xml.impress.template:StarOffice 6.0/7 Presentation Template:sti:$
+25:application/vnd.sun.xml.math:StarOffice 6.0/7 Formula:sxm:$
+26:application/vnd.sun.xml.writer:StarOffice 6.0/7 Text Document:sxw:$
+27:application/vnd.sun.xml.writer.global:StarOffice 6.0/7 Master Document:sxg:$
+28:application/vnd.sun.xml.writer.template:StarOffice 6.0/7 Text Document Template:stw:$
+29:application/vnd.oasis.opendocument.text:OpenDocument Text:odt:$
+30:application/vnd.oasis.opendocument.text-flat-xml:OpenDocument Text Flat XML:fodt:$
+31:application/vnd.oasis.opendocument.text-template:OpenDocument Text Template:ott:$
+32:application/vnd.oasis.opendocument.text-master:OpenDocument Master Document:odm:$
+33:application/vnd.oasis.opendocument.text-web:HTML Document Template:oth:$
+34:application/vnd.oasis.opendocument.spreadsheet:OpenDocument Spreadsheet:ods:$
+35:application/vnd.oasis.opendocument.spreadsheet-flat-xml:OpenDocument Spreadsheet Flat XML:fods:$
+36:application/vnd.oasis.opendocument.spreadsheet-template:OpenDocument Spreadsheet Template:ots:$
+37:application/vnd.oasis.opendocument.graphics:OpenDocument Drawing:odg:$
+38:application/vnd.oasis.opendocument.graphics-flat-xml:OpenDocument Drawing Flat XML:fodg:$
+39:application/vnd.oasis.opendocument.graphics-template:OpenDocument Drawing Template:otg:$
+40:application/vnd.oasis.opendocument.presentation:OpenDocument Presentation:odp:$
+41:application/vnd.oasis.opendocument.presentation-flat-xml:OpenDocument Presentation Flat XML:fodp:$
+42:application/vnd.oasis.opendocument.presentation-template:OpenDocument Presentation Template:otp:$
+43:application/vnd.oasis.opendocument.formula:OpenDocument Formula:odf:$
+libflashplayer.so:$
+/usr/lib64/browser-plugins/libflashplayer.so:$
+11.2.202.429:$
+1418327356000:0:0:0:$
+Shockwave Flash 11.2 r202:$
+Shockwave Flash:$
+2
+0:application/x-shockwave-flash:Shockwave Flash:swf:$
+1:application/futuresplash:FutureSplash Player:spl:$
 libvlcplugin.so:$
 /usr/lib64/browser-plugins/libvlcplugin.so:$
 :$
@@ -69,66 +129,6 @@ VLC Web Plugin:$
 46:audio/amr:AMR audio:amr:$
 47:audio/x-flac:FLAC audio:flac:$
 48:audio/flac:FLAC audio:flac:$
-libflashplayer.so:$
-/usr/lib64/browser-plugins/libflashplayer.so:$
-11.2.202.425:$
-1416535854000:0:0:0:$
-Shockwave Flash 11.2 r202:$
-Shockwave Flash:$
-2
-0:application/x-shockwave-flash:Shockwave Flash:swf:$
-1:application/futuresplash:FutureSplash Player:spl:$
-libnpsoplugin.so:$
-/usr/lib64/libreoffice/program/libnpsoplugin.so:$
-:$
-1416422525000:0:0:0:$
-LibreOffice Plug-in handles all its documents:$
-LibreOffice Plug-in:$
-44
-0:application/msword:MS Word 97-2003 document:doc:$
-1:application/msword:MS Word 97-2003 document template:dot:$
-2:application/vnd.openxmlformats-officedocument.wordprocessingml.document:MS Word document:docx:$
-3:application/vnd.ms-word.document.macroenabled.12:MS Word document with macros:docm:$
-4:application/vnd.openxmlformats-officedocument.wordprocessingml.template:MS Word document template:dotx:$
-5:application/vnd.ms-word.template.macroenabled.12:MS Word document template with macros:dotm:$
-6:application/rtf:Rich Text Format:rtf:$
-7:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet:xls:$
-8:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet template:xlt:$
-9:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet:xla:$
-10:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:MS Excel spreadsheet:xlsx:$
-11:application/vnd.ms-excel.sheet.macroenabled.12:MS Excel spreadsheet with macros:xlsm:$
-12:application/vnd.openxmlformats-officedocument.spreadsheetml.template:MS Excel spreadsheet template:xltx:$
-13:application/vnd.ms-excel.template.macroenabled.12:MS Excel spreadsheet template with macros:xltm:$
-14:application/vnd.ms-powerpoint:MS PowerPoint 97-2003 presentation:ppt:$
-15:application/vnd.openxmlformats-officedocument.presentationml.presentation:MS PowerPoint presentation:pptx:$
-16:application/vnd.ms-powerpoint.presentation.macroenabled.12:MS PowerPoint presentation with macros:pptm:$
-17:application/vnd.openxmlformats-officedocument.presentationml.template:MS PowerPoint presentation template:potx:$
-18:application/vnd.ms-powerpoint.template.macroenabled.12:MS PowerPoint presentation template with macros:potm:$
-19:application/vnd.sun.xml.calc:StarOffice 6.0/7 Spreadsheet:sxc:$
-20:application/vnd.sun.xml.calc.template:StarOffice 6.0/7 Spreadsheet Template:stc:$
-21:application/vnd.sun.xml.draw:StarOffice 6.0/7 Drawing:sxd:$
-22:application/vnd.sun.xml.draw.template:StarOffice 6.0/7 Drawing Template:std:$
-23:application/vnd.sun.xml.impress:StarOffice 6.0/7 Presentation:sxi:$
-24:application/vnd.sun.xml.impress.template:StarOffice 6.0/7 Presentation Template:sti:$
-25:application/vnd.sun.xml.math:StarOffice 6.0/7 Formula:sxm:$
-26:application/vnd.sun.xml.writer:StarOffice 6.0/7 Text Document:sxw:$
-27:application/vnd.sun.xml.writer.global:StarOffice 6.0/7 Master Document:sxg:$
-28:application/vnd.sun.xml.writer.template:StarOffice 6.0/7 Text Document Template:stw:$
-29:application/vnd.oasis.opendocument.text:OpenDocument Text:odt:$
-30:application/vnd.oasis.opendocument.text-flat-xml:OpenDocument Text Flat XML:fodt:$
-31:application/vnd.oasis.opendocument.text-template:OpenDocument Text Template:ott:$
-32:application/vnd.oasis.opendocument.text-master:OpenDocument Master Document:odm:$
-33:application/vnd.oasis.opendocument.text-web:HTML Document Template:oth:$
-34:application/vnd.oasis.opendocument.spreadsheet:OpenDocument Spreadsheet:ods:$
-35:application/vnd.oasis.opendocument.spreadsheet-flat-xml:OpenDocument Spreadsheet Flat XML:fods:$
-36:application/vnd.oasis.opendocument.spreadsheet-template:OpenDocument Spreadsheet Template:ots:$
-37:application/vnd.oasis.opendocument.graphics:OpenDocument Drawing:odg:$
-38:application/vnd.oasis.opendocument.graphics-flat-xml:OpenDocument Drawing Flat XML:fodg:$
-39:application/vnd.oasis.opendocument.graphics-template:OpenDocument Drawing Template:otg:$
-40:application/vnd.oasis.opendocument.presentation:OpenDocument Presentation:odp:$
-41:application/vnd.oasis.opendocument.presentation-flat-xml:OpenDocument Presentation Flat XML:fodp:$
-42:application/vnd.oasis.opendocument.presentation-template:OpenDocument Presentation Template:otp:$
-43:application/vnd.oasis.opendocument.formula:OpenDocument Formula:odf:$
 IcedTeaPlugin.so:$
 /usr/lib64/IcedTeaPlugin.so:$
 :$

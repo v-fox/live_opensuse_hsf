@@ -7,3 +7,5 @@ source/root/etc/os-release
 source/root/home/hacker/*.tar.xz
 source/root/home/hacker/README.md
 source/root/home/hacker/ChangeLog*
+source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/healthreport.sqlite
+source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/datareporting/state.json
