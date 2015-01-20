@@ -218,10 +218,12 @@ sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
 echo "** Cleaning up auto-generated files..."
 cd "${dir}"
 while read i; do
-	echo "	removing '${i}'"
-	if [ -e "${i}" ]; then
-		rm -rf "${i}"
-	fi
+	for f in $(eval "echo ${i}"); do
+		echo "	removing '${f}'"
+		if [ -e "${f}" ]; then
+			rm -rf "${f}"
+		fi
+	done
 done < config/generated
 
 cd "${dir}/data"
