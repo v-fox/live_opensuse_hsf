@@ -335,6 +335,9 @@ root/home/hacker/.asoundrc
 root/etc/skel/.gitconfig
 root/root/.gitconfig
 root/home/hacker/.gitconfig
+root/etc/skel/.mplayer/config
+root/root/.mplayer/config
+root/home/hacker/.mplayer/config
 root/etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
 root/root/.config/pcmanfm-qt/lxqt/settings.conf
 root/home/hacker/.config/pcmanfm-qt/lxqt/settings.conf
@@ -476,6 +479,9 @@ root/home/hacker/.config/autostart/iBus.desktop
 root/etc/skel/.config/autostart/lxqt-desktop.desktop
 root/root/.config/autostart/lxqt-desktop.desktop
 root/home/hacker/.config/autostart/lxqt-desktop.desktop
+root/etc/skel/.config/autostart/lxqt-policykit-agent.desktop
+root/root/.config/autostart/lxqt-policykit-agent.desktop
+root/home/hacker/.config/autostart/lxqt-policykit-agent.desktop
 root/etc/skel/.config/autostart/pulseaudio.desktop
 root/root/.config/autostart/pulseaudio.desktop
 root/home/hacker/.config/autostart/pulseaudio.desktop
