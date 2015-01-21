@@ -43,6 +43,7 @@ suseActivateDefaultServices
 systemctl disable rsyslog
 systemctl disable apparmor
 systemctl disable SuSEfirewall2
+systemctl disable wicked.service
 systemctl enable pm-profiler
 systemctl enable rtkit-daemon
 systemctl enable compcache
