@@ -7,7 +7,6 @@ pcm.!default {
   hint {
     show on
     description "Default ALSA Output (currently JACK)" }
-  fallback "sysdefault"
 }
 ctl.!default {
   type hw
