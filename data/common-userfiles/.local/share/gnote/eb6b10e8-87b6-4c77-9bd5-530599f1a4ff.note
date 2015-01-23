@@ -17,9 +17,12 @@
 <list><list-item dir="ltr">important changes were made to <link:url>/etc/zypp/zypp.conf</link:url> 
 <list><list-item dir="ltr">'<highlight>solver.allowVendorChange</highlight>' was set to 'true'.
 <list><list-item dir="ltr">it should be safe due to strict prioritization in repo list, but keep that in mind anyway.
-</list-item></list></list-item><list-item dir="ltr">'<highlight>solver.onlyRequires</highlight>' was set to 'true'.
+</list-item></list></list-item><list-item dir="ltr">'<highlight>solver.cleandepsOnRemove</highlight>' was set to 'true'.
+<list><list-item dir="ltr">zypper now is very aggressive on removal of packages, beware.
+</list-item></list></list-item></list></list-item><list-item dir="ltr"><link:url>/etc/zypp/zypper.conf</link:url> also has been changed:
+<list><list-item dir="ltr">'<highlight>installRecommends</highlight>' was set to 'no'.
 <list><list-item dir="ltr">this forces zypper to install only the bare minimum and may leave some packages being useless in absence of non-compile-time dependencies, like some <link:url>/usr/share</link:url> data, for example.
-</list-item></list></list-item><list-item dir="ltr">you might want to also check Options-&gt;'<highlight>Ignore recommended packages for already installed packages</highlight>' in YaST Package Manager to achieve same effect as with 'solver.onlyRequires' for zypper and prevent it from installing loads of unnecessary crap</list-item></list></list-item></list>
+</list-item></list></list-item></list></list-item><list-item dir="ltr">you might want to also check Options-&gt;'<highlight>Ignore recommended packages for already installed packages</highlight>' in YaST Package Manager to achieve same effect as with 'solver.onlyRequires' for zypper and prevent it from installing loads of unnecessary crap</list-item></list>
 
 <list><list-item dir="ltr"><highlight>JACK</highlight> is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality
 <list><list-item dir="ltr">note <highlight>QJackCtl</highlight>, JACK configurator, <highlight>QasMixer</highlight>, ALSA volume configurator and <highlight>PASysTray</highlight>, advanced PA configurator, and in your tray
@@ -65,5 +68,5 @@
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2015-01-18T21:11:13.050905Z</last-change-date><last-metadata-change-date>2015-01-18T21:11:13.050905Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>3727</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+</text><last-change-date>2015-01-23T10:39:04.725607Z</last-change-date><last-metadata-change-date>2015-01-23T10:39:04.726142Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>1222</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 
