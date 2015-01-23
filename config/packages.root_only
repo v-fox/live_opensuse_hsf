@@ -43,7 +43,6 @@ blueman
 bluez
 bluez-cups
 bonnie++
-boomaga
 bootcycle
 branding-openSUSE
 bridge-utils
@@ -82,6 +81,7 @@ cracklib-dict-full
 crda
 cromfs
 Crystalcursors
+cups-pdf 
 davfs2
 dc3dd
 dconf
