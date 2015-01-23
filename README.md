@@ -21,7 +21,8 @@ It provides:
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
 * LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
-* printer and scanner support
+* printer (via cups), scanner (via x/sane) and analogue video input (via tvtime) support
+* wide range of gamepad utilities, such as AntiMicro (for key & axis mapping) and jstest-gtk
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other various console tools
 * anti-censorship kit: Tor, Polipo, dnscrypt-proxy, proxychains and miredo-client
 * networking: ze/nmap, hostapd, usbip, nping, iptraf-ng, upnp-inspector, mtr, lft, minicom, rancid, aria2, aMule, irssi and a bunch
@@ -47,7 +48,6 @@ Notes:
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description  
 ⊙ Firefox and Thunderbird are set up to use Tor by default, *_proxy variables are also globally set, DNS queries are encrypted and funneled to OpenDNS by default  
 ⊙ popular Microsoft fonts are included for web & document compatibility. they may be removed in future  
-⊙ Bitcoin support is wanted but Qt5 dependency of official client makes it unfeasible for now  
 
 ⊙ can be put on flash USB sticks and such from within itself by  
 * simple `dd bs=<your flash's write block size, like 64K> if=<image or even cdrom device that you have booted it on> of=/dev/<target_device>`
@@ -56,16 +56,16 @@ Notes:
 ⊙ DE-specific apps are included for the lack of adequate analogues  
 * KDE:  
   * krusader (dolphin + konqueror + mc in one package and more ? yes, please)  
-  * bluedevil (bluez control)  
   * yakuake (handy console), will be replaced with finalterm once it matures  
-  * kate (great simple editor)  
+  * kate/kwrite (great simple editor)  
   * okular (useful doc viewer, integrated in Firefox via kparts-plugin)  
   * kchmviewer (MS chm viewer), because sometimes okular screws up  
   * gwenview + kipi-plugins (highly-capable image viewer)  
 * GNOME:  
   * nm-applet (this is _the only_ NM GUI that can launch in any DE)  
+  * blueman (bluez5 control)  
   * gparted (The F/OSS disk editor), even though it can be substituted with YaST  
-  * pavucontrol (PulseAudio control) and paprefs (PA network configurator)  
+  * pasystray (PulseAudio control) and all its dependencies  
   * ekiga (The SIP & H.323 client)  
   * easytag (The audio file tag editor)  
   * seahorse (gpg GUI)  

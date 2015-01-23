@@ -1,12 +1,14 @@
 0.8.0:
 	* Transition to OpenSUSE 13.2
-	* LXQt 0.8 update
+	* LXQt 0.8 update (Qt4 version due to Qt5 build's instability)
 		be wary, nitrogen is used to control desktop wallpapers instead of pcmanfm-qt
 	* Enlightenment removed due to inability to login
 	* printer and scaner support added due to occasional usefulness
 	* YaST firewall is disabled by default to ensure connectivity
 	* all audio I/O goes to JACK now, default user is allowed realtime
 		PA runs as JACK client, uses echo cancellation by default
+		pure ALSA also redirects to JACK
+		OSS apps (like tvtime) can use JACK via PA's 'padsp'
 		JAMin is used before output to enhance sound, defaults to low & high boost + DRC
 		QJackCtl, QasMixer and PASysTray are used for control and configuration
 	* LeechCraft-Azoth now supports audio calls
@@ -21,7 +23,7 @@
 			sqlite, libevent, hunspell, icu, ffi, bz2
 		No compile optimisations:
 			 (O3 breaks png rendering, LTO is still flacky and PGO needs X on building for correct results)
-		GStreamer 1.0 and JACK support (PA support is disabled)
+		No direct JACK support (PA is quite hardcoded now, unfortunately)
 		disabled crash reporting, accessibility
 		enabled stripping, disabled '-g' flag
 	* sudo now handles GUI apps and can replace xdg-su/kdesu/gksu
