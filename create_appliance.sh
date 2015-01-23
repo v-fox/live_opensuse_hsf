@@ -69,6 +69,20 @@ PACKAGE_LIST="${dst}/build/image-root/home/${OUR_USER}/${NAME_PRETTY} - package 
 PACKAGE_LIST_PROPER=${img}/$(basename "${IMAGE_PROPER}" .iso).packages
 HASHFILE=$(basename "${IMAGE_PROPER}" .iso).sha256
 
+# Cleaning up #1.
+echo "** Cleaning up auto-generated files..."
+IFS=$'\n'
+while read i; do
+	for f in $(eval "ls -1 ${i}"); do
+		echo "	removing '${f}'"
+		if [ -e "${f}" ]; then
+			rm -rf "${f}"
+		fi
+	done
+done < config/generated
+unset IFS
+
+echo "** Duplicating common user-files..."
 # putting userfiles in their places
 cd "${dir}/data"
 ./common-userfiles_1-generate-gitignore.sh
@@ -214,20 +228,8 @@ echo "** Creating sha256 checksum..."
 cd "${img}"
 sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
 
-# Cleaning up.
-echo "** Cleaning up auto-generated files..."
-cd "${dir}"
-IFS=$'\n'
-while read i; do
-	for f in $(eval "ls -1 ${i}"); do
-		echo "	removing '${f}'"
-		if [ -e "${f}" ]; then
-			rm -rf "${f}"
-		fi
-	done
-done < config/generated
-unset IFS
-
+# Cleaning up #2.
+echo "** Cleaning up duplicate files..."
 cd "${dir}/data"
 ./common-userfiles_3-clean-root.sh
 
