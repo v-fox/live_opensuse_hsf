@@ -47,8 +47,6 @@ R600_SURF=1
 R600_DEBUG=sb
 # for dual-GPU bullshit
 DRI_PRIME=1
-# Firefox acceleration
-MOZ_USE_OMTC=1
 # SDL tuning
 SDL_VIDEO_YUV_HWACCEL=1
 # kmix crutch to prevent it from fiddling with PA
