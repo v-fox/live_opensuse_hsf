@@ -334,8 +334,7 @@ iw
 jack
 jack-stdio
 jamin
-java
-jre
+java-plugin
 jstest-gtk
 kate
 kbd
