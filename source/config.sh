@@ -68,6 +68,8 @@ systemctl enable miredo-client
 systemctl enable colord
 systemctl enable xdm
 
+# preemptively generate unbound keys
+systemctl restart unbound-keygen
 # preemptively building our dkms kernel modules
 /usr/sbin/dkms autoinstall
 
