@@ -375,6 +375,7 @@ leechcraft-auscrie
 leechcraft-azoth
 leechcraft-azoth-acetamide
 leechcraft-azoth-adiumstyles
+leechcraft-azoth-astrality
 leechcraft-azoth-autoidler
 leechcraft-azoth-autopaste
 leechcraft-azoth-birthdaynotifier
@@ -428,6 +429,7 @@ leechcraft-rosenthal
 leechcraft-secman
 leechcraft-secman-simplestorage
 leechcraft-summary
+leechcraft-tabsessionmanager
 leechcraft-tabslist
 leechcraft-vgrabber
 leechcraft-xproxy
@@ -685,6 +687,7 @@ sox
 splashy-mkinitrd
 splix
 ssdeep
+ssh-contact
 sssd
 stix-fonts
 stix-integrals-fonts
@@ -705,6 +708,9 @@ tano
 tcpdump
 tc-play
 tcpreen
+telepathy-mission-control
+telepathy-rakia
+telepathy-salut
 telnet
 terminfo
 terminus-bitmap-fonts
