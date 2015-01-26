@@ -747,7 +747,6 @@ vaapi-dummy-driver
 vaapi-intel-driver
 vaapi-tools
 vdpau-video
-vim
 vlan
 vlc
 vlc-codecs
