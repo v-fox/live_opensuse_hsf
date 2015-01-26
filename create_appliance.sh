@@ -69,14 +69,25 @@ PACKAGE_LIST="${dst}/build/image-root/home/${OUR_USER}/${NAME_PRETTY} - package 
 PACKAGE_LIST_PROPER=${img}/$(basename "${IMAGE_PROPER}" .iso).packages
 HASHFILE=$(basename "${IMAGE_PROPER}" .iso).sha256
 
+# No proxy.
+echo "** Unsetting proxy variables (because kiwi otherwise shits itself)..."
+for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
+	unset "${i}" && \
+		echo "  no more '${i}'"
+done
+
 # Cleaning up #1.
 echo "** Cleaning up auto-generated files..."
 IFS=$'\n'
 while read i; do
-	for f in $(eval "ls -1 ${i}"); do
-		echo "	removing '${f}'"
-		if [ -e "${f}" ]; then
-			rm -rf "${f}"
+	for f in $(eval "ls --color=never -1 ${i} 2> /dev/null"); do
+		if [ -n "${f}" ]; then
+			if [ -e "${f}" ]; then
+				echo "  removing '${f}'"
+				rm -rf "${f}"
+			else
+				echo "  skipping non-existent '${f}'"
+			fi
 		fi
 	done
 done < config/generated
