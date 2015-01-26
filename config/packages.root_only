@@ -230,10 +230,12 @@ gstreamer-plugins-vaapi
 gstreamer-utils
 gtk2-branding-openSUSE
 gtk2-data
+gtk2-immodule-xim
 gtk2-theme-oxygen
 gtk2-tools
 gtk3-branding-openSUSE
 gtk3-data
+gtk3-immodule-xim
 gtk3-theme-oxygen
 gtk3-tools
 gtk-recordMyDesktop
