@@ -1,6 +1,6 @@
 [Desktop Entry]
 Comment=A X compositor
-Exec=compton --dbus --backend glx --glx-swap-method -1 --vsync opengl-swc  --dbe --sw-opti --unredir-if-possible --paint-on-overlay
+Exec=compton --dbus --backend glx --glx-swap-method -1 --vsync opengl-swc --unredir-if-possible --paint-on-overlay --glx-no-rebind-pixmap
 GenericName=X compositor
 Name=Compton (X Compositor)
 OnlyShowIn=LXQt;
