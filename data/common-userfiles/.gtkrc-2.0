@@ -1,7 +1,7 @@
 gtk-theme-name="oxygen-gtk"
 gtk-icon-theme-name="oxygen-ionized_v1"
 gtk-fallback-icon-theme="gnome-wise"
-gtk-font-name="DejaVu Sans Book 9"
+gtk-font-name="DejaVu Sans 9"
 gtk-cursor-theme-name="crystalgreen"
 gtk-cursor-theme-size=0
 gtk-toolbar-style=GTK_TOOLBAR_BOTH_HORIZ
@@ -16,7 +16,7 @@ gtk-alternative-button-order = 1
 # font overide
 style "user-font" 
 {
-	font_name="DejaVu Sans Book"
+	font_name="DejaVu Sans"
 }
 widget_class "*" style "user-font"
 
