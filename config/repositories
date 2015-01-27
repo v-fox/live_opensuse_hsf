@@ -82,7 +82,7 @@
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_aevseev'>
 		<source path='obs://home:aevseev/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='85' alias='home_XRevan86'>
+	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_XRevan86'>
 		<source path='obs://home:XRevan86/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='98' alias='home_Lazy_Kent'>

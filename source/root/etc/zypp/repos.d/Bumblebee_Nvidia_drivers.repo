@@ -1,6 +1,6 @@
 [Bumblebee_Nvidia_drivers]
 name=Bumblebee_Nvidia_drivers
 enabled=0
-autorefresh=1
+autorefresh=0
 baseurl=http://download.opensuse.org/repositories/home:Bumblebee-Project:nVidia:latest/openSUSE_13.2
 type=rpm-md
