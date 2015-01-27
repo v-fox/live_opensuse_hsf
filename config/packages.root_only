@@ -3,7 +3,6 @@ accountsservice
 acetoneiso2
 acl
 acpid
-AdobeICCProfiles
 adobe-sourcecodepro-fonts
 aespipe
 aiccu
@@ -94,6 +93,7 @@ delayacct-utils
 deltarpm
 desktop-translations
 dictd
+dispcalGUI
 dmidecode
 dnscrypt-proxy
 dnstop
@@ -163,6 +163,7 @@ gimp-plugin-dds
 gimp-plugin-lqr
 gimp-plugins-python
 gimp-save-for-web
+gimp-separate+
 gimp-ufraw
 git
 git-credential-gnome-keyring
@@ -306,11 +307,14 @@ ibus-table-translit-ua
 ibus-table-viqr
 ibus-table-yawerty
 ibus-unikey
-icc-profiles-all
+icc-mime-types
+icc-profiles
+icc-profiles-scp-yamma
 ifplugd
 iftop
 ifuse
 ImageMagick
+ImageMagick-extra
 indic-fonts
 innoextract
 intel-gpu-tools
