@@ -11,6 +11,7 @@
 		OSS apps (like tvtime) can use JACK via PA's 'padsp'
 		JAMin is used before output to enhance sound, defaults to low & high boost + DRC
 		QJackCtl, QasMixer and PASysTray are used for control and configuration
+	* colour is managed via colord with argyllCMS, dispcalGUI and xiccd
 	* LeechCraft-Azoth now supports audio calls
 	* Tox P2P IM audio/video protocol is fully supported
 		(GTK & ncurses Tox clients + libpurple-plugin for LC-Azoth)
