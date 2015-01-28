@@ -3,7 +3,10 @@ accountsservice
 acetoneiso2
 acl
 acpid
+AdobeICCProfiles
 adobe-sourcecodepro-fonts
+adobe-sourcesanspro-fonts
+adobe-sourceserifpro-fonts
 aespipe
 aiccu
 aircrack-ng
@@ -137,6 +140,7 @@ fonttools
 fonttosfnt
 foo2zjs
 foremost
+free-ttf-fonts
 freetype-tools
 fsarchiver
 fslint
@@ -332,7 +336,7 @@ ibus-table-yawerty
 ibus-table-ziranma
 ibus-unikey
 icc-mime-types
-icc-profiles
+icc-profiles-all
 icc-profiles-scp-yamma
 ifplugd
 iftop
@@ -342,8 +346,6 @@ ImageMagick-extra
 indic-fonts
 innoextract
 intel-gpu-tools
-intlfonts
-intlfonts-euro-bitmap-fonts
 intlfonts-ttf-fonts
 iotop
 ipsec-tools
@@ -586,6 +588,7 @@ okular
 openal-soft
 openclipart-png
 opengost-otf-fonts
+opengost-ttf-fonts
 openldap2-client
 OpenPrintingPPDs-postscript
 openssh
