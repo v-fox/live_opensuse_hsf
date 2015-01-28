@@ -42,6 +42,7 @@ It does NOT provide:
 — Wayland packages (because it's too raw yet)   
 — many cd/dvd/bluray and whatever disk rom utilities (because spinning media must die). mkisofs, cdrecord and acetoneiso2 are included though  
 — accessibility features (because i have no idea how to setup them right)  
+— security hardening (because it requires strict and thorough testing in all usage scenarios which are manifold)  
 
 Notes:
 ------
@@ -71,6 +72,17 @@ Notes:
   * easytag (The audio file tag editor)  
   * seahorse (gpg GUI)  
   * gcr-viewer (crypto file viewer)  
+
+⊙ Some specialty apps that were not included but you may be interested in installing manually  
+* ardour3, rosegarden, qtractor, hydrogen, mixxx, rakarrack, OpenOctaveMidi: professional music works  
+  * fluid-soundfont-gs, GeneralUser: midi soundfonts  
+* cinelerra, LiVES, openshot, avidemux, kino: video editing  
+* blender: 3D modeling  
+* scribus: professional publishing  
+* cinepaint, mtpaint: painting  
+* inkscape, sk1: vector graphics editing  
+  * autotrace, uniconvertor/uniconvw: vector graphics utilities  
+* fontforge: font editing and creation  
 
 Building:
 ---------
