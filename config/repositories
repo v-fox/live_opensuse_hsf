@@ -19,7 +19,7 @@
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='Mozilla'>
 		<source path='obs://mozilla/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='62' alias='filesystems'>
+	<repository type='rpm-md' imageinclude='true' priority='92' alias='filesystems'>
 		<source path='obs://filesystems/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='50' alias='X11_XOrg'>
