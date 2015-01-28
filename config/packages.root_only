@@ -136,6 +136,7 @@ firmwarekit
 FirmwareUpdateKit
 flash-player
 flashrom
+fontmatrix
 fonttools
 fonttosfnt
 foo2zjs
@@ -368,7 +369,6 @@ java-plugin
 jstest-gtk
 kate
 kbd
-kcharselect
 kchmviewer
 kdeartwork4-icons
 kde-oxygen-fonts
