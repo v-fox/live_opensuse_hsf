@@ -475,6 +475,7 @@ libcap-progs
 liberation-fonts
 libevdev-tools
 libflashsupport
+libiscsi-utils
 libOSMesa9
 libotr2-tools
 libpoppler-glib8
@@ -589,6 +590,7 @@ openal-soft
 openclipart-png
 opengost-otf-fonts
 opengost-ttf-fonts
+open-iscsi
 openldap2-client
 OpenPrintingPPDs-postscript
 openssh
