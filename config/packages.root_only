@@ -136,8 +136,6 @@ firmwarekit
 FirmwareUpdateKit
 flash-player
 flashrom
-fluid-soundfont-gs
-fluidsynth
 fontmatrix
 fonttools
 fonttosfnt
@@ -386,7 +384,6 @@ kio_mtp
 kipi-plugins
 kipi-plugins-geolocation
 kismet
-kmid
 kmscon
 kparts-plugin
 krename
@@ -675,7 +672,6 @@ pwgen
 qasmixer
 qjackctl
 qps
-qsynth
 qt-mobility-pulseaudio
 radeontop
 radvd

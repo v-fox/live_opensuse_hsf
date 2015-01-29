@@ -75,7 +75,7 @@ Notes:
 
 ⊙ Some specialty apps that were not included but you may be interested in installing manually  
 * ardour3, rosegarden, qtractor, hydrogen, mixxx, rakarrack, OpenOctaveMidi: professional music works  
-  * fluid-soundfont-gs, GeneralUser: midi soundfonts  
+  * fluid-soundfont-gs, fluidsynth, qsynth, kmid: high-quality midi playback support  
 * cinelerra, LiVES, openshot, avidemux, kino: video editing  
 * blender: 3D modeling  
 * scribus: professional publishing  
