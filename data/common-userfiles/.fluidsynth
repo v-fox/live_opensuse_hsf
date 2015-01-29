@@ -1,0 +1,6 @@
+set synth.sample-rate 48000
+set audio.sample-format float
+set audio.jack.autoconnect true
+set audio.jack.multi true
+load "/usr/share/sounds/sf2/FluidR3_GM.sf2"
+load "/usr/share/sounds/sf2/FluidR3_GS.sf2"

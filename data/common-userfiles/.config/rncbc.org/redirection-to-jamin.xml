@@ -9,7 +9,11 @@
    <plug>port_1</plug>
    <plug>port_2</plug>
   </socket>
-  <socket exclusive="on" client="alsa-jack\.jackP\.[0-9]+\.." type="jack-audio" name="ALSA">
+  <socket exclusive="on" client="fluidsynth(|-.[0-9])|qsynth" type="jack-audio" name="fluidsynth">
+   <plug>l_.*|left</plug>
+   <plug>r_.*|right</plug>
+  </socket>
+  <socket exclusive="on" client="alsa-jack\.jackP\.[0-9]+\.[0-9]" type="jack-audio" name="ALSA">
    <plug>out_000</plug>
    <plug>out_001</plug>
   </socket>
@@ -49,6 +53,7 @@
   <cable output="all GStreamer players" input="jamin volume boost" type="jack-audio"/>
   <cable output="Adobe Flash" input="jamin volume boost" type="jack-audio"/>
   <cable output="TiMidity" input="jamin volume boost" type="jack-audio"/>
+  <cable output="fluidsynth" input="jamin volume boost" type="jack-audio"/>
  </cables>
 </patchbay>
 

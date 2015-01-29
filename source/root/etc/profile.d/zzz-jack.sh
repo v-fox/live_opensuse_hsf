@@ -1,6 +1,7 @@
 unalias sox
-export SDL_AUDIODRIVER=alsa
-alias timidity='timidity -Oj'
 export AUDIODRIVER=alsa
-export QEMU_AUDIO_DRV=alsa
-export ALSA_CONFIG_PATH=/etc/asound-jack.conf
+# SDL 1.x and 2.x have different names for PA output in the save variable and we want pulse shim to ensure proper mixing
+unset SDL_AUDIODRIVER
+alias timidity='timidity -Oj'
+alias tvtime='padsp tvtime'
+alias fluidsynth='fluidsynth -a jack -l /usr/share/sounds/sf2/FluidR3_GM.sf2'

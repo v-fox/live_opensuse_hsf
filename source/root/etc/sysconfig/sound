@@ -1,0 +1,61 @@
+## Path:	Hardware/Soundcard
+## Description:	Additional options for the sound system.
+## Type:	yesno
+## Default:	no
+## ServiceReload: alsasound
+#
+# Load ALSA sequencer modules at boot-up? (yes/no)
+# Sequencer modules are necessary only for handling MIDI devices.
+# If you don't need MIDI, leave here no.
+#
+LOAD_SEQUENCER="yes"
+
+## Type:	string
+## Default:	""
+#
+# The file name of SoundFont file to be loaded at boot
+# If you need to load a specific SoundFont file for SB AWE32, SB Live!
+# and Audigy series, set the file name (or path) of the file here.
+#
+SOUNDFONT_FILES=""
+
+## Type:	yesno
+## Default:	no
+#
+# Load OSS-emulation modules at boot-up? (yes/no)
+# OSS-emulation modules are needed if you use OSS applications
+# with ALSA drivers.  This option specifies whether these modules are
+# loaded at boot-time.
+#
+LOAD_OSS_EMUL_MODULES="yes"
+
+## Type:	yesno
+## Default:	no
+#
+# Load OSS-sequencer emulation module at boot-up? (yes/no)
+# OSS-sequencer emulation module is needed If you use old /dev/sequencer
+# or /dev/music.  The default is "no" since there are little
+# applications using these interfaces.
+#
+LOAD_OSS_SEQ_MODULE="yes"
+
+## Path:	Hardware/Soundcard/PulseAudio
+## Description:	PulseAudio configuration
+## Type:	list(yes,no,custom)
+#
+# Enable or disable PulseAudio system. Can be set to "custom" to not have
+# scripts automatically change sound-related configuration for PulseAudio.
+#
+PULSEAUDIO_ENABLE="custom"
+
+## Path:	Hardware/Soundcard/PulseAudio/SystemWide
+## Description:	System Wide PulseAudio
+## Type:	list(yes,no)
+#
+# Allows you to configure that you have system wide PulseAudio daemon. Such is
+# setup is not recommended. To make it work, you would need
+# pulseaudio-systemwide package and enable pulseaudio systemd service. If you
+# are not sure whether you want this, you don't. So unless you know what you
+# are doing, keep this set to "no".
+#
+PULSEAUDIO_SYSTEM="no"

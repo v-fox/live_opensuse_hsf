@@ -1,0 +1,16 @@
+[Toolbar mainToolBar]
+IconSize=16
+ToolButtonStyle=IconOnly
+
+[Notification Messages]
+softsynth_warnings=false
+
+[Settings]
+audio_fluid=jack
+audio_timidity=pulseaudio
+encoding=Unicode ( UTF-8 )
+exec_fluid=true
+output_connection=FluidSynth:0
+rate_fluid=48000
+rate_timidity=48000
+sf2_fluid=file:///usr/share/sounds/sf2/FluidR3_GS.sf2

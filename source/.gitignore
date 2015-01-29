@@ -1,4 +1,7 @@
 !.gitignore
+root/etc/skel/.fluidsynth
+root/root/.fluidsynth
+root/home/hacker/.fluidsynth
 root/etc/skel/.gtkrc-2.0
 root/root/.gtkrc-2.0
 root/home/hacker/.gtkrc-2.0
@@ -200,6 +203,9 @@ root/home/hacker/.kde4/share/config/konsolerc
 root/etc/skel/.kde4/share/config/kiorc
 root/root/.kde4/share/config/kiorc
 root/home/hacker/.kde4/share/config/kiorc
+root/etc/skel/.kde4/share/config/kmidrc
+root/root/.kde4/share/config/kmidrc
+root/home/hacker/.kde4/share/config/kmidrc
 root/etc/skel/.kde4/share/config/knfsshare
 root/root/.kde4/share/config/knfsshare
 root/home/hacker/.kde4/share/config/knfsshare
@@ -446,9 +452,6 @@ root/home/hacker/.config/enchant/en_GB.dic
 root/etc/skel/.config/qterminal.org/qterminal.ini
 root/root/.config/qterminal.org/qterminal.ini
 root/home/hacker/.config/qterminal.org/qterminal.ini
-root/etc/skel/.config/autostart/lxqt-appswitcher.desktop
-root/root/.config/autostart/lxqt-appswitcher.desktop
-root/home/hacker/.config/autostart/lxqt-appswitcher.desktop
 root/etc/skel/.config/autostart/qjackctl.desktop
 root/root/.config/autostart/qjackctl.desktop
 root/home/hacker/.config/autostart/qjackctl.desktop
@@ -518,6 +521,9 @@ root/home/hacker/.config/rncbc.org/QjackCtl.conf
 root/etc/skel/.config/rncbc.org/redirection-to-jamin.xml
 root/root/.config/rncbc.org/redirection-to-jamin.xml
 root/home/hacker/.config/rncbc.org/redirection-to-jamin.xml
+root/etc/skel/.config/rncbc.org/Qsynth.conf
+root/root/.config/rncbc.org/Qsynth.conf
+root/home/hacker/.config/rncbc.org/Qsynth.conf
 root/etc/skel/.config/pulse/client.conf
 root/root/.config/pulse/client.conf
 root/home/hacker/.config/pulse/client.conf
