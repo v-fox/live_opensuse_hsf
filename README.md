@@ -74,15 +74,26 @@ Notes:
   * gcr-viewer (crypto file viewer)  
 
 ⊙ Some specialty apps that were not included but you may be interested in installing manually  
-* ardour3, rosegarden, qtractor, hydrogen, mixxx, rakarrack, OpenOctaveMidi: professional music works  
-  * fluid-soundfont-gs, fluidsynth, qsynth, kmid: high-quality midi playback support  
-* cinelerra, LiVES, openshot, avidemux, kino: video editing  
-* blender: 3D modeling  
-* scribus: professional publishing  
-* cinepaint, mtpaint: painting  
-* inkscape, sk1: vector graphics editing  
-  * autotrace, uniconvertor/uniconvw: vector graphics utilities  
-* fontforge: font editing and creation  
+* music works  
+  * ardour3, rosegarden, qtractor, hydrogen, mixxx, rakarrack, OpenOctaveMidi  
+* high-quality midi playback  
+  * fluid-soundfont-gs, fluidsynth, qsynth, kmid  
+* video editing  
+  * cinelerra, LiVES, openshot, avidemux, kino  
+* 3D modeling  
+  * blender  
+* design  
+  * OpenCASCADE, FreeCAD, librecad, qcad, openscad, kicad, QCADesigner  
+* publishing  
+  * scribus  
+* painting  
+  * cinepaint, mtpaint  
+* vector drawing  
+  * inkscape, sk1  
+* vector drawing utilities  
+  * autotrace, uniconvertor/uniconvw  
+* font creation  
+  * fontforge  
 
 Building:
 ---------
