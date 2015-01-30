@@ -4,7 +4,8 @@
 <list><list-item dir="ltr">default credentials: <bold>root</bold>:<highlight>linux</highlight>, <bold>hacker</bold>:<highlight>&lt;empty&gt;</highlight></list-item></list>
 
 <list><list-item dir="ltr">before using package manager, first thing you NEED to do is:
-<list><list-item dir="ltr"><highlight>sudo zypper --gpg-auto-import-keys refresh</highlight> in terminal to get repo-caches _and import all their keys_</list-item></list></list-item></list>
+<list><list-item dir="ltr"><highlight>sudo zypper --gpg-auto-import-keys refresh</highlight> in terminal to get repo-caches _and import all their keys_
+</list-item></list></list-item><list-item dir="ltr">if you have installed HSF, before performing any bandwidth-intensive operations you might want to comment out proxy variables in <link:url>/etc/environment</link:url> and reboot or unset them so you wouldn't waste Tor's resources needlessly</list-item></list>
 
 <list><list-item dir="ltr">encryption and security tips:
 <list><list-item dir="ltr">all DNS queries are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them to OpenDNS via encrypted connection. if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<highlight>network.proxy.socks_remote_dns</highlight>' parameter in Firefox, Thunderbird and all Mozilla apps
@@ -71,5 +72,5 @@
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2015-01-28T11:49:43.485119Z</last-change-date><last-metadata-change-date>2015-01-28T11:49:43.485495Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>5164</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
+</text><last-change-date>2015-01-30T14:46:12.368348Z</last-change-date><last-metadata-change-date>2015-01-30T14:46:12.368348Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>6686</cursor-position><selection-bound-position>-1</selection-bound-position><width>820</width><height>919</height></note>
 
