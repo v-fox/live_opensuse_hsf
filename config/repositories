@@ -13,7 +13,7 @@
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='Kernel_stable'>
 		<source path='obs://Kernel:stable/standard'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='62' alias='Packman'>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='Packman'>
 		<source path='http://packman.inode.at/suse/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='Mozilla'>
