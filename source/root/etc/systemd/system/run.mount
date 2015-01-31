@@ -6,7 +6,7 @@
 #  (at your option) any later version.
 
 [Unit]
-Description=Temporary Directory
+Description=Temporary Directory for runtime variables
 Documentation=man:hier(7)
 Documentation=http://www.freedesktop.org/wiki/Software/systemd/APIFileSystems
 ConditionPathIsSymbolicLink=!/tmp
@@ -16,6 +16,6 @@ Before=local-fs.target umount.target
 
 [Mount]
 What=tmpfs
-Where=/tmp
+Where=/run
 Type=tmpfs
-Options=mode=1777,strictatime,size=5%
+Options=size=1%
