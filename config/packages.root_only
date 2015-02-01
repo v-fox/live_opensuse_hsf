@@ -432,7 +432,6 @@ leechcraft-azoth-woodpecker
 leechcraft-azoth-xoox
 leechcraft-azoth-xtazy
 leechcraft-azoth-zheet
-leechcraft-bittorrent
 leechcraft-blasq-deathnote
 leechcraft-blasq-rappor
 leechcraft-blasq-spegnersi
@@ -670,6 +669,7 @@ pulseaudio-module-zeroconf
 pulseaudio-utils
 pwgen
 qasmixer
+qbittorrent
 qjackctl
 qps
 qt-mobility-pulseaudio
