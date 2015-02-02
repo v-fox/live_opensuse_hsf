@@ -627,7 +627,8 @@ pax
 pax-utils
 pbm2l7k
 pdfcrack-multithread
-phonon-backend-gstreamer-0_10
+phonon4qt5-backend-gstreamer
+phonon-backend-gstreamer
 photorec
 plymouth-plugin-fade-throbber
 plymouth-plugin-label

@@ -94,6 +94,8 @@ Notes:
   * autotrace, uniconvertor/uniconvw  
 * font creation  
   * fontforge  
+* miscellaneous  
+  * QMPlay2 (vlc-like player with better GUI but no direct JACK support)  
 
 Building:
 ---------
