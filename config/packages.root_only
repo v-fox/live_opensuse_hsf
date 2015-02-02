@@ -487,10 +487,14 @@ libpurple-plugin-pack-extras
 libpurple-plugin-sipe
 libpurple-plugin-tox
 libpurple-plugin-whatsapp
+libreoffice-base-drivers-mysql
+libreoffice-branding-openSUSE
 libreoffice-calc-extensions
 libreoffice-filters-optional
 libreoffice-icon-theme-oxygen
+libreoffice-kde4
 libreoffice-l10n-en
+libreoffice-officebean
 libreoffice-templates-en
 libreoffice-templates-labels-a4
 libreoffice-templates-labels-letter
@@ -776,6 +780,7 @@ unace
 unbound
 unetbootin
 unidings-fonts
+unoconv
 unrar
 upnp-inspector
 upower
