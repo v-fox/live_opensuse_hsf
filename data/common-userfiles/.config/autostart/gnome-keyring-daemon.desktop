@@ -1,6 +1,0 @@
-[Desktop Entry]
-Exec=sh -c "gnome-keyring-daemon --start --daemonize && export GPG_AGENT_INFO SSH_AUTH_SOCK"
-Name=gnome-keyring-daemon
-Type=Application
-Version=1.0
-X-LXQt-Need-Tray=true

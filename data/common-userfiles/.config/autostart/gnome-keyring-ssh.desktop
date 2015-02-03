@@ -1,0 +1,16 @@
+[Desktop Entry]
+X-SuSE-translate=true
+Type=Application
+Name=SSH Key Agent
+Comment=GNOME Keyring: SSH Agent
+Exec=/usr/bin/gnome-keyring-daemon --start --components=ssh
+OnlyShowIn=GNOME;Unity;MATE;XFCE;LXQt;
+X-GNOME-Autostart-Phase=Initialization
+X-GNOME-AutoRestart=false
+X-GNOME-Autostart-Notify=true
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=gnome-keyring
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Bugzilla-Version=3.14.0
+X-Desktop-File-Install-Version=0.22
+
