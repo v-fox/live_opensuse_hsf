@@ -22,11 +22,11 @@
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='Mozilla_Factory'>
 		<source path='obs://mozilla:Factory/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='92' alias='filesystems'>
-		<source path='obs://filesystems/openSUSE_13.2'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='50' alias='X11_XOrg'>
 		<source path='obs://X11:XOrg/openSUSE_13.2'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
+		<source path='obs://X11:Utilities/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='Multilingualization'>
 		<source path='obs://M17N/openSUSE_13.2'/>
@@ -49,17 +49,23 @@
 	<repository type='rpm-md' imageinclude='true' priority='98' alias='server_database'>
 		<source path='obs://server:database/openSUSE_13.2'/>
 	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_dns'>
+		<source path='obs://server:dns/openSUSE_13.2'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_monitoring'>
+		<source path='obs://server:monitoring/openSUSE_13.2'/>
+	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='Archiving'>
 		<source path='obs://Archiving/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='Virtualization'>
 		<source path='obs://Virtualization/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
-		<source path='obs://X11:Utilities/openSUSE_13.2'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_samba_STABLE'>
 		<source path='obs://network:samba:STABLE/openSUSE_13.2'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='Printing'>
+		<source path='obs://Printing/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='multimedia_apps'>
 		<source path='obs://multimedia:apps/openSUSE_13.2'/>
@@ -72,12 +78,6 @@
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Extra'>
 		<source path='obs://KDE:Extra/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_dns'>
-		<source path='obs://server:dns/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_monitoring'>
-		<source path='obs://server:monitoring/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Apps'>
 		<source path='obs://GNOME:Apps/openSUSE_13.2'/>
@@ -93,6 +93,9 @@
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='emulators'>
 		<source path='obs://Emulators/openSUSE_13.2'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='92' alias='filesystems'>
+		<source path='obs://filesystems/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='55' alias='home_X0F_branches_emulators'>
 		<source path='obs://home:X0F:branches:Emulators/openSUSE_13.2'/>
