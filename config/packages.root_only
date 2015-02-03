@@ -18,8 +18,6 @@ alsa-tools
 aMule
 android-tools
 antimicro
-apcupsd
-apcupsd-gui
 apparmor-utils
 arabic-fonts
 aria2fe
@@ -384,6 +382,7 @@ kipi-plugins
 kipi-plugins-geolocation
 kismet
 kmscon
+knutclient
 kparts-plugin
 krename
 krusader
@@ -582,6 +581,7 @@ nscd
 ntfs-3g
 ntp
 ntpclient
+nut-drivers-net
 nvidia-texture-tools
 obexfs
 ocfs2console
@@ -653,6 +653,7 @@ poppler-data
 poppler-tools
 posixovl
 pothana2000-fonts
+powerd
 powertop
 ppp
 prctl
