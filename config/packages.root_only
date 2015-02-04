@@ -587,6 +587,7 @@ ntp
 ntpclient
 nut-drivers-net
 nvidia-texture-tools
+obexd-client
 obexfs
 ocfs2console
 ofono
@@ -598,6 +599,7 @@ opengost-otf-fonts
 opengost-ttf-fonts
 open-iscsi
 openldap2-client
+openobex-apps
 OpenPrintingPPDs-postscript
 openssh
 openssh-askpass

@@ -1,7 +1,8 @@
 [Desktop Entry]
 Categories=System;RemoteAccess;
 Comment=Obexd Server Daemon
-Exec=/usr/lib64/obex/obexd --nodaemon --opp --ftp -a --root=Public --root-setup=/usr/lib64/obex/obexd-setup.sh
+Exec=/usr/lib64/obex/obexd --nodaemon -a --root=Public --root-setup=/usr/lib64/obex/obexd-setup.sh
+Hidden=true
 Name=Obexd Server
 Terminal=false
 Type=Application
