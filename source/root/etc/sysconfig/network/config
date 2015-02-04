@@ -265,7 +265,7 @@ NETCONFIG_DNS_FORWARDER_FALLBACK="yes"
 # List of DNS domain names used for host-name lookup.
 # It is written as search list into the /etc/resolv.conf file.
 #
-NETCONFIG_DNS_STATIC_SEARCHLIST="local"
+NETCONFIG_DNS_STATIC_SEARCHLIST="local union"
 
 ## Type:        string
 ## Default:     ""
@@ -301,7 +301,7 @@ NETCONFIG_DNS_RANKING="auto"
 # 	"debug attempts:1 timeout:10"
 # See resolv.conf(5) manual page for details.
 #
-NETCONFIG_DNS_RESOLVER_OPTIONS="edns0"
+NETCONFIG_DNS_RESOLVER_OPTIONS="edns0 timeout:1"
 
 ## Type:        string
 ## Default:     ""
@@ -359,7 +359,7 @@ NETCONFIG_NIS_SETDOMAINNAME="yes"
 # the NETCONFIG_NIS_STATIC_DOMAIN and NETCONFIG_NIS_STATIC_SERVERS
 # variables, e.g.: NETCONFIG_NIS_STATIC_DOMAIN_1="second".
 #
-NETCONFIG_NIS_STATIC_DOMAIN=""
+NETCONFIG_NIS_STATIC_DOMAIN="union"
 
 ## Type:        string
 ## Default:     ""

@@ -72,6 +72,8 @@ systemctl enable xdm
 systemctl restart unbound-keygen
 # preemptively building our dkms kernel modules
 /usr/sbin/dkms autoinstall
+# preemptively setting up NIS domain name for legacy compatibility
+netconfig update
 
 # making list of installed packages from default user
 OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
