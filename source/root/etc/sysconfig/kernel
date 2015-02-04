@@ -7,7 +7,7 @@
 # ramdisk by calling the script "mkinitrd"
 # (like drivers for scsi-controllers, for lvm or reiserfs)
 #
-INITRD_MODULES=""
+INITRD_MODULES="ecryptfs"
 
 ## Type:        yesno
 ## Default:     ""
