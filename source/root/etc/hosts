@@ -9,10 +9,10 @@
 # IP-Address  Full-Qualified-Hostname  Short-Hostname
 #
 
-127.0.0.1       localhost lair lair.union
+127.0.0.1       localhost lair
 
 # special IPv6 addresses
-::1             localhost ipv6-localhost ipv6-loopback lair lair.union
+::1             localhost ipv6-localhost ipv6-loopback lair
 
 fe00::0         ipv6-localnet union
 
@@ -20,4 +20,4 @@ ff00::0         ipv6-mcastprefix
 ff02::1         ipv6-allnodes
 ff02::2         ipv6-allrouters
 ff02::3         ipv6-allhosts
-
+127.0.0.2       lair.union lair
