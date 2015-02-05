@@ -94,6 +94,7 @@ dc3dd
 dconf
 dconf-editor
 ddccontrol
+ddclient
 dejavu-fonts
 delayacct-utils
 deltarpm
@@ -525,6 +526,7 @@ lirc-remotes
 lsb-invalid-mta
 lsb-release
 lsof
+luksipc
 lxappearance
 lxappearance-obconf
 lynis
