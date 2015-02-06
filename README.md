@@ -18,7 +18,7 @@ It provides:
 * international collection of fonts and universal iBus input method by default
 * professional sound handling with JACK (Ardour3 and its friends are available in repositories, PA runs as JACK's client)
 * professional colour management facilities consisting of colord, argyllCMS, dispcalGUI and xiccd
-* LeechCraft modular system stripped for only IM, Socializing and P2P functionality + SFLphone for SIP with JACK
+* LeechCraft modular system stripped for only IM, Socializing and P2P functionality + Blink for SIP
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
 * LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
@@ -66,7 +66,6 @@ Notes:
 * GNOME:  
   * nm-applet (this is _the only_ NM GUI that can launch in any DE)  
   * blueman (bluez5 control)  
-  * sflphone-client-gnome (JACK-capable SIP client without KDE's or python's fat)  
   * gparted (The F/OSS disk editor), even though it can be substituted with YaST  
   * pasystray (PulseAudio control) and all its dependencies  
   * easytag (The audio file tag editor)  
@@ -96,7 +95,7 @@ Notes:
   * fontforge  
 * miscellaneous  
   * QMPlay2 (vlc-like player with better GUI but no direct JACK support)  
-  * blink (apparently is "the best real-time communications client using SIP protocol")  
+  * sflphone-client-gnome (SIP client that natively supports JACK and has many features... and glitches)  
 
 Building:
 ---------

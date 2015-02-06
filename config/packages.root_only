@@ -39,6 +39,7 @@ bc
 bind-utils
 bitmap
 bitstream-vera-fonts
+blink
 blueman
 bluez
 bluez-cups
@@ -407,7 +408,6 @@ leechcraft-auscrie
 leechcraft-azoth
 leechcraft-azoth-acetamide
 leechcraft-azoth-adiumstyles
-leechcraft-azoth-astrality
 leechcraft-azoth-autoidler
 leechcraft-azoth-autopaste
 leechcraft-azoth-birthdaynotifier
@@ -714,7 +714,6 @@ sentinella
 setools-console
 setools-gui
 setserial
-sflphone-client-gnome
 sg3_utils
 shellementary
 shim
@@ -756,9 +755,6 @@ tano
 tcpdump
 tc-play
 tcpreen
-telepathy-mission-control
-telepathy-rakia
-telepathy-salut
 telnet
 terminfo
 terminus-bitmap-fonts
