@@ -16,9 +16,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='40' alias='Packman'>
 		<source path='http://packman.inode.at/suse/openSUSE_13.2'/>
 	</repository>
-        <repository type='rpm-md' imageinclude='true' priority='45' alias='VLC'>
-                <source path='http://download.videolan.org/pub/vlc/SuSE/13.2'/>
-        </repository>
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='Mozilla_Factory'>
 		<source path='obs://mozilla:Factory/openSUSE_13.2'/>
 	</repository>

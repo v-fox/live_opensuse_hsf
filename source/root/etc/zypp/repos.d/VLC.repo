@@ -1,0 +1,9 @@
+[VLC]
+name=VLC
+enabled=0
+autorefresh=0
+baseurl=http://download.videolan.org/pub/vlc/SuSE/13.2
+path=/
+type=rpm-md
+priority=45
+keeppackages=0
