@@ -113,7 +113,6 @@ easytag
 ebtables
 ecryptfs-utils
 efont-unicode-bitmap-fonts
-ekiga
 emount
 enca
 enigmail
@@ -715,6 +714,7 @@ sentinella
 setools-console
 setools-gui
 setserial
+sflphone-client-gnome
 sg3_utils
 shellementary
 shim
