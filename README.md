@@ -18,7 +18,7 @@ It provides:
 * international collection of fonts and universal iBus input method by default
 * professional sound handling with JACK (PA & ALSA, both with OSS support, run as JACK's clients; tools are available in repositories)
 * professional colour management facilities consisting of colord, argyllCMS, dispcalGUI and xiccd
-* LeechCraft modular system stripped for only IM, Socializing and P2P functionality + Blink for SIP
+* LeechCraft modular system stripped for only IM, Socializing and P2P functionality + LinPhone for SIP
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
 * LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
@@ -93,9 +93,14 @@ Notes:
   * autotrace, uniconvertor/uniconvw  
 * font creation  
   * fontforge  
-* miscellaneous  
-  * QMPlay2 (vlc-like player with better GUI but no direct JACK support)  
+* telephony  
   * sflphone-client-gnome (SIP client that natively supports JACK and has many features... and glitches)  
+  * blink (supposedly is "the best real-time communications client using SIP protocol". ALSA-only and crash-prone)  
+  * ekiga (simple but ALSA-only)  
+  * yate-qt4 (lots of features with no GUI for them)  
+  * jitsi (Jack-of-all-trades and JAVA-fatass)  
+* multimedia  
+  * QMPlay2 (vlc-like player with better GUI but no JACK support)  
 
 Building:
 ---------

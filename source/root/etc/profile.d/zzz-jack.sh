@@ -5,3 +5,4 @@ unset SDL_AUDIODRIVER
 alias timidity='timidity -Oj'
 alias tvtime='padsp tvtime'
 alias fluidsynth='fluidsynth -a jack -l /usr/share/sounds/sf2/FluidR3_GM.sf2'
+export ALSA_CONFIG_PATH=/etc/alsa-jack.conf

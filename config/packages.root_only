@@ -39,7 +39,6 @@ bc
 bind-utils
 bitmap
 bitstream-vera-fonts
-blink
 blueman
 bluez
 bluez-cups
@@ -517,6 +516,7 @@ libyui-ncurses-pkg6
 libyui-qt-pkg6
 lightdm
 lightdm-gtk-greeter
+linphone
 linssid
 linuxconsoletools
 linux-ftools

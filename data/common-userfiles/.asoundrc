@@ -34,3 +34,14 @@ pcm.jack {
         1 system:capture_2
     }
 }
+
+# crutch for stupid apps like Firefox
+pcm.!sysdefault {
+  type plug
+  slave {
+    pcm jack
+    channels unchanged }
+  hint {
+    show on
+    description "Crutch for stupid applications (JACK enforcement)" }
+}
