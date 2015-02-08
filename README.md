@@ -16,7 +16,7 @@ It provides:
 * codecs, font antialiasing and texture compression support without artificial restrictions
 * LXQt slim desktop environment
 * international collection of fonts and universal iBus input method by default
-* professional sound handling with JACK (Ardour3 and its friends are available in repositories, PA runs as JACK's client)
+* professional sound handling with JACK (PA & ALSA, both with OSS support, run as JACK's clients; tools are available in repositories)
 * professional colour management facilities consisting of colord, argyllCMS, dispcalGUI and xiccd
 * LeechCraft modular system stripped for only IM, Socializing and P2P functionality + Blink for SIP
 * fresh Mozilla Firefox browser and Thunderbird e-mail client

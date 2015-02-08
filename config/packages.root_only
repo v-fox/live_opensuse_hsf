@@ -581,6 +581,7 @@ nitrogen
 nmap
 nmap-ndiff
 nmon
+noping
 npapi-vlc
 nping
 nscd
@@ -606,6 +607,7 @@ OpenPrintingPPDs-postscript
 openssh
 openssh-askpass
 openssh-helpers
+oping
 opus-tools
 oxygen-cursors4
 oxygen-ionized-icon-theme
@@ -680,6 +682,7 @@ pulseaudio-module-jack
 pulseaudio-module-lirc
 pulseaudio-module-zeroconf
 pulseaudio-utils
+pulseaudio-zsh-completion
 pwgen
 qasmixer
 qbittorrent
@@ -834,9 +837,7 @@ xf86-input-synaptics
 xf86-input-wacom
 xf86-video-ati
 xf86-video-intel
-xf86-video-modesetting
 xf86-video-nouveau
-xf86-video-v4l
 xfontsel
 xfs
 xfsinfo
