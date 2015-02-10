@@ -92,8 +92,9 @@ update-pciids
 update-usbids.sh
 update-smart-drivedb
 
-# making sure that en_US locale packages are present (otherwise programs like iBus are shitting themselves)
-#yast2 language set lang=en_GB languages=en_US
+# systemd locale defaults
+localectl list-x11-keymap-models "evdev"
+localectl list-x11-keymap-options "grp:ctrl_shift_toggle,grp_led:scroll,compose:ralt,terminate:ctrl_alt_bksp"
 
 #======================================
 # Prune extraneous files
