@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=sipw -v -b --priority=66 --plugins=zeroconf,subscriber,forward --desktop
+Hidden=true
+Name=SIP Witch
+Type=Application
+Version=1.0

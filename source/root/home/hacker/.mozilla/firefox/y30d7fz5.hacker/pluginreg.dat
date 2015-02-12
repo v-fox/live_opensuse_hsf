@@ -5,6 +5,15 @@ Version:0.17:$
 Arch:x86_64-gcc3:$
 
 [PLUGINS]
+libflashplayer.so:$
+/usr/lib64/browser-plugins/libflashplayer.so:$
+11.2.202.440:$
+1422055012000:0:0:0:$
+Shockwave Flash 11.2 r202:$
+Shockwave Flash:$
+2
+0:application/x-shockwave-flash:Shockwave Flash:swf:$
+1:application/futuresplash:FutureSplash Player:spl:$
 packagekit-plugin.so:$
 /usr/lib64/browser-plugins/packagekit-plugin.so:$
 :$
@@ -13,15 +22,6 @@ Plugin for Installing Applications (new):$
 PackageKit:$
 1
 0:application/x-packagekit-plugin:PackageKit Plugin:bsc:$
-libflashplayer.so:$
-/usr/lib64/browser-plugins/libflashplayer.so:$
-11.2.202.438:$
-1421564237000:0:0:0:$
-Shockwave Flash 11.2 r202:$
-Shockwave Flash:$
-2
-0:application/x-shockwave-flash:Shockwave Flash:swf:$
-1:application/futuresplash:FutureSplash Player:spl:$
 libnpsoplugin.so:$
 /usr/lib64/libreoffice/program/libnpsoplugin.so:$
 :$
@@ -411,9 +411,9 @@ KParts Plugin:$
 272:video/vnd.mpegurl:MPEG video:m1u:$
 273:video/x-mng:MNG animation:mng:$
 IcedTeaPlugin.so:$
-/usr/lib64/java-1_8_0-openjdk-plugin/lib/IcedTeaPlugin.so:$
+/usr/lib64/java-1_7_0-openjdk-plugin/lib/IcedTeaPlugin.so:$
 :$
-1413546082000:0:0:0:$
+1413549704000:0:0:0:$
 The <a href="http://icedtea.classpath.org/wiki/IcedTea-Web">IcedTea-Web Plugin</a> executes Java applets.:$
 IcedTea-Web Plugin (using IcedTea-Web 1.5.1 (suse-4.1-x86_64)):$
 36

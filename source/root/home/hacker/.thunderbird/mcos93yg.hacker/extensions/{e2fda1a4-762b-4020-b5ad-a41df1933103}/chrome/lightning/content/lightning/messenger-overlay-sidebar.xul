@@ -32,9 +32,6 @@
 
 <overlay id="ltnSidebarOverlay"
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
-<!-- All JS files that messenger-overlay-sidebar.xul wishes to include *must* go into the
-     calendar-scripts.inc file (all scripts shared with Sunbird) or lightning-scripts.inc
-     file (scripts relevant for Lightning-only). -->
 
   <!-- NEEDED FOR MULTIPLE CALENDAR SUPPORT -->
   <script type="application/javascript" src="chrome://calendar/content/calendar-management.js"/>
@@ -62,9 +59,11 @@
   <!-- NEEDED FOR TASK VIEW/LIST SUPPORT -->
   <script type="application/javascript" src="chrome://calendar/content/calendar-task-editing.js"/>
 
-<script type="application/javascript" src="chrome://lightning/content/lightning-utils.js"/>
-<script type="application/javascript" src="chrome://lightning/content/messenger-overlay-sidebar.js"/>
-<script type="application/javascript" src="chrome://calendar/content/calendar-invitations-manager.js"/>
+  <script type="application/javascript" src="chrome://calendar/content/calendar-extract.js"/>
+
+  <script type="application/javascript" src="chrome://lightning/content/lightning-utils.js"/>
+  <script type="application/javascript" src="chrome://lightning/content/messenger-overlay-sidebar.js"/>
+  <script type="application/javascript" src="chrome://calendar/content/calendar-invitations-manager.js"/>
 
   <window id="messengerWindow">
     <!-- Be sure to keep these sets, since they will be overlayed by
@@ -236,8 +235,7 @@
       <label id="calendar-invitations-label"
              class="text-link"
              onclick="openInvitationsDialog()"
-             onkeypress="if (event.keyCode == event.VK_ENTER ||
-                             event.keyCode == event.VK_RETURN) {
+             onkeypress="if (event.keyCode == event.VK_RETURN) {
                              openInvitationsDialog(); }"/>
     </statusbarpanel>
   </statusbar>

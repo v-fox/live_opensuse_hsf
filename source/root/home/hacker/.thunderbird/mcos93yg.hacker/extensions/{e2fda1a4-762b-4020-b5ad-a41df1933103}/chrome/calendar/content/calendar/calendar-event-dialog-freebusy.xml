@@ -108,6 +108,8 @@
       </property>
 
       <constructor><![CDATA[
+        Components.utils.import("resource://gre/modules/Preferences.jsm");
+
         this.initTimeRange();
       ]]></constructor>
 
@@ -117,8 +119,8 @@
               this.mStartHour = 0;
               this.mEndHour = 24;
           } else {
-              this.mStartHour = getPrefSafe("calendar.view.daystarthour", 8);
-              this.mEndHour = getPrefSafe("calendar.view.dayendhour", 19);
+              this.mStartHour = Preferences.get("calendar.view.daystarthour", 8);
+              this.mEndHour = Preferences.get("calendar.view.dayendhour", 19);
           }
         ]]></body>
       </method>
@@ -262,7 +264,7 @@
                   this, "anonid", "template");
           var parent = template.parentNode;
           while (parent.childNodes.length > 1) {
-              parent.removeChild(parent.lastChild);
+              parent.lastChild.remove();
           }
 
           template.force24Hours = this.mForce24Hours;
@@ -288,7 +290,7 @@
 
           var parent = template.parentNode;
           while (parent.childNodes.length > 1) {
-            parent.removeChild(parent.lastChild);
+            parent.lastChild.remove();
           }
 
           template.force24Hours = this.mForce24Hours;
@@ -409,6 +411,8 @@
       </property>
 
       <constructor><![CDATA[
+        Components.utils.import("resource://gre/modules/Preferences.jsm");
+
         var args = window.arguments[0];
         var startTime = args.startTime;
         var endTime = args.endTime;
@@ -519,8 +523,8 @@
               this.mStartHour = 0;
               this.mEndHour = 24;
           } else {
-              this.mStartHour = getPrefSafe("calendar.view.daystarthour", 8);
-              this.mEndHour = getPrefSafe("calendar.view.dayendhour", 19);
+              this.mStartHour = Preferences.get("calendar.view.daystarthour", 8);
+              this.mEndHour = Preferences.get("calendar.view.dayendhour", 19);
           }
         ]]></body>
       </method>
@@ -675,6 +679,8 @@
       </property>
 
       <constructor><![CDATA[
+        Components.utils.import("resource://gre/modules/Preferences.jsm");
+
         this.initTimeRange();
         this.mRange = Number(this.getAttribute("range"));
         this.onLoad();
@@ -955,8 +961,8 @@
               this.mStartHour = 0;
               this.mEndHour = 24;
           } else {
-              this.mStartHour = getPrefSafe("calendar.view.daystarthour", 8);
-              this.mEndHour = getPrefSafe("calendar.view.dayendhour", 19);
+              this.mStartHour = Preferences.get("calendar.view.daystarthour", 8);
+              this.mEndHour = Preferences.get("calendar.view.dayendhour", 19);
           }
         ]]></body>
       </method>
@@ -1066,6 +1072,8 @@
       </property>
 
       <constructor><![CDATA[
+        Components.utils.import("resource://gre/modules/Preferences.jsm");
+
         var args = window.arguments[0];
 
         this.initTimeRange();
@@ -1155,7 +1163,7 @@
               document.getAnonymousElementByAttribute(
                   this, "anonid", "item");
           this.appendNewRow(listbox, template, null);
-          listbox.removeChild(template);
+          template.remove();
 
           this.updateFreeBusy();
         ]]></body>
@@ -1471,8 +1479,7 @@
           var listbox =
               document.getAnonymousElementByAttribute(
                   this, "anonid", "listbox");
-          var nodeToRemove = this.getListItem(aRow)
-          nodeToRemove.parentNode.removeChild(nodeToRemove);
+          this.getListItem(aRow).remove();
           this.fitDummyRows();
           this.mMaxFreeBusy--;
         ]]></body>
@@ -1535,7 +1542,7 @@
           for (var i = kids.length - 1; this.mContentHeight > listboxHeight && i >= 0; --i) {
               if (kids[i].hasAttribute("_isDummyRow")) {
                   this.mContentHeight -= this.mRowHeight;
-                  listbox.removeChild(kids[i]);
+                  kids[i].remove();
               }
           }
 
@@ -1596,8 +1603,8 @@
               this.mStartHour = 0;
               this.mEndHour = 24;
           } else {
-              this.mStartHour = getPrefSafe("calendar.view.daystarthour", 8);
-              this.mEndHour = getPrefSafe("calendar.view.dayendhour", 19);
+              this.mStartHour = Preferences.get("calendar.view.daystarthour", 8);
+              this.mEndHour = Preferences.get("calendar.view.dayendhour", 19);
           }
         ]]></body>
       </method>

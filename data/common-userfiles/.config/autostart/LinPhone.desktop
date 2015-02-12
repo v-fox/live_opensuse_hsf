@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=linphone --iconified
+Hidden=true
+Name=LinPhone
+Type=Application
+Version=1.0
+X-LXQt-Need-Tray=true

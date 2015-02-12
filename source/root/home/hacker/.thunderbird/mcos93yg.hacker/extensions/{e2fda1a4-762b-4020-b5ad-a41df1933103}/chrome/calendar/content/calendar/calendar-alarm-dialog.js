@@ -4,6 +4,7 @@
 
 Components.utils.import("resource://gre/modules/PluralForm.jsm");
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 /**
  * Helper function to get the alarm service and cache it.
@@ -64,7 +65,7 @@ function onDismissAllAlarms() {
 
 /**
  * Event handler fired when the alarm widget's "Details..." label was clicked.
- * Open the event dialog in the most recent Sunbird or Thunderbird window
+ * Open the event dialog in the most recent Thunderbird window.
  *
  * @param event     The itemdetails event.
  */
@@ -113,7 +114,7 @@ function finishWindow() {
         // all/snooze all. This can happen when the closer is clicked or escape
         // is pressed. Snooze all remaining items using the default snooze
         // property.
-        let snoozePref = getPrefSafe("calendar.alarms.defaultsnoozelength", 0);
+        let snoozePref = Preferences.get("calendar.alarms.defaultsnoozelength", 0);
         if (snoozePref <= 0) {
             snoozePref = 5;
         }
@@ -263,7 +264,7 @@ function removeWidgetFor(aItem, aAlarm) {
             widget.removeEventListener("dismiss", onDismissAlarm, false);
             widget.removeEventListener("itemdetails", onItemDetails, false);
 
-            alarmRichlist.removeChild(widget);
+            widget.remove();
             closeIfEmpty();
             notfound = false;
         }
@@ -287,7 +288,7 @@ function closeIfEmpty() {
                 window.close();
             }
         }
-        setTimeout(closer, 250);
+        setTimeout(closer, 500);
     }
 }
 

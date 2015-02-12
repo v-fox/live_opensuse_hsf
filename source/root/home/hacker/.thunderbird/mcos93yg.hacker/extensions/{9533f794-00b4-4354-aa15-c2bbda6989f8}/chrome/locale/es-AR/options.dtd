@@ -38,6 +38,10 @@
 <!ENTITY down "↓">
 <!ENTITY hide "ocultar">
 <!ENTITY restore "restaurar">
+<!ENTITY middle_click.label "Mouse middle click action :" >
+<!ENTITY middle_click.accesskey "k" >
+<!ENTITY show_hide "Show/hide" >
+<!ENTITY activate_last "Activate last window" >
 <!ENTITY mail_notification_enabled.label "Habilitar notificaciones por correo">
 <!ENTITY mail_notification_enabled.accesskey "H">
 <!ENTITY message_count_type.label "tipo de contador de mensajes:">
@@ -51,8 +55,8 @@
 <!ENTITY mail_notification_unread_count.accesskey "U">
 <!ENTITY mail_notification_newmail_icon.label "visualizar ícono de correo nuevo">
 <!ENTITY mail_notification_newmail_icon.accesskey "n">
-<!ENTITY mail_notification_custom_mail_icon.label "visualizar ícono personalizado">
-<!ENTITY mail_notification_custom_mail_icon.accesskey "p">
+<!ENTITY mail_notification_mail_icon_custom.label "visualizar ícono personalizado">
+<!ENTITY mail_notification_mail_icon_custom.accesskey "p">
 <!ENTITY icon_text_color "Color de texto">
 <!ENTITY icon_text_color.accesskey "C">
 <!ENTITY choose "Seleccionar">
@@ -77,8 +81,8 @@
 <!ENTITY mail_change_trigger.accesskey "L">
 <!ENTITY mail_change_trigger.placeholder "/bin/notify-send">
 <!ENTITY mail_change_trigger.tooltip "Ruta absoluta del programa para correr cuando la cuenta de mensajes cambia. Este programa obtendrá recibira el contador de nuevos mensajes como primer argumento.">
-<!ENTITY mail_urgency_hint.label "Set X11 urgency hint">
-<!ENTITY mail_urgency_hint.accesskey "X">
+<!ENTITY mail_get_attention.label "Window draws attention on new messages">
+<!ENTITY mail_get_attention.accesskey "g">
 <!ENTITY chat_icon_enable.label "Habilitar ícono de chat">
 <!ENTITY chat_icon_enable.accesskey "H">
 <!ENTITY chat_icon_blink.label "Icono de chat parpadea con mensajes nuevos.">

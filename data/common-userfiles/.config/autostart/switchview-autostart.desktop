@@ -1,0 +1,12 @@
+[Desktop Entry]
+Categories=Monitor;System;
+Comment=System tray icon for managing sipwitch services
+Encoding=UTF-8
+Exec=switchview --startup
+Hidden=true
+Icon=switchview
+Name=switchview applet
+StartupNotify=false
+Terminal=false
+Type=Application
+X-Desktop-File-Install-Version=0.15

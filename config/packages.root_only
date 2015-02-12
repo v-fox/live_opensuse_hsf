@@ -37,6 +37,7 @@ avahi-autoipd
 avahi-utils
 bash-completion
 bc
+bcg729-mediastreamer
 bind-utils
 bitmap
 bitstream-vera-fonts
@@ -63,6 +64,7 @@ chm2pdf
 chntpw
 clamav
 clamtk
+clamtk-kde
 clementine
 cm-unicode-fonts
 colord
@@ -537,6 +539,7 @@ man-pages
 manufacturer-PPDs
 mc
 media-player-info
+mediastreamer2
 mercurial
 Mesa
 Mesa-demo-egl
@@ -552,7 +555,13 @@ modem-manager-gui
 monapo-fonts
 MozillaFirefox
 MozillaThunderbird
+msamr-mediastreamer
+msilbc-mediastreamer
 mso2010-fonts
+msr-tools
+mssilk-mediastreamer
+ms-sys
+msx264-mediastreamer
 mtd-utils
 mtpfs
 mtp-tools
@@ -732,6 +741,10 @@ signing-party
 sil-charis-fonts
 sipcalc
 siproxd
+sipwitch-plugin-forward
+sipwitch-plugin-scripting
+sipwitch-plugin-subscriber
+sipwitch-plugin-zeroconf
 skanlite
 smartmontools
 smplayer-qt5
@@ -753,6 +766,7 @@ stress
 subversion
 sudo
 SuSEfirewall2
+switchview
 sysconfig-netconfig
 syslinux
 system-config-printer-applet

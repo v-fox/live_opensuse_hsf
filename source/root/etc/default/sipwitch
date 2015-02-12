@@ -1,0 +1,34 @@
+# Default values for daemon operation.  This should be edited and is invoked
+# by init script.
+
+# install specifc plugins, or use "auto" to auto-load whatever is installed...
+PLUGINS="zeroconf subscriber forward"
+
+# options for server init (also used by systemd...)
+OPTIONS="--public"
+
+# runtime priority, recommended realtime for high capacity
+PRIORITY="66"
+
+# can be used to adjust pthread concurrency...
+#CONCURRENCY=??
+
+# can be used to specify running effective user/group id for the server
+USER="nobody"
+GROUP="nobody"
+
+# set server errlog history buffer, typical may be 100, default is none...
+#HISTORY=0
+
+# set UID mapping for automatic extension numbers, or 0 to disable
+#FIRSTUID="1000"
+
+# set group for automatic sip users, or - to disable
+SIPUSERS="users"
+
+# set admin group for automatic sip users, such as wheel, admin (ubuntu),
+# sudo, etc, or - to disable
+SIPADMIN="wheel"
+
+# specify security model, desktop or server, used in old init scripts..
+SECURITY="desktop"

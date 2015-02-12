@@ -6,6 +6,8 @@ Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calAlarmUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
+Components.utils.import("resource://gre/modules/Promise.jsm");
 
 const kHoursBetweenUpdates = 6;
 const kSleepMonitorInterval = 60000;
@@ -31,38 +33,6 @@ function calAlarmService() {
     this.mLoadedCalendars = {};
     this.mTimerMap = {};
     this.mObservers = new calListenerBag(Components.interfaces.calIAlarmServiceObserver);
-
-    this.mSleepMonitor = {
-        service: this,
-        interval: kSleepMonitorInterval,
-        timer: null,
-        expected: null,
-
-        checkExpected: function sm_checkExpected() {
-            let now = Date.now();
-            if (now - this.expected > kSleepMonitorTolerance) {
-                cal.LOG("[calAlarmService] Sleep cycle detected, reloading alarms");
-                this.service.shutdown();
-                this.service.startup();
-            } else {
-                this.expected = now + this.interval;
-            }
-        },
-
-        start: function sm_start() {
-            this.stop();
-            this.expected = Date.now() + this.interval;
-            this.timer = newTimerWithCallback(this.checkExpected.bind(this),
-                                              this.interval, true);
-        },
-
-        stop: function sm_stop() {
-            if (this.timer) {
-                this.timer.cancel();
-                this.timer = null;
-            }
-        }
-    };
 
     this.calendarObserver = {
         alarmService: this,
@@ -267,7 +237,7 @@ calAlarmService.prototype = {
                 if (!this.alarmService.mRangeEnd) {
                     // This is our first search for alarms.  We're going to look for
                     // alarms +/- 1 month from now.  If someone sets an alarm more than
-                    // a month ahead of an event, or doesn't start Sunbird/Lightning
+                    // a month ahead of an event, or doesn't start Lightning
                     // for a month, they'll miss some, but that's a slim chance
                     start = now.clone();
                     start.month -= 1;
@@ -291,12 +261,6 @@ calAlarmService.prototype = {
         timerCallback.notify();
 
         this.mUpdateTimer = newTimerWithCallback(timerCallback, kHoursBetweenUpdates * 3600000, true);
-
-        // The sleep monitor needs to be started on platforms that don't support wake_notification
-        if (Services.appinfo.OS != "WINNT" && Services.appinfo.OS != "Darwin") {
-            cal.LOG("[calAlarmService] Starting sleep monitor.");
-            this.mSleepMonitor.start();
-        }
 
         this.mStarted = true;
     },
@@ -330,8 +294,6 @@ calAlarmService.prototype = {
         Services.obs.removeObserver(this, "xpcom-shutdown");
         Services.obs.removeObserver(this, "wake_notification");
 
-        this.mSleepMonitor.stop();
-
         this.mStarted = false;
     },
 
@@ -351,7 +313,7 @@ calAlarmService.prototype = {
             return;
         }
 
-        let showMissed = cal.getPrefSafe("calendar.alarms.showmissed", true);
+        let showMissed = Preferences.get("calendar.alarms.showmissed", true);
 
         let alarms = aItem.getAlarms({});
         for each (let alarm in alarms) {
@@ -519,16 +481,21 @@ calAlarmService.prototype = {
     findAlarms: function cAS_findAlarms(aCalendars, aStart, aUntil) {
         let getListener = {
             alarmService: this,
+            addRemovePromise: Promise.defer(),
             onOperationComplete: function cAS_fA_onOperationComplete(aCalendar,
                                                                      aStatus,
                                                                      aOperationType,
                                                                      aId,
                                                                      aDetail) {
-                // calendar has been loaded, so until now, onLoad events can be ignored:
-                this.alarmService.mLoadedCalendars[aCalendar.id] = true;
+                this.addRemovePromise.promise.then((aValue) => {
+                    // calendar has been loaded, so until now, onLoad events can be ignored:
+                    this.alarmService.mLoadedCalendars[aCalendar.id] = true;
 
-                // notify observers that the alarms for the calendar have been loaded
-                this.alarmService.mObservers.notify("onAlarmsLoaded", [aCalendar]);
+                    // notify observers that the alarms for the calendar have been loaded
+                    this.alarmService.mObservers.notify("onAlarmsLoaded", [aCalendar]);
+                }, function onReject(aReason) {
+                    Components.utils.reportError("Promise was rejected: " + aReason);
+                });
             },
             onGetResult: function cAS_fA_onGetResult(aCalendar,
                                                      aStatus,
@@ -536,12 +503,17 @@ calAlarmService.prototype = {
                                                      aDetail,
                                                      aCount,
                                                      aItems) {
-                for each (let item in aItems) {
-                    // assure we don't fire alarms twice, handle removed alarms as far as we can:
-                    // e.g. we cannot purge removed items from ics files. XXX todo.
-                    this.alarmService.removeAlarmsForItem(item);
-                    this.alarmService.addAlarmsForItem(item);
-                }
+                let promise = this.addRemovePromise;
+                cal.forEach(aItems, (item) => {
+                    try {
+                        this.alarmService.removeAlarmsForItem(item);
+                        this.alarmService.addAlarmsForItem(item);
+                    } catch (ex) {
+                        promise.reject(ex);
+                    }
+                }, function completed() {
+                    promise.resolve();
+                });
             }
         };
 
@@ -568,7 +540,7 @@ calAlarmService.prototype = {
 
         // Total refresh similar to startup.  We're going to look for
         // alarms +/- 1 month from now.  If someone sets an alarm more than
-        // a month ahead of an event, or doesn't start Sunbird/Lightning
+        // a month ahead of an event, or doesn't start Lightning
         // for a month, they'll miss some, but that's a slim chance
         let start = nowUTC();
         let until = start.clone();

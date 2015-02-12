@@ -5,7 +5,8 @@
 Components.utils.import("resource://gre/modules/Services.jsm");
 
 var CalendarDeleteCommandEnabled = false;
-var CalendarNewItemsCommandEnabled = false;
+var CalendarNewEventsCommandEnabled = false;
+var CalendarNewTasksCommandEnabled = false;
 
 /**
  * Command controller to execute calendar specific commands
@@ -107,7 +108,7 @@ var calendarController = {
         switch (aCommand) {
             case "calendar_new_event_command":
             case "calendar_new_event_context_command":
-                return CalendarNewItemsCommandEnabled && this.writable && this.calendars_support_events;
+                return CalendarNewEventsCommandEnabled;
             case "calendar_modify_focused_item_command":
                 return this.item_selected;
             case "calendar_modify_event_command":
@@ -119,7 +120,7 @@ var calendarController = {
             case "calendar_new_todo_command":
             case "calendar_new_todo_context_command":
             case "calendar_new_todo_todaypane_command":
-                return CalendarNewItemsCommandEnabled && this.writable && this.calendars_support_tasks;
+                return CalendarNewTasksCommandEnabled;
             case "calendar_modify_todo_command":
             case "calendar_modify_todo_todaypane_command":
                  return this.todo_items_selected;
@@ -237,9 +238,6 @@ var calendarController = {
                         }
                     }
 
-                    // If calendar is not in foreground, let the default controller take
-                    // care. If we don't have a default controller (i.e sunbird), just
-                    // continue.
                     if (this.defaultController.supportsCommand(aCommand)) {
                         return this.defaultController.isCommandEnabled(aCommand);
                     }
@@ -418,8 +416,7 @@ var calendarController = {
             default:
                 if (this.defaultController && !this.isCalendarInForeground()) {
                     // If calendar is not in foreground, let the default controller take
-                    // care. If we don't have a default controller (i.e sunbird), just
-                    // continue.
+                    // care. If we don't have a default controller, just continue.
                     this.defaultController.doCommand(aCommand);
                     return;
                 }
@@ -432,9 +429,7 @@ var calendarController = {
     },
 
     isCalendarInForeground: function cC_isCalendarInForeground() {
-        // For sunbird, calendar is always in foreground. Otherwise check if
-        // we are in the correct mode.
-        return isSunbird() || (gCurrentMode && gCurrentMode != "mail");
+        return gCurrentMode && gCurrentMode != "mail";
     },
 
     isInMode: function cC_isInMode(mode) {
@@ -442,9 +437,9 @@ var calendarController = {
             case "mail":
                 return !isCalendarInForeground();
             case "calendar":
-                return isSunbird() || (gCurrentMode && gCurrentMode == "calendar");
+                return gCurrentMode && gCurrentMode == "calendar";
             case "task":
-                return !isSunbird() && (gCurrentMode && gCurrentMode == "task");
+                return gCurrentMode && gCurrentMode == "task";
         }
         return false;
     },
@@ -494,9 +489,7 @@ var calendarController = {
 
         calendarController.updateCommands();
         calendarController2.updateCommands();
-        if(!isSunbird()) {
-            document.commandDispatcher.updateCommands('mail-toolbar');
-        }
+        document.commandDispatcher.updateCommands('mail-toolbar');
     },
 
     /**
@@ -514,11 +507,7 @@ var calendarController = {
      * calendar.
      */
     get writable() {
-        return !this.all_readonly &&
-               (!this.offline ||
-                this.has_cached_calendars ||
-                (this.has_local_calendars &&
-                 !this.all_local_calendars_readonly));
+        return (cal.getCalendarManager().getCalendars({}).some(cal.isCalendarWritable));
     },
 
     /**
@@ -600,41 +589,6 @@ var calendarController = {
                this.item_selected &&
                !this.selected_events_readonly &&
                (!this.offline || !this.selected_events_requires_network);
-    },
-
-    /**
-     * Returns a boolean indicating that at least one of the calendars supports
-     * tasks.
-     */
-    get calendars_support_tasks() {
-        // XXX We might want to cache this
-        var calendars = getCalendarManager().getCalendars({});
-
-        for each (var calendar in calendars) {
-            if (isCalendarWritable(calendar) &&
-                calendar.getProperty("capabilities.tasks.supported") !== false) {
-                return true;
-            }
-        }
-        return false;
-    },
-
-
-    /**
-     * Returns a boolean indicating that at least one of the calendars supports
-     * events.
-     */
-    get calendars_support_events() {
-        // XXX We might want to cache this
-        var calendars = getCalendarManager().getCalendars({});
-
-        for each (var calendar in calendars) {
-            if (isCalendarWritable(calendar) &&
-                calendar.getProperty("capabilities.events.supported") !== false) {
-                return true;
-            }
-        }
-        return false;
     },
 
     /**
@@ -750,7 +704,6 @@ var calendarController2 = {
 
     doCommand: function doCommand(aCommand) {
         switch (aCommand) {
-            // These commands are overridden in lightning and native in sunbird.
             case "cmd_cut":
                 cutToClipboard();
                 break;
@@ -808,29 +761,21 @@ var calendarController2 = {
  * controller.
  */
 function injectCalendarCommandController() {
-    if (!isSunbird()) {
-        // We need to put our new command controller *before* the one that
-        // gets installed by thunderbird. Since we get called pretty early
-        // during startup we need to install the function below as a callback
-        // that periodically checks when the original thunderbird controller
-        // gets alive. Please note that setTimeout with a value of 0 means that
-        // we leave the current thread in order to re-enter the message loop.
+    // We need to put our new command controller *before* the one that
+    // gets installed by thunderbird. Since we get called pretty early
+    // during startup we need to install the function below as a callback
+    // that periodically checks when the original thunderbird controller
+    // gets alive. Please note that setTimeout with a value of 0 means that
+    // we leave the current thread in order to re-enter the message loop.
 
-        let tbController = top.controllers.getControllerForCommand("cmd_runJunkControls");
-        if (!tbController) {
-            setTimeout(injectCalendarCommandController, 0);
-            return;
-        } else {
-            calendarController.defaultController = tbController;
-        }
+    let tbController = top.controllers.getControllerForCommand("cmd_runJunkControls");
+    if (tbController) {
+        calendarController.defaultController = tbController;
+        top.controllers.insertControllerAt(0, calendarController);
+        document.commandDispatcher.updateCommands("calendar_commands");
     } else {
-        // On Sunbird, we also need to set up our hacky command controller.
-        top.controllers.insertControllerAt(0, calendarController2);
+        setTimeout(injectCalendarCommandController, 0);
     }
-
-    // This needs to be done for all applications
-    top.controllers.insertControllerAt(0, calendarController);
-    document.commandDispatcher.updateCommands("calendar_commands");
 }
 
 /**
@@ -887,13 +832,13 @@ function setupContextItemType(event, items) {
  * @param aNewDate      The new date as a JSDate.
  */
 function minimonthPick(aNewDate) {
-  if (cal.isSunbird() || gCurrentMode == "calendar" || gCurrentMode == "task") {
+  if (gCurrentMode == "calendar" || gCurrentMode == "task") {
       let cdt = cal.jsDateToDateTime(aNewDate, currentView().timezone);
       cdt.isDate = true;
       currentView().goToDay(cdt);
 
       // update date filter for task tree
-      let tree = document.getElementById(cal.isSunbird() ? "unifinder-todo-tree" : "calendar-task-tree");
+      let tree = document.getElementById("calendar-task-tree");
       tree.updateFilter();
   }
 }
@@ -932,25 +877,31 @@ function deleteSelectedItems() {
 }
 
 function calendarUpdateNewItemsCommand() {
-    let oldValue = CalendarNewItemsCommandEnabled;
+    // keep current current status
+    let oldEventValue = CalendarNewEventsCommandEnabled;
+    let oldTaskValue = CalendarNewTasksCommandEnabled;
 
-    let commands = ["calendar_new_event_command",
-                    "calendar_new_event_context_command",
-                    "calendar_new_todo_command",
-                    "calendar_new_todo_context_command",
-                    "calendar_new_todo_todaypane_command"];
+    // define command set to update
+    let eventCommands = ["calendar_new_event_command",
+                         "calendar_new_event_context_command"];
+    let taskCommands = ["calendar_new_todo_command",
+                        "calendar_new_todo_context_command",
+                        "calendar_new_todo_todaypane_command"];
 
-    CalendarNewItemsCommandEnabled = false;
-    let cal = getSelectedCalendar();
-    if (cal && isCalendarWritable(cal) && userCanAddItemsToCalendar(cal)) {
-        CalendarNewItemsCommandEnabled = true;
-    }
+    // re-calculate command status
+    CalendarNewEventsCommandEnabled = false;
+    CalendarNewTasksCommandEnabled = false;
+    let calendars = cal.getCalendarManager().getCalendars({}).filter(cal.isCalendarWritable).filter(userCanAddItemsToCalendar);
+    if (calendars.some(cal.isEventCalendar))
+        CalendarNewEventsCommandEnabled = true;
+    if (calendars.some(cal.isTaskCalendar))
+        CalendarNewTasksCommandEnabled = true;
 
-    if (CalendarNewItemsCommandEnabled != oldValue) {
-        for (let i = 0; i < commands.length; i++) {
-            goUpdateCommand(commands[i]);
-        }
-    }
+    // update command status if required
+    if (CalendarNewEventsCommandEnabled != oldEventValue)
+        eventCommands.forEach(goUpdateCommand);
+    if (CalendarNewTasksCommandEnabled != oldTaskValue)
+        taskCommands.forEach(goUpdateCommand);
 }
 
 function calendarUpdateDeleteCommand(selectedItems) {

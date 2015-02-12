@@ -7,6 +7,7 @@ Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://calendar/modules/calIteratorUtils.jsm");
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 Components.utils.import("resource://calendar/modules/ical.js");
 
 function calStringEnumerator(stringArray) {
@@ -89,7 +90,7 @@ calTimezoneService.prototype = {
 
     get UTC() {
         if (!this.mUTC) {
-            if (cal.getPrefSafe("calendar.icaljs", false)) {
+            if (Preferences.get("calendar.icaljs", false)) {
                 this.mUTC = new calICALJSTimezone(ICAL.Timezone.utcTimezone);
             } else {
                 this.mUTC = new calLibicalTimezone("UTC", null, "", "");
@@ -100,7 +101,7 @@ calTimezoneService.prototype = {
             // other clients make use of them without specifying a definition.
             const utcAliases = ["UTC", "utc", "Z", "Etc/GMT", "Etc/GMT+0",
                                 "Etc/UCT", "Etc/Unversal", "Etc/UTC",
-                                "Etc/Zulu", "GMT", "GMT+0", "GMT0",
+                                "Etc/Zulu", "GMT+0", "GMT0",
                                 "Greenwich", "UCT", "Universal", "Zulu"];
 
             for (let zone of utcAliases) {
@@ -113,7 +114,7 @@ calTimezoneService.prototype = {
 
     get floating() {
         if (!this.mFloating) {
-            if (cal.getPrefSafe("calendar.icaljs", false)) {
+            if (Preferences.get("calendar.icaljs", false)) {
                 this.mFloating = new calICALJSTimezone(ICAL.Timezone.localTimezone);
             } else {
                 this.mFloating = new calLibicalTimezone("floating", null, "", "");
@@ -247,7 +248,7 @@ calTimezoneService.prototype = {
                 var alias = row.alias;
                 if (alias && alias.length > 0) {
                     tz = alias; // resolve later
-                } else if (cal.getPrefSafe("calendar.icaljs", false)) {
+                } else if (Preferences.get("calendar.icaljs", false)) {
                     let parsedComp = ICAL.parse("BEGIN:VCALENDAR\r\n" + row.component + "\r\nEND:VCALENDAR");
 
                     let icalComp = new ICAL.Component(parsedComp[1]);
@@ -297,7 +298,7 @@ calTimezoneService.prototype = {
 
     get defaultTimezone() {
         if (!this.mDefaultTimezone) {
-            var prefTzid = cal.getPrefSafe("calendar.timezone.local", null);
+            var prefTzid = Preferences.get("calendar.timezone.local", null);
             var tzid = prefTzid;
             if (!tzid) {
                 try {
@@ -311,7 +312,7 @@ calTimezoneService.prototype = {
             cal.ASSERT(this.mDefaultTimezone, "Timezone not found: " + tzid);
             // Update prefs if necessary:
             if (this.mDefaultTimezone && this.mDefaultTimezone.tzid != prefTzid) {
-                cal.setPref("calendar.timezone.local", this.mDefaultTimezone.tzid);
+                Preferences.set("calendar.timezone.local", this.mDefaultTimezone.tzid);
             }
 
             // We need to observe the timezone preference to update the default
@@ -571,17 +572,6 @@ function guessSystemTimezone() {
                                 .getService(Components.interfaces.nsIHttpProtocolHandler);
 
         if (handler.oscpu.match(/^Windows/)) {
-            var regOSName, fileOSName;
-            if (handler.oscpu.match(/^Windows NT/)) {
-                regOSName  = "Windows NT";
-                fileOSName = "WindowsNT";
-            } else {
-                // Note: windows 98 compatibility will be deleted
-                // in releases built on Gecko 1.9 or later.
-                regOSName  = "Windows";
-                fileOSName = "Windows98";
-            }
-
             // If on Windows NT (2K/XP/Vista), current timezone only lists its
             // localized name, so to find its registry key name, match localized
             // name to localized names of each windows timezone listed in
@@ -597,8 +587,7 @@ function guessSystemTimezone() {
             wrk.close()
 
             wrk.open(wrk.ROOT_KEY_LOCAL_MACHINE,
-                     ("SOFTWARE\\Microsoft\\"+regOSName+
-                      "\\CurrentVersion\\Time Zones"),
+                     "SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Time Zones",
                      wrk.ACCESS_READ);
 
             // Linear search matching localized name of standard timezone
@@ -620,8 +609,8 @@ function guessSystemTimezone() {
             if (osUserTimeZone != null) {
                 // Lookup timezone registry key in table of known tz keys
                 // to convert to ZoneInfo timezone id.
-                const regKeyToZoneInfoBundle = Services.strings.createBundle("chrome://calendar/content/"+
-                                                                             fileOSName + "ToZoneInfoTZId.properties");
+                const regKeyToZoneInfoBundle = Services.strings.createBundle(
+                    "chrome://calendar/content/WindowsNTToZoneInfoTZId.properties");
                 zoneInfoIdFromOSUserTimeZone =
                     regKeyToZoneInfoBundle.GetStringFromName(osUserTimeZone);
             }

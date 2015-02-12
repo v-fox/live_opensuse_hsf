@@ -1,0 +1,29 @@
+#about_header { font-size: 1.5em; }
+
+#about_versionValue { font-weight: bold; }
+
+#about_websiteAddress {
+    text-decoration: none;
+    color: #15C;
+}
+#about_websiteAddress:hover { text-decoration: underline; }
+
+#macDialogButtons button {
+    /*display: none;*/
+    margin-bottom : 20px;
+}
+
+#macDialogButtons {
+    height: 30px;
+    min-height: 1px;
+    margin-right: 8px;
+    margin-bottom: 6px;
+}
+
+.displayedFormat {
+    width: 100px;
+}
+
+#fnvfox_lastSavedFolder {
+    padding-bottom: 5px;
+}

@@ -225,7 +225,7 @@ function refreshUIBits() {
  * @param aShow     If true, the mode will be switched to calendar if not
  *                    already there.
  */
-function ltnSwitchCalendarView(aType, aShow) {
+function switchCalendarView(aType, aShow) {
     gLastShownCalendarView = aType;
 
     if (aShow && gCurrentMode != "calendar") {
@@ -403,6 +403,9 @@ function ltnSwitch2Calendar() {
 
     document.commandDispatcher.updateCommands('calendar_commands');
     window.setCursor("auto");
+
+    // make sure the view is sized correctly
+    onCalendarViewResize();
   }
 }
 
@@ -461,4 +464,17 @@ function onToolbarsPopupShowingWithMode(aEvent, aInsertPoint) {
         toolbox.push("navigation-toolbox");
     }
     onViewToolbarsPopupShowing(aEvent, toolbox, aInsertPoint);
+}
+
+// Initialize the Calendar sidebar menu state
+function InitViewCalendarPaneMenu() {
+    let calSidebar = document.getElementById("ltnSidebar");
+
+    setBooleanAttribute("ltnViewCalendarPane", "checked",
+                        !calSidebar.getAttribute("collapsed"));
+
+    if (document.getElementById("appmenu_ltnViewCalendarPane")) {
+        setBooleanAttribute("appmenu_ltnViewCalendarPane", "checked",
+                            !calSidebar.getAttribute("collapsed"));
+    }
 }

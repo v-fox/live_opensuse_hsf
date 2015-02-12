@@ -4,6 +4,8 @@
 
 
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
+Components.utils.import("resource://gre/modules/PluralForm.jsm");
 
 /**
  * Helper function for filling the form,
@@ -219,7 +221,7 @@ function removeChildren(aElement) {
     }
 
     while (aElement.firstChild) {
-        aElement.removeChild(aElement.lastChild);
+        aElement.lastChild.remove();
     }
 }
 
@@ -232,7 +234,7 @@ function removeChildren(aElement) {
 function sortCalendarArray(calendars) {
     let ret = calendars.concat([]);
     let sortOrder = {};
-    let sortOrderPref = cal.getPrefSafe("calendar.list.sortOrder", "").split(" ");
+    let sortOrderPref = Preferences.get("calendar.list.sortOrder", "").split(" ");
     for (let i = 0; i < sortOrderPref.length; ++i) {
         sortOrder[sortOrderPref[i]] = i;
     }
@@ -250,10 +252,10 @@ function sortCalendarArray(calendars) {
     ret.sort(sortFunc);
 
     // check and repair pref:
-    let sortOrderString = cal.getPrefSafe("calendar.list.sortOrder", "");
+    let sortOrderString = Preferences.get("calendar.list.sortOrder", "");
     let wantedOrderString = ret.map(function(c) { return c.id; }).join(" ");
     if (wantedOrderString != sortOrderString) {
-        cal.setPref("calendar.list.sortOrder", wantedOrderString);
+        Preferences.set("calendar.list.sortOrder", wantedOrderString);
     }
 
     return ret;
@@ -412,51 +414,57 @@ function updateListboxDeleteButton(listboxId, buttonId) {
 }
 
 /**
- * Update plural singular menu items
+ * Gets the correct plural form of a given unit.
  *
- * XXX This function needs fixing with PluralForm.jsm
- *
- * @param lengthFildId    The ID of the element containing the number
- * @param menuId          The menu to update labels in.
+ * @param aLength         The number to use to determine the plural form
+ * @param aUnit           The unit to find the plural form of
+ * @param aIncludeLength  (optional) If true, the length will be included in the
+ *                          result. If false, only the pluralized unit is returned.
+ * @return                A string containg the pluralized version of the unit
  */
-function updateMenuLabels(lengthFieldId, menuId ) {
-    var field = document.getElementById(lengthFieldId);
-    var menu  = document.getElementById(menuId);
+function unitPluralForm(aLength, aUnit, aIncludeLength=true) {
+    let unitProp = {"minutes": "unitMinutes",
+                    "hours": "unitHours",
+                    "days": "unitDays"}[aUnit] || "unitMinutes";
 
-    // figure out whether we should use singular or plural
-    var length = field.value;
+    return PluralForm.get(aLength, cal.calGetString("calendar", unitProp))
+                     .replace("#1", aIncludeLength ? aLength : "").trim();
+}
 
-    var newLabelNumber;
+/**
+ * Update the given unit label to show the correct plural form.
+ *
+ * @param aLengthFieldId     The ID of the element containing the number
+ * @param aLabelId           The ID of the label to update.
+ * @param aUnit              The unit to use for the label.
+ */
+function updateUnitLabelPlural(aLengthFieldId, aLabelId, aUnit) {
+    let label  = document.getElementById(aLabelId);
+    let length = Number(document.getElementById(aLengthFieldId).value);
 
-    // XXX This assumes that "0 days, minutes, etc." is plural in other languages.
-    if ( (Number(length) == 0) || (Number(length) > 1) ) {
-        newLabelNumber = "label2"
-    } else {
-        newLabelNumber = "label1"
+    label.value = unitPluralForm(length, aUnit, false);
+}
+
+/**
+ * Update the given menu to show the correct plural form in the list.
+ *
+ * @param aLengthFieldId    The ID of the element containing the number
+ * @param aMenuId           The menu to update labels in.
+ */
+function updateMenuLabelsPlural(aLengthFieldId, aMenuId) {
+    let menu  = document.getElementById(aMenuId);
+    let length = Number(document.getElementById(aLengthFieldId).value);
+
+    // update the menu items
+    let items = menu.getElementsByTagName("menuitem");
+    for (let menuItem of items) {
+        menuItem.label = unitPluralForm(length, menuItem.value, false);
     }
 
-    // see what we currently show and change it if required
-    var oldLabelNumber = menu.getAttribute("labelnumber");
-
-    if (newLabelNumber != oldLabelNumber) {
-        // remember what we are showing now
-        menu.setAttribute("labelnumber", newLabelNumber);
-
-        // update the menu items
-        var items = menu.getElementsByTagName("menuitem");
-
-        for (var i = 0; i < items.length; ++i) {
-            var menuItem = items[i];
-            var newLabel = menuItem.getAttribute(newLabelNumber);
-            menuItem.label = newLabel;
-            menuItem.setAttribute("label", newLabel);
-        }
-
-        // force the menu selection to redraw
-        var saveSelectedIndex = menu.selectedIndex;
-        menu.selectedIndex = -1;
-        menu.selectedIndex = saveSelectedIndex;
-    }
+    // force the menu selection to redraw
+    let saveSelectedIndex = menu.selectedIndex;
+    menu.selectedIndex = -1;
+    menu.selectedIndex = saveSelectedIndex;
 }
 
 /**

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://flashVideoDownload/skin/main.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://flashVideoDownload/locale/flashVideoDownload.dtd">
+<overlay id="flashVideoDownload_overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">    
+    <script type="application/x-javascript" src="overlay.js"/>
+    <script type="application/x-javascript">console.log("hey!!!");</script>
+    
+    <stringbundleset id="stringbundleset">
+	<stringbundle id="flashVideoDownload_stringbundle" src="chrome://flashVideoDownload/locale/flashVideoDownload.properties"/>
+    </stringbundleset>
+
+    <toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton id="fnvfox_statusbarButton"
+			class="chromeclass-toolbar-additional toolbarbutton-1 fnvfox_toolbarButtonIconDisabled"
+			label="&overlay.toolbarButton;"
+			onclick="flashVideoDownload.buttonPressed(event);"
+			context="flashVideoDownloadContextMenu"		
+			tooltiptext="&overlay.statusbarButton_tooltip;">	    
+		</toolbarbutton>
+    </toolbarpalette>
+
+    <toolbarpalette id="BrowserToolbarPalette">
+        <toolbarbutton id="fnvfox_toolbarButton"
+	    class="chromeclass-toolbar-additional toolbarbutton-1 fnvfox_toolbarButtonIconDisabled"
+	    label="&overlay.toolbarButton;"
+	    onclick="flashVideoDownload.buttonPressed(event);"	    
+	    context="flashVideoDownloadContextMenu"
+            tooltiptext="&overlay.toolbarButton_tooltip;"/>
+    </toolbarpalette>
+
+    <window id="main-window">
+		<popupset>
+		    <menupopup id="flashVideoDownloadContextMenu"></menupopup>
+		    <menupopup id="flashVideoDownloadFileContextMenu" onpopupshowing="flashVideoDownload.setFileContextMenuOptions(event);">
+			<menuitem id="flashVideoDownloadFileContextMenuDownload" label="&overlay.download_contextMenu;" />
+			<menuitem id="flashVideoDownloadFileContextMenuClipboard" label="&overlay.copyUrlToClipboard_contextMenu;" />
+		    </menupopup>
+		</popupset>
+    </window>
+</overlay>

@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<window id="main-window"        
+        title="Download Flash and Video - Download Manager"
+        flex="1"
+        persist="width height screenX screenY sizemode"
+        xmlns:html="http://www.w3.org/1999/xhtml"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    
+<script type="application/x-javascript" src="chrome://flashVideoDownload/content/downloadManager.js"/>
+<!--<script type="application/x-javascript" src="chrome://flashVideoDownload/content/eran.js"/>-->
+        
+
+<popupset>
+    <menupopup id="fileMenupopup">
+	<menuitem label="Start" id="fileStart" />
+	<menuitem label="Pause" id="filePause" />
+	<menuitem label="Stop" id="fileStop" />
+	<menuseparator/>
+	<menuitem label="Copy File URL to Clipboard" id="fileCopyFileUrl" />
+	<menuitem label="Copy Web Page URL to Clipboard" id="fileCopyPageUrl" />
+	<menuseparator/>
+	<menuitem label="Remove Completed Downloads" id="fileRemoveCompleted" />
+	<menuitem label="Remove Selected Downloads" id="fileRemoveSelected" />
+	<menuseparator/>
+	<menuitem label="Move to Top" id="fileMoveTop" />
+	<menuitem label="Move Up" id="fileMoveUp" />
+	<menuitem label="Move Down" id="fileMoveDown" />
+	<menuitem label="Move to Bottom" id="fileMoveBottom" />
+	<menuseparator/>
+	<menuitem label="Select All" id="fileSelectAll" />
+	<menuitem label="Invert Selection" id="fileInvertSelection" />
+    </menupopup>
+</popupset>
+<vbox id="mainBox" flex="1">
+    <toolbox>
+	<toolbar>
+	    <toolbarbutton label="Add" id="addButton" />
+	    <toolbarbutton label="Start" />
+	    <toolbarbutton label="Pause" />
+	    <toolbarbutton label="Stop" />
+	    <toolbarbutton label="Delete" />
+	</toolbar>
+    </toolbox>    
+</vbox>
+</window>

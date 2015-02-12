@@ -1,0 +1,50 @@
+<!-- Options *Begin* (options.xul) -->
+<!ENTITY options.mainTitle "Flash &amp; Video 다운로드 설정">
+<!-- General Pane -->
+<!ENTITY options.general.title "일반">
+<!-- General.Interface -->
+<!ENTITY options.general.interface.title "인터페이스">
+<!ENTITY options.general.interface.showToolbarIcon_checkbox "툴바 아이콘 표시">
+<!ENTITY options.general.interface.showStatusbarIcon_checkbox "상태 표시줄 아이콘 표시">
+<!-- General.Flash and Videos -->
+<!ENTITY options.general.flashAndVideos.title "Flash &amp; Videos">
+<!ENTITY options.general.flashAndVideos.showFlashFilesResults_checkbox "플래시 파일 결과 표시">
+<!ENTITY options.general.flashAndVideos.showVideosFilesResults_checkbox "비디오 파일 결과 표시">
+<!-- General.Download Managers -->
+<!ENTITY options.general.downloadManagers.title "다운로드 매니저">
+<!ENTITY options.general.downloadManagers.useDownThemAll_checkbox "DownThemAll! 애드온을 이용하여 다운로드">
+<!-- General.Downloads -->
+<!ENTITY options.general.downloads.title "다운로드 설정">
+<!ENTITY options.general.downloads.useLastSavedFolder_radio "Use Last Saved Folder - Default Folder">
+<!ENTITY options.general.downloads.useFFDownloadsFolder_radio "Firefox 다운로드 폴더 사용">
+<!ENTITY options.general.downloads.saveTo_radio "저장:">
+<!ENTITY options.general.downloads.browse_button "찾아보기">
+<!ENTITY options.general.downloads.startDownloadsImmediately_checkbox "바로 다운로드 시작 (&quot;저장&quot; 관련 창 없음)">
+<!-- Youtube Pane -->
+<!ENTITY options.yt.title "YouTube">
+<!-- Youtube.Formats -->
+<!ENTITY options.yt.formats.title "표시할 형식 (어떤 동영상 형식을 표시할 것인지 선택):">
+<!-- Youtube.Qualities -->
+<!ENTITY options.yt.qualities.title "표시할 화질 (어떤 동영상 화질을 표시할 것인지 선택):">
+<!-- About Pane -->
+<!ENTITY options.yt.embeddedVideos.label "Embedded Videos:">
+<!ENTITY options.yt.embeddedVideos.enhancedDetection.label "Enhanced Videos Detection">
+<!ENTITY options.yt.embeddedVideos.enhancedDetection.label1 "Enable this only if certain videos were undetected.">
+<!ENTITY options.yt.embeddedVideos.enhancedDetection.label2 "Enabling this might slow web pages loading, so make sure to disable when not needed!">
+<!-- Dialog Buttons (Mac users) -->
+<!ENTITY options.about.title "정보">
+<!ENTITY options.about.header "Flash &amp; Video 다운로더">
+<!ENTITY options.about.version "버젼">
+<!ENTITY options.about.visitWebsite "홈페이지 방문:">
+<!-- Options *End* -->
+<!ENTITY options.dialogButtons.ok_button "확인">
+<!ENTITY options.dialogButtons.cancel_button "취소">
+<!-- Overlay *Begin* (overlay.xul) -->
+<!-- Overlay *End* -->
+<!ENTITY overlay.statusbarButton "Flash &amp; Video (StatusBar Icon)">
+<!ENTITY overlay.statusbarButton_tooltip "Flash &amp; Video 다운로드">
+<!ENTITY overlay.toolbarButton "Flash &amp; Video">
+<!ENTITY overlay.toolbarButton_tooltip "Flash &amp; Video 다운로드">
+<!ENTITY overlay.download_contextMenu "다운로드">
+<!ENTITY overlay.copyUrlToClipboard_contextMenu "URL 클립보드 복사">
+<!-- Overlay *End* -->

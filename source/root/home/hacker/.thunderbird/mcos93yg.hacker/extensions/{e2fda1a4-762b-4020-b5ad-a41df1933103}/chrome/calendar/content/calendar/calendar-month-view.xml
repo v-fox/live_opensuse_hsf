@@ -27,7 +27,8 @@
                          class="calendar-event-box-container"
                          xbl:inherits="readonly,flashing,alarm,allday,priority,progress,status,calendar,categories"
                          flex="1">
-                <xul:hbox class="calendar-event-details">
+                <xul:hbox anonid="event-detail-box"
+                          class="calendar-event-details">
                   <xul:vbox pack="center">
                     <xul:image anonid="item-icon"
                                class="calendar-item-image"
@@ -297,7 +298,7 @@
         <body><![CDATA[
           if (aItem.hashId in this.mItemHash) {
             let node =  this.mItemHash[aItem.hashId];
-            node.parentNode.removeChild(node);
+            node.remove();
             delete this.mItemHash[aItem.hashId];
           }
         ]]></body>
@@ -419,8 +420,10 @@
 
       <!-- constructor -->
       <constructor><![CDATA[
+          Components.utils.import("resource://gre/modules/Preferences.jsm");
+
           // Set the preference for the default start of the week
-          this.weekStartOffset = getPrefSafe("calendar.week.start", 0);
+          this.weekStartOffset = Preferences.get("calendar.week.start", 0);
 
           for (var i = 0; i < 7; i++) {
               let hdr = createXULElement("calendar-day-label");
@@ -967,8 +970,8 @@
         <parameter name="aAlarmItem"/>
         <parameter name="aStop"/>
         <body><![CDATA[
-          var showIndicator = getPrefSafe("calendar.alarms.indicator.show", true);
-          var totaltime = getPrefSafe("calendar.alarms.indicator.totaltime", 3600);
+          var showIndicator = Preferences.get("calendar.alarms.indicator.show", true);
+          var totaltime = Preferences.get("calendar.alarms.indicator.totaltime", 3600);
 
           if (!aStop && (!showIndicator || totaltime < 1)) {
             // No need to animate if the indicator should not be shown.
@@ -1006,7 +1009,7 @@
     <handlers>
       <handler event="wheel"><![CDATA[
         const pixelThreshold = 150;
-        let scrollEnabled = getPrefSafe('calendar.view.mousescroll', true);
+        let scrollEnabled = Preferences.get('calendar.view.mousescroll', true);
         if (!event.ctrlKey && !event.shiftKey &&
             !event.altKey && !event.metaKey && scrollEnabled) {
             // In the month view, the only thing that can be scrolled

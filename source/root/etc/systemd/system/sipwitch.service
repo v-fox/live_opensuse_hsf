@@ -1,0 +1,18 @@
+[Unit]
+Description=GNU SIP Witch, a SIP telephony service daemon.
+After=network.target
+Before=bayonne.service
+
+[Service]
+Type=notify
+PIDFile=/var/run/sipwitch/pidfile
+#EnvironmentFile=-/etc/conf.d/sipwitch
+#EnvironmentFile=-/etc/sysconfig/sipwitch
+EnvironmentFile=-/etc/default/sipwitch
+ExecStartPre=-/bin/rm -f /var/run/sipwitch/control
+ExecStart=/usr/sbin/sipw -S -f -v --priority=${PRIORITY} --plugins=${PLUGINS} --user=${USER} --group=${GROUP} ${OPTIONS}
+Restart=no
+NotifyAccess=main
+
+[Install]
+WantedBy=multi-user.target

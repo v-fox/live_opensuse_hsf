@@ -1,0 +1,134 @@
+﻿<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+ 
+    <Description about="urn:mozilla:install-manifest">
+	
+		<!-- Firefox -->
+		<em:targetApplication>
+		    <Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>1.5</em:minVersion>
+				<em:maxVersion>34.*</em:maxVersion>
+		    </Description>
+		</em:targetApplication>
+	    
+		<!-- SeaMonkey -->
+		<em:targetApplication>
+		    <Description>
+				<em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+				<em:minVersion>2.1</em:minVersion>
+				<em:maxVersion>2.29.*</em:maxVersion>
+		    </Description>
+		</em:targetApplication>
+	    
+		<em:creator>Vicente Amor</em:creator>
+		<em:name>Flash and Video Download</em:name>
+		<em:description>Download flash games and videos with a single click.</em:description>
+		<em:version>1.66</em:version>
+		<em:id>{bee6eb20-01e0-ebd1-da83-080329fb9a3a}</em:id>
+		<em:iconURL>chrome://flashVideoDownload/skin/icons/mainIcon.png</em:iconURL>
+		<em:type>2</em:type>
+		<em:unpack>true</em:unpack>
+		<em:optionsURL>chrome://flashVideoDownload/content/options.xul</em:optionsURL>
+		<em:homepageURL>http://www.fnvfox.com/</em:homepageURL>
+		<em:translator>Jean-François FARCACHE (fr-FR)</em:translator>
+		<em:translator>PETROVICS Sándor (hu-HU)</em:translator>
+		<em:translator>U Bless (ko-KP)</em:translator>
+		<em:translator>U Bless (ko-KR)</em:translator>
+		<em:translator>whknnn (zh-CN)</em:translator>
+		<em:translator>Ghelman (pr-BR)</em:translator>
+		<em:translator>markh (nl)</em:translator>
+		<em:translator>DakSrbija (sr)</em:translator>
+	    
+		<!-- Localizations -->
+		<em:localized>
+		    <Description>
+				<em:locale>fr-FR</em:locale>
+				<em:name>Flash and Video Download</em:name>
+				<em:description>Télécharger Flash &amp; Vidéo d'un seul click.</em:description>
+				<em:creator>Vicente Amor</em:creator>
+				<em:homepageURL>http://www.fnvfox.com/</em:homepageURL>
+				<em:translator>Jean-François FARCACHE (fr-FR)</em:translator>
+		    </Description>
+		</em:localized>
+		
+		<em:localized>
+		    <Description>
+			    <em:locale>hu-HU</em:locale>
+			    <em:name>Flash and Video Download</em:name>
+			    <em:description>Flash &amp; Videó letöltése egyetlen kattintással.</em:description>
+			    <em:creator>Vicente Amor</em:creator>
+			    <em:homepageURL>http://www.fnvfox.com/</em:homepageURL>
+			    <em:translator>PETROVICS Sándor (hu-HU)</em:translator>
+		    </Description>
+		</em:localized>	
+		
+		<em:localized>
+		    <Description>
+				<em:locale>ko-KR</em:locale>
+				<em:name>Flash and Video Download</em:name>
+				<em:description>한 번 클릭으로 플래시 게임과 비디오 다운로드</em:description>
+				<em:creator>Vicente Amor</em:creator>
+				<em:homepageURL>http://www.fnvfox.com/</em:homepageURL>
+				<em:translator>U Bless (ko-KR)</em:translator>
+		    </Description>
+		</em:localized>
+
+		<em:localized>
+		    <Description>
+				<em:locale>ko-KP</em:locale>
+				<em:name>Flash and Video Download</em:name>
+				<em:description>한 번 클릭으로 플래시 게임과 비디오 다운로드</em:description>
+				<em:creator>Vicente Amor</em:creator>
+				<em:homepageURL>http://www.fnvfox.com/</em:homepageURL>
+				<em:translator>U Bless (ko-KP)</em:translator>
+		    </Description>
+		</em:localized>
+
+		<em:localized>
+		    <Description>
+				<em:locale>zh-CN</em:locale>
+				<em:name>Flash and Video Download</em:name>
+				<em:description>Download flash games and videos with a single click.</em:description>
+				<em:creator>Vicente Amor</em:creator>
+				<em:homepageURL>http://www.fnvfox.com/</em:homepageURL>
+				<em:translator>whknnn (zh-CN)</em:translator>
+		    </Description>
+		</em:localized>
+
+		<em:localized>
+		    <Description>
+				<em:locale>pt-BR</em:locale>
+				<em:name>Flash and Video Download</em:name>
+				<em:description>Download flash games and videos with a single click.</em:description>
+				<em:creator>Vicente Amor</em:creator>
+				<em:homepageURL>http://www.fnvfox.com/</em:homepageURL>
+				<em:translator>Ghelman (pr-BR)</em:translator>
+		    </Description>
+		</em:localized>
+
+		<em:localized>
+		    <Description>
+				<em:locale>nl</em:locale>
+				<em:name>Flash and Video Download</em:name>
+				<em:description>Download flash games and videos with a single click.</em:description>
+				<em:creator>Vicente Amor</em:creator>
+				<em:homepageURL>http://www.fnvfox.com/</em:homepageURL>
+				<em:translator>markh (nl)</em:translator>
+		    </Description>
+		</em:localized>
+		
+		<em:localized>
+		    <Description>
+				<em:locale>sr</em:locale>
+				<em:name>Flash and Video Download</em:name>
+				<em:description>Download flash games and videos with a single click.</em:description>
+				<em:creator>Vicente Amor</em:creator>
+				<em:homepageURL>http://www.fnvfox.com/</em:homepageURL>
+				<em:translator>DakSrbija (sr)</em:translator>
+		    </Description>
+		</em:localized>	
+    </Description>      
+</RDF>

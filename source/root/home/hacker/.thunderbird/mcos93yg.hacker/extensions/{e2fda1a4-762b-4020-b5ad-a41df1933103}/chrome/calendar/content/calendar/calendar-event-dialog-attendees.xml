@@ -38,14 +38,16 @@
                          type="autocomplete"
                          flex="1"
                          autocompletesearch="addrbook ldap"
+                         autocompletesearchparam="{}"
                          timeout="300"
                          maxrows="4"
                          completedefaultindex="true"
                          forcecomplete="true"
                          minresultsforpopup="1"
-                         onblur="if (this.localName == 'textbox') document.getBindingParent(this).onBlurInput(event);"
+                         onblur="if (this.localName == 'textbox') document.getBindingParent(this).returnHit(this, true)"
                          ignoreblurwhilesearching="true"
-                         oninput="this.setAttribute('dirty', 'true');">
+                         oninput="this.setAttribute('dirty', 'true');"
+                         ontextentered="document.getBindingParent(this).returnHit(this);">
             </xul:textbox>
           </xul:listcell>
         </xul:listitem>
@@ -57,12 +59,7 @@
       <field name="mContentHeight">0</field>
       <field name="mRowHeight">0</field>
       <field name="mNumColumns">0</field>
-      <field name="mIOService">null</field>
-      <field name="mDirectoryServerObserver">null</field>
-      <field name="mPrefs">null</field>
       <field name="mIsOffline">0</field>
-      <field name="mLDAPSession">null</field>
-      <field name="mSessionAdded">false</field>
       <field name="mIsReadOnly">false</field>
       <field name="mIsInvitation">false</field>
       <field name="mPopupOpen">false</field>
@@ -70,6 +67,7 @@
       <constructor><![CDATA[
         Components.utils.import("resource://calendar/modules/calUtils.jsm");
         Components.utils.import("resource://gre/modules/Services.jsm");
+        Components.utils.import("resource:///modules/mailServices.js");
 
         this.mMaxAttendees = 0;
 
@@ -78,33 +76,6 @@
             self.onLoad();
         };
         window.addEventListener("load", load, true);
-        var unload = function attendeeListBinding_unloadHandler() {
-            self.onUnload();
-        };
-        window.addEventListener("unload", unload, true);
-
-        var observer = {
-            observe: function DSO_observe(subject,
-                              topic,
-                              value) {
-                // catch the exception and ignore it, so that if LDAP setup
-                // fails, the entire window doesn't get horked
-                try {
-                    self.setupAutocomplete();
-                }
-                catch (ex) {
-                }
-            }
-        }
-
-        this.mDirectoryServerObserver = observer;
-
-        // First get the preferences service
-        try {
-            this.mPrefs = Services.prefs.getBranch(null);
-        } catch (ex) {
-        }
-
       ]]></constructor>
 
       <method name="onLoad">
@@ -200,24 +171,9 @@
 
           // detach the template item from the listbox, but hold the reference.
           // until this function returns we add at least a single copy of this template back again.
-          listbox.removeChild(template);
-
-          this.addDirectoryServerObserver();
+          template.remove();
 
           this.setFocus(this.mMaxAttendees);
-        ]]></body>
-      </method>
-
-      <method name="onUnload">
-        <body><![CDATA[
-          this.removeDirectoryServerObserver();
-          this.releaseAutoCompleteState();
-          this.mIOService = null;
-
-          // We need to force the ldap session to be cleaned up as soon as
-          // possible to avoid hangs on shutdown.
-          this.mLDAPSession = null;
-          Components.utils.forceGC();
         ]]></body>
       </method>
 
@@ -289,9 +245,9 @@
           var inputValue = aAttendee.commonName;
           var regexp = new RegExp("^mailto:(.*)", "i");
           if (inputValue) {
-              // Make the commonName appear in quotes if it
-              // contains a comma or semicolon.
-              if (inputValue.search(/[,;]/) != -1) {
+              // Make the commonName appear in quotes if it contains a
+              // character that could confuse the header parser
+              if (inputValue.search(/[,;<>@]/) != -1) {
                   inputValue = '"' + inputValue + '"';
               }
               var email = aAttendee.id;
@@ -318,8 +274,12 @@
               inputValue = inputValue.substring(1, inputValue.length);
           }
 
-          input.setAttribute("value", inputValue);
-          input.value = inputValue;
+          // don't set value with null, otherwise autocomplete stops working,
+          // but make sure attendee and dirty are set
+          if (inputValue && inputValue != "") {
+	          input.setAttribute("value", inputValue);
+	          input.value = inputValue;
+          }
           input.attendee = aAttendee;
           input.setAttribute("dirty", "true");
 
@@ -423,11 +383,6 @@
                   input.removeAttribute('focused');
               }
 
-              // this copies the autocomplete sessions list from first attendee
-              if (this.mLDAPSession && this.mSessionAdded) {
-                  input.syncSessions(document.getAnonymousElementByAttribute(this, "id", 'attendeeCol3#1'));
-              }
-
               // focus on new input widget
               if (aSetFocus) {
                   this.setFocus(newNode);
@@ -437,19 +392,37 @@
         ]]></body>
       </method>
 
-
       <property name="attendees">
         <getter><![CDATA[
-          Components.utils.import("resource:///modules/mailServices.js");
           let attendees = [];
           let inputField;
 
+
+          function copyNameAttributes(email, name, attendee) {
+              // If the new address has no 'mailto'-prefix but seems
+              // to look like an email-address, we prepend the prefix.
+              // This also allows for non-email-addresses.
+              if (email.toLowerCase().indexOf("mailto:") != 0) {
+                  if (email.indexOf("@") >= 0) {
+                      email = "MAILTO:" + email;
+                  }
+              }
+              attendee.id = email;
+
+              if (name && name.length > 0) {
+                  attendee.commonName = name
+              }
+              return attendee;
+          }
+
           for (let i = 1; inputField = this.getInputElement(i); i++) {
-              let fieldValue = inputField.value;
-              if (fieldValue != "") {
+              if (inputField && inputField.value != "") {
                   // the inputfield already has a reference to the attendee
                   // object, we just need to fill in the name.
                   let attendee = inputField.attendee.clone();
+                  if (attendee.isOrganizer) {
+                      continue;
+                  }
 
                   attendee.role = this.getRoleElement(i).getAttribute("role");
                   //attendee.participationStatus = this.getStatusElement(i).getAttribute("status");
@@ -461,29 +434,17 @@
                   let names = {};
                   let fullNames = {};
 
-                  MailServices.headerParser.parseHeadersWithArray(fieldValue,
+                  MailServices.headerParser.parseHeadersWithArray(inputField.value,
                                                                   emailAddresses,
                                                                   names,
                                                                   fullNames);
 
-                  if (emailAddresses.value.length > 0) {
-                      // If the new address has no 'mailto'-prefix but seems
-                      // to look like an email-address, we prepend the prefix.
-                      // This also allows for non-email-addresses.
-                      let email = emailAddresses.value[0];
-                      if (email.toLowerCase().indexOf("mailto:") != 0) {
-                          if (email.indexOf("@") >= 0) {
-                              email = "MAILTO:" + email;
-                          }
-                      }
-                      attendee.id = email;
-                  }
-                  if (names.value.length > 0) {
-                      attendee.commonName = names.value[0];
-                  }
-
-                  // append the attendee object to the list of attendees.
-                  if (!attendee.isOrganizer || i > 1) {
+                  // We need to expand the attendees, this happens in case the
+                  // user entered comma-separated attendees in one field and
+                  // then clicked OK without switching to the next line.
+                  for (var j = 0; j < emailAddresses.value.length; j++) {
+                      if (j > 0) attendee = attendee.clone();
+                      copyNameAttributes(emailAddresses.value[j], names.value[j], attendee);
                       attendees.push(attendee);
                   }
               }
@@ -495,12 +456,9 @@
 
       <property name="organizer">
         <getter><![CDATA[
-          Components.utils.import("resource:///modules/mailServices.js");
-
           let inputField;
           for (let i = 1; inputField = this.getInputElement(i); i++) {
-              let fieldValue = inputField.value;
-              if (fieldValue != "") {
+              if (inputField && inputField.value != "") {
                   // The inputfield already has a reference to the attendee
                   // object, we just need to fill in the name.
                   let attendee = inputField.attendee.clone();
@@ -515,7 +473,7 @@
                   let names = {};
                   let fullNames = {};
 
-                  MailServices.headerParser.parseHeadersWithArray(fieldValue,
+                  MailServices.headerParser.parseHeadersWithArray(inputField.value,
                                                                   emailAddresses,
                                                                   names,
                                                                   fullNames);
@@ -546,36 +504,9 @@
         ]]></getter>
       </property>
 
-      <method name="onBlurInput">
-        <parameter name="event"/>
-        <body><![CDATA[
-          Components.utils.import("resource:///modules/mailServices.js");
-
-          let emailAddresses = {};
-          let names = {};
-          let fullNames = {};
-          MailServices.headerParser.parseHeadersWithArray(event.target.value,
-                                                          emailAddresses,
-                                                          names,
-                                                          fullNames);
-          if (emailAddresses.value.length > 1) {
-              let firstFullName = fullNames.value.shift();
-              event.target.value = firstFullName;
-              let insertAfterItem = this.getListItem(this.getRowByInputElement(event.target));
-              for each (let full in fullNames.value) {
-                  insertAfterItem = this.appendNewRow(false, insertAfterItem);
-                  let textinput = this.getInputFromListitem(insertAfterItem);
-                  textinput.value = full;
-              }
-          }
-        ]]></body>
-      </method>
-
       <method name="_resolveListByName">
         <parameter name="value"/>
         <body><![CDATA[
-            Components.utils.import("resource:///modules/mailServices.js");
-
             let emailAddresses = {};
             let names = {};
             let fullNames = {};
@@ -593,8 +524,6 @@
     <method name="_findListInAddrBooks">
         <parameter name="entryname"/>
         <body><![CDATA[
-            Components.utils.import("resource:///modules/mailServices.js");
-
             let allAddressBooks = MailServices.ab.directories;
 
             while (allAddressBooks.hasMoreElements()) {
@@ -697,10 +626,6 @@
             input.removeAttribute("disabled");
             input.setAttribute("id", "attendeeCol3#" + rowNumber);
 
-            if (this.mLDAPSession && this.mSessionAdded) {
-                input.syncSessions(document.getElementById('attendeeCol3#1'));
-            }
-
             input.attendee = newAttendee;
             input.value = entry;
             input.setAttribute("value", entry);
@@ -765,47 +690,45 @@
 
       <method name="onModify">
         <body><![CDATA[
-          Components.utils.import("resource:///modules/mailServices.js");
-
           let list = [];
           for (let i = 1; i <= this.mMaxAttendees; i++) {
               // retrieve the string from the appropriate row
               let input = this.getInputElement(i);
-              let fieldValue = input.value;
+              if (input && input.value) {
+                  // parse the string to break this down to individual names and addresses
+                  let email = "";
+                  let emailAddresses = {};
+                  let names = {};
+                  let fullNames = {};
 
-              // parse the string to break this down to individual names and addresses
-              let email = "";
-              let emailAddresses = {};
-              let names = {};
-              let fullNames = {};
+                  MailServices.headerParser.parseHeadersWithArray(input.value,
+                                                                  emailAddresses,
+                                                                  names,
+                                                                  fullNames);
 
-              MailServices.headerParser.parseHeadersWithArray(fieldValue,
-                                                              emailAddresses,
-                                                              names,
-                                                              fullNames);
-
-              if (emailAddresses.value.length > 0) {
-                  // if the new address has no 'mailto'-prefix but seems
-                  // to look like an email-address, we prepend the prefix.
-                  // this also allows for non-email-addresses.
-                  email = emailAddresses.value[0];
-                  if (email.toLowerCase().indexOf("mailto:") != 0) {
-                      if (email.indexOf("@") >= 0) {
-                          email = "MAILTO:" + email;
+                  if (emailAddresses.value.length > 0) {
+                      // if the new address has no 'mailto'-prefix but seems
+                      // to look like an email-address, we prepend the prefix.
+                      // this also allows for non-email-addresses.
+                      email = emailAddresses.value[0];
+                      if (email.toLowerCase().indexOf("mailto:") != 0) {
+                          if (email.indexOf("@") >= 0) {
+                              email = "MAILTO:" + email;
+                          }
                       }
                   }
-              }
 
-              let isdirty = false;
-              if (input.hasAttribute("dirty")) {
-                  isdirty = input.getAttribute("dirty");
+                  let isdirty = false;
+                  if (input.hasAttribute("dirty")) {
+                      isdirty = input.getAttribute("dirty");
+                  }
+                  input.removeAttribute("dirty");
+                  let entry = {
+                      dirty: isdirty,
+                      calid: email
+                  };
+                  list.push(entry);
               }
-              input.removeAttribute("dirty");
-              let entry = {
-                  dirty: isdirty,
-                  calid: email
-              };
-              list.push(entry);
           }
 
           let event = document.createEvent('Events');
@@ -900,7 +823,7 @@
           for (var i = kids.length - 1; this.mContentHeight > listboxHeight && i >= 0; --i) {
               if (kids[i].hasAttribute("_isDummyRow")) {
                   this.mContentHeight -= this.mRowHeight;
-                  listbox.removeChild(kids[i]);
+                  kids[i].remove();
               }
           }
 
@@ -1112,6 +1035,47 @@
         ]]></setter>
       </property>
 
+      <method name="returnHit">
+        <parameter name="element"/>
+        <parameter name="noAdvance"/>
+        <body><![CDATA[
+          function parseHeaderValue(aMsgIAddressObject) {
+              if (aMsgIAddressObject.name.match(/[<>@,]/)) {
+                  // special handling only needed for a name with a comma which are not already quoted
+                  return ((aMsgIAddressObject.name.match(/^".*"$/))
+                          ? aMsgIAddressObject.name
+                          : '"' + aMsgIAddressObject.name + '"'
+                         ) + ' <' + aMsgIAddressObject.email + '>';
+              } else {
+                  return aMsgIAddressObject.toString();
+              }
+          }
+
+          let arrowLength = 1;
+          if (element.value.contains(",")) {
+              let strippedAddresses = element.value.replace(/.* >> /, "");
+              let addresses = MailServices.headerParser.makeFromDisplayAddress(strippedAddresses);
+              element.value = parseHeaderValue(addresses[0]);
+
+              // the following code is needed to split attendees, if the user enters a comma
+              // separated list of attendees without using autocomplete functionality
+              let insertAfterItem = this.getListItem(this.getRowByInputElement(element));
+              for (let key in addresses) {
+                  if (key > 0) {
+                      insertAfterItem = this.appendNewRow(false, insertAfterItem);
+                      let textinput = this.getInputFromListitem(insertAfterItem);
+                      textinput.value = parseHeaderValue(addresses[key]);
+                  }
+              }
+              arrowLength = addresses.length;
+          }
+
+          if (!noAdvance) {
+              this.arrowHit(element, arrowLength);
+          }
+        ]]></body>
+      </method>
+
       <method name="arrowHit">
         <parameter name="aElement"/>
         <parameter name="aDirection"/>
@@ -1138,14 +1102,14 @@
       <method name="deleteHit">
         <parameter name="aElement"/>
         <body><![CDATA[
-          // don't delete the row if it's the last one remaining
+          // don't delete the row if only the organizer is remaining
           if (this.mMaxAttendees <= 1) {
               return;
           }
 
           var row = this.getRowByInputElement(aElement);
           this.deleteRow(row);
-          if (row > 1) {
+          if (row > 0) {
               row = row - 1;
           }
           this.setFocus(row);
@@ -1183,313 +1147,9 @@
           var listbox =
               document.getAnonymousElementByAttribute(
                   this, "anonid", "listbox");
-          var nodeToRemove = this.getListItem(aRow);
-          nodeToRemove.parentNode.removeChild(nodeToRemove);
+          this.getListItem(aRow).remove();
           this.fitDummyRows();
           this.mMaxAttendees--;
-        ]]></body>
-      </method>
-
-      <!-- ############################################################################# -->
-      <!-- LDAP support                                                                  -->
-      <!-- ############################################################################# -->
-
-      <method name="setupAutocomplete">
-        <body><![CDATA[
-          Components.utils.import("resource://gre/modules/Services.jsm");
-
-          var setupObserver = false;
-          var autocompleteLdap = false;
-          var autocompleteDirectory = null;
-          var prevAutocompleteDirectory = this.mCurrentAutocompleteDirectory;
-          var i;
-
-          try {
-              autocompleteLdap = this.mPrefs.getBoolPref("ldap_2.autoComplete.useDirectory");
-          } catch (ex) {
-              return;
-          }
-          if (autocompleteLdap) {
-              autocompleteDirectory = this.mPrefs.getCharPref(
-                  "ldap_2.autoComplete.directoryServer");
-          } else {
-              if (this.mLDAPSession && this.mSessionAdded) {
-                  for (var i = 1; i <= this.mMaxAttendees; i++)
-                      this.getInputElement(i).removeSession(this.mLDAPSession);
-                  this.mSessionAdded = false;
-              }
-              return;
-          }
-
-          // Use a temporary to do the setup so that we don't overwrite the
-          // global, then have some problem and throw an exception, and leave the
-          // global with a partially setup session.  We'll assign the temp
-          // into the global after we're done setting up the session.
-          var LDAPSession;
-          if (this.mLDAPSession) {
-              LDAPSession = this.mLDAPSession;
-          } else {
-              LDAPSession = Components.classes[
-                  "@mozilla.org/autocompleteSession;1?type=ldap"].createInstance()
-                  .QueryInterface(
-                      Components.interfaces.nsILDAPAutoCompleteSession);
-          }
-
-          if (LDAPSession && autocompleteDirectory && !Services.io.offline) {
-              // Add observer on the directory server we are autocompleting against
-              // only if current server is different from previous.
-              // Remove observer if current server is different from previous
-              this.mCurrentAutocompleteDirectory = autocompleteDirectory;
-              if (prevAutocompleteDirectory) {
-                  if (prevAutocompleteDirectory != this.mCurrentAutocompleteDirectory) {
-                      this.removeDirectorySettingsObserver(prevAutocompleteDirectory);
-                      this.addDirectorySettingsObserver();
-                      setupObserver = true;
-                  } else {
-                      setupObserver = false;
-                  }
-              } else {
-                  this.addDirectorySettingsObserver();
-                  setupObserver = true;
-              }
-
-              if (setupObserver) {
-                  let url = this.mPrefs.getComplexValue(autocompleteDirectory +".uri",
-                                                        Components.interfaces.nsISupportsString).data;
-
-                  LDAPSession.serverURL =
-                      cal.makeURL(url).QueryInterface(Components.interfaces.nsILDAPURL);
-
-                  // Get the login to authenticate as, if there is one
-                  try {
-                      LDAPSession.login = this.mPrefs.getComplexValue(
-                        autocompleteDirectory + ".auth.dn",
-                        Components.interfaces.nsISupportsString).data;
-                  } catch (ex) {
-                      // If we don't have this pref, no big deal
-                  }
-
-                  // Set the LDAP protocol version correctly
-                  var protocolVersion;
-                  try {
-                      protocolVersion = this.mPrefs.getCharPref(
-                          autocompleteDirectory + ".protocolVersion");
-                  } catch (ex) {
-                      // If we don't have this pref, no big deal
-                  }
-                  if (protocolVersion == "2") {
-                      LDAPSession.version =
-                          Components.interfaces.nsILDAPConnection.VERSION2;
-                  }
-
-                  // Don't search on non-CJK strings shorter than this
-                  try {
-                      LDAPSession.minStringLength = this.mPrefs.getIntPref(
-                          autocompleteDirectory + ".autoComplete.minStringLength");
-                  } catch (ex) {
-                      // if this pref isn't there, no big deal.  Just let
-                      // nsLDAPAutoCompleteSession use its default.
-                  }
-
-                  // don't search on CJK strings shorter than this
-                  try {
-                      LDAPSession.cjkMinStringLength = this.mPrefs.getIntPref(
-                          autocompleteDirectory + ".autoComplete.cjkMinStringLength");
-                  } catch (ex) {
-                      // If this pref isn't there, no big deal.  Just let
-                      // nsLDAPAutoCompleteSession use its default.
-                  }
-
-                  // We don't try/catch here, because if this fails, we're outta luck
-                  var ldapFormatter = Components.classes[
-                      "@mozilla.org/ldap-autocomplete-formatter;1?type=addrbook"]
-                      .createInstance().QueryInterface(
-                          Components.interfaces.nsIAbLDAPAutoCompFormatter);
-
-                  // Override autocomplete name format?
-                  try {
-                      ldapFormatter.nameFormat =
-                          this.mPrefs.getComplexValue(autocompleteDirectory +
-                              ".autoComplete.nameFormat",
-                              Components.interfaces.nsISupportsString).data;
-                  } catch (ex) {
-                      // If this pref isn't there, no big deal.  Just let
-                      // nsAbLDAPAutoCompFormatter use its default.
-                  }
-
-                  // override autocomplete mail address format?
-                  try {
-                      ldapFormatter.addressFormat =
-                          this.mPrefs.getComplexValue(autocompleteDirectory +
-                              ".autoComplete.addressFormat",
-                              Components.interfaces.nsISupportsString).data;
-                  } catch (ex) {
-                      // If this pref isn't there, no big deal.  Just let
-                      // nsAbLDAPAutoCompFormatter use its default.
-                  }
-
-                  try {
-                      // Figure out what goes in the comment column, if anything
-                      //
-                      // 0 = none
-                      // 1 = name of addressbook this card came from
-                      // 2 = other per-addressbook format
-                      var showComments = 0;
-                      showComments = this.mPrefs.getIntPref(
-                          "mail.autoComplete.commentColumn");
-
-                      switch (showComments) {
-                        case 1:
-                            // Use the name of this directory
-                            ldapFormatter.commentFormat = this.mPrefs.getComplexValue(
-                                autocompleteDirectory + ".description",
-                                Components.interfaces.nsISupportsString).data;
-                            break;
-                        case 2:
-                            // Override ldap-specific autocomplete entry?
-                            try {
-                                ldapFormatter.commentFormat =
-                                    this.mPrefs.getComplexValue(autocompleteDirectory +
-                                        ".autoComplete.commentFormat",
-                                        Components.interfaces.nsISupportsString).data;
-                            } catch (innerException) {
-                                // If nothing has been specified, use the ldap
-                                // organization field
-                                ldapFormatter.commentFormat = "[o]";
-                            }
-                            break;
-                        case 0:
-                        default:
-                            // Do nothing
-                      }
-                  } catch (ex) {
-                      // If something went wrong while setting up comments, try and
-                      // proceed anyway
-                  }
-
-                  // Set the session's formatter, which also happens to
-                  // force a call to the formatter's getAttributes() method
-                  // -- which is why this needs to happen after we've set the
-                  // various formats
-                  LDAPSession.formatter = ldapFormatter;
-
-                  // Override autocomplete entry formatting?
-                  try {
-                      LDAPSession.outputFormat =
-                          this.mPrefs.getComplexValue(autocompleteDirectory +
-                              ".autoComplete.outputFormat",
-                              Components.interfaces.nsISupportsString).data;
-                  } catch (ex) {
-                      // If this pref isn't there, no big deal.  Just let
-                      // nsLDAPAutoCompleteSession use its default.
-                  }
-
-                  // override default search filter template?
-                  try {
-                      LDAPSession.filterTemplate = this.mPrefs.getComplexValue(
-                          autocompleteDirectory + ".autoComplete.filterTemplate",
-                          Components.interfaces.nsISupportsString).data;
-                  } catch (ex) {
-                      // If this pref isn't there, no big deal.  Just let
-                      // nsLDAPAutoCompleteSession use its default
-                  }
-
-                  // Override default maxHits (currently 100)
-                  try {
-                      LDAPSession.maxHits =
-                          this.mPrefs.getIntPref(autocompleteDirectory +
-                                                 ".maxHits");
-                  } catch (ex) {
-                      // If this pref isn't there, or is out of range, no big deal.
-                      // Just let nsLDAPAutoCompleteSession use its default.
-                  }
-
-                  this.mLDAPSession = LDAPSession;
-              }
-
-              // Add as many autocomplete widgets as needed, but only if they
-              // haven't been added or if they have been removed.
-              if (!this.mSessionAdded) {
-                  // If we make it here, we know that session initialization has
-                  // succeeded; add the session for all recipients, and
-                  // remember that we've done so
-                  var autoCompleteWidget;
-                  for (i = 1; i <= this.mMaxAttendees; i++) {
-                      autoCompleteWidget = this.getInputElement(i);
-                      if (autoCompleteWidget) {
-                          autoCompleteWidget.addSession(LDAPSession);
-                          // Ldap searches don't insert a default entry with
-                          // the default domain appended to it so reduce the
-                          // minimum results for a popup to 2 in this case.
-                          autoCompleteWidget.minResultsForPopup = 2;
-                      }
-                   }
-                   this.mSessionAdded = true;
-              }
-          }
-        ]]></body>
-      </method>
-
-      <method name="addDirectoryServerObserver">
-        <body><![CDATA[
-          if (this.mPrefs) {
-              this.mPrefs.addObserver(
-                  "ldap_2.autoComplete.useDirectory",
-                  this.mDirectoryServerObserver,
-                  false);
-              this.mPrefs.addObserver(
-                  "ldap_2.autoComplete.directoryServer",
-                  this.mDirectoryServerObserver,
-                  false);
-          }
-        ]]></body>
-      </method>
-
-      <method name="removeDirectoryServerObserver">
-        <body><![CDATA[
-          if (this.mPrefs) {
-              this.mPrefs.removeObserver(
-                  "ldap_2.autoComplete.useDirectory",
-                  this.mDirectoryServerObserver);
-              this.mPrefs.removeObserver(
-                  "ldap_2.autoComplete.directoryServer",
-                  this.mDirectoryServerObserver);
-          }
-        ]]></body>
-      </method>
-
-      <method name="addDirectorySettingsObserver">
-        <body><![CDATA[
-          if (this.mPrefs) {
-              this.mPrefs.addObserver(
-                  this.mCurrentAutocompleteDirectory,
-                  this.mDirectoryServerObserver,
-                  false);
-          }
-        ]]></body>
-      </method>
-
-      <method name="removeDirectorySettingsObserver">
-        <parameter name="aPrefString"/>
-        <body><![CDATA[
-          if (this.mPrefs) {
-              this.mPrefs.removeObserver(
-                  aPrefString,
-                  this.mDirectoryServerObserver);
-          }
-        ]]></body>
-      </method>
-
-      <method name="releaseAutoCompleteState">
-        <body><![CDATA[
-          if (this.mLDAPSession && this.mSessionAdded) {
-              for (i = 1; i <= this.mMaxAttendees; i++) {
-                  this.getInputElement(i).removeSession(this.mLDAPSession);
-              }
-          }
-
-          this.mSessionAdded = false;
-          this.mLDAPSession = null;
         ]]></body>
       </method>
     </implementation>
@@ -1560,15 +1220,40 @@
             switch (event.keyCode) {
                 case KeyEvent.DOM_VK_DELETE:
                 case KeyEvent.DOM_VK_BACK_SPACE:
-                    if (!event.originalTarget.value) {
+                    let curRowId = this.getRowByInputElement(event.originalTarget);
+                    let allSelected = (event.originalTarget.textLength ==
+                                       event.originalTarget.selectionEnd -
+                                       event.originalTarget.selectionStart);
+
+                    if (!event.originalTarget.value ||
+                        event.originalTarget.textLength < 2 ||
+                        allSelected) {
+                        // if the user selected the entire attendee string, only one character was
+                        // left or the row was already empty before hitting the key, we remove the
+                        //  entire row to assure the attendee is deleted
                         this.deleteHit(event.originalTarget);
+
+                        // if the last row was removed, we append an empty one which has the focus
+                        // to enable adding a new attendee directly with freebusy information cleared
+                        let targetRowId = (event.keyCode == KeyEvent.DOM_VK_BACK_SPACE && curRowId > 2)
+                                          ? curRowId - 1 : curRowId;
+                        if (this.mMaxAttendees == 1) {
+                            this.appendNewRow(true);
+                        } else {
+                            this.setFocus(targetRowId);
+                        }
+
+                        // set cursor to begin or end of focused input box based on deletion direction
+                        let cPos = 0;
+                        let input = document.getAnonymousElementByAttribute(this.getListItem(targetRowId),
+                                                                            "anonid", "input");
+                        if (targetRowId != curRowId) {
+                            cPos = input.textLength;
+                        }
+                        input.setSelectionRange(cPos, cPos);
                     }
+
                     event.stopPropagation();
-                    break;
-                case KeyEvent.DOM_VK_RETURN:
-                    this.arrowHit(event.originalTarget, 1);
-                    event.stopPropagation();
-                    event.preventDefault();
                     break;
             }
         }
@@ -1595,19 +1280,9 @@
                     break;
                 case KeyEvent.DOM_VK_TAB:
                     this.arrowHit(event.originalTarget, event.shiftKey ? -1 : +1);
-                    event.stopPropagation();
-                    event.preventDefault();
-                    break;
-                case KeyEvent.DOM_VK_RETURN:
-                    event.stopPropagation();
-                    event.preventDefault();
                     break;
             }
         }
-      ]]></handler>
-
-      <handler event="input"><![CDATA[
-        this.setupAutocomplete();
       ]]></handler>
     </handlers>
   </binding>
@@ -1679,6 +1354,8 @@
       </property>
 
       <constructor><![CDATA[
+        Components.utils.import("resource://gre/modules/Preferences.jsm");
+
         this.initTimeRange();
 
         // The basedate is the date/time from which the display
@@ -1869,8 +1546,8 @@
               this.mStartHour = 0;
               this.mEndHour = 24;
           } else {
-              this.mStartHour = getPrefSafe("calendar.view.daystarthour", 8);
-              this.mEndHour = getPrefSafe("calendar.view.dayendhour", 19);
+              this.mStartHour = Preferences.get("calendar.view.daystarthour", 8);
+              this.mEndHour = Preferences.get("calendar.view.dayendhour", 19);
           }
         ]]></body>
       </method>
@@ -1947,7 +1624,7 @@
                 } else {
                     // Move the startdate and the enddate
                     this.mDragState = 1;
-                    window.setCursor("-moz-grab");
+                    window.setCursor("grab");
                 }
             }
         }

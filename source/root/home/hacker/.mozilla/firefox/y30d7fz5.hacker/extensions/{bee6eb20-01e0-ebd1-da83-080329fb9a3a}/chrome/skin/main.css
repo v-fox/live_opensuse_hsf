@@ -1,0 +1,71 @@
+.fnvfox_swfMenuItem {
+	list-style-image: url("chrome://flashVideoDownload/skin/icons/flash_icon.png")
+}
+
+/* applies to the status bar button as well */
+.fnvfox_toolbarButtonIconEnabled, [iconsize="small"].fnvfox_toolbarButtonIconEnabled {
+	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_enabled.png") !important;
+}
+
+/* applies to the status bar button as well */
+.fnvfox_toolbarButtonIconEnabled:hover, [iconsize="small"].fnvfox_toolbarButtonIconEnabled:hover {
+	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_enabled_over.png");
+}
+
+/* applies to the status bar button as well */
+.fnvfox_toolbarButtonIconDisabled, [iconsize="small"].fnvfox_toolbarButtonIconDisabled {
+	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_disabled.png") !important;
+}
+
+/* applies to the status bar button as well */
+.fnvfox_toolbarButtonIconEnabledVideo, [iconsize="small"].fnvfox_toolbarButtonIconEnabledVideo {
+	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_enabled_video.png") !important;
+}
+
+/* applies to the status bar button as well */
+.fnvfox_toolbarButtonIconEnabledVideo:hover, [iconsize="small"].fnvfox_toolbarButtonIconEnabledVideo:hover {
+	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_enabled_video_over.png");
+}
+
+
+
+/* version 3.6 (or older) support */
+.fnvfox_statusBarIconEnabled {
+   background-image:url(chrome://flashVideoDownload/skin/icons/icon_enabled.png);
+   background-repeat:no-repeat;
+   width:16px;
+   height:16px;
+   cursor:pointer;
+}
+
+.fnvfox_statusBarIconDisabled {
+   background-image:url(chrome://flashVideoDownload/skin/icons/icon_disabled.png);
+   background-repeat:no-repeat;
+   width:16px;
+   height:16px;
+   cursor:pointer;
+}
+
+.fnvfox_statusBarIconEnabled:hover {
+   background-image:url(chrome://flashVideoDownload/skin/icons/icon_enabled_over.png);
+   background-repeat:no-repeat;
+   width:16px;
+   height:16px;
+   cursor:pointer;
+}
+
+.fnvfox_statusBarIconEnabledVideo {
+   background-image:url(chrome://flashVideoDownload/skin/icons/icon_enabled_video.png);
+   background-repeat:no-repeat;
+   width:30px;
+   height:16px;
+   cursor:pointer;
+}
+
+.fnvfox_statusBarIconEnabledVideo:hover {
+   background-image:url(chrome://flashVideoDownload/skin/icons/icon_enabled_video_over.png);
+   background-repeat:no-repeat;
+   width:30px;
+   height:16px;
+   cursor:pointer;
+}

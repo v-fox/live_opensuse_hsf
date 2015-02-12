@@ -25,7 +25,7 @@ firetray.GtkIcons = {
     try {
       if (this.initialized) return true;
 
-      this.loadDefaultTheme();
+      this.appendSearchPath();
       this.initialized = true;
       return true;
     } catch (x) {
@@ -35,13 +35,28 @@ firetray.GtkIcons = {
   },
 
   shutdown: function() {
+    // FIXME: XXX destroy icon here
     this.initialized = false;
   },
 
-  loadDefaultTheme: function() {
-    this.GTK_THEME_ICON_PATH = firetray.Utils.chromeToPath("chrome://firetray/skin/linux/icons");
+  appendSearchPath: function() {
+    this.GTK_THEME_ICON_PATH = firetray.Utils.chromeToPath("chrome://firetray/skin/icons/linux");
     let gtkIconTheme = gtk.gtk_icon_theme_get_default();
     gtk.gtk_icon_theme_append_search_path(gtkIconTheme, this.GTK_THEME_ICON_PATH);
+
+    if (log.level <= firetray.Logging.LogMod.Level.Debug) {
+      Cu.import("resource://firetray/ctypes/linux/glib.jsm");
+      Cu.import("resource://firetray/ctypes/linux/gobject.jsm");
+      firetray.Handler.subscribeLibsForClosing([glib, gobject]);
+      let path = new gobject.gchar.ptr.ptr;
+      let n_elements = new gobject.gint;
+      gtk.gtk_icon_theme_get_search_path(gtkIconTheme, path.address(), n_elements.address());
+      let pathIt = path;
+      for (let i=0, len=n_elements.value; i<len || pathIt.isNull(); ++i) {
+        pathIt = pathIt.increment();
+      }
+      glib.g_strfreev(path);
+    }
   }
 
 };

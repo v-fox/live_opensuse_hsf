@@ -5,6 +5,7 @@
 const EXPORTED_SYMBOLS = ["Extractor"];
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 /**
 * Initializes extraction
@@ -16,15 +17,11 @@ Components.utils.import("resource://gre/modules/Services.jsm");
 * @param dayStart        ambiguous hours earlier than this are considered to
 *                            be in the afternoon, when null then by default
 *                            set to 6
+* @param fixedLang       whether to use only fallbackLocale for extraction
 */
-function Extractor(baseUrl, fallbackLocale, dayStart) {
+function Extractor(baseUrl, fallbackLocale, dayStart, fixedLang) {
     this.bundleUrl = baseUrl;
     this.fallbackLocale = fallbackLocale;
-
-    if (dayStart != null) {
-        this.dayStart = dayStart;
-    }
-
     this.email = "";
     this.marker = "--MARK--";
     this.collected = [];
@@ -37,6 +34,15 @@ function Extractor(baseUrl, fallbackLocale, dayStart) {
     this.now = new Date();
     this.bundle = "";
     this.overrides = {};
+    this.fixedLang = true;
+
+    if (dayStart != null) {
+        this.dayStart = dayStart;
+    }
+
+    if (fixedLang != null) {
+        this.fixedLang = fixedLang;
+    }
 }
 
 Extractor.prototype = {
@@ -81,14 +87,154 @@ Extractor.prototype = {
         }
     },
 
-    setLanguage: function setLanguage() {
-        if (this.checkBundle(this.fallbackLocale)) {
-            ;
-        } else {
-            this.fallbackLocale = "en-US";
+    avgNonAsciiCharCode: function avgNonAsciiCharCode() {
+        let sum = 0;
+        let cnt = 0;
+
+        for (let i = 0; i < this.email.length; i++) {
+            let ch = this.email.charCodeAt(i);
+            if (ch > 128) {
+                sum += ch;
+                cnt++;
+            }
         }
 
-        let path = this.bundleUrl.replace("LOCALE", this.fallbackLocale, "g");
+        let nonAscii = sum/cnt || 0;
+        cal.LOG("[calExtract] Average non-ascii charcode: " + nonAscii);
+        return nonAscii;
+    },
+
+    setLanguage: function setLanguage() {
+        let path;
+
+        if (this.fixedLang == true) {
+            if (this.checkBundle(this.fallbackLocale)) {
+                cal.LOG("[calExtract] Fixed locale was used to choose " +
+                        this.fallbackLocale + " patterns.");
+            } else {
+                this.fallbackLocale = "en-US";
+                cal.LOG("[calExtract] " + this.fallbackLocale +
+                        " patterns were not found. Using en-US instead");
+            }
+
+            path = this.bundleUrl.replace("LOCALE", this.fallbackLocale, "g");
+
+            let pref = "calendar.patterns.last.used.languages";
+            let lastUsedLangs = Preferences.get(pref, "");
+            if (lastUsedLangs == "") {
+                Preferences.set(pref, this.fallbackLocale);
+            } else {
+                let langs = lastUsedLangs.split(",");
+                let idx = langs.indexOf(this.fallbackLocale);
+                if (idx == -1) {
+                    Preferences.set(pref, this.fallbackLocale + "," + lastUsedLangs);
+                } else {
+                    langs.splice(idx, 1);
+                    Preferences.set(pref, this.fallbackLocale + "," + langs.join(","));
+                }
+            }
+        } else {
+            let spellclass = "@mozilla.org/spellchecker/engine;1";
+            let mozISpellCheckingEngine = Components.interfaces.mozISpellCheckingEngine;
+            let sp = Components.classes[spellclass]
+                               .getService(mozISpellCheckingEngine);
+
+            let arr = {};
+            let cnt = {};
+            sp.getDictionaryList(arr, cnt);
+            let dicts = arr["value"];
+
+            if (dicts.length == 0) {
+                cal.LOG("[calExtract] There are no dictionaries installed and " +
+                        "enabled. You might want to add some if date and time " +
+                        "extraction from emails seems inaccurate.");
+            }
+
+            let patterns;
+            let words = this.email.split(/\s+/);
+            let most = 0;
+            let mostLocale;
+            for (let dict in dicts) {
+                // dictionary locale and patterns locale match
+                if (this.checkBundle(dicts[dict])) {
+                    let t1 = (new Date()).getTime();
+                    sp.dictionary = dicts[dict];
+                    let dur = (new Date()).getTime() - t1;
+                    cal.LOG("[calExtract] Loading " + dicts[dict] +
+                            " dictionary took " + dur + "ms");
+                    patterns = dicts[dict];
+                // beginning of dictionary locale matches patterns locale
+                } else if (this.checkBundle(dicts[dict].substring(0, 2))) {
+                    let t1 = (new Date()).getTime();
+                    sp.dictionary = dicts[dict];
+                    let dur = (new Date()).getTime() - t1;
+                    cal.LOG("[calExtract] Loading " + dicts[dict] +
+                            " dictionary took " + dur + "ms");
+                    patterns = dicts[dict].substring(0, 2);
+                // dictionary for which patterns aren't present
+                } else {
+                    cal.LOG("[calExtract] Dictionary present, rules missing: " + dicts[dict]);
+                    continue;
+                }
+
+                let correct = 0;
+                let total = 0;
+                for (let word in words) {
+                    words[word] = words[word].replace(/[()\d,;:?!#\.]/g, "");
+                    if (words[word].length >= 2) {
+                        total++;
+                        if (sp.check(words[word])) {
+                            correct++;
+                        }
+                    }
+                }
+
+                let percentage = correct/total * 100.0;
+                cal.LOG("[calExtract] " + dicts[dict] + " dictionary matches " +
+                        percentage + "% of words");
+
+                if (percentage > 50.0 && percentage > most) {
+                    mostLocale = patterns;
+                    most = percentage;
+                }
+            }
+
+            let avgCharCode = this.avgNonAsciiCharCode();
+
+            // using dictionaries for language recognition with non-latin letters doesn't work
+            // very well, possibly because of bug 471799
+            if (avgCharCode > 48000 && avgCharCode < 50000) {
+                cal.LOG("[calExtract] Using ko patterns based on charcodes");
+                path = this.bundleUrl.replace("LOCALE", "ko", "g");
+            // is it possible to differentiate zh-TW and zh-CN?
+            } else if (avgCharCode > 24000 && avgCharCode < 32000) {
+                cal.LOG("[calExtract] Using zh-TW patterns based on charcodes");
+                path = this.bundleUrl.replace("LOCALE", "zh-TW", "g");
+            } else if (avgCharCode > 14000 && avgCharCode < 24000) {
+                cal.LOG("[calExtract] Using ja patterns based on charcodes");
+                path = this.bundleUrl.replace("LOCALE", "ja", "g");
+            // Bulgarian also looks like that
+            } else if (avgCharCode > 1000 && avgCharCode < 1200) {
+                cal.LOG("[calExtract] Using ru patterns based on charcodes");
+                path = this.bundleUrl.replace("LOCALE", "ru", "g");
+            // dictionary based
+            } else if (most > 0) {
+                cal.LOG("[calExtract] Using " + mostLocale + " patterns based on dictionary");
+                path = this.bundleUrl.replace("LOCALE", mostLocale, "g");
+            // fallbackLocale matches patterns exactly
+            } else if (this.checkBundle(this.fallbackLocale)) {
+                cal.LOG("[calExtract] Falling back to " + this.fallbackLocale);
+                path = this.bundleUrl.replace("LOCALE", this.fallbackLocale, "g");
+            // beginning of fallbackLocale matches patterns
+            } else if (this.checkBundle(this.fallbackLocale.substring(0, 2))) {
+                this.fallbackLocale = this.fallbackLocale.substring(0, 2);
+                cal.LOG("[calExtract] Falling back to " + this.fallbackLocale);
+                path = this.bundleUrl.replace("LOCALE", this.fallbackLocale, "g");
+            } else {
+                cal.LOG("[calExtract] Using en-US");
+                path = this.bundleUrl.replace("LOCALE", "en-US", "g");
+            }
+        }
         this.bundle = Services.strings.createBundle(path);
     },
 
@@ -128,7 +274,7 @@ Extractor.prototype = {
         this.cleanup();
         cal.LOG("[calExtract] Email after processing for extraction: \n" + this.email);
 
-        this.overrides = JSON.parse(cal.getPrefSafe("calendar.patterns.override", "{}"));
+        this.overrides = JSON.parse(Preferences.get("calendar.patterns.override", "{}"));
         this.setLanguage();
 
         for (let i = 0; i <= 31; i++) {
@@ -136,7 +282,7 @@ Extractor.prototype = {
         }
         this.dailyNumbers = this.numbers.join(this.marker);
 
-        this.hourlyNumbers =  this.numbers[0] + this.marker;
+        this.hourlyNumbers = this.numbers[0] + this.marker;
         for (let i = 1; i <= 22; i++) {
             this.hourlyNumbers += this.numbers[i] + this.marker;
         }
@@ -196,7 +342,7 @@ Extractor.prototype = {
         this.extractDuration("duration.hours", 60);
         this.extractDuration("duration.days", 60 * 24);
 
-        if (sel !== undefined) {
+        if (sel !== undefined && sel !== null) {
             this.markSelected(sel, title);
         }
         this.markContained();
@@ -301,7 +447,7 @@ Extractor.prototype = {
                                     let item = new Date(this.now.getTime());
                                     while (true) {
                                         item.setDate(item.getDate() + 1);
-                                        if (item.getMonth() == date.month - 1  &&
+                                        if (item.getMonth() == date.month - 1 &&
                                             item.getDate() == date.day) {
                                             date.year = item.getFullYear();
                                             break;
@@ -341,7 +487,7 @@ Extractor.prototype = {
                             let item = new Date(this.now.getTime());
                             while (true) {
                                 item.setDate(item.getDate() + 1);
-                                if (item.getMonth() == date.month - 1  &&
+                                if (item.getMonth() == date.month - 1 &&
                                     item.getDate() == date.day) {
                                     date.year = item.getFullYear();
                                     break;
@@ -358,7 +504,7 @@ Extractor.prototype = {
         }
     },
 
-    extractDate: function extractDate (pattern, relation) {
+    extractDate: function extractDate(pattern, relation) {
         let alts = this.getRepPatterns(pattern,
                                        ["(\\d{1,2}" + this.marker + this.dailyNumbers + ")"]);
         let res;
@@ -371,12 +517,11 @@ Extractor.prototype = {
                     let day = this.parseNumber(res[1], this.numbers);
                     if (this.isValidDay(day)) {
                         let item = new Date(this.now.getTime());
-                        if (this.now.getDate() > day) {
+                        if (this.now.getDate() != day) {
                             // find next nth date
                             while (true) {
                                 item.setDate(item.getDate() + 1);
-                                if (item.getMonth() != this.now.getMonth() &&
-                                    item.getDate() == day) {
+                                if (item.getDate() == day) {
                                     break;
                                 }
                             }
@@ -832,6 +977,7 @@ Extractor.prototype = {
         let def = "061dc19c-719f-47f3-b2b5-e767e6f02b7a";
         try {
             value = this.bundle.GetStringFromName(name);
+            this.checkForFaultyPatterns(value, name);
             if (value.trim() == "") {
                 cal.LOG("[calExtract] Pattern not found: " + name);
                 return def;
@@ -877,6 +1023,7 @@ Extractor.prototype = {
 
         try {
             let value = this.bundle.GetStringFromName(name);
+            this.checkForFaultyPatterns(value, name);
             if (value.trim() == "") {
                 cal.LOG("[calExtract] Pattern empty: " + name);
                 return alts;
@@ -959,8 +1106,17 @@ Extractor.prototype = {
         return value.replace(/\s+/g, "\\s*").sanitize();
     },
 
+    checkForFaultyPatterns: function checkForFaultyPatterns(pattern, name) {
+        if (/^\s*\|/.exec(pattern) || /\|\s*$/.exec(pattern) || /\|\s*\|/.exec(pattern)) {
+            dump("[calExtract] Faulty extraction pattern " +
+                 pattern + " for " + name + "\n");
+            Components.utils.reportError("[calExtract] Faulty extraction pattern " +
+                                         pattern + " for " + name);
+        }
+    },
+
     isValidYear: function isValidYear(year) {
-        return (year >= 2000  && year <= 2050);
+        return (year >= 2000 && year <= 2050);
     },
 
     isValidMonth: function isValidMonth(month) {
@@ -1083,6 +1239,9 @@ Extractor.prototype = {
 
     parseNumber: function parseNumber(number, numbers) {
         let r = parseInt(number, 10);
+        // number comes in as plain text, numbers are already adjusted for usage
+        // in regular expression
+        number = this.cleanPatterns(number);
         if (isNaN(r)) {
             for (let i = 0; i <= 31; i++) {
                 let ns = numbers[i].split("|");

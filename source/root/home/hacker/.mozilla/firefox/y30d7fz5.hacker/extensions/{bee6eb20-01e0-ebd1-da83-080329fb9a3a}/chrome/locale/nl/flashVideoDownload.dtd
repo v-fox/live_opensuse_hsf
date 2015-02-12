@@ -1,0 +1,50 @@
+<!-- Options *Begin* (options.xul) -->
+<!ENTITY options.mainTitle "Download Flash &amp; Video-opties">
+<!-- General Pane -->
+<!ENTITY options.general.title "Algemeen">
+<!-- General.Interface -->
+<!ENTITY options.general.interface.title "Interface">
+<!ENTITY options.general.interface.showToolbarIcon_checkbox "Werkbalkpictogram weergeven">
+<!ENTITY options.general.interface.showStatusbarIcon_checkbox "Statusbalkpictogram weergeven">
+<!-- General.Flash and Videos -->
+<!ENTITY options.general.flashAndVideos.title "Flash en video’s">
+<!ENTITY options.general.flashAndVideos.showFlashFilesResults_checkbox "Resultaten Flash-bestanden weergeven">
+<!ENTITY options.general.flashAndVideos.showVideosFilesResults_checkbox "Resultaten videobestanden weergeven">
+<!-- General.Download Managers -->
+<!ENTITY options.general.downloadManagers.title "Downloadbeheerders">
+<!ENTITY options.general.downloadManagers.useDownThemAll_checkbox "Gebruik de add-on DownThemAll! om downloads te beheren">
+<!-- General.Downloads -->
+<!ENTITY options.general.downloads.title "Downloads">
+<!ENTITY options.general.downloads.useLastSavedFolder_radio "Laatste opslagmap gebruiken - standaardmap">
+<!ENTITY options.general.downloads.useFFDownloadsFolder_radio "Downloadmap Firefox gebruiken">
+<!ENTITY options.general.downloads.saveTo_radio "Opslaan in:">
+<!ENTITY options.general.downloads.browse_button "Bladeren">
+<!ENTITY options.general.downloads.startDownloadsImmediately_checkbox "Downloads onmiddellijk starten (zonder te vragen om opslaglocatie)">
+<!-- Youtube Pane -->
+<!ENTITY options.yt.title "YouTube">
+<!-- Youtube.Formats -->
+<!ENTITY options.yt.formats.title "Weergegeven opmaken: (selecteer welke video-opmaken als downloadbaar worden weergegeven):">
+<!-- Youtube.Qualities -->
+<!ENTITY options.yt.qualities.title "Weergegeven kwaliteiten (selecteer welke videokwaliteiten als downloadbaar worden weergegeven):">
+<!-- About Pane -->
+<!ENTITY options.yt.embeddedVideos.label "Embedded Videos:">
+<!ENTITY options.yt.embeddedVideos.enhancedDetection.label "Enhanced Videos Detection">
+<!ENTITY options.yt.embeddedVideos.enhancedDetection.label1 "Schakel dit alleen in als bepaalde video’s niet worden gedetecteerd.">
+<!ENTITY options.yt.embeddedVideos.enhancedDetection.label2 "Door dit in te schakelen worden webpagina’s mogelijk langzamer geladen, dus schakel dit uit wanneer het niet nodig is!">
+<!-- Dialog Buttons (Mac users) -->
+<!ENTITY options.about.title "Over">
+<!ENTITY options.about.header "Download Flash &amp; Video">
+<!ENTITY options.about.version "Versie">
+<!ENTITY options.about.visitWebsite "Website bezoeken:">
+<!-- Options *End* -->
+<!ENTITY options.dialogButtons.ok_button "OK">
+<!ENTITY options.dialogButtons.cancel_button "Annuleren">
+<!-- Overlay *Begin* (overlay.xul) -->
+<!-- Overlay *End* -->
+<!ENTITY overlay.statusbarButton "Flash en video (statusbalkpictogram)">
+<!ENTITY overlay.statusbarButton_tooltip "Flash en video downloaden">
+<!ENTITY overlay.toolbarButton "Flash en video">
+<!ENTITY overlay.toolbarButton_tooltip "Flash en video downloaden">
+<!ENTITY overlay.download_contextMenu "Downloaden">
+<!ENTITY overlay.copyUrlToClipboard_contextMenu "URL naar Klembord kopiëren">
+<!-- Overlay *End* -->

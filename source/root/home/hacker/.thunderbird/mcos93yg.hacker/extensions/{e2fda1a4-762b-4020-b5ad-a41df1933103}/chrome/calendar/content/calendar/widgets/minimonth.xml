@@ -418,6 +418,7 @@
       <field name="mObservesComposite">false</field>
       <constructor><![CDATA[
           Components.utils.import("resource://gre/modules/Services.jsm");
+          Components.utils.import("resource://gre/modules/Preferences.jsm");
 
           this.mToday = false;
           this.mSelected = false;
@@ -438,8 +439,7 @@
       <destructor><![CDATA[
           Components.utils.import("resource://gre/modules/Services.jsm");
 
-          var composite = getCompositeCalendar();
-          if (composite && this.mObservesComposite == true) {
+          if (this.mObservesComposite == true) {
               getCompositeCalendar().removeObserver(this);
           }
 
@@ -697,7 +697,7 @@
       <method name="refreshDisplay">
         <body><![CDATA[
           // Find out which should be the first day of the week
-          this.weekStart = getPrefSafe("calendar.week.start", 0);
+          this.weekStart = Preferences.get("calendar.week.start", 0);
           if (!this.mValue) {
               this.mValue = new Date();
           }

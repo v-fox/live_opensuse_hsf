@@ -1,0 +1,50 @@
+<!-- Options *Begin* (options.xul) -->
+<!ENTITY options.mainTitle "Opções do Download Flash &amp; Vídeo">
+<!-- General Pane -->
+<!ENTITY options.general.title "Geral">
+<!-- General.Interface -->
+<!ENTITY options.general.interface.title "Interface">
+<!ENTITY options.general.interface.showToolbarIcon_checkbox "Mostrar ícone na barra de ferramentas">
+<!ENTITY options.general.interface.showStatusbarIcon_checkbox "Mostrar ícone na barra de status">
+<!-- General.Flash and Videos -->
+<!ENTITY options.general.flashAndVideos.title "Flash &amp; Vídeos">
+<!ENTITY options.general.flashAndVideos.showFlashFilesResults_checkbox "Mostrar resultados de arquivos Flash">
+<!ENTITY options.general.flashAndVideos.showVideosFilesResults_checkbox "Mostrar resultados de arquivos de vídeo">
+<!-- General.Download Managers -->
+<!ENTITY options.general.downloadManagers.title "Gerenciadores de download">
+<!ENTITY options.general.downloadManagers.useDownThemAll_checkbox "Usar complemento DownThemAll! para gerenciar downloads">
+<!-- General.Downloads -->
+<!ENTITY options.general.downloads.title "Downloads">
+<!ENTITY options.general.downloads.useLastSavedFolder_radio "Usar última pasta - Pasta padrão">
+<!ENTITY options.general.downloads.useFFDownloadsFolder_radio "Usar pasta de downloads do Firefox">
+<!ENTITY options.general.downloads.saveTo_radio "Salvar em:">
+<!ENTITY options.general.downloads.browse_button "Escolher">
+<!ENTITY options.general.downloads.startDownloadsImmediately_checkbox "Iniciar downloads imediatamente (sem abrir o diálogo &quot;Salvar como&quot;)">
+<!-- Youtube Pane -->
+<!ENTITY options.yt.title "YouTube">
+<!-- Youtube.Formats -->
+<!ENTITY options.yt.formats.title "Formatos mostrados (selecionar quais formatos de vídeo serão mostrados para baixar):">
+<!-- Youtube.Qualities -->
+<!ENTITY options.yt.qualities.title "Qualidades mostradas (selecionar quais qualidades de vídeo serão mostradas para baixar):">
+<!-- About Pane -->
+<!ENTITY options.yt.embeddedVideos.label "Embedded Videos:">
+<!ENTITY options.yt.embeddedVideos.enhancedDetection.label "Enhanced Videos Detection">
+<!ENTITY options.yt.embeddedVideos.enhancedDetection.label1 "Habilitar apenas se alguns vídeos não tiverem sido detectados.">
+<!ENTITY options.yt.embeddedVideos.enhancedDetection.label2 "Habilitar isso pode diminuir a velocidade de carregamento de páginas web. Lembre-se de desabilitar quando não for necessário!">
+<!-- Dialog Buttons (Mac users) -->
+<!ENTITY options.about.title "Sobre">
+<!ENTITY options.about.header "Download Flash &amp; Vídeo">
+<!ENTITY options.about.version "Versão">
+<!ENTITY options.about.visitWebsite "Visitar site:">
+<!-- Options *End* -->
+<!ENTITY options.dialogButtons.ok_button "Ok">
+<!ENTITY options.dialogButtons.cancel_button "Cancelar">
+<!-- Overlay *Begin* (overlay.xul) -->
+<!-- Overlay *End* -->
+<!ENTITY overlay.statusbarButton "Flash &amp; Vídeo">
+<!ENTITY overlay.statusbarButton_tooltip "Download Flash &amp; Vídeo">
+<!ENTITY overlay.toolbarButton "Flash &amp; Vídeo">
+<!ENTITY overlay.toolbarButton_tooltip "Download Flash &amp; Vídeo">
+<!ENTITY overlay.download_contextMenu "Baixar">
+<!ENTITY overlay.copyUrlToClipboard_contextMenu "Copiar endereço para área de transferência">
+<!-- Overlay *End* -->

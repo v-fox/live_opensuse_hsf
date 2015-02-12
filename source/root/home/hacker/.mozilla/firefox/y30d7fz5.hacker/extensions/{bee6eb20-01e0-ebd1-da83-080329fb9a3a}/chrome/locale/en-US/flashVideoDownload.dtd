@@ -1,0 +1,66 @@
+<!-- Options *Begin* (options.xul) -->
+    <!ENTITY options.mainTitle "Download Flash &amp; Video Options">
+
+    <!-- General Pane -->
+    <!ENTITY options.general.title "General">
+    
+    <!-- General.Interface -->
+    <!ENTITY options.general.interface.title "Interface">
+    <!ENTITY options.general.interface.showToolbarIcon_checkbox "Show Toolbar Icon">
+    <!ENTITY options.general.interface.showStatusbarIcon_checkbox "Show Statusbar Icon">
+    
+    <!-- General.Flash and Videos -->
+    <!ENTITY options.general.flashAndVideos.title "Flash &amp; Videos">
+    <!ENTITY options.general.flashAndVideos.showFlashFilesResults_checkbox "Show Flash Files Results">
+    <!ENTITY options.general.flashAndVideos.showVideosFilesResults_checkbox "Show Videos Files Results">
+    
+    <!-- General.Download Managers -->
+    <!ENTITY options.general.downloadManagers.title "Download Managers">
+    <!ENTITY options.general.downloadManagers.useDownThemAll_checkbox "Use DownThemAll! Add-On to Manage Downloads">
+    
+    <!-- General.Downloads -->
+    <!ENTITY options.general.downloads.title "Downloads">
+    <!ENTITY options.general.downloads.useLastSavedFolder_radio "Use Last Saved Folder - Default Folder">
+    <!ENTITY options.general.downloads.useFFDownloadsFolder_radio "Use Firefox Downloads Folder">
+    <!ENTITY options.general.downloads.saveTo_radio "Save To:">
+    <!ENTITY options.general.downloads.browse_button "Browse">
+    <!ENTITY options.general.downloads.startDownloadsImmediately_checkbox "Start Downloads Immediately (without prompting the &quot;Save To&quot; dialog)">
+    
+    
+    <!-- Youtube Pane -->
+    <!ENTITY options.yt.title "YouTube">
+    
+    <!-- Youtube.Formats -->
+    <!ENTITY options.yt.formats.title "Displayed Formats (select which video formats will show for download):">
+    
+    <!-- Youtube.Qualities -->
+    <!ENTITY options.yt.qualities.title "Displayed Qualities (select which video qualities will show for download):">
+    
+    <!-- Youtube.Embedded Videos -->
+    <!ENTITY options.yt.embeddedVideos.label "Embedded Videos:">
+    <!ENTITY options.yt.embeddedVideos.enhancedDetection.label "Enhanced Videos Detection">
+    <!ENTITY options.yt.embeddedVideos.enhancedDetection.label1 "Enable this only if certain videos were undetected.">
+    <!ENTITY options.yt.embeddedVideos.enhancedDetection.label2 "Enabling this might slow web pages loading, so make sure to disable when not needed!">        
+    
+    
+    <!-- About Pane -->
+    <!ENTITY options.about.title "About">
+    <!ENTITY options.about.header "Download Flash &amp; Video">
+    <!ENTITY options.about.version "Version">
+    <!ENTITY options.about.visitWebsite "Visit Website: ">
+    
+    
+    <!-- Dialog Buttons (Mac users) -->
+    <!ENTITY options.dialogButtons.ok_button "Ok">
+    <!ENTITY options.dialogButtons.cancel_button "Cancel">
+<!-- Options *End* -->
+
+
+<!-- Overlay *Begin* (overlay.xul) -->
+    <!ENTITY overlay.statusbarButton "Flash &amp; Video (StatusBar Icon)">
+    <!ENTITY overlay.statusbarButton_tooltip "Download Flash &amp; Video">
+    <!ENTITY overlay.toolbarButton "Flash &amp; Video">
+    <!ENTITY overlay.toolbarButton_tooltip "Download Flash &amp; Video">
+    <!ENTITY overlay.download_contextMenu "Download">
+    <!ENTITY overlay.copyUrlToClipboard_contextMenu "Copy URL to Clipboard">
+<!-- Overlay *End* -->

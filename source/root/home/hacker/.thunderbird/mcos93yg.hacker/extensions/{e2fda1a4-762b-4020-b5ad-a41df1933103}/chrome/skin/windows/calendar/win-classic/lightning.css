@@ -1,0 +1,72 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ::::: tabs ::::: */
+
+/* ::: new tab buttons ::: */
+#calendar-tab-button {
+  list-style-image: url(chrome://lightning-common/skin/mode-switch-icons.png);
+  -moz-image-region: rect(0px 64px 16px 48px);
+}
+
+#calendar-tab-button[disabled] {
+  -moz-image-region: rect(32px 64px 48px 48px);
+}
+
+#task-tab-button {
+  list-style-image: url(chrome://lightning-common/skin/mode-switch-icons.png);
+  -moz-image-region: rect(0px 80px 16px 64px);
+}
+
+#task-tab-button[disabled] {
+  -moz-image-region: rect(32px 80px 48px 64px);
+}
+
+/* ::: tab icons ::: */
+.icon-holder[type="calendar"],
+.tabmail-tab[type="calendar"] {
+  list-style-image: url(chrome://lightning-common/skin/mode-switch-icons.png);
+  -moz-image-region: rect(0px 64px 16px 48px);
+}
+
+.icon-holder[type="tasks"],
+.tabmail-tab[type="tasks"] {
+  list-style-image: url(chrome://lightning-common/skin/mode-switch-icons.png);
+  -moz-image-region: rect(0px 80px 16px 64px);
+}
+
+/* ::: imip button icons ::: */
+.imipAcceptButton {
+  list-style-image: url(chrome://lightning/skin/imip.png);
+  -moz-image-region: rect(0px 16px 16px 0px);
+}
+
+.imipDeclineButton {
+  list-style-image: url(chrome://lightning/skin/imip.png);
+  -moz-image-region: rect(0px 32px 16px 16px);
+}
+
+.imipTentativeButton {
+  list-style-image: url(chrome://lightning/skin/imip.png);
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+
+/* These buttons may also deserve an icon:
+   .imipDetailsButton
+       (-> open the event or summary dialog)
+   .imipMoreButton
+       (-> dropdown button to offer more options to the user)
+   .imipAddButton
+       (-> add an event to the calendar)
+   .imipUpdateButton
+       (-> ipdate an event in the calendar)
+   .imipDeleteButton
+       (-> delete an event from the calendar)
+   .imipReconfirmButton
+       (-> re-confirm the own participation status on organizer's request)
+   .imipAcceptRecurrencesButton
+   .imipDeclineRecurrencesButton
+   .imipTentativeRecurrencesButton
+       (-> the same functionality as above, but for recurring events)
+*/

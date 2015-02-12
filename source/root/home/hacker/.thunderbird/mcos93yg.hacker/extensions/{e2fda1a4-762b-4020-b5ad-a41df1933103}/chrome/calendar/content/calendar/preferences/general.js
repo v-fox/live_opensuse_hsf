@@ -27,5 +27,28 @@ var gCalendarGeneralPane = {
 
         // deselect and reselect to update visible item title
         updateSelectedLabel("dateformat");
+        updateUnitLabelPlural("defaultlength", "defaultlengthunit", "minutes");
+        this.updateDefaultTodoDates();
+    },
+
+    updateDefaultTodoDates: function gCGP_updateDefaultTodoDates() {
+        let defaultDue = document.getElementById("default_task_due").value;
+        let defaultStart = document.getElementById("default_task_start").value;
+        let offsetValues = ["offsetcurrent", "offsetnexthour"];
+
+        document.getElementById("default_task_due_offset")
+                .style.visibility = offsetValues.indexOf(defaultDue) > -1 ? "" : "hidden";
+        document.getElementById("default_task_start_offset")
+                .style.visibility = offsetValues.indexOf(defaultStart) > -1 ? "" : "hidden";
+
+        updateMenuLabelsPlural("default_task_start_offset_text", "default_task_start_offset_units");
+        updateMenuLabelsPlural("default_task_due_offset_text", "default_task_due_offset_units");
+    },
+
+    updateItemtypeDeck: function() {
+        let panelId = document.getElementById("defaults-itemtype-menulist").value;
+        let panel = document.getElementById(panelId);
+        document.getElementById("defaults-itemtype-deck").selectedPanel = panel;
     }
 };
+

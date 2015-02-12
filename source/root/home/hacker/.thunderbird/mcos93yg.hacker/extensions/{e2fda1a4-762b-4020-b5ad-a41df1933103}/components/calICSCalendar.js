@@ -4,6 +4,7 @@
 
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calXMLUtils.jsm");
@@ -406,13 +407,18 @@ calICSCalendar.prototype = {
     {
         ctxt = ctxt.wrappedJSObject;
         let httpChannel;
+        let requestSucceeded = false;
         try {
             httpChannel = request.QueryInterface(Components.interfaces.nsIHttpChannel);
-            cal.LOG("[calICSCalendar] channel.requestSucceeded: " + httpChannel.requestSucceeded);
+            requestSucceeded = httpChannel.requestSucceeded;
         } catch(e) {
         }
 
-        if ((httpChannel && !httpChannel.requestSucceeded) ||
+        if (httpChannel) {
+            cal.LOG("[calICSCalendar] channel.requestSucceeded: " + requestSucceeded);
+        }
+
+        if ((httpChannel && !requestSucceeded) ||
             (!httpChannel && !Components.isSuccessCode(request.status))) {
             ctxt.mObserver.onError(this.superCalendar,
                                    Components.isSuccessCode(request.status)
@@ -703,8 +709,8 @@ calICSCalendar.prototype = {
             }
         }
 
-        var backupDays = getPrefSafe("calendar.backup.days", 1);
-        var numBackupFiles = getPrefSafe("calendar.backup.filenum", 3);
+        var backupDays = Preferences.get("calendar.backup.days", 1);
+        var numBackupFiles = Preferences.get("calendar.backup.filenum", 3);
 
         try {
             var backupDir = cal.getCalendarDirectory();
@@ -721,10 +727,10 @@ calICSCalendar.prototype = {
         }
 
         try {
-            var pseudoID = this.getProperty("uniquenum");
+            var pseudoID = this.getProperty("uniquenum2");
             if (!pseudoID) {
                 pseudoID = new Date().getTime();
-                this.setProperty("uniquenum", pseudoID);
+                this.setProperty("uniquenum2", pseudoID);
             }
         } catch(e) {
             // calendarmgr not found. Likely because we are running in
@@ -741,12 +747,12 @@ calICSCalendar.prototype = {
             doInitialBackup = true;
 
         var doDailyBackup = false;
-        var backupTime = this.getProperty('backup-time');
+        var backupTime = this.getProperty('backup-time2');
         if (!backupTime ||
             (new Date().getTime() > backupTime + backupDays*24*60*60*1000)) {
             // It's time do to a daily backup
             doDailyBackup = true;
-            this.setProperty('backup-time', new Date().getTime());
+            this.setProperty('backup-time2', new Date().getTime());
         }
 
         var dailyBackupFileName;
@@ -899,9 +905,11 @@ httpHooks.prototype = {
     onAfterGet: function(aChannel, aForceRefresh) {
         let httpchannel = aChannel.QueryInterface(Components.interfaces.nsIHttpChannel);
         let responseStatus = 0;
+        let responseStatusCategory = 0;
 
         try {
             responseStatus = httpchannel.responseStatus;
+            responseStatusCategory = Math.floor(responseStatus / 100);
         } catch(e) {
             // Error might have been a temporary connection issue, keep old data to
             // prevent potential data loss if it becomes available again.
@@ -909,27 +917,26 @@ httpHooks.prototype = {
             return false;
         }
 
-        switch (responseStatus) {
-            case 304:
-                // 304: Not Modified
-                // Can use the old data, so tell the caller that it can skip parsing.
-                cal.LOG("[calICSCalendar] Response status 304: Not Modified. Using the existing data.");
-                return false;
-            case 404:
-                // 404: Not Found
-                // This is a new calendar. Shouldn't try to parse it. But it also
-                // isn't a failure, so don't throw.
-                cal.LOG("[calICSCalendar] Response status 404: Not Found. This is a new calendar.");
-                return false;
-
-            case 401:
-            case 403:
-                // 401/403: Not Authorized
-                // The user likely cancelled the login dialog.
-                cal.LOG("[calICSCalendar] Response status 401/403: Not Authorized. Login dialog cancelled.");
-                this.mCalendar.setProperty("disabled", "true");
-                this.mCalendar.setProperty("auto-enabled", "true");
-                return false;
+        if (responseStatus == 304) {
+            // 304: Not Modified
+            // Can use the old data, so tell the caller that it can skip parsing.
+            cal.LOG("[calICSCalendar] Response status 304: Not Modified. Using the existing data.");
+            return false;
+        } else if (responseStatus == 404) {
+            // 404: Not Found
+            // This is a new calendar. Shouldn't try to parse it. But it also
+            // isn't a failure, so don't throw.
+            cal.LOG("[calICSCalendar] Response status 404: Not Found. This is a new calendar.");
+            return false;
+        } else if (responseStatus == 410) {
+            cal.LOG("[calICSCalendar] Response status 410, calendar is gone. Disabling the calendar.");
+            this.mCalendar.setProperty("disabled", "true");
+            return false;
+        } else if (responseStatusCategory == 4 || responseStatusCategory == 5) {
+            cal.LOG("[calICSCalendar] Response status " + responseStatus + ", temporarily disabling calendar for safety.");
+            this.mCalendar.setProperty("disabled", "true");
+            this.mCalendar.setProperty("auto-enabled", "true");
+            return false;
         }
 
         try {

@@ -15,7 +15,7 @@ function addCalendarNames(aEvent) {
     var calendarMenuPopup = aEvent.target;
     var calendars = getCalendarManager().getCalendars({});
     while (calendarMenuPopup.hasChildNodes()) {
-        calendarMenuPopup.removeChild(calendarMenuPopup.lastChild);
+        calendarMenuPopup.lastChild.remove();
     }
     var tasks = getSelectedTasks(aEvent);
     var tasksSelected = (tasks.length > 0);
@@ -36,20 +36,19 @@ function changeContextMenuForTask(aEvent) {
     handleTaskContextMenuStateChange(aEvent);
 
     let idnode = document.popupNode.id;
-    let sunbird = cal.isSunbird();
     let items = getSelectedTasks(aEvent);
     document.getElementById("task-context-menu-new").hidden =
-        (idnode == "unifinder-todo-tree" && !sunbird);
+        (idnode == "unifinder-todo-tree");
     document.getElementById("task-context-menu-modify").hidden =
-        (idnode == "unifinder-todo-tree" && !sunbird);
+        (idnode == "unifinder-todo-tree");
     document.getElementById("task-context-menu-new-todaypane").hidden =
-        (idnode == "calendar-task-tree" || sunbird);
+        (idnode == "calendar-task-tree");
     document.getElementById("task-context-menu-modify-todaypane").hidden =
-        (idnode == "calendar-task-tree" || sunbird);
+        (idnode == "calendar-task-tree");
     document.getElementById("task-context-menu-filter-todaypane").hidden =
-        (idnode == "calendar-task-tree" || sunbird);
+        (idnode == "calendar-task-tree");
     document.getElementById("task-context-menu-separator-filter").hidden =
-        (idnode == "calendar-task-tree" || sunbird);
+        (idnode == "calendar-task-tree");
 
     let tasksSelected = (items.length > 0);
     applyAttributeToMenuChildren(aEvent.target, "disabled", (!tasksSelected));
@@ -62,8 +61,9 @@ function changeContextMenuForTask(aEvent) {
         document.getElementById("calendar_new_todo_todaypane_command").setAttribute("disabled", "true");
     }
 
-    // make sure the paste menu item is enabled
+    // make sure the "Paste" and "Cut" menu items are enabled
     goUpdateCommand("cmd_paste");
+    goUpdateCommand("cmd_cut");
 
     // make sure the filter menu is enabled
     document.getElementById("task-context-menu-filter-todaypane").removeAttribute("disabled");
@@ -95,6 +95,13 @@ function handleTaskContextMenuStateChange(aEvent) {
  * @param aEvent    The popupshowing event of the opening menu.
  */
 function changeMenuForTask(aEvent) {
+    // Make sure to update the status of some commands. 
+    ["calendar_delete_todo_command",
+     "calendar_toggle_completed_command",
+     "calendar_general-progress_command",
+     "calendar_general-priority_command",
+     "calendar_general-postpone_command"].forEach(goUpdateCommand);
+
     let tasks = getSelectedTasks(aEvent);
     let tasksSelected = (tasks.length > 0);
     if (tasksSelected) {

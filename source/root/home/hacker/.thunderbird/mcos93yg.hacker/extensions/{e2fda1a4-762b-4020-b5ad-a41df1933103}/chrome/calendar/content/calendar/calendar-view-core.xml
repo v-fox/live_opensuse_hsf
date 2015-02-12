@@ -69,6 +69,7 @@
       <constructor><![CDATA[
          Components.utils.import("resource://calendar/modules/calAlarmUtils.jsm");
          Components.utils.import("resource://calendar/modules/calUtils.jsm");
+         Components.utils.import("resource://gre/modules/Preferences.jsm");
 
          let self = this;
          this.eventNameTextbox.onblur = function onBlur() {
@@ -151,7 +152,7 @@
           var evl = this.eventNameLabel;
           var item = this.mOccurrence;
           evl.value = (item.title ? item.title.replace(/\n/g, ' ') :
-                                    calGetString("calendar", "eventUntitled"));
+                                    cal.calGetString("calendar", "eventUntitled"));
         ]]></body>
       </method>
 
@@ -168,7 +169,7 @@
 
           // Add alarm icons as needed.
           let alarms = item.getAlarms({});
-          if (alarms.length && getPrefSafe("calendar.alarms.indicator.show", true)) {
+          if (alarms.length && Preferences.get("calendar.alarms.indicator.show", true)) {
               let iconsBox = document.getAnonymousElementByAttribute(this, "anonid", "alarm-icons-box");
               cal.alarms.addReminderImages(iconsBox, alarms);
 

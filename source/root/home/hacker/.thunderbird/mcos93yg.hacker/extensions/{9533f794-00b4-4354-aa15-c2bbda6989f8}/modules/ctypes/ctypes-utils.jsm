@@ -36,15 +36,21 @@
  *
  * ***** END LICENSE BLOCK ***** */
 
+var EXPORTED_SYMBOLS  = [ "ctypes_library", "is64bit", "WinCbABI" ];
+
 const Cu = Components.utils;
 
 Cu.import("resource://gre/modules/ctypes.jsm");
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://firetray/logging.jsm");
 
-var EXPORTED_SYMBOLS  = [ "ctypes_library" ];
+const is64bit = ctypes.size_t.size == 8; // firetray.Handler.runtimeABI.indexOf('_64') > -1;
+
+const WinABI   = is64bit ? ctypes.default_abi : ctypes.winapi_abi;
+const WinCbABI = is64bit ? ctypes.default_abi : ctypes.stdcall_abi;
 
 let log = firetray.Logging.getLogger("firetray.ctypes-utils");
+log.info("is64bit="+is64bit);
 
 /**
  * Loads a library using ctypes and exports an object on to the specified
@@ -110,14 +116,15 @@ function ctypes_library(aName, aABIs, aDefines, aGlobal) {
 
     var library;
     for each (let abi in aABIs) {
-      let soname = "lib" + aName + ".so." + abi.toString();
+      // FIXME: ABI is in fact SO_VER. Now we're mixing .so versions and the
+      // .dll extension :(
+      let libname = abi === 'dll' ? aName :
+        "lib" + aName + ".so." + abi.toString();
       try {
-        library = ctypes.open(soname);
+        library = ctypes.open(libname);
         this.ABI = abi;
         break;
-      } catch(e) {
-          log.error(soname+" unfound.");
-      }
+      } catch(e) {}
     }
 
     this.name = aName;
@@ -139,6 +146,7 @@ function ctypes_library(aName, aABIs, aDefines, aGlobal) {
     };
 
     if (!library) {
+      log.info("Library does not exist: " + aName);
       this.ABI = -1;
       return;
     }
@@ -149,7 +157,12 @@ function ctypes_library(aName, aABIs, aDefines, aGlobal) {
         try {
           args = [];
           args.push(arguments[0]);
-          args.push(ctypes.default_abi);
+          // FIXME: ugly hack. We'll see when we need WinCbABI
+          if (this.ABI === 'dll') {
+            args.push(WinABI);
+          } else {
+            args.push(ctypes.default_abi);
+          }
           for each (let arg in Array.prototype.slice.call(arguments, 1)) {
             args.push(arg);
           }

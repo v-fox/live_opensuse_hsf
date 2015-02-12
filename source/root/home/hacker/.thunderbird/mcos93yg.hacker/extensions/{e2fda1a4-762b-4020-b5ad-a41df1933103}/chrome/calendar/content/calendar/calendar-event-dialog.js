@@ -6,6 +6,8 @@ Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://calendar/modules/calRecurrenceUtils.jsm");
 Components.utils.import("resource:///modules/mailServices.js");
+Components.utils.import("resource://gre/modules/PluralForm.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 try {
     Components.utils.import("resource:///modules/cloudFileAccounts.js");
@@ -365,9 +367,12 @@ function loadDialog(item) {
     setElementValue("item-description", item.getProperty("DESCRIPTION"));
 
     // Status
-    if (isEvent(item)) {
+    if (cal.isEvent(item)) {
         gStatus = item.hasProperty("STATUS") ?
             item.getProperty("STATUS") : "NONE";
+        if (gStatus == "NONE") {
+            document.getElementById("cmd_status_none").removeAttribute("hidden");
+        }
         updateStatus();
     } else {
         let todoStatus = document.getElementById("todo-status");
@@ -437,15 +442,24 @@ function loadDialog(item) {
     updateTitle();
 
     let notifyCheckbox = document.getElementById("notify-attendees-checkbox");
+    let undiscloseCheckbox = document.getElementById("undisclose-attendees-checkbox");
     if (canNotifyAttendees(item.calendar, item)) {
         // visualize that the server will send out mail:
         notifyCheckbox.checked = true;
+        // hide undisclosure control as this a client only feature
+        undiscloseCheckbox.disabled = true;
     } else {
         let itemProp = item.getProperty("X-MOZ-SEND-INVITATIONS");
         notifyCheckbox.checked = (item.calendar.getProperty("imip.identity") &&
                                   ((itemProp === null)
-                                   ? getPrefSafe("calendar.itip.notify", true)
+                                   ? Preferences.get("calendar.itip.notify", true)
                                    : (itemProp == "TRUE")));
+        let undiscloseProp = item.getProperty("X-MOZ-SEND-INVITATIONS-UNDISCLOSED");
+        undiscloseCheckbox.checked = (undiscloseProp === null)
+                                     ? false // default value as most common within organizations
+                                     : (undiscloseProp == "TRUE");
+        // disable checkbox, if notifyCheckbox is not checked
+        undiscloseCheckbox.disabled = (notifyCheckbox.checked == false);
     }
 
     updateAttendees();
@@ -453,7 +467,22 @@ function loadDialog(item) {
     updateReminder(true);
 
     gShowTimeAs = item.getProperty("TRANSP");
+    // display transparency controls only for events
+    if (!cal.isEvent(item)) {
+        setBooleanAttribute("options-freebusy-menu", "hidden", true);
+        setBooleanAttribute("button-freebusy", "hidden", true);
+        setBooleanAttribute("status-freebusy", "hidden", true);
+    }
     updateShowTimeAs();
+}
+
+/**
+ * Enables/disables undiscloseCheckbox on (un)checking notifyCheckbox
+ */
+function changeUndiscloseCheckboxStatus() {
+    let notifyCheckbox = document.getElementById("notify-attendees-checkbox");
+    let undiscloseCheckbox = document.getElementById("undisclose-attendees-checkbox");
+    undiscloseCheckbox.disabled = (!notifyCheckbox.checked);
 }
 
 /**
@@ -624,8 +653,8 @@ function dateTimeControls2State(aStartDatepicker) {
     var saveEndTime = gEndTime;
     var kDefaultTimezone = calendarDefaultTimezone();
 
-    let timezonesEnabled = document.getElementById('options-timezone-menuitem')
-                           .getAttribute('checked') == 'true';
+    let timezonesEnabled = document.getElementById('cmd_timezone')
+                                   .getAttribute('checked') == 'true';
     if (gStartTime) {
         // jsDate is always in OS timezone, thus we create a calIDateTime
         // object from the jsDate representation then we convert the timezone
@@ -1090,20 +1119,15 @@ function updateTitle() {
  *
  * TODO We can use general rules here, i.e
  *      dialog[itemType="task"] .event-only,
- *      dialog[itemType="event"] .task-only,
- *      dialog:not([product="lightning"]) .lightning-only {
+ *      dialog[itemType="event"] .task-only {
  *          display: none;
  *      }
- */
+*/
 function updateStyle() {
     const kDialogStylesheet = "chrome://calendar/skin/calendar-event-dialog.css";
 
     for each (let stylesheet in document.styleSheets) {
         if (stylesheet.href == kDialogStylesheet) {
-            if (cal.isSunbird()) {
-                stylesheet.insertRule(".lightning-only { display: none; }",
-                                      stylesheet.cssRules.length);
-            }
             if (cal.isEvent(window.calendarItem)) {
                 stylesheet.insertRule(".todo-only { display: none; }",
                                       stylesheet.cssRules.length);
@@ -1125,17 +1149,9 @@ function updateStyle() {
  */
 function onPopupShowing(menuPopup) {
     if (isToDo(window.calendarItem)) {
-        var nodes = menuPopup.childNodes;
+        var nodes = menuPopup.parentNode.querySelectorAll("#options-menupopup > .event-only");
         for (var i = nodes.length - 1; i >= 0; --i) {
-            var node = nodes[i];
-            if (node.hasAttribute('class')) {
-                if (node.getAttribute('class').split(' ').some(
-                    function (element) {
-                        return element.toLowerCase() == 'event-only';
-                    })) {
-                    menuPopup.removeChild(node);
-                }
-            }
+            nodes.item(i).remove();
         }
     }
 }
@@ -1164,8 +1180,9 @@ function updateAccept() {
     }
 
     if (startDate && endDate) {
-        var menuItem = document.getElementById('options-timezone-menuitem');
-        if (menuItem.getAttribute('checked') == 'true') {
+        let timezonesEnabled = document.getElementById('cmd_timezone')
+                                       .getAttribute('checked') == 'true';
+        if (timezonesEnabled) {
             var startTimezone = gStartTimezone;
             var endTimezone = gEndTimezone;
             if (endTimezone.isUTC) {
@@ -1267,7 +1284,7 @@ function onUpdateAllDay() {
             // was an "All day" type, so we have to set default values.
             gStartTime.hour = getDefaultStartDate(window.initialStartDateValue).hour;
             gEndTime.hour = gStartTime.hour;
-            gEndTime.minute += getPrefSafe("calendar.event.defaultlength", 60);
+            gEndTime.minute += Preferences.get("calendar.event.defaultlength", 60);
             gOldStartTimezone = kDefaultTimezone;
             gOldEndTimezone = kDefaultTimezone;
         } else {
@@ -1371,7 +1388,7 @@ function openNewCardDialog() {
  * @param allDay    If true, the event is all-day
  */
 function setShowTimeAs(allDay) {
-    gShowTimeAs = (allDay ? getPrefSafe("calendar.allday.defaultTransparency", "TRANSPARENT") : "OPAQUE");
+    gShowTimeAs = cal.getEventDefaultTransparency(allDay);
     updateShowTimeAs();
 }
 
@@ -1436,8 +1453,8 @@ function editAttendees() {
         endTime.isDate = false;
     }
 
-    var menuItem = document.getElementById('options-timezone-menuitem');
-    var displayTimezone = menuItem.getAttribute('checked') == 'true';
+    let displayTimezone = document.getElementById('cmd_timezone')
+                                  .getAttribute('checked') == 'true';
 
     var args = new Object();
     args.startTime = startTime;
@@ -1596,6 +1613,26 @@ function updatePrivacy() {
 }
 
 /**
+ * This function rotates the Priority of an item to the next value
+ * following the sequence -> Not specified -> Low -> Normal -> High ->.
+ */
+function rotatePriority() {
+    let hasPriority = capSupported("priority");
+    if (hasPriority) {
+        if (gPriority <= 0 || gPriority > 9) {         // not specified
+            gPriority = 9;
+        } else if (gPriority >= 1 && gPriority <= 4) { // high
+            gPriority = 0;
+        } else if (gPriority == 5) {                   // normal
+            gPriority = 1;
+        } else if (gPriority >= 6 && gPriority <= 9) { // low
+            gPriority = 5;
+        }
+        updatePriority();
+    }
+}
+
+/**
  * Handler function to change the priority from the dialog elements
  *
  * @param target    A XUL node with a value attribute which should be the new
@@ -1607,11 +1644,12 @@ function editPriority(target) {
 }
 
 /**
- * Update the dialog controls related related to priority.
+ * Update the dialog controls related to priority.
  */
 function updatePriority() {
     // Set up capabilities
     var hasPriority = capSupported("priority");
+    setElementValue("button-priority", !hasPriority && "true", "disabled");
     setElementValue("options-priority-menu", !hasPriority && "true", "disabled");
     setElementValue("status-priority", !hasPriority && "true", "collapsed");
 
@@ -1664,6 +1702,21 @@ function updatePriority() {
 }
 
 /**
+ * Rotate the Status of an item to the next value following
+ * the sequence -> NONE -> TENTATIVE -> CONFIRMED -> CANCELLED ->.
+ */
+function rotateStatus() {
+    let states = ["TENTATIVE","CONFIRMED","CANCELLED"];
+    let noneCmd = document.getElementById("cmd_status_none");
+    // If control for status "NONE" is visible, allow rotating to it.
+    if (cal.isEvent(window.calendarItem) && !noneCmd.hasAttribute("hidden")) {
+        states.unshift("NONE");
+    }
+    gStatus = states[(states.indexOf(gStatus) + 1) % states.length];
+    updateStatus();
+}
+
+/**
  * Handler function to change the status from the dialog elements
  *
  * @param target    A XUL node with a value attribute which should be the new
@@ -1675,10 +1728,14 @@ function editStatus(target) {
 }
 
 /**
- * Update the dialog controls related related to status.
+ * Update the dialog controls related to status.
  */
 function updateStatus() {
     let found = false;
+    const statusLabels = ["status-status-tentative-label",
+                          "status-status-confirmed-label",
+                          "status-status-cancelled-label"];
+    setBooleanAttribute("status-status", "collapsed", true);
     [ "cmd_status_none",
       "cmd_status_tentative",
       "cmd_status_confirmed",
@@ -1689,6 +1746,13 @@ function updateStatus() {
               found = found || matches;
 
               node.setAttribute("checked", matches ? "true" : "false");
+
+              if (index > 0) {
+                  setBooleanAttribute(statusLabels[index-1], "hidden", !matches);
+                  if (matches) {
+                      setBooleanAttribute("status-status", "collapsed", false);
+                  }
+              }
           }
       );
     if (!found) {
@@ -1697,6 +1761,16 @@ function updateStatus() {
         gStatus = "NONE";
         updateStatus();
     }
+}
+
+/**
+ * Toggles the transparency (Show Time As property) of an item
+ * from BUSY (Opaque) to FREE (Transparent).
+ */
+function rotateShowTimeAs() {
+    const states = ["OPAQUE", "TRANSPARENT"];
+    gShowTimeAs = states[(states.indexOf(gShowTimeAs) + 1) % states.length];
+    updateShowTimeAs();
 }
 
 /**
@@ -1714,17 +1788,36 @@ function editShowTimeAs(target) {
  * Update the dialog controls related to transparency.
  */
 function updateShowTimeAs() {
-    var showAsBusy = document.getElementById("cmd_showtimeas_busy");
-    var showAsFree = document.getElementById("cmd_showtimeas_free");
+    if (cal.isEvent(window.calendarItem)) {
+        var showAsBusy = document.getElementById("cmd_showtimeas_busy");
+        var showAsFree = document.getElementById("cmd_showtimeas_free");
 
-    showAsBusy.setAttribute("checked",
-                            gShowTimeAs == "OPAQUE" ? "true" : "false");
-    showAsFree.setAttribute("checked",
-                            gShowTimeAs == "TRANSPARENT" ? "true" : "false");
+        showAsBusy.setAttribute("checked",
+                                gShowTimeAs == "OPAQUE" ? "true" : "false");
+        showAsFree.setAttribute("checked",
+                                gShowTimeAs == "TRANSPARENT" ? "true" : "false");
+
+        setBooleanAttribute("status-freebusy",
+                            "collapsed",
+                            gShowTimeAs != "OPAQUE" && gShowTimeAs != "TRANSPARENT");
+        setBooleanAttribute("status-freebusy-free-label", "hidden", gShowTimeAs == "OPAQUE");
+        setBooleanAttribute("status-freebusy-busy-label", "hidden", gShowTimeAs == "TRANSPARENT");
+    }
+}
+
+/**
+ * Toggles the command that allows to enable the timezone
+ * links in the dialog.
+ */
+function toggleTimezoneLinks() {
+    let cmdTimezone = document.getElementById('cmd_timezone');
+    let isChecked = cmdTimezone.getAttribute("checked") == "true";
+    cmdTimezone.setAttribute("checked", isChecked ? "false" : "true");
+    updateDateTime();
 }
 
 function loadCloudProviders() {
-    let cloudFileEnabled = cal.getPrefSafe("mail.cloud_files.enabled", false)
+    let cloudFileEnabled = Preferences.get("mail.cloud_files.enabled", false)
     let cmd = document.getElementById("cmd_attach_cloud");
 
     if (!cloudFileEnabled) {
@@ -1753,9 +1846,9 @@ function loadCloudProviders() {
 
         // Add the item to the different places we advertise cloud providers
         if (toolbarPopup) {
-            toolbarPopup.appendChild(item.cloneNode()).cloudProvider = cloudProvider;
+            toolbarPopup.appendChild(item.cloneNode(true)).cloudProvider = cloudProvider;
         }
-        attachmentPopup.appendChild(item.cloneNode()).cloudProvider = cloudProvider;
+        attachmentPopup.appendChild(item.cloneNode(true)).cloudProvider = cloudProvider;
 
         // The last one doesn't need to clone, just use the item itself.
         optionsPopup.appendChild(item).cloudProvider = cloudProvider;
@@ -1933,8 +2026,7 @@ function uploadCloudAttachment(attachment, cloudProvider, listItem) {
                 // When we have a nice notification bar, we can show more info
                 // about the failure.
                 setTimeout(function() {
-                    let documentLink = document.getElementById("attachment-link");
-                    documentLink.removeChild(listItem);
+                    listItem.remove();
                     updateAttachment();
                 }, 5000);
             }
@@ -1983,7 +2075,7 @@ function addAttachment(attachment, cloudProvider) {
             } else {
                 let leafName = attachment.getParameter("FILENAME");
                 let providerType = attachment.getParameter("PROVIDER");
-                let cloudFileEnabled = cal.getPrefSafe("mail.cloud_files.enabled", false);
+                let cloudFileEnabled = Preferences.get("mail.cloud_files.enabled", false);
 
                 if (leafName) {
                     // TODO security issues?
@@ -2055,20 +2147,16 @@ function deleteAllAttachments() {
     var ok = (itemCount < 2);
 
     if (itemCount > 1) {
-        ok = Services.prompt.confirm(window,
-                                     calGetString("calendar-event-dialog",
-                                                  "removeCalendarsTitle"),
-                                     calGetString("calendar-event-dialog",
-                                                  "removeCalendarsText",
-                                                  [itemCount]),
-                                     {});
+        let removeText = PluralForm.get(itemCount, cal.calGetString("calendar-event-dialog", "removeAttachmentsText"));
+        let removeTitle = cal.calGetString("calendar-event-dialog", "removeCalendarsTitle");
+        ok = Services.prompt.confirm(window, removeTitle, removeText.replace("#1", itemCount), {});
     }
 
     if (ok) {
         let child;
         let documentLink = document.getElementById("attachment-link");
         while (documentLink.hasChildNodes()) {
-            child = documentLink.removeChild(documentLink.lastChild);
+            child = documentLink.lastChild.remove();
             child.attachment = null;
         }
         gAttachMap = {};
@@ -2115,7 +2203,7 @@ function attachmentLinkKeyPress(event) {
         case kKE.DOM_VK_DELETE:
             deleteAttachment();
             break;
-        case kKE.DOM_VK_ENTER:
+        case kKE.DOM_VK_RETURN:
             openAttachment();
             break;
     }
@@ -2137,6 +2225,47 @@ function attachmentLinkClicked(event) {
         attachURL();
     } else if (event.originalTarget.localName == "listitem" && event.detail == 2) {
         openAttachment();
+    }
+}
+
+/**
+ * Helper function to show a notification in the event-dialog's notificationBox
+ *
+ * @param aMessage     the message text to show
+ * @param aValue       string identifying the notification
+ * @param aPriority    (optional) the priority of the warning (info, critical), default is 'warn'
+ * @param aImage       (optional) URL of image to appear on the notification
+ * @param aButtonset   (optional) array of button descriptions to appear on the notification
+ * @param aCallback    (optional) a function to handle events from the notificationBox
+ */
+function notifyUser(aMessage, aValue, aPriority, aImage, aButtonset, aCallback) {
+    let notificationBox = document.getElementById("event-dialog-notifications");
+    // only append, if the notification does not already exist
+    if (notificationBox.getNotificationWithValue(aValue) == null) {
+        const prioMap = {
+            "info": notificationBox.PRIORITY_INFO_MEDIUM,
+            "critical": notificationBox.PRIORITY_CRITICAL_MEDIUM
+        };
+        let priority = prioMap[aPriority] || notificationBox.PRIORITY_WARNING_MEDIUM;
+        notificationBox.appendNotification(aMessage,
+                                           aValue,
+                                           aImage,
+                                           priority,
+                                           aButtonset,
+                                           aCallback);
+    }
+}
+
+/**
+ * Remove a notification from the notifiactionBox
+ *
+ * @param aValue      string identifying the notification to remove
+ */
+function removeNotification(aValue) {
+    let notificationBox = document.getElementById("event-dialog-notifications");
+    let notification = notificationBox.getNotificationWithValue(aValue);
+    if (notification != null) {
+        notificationBox.removeNotification(notification);
     }
 }
 
@@ -2164,8 +2293,10 @@ function updateCalendar() {
 
     if (!canNotifyAttendees(calendar, item) && calendar.getProperty("imip.identity")) {
         enableElement("notify-attendees-checkbox");
+        enableElement("undisclose-attendees-checkbox");
     } else {
         disableElement("notify-attendees-checkbox");
+        disableElement("undisclose-attendees-checkbox");
     }
 
     // update the accept button
@@ -2604,6 +2735,12 @@ function saveItem() {
         } else {
             item.setProperty("X-MOZ-SEND-INVITATIONS", notifyCheckbox.checked ? "TRUE" : "FALSE");
         }
+        let undiscloseCheckbox = document.getElementById("undisclose-attendees-checkbox");
+        if (undiscloseCheckbox.disabled) {
+            item.deleteProperty("X-MOZ-SEND-INVITATIONS-UNDISCLOSED");
+        } else {
+            item.setProperty("X-MOZ-SEND-INVITATIONS-UNDISCLOSED", undiscloseCheckbox.checked ? "TRUE" : "FALSE");
+        }
     }
 
     // We check if the organizerID is different from our
@@ -2827,23 +2964,16 @@ function onCommandCustomize() {
     document.getElementById("cmd_customize").setAttribute("disabled", "true");
 
     var id = "event-toolbox";
-    if (isSunbird()) {
-        window.openDialog("chrome://global/content/customizeToolbar.xul",
-                          "CustomizeToolbar",
-                          "chrome,all,dependent",
-                          document.getElementById(id));
-    } else {
-        var wintype = document.documentElement.getAttribute("windowtype");
-        wintype = wintype.replace(/:/g, "");
+    var wintype = document.documentElement.getAttribute("windowtype");
+    wintype = wintype.replace(/:/g, "");
 
-        window.openDialog("chrome://global/content/customizeToolbar.xul",
-                          "CustomizeToolbar" + wintype,
-                          "chrome,all,dependent",
-                          document.getElementById(id), // toolbar dom node
-                          false,                       // is mode toolbar yes/no?
-                          null,                        // callback function
-                          "dialog");                   // name of this mode
-    }
+    window.openDialog("chrome://global/content/customizeToolbar.xul",
+                      "CustomizeToolbar" + wintype,
+                      "chrome,all,dependent",
+                      document.getElementById(id), // toolbar dom node
+                      false,                       // is mode toolbar yes/no?
+                      null,                        // callback function
+                      "dialog");                   // name of this mode
 }
 
 /**
@@ -2929,7 +3059,7 @@ function showTimezonePopup(event, dateTime, editFunc) {
 
     // Clear out any old recent timezones
     while (timezoneDefaultItem.nextSibling != timezoneSeparator) {
-        timezonePopup.removeChild(timezoneDefaultItem.nextSibling);
+        timezoneDefaultItem.nextSibling.remove();
     }
 
     // Fill in the new recent timezones
@@ -2986,7 +3116,7 @@ function editTimezone(aElementId,aDateTime,aCallback) {
  * - 'todo-duedate'
  * The date/time-objects are either displayed in their respective
  * timezone or in the default timezone. This decision is based
- * on whether or not 'options-timezone-menuitem' is checked.
+ * on whether or not 'cmd_timezone' is checked.
  * the necessary information is taken from the following variables:
  * - 'gStartTime'
  * - 'gEndTime'
@@ -2995,13 +3125,14 @@ function editTimezone(aElementId,aDateTime,aCallback) {
 function updateDateTime() {
     gIgnoreUpdate = true;
 
-    var item = window.calendarItem;
-    var menuItem = document.getElementById('options-timezone-menuitem');
+    let item = window.calendarItem;
+    let timezonesEnabled = document.getElementById('cmd_timezone')
+                                   .getAttribute('checked') == 'true';
 
     // Convert to default timezone if the timezone option
     // is *not* checked, otherwise keep the specific timezone
     // and display the labels in order to modify the timezone.
-    if (menuItem.getAttribute('checked') == 'true') {
+    if (timezonesEnabled) {
         if (isEvent(item)) {
           var startTime = gStartTime.getInTimezone(gStartTimezone);
           var endTime = gEndTime.getInTimezone(gEndTimezone);
@@ -3135,16 +3266,16 @@ function updateDateTime() {
  * - 'timezone-starttime'
  * - 'timezone-endtime'
  * the timezone-links show the corrosponding names of the
- * start/end times. if 'options-timezone-menuitem' is not checked
+ * start/end times. If 'cmd_timezone' is not checked
  * the links will be collapsed.
  */
 function updateTimezone() {
-    let menuItem = document.getElementById('options-timezone-menuitem');
-
+    let timezonesEnabled = document.getElementById('cmd_timezone')
+                                   .getAttribute('checked') == 'true';
     // convert to default timezone if the timezone option
     // is *not* checked, otherwise keep the specific timezone
     // and display the labels in order to modify the timezone.
-    if (menuItem.getAttribute('checked') == 'true') {
+    if (timezonesEnabled) {
         let startTimezone = gStartTimezone;
         let endTimezone = gEndTimezone;
 
@@ -3333,7 +3464,7 @@ function updateRepeatDetails() {
         let lines = detailsString.split("\n");
         repeatDetails.removeAttribute("collapsed");
         while (repeatDetails.childNodes.length > lines.length) {
-            repeatDetails.removeChild(repeatDetails.lastChild);
+            repeatDetails.lastChild.remove();
         }
         let numChilds = repeatDetails.childNodes.length;
         for (let i = 0; i < lines.length; i++) {
@@ -3403,7 +3534,7 @@ function showAttendeePopup(event) {
     // Remove all remaining menu items after the separator and the template menu
     // item.
     while (template.nextSibling) {
-        popup.removeChild(template.nextSibling);
+        template.nextSibling.remove();
     }
 
     // Add the rest of the attendees.
@@ -3471,8 +3602,8 @@ function sendMailToAttendees(aAttendees) {
     var emailSubject = calGetString("calendar-event-dialog",
                                     "emailSubjectReply",
                                     [item.title]);
-
-    sendMailTo(toList, emailSubject);
+    let identity = window.calendarItem.calendar.getProperty("imip.identity");
+    sendMailTo(toList, emailSubject, null, identity);
 }
 
 /**

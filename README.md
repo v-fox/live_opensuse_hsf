@@ -19,7 +19,7 @@ It provides:
 * professional sound handling with JACK (PA & ALSA, both with OSS support, run as JACK's clients; tools are available in repositories)
 * professional colour management facilities consisting of colord, argyllCMS, dispcalGUI and xiccd
 * professional networking tools and rich connectivity options
-* LeechCraft modular system stripped for only IM, Socializing and P2P functionality + LinPhone for HD A/V multiuser encrypted SIP
+* LeechCraft modular system stripped for only IM and socializing + LinPhone & SIP Witch for P2P HD A/V multiuser encrypted SIP (telephony)
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * Clementine audio player, VLC and S/Mplayer video players
 * LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict

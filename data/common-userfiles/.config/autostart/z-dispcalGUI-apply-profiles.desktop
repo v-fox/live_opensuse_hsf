@@ -1,0 +1,14 @@
+[Desktop Entry]
+Comment=Sets ICC profiles and loads calibration curves for all configured display devices
+Comment[de]=Setzt ICC-Profile und lädt Kalibrierungskurven für alle konfigurierten Anzeigegeräte
+Encoding=UTF-8
+Exec=dispcalGUI-apply-profiles
+GenericName=Calibration and ICC Profile Loader
+GenericName[de]=Kalibrierungs- und ICC-Profil-Lader
+Hidden=true
+Icon=dispcalGUI-apply-profiles
+Name=dispcalGUI Calibration and ICC Profile Loader
+Name[de]=dispcalGUI Kalibrierungs- und ICC-Profil-Lader
+Terminal=false
+Type=Application
+Version=1.0

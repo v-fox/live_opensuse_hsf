@@ -1,0 +1,67 @@
+ <!-- Options *Begin* (options.xul) -->
+    <!ENTITY options.mainTitle "Download Flash &amp; Video Beállítások">
+
+    <!-- General Pane -->
+    <!ENTITY options.general.title "Általános">
+    
+    <!-- General.Interface -->
+    <!ENTITY options.general.interface.title "Felhasználói felület">
+    <!ENTITY options.general.interface.showToolbarIcon_checkbox "Ikon megjelenítése eszköztáron">
+    <!ENTITY options.general.interface.showStatusbarIcon_checkbox "Ikon megjelenítése a kiegészítősávon">
+    
+    <!-- General.Flash and Videos -->
+    <!ENTITY options.general.flashAndVideos.title "Flash &amp; Videók">
+    <!ENTITY options.general.flashAndVideos.showFlashFilesResults_checkbox "Flash fájl találatok megjelenítése">
+    <!ENTITY options.general.flashAndVideos.showVideosFilesResults_checkbox "Videó fájl találatok megjelenítése">
+    
+    <!-- General.Download Managers -->
+    <!ENTITY options.general.downloadManagers.title "Letöltéskezelő">
+    <!ENTITY options.general.downloadManagers.useDownThemAll_checkbox "DownThemAll! bővítmény használata letöltéskezelőként">
+    
+    <!-- General.Downloads -->
+    <!ENTITY options.general.downloads.title "Letöltések">
+    <!ENTITY options.general.downloads.useLastSavedFolder_radio "Legutóbbi mentési mappa használata - alapértelmezett mappa">
+    <!ENTITY options.general.downloads.useFFDownloadsFolder_radio "Firefox letöltési mappa használata">
+    <!ENTITY options.general.downloads.saveTo_radio "Mentés ide:">
+    <!ENTITY options.general.downloads.browse_button "Tallózás">
+    <!ENTITY options.general.downloads.startDownloadsImmediately_checkbox "Letöltések indítása azonnal (&quot;Mentés ide&quot; párbeszédablak megjelenítése nélkül)">
+    
+    
+    <!-- Youtube Pane -->
+    <!ENTITY options.yt.title "YouTube">
+    
+    <!-- Youtube.Formats -->
+    <!ENTITY options.yt.formats.title "Megjelenítendő formátumok (válassza ki, melyik videó formátumok jelenjenek meg letölthető formátumok között):">
+    
+    <!-- Youtube.Qualities -->
+    <!ENTITY options.yt.qualities.title "Megjelenítendő minőségek (válassza ki, melyik videó minőségek jelenjenek meg letölthető minőségek között):">
+    
+    <!-- Youtube.Embedded Videos -->
+    <!ENTITY options.yt.embeddedVideos.label "Beágyazott Videók:">
+    <!ENTITY options.yt.embeddedVideos.enhancedDetection.label "Enhanced Videos Detection">
+    <!ENTITY options.yt.embeddedVideos.enhancedDetection.label1 "Csak akkor engedélyezze, ha némelyik videó nem lett észlelve.">
+    <!ENTITY options.yt.embeddedVideos.enhancedDetection.label2 "Engedélyezése lassíthatja weboldalak betöltését, ezért győződjön meg róla, hogy le legyen tiltva, ha nincs rá szükség!">        
+    
+    
+    <!-- About Pane -->
+    <!ENTITY options.about.title "Névjegy">
+    <!ENTITY options.about.header "Download Flash &amp; Video">
+    <!ENTITY options.about.version "Verzió">
+    <!ENTITY options.about.visitWebsite "Honlap: ">
+    
+    
+    <!-- Dialog Buttons (Mac users) -->
+    <!ENTITY options.dialogButtons.ok_button "Ok">
+    <!ENTITY options.dialogButtons.cancel_button "Mégse">
+<!-- Options *End* -->
+
+
+
+<!-- Overlay *Begin* (overlay.xul) -->
+    <!ENTITY overlay.statusbarButton "Flash &amp; Videó (Kiegészítősáv ikon)">
+    <!ENTITY overlay.statusbarButton_tooltip "Flash &amp; Videó letöltése">
+    <!ENTITY overlay.toolbarButton "Flash &amp; Videó">
+    <!ENTITY overlay.toolbarButton_tooltip "Flash &amp; Videó letöltése">
+    <!ENTITY overlay.download_contextMenu "Letöltés">
+    <!ENTITY overlay.copyUrlToClipboard_contextMenu "URL másolása a vágólapra">
+<!-- Overlay *End* -->

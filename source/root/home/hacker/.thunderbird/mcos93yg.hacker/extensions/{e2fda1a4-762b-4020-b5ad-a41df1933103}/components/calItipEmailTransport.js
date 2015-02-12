@@ -6,6 +6,7 @@ Components.utils.import("resource:///modules/mailServices.js");
 Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 function convertFromUnicode(aCharset, aSrc) {
     let unicodeConverter = Components.classes["@mozilla.org/intl/scriptableunicodeconverter"]
@@ -93,7 +94,7 @@ calItipEmailTransport.prototype = {
                         att = item.getAttendeeById("mailto:" + aItipItem.identity);
                     }
                     if (!att) { // should not happen anymore
-                        return;
+                        return false;
                     }
 
                     // work around BUG 351589, the below just removes RSVP:
@@ -128,11 +129,12 @@ calItipEmailTransport.prototype = {
                 }
             }
 
-            this._sendXpcomMail(aRecipients, aSubject, aBody, aItipItem);
+            return this._sendXpcomMail(aRecipients, aSubject, aBody, aItipItem);
         } else {
             // Sunbird case: Call user's default mailer on system.
             throw Components.results.NS_ERROR_NOT_IMPLEMENTED;
         }
+        return false;
     },
 
     _initEmailTransport: function cietIES() {
@@ -190,7 +192,7 @@ calItipEmailTransport.prototype = {
                         "This will disable OL (up to 2003) to consume the mail as an iTIP invitation showing\n" +
                         "the usual calendar buttons.");
                 // To somehow have a last resort before sending spam, the user can choose to send the mail.
-                let prefCompatMode = cal.getPrefSafe("calendar.itip.compatSendMode", 0);
+                let prefCompatMode = Preferences.get("calendar.itip.compatSendMode", 0);
                 let inoutCheck = { value: (prefCompatMode == 1) };
                 let parent = Services.wm.getMostRecentWindow(null);
                 if (parent.closed) {
@@ -209,7 +211,7 @@ calItipEmailTransport.prototype = {
                 } // else go on with auto sending for now
                 compatMode = (inoutCheck.value ? 1 : 0);
                 if (compatMode != prefCompatMode) {
-                    cal.setPref("calendar.itip.compatSendMode", compatMode);
+                    Preferences.set("calendar.itip.compatSendMode", compatMode);
                 }
             }
             case (Components.interfaces.calIItipItem.AUTO): {
@@ -234,6 +236,19 @@ calItipEmailTransport.prototype = {
                     composeFields.to = toList;
                     composeFields.from = identity.email;
                     composeFields.replyTo = identity.replyTo;
+                    let validRecipients;
+                    if (identity.doCc) {
+                        validRecipients = cal.validateRecipientList(identity.doCcList);
+                        if (validRecipients != "") {
+                            composeFields.cc = validRecipients;
+                        }
+                    }
+                    if (identity.doBcc) {
+                        validRecipients = cal.validateRecipientList(identity.doBccList);
+                        if (validRecipients != "") {
+                            composeFields.bcc = validRecipients;
+                        }
+                    }
 
                     // xxx todo: add send/progress UI, maybe recycle
                     //           "@mozilla.org/messengercompose/composesendlistener;1"
@@ -253,6 +268,7 @@ calItipEmailTransport.prototype = {
                                             null  /* nsIMsgSendListener aListener */,
                                             null  /* nsIMsgStatusFeedback aStatusFeedback */,
                                             ""    /* password */);
+                    return true;
                 }
                 break;
             }
@@ -267,6 +283,7 @@ calItipEmailTransport.prototype = {
                                 "Unknown autoResponse type: " +
                                 aItem.autoResponse);
         }
+        return false;
     },
 
     _createTempImipFile: function cietCTIF(compatMode, aToList, aSubject, aBody, aItem, aIdentity) {
@@ -304,6 +321,19 @@ calItipEmailTransport.prototype = {
                             "To: " + aToList + "\r\n" +
                             "Date: " + (new Date()).toUTCString() + "\r\n" +
                             "Subject: " + encodeMimeHeader(aSubject.replace(/(\n|\r\n)/, "|")) + "\r\n");
+            let validRecipients;
+            if (aIdentity.doCc) {
+                validRecipients = cal.validateRecipientList(aIdentity.doCcList);
+                if (validRecipients != "") {
+                    mailText += ("Cc: " + validRecipients + "\r\n");
+                }
+            }
+            if (aIdentity.doBcc) {
+                validRecipients = cal.validateRecipientList(aIdentity.doBccList);
+                if (validRecipients != "") {
+                    mailText += ("Bcc: " + validRecipients + "\r\n");
+                }
+            }
             switch (compatMode) {
                 case 1:
                     mailText += ("Content-class: urn:content-classes:calendarmessage\r\n" +

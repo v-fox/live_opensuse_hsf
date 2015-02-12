@@ -3,6 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 function Synthetic(aOpen, aDuration) {
     this.open = aOpen;
@@ -29,7 +30,7 @@ function initAgendaListbox() {
     this.today = new Synthetic(showTodayHeader, 1);
     this.addPeriodListItem(this.today, "today-header");
     this.tomorrow = new Synthetic(showTomorrowHeader, 1);
-    var soondays = getPrefSafe("calendar.agendaListbox.soondays", 5);
+    var soondays = Preferences.get("calendar.agendaListbox.soondays", 5);
     this.soon = new Synthetic(showSoonHeader, soondays);
     this.periods = [this.today, this.tomorrow, this.soon];
 
@@ -88,7 +89,7 @@ function removePeriodListItem(aPeriod) {
     if (aPeriod.listItem) {
         aPeriod.listItem.getCheckbox().removeEventListener("CheckboxStateChange", this.onCheckboxChange, true);
         if (aPeriod.listItem) {
-            this.agendaListboxControl.removeChild(aPeriod.listItem);
+            aPeriod.listItem.remove();
             aPeriod.listItem = null;
         }
     }
@@ -120,7 +121,7 @@ function onCheckboxChange(event) {
                 var nextItemSibling = listItem.nextSibling;
                 leaveloop = (!agendaListbox.isEventListItem(listItem));
                 if (!leaveloop) {
-                    agendaListbox.agendaListboxControl.removeChild(listItem);
+                    listItem.remove();
                     listItem = nextItemSibling;
                 }
             }
@@ -485,7 +486,7 @@ function deleteItem(aItem, aMoveSelection) {
                     this.moveSelection();
                 }
             }
-            this.agendaListboxControl.removeChild(listItem);
+            listItem.remove();
         }
     }
     return isSelected;
@@ -502,7 +503,7 @@ function deleteItemsFromCalendar(aCalendar) {
     for each (let childNode in childNodes) {
         if (childNode && childNode.occurrence
             && childNode.occurrence.calendar.id == aCalendar.id) {
-            this.agendaListboxControl.removeChild(childNode);
+            childNode.remove();
         }
     }
 }
@@ -566,7 +567,9 @@ function createNewEvent(aEvent) {
         // isDate = true automatically makes the start time be the next full hour.
         var eventStart = agendaListbox.today.start.clone();
         eventStart.isDate = true;
-        createEventWithDialog(getSelectedCalendar(), eventStart);
+        if (calendarController.isCommandEnabled("calendar_new_event_command")) {
+            createEventWithDialog(getSelectedCalendar(), eventStart);
+        }
     }
 }
 
@@ -787,7 +790,7 @@ function removeListItems() {
             }
             if (this.isEventListItem(listItem)) {
                 if (listItem != this.agendaListboxControl.firstChild) {
-                    this.agendaListboxControl.removeChild(listItem);
+                    listItem.remove();
                 } else {
                     leaveloop = true;
                 }
@@ -1041,7 +1044,7 @@ function setCurrentEvent() {
     if (removelist) {
       if (removelist.length > 0) {
           for (var i = 0;i < removelist.length; i++) {
-              agendaListbox.agendaListboxControl.removeChild(removelist[i]);
+              removelist[i].remove();
           }
       }
     }

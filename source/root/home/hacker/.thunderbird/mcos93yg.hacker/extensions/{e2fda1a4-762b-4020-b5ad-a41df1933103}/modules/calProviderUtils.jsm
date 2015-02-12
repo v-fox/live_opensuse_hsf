@@ -7,6 +7,7 @@ Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calAuthUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 /*
  * Provider helper code
@@ -248,9 +249,6 @@ cal.getImipTransport = function calGetImipTransport(aCalendar) {
  */
 cal.getEmailIdentityOfCalendar = function calGetEmailIdentityOfCalendar(aCalendar, outAccount) {
     cal.ASSERT(aCalendar, "no calendar!", Components.results.NS_ERROR_INVALID_ARG);
-    if (cal.isSunbird()) {
-        return null;
-    }
     let key = aCalendar.getProperty("imip.identity.key");
     if (key !== null) {
         if (key.length == 0) { // i.e. "None"
@@ -718,7 +716,7 @@ cal.ProviderBase.prototype = {
             case "itip.transport": // iTIP/iMIP default:
                 return cal.getImipTransport(this);
             case "itip.notify-replies": // iTIP/iMIP default:
-                 return cal.getPrefSafe("calendar.itip.notify-replies", false);
+                 return Preferences.get("calendar.itip.notify-replies", false);
             // temporary hack to get the uncached calendar instance:
             case "cache.uncachedCalendar":
                 return this;

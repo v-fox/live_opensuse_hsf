@@ -20,6 +20,8 @@
                 src="chrome://calendar/content/preferences/alarms.js"/>
         <script type="application/javascript"
                 src="chrome://calendar/content/calendar-dialog-utils.js"/>
+        <script type="application/javascript"
+                src="chrome://calendar/content/calendar-ui-utils.js"/>
 
         <preferences>
             <preference id="calendar.alarms.playsound"
@@ -54,6 +56,9 @@
             <preference id="calendar.alarms.todoalarmunit"
                         name="calendar.alarms.todoalarmunit"
                         type="string"/>
+            <preference id="calendar.alarms.defaultsnoozelength"
+                        name="calendar.alarms.defaultsnoozelength"
+                        type="int"/>
 <!--
             <preference id="calendar.alarms.emailaddress"
                         name="calendar.alarms.emailaddress"
@@ -116,6 +121,22 @@
                 </columns>
                 <rows>
                     <row align="center">
+                        <label value="&pref.defaultsnoozelength.label;"
+                               accesskey="&pref.defaultsnoozelength.accesskey;"
+                               control="defaultsnoozelength"/>
+                        <hbox align="center">
+                            <textbox id="defaultsnoozelength"
+                                     preference="calendar.alarms.defaultsnoozelength"
+                                     type="number"
+                                     min="0"
+                                     maxlength="4"
+                                     size="3"
+                                     onselect="updateUnitLabelPlural('defaultsnoozelength','defaultsnoozelengthunit','minutes')"
+                                     oninput="updateUnitLabelPlural('defaultsnoozelength','defaultsnoozelengthunit','minutes')"/>
+                            <label id="defaultsnoozelengthunit"/>
+                        </hbox>
+                    </row>
+                    <row align="center">
                         <label value="&pref.defalarm4events.label;"
                                accesskey="&pref.defalarm4events.accesskey;"
                                control="eventdefalarm"/>
@@ -161,27 +182,18 @@
                                      type="number"
                                      min="0"
                                      size="3"
-                                     oninput="gAlarmsPane.updateMenuPlural('eventdefalarmlen','eventdefalarmunit')"/>
+                                     onselect="updateMenuLabelsPlural('eventdefalarmlen','eventdefalarmunit')"
+                                     oninput="updateMenuLabelsPlural('eventdefalarmlen','eventdefalarmunit')"/>
                             <menulist id="eventdefalarmunit"
                                       crop="none"
-                                      preference="calendar.alarms.eventalarmunit"
-                                      labelnumber="labelplural">
+                                      preference="calendar.alarms.eventalarmunit">
                                 <menupopup id="eventdefalarmunitpopup">
                                     <menuitem id="eventdefalarmunitmin"
-                                              label="&calendar.global.units.minutes;"
-                                              labelplural="&calendar.global.units.minutes;"
-                                              labelsingular="&calendar.global.units.minute;"
                                               value="minutes"
                                               selected="true"/>
                                     <menuitem id="eventdefalarmunithour"
-                                              label="&calendar.global.units.hours;"
-                                              labelplural="&calendar.global.units.hours;"
-                                              labelsingular="&calendar.global.units.hour;"
                                               value="hours"/>
                                     <menuitem id="eventdefalarmunitday"
-                                              label="&calendar.global.units.days;"
-                                              labelplural="&calendar.global.units.days;"
-                                              labelsingular="&calendar.global.units.day;"
                                               value="days"/>
                                 </menupopup>
                             </menulist>
@@ -197,27 +209,18 @@
                                      type="number"
                                      min="0"
                                      size="3"
-                                     oninput="gAlarmsPane.updateMenuPlural('tododefalarmlen','tododefalarmunit')"/>
+                                     onselect="updateMenuLabelsPlural('tododefalarmlen','tododefalarmunit')"
+                                     oninput="updateMenuLabelsPlural('tododefalarmlen','tododefalarmunit')"/>
                             <menulist id="tododefalarmunit"
                                       crop="none"
-                                      preference="calendar.alarms.todoalarmunit"
-                                      labelnumber="labelplural">
+                                      preference="calendar.alarms.todoalarmunit">
                                 <menupopup id="tododefalarmunitpopup">
                                     <menuitem id="tododefalarmunitmin"
-                                              label="&calendar.global.units.minutes;"
-                                              labelplural="&calendar.global.units.minutes;"
-                                              labelsingular="&calendar.global.units.minute;"
                                               value="minutes"
                                               selected="true"/>
                                     <menuitem id="tododefalarmunithour"
-                                              label="&calendar.global.units.hours;"
-                                              labelplural="&calendar.global.units.hours;"
-                                              labelsingular="&calendar.global.units.hour;"
                                               value="hours"/>
                                     <menuitem id="tododefalarmunitday"
-                                              label="&calendar.global.units.days;"
-                                              labelplural="&calendar.global.units.days;"
-                                              labelsingular="&calendar.global.units.day;"
                                               value="days"/>
                                 </menupopup>
                             </menulist>

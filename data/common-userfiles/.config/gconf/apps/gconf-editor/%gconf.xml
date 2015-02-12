@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<gconf>
+	<entry name="recents" mtime="1423705530" type="list" ltype="string">
+		<li type="string">
+			<stringvalue>/system/gstreamer/0.10/default/musicaudiosink_description</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/system/gstreamer/0.10/default/videosink</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/system/gstreamer/0.10/default/musicaudiosink</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/system/gstreamer/0.10/default/chataudiosink</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/system/gstreamer/0.10/default/audiosrc</stringvalue>
+		</li>
+		<li type="string">
+			<stringvalue>/system/gstreamer/0.10/default/audiosink</stringvalue>
+		</li>
+	</entry>
+</gconf>

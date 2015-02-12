@@ -6,6 +6,7 @@ Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calAlarmUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 /**
  * Controller for the views
@@ -238,22 +239,6 @@ var calendarViewController = {
         endBatchTransaction();
     }
 };
-
-/**
- * This function provides a neutral way to switch between views.
- *
- * @param aType     The type of view to select.
- * @param aShow     If true, the calendar view is forced to be shown, i.e.
- *                    bringing the view to the front if the application is
- *                    showing other elements (Lightning).
- */
-function switchCalendarView(aType, aShow) {
-    if (cal.isSunbird()) {
-        sbSwitchToView(aType);
-    } else {
-        ltnSwitchCalendarView(aType, aShow);
-    }
-}
 
 /**
  * This function does the common steps to switch between views. Should be called
@@ -542,7 +527,7 @@ var categoryManagement = {
             this.categoryStyleCache[aCatName] = sheet.cssRules[ruleIndex];
         }
 
-        let color = cal.getPrefSafe("calendar.category.color." + aCatName) || "";
+        let color = Preferences.get("calendar.category.color." + aCatName) || "";
         this.categoryStyleCache[aCatName].style.backgroundColor = color;
     }
 };

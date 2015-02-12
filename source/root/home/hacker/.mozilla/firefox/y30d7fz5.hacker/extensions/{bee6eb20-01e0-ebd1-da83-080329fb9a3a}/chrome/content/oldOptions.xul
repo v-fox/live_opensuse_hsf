@@ -1,0 +1,166 @@
+<?xml version="1.0" ?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://flashVideoDownload/skin/options.css" type="text/css"?>
+<!DOCTYPE window SYSTEM "chrome://flashVideoDownload/locale/flashVideoDownload.dtd">	
+<prefwindow 
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+	title="&options.mainTitle;"
+	id="fnvOptions" 		
+	buttons=","
+	ondialogaccept="options.save();"
+	windowtype="prefwindow">
+	<script type="application/x-javascript" src="options.js"/>	
+
+	<!--General Settings-->
+	<prefpane id="general" label="&options.general.title;" image="chrome://flashVideoDownload/skin/icons/options/general_icon.png">
+		<preferences>
+			<preference id="fnvfox_toolbarButtonOption" name="extensions.fnvfox.general.interface.toolbarButton" type="bool" />
+			<preference id="fnvfox_statusbarButtonOption" name="extensions.fnvfox.general.interface.statusbarButton" type="bool" />
+			<preference id="fnvfox_dtaOption" name="extensions.fnvfox.general.downloadManagers.dta" type="bool" />
+			<preference id="fnvfox_useFirefoxDownloadsFolderOption" name="extensions.fnvfox.general.downloads.useFirefoxDownloadsFolder" type="bool" />
+			<preference id="fnvfox_downloadImmediately" name="extensions.fnvfox.general.downloads.downloadImmediately" type="bool" />
+			<preference id="fnvfox_showFlashFiles" name="extensions.fnvfox.general.flashAndVideoFiles.showFlashFiles" type="bool" />
+			<preference id="fnvfox_showVideoFiles" name="extensions.fnvfox.general.flashAndVideoFiles.showVideoFiles" type="bool" />				
+		</preferences>
+    
+		<!-- GUI Elements... -->
+		<vbox flex="1" id="wrapper">
+			<vbox flex="1" id="generalInterfaceTitle">
+				<groupbox flex="1">
+					<caption label="&options.general.interface.title;" />
+					<checkbox id="fnvfox_toolbarOptionCheckbox" label="&options.general.interface.showToolbarIcon_checkbox;" oncommand="options.checkPrefChange(this, document.getElementById('fnvfox_statusbarOptionCheckbox'));" preference="fnvfox_toolbarButtonOption" />
+					<checkbox id="fnvfox_statusbarOptionCheckbox" label="&options.general.interface.showStatusbarIcon_checkbox;" oncommand="options.checkPrefChange(this, document.getElementById('fnvfox_toolbarOptionCheckbox'));" preference="fnvfox_statusbarButtonOption" />
+				</groupbox>
+			</vbox>
+			<vbox flex="1">
+				<groupbox flex="1">
+					<caption label="&options.general.flashAndVideos.title;" />
+					<checkbox id="fnvfox_showFlashFilesOptionCheckbox" label="&options.general.flashAndVideos.showFlashFilesResults_checkbox;" preference="fnvfox_showFlashFiles" oncommand="options.checkPrefChange(this, document.getElementById('fnvfox_showVideoFilesOptionCheckbox'));" />
+					<checkbox id="fnvfox_showVideoFilesOptionCheckbox" label="&options.general.flashAndVideos.showVideosFilesResults_checkbox;" preference="fnvfox_showVideoFiles" oncommand="options.checkPrefChange(this, document.getElementById('fnvfox_showFlashFilesOptionCheckbox'));" />
+				</groupbox>
+			</vbox>				
+			<vbox flex="1">
+				<groupbox flex="1">
+					<caption label="&options.general.downloadManagers.title;" />
+					<checkbox id="fnvfox_dtaOptionCheckbox" label="&options.general.downloadManagers.useDownThemAll_checkbox;" preference="fnvfox_dtaOption" oncommand="options.downloadsGroupboxEnabled(!this.checked);" />
+				</groupbox>
+			</vbox>
+			<vbox flex="1">
+				<groupbox flex="1">
+					<caption label="&options.general.downloads.title;" />
+					<radiogroup flex="1" id="fnvfox_downloadsRadiogroup">
+						<vbox flex="1">
+							<radio id="fnvfox_lastSavedFolder" label="&options.general.downloads.useLastSavedFolder_radio;" />
+							<radio id="fnvfox_firefoxDownloadsFolderOptionRadio" label="&options.general.downloads.useFFDownloadsFolder_radio;" />
+							<hbox flex="1">
+								<radio id="fnvfox_saveToOptionRadio" label="&options.general.downloads.saveTo_radio;" />
+								<textbox flex="1" readonly="true" id="fnvfox_downloadsFolderTextbox" size="35" >										
+									<image id="fnvfox_downloadsFolderTextboxImage" />
+								</textbox>
+								<button id="fnvfox_downloadsBrowseButton" label="&options.general.downloads.browse_button;" oncommand="options.browseDownloadsFolder();" />
+							</hbox>
+						</vbox>
+					</radiogroup>
+					<checkbox id="fnvfox_downloadsStart" label="&options.general.downloads.startDownloadsImmediately_checkbox;" preference="fnvfox_downloadImmediately" />
+				</groupbox>
+			</vbox>
+		</vbox>
+	</prefpane>
+	
+	<prefpane id="yt" label="&options.yt.title;" image="chrome://flashVideoDownload/skin/icons/options/yt_icon.png">
+		<preferences>
+			<preference id="fnvfox_yt_formats_mp4" name="extensions.fnvfox.yt.formats.mp4" type="bool" />
+			<preference id="fnvfox_yt_formats_webm" name="extensions.fnvfox.yt.formats.webm" type="bool" />
+			<preference id="fnvfox_yt_formats_flv" name="extensions.fnvfox.yt.formats.flv" type="bool" />
+			<preference id="fnvfox_yt_formats_3gp" name="extensions.fnvfox.yt.formats.3gp" type="bool" />
+			<preference id="fnvfox_yt_formats_3dmp4" name="extensions.fnvfox.yt.formats.3dmp4" type="bool" />
+			<preference id="fnvfox_yt_formats_3dwebm" name="extensions.fnvfox.yt.formats.3dwebm" type="bool" />
+			
+			<preference id="fnvfox_yt_qualities_144p" name="extensions.fnvfox.yt.qualities.144p" type="bool" />
+			<preference id="fnvfox_yt_qualities_240p" name="extensions.fnvfox.yt.qualities.240p" type="bool" />
+			<preference id="fnvfox_yt_qualities_270p" name="extensions.fnvfox.yt.qualities.270p" type="bool" />
+			<preference id="fnvfox_yt_qualities_360p" name="extensions.fnvfox.yt.qualities.360p" type="bool" />
+			<preference id="fnvfox_yt_qualities_520p" name="extensions.fnvfox.yt.qualities.520p" type="bool" />
+			<preference id="fnvfox_yt_qualities_720p" name="extensions.fnvfox.yt.qualities.720p" type="bool" />
+			<preference id="fnvfox_yt_qualities_3072p" name="extensions.fnvfox.yt.qualities.3072p" type="bool" />
+			<preference id="fnvfox_yt_qualities_3d240p" name="extensions.fnvfox.yt.qualities.3d240p" type="bool" />
+			<preference id="fnvfox_yt_qualities_3d360p" name="extensions.fnvfox.yt.qualities.3d360p" type="bool" />
+			<preference id="fnvfox_yt_qualities_3d520p" name="extensions.fnvfox.yt.qualities.3d520p" type="bool" />
+			<preference id="fnvfox_yt_qualities_3d720p" name="extensions.fnvfox.yt.qualities.3d720p" type="bool" />
+			
+			<preference id="fnvfox_yt_embeddedVideos_enhancedDetection" name="extensions.fnvfox.yt.embeddedVideos.enhancedDetection" type="bool" />
+		</preferences>
+		<vbox>
+			<vbox flex="1">
+				<groupbox flex="1">
+					<caption label="&options.yt.formats.title;" />
+					<hbox flex="1">
+						<checkbox class="displayedFormat" label="MP4" preference="fnvfox_yt_formats_mp4" />							
+						<checkbox class="displayedFormat" label="WebM" preference="fnvfox_yt_formats_webm" />
+						<checkbox class="displayedFormat" label="FLV" preference="fnvfox_yt_formats_flv" />
+						<checkbox class="displayedFormat" label="3GP" preference="fnvfox_yt_formats_3gp" />
+					</hbox>
+					<hbox flex="1">
+						<checkbox class="displayedFormat" label="MP4 3D" preference="fnvfox_yt_formats_3dmp4" />
+						<checkbox class="displayedFormat" label="WebM 3D" preference="fnvfox_yt_formats_3dwebm" />
+					</hbox>
+				</groupbox>
+			</vbox>
+		</vbox>
+		<vbox>
+			<vbox flex="1">
+				<groupbox flex="1">
+					<caption label="&options.yt.qualities.title;" />
+					<hbox flex="1">
+						<vbox flex="1">
+							<checkbox class="displayedFormat" label="144p" preference="fnvfox_yt_qualities_144p" />							
+							<checkbox class="displayedFormat" label="240p" preference="fnvfox_yt_qualities_240p" />
+							<checkbox class="displayedFormat" label="270p" preference="fnvfox_yt_qualities_270p" />
+						</vbox>
+						<vbox flex="1">								
+							<checkbox class="displayedFormat" label="360p" preference="fnvfox_yt_qualities_360p" />
+							<checkbox class="displayedFormat" label="520p" preference="fnvfox_yt_qualities_520p" />
+							<checkbox class="displayedFormat" label="720p" preference="fnvfox_yt_qualities_720p" />							
+						</vbox>
+						<vbox flex="1">							
+							<checkbox class="displayedFormat" label="3072p" preference="fnvfox_yt_qualities_3072p" />
+							<checkbox class="displayedFormat" label="240p 3D" preference="fnvfox_yt_qualities_3d240p" />
+							<checkbox class="displayedFormat" label="360p 3D" preference="fnvfox_yt_qualities_3d360p" />
+						</vbox>
+						<vbox flex="1">							
+							<checkbox class="displayedFormat" label="520p 3D" preference="fnvfox_yt_qualities_3d520p" />
+							<checkbox class="displayedFormat" label="720p 3D" preference="fnvfox_yt_qualities_3d720p" />
+						</vbox>
+					</hbox>
+				</groupbox>
+			</vbox>
+		</vbox>
+		<vbox>
+			<groupbox flex="1">
+				<caption label="&options.yt.embeddedVideos.label;" />
+				<checkbox label="&options.yt.embeddedVideos.enhancedDetection.label;" preference="fnvfox_yt_embeddedVideos_enhancedDetection"/>
+				<label class="smallText" value="&options.yt.embeddedVideos.enhancedDetection.label1;"></label>
+				<label class="smallText" value="&options.yt.embeddedVideos.enhancedDetection.label2;" style="color: red;"/>
+			</groupbox>
+		</vbox>
+	</prefpane>
+	
+	<!--About Settings-->
+	<prefpane id="about" label="&options.about.title;" image="chrome://flashVideoDownload/skin/icons/options/about_icon.png">
+		<vbox>
+			<label id="about_header" value="&options.about.header;" />
+			<hbox flex="1">
+				<label value="&options.about.version;" />
+				<label id="about_versionValue" value="" />
+			</hbox>
+			<stack>					
+				<hbox flex="1" top="1"><label value="&options.about.visitWebsite;" /></hbox>
+				<hbox flex="1" left="75"><label id="about_websiteAddress" href="http://www.fnvfox.com" class="text-link" value="www.fnvfox.com" /></hbox>
+			</stack>
+		</vbox>
+	</prefpane>
+	<hbox id="macDialogButtons" pack="end" flex="1">
+		<button label="&options.dialogButtons.ok_button;" oncommand="document.getElementById('fnvOptions').acceptDialog(); options.save();" />
+		<button label="&options.dialogButtons.cancel_button;" oncommand="window.close();" />
+	</hbox>		
+</prefwindow>

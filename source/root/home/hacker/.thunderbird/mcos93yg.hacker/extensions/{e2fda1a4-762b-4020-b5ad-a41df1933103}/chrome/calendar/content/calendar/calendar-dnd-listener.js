@@ -6,6 +6,7 @@ Components.utils.import("resource://calendar/modules/calUtils.jsm");
 Components.utils.import("resource://calendar/modules/calAlarmUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
 Components.utils.import("resource://gre/modules/XPCOMUtils.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 var itemConversion = {
 
@@ -144,7 +145,7 @@ var itemConversion = {
         if (!item.startDate) {
             if (aTask.dueDate) {
                 item.startDate = aTask.dueDate.clone();
-                item.startDate.minute -= getPrefSafe("calendar.event.defaultlength", 60);
+                item.startDate.minute -= Preferences.get("calendar.event.defaultlength", 60);
             } else {
                 item.startDate = cal.getDefaultStartDate();
             }
@@ -155,7 +156,7 @@ var itemConversion = {
             // Make the event be the default event length if no due date was
             // specified.
             item.endDate = item.startDate.clone();
-            item.endDate.minute += getPrefSafe("calendar.event.defaultlength", 60);
+            item.endDate.minute += Preferences.get("calendar.event.defaultlength", 60);
         }
 
         // Alarms
@@ -239,7 +240,7 @@ calDNDBaseObserver.prototype = {
         var destCal = getSelectedCalendar();
         switch (bestFlavor.value) {
             case "text/calendar":
-//@line 246 "/builds/slave/tb-rel-c-esr24-lx_bld-00000000/build/calendar/base/content/calendar-dnd-listener.js"
+//@line 247 "/builds/slave/tb-rel-c-esr31-lx_bld-00000000/build/calendar/base/content/calendar-dnd-listener.js"
                 var parser = Components.classes["@mozilla.org/calendar/ics-parser;1"]
                              .createInstance(Components.interfaces.calIIcsParser);
                 parser.parseString(data);
@@ -431,7 +432,8 @@ calMailButtonDNDObserver.prototype = {
                 }
             }
 
-            sendMailTo(recipients, item.title, item.getProperty("DESCRIPTION"));
+            let identity = item.calendar.getProperty("imip.identity");
+            sendMailTo(recipients, item.title, item.getProperty("DESCRIPTION"), identity);
         }
     },
 

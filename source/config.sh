@@ -64,6 +64,8 @@ systemctl enable unbound
 systemctl enable tor
 systemctl enable polipo
 systemctl enable avahi-daemon
+# linphone provides P2P SIP, so we don't need SIP Witch
+#systemctl enable sipwitch
 systemctl enable miredo-client
 systemctl enable colord
 systemctl enable xdm

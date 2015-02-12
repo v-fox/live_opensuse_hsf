@@ -20,9 +20,16 @@ pref("extensions.{e2fda1a4-762b-4020-b5ad-a41df1933103}.creator",
 // general settings
 pref("calendar.date.format", 0);
 pref("calendar.event.defaultlength", 60);
+pref("calendar.task.defaultstart", "none");
+pref("calendar.task.defaultstartoffset", 0);
+pref("calendar.task.defaultstartoffsetunits", "minutes");
+pref("calendar.task.defaultdue", "none");
+pref("calendar.task.defaultdueoffset", 60);
+pref("calendar.task.defaultdueoffsetunits", "minutes");
 
-// default transparency of allday items; could be switched to e.g. "OPAQUE":
-pref("calendar.allday.defaultTransparency", "TRANSPARENT");
+// default transparency (free-busy status) of standard and all-day events
+pref("calendar.events.defaultTransparency.allday.transparent", true);
+pref("calendar.events.defaultTransparency.standard.transparent", false);
 
 // number of days in "Soon" section
 pref("calendar.agendaListbox.soondays", 5);
@@ -61,6 +68,9 @@ pref("calendar.itip.notify", true);
 
 // whether the organizer propagates replies of attendees to all attendees
 pref("calendar.itip.notify-replies", false);
+
+// whether email invitation updates are send out to all attendees if (only) adding a new attendee
+pref("calendar.itip.updateInvitationForNewAttendeesOnly", false);
 
 // whether CalDAV (experimental) scheduling is enabled or not.
 pref("calendar.caldav.sched.enabled", false);
@@ -119,7 +129,7 @@ pref("calendar.threading.latency ", 250);
 pref("calendar.network.multirealm", false);
 
 // Set up user agent
-pref("calendar.useragent.extra", "Lightning/2.6.5");
+pref("calendar.useragent.extra", "Lightning/3.3.2");
 
 // Disable use of system colors in minimonth and calendar views
 pref("calendar.view.useSystemColors", false);

@@ -8,6 +8,7 @@ var gCalThreadingEnabled;
 
 Components.utils.import("resource:///modules/XPCOMUtils.jsm");
 Components.utils.import("resource://gre/modules/Services.jsm");
+Components.utils.import("resource://gre/modules/Preferences.jsm");
 
 // Usually the backend loader gets loaded via profile-after-change, but in case
 // a calendar component hooks in earlier, its very likely it will use calUtils.
@@ -130,9 +131,27 @@ let cal = {
 
     get threadingEnabled() {
         if (gCalThreadingEnabled === undefined) {
-            gCalThreadingEnabled = !cal.getPrefSafe("calendar.threading.disabled", false);
+            gCalThreadingEnabled = !Preferences.get("calendar.threading.disabled", false);
         }
         return gCalThreadingEnabled;
+    },
+
+    /*
+     * Checks whether a calendar supports events
+     *
+     * @param aCalendar
+     */
+    isEventCalendar: function cal_isEventCalendar(aCalendar) {
+        return (aCalendar.getProperty("capabilities.events.supported") !== false);
+    },
+
+    /*
+     * Checks whether a calendar supports tasks
+     *
+     * @param aCalendar
+     */
+    isTaskCalendar: function cal_isTaskCalendar(aCalendar) {
+        return (aCalendar.getProperty("capabilities.tasks.supported") !== false);
     },
 
     /**
@@ -197,6 +216,27 @@ let cal = {
     },
 
     /**
+     * Returns a basically checked recipient list - malformed elements will be removed
+     *
+     * @param   string aRecipients  a comma-seperated list of e-mail addresses
+     * @return  string              a comma-seperated list of e-mail addresses
+     */
+    validateRecipientList: function (aRecipients) {
+        let compFields = Components.classes["@mozilla.org/messengercompose/composefields;1"]
+                                   .createInstance(Components.interfaces.nsIMsgCompFields);
+        // Resolve the list considering also configured display names
+        let result = compFields.splitRecipients(aRecipients, false, {});
+        // Malformed e-mail addresses with display name in list will result in "Display name <>".
+        // So, we need an additional check on the e-mail address itself and sort out malformed
+        // entries from the previous list (both objects have always the same length)
+        if (result.length > 0) {
+            let resultAddress = compFields.splitRecipients(aRecipients, true, {});
+            result = result.filter((v, idx) => !!resultAddress[idx]);
+        }
+        return result.join(",");
+    },
+
+    /**
      * Shortcut function to check whether an item is an invitation copy and
      * has a participation status of either NEEDS-ACTION or TENTATIVE.
      *
@@ -230,6 +270,25 @@ let cal = {
             invitedAttendee = calendar.getInvitedAttendee(aItem);
         }
         return invitedAttendee;
+    },
+
+    /**
+     * Returns the default transparency to apply for an event depending on whether its an all-day event
+     *
+     * @param aIsAllDay      If true, the default transparency for all-day events is returned
+     */
+    getEventDefaultTransparency: function (aIsAllDay) {
+        let transp = null;
+        if (aIsAllDay) {
+            transp = Preferences.get("calendar.events.defaultTransparency.allday.transparent", false)
+                     ? "TRANSPARENT"
+                     : "OPAQUE";
+        } else {
+            transp = Preferences.get("calendar.events.defaultTransparency.standard.transparent", false)
+                     ? "TRANSPARENT"
+                     : "OPAQUE";
+        }
+        return transp;
     },
 
     // The below functions will move to some different place once the
@@ -584,12 +643,12 @@ let cal = {
         while (childNode) {
             let prevChildNode = childNode.previousSibling;
             if (!aAttribute || aAttribute === undefined) {
-                aParentNode.removeChild(childNode);
+                childNode.remove();
              } else if (!aValue || aValue === undefined) {
-                aParentNode.removeChild(childNode);
+                childNode.remove();
             } else if (childNode && childNode.hasAttribute(aAttribute)
                 && childNode.getAttribute(aAttribute) == aValue) {
-                aParentNode.removeChild(childNode);
+                childNode.remove();
             }
             childNode = prevChildNode;
         };
