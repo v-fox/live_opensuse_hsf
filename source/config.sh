@@ -73,7 +73,7 @@ systemctl enable xdm
 # preemptively generate unbound keys
 systemctl restart unbound-keygen
 # preemptively building our dkms kernel modules
-/usr/sbin/dkms autoinstall
+dkms autoinstall
 # preemptively setting up NIS domain name for legacy compatibility
 netconfig update
 
