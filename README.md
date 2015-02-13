@@ -5,9 +5,9 @@ This is hybrid live cd/usb openSUSE spin aimed to be fully functional out-of-the
 It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), [CAINE](https://www.caine-live.net) or [Whonix](https://www.whonix.org), however it should be quite adequate as an installation basis for everyday use and comes with pre-configured data proxying via [Tor](https://www.torproject.org/about/overview.html) & [DNSCrypt](http://dnscrypt.org).
 
 I recommend using smart SATA boxes and usb drives with legacy (floppy / CD / virtual partition) emulation as the replacement for disks, like:  
-* ⊘ [IODD](https://iodd.co.kr) / [Zalman ZM-\*](https://www.zalman.com/global/product/CategorySecond_Pic.php) series
-* ⊘ [The IsoStick](https://isostick.com)
-* ⊘ or just using it on any fast USB stick
+⊘ [IODD](https://iodd.co.kr) / [Zalman ZM-\*](https://www.zalman.com/global/product/CategorySecond_Pic.php) series  
+⊘ [The IsoStick](https://isostick.com)  
+⊘ or just using it on any fast USB stick  
 
 It provides:
 ------------
@@ -23,7 +23,7 @@ It provides:
 * LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * qBitTorrent, aMule, Filezilla and aria2 for file transfer
-* Clementine audio player, VLC and S/Mplayer video players
+* Clementine audio player, VLC and SMplayer/mpv video players
 * LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
 * printer (via cups), scanner (via x/sane) and analogue video input (via tvtime) support
 * wide range of gamepad utilities, such as AntiMicro (for key & axis mapping) and jstest-gtk
