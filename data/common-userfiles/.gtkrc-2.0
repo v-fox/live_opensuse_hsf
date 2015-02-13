@@ -10,6 +10,7 @@ gtk-button-images=1
 gtk-menu-images=1
 gtk-enable-event-sounds=0
 gtk-enable-input-feedback-sounds=0
+gtk-error-bell = 0
 gtk-alternative-button-order = 1
 
 ## customization

@@ -1,1 +1,1 @@
-setterm -blength 0
+set bell-style none
