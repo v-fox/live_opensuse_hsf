@@ -54,7 +54,7 @@ video_adaptive_jitt_comp_enabled=1
 [audio_codec_0]
 mime=opus
 rate=48000
-channels=2
+channels=1
 enabled=1
 
 [audio_codec_1]

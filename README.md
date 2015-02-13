@@ -19,15 +19,17 @@ It provides:
 * professional sound handling with JACK (PA & ALSA, both with OSS support, run as JACK's clients; tools are available in repositories)
 * professional colour management facilities consisting of colord, argyllCMS, dispcalGUI and xiccd
 * professional networking tools and rich connectivity options
-* LeechCraft modular system stripped for only IM and socializing + LinPhone & SIP Witch for P2P HD A/V multiuser encrypted SIP (telephony)
+* LeechCraft modular system stripped for only IM and socializing
+* LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
+* qBitTorrent, aMule, Filezilla and aria2 for file transfer
 * Clementine audio player, VLC and S/Mplayer video players
 * LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
 * printer (via cups), scanner (via x/sane) and analogue video input (via tvtime) support
 * wide range of gamepad utilities, such as AntiMicro (for key & axis mapping) and jstest-gtk
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other various console tools
 * anti-censorship kit: Tor, Polipo, dnscrypt-proxy, proxychains and miredo-client
-* networking: ze/nmap, hostapd, usbip, nping, iptraf-ng, nethogs, upnp-inspector, mtr, lft, minicom, rancid, aria2, aMule, irssi and a bunch
+* networking: ze/nmap, hostapd, usbip, nping, iptraf-ng, nethogs, upnp-inspector, mtr, lft, minicom, rancid, irssi and a bunch
 * gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
 * exfat and zfs kernel modules and general FS management & recovery tools like fsarchiver/guymager, ddrescue, testdisk, photorec, ext4magic
 * autopsy/sleuthkit, scalpel, foremost, chkrootkit, ntpassw/dchntpw/ophcrack, lynis, aircrack-ng, kismet, reaver and more security tools
