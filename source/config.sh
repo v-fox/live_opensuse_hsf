@@ -51,7 +51,8 @@ systemctl enable irq_balancer
 systemctl enable upower
 systemctl enable gpm
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
-systemctl enable autofs
+# greatly slows down boot up
+#systemctl enable autofs
 systemctl enable lm_sensors
 systemctl enable hddtemp
 systemctl enable dkms
