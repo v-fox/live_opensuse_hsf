@@ -347,6 +347,9 @@ root/home/hacker/.gitconfig
 root/etc/skel/.mplayer/config
 root/root/.mplayer/config
 root/home/hacker/.mplayer/config
+root/etc/skel/.gtkrc-2.0.mine
+root/root/.gtkrc-2.0.mine
+root/home/hacker/.gtkrc-2.0.mine
 root/etc/skel/.config/pcmanfm-qt/lxqt/settings.conf
 root/root/.config/pcmanfm-qt/lxqt/settings.conf
 root/home/hacker/.config/pcmanfm-qt/lxqt/settings.conf
