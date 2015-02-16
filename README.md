@@ -37,18 +37,18 @@ such as AntiMicro (for key & axis mapping) and jstest-gtk
 * LeechCraft modular system stripped for only IM and socializing
 * LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
-* qBitTorrent, aMule, Filezilla and aria2 for file transfer
+* qBitTorrent, aMule, Filezilla, wget & aria2/fe and httrack for file transfer
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other console tools
-* wireshark-qt, ze/nmap, hostapd, usbip, nping, iptraf-ng, nethogs,  
-upnp-inspector, mtr, lft, minicom, miredo-client, rancid and more
-* gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, testdisk,  
-guymager, snapper, disktype and other filesystem tools
-* general FS management & recovery tools like fsarchiver, guymager, ddrescue,  
-testdisk, photorec, ext4magic and exfat & zfs kernel modules
-* autopsy/sleuthkit, scalpel, foremost, chkrootkit, ntpassw/dchntpw/ophcrack,  
-lynis, aircrack-ng, kismet, reaver and more security tools
-* tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup,  
-seahorse/gnome-keyring, keepassx encryption utilities
+* networking tools:  
+  * looking: hostapd, usbip, miredo-client, rancid, iptraf-ng, nethogs, upnp-inspector, mtr, lft, minicom
+  * touching: wireshark-qt, ze/nmap, xprobe2, scapy & nping, aircrack-ng, kismet, reaver
+* filesystem tools:  
+  * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat & zfs kernel modules
+  * recovery/imaging: fsarchiver, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
+* security/forensics tools:  
+  * autopsy/sleuthkit, scalpel, plaso/log2timeline/Windows®-gutting toolkit, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
+* encryption tools:  
+  * tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx
 * bunch of useful repos pre-configured for games, emulators  
 and recent but mostly stable updates
 

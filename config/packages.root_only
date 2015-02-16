@@ -282,6 +282,7 @@ hostapd
 hostap-utils
 hplip-hpijs
 htop
+httrack
 hunspell
 hunspell-tools
 hwinfo
@@ -477,9 +478,16 @@ libcanberra-gtk-module-common
 libcap-ng-utils
 libcap-progs
 liberation-fonts
+libesedb-tools
 libevdev-tools
+libevt-tools
+libevtx-tools
+libewf-tools
 libflashsupport
 libiscsi-utils
+liblnk-tools
+libmsiecf-tools
+libolecf-tools
 libOSMesa9
 libotr2-tools
 libpoppler-glib8
@@ -493,6 +501,7 @@ libpurple-plugin-pack-extras
 libpurple-plugin-sipe
 libpurple-plugin-tox
 libpurple-plugin-whatsapp
+libregf-tools
 libreoffice-base-drivers-mysql
 libreoffice-branding-openSUSE
 libreoffice-calc-extensions
@@ -507,12 +516,16 @@ libreoffice-templates-labels-letter
 libreoffice-templates-presentation-layouts
 libreoffice-writer-extensions
 libsecret-tools
+libsmdev-tools
 libtxc_dxtn
 libva-egl1
 libvdpau_nouveau
 libvdpau_r300
 libvdpau_r600
 libvdpau_radeonsi
+libvhdi-tools
+libvmdk-tools
+libvshadow-tools
 libXaw3d8
 libXRes1
 libXTrap6
@@ -526,6 +539,7 @@ linuxconsoletools
 linux-ftools
 lirc
 lirc-remotes
+log2timeline
 lsb-invalid-mta
 lsb-release
 lsof
@@ -654,6 +668,7 @@ pdfcrack-multithread
 phonon4qt5-backend-gstreamer
 phonon-backend-gstreamer
 photorec
+plaso
 plymouth-plugin-fade-throbber
 plymouth-plugin-label
 plymouth-plugin-script
@@ -707,6 +722,7 @@ radvd
 reaver
 reiser4progs
 rfkill
+rkhunter
 rpcbind
 rpm
 rp-pppoe
@@ -719,6 +735,7 @@ sazanami-fonts
 sbc
 sbl
 scalpel
+scapy
 schedtop
 screen
 sdparm
@@ -745,6 +762,7 @@ sipwitch-plugin-scripting
 sipwitch-plugin-subscriber
 sipwitch-plugin-zeroconf
 skanlite
+sleuthkit
 smartmontools
 snapper
 snapper-zypp-plugin
@@ -754,6 +772,7 @@ sourceserifpro-fonts
 sox
 splashy-mkinitrd
 splix
+srm
 ssdeep
 ssh-contact
 sssd
@@ -801,6 +820,7 @@ ubuntu-fonts
 ucode-intel
 udev
 udftools
+udisks
 udisks2
 ulogd
 unace
@@ -867,6 +887,7 @@ xkbutils
 xkill
 xl2tpd
 xlsfonts
+xmount
 xorg-scripts
 xorg-x11
 xorg-x11-driver-input
@@ -878,6 +899,7 @@ xorg-x11-libX11-ccache
 xorg-x11-server-extra
 xplsprinters
 xprehashprinterlist
+xprobe2
 xrandr
 xsane
 xscreensaver
