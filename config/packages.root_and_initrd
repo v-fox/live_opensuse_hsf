@@ -1,4 +1,5 @@
 adaptec-firmware
+aegisub
 alsa-firmware
 atmel-firmware
 bluez-firmware
@@ -21,6 +22,7 @@ nano
 os-prober
 plymouth-branding-HSF
 pngcrush
+subtitlecomposer
 technisat-usb2-firmware
 ucode-amd
 util-linux

@@ -1,18 +1,4 @@
-# ALSA => JACK routing (screw you, PA !)
-pcm.!default {
-  type plug
-  slave {
-    pcm jack
-    channels unchanged }
-  hint {
-    show on
-    description "Default ALSA Output (currently JACK)" }
-}
-ctl.!default {
-  type hw
-  card 0
-}
-
+### ALSA => JACK routing (screw you, PA !)
 pcm.jack {
     type jack
     hint {
@@ -35,19 +21,28 @@ pcm.jack {
     }
 }
 
-# crutch for stupid apps like Firefox
+pcm.!default {
+  type plug
+  slave.pcm jack
+  hint {
+    show on
+    description "Default ALSA Output (currently JACK)" }
+}
+ctl.!default {
+  type hw
+  card 0
+}
+
+## crutch for stupid apps like Firefox
 pcm.!sysdefault {
   type plug
-  slave {
-    pcm jack
-    channels unchanged }
+  slave.pcm jack
   hint {
     show on
     description "Crutch for stupid applications (JACK enforcement)" }
 }
 
-# snd-aloop crutch for super-stupid applications like wine
-
+## snd-aloop crutch for super-stupid applications like wine
 # playback device
 pcm.aloopPlayback {
   type dmix
@@ -106,4 +101,22 @@ pcm.jack-aloop {
   hint {
     show on
     description "Crutch for super-stupid applications (ass-backwards JACK enforcement)" }
+}
+
+## additional pulse crutch for completely retarded applications like aegisub
+## that can't handle neither ALSA or Pulse directly and can't even dream of JACK.
+## also, some apps with hyper-lazy authors may rely on ALSA/PA emulation because
+## they didn't code PA support but realised that ALSA is inaccessible now
+pcm.pulse {
+    type pulse
+    hint {
+        show on
+        description "Crutch for full retard applications (PulseAudio redirection layer)"
+    }
+    fallback "sysdefault"
+}
+
+ctl.pulse {
+    type pulse
+    fallback "sysdefault"
 }

@@ -1,49 +1,53 @@
 <!DOCTYPE patchbay>
 <patchbay version="0.3.11" name="redirection-to-jamin">
  <output-sockets>
-  <socket exclusive="on" client="jamin" type="jack-audio" name="Jamin output">
+  <socket exclusive="off" client="jamin" type="jack-audio" name="Jamin output">
    <plug>a\.master\.out_L|out_L</plug>
    <plug>a\.master\.out_R|out_R</plug>
   </socket>
-  <socket exclusive="on" client="MPlayer \[[0-9]+\]|mpv" type="jack-audio" name="mplayer &amp; mpv">
+  <socket exclusive="off" client="MPlayer \[[0-9]+\]|mpv" type="jack-audio" name="mplayer &amp; mpv">
    <plug>out_0</plug>
    <plug>out_1</plug>
   </socket>
-  <socket exclusive="on" client="vlc_[0-9]+" type="jack-audio" name="VLC">
+  <socket exclusive="off" client="vlc_[0-9]+" type="jack-audio" name="VLC">
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
-  <socket exclusive="on" client="TiMidity" type="jack-audio" name="TiMidity">
+  <socket exclusive="off" client="TiMidity" type="jack-audio" name="TiMidity">
    <plug>port_1</plug>
    <plug>port_2</plug>
   </socket>
-  <socket exclusive="on" client="fluidsynth(|-.[0-9])|qsynth" type="jack-audio" name="fluidsynth">
+  <socket exclusive="off" client="fluidsynth(|-.[0-9])|qsynth" type="jack-audio" name="fluidsynth">
    <plug>l_.*|left</plug>
    <plug>r_.*|right</plug>
   </socket>
-  <socket exclusive="on" client="alsa-jack\.jackP\.[0-9]+\.[0-9]" type="jack-audio" name="ALSA">
+  <socket exclusive="off" client="alsa-jack\.jackP\.[0-9]+\.[0-9]" type="jack-audio" name="ALSA">
    <plug>out_000</plug>
    <plug>out_001</plug>
   </socket>
-  <socket exclusive="on" client=".*" type="jack-audio" name="FIrefox (cubeb)">
+  <socket exclusive="off" client=".*" type="jack-audio" name="FIrefox (cubeb)">
    <plug>AudioStream_.*_0</plug>
    <plug>AudioStream_.*_1</plug>
   </socket>
-  <socket exclusive="on" client="PulseAudio JACK Sink" type="jack-audio" name="PA stereo output">
+  <socket exclusive="off" client="PulseAudio JACK Sink" type="jack-audio" name="PA stereo output">
    <plug>front-left</plug>
    <plug>front-right</plug>
   </socket>
-  <socket exclusive="on" client=".*" type="jack-audio" name="all GStreamer players">
-   <plug>out_jackaudiosink.*_1</plug>
-   <plug>out_jackaudiosink.*_2</plug>
+  <socket exclusive="off" client=".*" type="jack-audio" name="all GStreamer players">
+   <plug>out_.*_1</plug>
+   <plug>out_.*_2</plug>
   </socket>
-  <socket exclusive="on" client="flash" type="jack-audio" name="Adobe Flash">
+  <socket exclusive="off" client="flash" type="jack-audio" name="Adobe Flash">
    <plug>out1</plug>
    <plug>out2</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket exclusive="off" client="system" type="jack-audio" name="main output">
+  <socket exclusive="off" client="SimpleScreenRecorder" type="jack-audio" name="SimpleScreenRecorder">
+   <plug>in_1</plug>
+   <plug>in_2</plug>
+  </socket>
+  <socket exclusive="on" client="system" type="jack-audio" name="main output">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>

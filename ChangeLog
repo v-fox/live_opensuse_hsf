@@ -18,16 +18,20 @@
 	* Tox P2P IM audio/video protocol is fully supported
 		(Qt & ncurses Tox clients + libpurple-plugin for LC-Azoth)
 	* LinPhone + SIP Witch / switchview bundle is added for safe P2P conferencing in HD A/V
+	* SMplayer and VLC replaced with bomi/mpv
+	* gtk-recordmydesktop replaced with simplescreenrecorder
+	* SubtitleComposer and Aegisub are added for subtitle handling
+        * GoldenDict, the ultimate dictionary, is updated from its ancient version
 	* all logging completely directed into systemd-journal
 		and it should shit less into console
-	* GoldenDict, the ultimate dictionary, is updated from its ancient version
 	* PCI & USB ids, smartdb and CAs always updated before creating image
 	* Custom build of Firefox with:
 		system libjpeg-turbo, libpng, cairo, pixman, libvpx,
 			sqlite, libevent, hunspell, icu, ffi, bz2
-		No compile optimisations:
-			 (O3 breaks png rendering, LTO is still flacky and PGO needs X on building for correct results)
-		No direct JACK support (PA is quite hardcoded now, unfortunately)
+		!No compile optimisations:
+			(O3 breaks png rendering,
+			LTO is still flacky and PGO needs X on building for correct results)
+		!No direct JACK support (PA is quite hardcoded now, unfortunately)
 		disabled crash reporting, accessibility
 		enabled stripping, disabled '-g' flag
 	* sudo now handles GUI apps and can replace xdg-su/kdesu/gksu

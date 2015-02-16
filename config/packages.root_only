@@ -44,6 +44,7 @@ bitstream-vera-fonts
 blueman
 bluez
 bluez-cups
+bomi
 bonnie++
 bootcycle
 branding-openSUSE
@@ -264,7 +265,6 @@ gtk3-data
 gtk3-immodule-xim
 gtk3-theme-oxygen
 gtk3-tools
-gtk-recordMyDesktop
 guestfs-tools
 gupnp-tools
 gutenprint
@@ -593,7 +593,7 @@ nmap
 nmap-ndiff
 nmon
 noping
-npapi-vlc
+npapi-vlc-beta
 nping
 nscd
 ntfs-3g
@@ -705,7 +705,6 @@ qt-mobility-pulseaudio
 radeontop
 radvd
 reaver
-recordmydesktop
 reiser4progs
 rfkill
 rpcbind
@@ -738,6 +737,7 @@ shim
 showfont
 signing-party
 sil-charis-fonts
+simplescreenrecorder
 sipcalc
 siproxd
 sipwitch-plugin-forward
@@ -746,7 +746,6 @@ sipwitch-plugin-subscriber
 sipwitch-plugin-zeroconf
 skanlite
 smartmontools
-smplayer-qt5
 snapper
 snapper-zypp-plugin
 snmp-mibs
@@ -822,9 +821,7 @@ vaapi-intel-driver
 vaapi-tools
 vdpau-video
 vlan
-vlc
-vlc-codecs
-vlc-qt
+vlc-beta-codecs
 vmfs-tools
 vorbis-tools
 vpx-tools

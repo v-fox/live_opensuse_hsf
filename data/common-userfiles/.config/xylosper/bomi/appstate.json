@@ -1,0 +1,173 @@
+{
+    "ask_system_tray": false,
+    "auto_exit": false,
+    "bluray_device": "",
+    "dvd_device": "",
+    "history_visible": false,
+    "playinfo_visible": false,
+    "playlist_repeat": false,
+    "playlist_shuffled": false,
+    "playlist_visible": false,
+    "state": {
+        "audio_amplifier": 100,
+        "audio_channel_layout": "_2_0",
+        "audio_equalizer": {
+            "dbs": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ]
+        },
+        "audio_muted": false,
+        "audio_sync": 0,
+        "audio_tempo_scaler": true,
+        "audio_track": 0,
+        "audio_tracks": {
+            "tracks": [
+            ],
+            "type": "audio"
+        },
+        "audio_volume": 100,
+        "audio_volume_normalizer": true,
+        "device": "",
+        "edition": -1,
+        "play_speed": 100,
+        "resume_position": -1,
+        "sub_alignment": "Bottom",
+        "sub_display": "OnLetterbox",
+        "sub_hidden": false,
+        "sub_position": 100,
+        "sub_sync": 0,
+        "sub_track": "",
+        "sub_tracks": {
+            "tracks": [
+            ],
+            "type": "subtitle"
+        },
+        "sub_tracks_inclusive": {
+            "tracks": [
+            ],
+            "type": "inclusive-subtitle"
+        },
+        "sub_visible": false,
+        "video_aspect_ratio": "Source",
+        "video_chroma_upscaler": "Bilinear",
+        "video_chroma_upscaler_map": {
+            "Bicubic": {
+                "params": {
+                    "param1": 0,
+                    "param2": 0.5
+                },
+                "type": "Bicubic"
+            },
+            "Bilinear": {
+                "params": {
+                },
+                "type": "Bilinear"
+            },
+            "EwaLanczos": {
+                "params": {
+                    "antiring": 0,
+                    "radius": 3
+                },
+                "type": "EwaLanczos"
+            },
+            "Lanczos": {
+                "params": {
+                    "radius": 3
+                },
+                "type": "Lanczos"
+            },
+            "Sharpen": {
+                "params": {
+                    "param1": 0.5,
+                    "radius": 5
+                },
+                "type": "Sharpen"
+            },
+            "Spline": {
+                "params": {
+                    "radius": 3
+                },
+                "type": "Spline"
+            }
+        },
+        "video_color": {
+            "brightness": 0,
+            "contrast": 0,
+            "hue": 0,
+            "saturation": 0
+        },
+        "video_crop_ratio": "Source",
+        "video_deinterlacing": "Auto",
+        "video_dithering": "Ordered",
+        "video_effects": [
+        ],
+        "video_horizontal_alignment": "Center",
+        "video_hq_downscaling": true,
+        "video_hq_upscaling": true,
+        "video_interpolator": "Sharpen",
+        "video_interpolator_map": {
+            "Bicubic": {
+                "params": {
+                    "param1": 0,
+                    "param2": 0.5
+                },
+                "type": "Bicubic"
+            },
+            "Bilinear": {
+                "params": {
+                },
+                "type": "Bilinear"
+            },
+            "EwaLanczos": {
+                "params": {
+                    "antiring": 0,
+                    "radius": 3
+                },
+                "type": "EwaLanczos"
+            },
+            "Lanczos": {
+                "params": {
+                    "radius": 3
+                },
+                "type": "Lanczos"
+            },
+            "Sharpen": {
+                "params": {
+                    "param1": 0.5,
+                    "radius": 5
+                },
+                "type": "Sharpen"
+            },
+            "Spline": {
+                "params": {
+                    "radius": 3
+                },
+                "type": "Spline"
+            }
+        },
+        "video_motion_interpolation": true,
+        "video_offset": {
+            "x": 0,
+            "y": 0
+        },
+        "video_range": "Auto",
+        "video_space": "Auto",
+        "video_tracks": {
+            "tracks": [
+            ],
+            "type": "video"
+        },
+        "video_vertical_alignment": "Center"
+    },
+    "sub_find_lang_code": "",
+    "win_stays_on_top": "Playing"
+}

@@ -1,1 +1,1 @@
-/usr/bin/nice -n -20 jackd -P89 -t250 -u -dalsa -r48000 -p1024 -n2 -H -M -Xseq -zs -c hpet
+/usr/bin/nice -n -20 jackd -P89 -t250 -u -dalsa -r48000 -p1024 -n2 -s -m -H -M -Xseq -i2 -o2 -zs -c hpet
