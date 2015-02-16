@@ -12,42 +12,59 @@ I recommend using smart SATA boxes and usb drives with legacy (floppy / CD / vir
 It provides:
 ------------
 * fresh stable kernel from Kernel:stable repo
-* fresh (default) or bleeding edge OSS video stack from X11 repo (rc's) and pontostroy (git & kernel rc's)
+* fresh (default) OSS video stack from X11 repo (rc's)  
+or bleeding edge from pontostroy (git & kernel rc's)
 * LXQt slim desktop environment
 * international collection of fonts and universal iBus input method by default
 * LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
-* codecs, font antialiasing and texture compression support without artificial restrictions
-* bomi/mpv (ex-C/Mplayer) video player, CLI VLC with Firefox plugin, SubtitleComposer and Aegisub subtitle editors
-* professional sound handling with JACK (PA & ALSA, both with OSS support, run as JACK's clients; tools are available in repositories)
-* Clementine audio player, Audacity audio editor/recorder, GStreamer with FFMPEG and JACK output by default
-* professional colour management facilities consisting of colord, argyllCMS, dispcalGUI and xiccd
-* printer (via cups), scanner (via x/sane) and analogue video input (via tvtime) support
-* professional feature-rich screencasting tool "SimpleScreenRecorder" with native JACK support
-* wide range of gamepad utilities, such as AntiMicro (for key & axis mapping) and jstest-gtk
+* codecs, font antialiasing and texture compression support  
+without artificial restrictions
+* bomi/mpv (ex-C/Mplayer) video player, CLI VLC with Firefox plugin,  
+SubtitleComposer and Aegisub subtitle editors
+* professional sound handling with JACK  
+(PA & ALSA, both with OSS emulation, run as JACK's clients)
+* Clementine audio player, Audacity audio editor/recorder,  
+GStreamer with FFMPEG and JACK output by default
+* professional colour management facilities  
+(consisting of colord, argyllCMS, dispcalGUI and xiccd)
+* printer (via cups), scanner (via x/sane)  
+and analogue video input (via tvtime) support
+* professional screencasting tool SimpleScreenRecorder with native JACK support
+* wide range of gamepad utilities,  
+such as AntiMicro (for key & axis mapping) and jstest-gtk
 * professional networking tools and rich connectivity options
-* anti-censorship kit: Tor, Polipo, dnscrypt-proxy, proxychains and miredo-client
+* anti-censorship kit: Tor/Polipo, dnscrypt-proxy/Unbound, proxychains and VPN
 * LeechCraft modular system stripped for only IM and socializing
 * LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * qBitTorrent, aMule, Filezilla and aria2 for file transfer
-* mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other various console tools
-* ze/nmap, hostapd, usbip, nping, iptraf-ng, nethogs, upnp-inspector, mtr, lft, minicom, rancid, irssi and more
-* gparted, gptfdisk-fixparts, guestfs-tools, testdisk, snapper, disktype and other filesystem tools
-* exfat and zfs kernel modules and general FS management & recovery tools like fsarchiver/guymager, ddrescue, testdisk, photorec, ext4magic
-* autopsy/sleuthkit, scalpel, foremost, chkrootkit, ntpassw/dchntpw/ophcrack, lynis, aircrack-ng, kismet, reaver and more security tools
-* tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx encryption utilities
-* bunch of useful repos pre-configured for games, emulators and recent but mostly stable updates
+* mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other console tools
+* wireshark-qt, ze/nmap, hostapd, usbip, nping, iptraf-ng, nethogs,  
+upnp-inspector, mtr, lft, minicom, miredo-client, rancid and more
+* gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, testdisk,  
+guymager, snapper, disktype and other filesystem tools
+* general FS management & recovery tools like fsarchiver, guymager, ddrescue,  
+testdisk, photorec, ext4magic and exfat & zfs kernel modules
+* autopsy/sleuthkit, scalpel, foremost, chkrootkit, ntpassw/dchntpw/ophcrack,  
+lynis, aircrack-ng, kismet, reaver and more security tools
+* tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup,  
+seahorse/gnome-keyring, keepassx encryption utilities
+* bunch of useful repos pre-configured for games, emulators  
+and recent but mostly stable updates
 
 It does NOT provide:
 --------------------
-— Windows® compatibility, wine and such (because it requires shitload of 32bit packages)  
-— proprietary video drivers (because they suck and are pain in the ass), and video driver support for anything without KMS for that matter  
-— whole KDE or Gnome pre-installed (because of how fat the former and how ugly the later are)  
-— any language packages (for space conservation)  
-— Wayland packages (because it's too raw yet)   
-— many cd/dvd/bluray and whatever disk rom utilities (because spinning media must die). mkisofs, cdrecord and acetoneiso2 are included though  
+— Windows® compatibility, wine (because it requires shitload of 32bit packages)  
+— proprietary video drivers (because they suck and are pain in the ass).  
+  or video driver support for anything without KMS, for that matter  
+— whole KDE or Gnome (because of how fat the former and how ugly the later are)  
+— any language translation packages (for space conservation)  
+— Wayland packages (because it's too raw yet)  
+— many cd/dvd/bluray and whatever disk tools (because spinning media must die).  
+  mkisofs, cdrecord and acetoneiso2 are included though  
 — accessibility features (because i have no idea how to setup them right)  
-— security hardening (because it requires strict and thorough testing in all usage scenarios which are manifold)  
+— security hardening (because it requires strict and thorough testing
+  in all usage scenarios which are manifold)  
 
 Notes:
 ------

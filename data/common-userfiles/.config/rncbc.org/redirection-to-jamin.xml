@@ -34,8 +34,8 @@
    <plug>front-right</plug>
   </socket>
   <socket exclusive="off" client=".*" type="jack-audio" name="all GStreamer players">
-   <plug>out_.*_1</plug>
-   <plug>out_.*_2</plug>
+   <plug>out_.*audiosink_1</plug>
+   <plug>out_.*audiosink_2</plug>
   </socket>
   <socket exclusive="off" client="flash" type="jack-audio" name="Adobe Flash">
    <plug>out1</plug>
