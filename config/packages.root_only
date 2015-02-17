@@ -8,6 +8,7 @@ adobe-sourcecodepro-fonts
 adobe-sourcesanspro-fonts
 adobe-sourceserifpro-fonts
 aespipe
+afuse
 aiccu
 aircrack-ng
 alsa-oss
@@ -20,6 +21,7 @@ android-tools
 antimicro
 apparmor-utils
 arabic-fonts
+archivemount
 aria2fe
 arj
 arping2
@@ -27,6 +29,7 @@ arpwatch
 arpwatch-ethercodes
 at
 atop
+atop-daemon
 attr
 audacity
 autofs
@@ -38,6 +41,7 @@ avahi-utils
 bash-completion
 bc
 bcg729-mediastreamer
+bindfs
 bind-utils
 bitmap
 bitstream-vera-fonts
@@ -58,6 +62,7 @@ caffeine
 cagibi
 calibre
 ccgfs
+cddfs
 cdrecord
 cfv
 chkrootkit
@@ -67,6 +72,7 @@ clamav
 clamtk
 clamtk-kde
 clementine
+clicfs
 cm-unicode-fonts
 colord
 colordiff
@@ -92,6 +98,8 @@ cups-backends
 cups-filters
 cups-filters-cups-browsed
 cups-pdf
+curlftpfs
+curlwwwfs
 cyreal-lobster-cyrillic-fonts
 davfs2
 dc3dd
@@ -119,6 +127,7 @@ ecryptfs-utils
 efont-unicode-bitmap-fonts
 emount
 enca
+encfs
 enigmail
 epson-inkjet-printer-escpr
 ethtool
@@ -156,6 +165,11 @@ ftop
 fusecompress
 fuse-exfat
 fuse-funionfs
+fuse-lessfs
+fusepod
+fuse-sfs
+fusesmb
+fuse-zip
 gconf2-branding-openSUSE
 gconf-editor
 gconf-polkit
@@ -221,6 +235,7 @@ gpa
 gpart
 gparted
 gpg-offline
+gphotofs
 gpm
 gptfdisk
 gptfdisk-fixparts
@@ -287,6 +302,7 @@ httrack
 hunspell
 hunspell-tools
 hwinfo
+hxtools
 hydra-gtk
 i2c-tools
 ibus
@@ -560,6 +576,7 @@ Mesa
 Mesa-demo-egl
 Mesa-demo-x
 minicom
+miniupnpc
 miredo-client
 mjpegtools
 mkcomposecache
@@ -665,6 +682,7 @@ pavumeter
 pax
 pax-utils
 pbm2l7k
+pcachefs
 pdfcrack-multithread
 phonon4qt5-backend-gstreamer
 phonon-backend-gstreamer
@@ -720,6 +738,7 @@ qps
 qt-mobility-pulseaudio
 radeontop
 radvd
+rancid
 reaver
 reiser4progs
 rfkill
@@ -765,6 +784,7 @@ sipwitch-plugin-zeroconf
 skanlite
 sleuthkit
 smartmontools
+smestorage
 snapper
 snapper-zypp-plugin
 snmp-mibs
@@ -828,6 +848,7 @@ unace
 unbound
 unetbootin
 unidings-fonts
+unionfs-fuse
 unoconv
 unrar
 upnp-inspector

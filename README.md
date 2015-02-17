@@ -37,12 +37,13 @@ such as AntiMicro (for key & axis mapping) and jstest-gtk
 * LeechCraft modular system stripped for only IM and socializing
 * LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
-* qBitTorrent, aMule, Filezilla, wget & aria2/fe and httrack for file transfer
+* qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other console tools
 * networking tools:  
-  * looking: hostapd, usbip, miredo-client, rancid, iptraf-ng, nethogs, upnp-inspector, mtr, lft, minicom
-  * touching: wireshark-qt, ze/nmap, xprobe2, scapy & nping, aircrack-ng, kismet, reaver
+  * looking: hostapd, usbip, miredo-client, iptraf-ng, nethogs, upnp-inspector, mtr/-gtk, lft, minicom
+  * touching: wireshark-qt, ze/nmap, xprobe2, scapy & nping, aircrack-ng, kismet, reaver, rancid
 * filesystem tools:  
+  * some FUSE stuff that's not complete overblown crap
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat & zfs kernel modules
   * recovery/imaging: fsarchiver/-qt4, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
 * security/forensics tools:  
