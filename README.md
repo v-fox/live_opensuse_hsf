@@ -44,7 +44,7 @@ such as AntiMicro (for key & axis mapping) and jstest-gtk
   * touching: wireshark-qt, ze/nmap, xprobe2, scapy & nping, aircrack-ng, kismet, reaver
 * filesystem tools:  
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat & zfs kernel modules
-  * recovery/imaging: fsarchiver, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
+  * recovery/imaging: fsarchiver/-qt4, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
 * security/forensics tools:  
   * autopsy/sleuthkit, scalpel, plaso/log2timeline/Windows®-gutting toolkit, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
 * encryption tools:  
