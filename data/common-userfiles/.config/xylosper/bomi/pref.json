@@ -29,8 +29,8 @@
     "audio_device": "jack",
     "audio_normalizer": {
         "bufferLengthInSeconds": 5,
-        "maximumGain": 10,
-        "minimumGain": 0.10000000000000001,
+        "maximumGain": 3,
+        "minimumGain": 0.50000000000000001,
         "silenceLevel": 0.0001,
         "targetLevel": 0.070000000000000007
     },

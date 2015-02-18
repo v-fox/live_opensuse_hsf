@@ -35,7 +35,7 @@
             "type": "audio"
         },
         "audio_volume": 100,
-        "audio_volume_normalizer": true,
+        "audio_volume_normalizer": false,
         "device": "",
         "edition": -1,
         "play_speed": 100,

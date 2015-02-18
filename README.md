@@ -43,15 +43,16 @@ such as AntiMicro (for key & axis mapping) and jstest-gtk
   * looking: hostapd, usbip, miredo-client, iptraf-ng, nethogs, upnp-inspector, mtr/-gtk, lft, minicom
   * touching: wireshark-qt, ze/nmap, xprobe2, scapy & nping, aircrack-ng, kismet, reaver, rancid
 * filesystem tools:  
-  * some FUSE stuff that's not complete overblown crap
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat & zfs kernel modules
   * recovery/imaging: fsarchiver/-qt4, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
+  * some FUSE stuff that may come in handy
 * security/forensics tools:  
   * autopsy/sleuthkit, scalpel, plaso/log2timeline/Windows®-gutting toolkit, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
 * encryption tools:  
   * tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx
-* bunch of useful repos pre-configured for games, emulators  
-and recent but mostly stable updates
+* useful things that I put there but forgot to mention
+* bunch of repos pre-configured (but disabled) for games, emulators  
+and recent though mostly stable updates
 
 It does NOT provide:
 --------------------
@@ -63,7 +64,7 @@ It does NOT provide:
 — Wayland packages (because it's too raw yet)  
 — many cd/dvd/bluray and whatever disk tools (because spinning media must die).  
   mkisofs, cdrecord and acetoneiso2 are included though  
-— accessibility features (because i have no idea how to setup them right)  
+— accessibility features (because I have no idea how to setup them right)  
 — security hardening (because it requires strict and thorough testing
   in all usage scenarios which are manifold)  
 
