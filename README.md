@@ -50,7 +50,7 @@ such as AntiMicro (for key & axis mapping) and jstest-gtk
   * autopsy/sleuthkit, scalpel, plaso/log2timeline/Windows®-gutting toolkit, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
 * encryption tools:  
   * tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx
-* useful things that I put there but forgot to mention
+* useful things that I've put there but forgot to mention
 * bunch of repos pre-configured (but disabled) for games, emulators  
 and recent though mostly stable updates
 
