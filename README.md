@@ -40,11 +40,11 @@ such as AntiMicro (for key & axis mapping) and jstest-gtk
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other console tools
 * networking tools:  
-  * looking: hostapd, usbip, miredo-client, iptraf-ng, nethogs, upnp-inspector, mtr/-gtk, lft, minicom
+  * looking: hostapd, usbip, miredo-client, iptraf-ng, nethogs, upnp-inspector, mtr{-gtk}, lft, minicom
   * touching: wireshark-qt, ze/nmap, xprobe2, scapy & nping, aircrack-ng, kismet, reaver, rancid
 * filesystem tools:  
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat & zfs kernel modules
-  * recovery/imaging: fsarchiver/-qt4, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
+  * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
   * some FUSE stuff that may come in handy
 * security/forensics tools:  
   * autopsy/sleuthkit, scalpel, plaso/log2timeline/Windows®-gutting toolkit, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
@@ -117,6 +117,10 @@ Notes:
   * autotrace, uniconvertor/uniconvw  
 * font creation  
   * fontforge  
+* OCR (image_of_text-to-real_text conversion)  
+  * yagf (xsane OCR wrapper)  
+  * djvubind or ocrodjvu/img2djvu (DjVu-centric wrappers for OCR systems)  
+  * tesseract-{gui} / cuneiform / gocr{-gui} / orcad / ocropus (OCR systems)  
 * telephony  
   * sflphone-client-gnome (SIP client that natively supports JACK and has many features... and glitches)  
   * blink (supposedly is "the best real-time communications client using SIP protocol". ALSA-only and crash-prone)  
@@ -124,8 +128,8 @@ Notes:
   * yate-qt4 (lots of features with no GUI for them)  
   * jitsi (Jack-of-all-trades and JAVA-fatass)  
 * multimedia  
+  * SMplayer GUI for mpv & mplayer (allows extreme fine-tuning but is full of legacy code)  
   * VLC (the king of media players but it's interface sucks)  
-  * SMplayer (allows extreme fine-tuning but is full of legacy code)  
   * QMPlay2 (vlc-like player with better GUI but without JACK support)  
 
 Building:

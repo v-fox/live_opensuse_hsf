@@ -107,7 +107,7 @@
         },
         "video_crop_ratio": "Source",
         "video_deinterlacing": "Auto",
-        "video_dithering": "Ordered",
+        "video_dithering": "None",
         "video_effects": [
         ],
         "video_horizontal_alignment": "Center",
@@ -154,7 +154,7 @@
                 "type": "Spline"
             }
         },
-        "video_motion_interpolation": true,
+        "video_motion_interpolation": false,
         "video_offset": {
             "x": 0,
             "y": 0
