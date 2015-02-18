@@ -5,7 +5,7 @@
    <plug>a\.master\.out_L|out_L</plug>
    <plug>a\.master\.out_R|out_R</plug>
   </socket>
-  <socket exclusive="off" client="MPlayer \[[0-9]+\]|mpv" type="jack-audio" name="mplayer &amp; mpv">
+  <socket exclusive="off" client="MPlayer \[[0-9]+\]|mpv(|-.[0-9])" type="jack-audio" name="mplayer &amp; mpv">
    <plug>out_0</plug>
    <plug>out_1</plug>
   </socket>
@@ -25,6 +25,10 @@
    <plug>out_000</plug>
    <plug>out_001</plug>
   </socket>
+  <socket exclusive="off" client="alsa_in" type="jack-audio" name="ALSA-aloop">
+   <plug>capture_1</plug>
+   <plug>capture_2</plug>
+  </socket>
   <socket exclusive="off" client=".*" type="jack-audio" name="FIrefox (cubeb)">
    <plug>AudioStream_.*_0</plug>
    <plug>AudioStream_.*_1</plug>
@@ -34,8 +38,8 @@
    <plug>front-right</plug>
   </socket>
   <socket exclusive="off" client=".*" type="jack-audio" name="all GStreamer players">
-   <plug>out_.*audiosink_1</plug>
-   <plug>out_.*audiosink_2</plug>
+   <plug>out_.*audiosink[\-0-9]+_1</plug>
+   <plug>out_.*audiosink[\-0-9]+_2</plug>
   </socket>
   <socket exclusive="off" client="flash" type="jack-audio" name="Adobe Flash">
    <plug>out1</plug>
@@ -55,6 +59,14 @@
    <plug>in_L</plug>
    <plug>in_R</plug>
   </socket>
+  <socket exclusive="off" client="alsa_out" type="jack-audio" forward="PulseAudio Source" name="ALSA-aloop">
+   <plug>playback_1</plug>
+   <plug>playback_2</plug>
+  </socket>
+  <socket exclusive="off" client="PulseAudio JACK Source" type="jack-audio" name="PulseAudio Source">
+   <plug>front-left</plug>
+   <plug>front-right</plug>
+  </socket>
  </input-sockets>
  <slots/>
  <cables>
@@ -64,6 +76,7 @@
   <cable output="TiMidity" input="jamin volume boost" type="jack-audio"/>
   <cable output="fluidsynth" input="jamin volume boost" type="jack-audio"/>
   <cable output="ALSA" input="jamin volume boost" type="jack-audio"/>
+  <cable output="ALSA-aloop" input="jamin volume boost" type="jack-audio"/>
   <cable output="FIrefox (cubeb)" input="jamin volume boost" type="jack-audio"/>
   <cable output="PA stereo output" input="jamin volume boost" type="jack-audio"/>
   <cable output="all GStreamer players" input="jamin volume boost" type="jack-audio"/>
