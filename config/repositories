@@ -25,9 +25,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
 		<source path='obs://X11:Utilities/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='Multilingualization'>
-		<source path='obs://M17N/openSUSE_13.2'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network'>
 		<source path='obs://network/openSUSE_13.2'/>
 	</repository>

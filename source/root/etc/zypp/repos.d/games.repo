@@ -4,4 +4,4 @@ enabled=0
 autorefresh=0
 baseurl=http://download.opensuse.org/repositories/games/openSUSE_13.2
 type=rpm-md
-priority=80
+priority=92

@@ -2,7 +2,7 @@
 <note version="0.3" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size" xmlns="http://beatniksoftware.com/tomboy"><title>HSF *IMPORTANT* Notes</title><text xml:space="preserve"><note-content version="0.1" xmlns:link="http://beatniksoftware.com/tomboy/link" xmlns:size="http://beatniksoftware.com/tomboy/size">HSF *IMPORTANT* Notes
 
 <list><list-item dir="ltr">default credentials: <bold>root</bold>:<highlight>linux</highlight>, <bold>hacker</bold>:<highlight>&lt;empty&gt;</highlight>
-</list-item><list-item dir="ltr">hacker's example pgp passphrase:unsafe for work. DON'T actually USE IT</list-item></list>
+</list-item><list-item dir="ltr">hacker's example pgp passphrase: unsafe for work. DON'T actually USE IT</list-item></list>
 
 <list><list-item dir="ltr">before using package manager, first thing you NEED to do is:
 <list><list-item dir="ltr"><highlight>sudo zypper --gpg-auto-import-keys refresh</highlight> in terminal to get repo-caches _and import all their keys_
@@ -34,7 +34,10 @@
 <list><list-item dir="ltr"><highlight>JACK</highlight> is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality
 <list><list-item dir="ltr">note <highlight>QJackCtl</highlight>, JACK configurator, <highlight>QasMixer</highlight>, ALSA volume configurator and <highlight>PASysTray</highlight>, advanced PA configurator, and in your tray
 </list-item><list-item dir="ltr">please, set all your multimedia apps to use JACK with '<highlight>jamin</highlight>' port by default or disable it and then use naked PA (remove <link:url>~/.config/pulse</link:url> &amp; <link:url>/etc/profile.d/zzz-jack</link:url>.*). note that Firefox uses PA shim because its ALSA and JACK support is broken.
-<list><list-item dir="ltr">note <link:url>http://arunraghavan.net/2014/11/notes-from-the-pulseaudio-mini-summit-2014/</link:url> - the end of 2014 and PA devs admit that:
+<list><list-item dir="ltr">ALSA-only apps should use '<highlight>default</highlight>' or '<highlight>sysdefault</highlight>' ALSA/JACK devices
+<list><list-item dir="ltr">those that don't like that (aegisub, for example) should try 'pulse' ALSA/PA/JACK device
+</list-item><list-item dir="ltr">if that also fails, see <link:url>~/.asoundrc</link:url> on how to set up ALSA/JACK aloop
+</list-item></list></list-item><list-item dir="ltr">note <link:url>http://arunraghavan.net/2014/11/notes-from-the-pulseaudio-mini-summit-2014/</link:url> - the end of 2014 and PA devs admit that:
 <list><list-item dir="ltr">1) realtime support is semibroken
 </list-item><list-item dir="ltr">2) PA still uses software conversions for everything and its a norm because not fucking up sound is just for &quot;audiophiles&quot;
 </list-item><list-item dir="ltr">3) PA devs don't know what's best even for software conversion but have decided to remove option that provided the least distortion
@@ -76,11 +79,11 @@
 
 <list><list-item dir="ltr">VDPAU, VA-API and OpenMaX F/OSS video hw-decoding libraries were installed.
 <list><list-item dir="ltr">to enable VA-API acceleration on VDPAU-hardware (amd, nvidia) set this environmental variable:
-<list><list-item dir="ltr"><highlight>LIBVA_DRIVER_NAME=vdpau</highlight>
+<list><list-item dir="ltr"><highlight>LIBVA_DRIVER=vdpau</highlight>
 </list-item></list></list-item><list-item dir="ltr">to enable VDPAU/GL acceleration on VA-API-hardware (intel):
 <list><list-item dir="ltr">install 'libvdpau_va_gl1'
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2015-02-12T08:27:55.941436Z</last-change-date><last-metadata-change-date>2015-02-12T08:27:55.942295Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>575</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
+</text><last-change-date>2015-02-18T13:55:49.721769Z</last-change-date><last-metadata-change-date>2015-02-18T13:55:49.722265Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>3294</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
 

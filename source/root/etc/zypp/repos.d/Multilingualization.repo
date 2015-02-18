@@ -1,0 +1,7 @@
+[Multilingualization]
+name=Multilingualization
+enabled=0
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/M17N/openSUSE_13.2
+type=rpm-md
+priority=82
