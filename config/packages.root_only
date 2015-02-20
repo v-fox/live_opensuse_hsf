@@ -687,7 +687,6 @@ pdfcrack-multithread
 phonon4qt5-backend-gstreamer
 phonon-backend-gstreamer
 photorec
-plaso
 plymouth-plugin-fade-throbber
 plymouth-plugin-label
 plymouth-plugin-script
@@ -731,6 +730,7 @@ pulseaudio-module-zeroconf
 pulseaudio-utils
 pulseaudio-zsh-completion
 pwgen
+python-plaso
 qasmixer
 qbittorrent
 qjackctl
