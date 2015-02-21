@@ -314,7 +314,6 @@ ibus-gtk3
 ibus-hangul
 ibus-input-pad
 ibus-kkc
-ibus-kmfl
 ibus-lang
 ibus-libpinyin
 ibus-libzhuyin
@@ -355,7 +354,6 @@ ibus-table-thai
 ibus-table-translit
 ibus-table-translit-ua
 ibus-table-viqr
-ibus-table-xinhua
 ibus-table-yawerty
 ibus-table-ziranma
 ibus-unikey
