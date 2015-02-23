@@ -1,5 +1,4 @@
 adaptec-firmware
-aegisub
 alsa-firmware
 atmel-firmware
 bluez-firmware
@@ -8,7 +7,6 @@ crystalhd-firmware
 disktype
 efibootmgr
 gfxboot-branding-HSF
-gio-branding-upstream
 grub2-branding-HSF
 grub2-i386-pc
 grub2-x86_64-efi
@@ -22,8 +20,6 @@ mpt-firmware
 nano
 os-prober
 plymouth-branding-HSF
-pngcrush
-subtitlecomposer
 technisat-usb2-firmware
 ucode-amd
 util-linux

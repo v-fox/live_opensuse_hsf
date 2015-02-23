@@ -7,6 +7,7 @@ AdobeICCProfiles
 adobe-sourcecodepro-fonts
 adobe-sourcesanspro-fonts
 adobe-sourceserifpro-fonts
+aegisub
 aespipe
 afuse
 aiccu
@@ -192,6 +193,7 @@ gimp-plugins-python
 gimp-save-for-web
 gimp-separate+
 gimp-ufraw
+gio-branding-upstream
 git
 git-credential-gnome-keyring
 git-cvs
@@ -697,6 +699,7 @@ plymouth-x11-renderer
 pmacct
 pm-profiler
 pm-utils
+pngcrush
 polipo
 polkit-default-privs
 polkit-gnome
@@ -799,6 +802,7 @@ stix-fonts
 stix-integrals-fonts
 strace
 stress
+subtitlecomposer
 subversion
 sudo
 SuSEfirewall2
