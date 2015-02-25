@@ -66,6 +66,7 @@ ccgfs
 cddfs
 cdrecord
 cfv
+checkit
 chkrootkit
 chm2pdf
 chntpw
@@ -972,7 +973,7 @@ yast2-trans-en_GB
 yast2-vm
 zenmap
 zerofree
-zfsonlinux-zfs-dkms
+zfs
 zsh
 zuluCrypt
 zypper

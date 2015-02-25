@@ -45,9 +45,9 @@ Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say)
   * touching: wireshark-qt, ze/nmap, xprobe2, scapy & nping, aircrack-ng, kismet, reaver, rancid
   * filesharing: nfs-kernel-server, pure-ftpd, samba
 * filesystem tools:  
-  * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat & zfs kernel modules
+  * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat kernel module
   * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
-  * some FUSE stuff that may come in handy
+  * support for pretty much all filesystems known to man, in kernel or via FUSE
 * security/forensics tools:  
   * autopsy/sleuthkit, scalpel, plaso/log2timeline/Windows®-gutting toolkit, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
 * encryption tools:  
