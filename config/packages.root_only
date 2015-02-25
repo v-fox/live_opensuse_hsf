@@ -655,7 +655,7 @@ oping
 opus-tools
 oxygen-cursors4
 oxygen-ionized-icon-theme
-p7zip-kde4
+p7zip
 PackageKit-browser-plugin
 PackageKit-gstreamer-plugin
 paman
@@ -682,7 +682,6 @@ pasystray
 patool
 pavucontrol
 pavumeter
-pax
 pax-utils
 pbm2l7k
 pcachefs
