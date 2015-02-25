@@ -69,6 +69,7 @@ cfv
 chkrootkit
 chm2pdf
 chntpw
+cksfv
 clamav
 clamtk
 clamtk-kde
@@ -165,7 +166,6 @@ fslsfonts
 ftop
 fusecompress
 fuse-exfat
-fuse-funionfs
 fuse-lessfs
 fusepod
 fuse-sfs
@@ -304,7 +304,6 @@ httrack
 hunspell
 hunspell-tools
 hwinfo
-hxtools
 hydra-gtk
 i2c-tools
 ibus
@@ -400,6 +399,7 @@ kdiff3
 kdnssd
 keepassx
 kfilemetadata
+khmeros-fonts
 killswitch-applet
 kio_iso
 kio_kamera
@@ -556,7 +556,6 @@ linuxconsoletools
 linux-ftools
 lirc
 lirc-remotes
-log2timeline
 lsb-invalid-mta
 lsb-release
 lsof
@@ -565,6 +564,7 @@ lxappearance
 lxappearance-obconf
 lynis
 make
+makeself
 man
 man-pages
 manufacturer-PPDs
@@ -585,7 +585,9 @@ mlocate
 ModemManager
 modem-manager-gui
 monapo-fonts
+mozaddon-gnotifier
 MozillaFirefox
+mozilla-kde4-integration
 MozillaThunderbird
 msamr-mediastreamer
 msilbc-mediastreamer
@@ -664,9 +666,9 @@ pam_cifscreds
 pam_fprint
 pam_krb5
 pam_mktemp
-pam_mount
 pam_p11
 pam_pkcs11
+pam_schroedinger
 pam_snapper
 pam_ssh
 pam_userpass
@@ -677,6 +679,7 @@ paratype-pt-serif-fonts
 partclone
 pastebinit
 pasystray
+patool
 pavucontrol
 pavumeter
 pax
@@ -684,6 +687,8 @@ pax-utils
 pbm2l7k
 pcachefs
 pdfcrack-multithread
+peazip
+peazip-kde4
 phonon4qt5-backend-gstreamer
 phonon-backend-gstreamer
 photorec
@@ -730,8 +735,10 @@ pulseaudio-module-lirc
 pulseaudio-module-zeroconf
 pulseaudio-utils
 pulseaudio-zsh-completion
+pure-ftpd
 pwgen
 python-plaso
+python-scapy
 qasmixer
 qbittorrent
 qjackctl
@@ -756,7 +763,6 @@ sazanami-fonts
 sbc
 sbl
 scalpel
-scapy
 schedtop
 screen
 sdparm
@@ -792,6 +798,7 @@ snmp-mibs
 sourcesanspro-fonts
 sourceserifpro-fonts
 sox
+spax
 splashy-mkinitrd
 splix
 srm
@@ -823,6 +830,7 @@ telnet
 terminfo
 terminus-bitmap-fonts
 testdisk
+tftp
 thai-fonts
 thessalonica-oldstandard-otf-fonts
 thessalonica-theano-otf-fonts
@@ -830,8 +838,8 @@ thryomanes-fonts
 timezone
 tmpwatch
 tor
-tox-gui-qTox
 tox-gui-Toxic
+tox-gui-uTox
 traceroute
 trackma-qt
 translation-update
@@ -887,6 +895,7 @@ wpa_supplicant-gui
 wqy-microhei-fonts
 wqy-zenhei-fonts
 wvdial
+xar
 xbacklight
 xcompmgr
 xcursor-themes
@@ -905,6 +914,7 @@ xfsinfo
 xfsprogs
 xgamma
 xiccd
+xinetd
 xinput
 xkbevd
 xkbutils
@@ -940,7 +950,9 @@ yast2-control-center-qt
 yast2-dbus-server
 yast2-firewall
 yast2-firstboot
+yast2-ftp-server
 yast2-installation
+yast2-instserver
 yast2-live-installer
 yast2-metapackage-handler
 yast2-nfs-client
@@ -958,6 +970,7 @@ yast2-sudo
 yast2-support
 yast2-tftp-server
 yast2-trans-en_GB
+yast2-vm
 zenmap
 zerofree
 zfsonlinux-zfs-dkms

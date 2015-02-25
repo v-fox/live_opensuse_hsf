@@ -35,13 +35,15 @@ such as AntiMicro (for key & axis mapping) and jstest-gtk
 * professional networking tools and rich connectivity options
 * anti-censorship kit: Tor/Polipo, dnscrypt-proxy/Unbound, proxychains and VPN
 * LeechCraft modular system stripped for only IM and socializing
-* LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony
+* LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony,  
+Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say)
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other console tools
 * networking tools:  
   * looking: hostapd, usbip, miredo-client, iptraf-ng, nethogs, upnp-inspector, mtr{-gtk}, lft, minicom
   * touching: wireshark-qt, ze/nmap, xprobe2, scapy & nping, aircrack-ng, kismet, reaver, rancid
+  * filesharing: nfs-kernel-server, pure-ftpd, samba
 * filesystem tools:  
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat & zfs kernel modules
   * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic

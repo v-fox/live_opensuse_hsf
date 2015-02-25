@@ -6,17 +6,15 @@
 
 <list><list-item dir="ltr">before using package manager, first thing you NEED to do is:
 <list><list-item dir="ltr"><highlight>sudo zypper --gpg-auto-import-keys refresh</highlight> in terminal to get repo-caches _and import all their keys_
-</list-item></list></list-item><list-item dir="ltr">if you have installed HSF, before performing any bandwidth-intensive operations you might want to comment out proxy variables in <link:url>/etc/environment</link:url> and reboot or unset them so you wouldn't waste Tor's resources needlessly
+</list-item></list></list-item><list-item dir="ltr">if you have installed HSF, before performing any bandwidth-intensive operations you might want to run `<highlight>yast2 proxy</highlight>` and disable global proxying so you wouldn't waste Tor's resources needlessly
 </list-item><list-item dir="ltr">/tmp runs on RAM-disk with size of 10% of total RAM capacity, so don't let your apps shit in it</list-item></list>
 
 <list><list-item dir="ltr">encryption and security tips:
 <list><list-item dir="ltr">all DNS queries are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them to OpenDNS via encrypted connection. if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<highlight>network.proxy.socks_remote_dns</highlight>' parameter in Firefox, Thunderbird and all Mozilla apps
 </list-item><list-item dir="ltr">for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)
 </list-item><list-item dir="ltr">try not to use Google products and Facebook
-</list-item><list-item dir="ltr">AppArmor is disabled by default, to enable it:
-<list><list-item dir="ltr">uncomment <highlight>pam_apparmor.so</highlight> in <link:url>/etc/pam.d/common-session-pc</link:url>
-</list-item><list-item dir="ltr">enable its service
-</list-item></list></list-item><list-item dir="ltr">ALWAYS use <highlight>ZRTP</highlight> in SIP instead of SRTP but if you are going to use SRTP, do it together with TLS
+</list-item><list-item dir="ltr">AppArmor systemd service is disabled by default, enable it if you can handle it
+</list-item><list-item dir="ltr">ALWAYS use <highlight>ZRTP</highlight> in SIP instead of SRTP but if you are going to use SRTP, do it together with TLS
 <list><list-item dir="ltr">or Party Van will come - <link:url>https://www.acritelli.com/hacking-voip-decrypting-sdes-protected-srtp-phone-calls/</link:url></list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">important changes were made to <link:url>/etc/zypp/zypp.conf</link:url> 
@@ -85,5 +83,5 @@
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2015-02-18T13:55:49.721769Z</last-change-date><last-metadata-change-date>2015-02-18T13:55:49.722265Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>3294</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
+</text><last-change-date>2015-02-25T08:14:24.381044Z</last-change-date><last-metadata-change-date>2015-02-25T08:14:24.381381Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>461</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
 
