@@ -10,7 +10,6 @@ adobe-sourceserifpro-fonts
 aegisub
 aespipe
 afuse
-agfa-fonts
 aiccu
 aircrack-ng
 alsa-oss
@@ -521,7 +520,6 @@ libevtx-tools
 libewf-tools
 libflashsupport
 libgcrypt20-hmac
-libgcrypt-hmac256
 libhmac-tools
 libiscsi-utils
 liblnk-tools

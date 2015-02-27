@@ -7,7 +7,7 @@
 # ramdisk by calling the script "mkinitrd"
 # (like drivers for scsi-controllers, for lvm or reiserfs)
 #
-INITRD_MODULES="ecryptfs"
+INITRD_MODULES=""
 
 ## Type:        yesno
 ## Default:     ""
@@ -19,7 +19,7 @@ INITRD_MODULES="ecryptfs"
 # supported on the underlying hardware.
 # After changing run mkinitrd again.
 #
-NO_KMS_IN_INITRD="yes"
+NO_KMS_IN_INITRD="no"
  
 ## Type:        string
 ## Command:     /sbin/mkinitrd
