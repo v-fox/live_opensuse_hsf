@@ -423,6 +423,14 @@ kio_mtp
 kipi-plugins
 kipi-plugins-geolocation
 kismet
+kiwi-config-openSUSE
+kiwi-desc-isoboot
+kiwi-desc-netboot
+kiwi-desc-oemboot
+kiwi-instsource-plugins-openSUSE-13-2
+kiwi-pxeboot
+kiwi-templates
+kiwi-tools
 kmscon
 knutclient
 kparts-plugin
@@ -608,7 +616,6 @@ miniupnpc
 miredo-client
 mjpegtools
 mkcomposecache
-mkisofs
 mlocate
 ModemManager
 modem-manager-gui

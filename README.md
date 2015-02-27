@@ -11,6 +11,7 @@ I recommend using smart SATA boxes and usb drives with legacy (floppy / CD / vir
 
 It provides:
 ------------
+* complete toolkit that created it
 * fresh stable kernel from Kernel:stable repo
 * fresh (enabled) OSS video stack from X11 repo (rc's)  
 or bleeding edge (configured) from pontostroy (git & kernel rc's)
