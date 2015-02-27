@@ -10,6 +10,7 @@ adobe-sourceserifpro-fonts
 aegisub
 aespipe
 afuse
+agfa-fonts
 aiccu
 aircrack-ng
 alsa-oss
@@ -130,6 +131,7 @@ e2fsprogs-snapshots
 easytag
 ebtables
 ecryptfs-utils
+efont-unicode
 efont-unicode-bitmap-fonts
 emount
 enca
@@ -156,7 +158,9 @@ firmwarekit
 FirmwareUpdateKit
 flash-player
 flashrom
+fontconfig
 fontmatrix
+fonts-config
 fonttools
 fonttosfnt
 foo2zjs
@@ -425,6 +429,7 @@ knutclient
 kparts-plugin
 krename
 krusader
+kvm
 kwalletmanager
 kwrite
 ladspa
@@ -559,6 +564,11 @@ libvdpau_r300
 libvdpau_r600
 libvdpau_radeonsi
 libvhdi-tools
+libvirt
+libvirt-daemon-config-network
+libvirt-daemon-config-nwfilter
+libvirt-daemon-qemu
+libvirt-login-shell
 libvmdk-tools
 libvshadow-tools
 libXaw3d8
@@ -759,8 +769,11 @@ pure-ftpd
 pwgen
 python-plaso
 python-scapy
+python-SpiceClientGtk
 qasmixer
 qbittorrent
+qemu-guest-agent
+qemu-kvm
 qjackctl
 qps
 qt-mobility-pulseaudio
@@ -818,6 +831,9 @@ sourcesanspro-fonts
 sourceserifpro-fonts
 sox
 spax
+spice-client
+spice-gtk
+spice-vdagent
 splashy-mkinitrd
 splix
 srm
@@ -855,6 +871,7 @@ thai-fonts
 thessalonica-oldstandard-otf-fonts
 thessalonica-theano-otf-fonts
 thryomanes-fonts
+tigervnc
 timezone
 tmpwatch
 tor
@@ -892,10 +909,19 @@ vaapi-dummy-driver
 vaapi-intel-driver
 vaapi-tools
 vbindiff
+vde2
+vde2-cryptcab
+vde2-slirp
 vdpau-video
+vhostmd
+virt-manager
+virt-sandbox
+virt-v2v
+virt-viewer
 vlan
 vlc-beta-codecs
 vmfs-tools
+vm-install
 vorbis-tools
 vpx-tools
 vtun
@@ -933,6 +959,7 @@ xf86-video-ati
 xf86-video-dummy
 xf86-video-intel
 xf86-video-nouveau
+xf86-video-qxl
 xfontsel
 xfs
 xfsinfo
@@ -953,9 +980,12 @@ xorg-x11-driver-input
 xorg-x11-driver-video
 xorg-x11-essentials
 xorg-x11-fonts
+xorg-x11-fonts-core
 xorg-x11-libs
 xorg-x11-libX11-ccache
 xorg-x11-server-extra
+xorg-x11-server-Xspice
+xorg-x11-xauth
 xplsprinters
 xprehashprinterlist
 xprobe2
@@ -981,6 +1011,7 @@ yast2-installation
 yast2-instserver
 yast2-iscsi-client
 yast2-live-installer
+yast2-lxc
 yast2-metapackage-handler
 yast2-nfs-client
 yast2-nfs-server

@@ -53,7 +53,8 @@ systemctl enable gpm
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
 # greatly slows down boot up
 #systemctl enable autofs
-systemctl enable lm_sensors
+# $(sensors-detect) should be launched first manually to make sure that it's safe
+#systemctl enable lm_sensors
 systemctl enable hddtemp
 systemctl enable dkms
 systemctl enable bluetooth
@@ -70,6 +71,10 @@ systemctl enable avahi-daemon
 systemctl enable miredo-client
 systemctl enable colord
 systemctl enable xdm
+# needed for it to be properly run in VM
+systemctl enable spice-vdagentd
+# needed for it to run VMs
+systemctl enable libvirtd
 
 # preemptively generate unbound keys
 systemctl restart unbound-keygen

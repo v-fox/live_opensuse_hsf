@@ -33,6 +33,8 @@ and analogue video input (via tvtime) support
 * professional screencasting tool SimpleScreenRecorder with native JACK support
 * wide range of gamepad utilities  
 such as AntiMicro (for key & axis mapping) and jstest-gtk
+* professional virtualization with libvirt & KVM / LXC  
+(featuring userland virt-manager and SPICE flowing out-of-the-box)
 * professional networking tools and rich connectivity options
 * OpenVAS and ClamAV security systems
 * anti-censorship kit: Tor/Polipo, dnscrypt-proxy/Unbound, proxychains and VPN

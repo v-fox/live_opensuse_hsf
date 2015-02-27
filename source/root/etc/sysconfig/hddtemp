@@ -12,7 +12,9 @@ HDDTEMP_PORT="7634"
 
 # Put at least the disk(s) you want to monitor here.
 # default is /dev/sda
-DEVICE="/dev/disk/by-path/pci-????????????-scsi-???????"
+DEVICE="/dev/sd?"
+# this recently broke for some reason.. or is it ever worked ?
+#DEVICE="/dev/disk/by-path/pci-????????????-scsi-???????"
 
 # hddtemp command line options.
 HDDTEMP_ARGS="-d -f $HDDTEMP_DB -p $HDDTEMP_PORT $DEVICE"
