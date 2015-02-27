@@ -26,6 +26,7 @@ archivemount
 aria2fe
 arj
 arping2
+arp-scan
 arpwatch
 arpwatch-ethercodes
 at
@@ -242,8 +243,10 @@ gphotofs
 gpm
 gptfdisk
 gptfdisk-fixparts
+greenbone-security-assistant
 grub
 grub2
+gsd
 gsettings-backend-dconf
 gsettings-desktop-schemas
 gst123
@@ -372,6 +375,7 @@ icewm-default
 ifplugd
 iftop
 ifuse
+ike-scan
 ImageMagick
 ImageMagick-extra
 indic-fonts
@@ -518,6 +522,7 @@ liblnk-tools
 libmsiecf-tools
 libolecf-tools
 libopenssl1_0_0-hmac
+libopenvas
 libOSMesa9
 libotr2-tools
 libpoppler-glib8
@@ -664,6 +669,10 @@ OpenPrintingPPDs-postscript
 openssh
 openssh-askpass
 openssh-helpers
+openvas-administrator
+openvas-cli
+openvas-manager
+openvas-scanner
 oping
 opus-tools
 oxygen-cursors4
@@ -814,6 +823,7 @@ splix
 srm
 ssdeep
 ssh-contact
+sslscan
 sssd
 stix-fonts
 stix-integrals-fonts
@@ -881,13 +891,16 @@ v4l-utils
 vaapi-dummy-driver
 vaapi-intel-driver
 vaapi-tools
+vbindiff
 vdpau-video
 vlan
 vlc-beta-codecs
 vmfs-tools
 vorbis-tools
 vpx-tools
+vtun
 wallpaper-branding-HSF
+wapiti
 wdfs
 webcore-fonts
 webcore-fonts-vista
@@ -897,6 +910,7 @@ whois
 wireless-regdb
 wireless-tools
 wireshark
+wireshark-plugin-libvirt
 wireshark-ui-qt
 wm-icons
 wminput
