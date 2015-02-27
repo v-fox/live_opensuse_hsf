@@ -40,7 +40,6 @@ autossh
 avahi
 avahi-autoipd
 avahi-utils
-avfs
 bash-completion
 bbswitch
 bc
