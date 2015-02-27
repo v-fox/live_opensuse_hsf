@@ -519,6 +519,7 @@ libevt-tools
 libevtx-tools
 libewf-tools
 libflashsupport
+libfreerdp-1_0-plugins
 libgcrypt20-hmac
 libhmac-tools
 libiscsi-utils
@@ -570,6 +571,7 @@ libvirt-daemon-qemu
 libvirt-login-shell
 libvmdk-tools
 libvshadow-tools
+libwpd-tools
 libXaw3d8
 libXRes1
 libXTrap6
@@ -781,6 +783,9 @@ radvd
 rancid
 reaver
 reiser4progs
+remmina-plugin-rdp
+remmina-plugin-vnc
+remmina-plugin-xdmcp
 rfkill
 rkhunter
 rpcbind
@@ -870,7 +875,6 @@ thai-fonts
 thessalonica-oldstandard-otf-fonts
 thessalonica-theano-otf-fonts
 thryomanes-fonts
-tigervnc
 timezone
 tmpwatch
 tor
@@ -985,6 +989,7 @@ xorg-x11-libX11-ccache
 xorg-x11-server-extra
 xorg-x11-server-Xspice
 xorg-x11-xauth
+xorg-x11-Xvnc
 xplsprinters
 xprehashprinterlist
 xprobe2
