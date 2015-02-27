@@ -94,6 +94,7 @@ Notes:
   * okular (useful doc viewer, integrated in Firefox via kparts-plugin)  
   * kchmviewer (MS chm viewer), because sometimes okular screws up  
   * gwenview + kipi-plugins (highly-capable image viewer)  
+  * kvkbd (virtual keyboard in case of hardware fault)  
 * GNOME:  
   * nm-applet (this is _the only_ NM GUI that can launch in any DE)  
   * blueman (bluez5 control)  
