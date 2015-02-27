@@ -70,8 +70,14 @@ function _PrefManager() {
     // acts as a constructor
     this.startup = function() {
         // Register to receive notifications of preference changes  	
-        self.prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getBranch(self.prefsBranch);  
-        self.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);  
+        self.prefs = Components.classes["@mozilla.org/preferences-service;1"]
+            .getService(Components.interfaces.nsIPrefService)
+            .getBranch(self.prefsBranch);
+        
+        // this is only necessary for Gecko 13 and below
+        if (!("addObserver" in self.prefs)) {
+            self.prefs.QueryInterface(Components.interfaces.nsIPrefBranch2);
+        }
         self.prefs.addObserver("", self, false);
         self.children = self.getPrefsChildren();
         self.setFirstRunDownloadsFolderPref();

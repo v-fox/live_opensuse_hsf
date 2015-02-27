@@ -509,6 +509,9 @@ root/home/hacker/.config/autostart/gnote.desktop
 root/etc/skel/.config/autostart/qasmixer.desktop
 root/root/.config/autostart/qasmixer.desktop
 root/home/hacker/.config/autostart/qasmixer.desktop
+root/etc/skel/.config/autostart/hplip-systray.desktop
+root/root/.config/autostart/hplip-systray.desktop
+root/home/hacker/.config/autostart/hplip-systray.desktop
 root/etc/skel/.config/autostart/iBus.desktop
 root/root/.config/autostart/iBus.desktop
 root/home/hacker/.config/autostart/iBus.desktop

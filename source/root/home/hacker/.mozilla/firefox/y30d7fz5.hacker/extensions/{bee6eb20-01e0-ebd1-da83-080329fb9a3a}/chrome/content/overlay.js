@@ -54,7 +54,7 @@ var flashVideoDownload = new function() {
         window.addEventListener("unload", function() { self.onUnload(); }, false);
     };
 
-    this.onLoad = function() {
+    this.onLoad = function() {        
         this.window = window;   // stores a reference to browser's window (is used through the Classes lib)
 
         this.loadModules();
@@ -72,7 +72,7 @@ var flashVideoDownload = new function() {
         this.checkStatusbarPref();
     };
 
-    this.onUnload = function() {
+    this.onUnload = function() {        
         this.PrefManager.shutdown();
         this.removeObservers();
     };
@@ -767,6 +767,28 @@ var flashVideoDownload = new function() {
         filename = filename.substring(0, filename.length-lastMatch.length);
         return filename + " (" + fileNum + ")";
     };
+
+    this.downloadFileUsingDownloadsJSM = function(url, file) {
+        var imports = {};
+        Components.utils.import("resource://gre/modules/Downloads.jsm", imports);
+        Components.utils.import("resource://gre/modules/Task.jsm", imports);
+        var Downloads = imports.Downloads;
+        var Task = imports.Task;
+
+        Task.spawn(function () {
+            let list = yield Downloads.getList(Downloads.ALL);
+            try {
+                let download = yield Downloads.createDownload({
+                    source: url,
+                    target: file
+                });
+                list.add(download);
+                try {
+                    download.start();                    
+                } finally { }
+            } finally { }
+        }).then(null, Components.utils.reportError);
+    };
     
     this.downloadFile = function(title, url, fileType) {	
         try {	    
@@ -793,6 +815,11 @@ var flashVideoDownload = new function() {
                 filename = this.renameDownloadFile(filename);
                 file = this.getDownloadFile(filename, fileType, false);
             }
+
+            if (this.VersionInfo.isVersionBiggerOrEqual("26")) {
+                this.downloadFileUsingDownloadsJSM(url, file);
+                return;
+            }            
     
             var persist = Components.classes['@mozilla.org/embedding/browser/nsWebBrowserPersist;1'].createInstance(Components.interfaces.nsIWebBrowserPersist);  
             var ios = Components.classes['@mozilla.org/network/io-service;1'].getService(Components.interfaces.nsIIOService);  
@@ -813,5 +840,5 @@ var flashVideoDownload = new function() {
         finally {}
     };
     
-    this.init();
+    this.init();    
 };

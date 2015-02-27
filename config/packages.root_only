@@ -1,6 +1,5 @@
 aaa_base-extras
 accountsservice
-acetoneiso2
 acl
 acpid
 AdobeICCProfiles
@@ -66,7 +65,8 @@ cagibi
 calibre
 ccgfs
 cddfs
-cdrecord
+cdemu-client
+cdrkit-cdrtools-compat
 cfv
 checkit
 chkrootkit
@@ -175,6 +175,7 @@ fuse-lessfs
 fusepod
 fuse-sfs
 fusesmb
+gcdemu
 gconf2-branding-openSUSE
 gconf-editor
 gconf-polkit
@@ -427,7 +428,6 @@ knutclient
 kparts-plugin
 krename
 krusader
-kvkbd
 kvm
 kwalletmanager
 kwrite
@@ -668,6 +668,8 @@ ocfs2console
 ofono
 oggvideotools
 okular
+onboard
+onboard-data
 openal-soft
 openclipart-png
 opengost-otf-fonts

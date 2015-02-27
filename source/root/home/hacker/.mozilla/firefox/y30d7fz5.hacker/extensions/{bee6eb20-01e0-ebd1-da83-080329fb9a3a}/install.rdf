@@ -10,7 +10,7 @@
 		    <Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 				<em:minVersion>1.5</em:minVersion>
-				<em:maxVersion>34.*</em:maxVersion>
+				<em:maxVersion>36.*</em:maxVersion>
 		    </Description>
 		</em:targetApplication>
 	    
@@ -26,7 +26,7 @@
 		<em:creator>Vicente Amor</em:creator>
 		<em:name>Flash and Video Download</em:name>
 		<em:description>Download flash games and videos with a single click.</em:description>
-		<em:version>1.66</em:version>
+		<em:version>1.68</em:version>
 		<em:id>{bee6eb20-01e0-ebd1-da83-080329fb9a3a}</em:id>
 		<em:iconURL>chrome://flashVideoDownload/skin/icons/mainIcon.png</em:iconURL>
 		<em:type>2</em:type>

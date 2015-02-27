@@ -5,137 +5,13 @@ Version:0.17:$
 Arch:x86_64-gcc3:$
 
 [PLUGINS]
-libflashplayer.so:$
-/usr/lib64/browser-plugins/libflashplayer.so:$
-11.2.202.440:$
-1422055012000:0:0:0:$
-Shockwave Flash 11.2 r202:$
-Shockwave Flash:$
-2
-0:application/x-shockwave-flash:Shockwave Flash:swf:$
-1:application/futuresplash:FutureSplash Player:spl:$
-packagekit-plugin.so:$
-/usr/lib64/browser-plugins/packagekit-plugin.so:$
-:$
-1421859480000:0:0:0:$
-Plugin for Installing Applications (new):$
-PackageKit:$
-1
-0:application/x-packagekit-plugin:PackageKit Plugin:bsc:$
-libnpsoplugin.so:$
-/usr/lib64/libreoffice/program/libnpsoplugin.so:$
-:$
-1419010162000:0:0:0:$
-LibreOffice Plug-in handles all its documents:$
-LibreOffice Plug-in:$
-44
-0:application/msword:MS Word 97-2003 document:doc:$
-1:application/msword:MS Word 97-2003 document template:dot:$
-2:application/vnd.openxmlformats-officedocument.wordprocessingml.document:MS Word document:docx:$
-3:application/vnd.ms-word.document.macroenabled.12:MS Word document with macros:docm:$
-4:application/vnd.openxmlformats-officedocument.wordprocessingml.template:MS Word document template:dotx:$
-5:application/vnd.ms-word.template.macroenabled.12:MS Word document template with macros:dotm:$
-6:application/rtf:Rich Text Format:rtf:$
-7:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet:xls:$
-8:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet template:xlt:$
-9:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet:xla:$
-10:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:MS Excel spreadsheet:xlsx:$
-11:application/vnd.ms-excel.sheet.macroenabled.12:MS Excel spreadsheet with macros:xlsm:$
-12:application/vnd.openxmlformats-officedocument.spreadsheetml.template:MS Excel spreadsheet template:xltx:$
-13:application/vnd.ms-excel.template.macroenabled.12:MS Excel spreadsheet template with macros:xltm:$
-14:application/vnd.ms-powerpoint:MS PowerPoint 97-2003 presentation:ppt:$
-15:application/vnd.openxmlformats-officedocument.presentationml.presentation:MS PowerPoint presentation:pptx:$
-16:application/vnd.ms-powerpoint.presentation.macroenabled.12:MS PowerPoint presentation with macros:pptm:$
-17:application/vnd.openxmlformats-officedocument.presentationml.template:MS PowerPoint presentation template:potx:$
-18:application/vnd.ms-powerpoint.template.macroenabled.12:MS PowerPoint presentation template with macros:potm:$
-19:application/vnd.sun.xml.calc:StarOffice 6.0/7 Spreadsheet:sxc:$
-20:application/vnd.sun.xml.calc.template:StarOffice 6.0/7 Spreadsheet Template:stc:$
-21:application/vnd.sun.xml.draw:StarOffice 6.0/7 Drawing:sxd:$
-22:application/vnd.sun.xml.draw.template:StarOffice 6.0/7 Drawing Template:std:$
-23:application/vnd.sun.xml.impress:StarOffice 6.0/7 Presentation:sxi:$
-24:application/vnd.sun.xml.impress.template:StarOffice 6.0/7 Presentation Template:sti:$
-25:application/vnd.sun.xml.math:StarOffice 6.0/7 Formula:sxm:$
-26:application/vnd.sun.xml.writer:StarOffice 6.0/7 Text Document:sxw:$
-27:application/vnd.sun.xml.writer.global:StarOffice 6.0/7 Master Document:sxg:$
-28:application/vnd.sun.xml.writer.template:StarOffice 6.0/7 Text Document Template:stw:$
-29:application/vnd.oasis.opendocument.text:OpenDocument Text:odt:$
-30:application/vnd.oasis.opendocument.text-flat-xml:OpenDocument Text Flat XML:fodt:$
-31:application/vnd.oasis.opendocument.text-template:OpenDocument Text Template:ott:$
-32:application/vnd.oasis.opendocument.text-master:OpenDocument Master Document:odm:$
-33:application/vnd.oasis.opendocument.text-web:HTML Document Template:oth:$
-34:application/vnd.oasis.opendocument.spreadsheet:OpenDocument Spreadsheet:ods:$
-35:application/vnd.oasis.opendocument.spreadsheet-flat-xml:OpenDocument Spreadsheet Flat XML:fods:$
-36:application/vnd.oasis.opendocument.spreadsheet-template:OpenDocument Spreadsheet Template:ots:$
-37:application/vnd.oasis.opendocument.graphics:OpenDocument Drawing:odg:$
-38:application/vnd.oasis.opendocument.graphics-flat-xml:OpenDocument Drawing Flat XML:fodg:$
-39:application/vnd.oasis.opendocument.graphics-template:OpenDocument Drawing Template:otg:$
-40:application/vnd.oasis.opendocument.presentation:OpenDocument Presentation:odp:$
-41:application/vnd.oasis.opendocument.presentation-flat-xml:OpenDocument Presentation Flat XML:fodp:$
-42:application/vnd.oasis.opendocument.presentation-template:OpenDocument Presentation Template:otp:$
-43:application/vnd.oasis.opendocument.formula:OpenDocument Formula:odf:$
-libvlcplugin.so:$
-/usr/lib64/browser-plugins/libvlcplugin.so:$
-:$
-1418307664000:0:0:0:$
-VLC media player Web Plugin 2.1.5 Rincewind<br />Copyright © 2002-2014 VLC authors and VideoLAN<br /><a href="http://www.videolan.org/vlc/">http://www.videolan.org/vlc/</a>:$
-VLC Web Plugin:$
-49
-0:audio/mpeg:MPEG audio:mp2,mp3,mpga,mpega:$
-1:audio/x-mpeg:MPEG audio:mp2,mp3,mpga,mpega:$
-2:video/mpeg:MPEG video:mpg,mpeg,mpe:$
-3:video/x-mpeg:MPEG video:mpg,mpeg,mpe:$
-4:video/mpeg-system:MPEG video:mpg,mpeg,mpe,vob:$
-5:video/x-mpeg-system:MPEG video:mpg,mpeg,mpe,vob:$
-6:audio/mp4:MPEG-4 audio:aac,mp4,mpg4:$
-7:audio/x-m4a:MPEG-4 audio:m4a:$
-8:audio/m4a:MPEG-4 audio:m4a:$
-9:video/mp4:MPEG-4 video:mp4,mpg4:$
-10:application/mpeg4-iod:MPEG-4 video:mp4,mpg4:$
-11:application/mpeg4-muxcodetable:MPEG-4 video:mp4,mpg4:$
-12:video/x-m4v:MPEG-4 video:m4v:$
-13:video/x-msvideo:AVI video:avi:$
-14:video/quicktime:QuickTime video:mov,qt:$
-15:application/ogg:Ogg stream:ogg:$
-16:video/ogg:Ogg video:ogv:$
-17:audio/ogg:Ogg audio:oga:$
-18:application/x-ogg:Ogg stream:ogg:$
-19:audio/ogg;codecs=opus:Opus audio:opus:$
-20:application/x-vlc-plugin:VLC plug-in::$
-21:video/x-ms-asf-plugin:Windows Media Video:asf,asx:$
-22:video/x-ms-asf:Windows Media Video:asf,asx:$
-23:application/x-mplayer2:Windows Media::$
-24:video/x-ms-wmv:Windows Media:wmv:$
-25:video/x-ms-wvx:Windows Media Video:wvx:$
-26:audio/x-ms-wma:Windows Media Audio:wma:$
-27:application/x-google-vlc-plugin:Google VLC plug-in::$
-28:audio/wav:WAV audio:wav:$
-29:audio/x-wav:WAV audio:wav:$
-30:audio/3gpp:3GPP audio:3gp,3gpp:$
-31:video/3gpp:3GPP video:3gp,3gpp:$
-32:audio/3gpp2:3GPP2 audio:3g2,3gpp2:$
-33:video/3gpp2:3GPP2 video:3g2,3gpp2:$
-34:video/divx:DivX video:divx:$
-35:video/flv:FLV video:flv:$
-36:video/x-flv:FLV video:flv:$
-37:application/x-matroska:Matroska video:mkv:$
-38:video/x-matroska:Matroska video:mkv:$
-39:audio/x-matroska:Matroska audio:mka:$
-40:application/xspf+xml:Playlist xspf:xspf:$
-41:audio/x-mpegurl:MPEG audio:m3u:$
-42:video/webm:WebM video:webm:$
-43:audio/webm:WebM audio:webm:$
-44:application/vnd.rn-realmedia:Real Media File:rm:$
-45:audio/x-realaudio:Real Media Audio:ra:$
-46:audio/amr:AMR audio:amr:$
-47:audio/x-flac:FLAC audio:flac:$
-48:audio/flac:FLAC audio:flac:$
 libkpartsplugin.so:$
 /usr/lib64/browser-plugins/libkpartsplugin.so:$
 :$
-1414408219000:0:0:0:$
+1424077926000:0:0:0:$
 File viewer using KDE's KParts technology (2012-07-23):$
 KParts Plugin:$
-269
+274
 0:application/epub+zip:electronic book document:epub:$
 1:application/gml+xml:GML document:gml:$
 2:application/javascript:JavaScript program:js:$
@@ -240,171 +116,292 @@ KParts Plugin:$
 101:application/x-troff-man:Troff document:man:$
 102:application/x-turtle:Turtle RDF document::$
 103:application/x-ufraw:UFRaw ID image:ufraw:$
-104:application/x-wwf:WWF document:wwf:$
-105:application/x-xbel:XBEL bookmarks:xbel:$
-106:application/x-xliff:XLIFF translation file:xlf:$
-107:application/x-yaml:YAML document:yaml:$
-108:application/xhtml+xml:XHTML page:xhtml:$
-109:application/xml:XML document:xml:$
-110:application/xml-dtd:DTD file:dtd:$
-111:application/xml-external-parsed-entity:XML entities document:ent:$
-112:application/xsd:W3C XML schema:xsd:$
-113:application/xslt+xml:XSLT stylesheet:xsl:$
-114:application/xspf+xml:XSPF playlist:xspf:$
-115:audio/x-mpegurl:MP3 audio:m3u:$
-116:image/bmp:Windows BMP image:bmp:$
-117:image/fax-g3:CCITT G3 fax:g3:$
-118:image/g3fax:G3 fax image::$
-119:image/gif:GIF image:gif:$
-120:image/jp2:JPEG-2000 image:jp2:$
-121:image/jpeg:JPEG image:jpeg:$
-122:image/png:PNG image:png:$
-123:image/svg+xml:SVG image:svg:$
-124:image/tiff:TIFF image:tif:$
-125:image/vnd.adobe.photoshop:Photoshop image:psd:$
-126:image/vnd.djvu:DjVu image:djvu:$
-127:image/vnd.microsoft.icon:Microsoft icon:ico:$
-128:image/x-adobe-dng:Adobe DNG negative:dng:$
-129:image/x-bzeps:EPS image:eps.bz2:$
-130:image/x-canon-cr2:Canon CR2 raw image:cr2:$
-131:image/x-dds:DirectDraw surface:dds:$
-132:image/x-eps:EPS image:eps:$
-133:image/x-exr:EXR image:exr:$
-134:image/x-gzeps:EPS image:eps.gz:$
-135:image/x-hdr:HDR image:hdr:$
-136:image/x-jng:JNG image:jng:$
-137:image/x-kodak-dcr:Kodak DCR raw image:dcr:$
-138:image/x-kodak-k25:Kodak K25 raw image:k25:$
-139:image/x-kodak-kdc:Kodak KDC raw image:kdc:$
-140:image/x-nikon-nef:Nikon NEF raw image:nef:$
-141:image/x-pcx:PCX image:pcx:$
-142:image/x-pentax-pef:Pentax PEF raw image:pef:$
-143:image/x-portable-bitmap:PBM image:pbm:$
-144:image/x-portable-graymap:PGM image:pgm:$
-145:image/x-portable-pixmap:PPM image:ppm:$
-146:image/x-rgb:RGB image:rgb:$
-147:image/x-sony-arw:Sony ARW raw image:arw:$
-148:image/x-sony-sr2:Sony SR2 raw image:sr2:$
-149:image/x-sony-srf:Sony SRF raw image:srf:$
-150:image/x-tga:TGA image:icb:$
-151:image/x-webp:WebP image:webp:$
-152:image/x-xbitmap:XBM image:xbm:$
-153:image/x-xcf:GIMP image:xcf:$
-154:image/x-xpixmap:XPM image:xpm:$
-155:model/vrml:VRML document:vrm:$
-156:text/cache-manifest:Web application cache manifest:manifest:$
-157:text/calendar:VCS/ICS calendar:vcs:$
-158:text/css:CSS stylesheet:css:$
-159:text/csv:CSV document:csv:$
-160:text/enriched:enriched text document::$
-161:text/html:HTML document:html:$
-162:text/htmlh:help page::$
-163:text/plain:plain text document:txt:$
-164:text/rfc822-headers:email headers::$
-165:text/richtext:rich text document:rtx:$
-166:text/sgml:SGML document:sgml:$
-167:text/spreadsheet:spreadsheet interchange document:sylk:$
-168:text/tab-separated-values:TSV document:tsv:$
-169:text/troff:Troff document:tr:$
-170:text/vcard:electronic business card:vcard:$
-171:text/vnd.abc:abc musical notation file:abc:$
-172:text/vnd.cgats:CGATS color measurements:cgats:$
-173:text/vnd.graphviz:Graphviz DOT graph:gv:$
-174:text/vnd.rn-realtext:RealText document:rt:$
-175:text/vnd.sun.j2me.app-descriptor:JAD document:jad:$
-176:text/vnd.trolltech.linguist:message catalog:ts:$
-177:text/vnd.wap.wml:WML document:wml:$
-178:text/vnd.wap.wmlscript:WMLScript program:wmls:$
-179:text/vtt:WebVTT subtitles:vtt:$
-180:text/x-adasrc:Ada source code:adb:$
-181:text/x-authors:author list::$
-182:text/x-bibtex:BibTeX document:bib:$
-183:text/x-c++hdr:C++ header:hh:$
-184:text/x-c++src:C++ source code:cpp:$
-185:text/x-changelog:ChangeLog document::$
-186:text/x-chdr:C header:h:$
-187:text/x-cmake:CMake source code:cmake:$
-188:text/x-cobol:COBOL source file:cbl:$
-189:text/x-copying:license terms::$
-190:text/x-credits:author credits::$
-191:text/x-csharp:C# source code:cs:$
-192:text/x-csrc:C source code:c:$
-193:text/x-dcl:DCL script:dcl:$
-194:text/x-dsl:DSSSL document:dsl:$
-195:text/x-dsrc:D source code:d:$
-196:text/x-eiffel:Eiffel source code:e:$
-197:text/x-emacs-lisp:Emacs Lisp source code:el:$
-198:text/x-erlang:Erlang source code:erl:$
-199:text/x-fortran:Fortran source code:f:$
-200:text/x-gettext-translation:translation file:po:$
-201:text/x-gettext-translation-template:translation template:pot:$
-202:text/x-go:Go source code:go:$
-203:text/x-google-video-pointer:Google Video Pointer:gvp:$
-204:text/x-haskell:Haskell source code:hs:$
-205:text/x-hex:Intel® hexadecimal object file:hex:$
-206:text/x-idl:IDL document:idl:$
-207:text/x-imelody:iMelody ringtone:imy:$
-208:text/x-install:installation instructions::$
-209:text/x-iptables:iptables configuration file:iptables:$
-210:text/x-java:Java source code:java:$
-211:text/x-katefilelist:Kate file list loader plugin list:katefl:$
-212:text/x-ldif:LDIF address book:ldif:$
-213:text/x-lilypond:Lilypond music sheet:ly:$
-214:text/x-literate-haskell:LHS source code:lhs:$
-215:text/x-log:application log:log:$
-216:text/x-lua:Lua script:lua:$
-217:text/x-makefile:Makefile:mk:$
-218:text/x-markdown:Markdown document:md:$
-219:text/x-matlab:MATLAB script/function:m:$
-220:text/x-microdvd:MicroDVD subtitles:sub:$
-221:text/x-moc:Qt MOC file:moc:$
-222:text/x-modelica:Modelica model:mo:$
-223:text/x-mof:Managed Object Format:mof:$
-224:text/x-mpsub:MPSub subtitles:sub:$
-225:text/x-mrml:MRML playlist:mrml:$
-226:text/x-ms-regedit:Windows Registry extract:reg:$
-227:text/x-mup:Mup publication:mup:$
-228:text/x-nfo:NFO document:nfo:$
-229:text/x-objchdr:Objective-C header::$
-230:text/x-objcsrc:Objective-C source code:m:$
-231:text/x-ocaml:OCaml source code:ml:$
-232:text/x-ocl:OCL file:ocl:$
-233:text/x-ooc:OOC source code:ooc:$
-234:text/x-opml+xml:OPML syndication feed:opml:$
-235:text/x-pascal:Pascal source code:p:$
-236:text/x-patch:differences between files:diff:$
-237:text/x-python:Python script:py:$
-238:text/x-qml:Qt Markup Language file:qml:$
-239:text/x-readme:README document::$
-240:text/x-reject:rejected patch:rej:$
-241:text/x-rpm-spec:RPM spec file:spec:$
-242:text/x-scala:Scala source code:scala:$
-243:text/x-scheme:Scheme source code:scm:$
-244:text/x-setext:Setext document:etx:$
-245:text/x-ssa:SSA subtitles:ssa:$
-246:text/x-subviewer:SubViewer subtitles:sub:$
-247:text/x-suse-ymp:YaST Meta Package:ymp:$
-248:text/x-suse-ymu:URL of a YaST Meta Package:ymu:$
-249:text/x-svhdr:SystemVerilog header:svh:$
-250:text/x-svsrc:SystemVerilog source code:sv:$
-251:text/x-tcl:Tcl script:tcl:$
-252:text/x-tex:TeX document:tex:$
-253:text/x-texinfo:TeXInfo document:texi:$
-254:text/x-troff-me:Troff ME input document:me:$
-255:text/x-troff-mm:Troff MM input document:mm:$
-256:text/x-troff-ms:Troff MS input document:ms:$
-257:text/x-txt2tags:txt2tags document:t2t:$
-258:text/x-uil:X-Motif UIL table:uil:$
-259:text/x-uri:resource location::$
-260:text/x-uuencode:uuencoded file:uue:$
-261:text/x-vala:Vala source code:vala:$
-262:text/x-verilog:Verilog source code:v:$
-263:text/x-vhdl:VHDL source code:vhd:$
-264:text/x-xmi:XMI file:xmi:$
-265:text/x-xslfo:XSL FO file:fo:$
-266:text/xmcd:XMCD CD database::$
-267:video/vnd.mpegurl:MPEG video:m1u:$
-268:video/x-mng:MNG animation:mng:$
+104:application/x-virt-viewer:Virt-Viewer connection file:vv:$
+105:application/x-wwf:WWF document:wwf:$
+106:application/x-xbel:XBEL bookmarks:xbel:$
+107:application/x-xliff:XLIFF translation file:xlf:$
+108:application/x-yaml:YAML document:yaml:$
+109:application/xhtml+xml:XHTML page:xhtml:$
+110:application/xml:XML document:xml:$
+111:application/xml-dtd:DTD file:dtd:$
+112:application/xml-external-parsed-entity:XML entities document:ent:$
+113:application/xsd:W3C XML schema:xsd:$
+114:application/xslt+xml:XSLT stylesheet:xsl:$
+115:application/xspf+xml:XSPF playlist:xspf:$
+116:audio/x-mpegurl:MP3 audio:m3u:$
+117:image/bmp:Windows BMP image:bmp:$
+118:image/fax-g3:CCITT G3 fax:g3:$
+119:image/g3fax:G3 fax image::$
+120:image/gif:GIF image:gif:$
+121:image/jp2:JPEG-2000 image:jp2:$
+122:image/jpeg:JPEG image:jpeg:$
+123:image/png:PNG image:png:$
+124:image/svg+xml:SVG image:svg:$
+125:image/tiff:TIFF image:tif:$
+126:image/vnd.adobe.photoshop:Photoshop image:psd:$
+127:image/vnd.djvu:DjVu image:djvu:$
+128:image/vnd.microsoft.icon:Microsoft icon:ico:$
+129:image/x-adobe-dng:Adobe DNG negative:dng:$
+130:image/x-bzeps:EPS image:eps.bz2:$
+131:image/x-canon-cr2:Canon CR2 raw image:cr2:$
+132:image/x-dds:DirectDraw surface:dds:$
+133:image/x-eps:EPS image:eps:$
+134:image/x-exr:EXR image:exr:$
+135:image/x-gzeps:EPS image:eps.gz:$
+136:image/x-hdr:HDR image:hdr:$
+137:image/x-jng:JNG image:jng:$
+138:image/x-kodak-dcr:Kodak DCR raw image:dcr:$
+139:image/x-kodak-k25:Kodak K25 raw image:k25:$
+140:image/x-kodak-kdc:Kodak KDC raw image:kdc:$
+141:image/x-nikon-nef:Nikon NEF raw image:nef:$
+142:image/x-pcx:PCX image:pcx:$
+143:image/x-pentax-pef:Pentax PEF raw image:pef:$
+144:image/x-portable-bitmap:PBM image:pbm:$
+145:image/x-portable-graymap:PGM image:pgm:$
+146:image/x-portable-pixmap:PPM image:ppm:$
+147:image/x-rgb:RGB image:rgb:$
+148:image/x-sony-arw:Sony ARW raw image:arw:$
+149:image/x-sony-sr2:Sony SR2 raw image:sr2:$
+150:image/x-sony-srf:Sony SRF raw image:srf:$
+151:image/x-tga:TGA image:icb:$
+152:image/x-webp:WebP image:webp:$
+153:image/x-xbitmap:XBM image:xbm:$
+154:image/x-xcf:GIMP image:xcf:$
+155:image/x-xpixmap:XPM image:xpm:$
+156:model/vrml:VRML document:vrm:$
+157:text/cache-manifest:Web application cache manifest:manifest:$
+158:text/calendar:VCS/ICS calendar:vcs:$
+159:text/css:CSS stylesheet:css:$
+160:text/csv:CSV document:csv:$
+161:text/enriched:enriched text document::$
+162:text/html:HTML document:html:$
+163:text/htmlh:help page::$
+164:text/plain:plain text document:txt:$
+165:text/rfc822-headers:email headers::$
+166:text/richtext:rich text document:rtx:$
+167:text/sgml:SGML document:sgml:$
+168:text/spreadsheet:spreadsheet interchange document:sylk:$
+169:text/tab-separated-values:TSV document:tsv:$
+170:text/troff:Troff document:tr:$
+171:text/vcard:electronic business card:vcard:$
+172:text/vnd.abc:abc musical notation file:abc:$
+173:text/vnd.cgats:CGATS color measurements:cgats:$
+174:text/vnd.graphviz:Graphviz DOT graph:gv:$
+175:text/vnd.rn-realtext:RealText document:rt:$
+176:text/vnd.sun.j2me.app-descriptor:JAD document:jad:$
+177:text/vnd.trolltech.linguist:message catalog:ts:$
+178:text/vnd.wap.wml:WML document:wml:$
+179:text/vnd.wap.wmlscript:WMLScript program:wmls:$
+180:text/vtt:WebVTT subtitles:vtt:$
+181:text/x-adasrc:Ada source code:adb:$
+182:text/x-ass:Advanced SubStation Alpha subtitles:ass:$
+183:text/x-authors:author list::$
+184:text/x-bibtex:BibTeX document:bib:$
+185:text/x-c++hdr:C++ header:hh:$
+186:text/x-c++src:C++ source code:cpp:$
+187:text/x-changelog:ChangeLog document::$
+188:text/x-chdr:C header:h:$
+189:text/x-cmake:CMake source code:cmake:$
+190:text/x-cobol:COBOL source file:cbl:$
+191:text/x-copying:license terms::$
+192:text/x-credits:author credits::$
+193:text/x-csharp:C# source code:cs:$
+194:text/x-csrc:C source code:c:$
+195:text/x-dcl:DCL script:dcl:$
+196:text/x-dsl:DSSSL document:dsl:$
+197:text/x-dsrc:D source code:d:$
+198:text/x-eiffel:Eiffel source code:e:$
+199:text/x-emacs-lisp:Emacs Lisp source code:el:$
+200:text/x-erlang:Erlang source code:erl:$
+201:text/x-fortran:Fortran source code:f:$
+202:text/x-gettext-translation:translation file:po:$
+203:text/x-gettext-translation-template:translation template:pot:$
+204:text/x-go:Go source code:go:$
+205:text/x-google-video-pointer:Google Video Pointer:gvp:$
+206:text/x-haskell:Haskell source code:hs:$
+207:text/x-hex:Intel® hexadecimal object file:hex:$
+208:text/x-idl:IDL document:idl:$
+209:text/x-imelody:iMelody ringtone:imy:$
+210:text/x-install:installation instructions::$
+211:text/x-iptables:iptables configuration file:iptables:$
+212:text/x-java:Java source code:java:$
+213:text/x-katefilelist:Kate file list loader plugin list:katefl:$
+214:text/x-ldif:LDIF address book:ldif:$
+215:text/x-lilypond:Lilypond music sheet:ly:$
+216:text/x-literate-haskell:LHS source code:lhs:$
+217:text/x-log:application log:log:$
+218:text/x-lua:Lua script:lua:$
+219:text/x-makefile:Makefile:mk:$
+220:text/x-markdown:Markdown document:md:$
+221:text/x-matlab:MATLAB script/function:m:$
+222:text/x-microdvd:MicroDVD subtitles:sub:$
+223:text/x-moc:Qt MOC file:moc:$
+224:text/x-modelica:Modelica model:mo:$
+225:text/x-mof:Managed Object Format:mof:$
+226:text/x-mplsub:MPLSub subtitles:mpl:$
+227:text/x-mpsub:MPSub subtitles:sub:$
+228:text/x-mrml:MRML playlist:mrml:$
+229:text/x-ms-regedit:Windows Registry extract:reg:$
+230:text/x-mup:Mup publication:mup:$
+231:text/x-nfo:NFO document:nfo:$
+232:text/x-objchdr:Objective-C header::$
+233:text/x-objcsrc:Objective-C source code:m:$
+234:text/x-ocaml:OCaml source code:ml:$
+235:text/x-ocl:OCL file:ocl:$
+236:text/x-ooc:OOC source code:ooc:$
+237:text/x-opml+xml:OPML syndication feed:opml:$
+238:text/x-pascal:Pascal source code:p:$
+239:text/x-patch:differences between files:diff:$
+240:text/x-python:Python script:py:$
+241:text/x-qml:Qt Markup Language file:qml:$
+242:text/x-readme:README document::$
+243:text/x-reject:rejected patch:rej:$
+244:text/x-rpm-spec:RPM spec file:spec:$
+245:text/x-scala:Scala source code:scala:$
+246:text/x-scheme:Scheme source code:scm:$
+247:text/x-setext:Setext document:etx:$
+248:text/x-ssa:SubStation Alpha subtitles:ssa:$
+249:text/x-subviewer:SubViewer subtitles:sub:$
+250:text/x-suse-ymp:YaST Meta Package:ymp:$
+251:text/x-suse-ymu:URL of a YaST Meta Package:ymu:$
+252:text/x-svhdr:SystemVerilog header:svh:$
+253:text/x-svsrc:SystemVerilog source code:sv:$
+254:text/x-tcl:Tcl script:tcl:$
+255:text/x-tex:TeX document:tex:$
+256:text/x-texinfo:TeXInfo document:texi:$
+257:text/x-tmplayer:TMPlayer subtitles:sub:$
+258:text/x-tmplayer+:TMPlayer+ subtitles:sub:$
+259:text/x-troff-me:Troff ME input document:me:$
+260:text/x-troff-mm:Troff MM input document:mm:$
+261:text/x-troff-ms:Troff MS input document:ms:$
+262:text/x-txt2tags:txt2tags document:t2t:$
+263:text/x-uil:X-Motif UIL table:uil:$
+264:text/x-uri:resource location::$
+265:text/x-uuencode:uuencoded file:uue:$
+266:text/x-vala:Vala source code:vala:$
+267:text/x-verilog:Verilog source code:v:$
+268:text/x-vhdl:VHDL source code:vhd:$
+269:text/x-xmi:XMI file:xmi:$
+270:text/x-xslfo:XSL FO file:fo:$
+271:text/xmcd:XMCD CD database::$
+272:video/vnd.mpegurl:MPEG video:m1u:$
+273:video/x-mng:MNG animation:mng:$
+libvlcplugin.so:$
+/usr/lib64/browser-plugins/libvlcplugin.so:$
+:$
+1423770307000:0:0:0:$
+VLC media player Web Plugin 3.0.0-git Vetinari<br />Copyright © 2002-2014 VLC authors and VideoLAN<br /><a href="http://www.videolan.org/vlc/">http://www.videolan.org/vlc/</a>:$
+VLC Web Plugin:$
+49
+0:audio/mpeg:MPEG audio:mp2,mp3,mpga,mpega:$
+1:audio/x-mpeg:MPEG audio:mp2,mp3,mpga,mpega:$
+2:video/mpeg:MPEG video:mpg,mpeg,mpe:$
+3:video/x-mpeg:MPEG video:mpg,mpeg,mpe:$
+4:video/mpeg-system:MPEG video:mpg,mpeg,mpe,vob:$
+5:video/x-mpeg-system:MPEG video:mpg,mpeg,mpe,vob:$
+6:audio/mp4:MPEG-4 audio:aac,mp4,mpg4:$
+7:audio/x-m4a:MPEG-4 audio:m4a:$
+8:audio/m4a:MPEG-4 audio:m4a:$
+9:video/mp4:MPEG-4 video:mp4,mpg4:$
+10:application/mpeg4-iod:MPEG-4 video:mp4,mpg4:$
+11:application/mpeg4-muxcodetable:MPEG-4 video:mp4,mpg4:$
+12:video/x-m4v:MPEG-4 video:m4v:$
+13:video/x-msvideo:AVI video:avi:$
+14:video/quicktime:QuickTime video:mov,qt:$
+15:application/ogg:Ogg stream:ogg:$
+16:video/ogg:Ogg video:ogv:$
+17:audio/ogg:Ogg audio:oga:$
+18:application/x-ogg:Ogg stream:ogg:$
+19:audio/ogg;codecs=opus:Opus audio:opus:$
+20:application/x-vlc-plugin:VLC plug-in::$
+21:video/x-ms-asf-plugin:Windows Media Video:asf,asx:$
+22:video/x-ms-asf:Windows Media Video:asf,asx:$
+23:application/x-mplayer2:Windows Media::$
+24:video/x-ms-wmv:Windows Media:wmv:$
+25:video/x-ms-wvx:Windows Media Video:wvx:$
+26:audio/x-ms-wma:Windows Media Audio:wma:$
+27:application/x-google-vlc-plugin:Google VLC plug-in::$
+28:audio/wav:WAV audio:wav:$
+29:audio/x-wav:WAV audio:wav:$
+30:audio/3gpp:3GPP audio:3gp,3gpp:$
+31:video/3gpp:3GPP video:3gp,3gpp:$
+32:audio/3gpp2:3GPP2 audio:3g2,3gpp2:$
+33:video/3gpp2:3GPP2 video:3g2,3gpp2:$
+34:video/divx:DivX video:divx:$
+35:video/flv:FLV video:flv:$
+36:video/x-flv:FLV video:flv:$
+37:application/x-matroska:Matroska video:mkv:$
+38:video/x-matroska:Matroska video:mkv:$
+39:audio/x-matroska:Matroska audio:mka:$
+40:application/xspf+xml:Playlist xspf:xspf:$
+41:audio/x-mpegurl:MPEG audio:m3u:$
+42:video/webm:WebM video:webm:$
+43:audio/webm:WebM audio:webm:$
+44:application/vnd.rn-realmedia:Real Media File:rm:$
+45:audio/x-realaudio:Real Media Audio:ra:$
+46:audio/amr:AMR audio:amr:$
+47:audio/x-flac:FLAC audio:flac:$
+48:audio/flac:FLAC audio:flac:$
+libflashplayer.so:$
+/usr/lib64/browser-plugins/libflashplayer.so:$
+11.2.202.442:$
+1422498016000:0:0:0:$
+Shockwave Flash 11.2 r202:$
+Shockwave Flash:$
+2
+0:application/x-shockwave-flash:Shockwave Flash:swf:$
+1:application/futuresplash:FutureSplash Player:spl:$
+libnpsoplugin.so:$
+/usr/lib64/libreoffice/program/libnpsoplugin.so:$
+:$
+1419010162000:0:0:0:$
+LibreOffice Plug-in handles all its documents:$
+LibreOffice Plug-in:$
+44
+0:application/msword:MS Word 97-2003 document:doc:$
+1:application/msword:MS Word 97-2003 document template:dot:$
+2:application/vnd.openxmlformats-officedocument.wordprocessingml.document:MS Word document:docx:$
+3:application/vnd.ms-word.document.macroenabled.12:MS Word document with macros:docm:$
+4:application/vnd.openxmlformats-officedocument.wordprocessingml.template:MS Word document template:dotx:$
+5:application/vnd.ms-word.template.macroenabled.12:MS Word document template with macros:dotm:$
+6:application/rtf:Rich Text Format:rtf:$
+7:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet:xls:$
+8:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet template:xlt:$
+9:application/vnd.ms-excel:MS Excel 97-2003 spreadsheet:xla:$
+10:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet:MS Excel spreadsheet:xlsx:$
+11:application/vnd.ms-excel.sheet.macroenabled.12:MS Excel spreadsheet with macros:xlsm:$
+12:application/vnd.openxmlformats-officedocument.spreadsheetml.template:MS Excel spreadsheet template:xltx:$
+13:application/vnd.ms-excel.template.macroenabled.12:MS Excel spreadsheet template with macros:xltm:$
+14:application/vnd.ms-powerpoint:MS PowerPoint 97-2003 presentation:ppt:$
+15:application/vnd.openxmlformats-officedocument.presentationml.presentation:MS PowerPoint presentation:pptx:$
+16:application/vnd.ms-powerpoint.presentation.macroenabled.12:MS PowerPoint presentation with macros:pptm:$
+17:application/vnd.openxmlformats-officedocument.presentationml.template:MS PowerPoint presentation template:potx:$
+18:application/vnd.ms-powerpoint.template.macroenabled.12:MS PowerPoint presentation template with macros:potm:$
+19:application/vnd.sun.xml.calc:StarOffice 6.0/7 Spreadsheet:sxc:$
+20:application/vnd.sun.xml.calc.template:StarOffice 6.0/7 Spreadsheet Template:stc:$
+21:application/vnd.sun.xml.draw:StarOffice 6.0/7 Drawing:sxd:$
+22:application/vnd.sun.xml.draw.template:StarOffice 6.0/7 Drawing Template:std:$
+23:application/vnd.sun.xml.impress:StarOffice 6.0/7 Presentation:sxi:$
+24:application/vnd.sun.xml.impress.template:StarOffice 6.0/7 Presentation Template:sti:$
+25:application/vnd.sun.xml.math:StarOffice 6.0/7 Formula:sxm:$
+26:application/vnd.sun.xml.writer:StarOffice 6.0/7 Text Document:sxw:$
+27:application/vnd.sun.xml.writer.global:StarOffice 6.0/7 Master Document:sxg:$
+28:application/vnd.sun.xml.writer.template:StarOffice 6.0/7 Text Document Template:stw:$
+29:application/vnd.oasis.opendocument.text:OpenDocument Text:odt:$
+30:application/vnd.oasis.opendocument.text-flat-xml:OpenDocument Text Flat XML:fodt:$
+31:application/vnd.oasis.opendocument.text-template:OpenDocument Text Template:ott:$
+32:application/vnd.oasis.opendocument.text-master:OpenDocument Master Document:odm:$
+33:application/vnd.oasis.opendocument.text-web:HTML Document Template:oth:$
+34:application/vnd.oasis.opendocument.spreadsheet:OpenDocument Spreadsheet:ods:$
+35:application/vnd.oasis.opendocument.spreadsheet-flat-xml:OpenDocument Spreadsheet Flat XML:fods:$
+36:application/vnd.oasis.opendocument.spreadsheet-template:OpenDocument Spreadsheet Template:ots:$
+37:application/vnd.oasis.opendocument.graphics:OpenDocument Drawing:odg:$
+38:application/vnd.oasis.opendocument.graphics-flat-xml:OpenDocument Drawing Flat XML:fodg:$
+39:application/vnd.oasis.opendocument.graphics-template:OpenDocument Drawing Template:otg:$
+40:application/vnd.oasis.opendocument.presentation:OpenDocument Presentation:odp:$
+41:application/vnd.oasis.opendocument.presentation-flat-xml:OpenDocument Presentation Flat XML:fodp:$
+42:application/vnd.oasis.opendocument.presentation-template:OpenDocument Presentation Template:otp:$
+43:application/vnd.oasis.opendocument.formula:OpenDocument Formula:odf:$
 IcedTeaPlugin.so:$
 /usr/lib64/java-1_7_0-openjdk-plugin/lib/IcedTeaPlugin.so:$
 :$
@@ -448,5 +445,18 @@ IcedTea-Web Plugin (using IcedTea-Web 1.5.1 (suse-4.1-x86_64)):$
 33:application/x-java-bean;version=1.7:IcedTea:class,jar:$
 34:application/x-java-bean;jpi-version=1.7.0_50:IcedTea:class,jar:$
 35:application/x-java-vm-npruntime:IcedTea::$
+nsdejavu.so:$
+/usr/lib64/browser-plugins/nsdejavu.so:$
+:$
+1412655489000:0:0:0:$
+This is the <a href="http://djvu.sourceforge.net">DjView-4.9</a> version of the DjVu plugin.<br>See <a href="http://djvu.sourceforge.net">DjVuLibre</a>.:$
+DjView-4.9:$
+6
+0:image/x-djvu:DjVu File:djvu,djv:$
+1:image/x.djvu:DjVu File::$
+2:image/djvu:DjVu File::$
+3:image/x-dejavu:DjVu File::$
+4:image/x-iw44:DjVu File::$
+5:image/vnd.djvu:DjVu File::$
 
 [INVALID]
