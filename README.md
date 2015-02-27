@@ -12,30 +12,31 @@ I recommend using smart SATA boxes and usb drives with legacy (floppy / CD / vir
 It provides:
 ------------
 * fresh stable kernel from Kernel:stable repo
-* fresh (default) OSS video stack from X11 repo (rc's)  
-or bleeding edge from pontostroy (git & kernel rc's)
+* fresh (enabled) OSS video stack from X11 repo (rc's)  
+or bleeding edge (configured) from pontostroy (git & kernel rc's)
 * LXQt slim desktop environment
 * international collection of fonts and universal iBus input method by default
-* LibreOffice, Calibre, pdfcrack, GIMP and fresh GoldenDict
+* LibreOffice, GIMP and fresh GoldenDict;  
+Calibre, okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
-* bomi/mpv (ex-C/Mplayer) video player, CLI VLC with Firefox plugin,  
+* bomi/mpv (ex-C/Mplayer) video player, CLI VLC with Firefox plugin;  
 SubtitleComposer and Aegisub subtitle editors
 * professional sound handling with JACK  
 (PA & ALSA, both with OSS emulation, run as JACK's clients)
-* Clementine audio player, Audacity audio editor/recorder,  
+* Clementine audio player, Audacity audio editor/recorder;  
 GStreamer with FFMPEG and JACK output by default
 * professional colour management facilities  
 (consisting of colord, argyllCMS, dispcalGUI and xiccd)
 * printer (via cups), scanner (via x/sane)  
 and analogue video input (via tvtime) support
 * professional screencasting tool SimpleScreenRecorder with native JACK support
-* wide range of gamepad utilities,  
+* wide range of gamepad utilities  
 such as AntiMicro (for key & axis mapping) and jstest-gtk
 * professional networking tools and rich connectivity options
 * anti-censorship kit: Tor/Polipo, dnscrypt-proxy/Unbound, proxychains and VPN
 * LeechCraft modular system stripped for only IM and socializing
-* LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony,  
+* LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
 Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say)
 * fresh Mozilla Firefox browser and Thunderbird e-mail client
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
@@ -100,7 +101,7 @@ Notes:
 
 ⊙ Some specialty apps that were not included but you may be interested in installing manually  
 * music works  
-  * ardour3, rosegarden, qtractor, hydrogen, mixxx, rakarrack, OpenOctaveMidi  
+  * ardour3, rosegarden, qtractor, hydrogen, mixxx, rakarrack, OpenOctaveMidi, vmpk  
 * high-quality midi playback  
   * fluid-soundfont-gs, fluidsynth, qsynth, kmid  
 * video editing  
@@ -111,6 +112,9 @@ Notes:
   * OpenCASCADE, FreeCAD, librecad, qcad, openscad, kicad, QCADesigner  
 * publishing  
   * scribus  
+* office works utilities  
+  * chm2pdf  
+  * djvu2pdf/pdf2djvu  
 * painting  
   * cinepaint, mtpaint  
 * vector drawing  
@@ -130,6 +134,7 @@ Notes:
   * yate-qt4 (lots of features with no GUI for them)  
   * jitsi (Jack-of-all-trades and JAVA-fatass)  
 * multimedia  
+  * Tano (vlc-based IP TV player but TV is bad for ya)  
   * SMplayer GUI for mpv & mplayer (allows extreme fine-tuning but is full of legacy code)  
   * VLC (the king of media players but it's interface sucks)  
   * QMPlay2 (vlc-like player with better GUI but without JACK support)  

@@ -39,7 +39,9 @@ autossh
 avahi
 avahi-autoipd
 avahi-utils
+avfs
 bash-completion
+bbswitch
 bc
 bcg729-mediastreamer
 bindfs
@@ -68,7 +70,6 @@ cdrecord
 cfv
 checkit
 chkrootkit
-chm2pdf
 chntpw
 cksfv
 clamav
@@ -116,6 +117,7 @@ deltarpm
 desktop-translations
 dictd
 dispcalGUI
+djvulibre-djview4
 dmidecode
 dnscrypt-proxy
 dnstop
@@ -170,7 +172,6 @@ fuse-lessfs
 fusepod
 fuse-sfs
 fusesmb
-fuse-zip
 gconf2-branding-openSUSE
 gconf-editor
 gconf-polkit
@@ -283,6 +284,7 @@ gtk3-data
 gtk3-immodule-xim
 gtk3-theme-oxygen
 gtk3-tools
+guestfs-data
 guestfs-tools
 gupnp-tools
 gutenprint
@@ -291,14 +293,18 @@ guymager
 gvfs-backends
 gvfs-fuse
 gwenview
+hashdeep
 hddtemp
 hdparm
 hg-fast-export
 hicolor-icon-theme
 hicolor-icon-theme-branding-openSUSE
+hmaccalc
 hostapd
 hostap-utils
+hplip
 hplip-hpijs
+hplip-sane
 htop
 httrack
 hunspell
@@ -361,6 +367,8 @@ ibus-unikey
 icc-mime-types
 icc-profiles-all
 icc-profiles-scp-yamma
+iceWMCP-addons
+icewm-default
 ifplugd
 iftop
 ifuse
@@ -494,6 +502,7 @@ libcanberra-gtk3-module
 libcanberra-gtk-module-common
 libcap-ng-utils
 libcap-progs
+libcryptsetup4-hmac
 liberation-fonts
 libesedb-tools
 libevdev-tools
@@ -501,10 +510,14 @@ libevt-tools
 libevtx-tools
 libewf-tools
 libflashsupport
+libgcrypt20-hmac
+libgcrypt-hmac256
+libhmac-tools
 libiscsi-utils
 liblnk-tools
 libmsiecf-tools
 libolecf-tools
+libopenssl1_0_0-hmac
 libOSMesa9
 libotr2-tools
 libpoppler-glib8
@@ -606,6 +619,7 @@ nanum-fonts
 nanum-gothic-coding-fonts
 ncat
 ncdu
+ndiff
 ndisc6
 nepim
 netcat-openbsd
@@ -624,7 +638,6 @@ nfs4-acl-tools
 nfs-client
 nitrogen
 nmap
-nmap-ndiff
 nmon
 noping
 npapi-vlc-beta
@@ -656,8 +669,6 @@ opus-tools
 oxygen-cursors4
 oxygen-ionized-icon-theme
 p7zip
-PackageKit-browser-plugin
-PackageKit-gstreamer-plugin
 paman
 pam_apparmor
 pam_ccreds
@@ -716,6 +727,7 @@ powertop
 ppp
 ppp-userpass
 prctl
+primus
 procinfo
 proctail
 projectM-jack
@@ -757,7 +769,6 @@ rsync
 samba-client
 sane-backends
 sane-backends-autoconfig
-sax3
 sazanami-fonts
 sbc
 sbl
@@ -821,7 +832,7 @@ systemd-logger
 systemd-ui
 systemtap
 t6_client
-tano
+tarix
 tcpdump
 tc-play
 tcpreen
@@ -905,6 +916,7 @@ xf86-input-evdev
 xf86-input-synaptics
 xf86-input-wacom
 xf86-video-ati
+xf86-video-dummy
 xf86-video-intel
 xf86-video-nouveau
 xfontsel
@@ -947,11 +959,13 @@ yast2-ca-management
 yast2-control-center
 yast2-control-center-qt
 yast2-dbus-server
+yast2-fcoe-client
 yast2-firewall
 yast2-firstboot
 yast2-ftp-server
 yast2-installation
 yast2-instserver
+yast2-iscsi-client
 yast2-live-installer
 yast2-metapackage-handler
 yast2-nfs-client
@@ -969,7 +983,6 @@ yast2-sudo
 yast2-support
 yast2-tftp-server
 yast2-trans-en_GB
-yast2-vm
 zenmap
 zerofree
 zfs
