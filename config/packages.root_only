@@ -789,6 +789,7 @@ qt-mobility-pulseaudio
 radeontop
 radvd
 rancid
+rar
 reaver
 reiser4progs
 remmina-plugin-rdp
@@ -830,7 +831,6 @@ sipwitch-plugin-forward
 sipwitch-plugin-scripting
 sipwitch-plugin-subscriber
 sipwitch-plugin-zeroconf
-skanlite
 sleuthkit
 smartmontools
 smestorage
