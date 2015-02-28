@@ -44,6 +44,8 @@ systemctl disable rsyslog
 systemctl disable apparmor
 systemctl disable SuSEfirewall2
 systemctl disable wicked.service
+# we don't want it to run by default and its modules are broken anyway
+systemctl disable zfs
 systemctl enable pm-profiler
 systemctl enable rtkit-daemon
 systemctl enable compcache
@@ -77,7 +79,7 @@ systemctl enable spice-vdagentd
 systemctl enable libvirtd
 
 # preemptively generate unbound keys
-systemctl restart unbound-keygen
+systemctl start unbound-keygen
 # preemptively building our dkms kernel modules
 dkms autoinstall
 # preemptively setting up NIS domain name for legacy compatibility
