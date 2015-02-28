@@ -77,6 +77,10 @@ for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
 done
 
 # Cleaning up #1.
+echo "** Forcefully unmounting possible chroot leftovers..."
+umount -v -f -l ${dst}/build/image-root/sys/kernel/security
+umount -v -f -l ${dst}/build/image-root/sys
+
 echo "** Cleaning up auto-generated files..."
 IFS=$'\n'
 while read i; do
