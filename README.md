@@ -21,7 +21,7 @@ or bleeding edge (configured) from pontostroy (git & kernel rc's)
 Calibre, okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
-* bomi/mpv (ex-C/Mplayer) video player, CLI VLC with Firefox plugin;  
+* bomi/mpv (ex-C/Mplayer) video and Tano IPTV players, VLC Firefox plugin;  
 SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * professional sound handling with JACK  
 (PA & ALSA, both with OSS emulation, run as JACK's clients)
@@ -140,7 +140,6 @@ Notes:
   * yate-qt4 (lots of features with no GUI for them)  
   * jitsi (Jack-of-all-trades and JAVA-fatass)  
 * multimedia  
-  * Tano (vlc-based IP TV player but TV is bad for ya)  
   * SMplayer GUI for mpv & mplayer (allows extreme fine-tuning but is full of legacy code)  
   * VLC (the king of media players but it's interface sucks)  
   * QMPlay2 (vlc-like player with better GUI but without JACK support)  

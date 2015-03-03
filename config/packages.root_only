@@ -661,7 +661,7 @@ nitrogen
 nmap
 nmon
 noping
-npapi-vlc-beta
+npapi-vlc
 nping
 nscd
 ntfs-3g
@@ -867,6 +867,7 @@ systemd-logger
 systemd-ui
 systemtap
 t6_client
+tano
 tarix
 tcpdump
 tc-play
@@ -926,7 +927,7 @@ virt-sandbox
 virt-v2v
 virt-viewer
 vlan
-vlc-beta-codecs
+vlc-codecs
 vmfs-tools
 vm-install
 vorbis-tools
