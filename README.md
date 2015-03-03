@@ -22,7 +22,7 @@ Calibre, okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
 * bomi/mpv (ex-C/Mplayer) video player, CLI VLC with Firefox plugin;  
-SubtitleComposer and Aegisub subtitle editors
+SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * professional sound handling with JACK  
 (PA & ALSA, both with OSS emulation, run as JACK's clients)
 * Clementine audio player, Audacity audio editor/recorder;  
@@ -48,14 +48,14 @@ Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say)
 * networking tools:  
   * interconnecting: hostapd, usbip, miredo-client, minicom and rancid
   * looking: {arp-,ike-,ssl}scan, iptraf-ng, nethogs, upnp-inspector, mtr{-gtk}, lft
-  * touching: wireshark-qt, ze/nmap, wapiti, xprobe2, scapy & nping, aircrack-ng, kismet, reaver
+  * touching: wireshark-qt, {ze}nmap, wapiti, xprobe2, scapy & nping, aircrack-ng, kismet, reaver
   * filesharing: nfs-kernel-server, pure-ftpd, samba
 * filesystem tools:  
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat kernel module
   * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
   * support for pretty much all filesystems known to man, in kernel or via FUSE
 * security/forensics tools:  
-  * autopsy/sleuthkit, scalpel, plaso/log2timeline/Windows®-gutting toolkit, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
+  * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
 * encryption tools:  
   * tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx
 * useful things that I've put there but forgot to mention
@@ -73,7 +73,8 @@ It does NOT provide:
 — many cd/dvd/bluray and whatever disk tools (because spinning media must die).  
   cdrkit-cdrtools-compat and cdemu are included though  
 — accessibility features (because I have no idea how to setup them right)  
-— security hardening (because it requires strict and thorough testing
+  but there is `onboard` virtual keyboard  
+— security hardening (because it requires strict and thorough testing  
   in all usage scenarios which are manifold)  
 
 Notes:
@@ -95,7 +96,6 @@ Notes:
   * okular (useful doc viewer, integrated in Firefox via kparts-plugin)  
   * kchmviewer (MS chm viewer), because sometimes okular screws up  
   * gwenview + kipi-plugins (highly-capable image viewer)  
-  * kvkbd (virtual keyboard in case of hardware fault)  
 * GNOME:  
   * nm-applet (this is _the only_ NM GUI that can launch in any DE)  
   * blueman (bluez5 control)  

@@ -77,11 +77,11 @@
 
 <list><list-item dir="ltr">VDPAU, VA-API and OpenMaX F/OSS video hw-decoding libraries were installed.
 <list><list-item dir="ltr">to enable VA-API acceleration on VDPAU-hardware (amd, nvidia) set this environmental variable:
-<list><list-item dir="ltr"><highlight>LIBVA_DRIVER=vdpau</highlight>
+<list><list-item dir="ltr"><highlight>LIBVA_DRIVER_NAME=vdpau</highlight>
 </list-item></list></list-item><list-item dir="ltr">to enable VDPAU/GL acceleration on VA-API-hardware (intel):
 <list><list-item dir="ltr">install 'libvdpau_va_gl1'
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2015-02-25T08:14:24.381044Z</last-change-date><last-metadata-change-date>2015-02-25T08:14:24.381381Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>461</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
+</text><last-change-date>2015-03-02T22:25:13.440192Z</last-change-date><last-metadata-change-date>2015-03-02T22:25:13.440443Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>7248</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
 

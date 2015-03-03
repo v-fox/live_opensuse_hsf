@@ -265,7 +265,6 @@ gstreamer-0_10-plugins-gl
 gstreamer-0_10-plugins-good-extra
 gstreamer-0_10-plugins-ugly
 gstreamer-0_10-plugins-ugly-orig-addon
-gstreamer-0_10-plugins-vaapi
 gstreamer-0_10-utils
 gstreamer-libnice
 gstreamer-plugin-gstclutter
@@ -278,7 +277,6 @@ gstreamer-plugins-good-extra
 gstreamer-plugins-libav
 gstreamer-plugins-ugly
 gstreamer-plugins-ugly-orig-addon
-gstreamer-plugins-vaapi
 gstreamer-utils
 gtk2-branding-openSUSE
 gtk2-data
@@ -518,6 +516,7 @@ libcanberra-gtk3-module
 libcanberra-gtk-module-common
 libcap-ng-utils
 libcap-progs
+libclutter-gst-2_0-0
 libcryptsetup4-hmac
 liberation-fonts
 libesedb-tools
@@ -914,7 +913,6 @@ usb_modeswitch-data
 usbutils
 v4l-tools
 v4l-utils
-vaapi-dummy-driver
 vaapi-intel-driver
 vaapi-tools
 vbindiff

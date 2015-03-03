@@ -57,8 +57,10 @@ SDL_VIDEO_YUV_HWACCEL=1
 KMIX_PULSEAUDIO_DISABLE=1
 # PA echo cancellation
 #PULSE_PROP="filter.want=echo-cancel"
-# hardware video decoding stuff. READ gnote NOTES before changing !
-#LIBVA_DRIVER=vdpau
+## hardware video decoding stuff. READ gnote NOTES before changing !
+# LIBVA is VERY TROUBLESOME: GStreamer apps are always trying to initialize HVD through it even when they clearly can't and fail miserably
+#LIBVA_DRIVER_NAME=vdpau
+# vdpau driver auto-identification tends to work well... unless libvdpau_va_gl1 screws it up
 #VDPAU_DRIVER=va_gl
 # needed for LADSPA-using programs
 LADSPA_PATH=/usr/lib64/ladspa
