@@ -62,6 +62,14 @@
 </list-item><list-item dir="ltr"><highlight>ibus</highlight> input method daemon is launched for 'hacker' user, you can access its preferences via system tray icon and <underline>add your keyboard settings there</underline>
 </list-item><list-item dir="ltr">to set up non-ibus input you, probably, has to use systemd's new &quot;bicycle&quot; named `<highlight>localectl</highlight>` (when those assholes would learn to put functional part, like &quot;ctl&quot;, of the name first ?)</list-item></list></list-item></list>
 
+<list><list-item dir="ltr">important default hotkeys:
+<list><list-item dir="ltr">Ctrl+Alt+BackSpace = kill entire graphical session
+</list-item><list-item dir="ltr">Ctrl+Alt+Escape = `xkill` graphical application killer
+</list-item><list-item dir="ltr">Ctrl+` = `yakuake` console
+</list-item><list-item dir="ltr">Ctrl+Escape = `qps` process informer
+</list-item><list-item dir="ltr">Meta/Win+PrintScreen = screenshot entire screen
+</list-item><list-item dir="ltr">Meta/Win+PrintScreen+Shift = screenshot focused window</list-item></list></list-item></list>
+
 <list><list-item dir="ltr"><link:url>/etc/environment</link:url> is the best place for it global variables.</list-item></list>
 
 <list><list-item dir="ltr">KDE's KIO
@@ -83,5 +91,5 @@
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2015-03-02T22:25:13.440192Z</last-change-date><last-metadata-change-date>2015-03-02T22:25:13.440443Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>7248</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
+</text><last-change-date>2015-03-05T17:54:30.830913Z</last-change-date><last-metadata-change-date>2015-03-05T17:54:30.830913Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>6770</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
 
