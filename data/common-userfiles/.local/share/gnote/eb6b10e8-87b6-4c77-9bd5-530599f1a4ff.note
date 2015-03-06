@@ -44,7 +44,8 @@
 <list><list-item dir="ltr">JAMin is started on the second desktop for not to mess with your primary activities
 </list-item><list-item dir="ltr">if you have good, expensive output setup with granular hardware control, then you should probably disable some or all JAMIn's features. or just not directing audio players to it would be a good idea (GStreamer's output is directed by default)
 </list-item><list-item dir="ltr">you should put bass &amp; treble and such switches on your speakers on &quot;zero change&quot; position (min, max or neutral, depending on implementation) and set hardware volume as high as you can tolerate. then control volume and wave form with JAMin
-</list-item><list-item dir="ltr">if sound has too much distortion, first try decreasing &quot;limiter, input&quot; in range from 20 to 0. then fiddle with the equalizer
+</list-item><list-item dir="ltr">if sound has too much distortion, first try decreasing &quot;limiter, input&quot; in range from 20 to 0. then fiddle with the equalizer. you may want to disable sound boost anyway since it negates subtle volume transitions in music
+</list-item><list-item dir="ltr">JAMin has been caught in the act of putting garbage in direct rendering surfaces such as paused video players, LibreOffice and Firefox UIs. It seems to be a bug in sound spectre rendering code. To workaround that, <highlight>try selecting any tab other than &quot;HDEQ&quot;</highlight>
 </list-item></list></list-item><list-item dir="ltr">for <highlight>better realtime</highlight> it's recommended to:
 <list><list-item dir="ltr">set <highlight>PM_PROFILER_PROFILE</highlight> in <link:url>/etc/sysconfig/pm-profiler</link:url> to &quot;low_latency&quot; which will change default CPU governor from &quot;ondemand&quot; to &quot;performance&quot;
 </list-item></list></list-item><list-item dir="ltr">on systems with HDMI a sound driver for it can load before your main one and QJackCtl will fail. to fix that simply open its settings and select proper card manually
@@ -91,5 +92,5 @@
 </list-item><list-item dir="ltr"><highlight>VDPAU_DRIVER=va_gl</highlight> (va_gl1 package tends to hardcode that, this is why it's not installed by default)</list-item></list></list-item></list></list-item></list>
 
 <list><list-item dir="ltr">'<highlight>QT_GRAPHICSSYSTEM</highlight>' is set to 'native', you may want to change it to 'raster' for proprietary drivers</list-item></list></note-content>
-</text><last-change-date>2015-03-05T17:54:30.830913Z</last-change-date><last-metadata-change-date>2015-03-05T17:54:30.830913Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>6770</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
+</text><last-change-date>2015-03-06T02:36:52.964942Z</last-change-date><last-metadata-change-date>2015-03-06T02:36:52.965312Z</last-metadata-change-date><create-date>2014-05-14T17:20:19.003410Z</create-date><cursor-position>5338</cursor-position><selection-bound-position>-1</selection-bound-position><width>823</width><height>778</height></note>
 
