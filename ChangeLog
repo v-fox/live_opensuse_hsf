@@ -1,3 +1,8 @@
+0.8.1:
+	* workaround for YaST2-firstboot no-GUI bug
+	* addition of Tano IPTV player and return of non-beta VLC
+	* removal of vaapi support in gstreamer (it brings more trouble than it's worth)
+
 0.8.0:
 	* Transition to OpenSUSE 13.2
 	* LXQt 0.8 update (Qt4 version due to Qt5 build's instability)
