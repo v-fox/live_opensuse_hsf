@@ -1037,6 +1037,7 @@ yast2-sudo
 yast2-support
 yast2-tftp-server
 yast2-trans-en_GB
+yast2-x11
 zenmap
 zerofree
 zfs
