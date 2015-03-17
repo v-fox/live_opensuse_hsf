@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mime-info [
+  <!ELEMENT mime-info (mime-type)+>
+  <!ATTLIST mime-info xmlns CDATA #FIXED "http://www.freedesktop.org/standards/shared-mime-info">
+
+  <!ELEMENT mime-type (comment+, (acronym,expanded-acronym)? , (generic-icon? | glob | magic | treemagic | root-XML | alias | sub-class-of)*)>
+  <!ATTLIST mime-type type CDATA #REQUIRED>
+
+  <!-- a comment describing a document with the respective MIME type. Example: "WMV video" -->
+  <!ELEMENT comment (#PCDATA)>
+  <!ATTLIST comment xml:lang CDATA #IMPLIED>
+
+  <!-- a comment describing the respective unexpanded MIME type acronym. Example: "WMV" -->
+  <!ELEMENT acronym (#PCDATA)>
+  <!ATTLIST acronym xml:lang CDATA #IMPLIED>
+
+  <!-- a comment describing the respective expanded MIME type acronym. Example: "Windows Media Video" -->
+  <!ELEMENT expanded-acronym (#PCDATA)>
+  <!ATTLIST expanded-acronym xml:lang CDATA #IMPLIED>
+
+  <!-- a generic icon name as per the Icon Naming Specification, only required if computing
+  it from the mime-type would not work, See "generic-icon" in the Shared Mime Specification -->
+  <!ELEMENT generic-icon EMPTY>
+  <!ATTLIST generic-icon name (application-x-executable|audio-x-generic|font-x-generic|image-x-generic|package-x-generic|text-html|text-x-generic|text-x-generic-template|text-x-script|video-x-generic|x-office-address-book|x-office-calendar|x-office-document|x-office-presentation|x-office-spreadsheet) #IMPLIED>
+
+  <!ELEMENT glob EMPTY>
+  <!ATTLIST glob pattern CDATA #REQUIRED>
+  <!ATTLIST glob weight CDATA #IMPLIED>
+  <!ATTLIST glob case-sensitive CDATA #IMPLIED>
+
+  <!ELEMENT magic (match)+>
+  <!ATTLIST magic priority CDATA #IMPLIED>
+
+  <!ELEMENT match (match)*>
+  <!ATTLIST match offset CDATA #REQUIRED>
+  <!ATTLIST match type (string|big16|big32|little16|little32|host16|host32|byte) #REQUIRED>
+  <!ATTLIST match value CDATA #REQUIRED>
+  <!ATTLIST match mask CDATA #IMPLIED>
+
+  <!ELEMENT treemagic (treematch)+>
+  <!ATTLIST treemagic priority CDATA #IMPLIED>
+
+  <!ELEMENT treematch (treematch)*>
+  <!ATTLIST treematch path CDATA #REQUIRED>
+  <!ATTLIST treematch type (file|directory|link) #IMPLIED>
+  <!ATTLIST treematch match-case (true|false) #IMPLIED>
+  <!ATTLIST treematch executable (true|false) #IMPLIED>
+  <!ATTLIST treematch non-empty (true|false) #IMPLIED>
+  <!ATTLIST treematch mimetype CDATA #IMPLIED>
+
+  <!ELEMENT root-XML EMPTY>
+  <!ATTLIST root-XML namespaceURI CDATA #REQUIRED>
+  <!ATTLIST root-XML localName CDATA #REQUIRED>
+
+  <!ELEMENT alias EMPTY>
+  <!ATTLIST alias type CDATA #REQUIRED>
+
+  <!ELEMENT sub-class-of EMPTY>
+  <!ATTLIST sub-class-of type CDATA #REQUIRED>
+]>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-shockwave-flash">
+    <comment>Shockwave Flash file</comment>
+    <comment xml:lang="ar">ملف Shockwave Flash</comment>
+    <comment xml:lang="be@latin">Fajł Shockwave Flash</comment>
+    <comment xml:lang="bg">Файл — Shockwave Flash</comment>
+    <comment xml:lang="ca">fitxer Shockwave Flash</comment>
+    <comment xml:lang="cs">soubor Shockwave Flash</comment>
+    <comment xml:lang="da">Shockwave Flash-fil</comment>
+    <comment xml:lang="de">Shockwave-Flash-Datei</comment>
+    <comment xml:lang="el">Αρχείο Shockwave Flash</comment>
+    <comment xml:lang="en_GB">Shockwave Flash file</comment>
+    <comment xml:lang="eo">dosiero de Shockwave Flash</comment>
+    <comment xml:lang="es">archivo Shockwave Flash</comment>
+    <comment xml:lang="eu">Shockwave Flash fitxategia</comment>
+    <comment xml:lang="fi">Shockwave Flash -tiedosto</comment>
+    <comment xml:lang="fo">Shockwave Flash fíla</comment>
+    <comment xml:lang="fr">fichier Shockwave Flash</comment>
+    <comment xml:lang="ga">comhad Shockwave Flash</comment>
+    <comment xml:lang="gl">ficheiro sockwave Flash</comment>
+    <comment xml:lang="he">קובץ של Shockwave Flash</comment>
+    <comment xml:lang="hr">Shockwave Flash datoteka</comment>
+    <comment xml:lang="hu">Shockwave Flash-fájl</comment>
+    <comment xml:lang="ia">File Shockwave Flash</comment>
+    <comment xml:lang="id">Berkas Shockwave Flash</comment>
+    <comment xml:lang="it">File Shockwave Flash</comment>
+    <comment xml:lang="ja">Shockwave Flash ファイル</comment>
+    <comment xml:lang="kk">Shockwave Flash файлы</comment>
+    <comment xml:lang="ko">Shockwave 플래시 파일</comment>
+    <comment xml:lang="lt">Shockwave Flash failas</comment>
+    <comment xml:lang="lv">Shockwave Flash datne</comment>
+    <comment xml:lang="ms">Fail Shockwave Flash</comment>
+    <comment xml:lang="nb">Shockwave Flash-fil</comment>
+    <comment xml:lang="nl">Shockwave Flash-bestand</comment>
+    <comment xml:lang="nn">Shockwave Flash-fil</comment>
+    <comment xml:lang="pl">Plik Shockwave Flash</comment>
+    <comment xml:lang="pt">ficheiro Shockwave Flash</comment>
+    <comment xml:lang="pt_BR">Arquivo Shockwave Flash</comment>
+    <comment xml:lang="ro">Fișier Shockwave Flash</comment>
+    <comment xml:lang="ru">файл Shockwave Flash</comment>
+    <comment xml:lang="sk">Súbor Shockwave Flash</comment>
+    <comment xml:lang="sl">Datoteka Shockwave Flash</comment>
+    <comment xml:lang="sq">File Flash Shockwave</comment>
+    <comment xml:lang="sr">Шоквејв Флеш датотека</comment>
+    <comment xml:lang="sv">Shockwave Flash-fil</comment>
+    <comment xml:lang="uk">файл Shockwave Flash</comment>
+    <comment xml:lang="vi">Tập tin Flash Shockwave</comment>
+    <comment xml:lang="zh_CN">Shockwave Flash 文件</comment>
+    <comment xml:lang="zh_TW">Shockwave Flash 檔案</comment>
+    <alias type="application/vnd.adobe.flash.movie"/>
+    <alias type="application/futuresplash"/>
+    <generic-icon name="video-x-generic"/>
+    <magic priority="50">
+      <match value="FWS" type="string" offset="0"/>
+      <match value="CWS" type="string" offset="0"/>
+    </magic>
+    <glob pattern="*.swf"/>
+    <glob pattern="*.spl"/>
+  </mime-type>
+  
+</mime-info>
