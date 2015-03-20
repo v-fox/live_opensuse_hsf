@@ -111,8 +111,8 @@
         "video_effects": [
         ],
         "video_horizontal_alignment": "Center",
-        "video_hq_downscaling": true,
-        "video_hq_upscaling": true,
+        "video_hq_downscaling": false,
+        "video_hq_upscaling": false,
         "video_interpolator": "Sharpen",
         "video_interpolator_map": {
             "Bicubic": {
