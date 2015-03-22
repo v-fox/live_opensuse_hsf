@@ -211,7 +211,6 @@ gnome-icon-theme-extras
 gnome-icon-theme-symbolic
 gnome-keyring
 gnome-keyring-pam
-gnome-keyring-sharp
 gnome-media
 gnote
 gnu_ddrescue
@@ -392,7 +391,6 @@ iputils
 irda
 irqbalance
 irssi
-irssi-extra
 irssi-otr
 isight-firmware-tools
 ispell-american
