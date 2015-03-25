@@ -497,6 +497,9 @@ root/home/hacker/.config/autostart/killswitch-applet.desktop
 root/etc/skel/.config/autostart/caffeine.desktop
 root/root/.config/autostart/caffeine.desktop
 root/home/hacker/.config/autostart/caffeine.desktop
+root/etc/skel/.config/autostart/lxqt-xscreensaver-autostart.desktop
+root/root/.config/autostart/lxqt-xscreensaver-autostart.desktop
+root/home/hacker/.config/autostart/lxqt-xscreensaver-autostart.desktop
 root/etc/skel/.config/autostart/gnome-keyring-ssh.desktop
 root/root/.config/autostart/gnome-keyring-ssh.desktop
 root/home/hacker/.config/autostart/gnome-keyring-ssh.desktop
