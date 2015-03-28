@@ -1,51 +1,12 @@
 <?xml version="1.0"?>
 <RDF:RDF xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="urn:mimetype:handler:application/zip"
-                   NC:alwaysAsk="true"
-                   NC:saveToDisk="true">
-    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/zip"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="urn:mimetype:handler:application/x-gzip"
-                   NC:alwaysAsk="true"
-                   NC:saveToDisk="true">
-    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-gzip"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="urn:mimetype:application/x-gzip"
-                   NC:value="application/x-gzip"
-                   NC:editable="true"
-                   NC:fileExtensions="gz"
-                   NC:description="Gzip archive">
-    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-gzip"/>
-  </RDF:Description>
   <RDF:Description RDF:about="urn:mimetypes">
     <NC:MIME-types RDF:resource="urn:mimetypes:root"/>
   </RDF:Description>
-  <RDF:Description RDF:about="urn:mimetype:handler:application/x-bittorrent"
-                   NC:alwaysAsk="false"
-                   NC:saveToDisk="false"
-                   NC:useSystemDefault="false"
-                   NC:handleInternal="false">
-    <NC:possibleApplication RDF:resource="urn:handler:local:/usr/bin/qbittorrent"/>
-    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-bittorrent"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="urn:handler:local:/usr/bin/qbittorrent"
+  <RDF:Description RDF:about="urn:scheme:externalApplication:magnet"
                    NC:prettyName="qbittorrent"
-                   NC:path="/usr/bin/qbittorrent" />
-  <RDF:Description RDF:about="urn:mimetype:application/x-bittorrent"
-                   NC:fileExtensions="torrent"
-                   NC:description="BitTorrent seed file"
-                   NC:value="application/x-bittorrent"
-                   NC:editable="true">
-    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-bittorrent"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="urn:mimetype:application/zip"
-                   NC:value="application/zip"
-                   NC:editable="true"
-                   NC:fileExtensions="zip"
-                   NC:description="Zip archive">
-    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/zip"/>
-  </RDF:Description>
+                   NC:path="/usr/local/bin/qbittorrent" />
   <RDF:Description RDF:about="urn:mimetype:handler:application/x-redhat-package-manager"
                    NC:alwaysAsk="true"
                    NC:saveToDisk="true">
@@ -58,19 +19,68 @@
     <RDF:li RDF:resource="urn:mimetype:application/x-gzip"/>
   </RDF:Seq>
   <RDF:Description RDF:about="urn:mimetype:externalApplication:application/x-bittorrent"
-                   NC:path="/usr/bin/qbittorrent"
-                   NC:prettyName="qbittorrent" />
+                   NC:prettyName="qbittorrent"
+                   NC:path="/usr/local/bin/qbittorrent" />
+  <RDF:Description RDF:about="urn:schemes">
+    <NC:Protocol-Schemes RDF:resource="urn:schemes:root"/>
+  </RDF:Description>
+  <RDF:Seq RDF:about="urn:schemes:root">
+    <RDF:li RDF:resource="urn:scheme:magnet"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:mimetype:application/x-gzip"
+                   NC:value="application/x-gzip"
+                   NC:editable="true"
+                   NC:fileExtensions="gz"
+                   NC:description="Gzip archive">
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-gzip"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-bittorrent"
+                   NC:alwaysAsk="false">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-bittorrent"/>
+    <NC:possibleApplication RDF:resource="urn:handler:local:/usr/local/bin/qbittorrent"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:application/zip"
+                   NC:value="application/zip"
+                   NC:editable="true"
+                   NC:fileExtensions="zip"
+                   NC:description="Zip archive">
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/zip"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:scheme:magnet"
+                   NC:value="magnet">
+    <NC:handlerProp RDF:resource="urn:scheme:handler:magnet"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:application/x-bittorrent"
+                   NC:fileExtensions="torrent"
+                   NC:description="BitTorrent seed file"
+                   NC:value="application/x-bittorrent"
+                   NC:editable="true">
+    <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-bittorrent"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/zip"
+                   NC:alwaysAsk="true"
+                   NC:saveToDisk="true">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/zip"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mimetype:handler:application/x-gzip"
+                   NC:alwaysAsk="true"
+                   NC:saveToDisk="true">
+    <NC:externalApplication RDF:resource="urn:mimetype:externalApplication:application/x-gzip"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:scheme:handler:magnet"
+                   NC:alwaysAsk="false">
+    <NC:externalApplication RDF:resource="urn:scheme:externalApplication:magnet"/>
+    <NC:possibleApplication RDF:resource="urn:handler:local:/usr/local/bin/qbittorrent"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:root"
+                   NC:en-GB_defaultHandlersVersion="4" />
+  <RDF:Description RDF:about="urn:handler:local:/usr/local/bin/qbittorrent"
+                   NC:prettyName="qbittorrent"
+                   NC:path="/usr/local/bin/qbittorrent" />
   <RDF:Description RDF:about="urn:mimetype:application/x-redhat-package-manager"
                    NC:value="application/x-redhat-package-manager"
                    NC:editable="true"
                    NC:description="RPM package">
     <NC:handlerProp RDF:resource="urn:mimetype:handler:application/x-redhat-package-manager"/>
   </RDF:Description>
-  <RDF:Description RDF:about="urn:root"
-                   NC:en-GB_defaultHandlersVersion="4" />
-  <RDF:Description RDF:about="urn:schemes">
-    <NC:Protocol-Schemes RDF:resource="urn:schemes:root"/>
-  </RDF:Description>
-  <RDF:Seq RDF:about="urn:schemes:root">
-  </RDF:Seq>
 </RDF:RDF>
