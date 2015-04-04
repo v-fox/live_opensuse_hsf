@@ -3,6 +3,7 @@
 	* addition of Tano IPTV player and return of non-beta VLC
 	* removal of vaapi support in gstreamer (it brings more trouble than it's worth)
 	* removal of XScreenSaver (due to inhibition problem)
+	* replacement of NPAPI flash with PPAPI one and removal of JACK patch for FF due to its quality
 
 0.8.0:
 	* Transition to OpenSUSE 13.2

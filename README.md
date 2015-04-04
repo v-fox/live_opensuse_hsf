@@ -21,7 +21,7 @@ or bleeding edge (configured) from pontostroy (git & kernel rc's)
 Calibre, okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
-* bomi/mpv (ex-C/Mplayer) video and Tano IPTV players, VLC Firefox plugin;  
+* bomi/mpv (ex-C/Mplayer) & Tano video & IPTV players, VLC Firefox plugin;  
 SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * professional sound handling with JACK  
 (PA & ALSA, both with OSS emulation, run as JACK's clients)
@@ -42,13 +42,14 @@ such as AntiMicro (for key & axis mapping) and jstest-gtk
 * LeechCraft modular system stripped for only IM and socializing
 * LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
 Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say)
-* fresh Mozilla Firefox browser and Thunderbird e-mail client
+* fresh Mozilla Firefox browser and Thunderbird e-mail client;  
+fresh PPAPI Flash abomination with excellent NPAPI shim
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other console tools
 * networking tools:  
   * interconnecting: hostapd, usbip, miredo-client, minicom and rancid
   * looking: {arp-,ike-,ssl}scan, iptraf-ng, nethogs, upnp-inspector, mtr{-gtk}, lft
-  * touching: wireshark-qt, {ze}nmap, wapiti, xprobe2, scapy & nping, aircrack-ng, kismet, reaver
+  * touching: wireshark-qt, {ze}nmap, wapiti, xprobe2, scapy & {h,n}ping, aircrack-ng, kismet, reaver
   * filesharing: nfs-kernel-server, pure-ftpd, samba
 * filesystem tools:  
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat kernel module

@@ -71,6 +71,7 @@ cfv
 checkit
 chkrootkit
 chntpw
+chromium-pepper-flash
 cksfv
 clamav
 clamtk
@@ -154,7 +155,6 @@ filesystem
 filezilla
 firmwarekit
 FirmwareUpdateKit
-flash-player
 flashrom
 fontconfig
 fontmatrix
@@ -163,9 +163,11 @@ fonttools
 fonttosfnt
 foo2zjs
 foremost
+fprintd-pam
 freenx-client
 free-ttf-fonts
 freetype-tools
+freshplayerplugin
 fsarchiver
 fsarchiver-qt4
 fslint
@@ -190,6 +192,7 @@ gdouros-musica-fonts
 gdouros-symbola-fonts
 gegl-0_2
 GeoIP
+get-flash-videos
 gettext-tools
 gimp
 gimp-gap
@@ -306,6 +309,7 @@ hicolor-icon-theme-branding-openSUSE
 hmaccalc
 hostapd
 hostap-utils
+hping
 hplip
 hplip-hpijs
 hplip-sane
@@ -701,7 +705,6 @@ pam_apparmor
 pam_ccreds
 pam_chroot
 pam_cifscreds
-pam_fprint
 pam_krb5
 pam_mktemp
 pam_p11
@@ -726,6 +729,7 @@ pcachefs
 pdfcrack-multithread
 peazip
 peazip-kde4
+pgpdump
 phonon4qt5-backend-gstreamer
 phonon-backend-gstreamer
 photorec
@@ -763,7 +767,6 @@ proxytunnel
 psmisc
 ptools
 ptunnel
-pullin-flash-player
 pulseaudio-bash-completion
 pulseaudio-esound-compat
 pulseaudio-module-bluetooth
@@ -800,6 +803,7 @@ rpcbind
 rpm
 rp-pppoe
 rsync
+rtmpdump
 samba-client
 sane-backends
 sane-backends-autoconfig
@@ -848,6 +852,7 @@ splix
 srm
 ssdeep
 ssh-contact
+ssldump
 sslscan
 sssd
 stix-fonts
@@ -970,6 +975,7 @@ xf86-video-nouveau
 xf86-video-qxl
 xfontsel
 xfs
+xfsdump
 xfsinfo
 xfsprogs
 xgamma
