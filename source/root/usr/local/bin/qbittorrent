@@ -1,2 +1,5 @@
 #!/bin/sh
-env TMP=/tmp TEMP="${TMP}" TMPDIR="${TMP}" /usr/bin/qbittorrent $*
+TMP=/tmp
+TEMP="${TMP}"
+TMPDIR="${TMP}"
+env /usr/bin/qbittorrent "$*"
