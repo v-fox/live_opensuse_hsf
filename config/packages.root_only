@@ -949,7 +949,6 @@ whois
 wireless-regdb
 wireless-tools
 wireshark
-wireshark-plugin-libvirt
 wireshark-ui-qt
 wm-icons
 wminput
