@@ -554,6 +554,9 @@ root/home/hacker/.config/gnote/addins/global.ini
 root/etc/skel/.config/gnote/manifest.xml
 root/root/.config/gnote/manifest.xml
 root/home/hacker/.config/gnote/manifest.xml
+root/etc/skel/.config/freshwrapper.conf
+root/root/.config/freshwrapper.conf
+root/home/hacker/.config/freshwrapper.conf
 root/etc/skel/.config/mpv/mpv.conf
 root/root/.config/mpv/mpv.conf
 root/home/hacker/.config/mpv/mpv.conf

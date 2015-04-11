@@ -1,5 +1,5 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.3.11" name="redirection-to-jamin">
+<patchbay version="0.3.12" name="redirection-to-jamin">
  <output-sockets>
   <socket exclusive="off" client="jamin" type="jack-audio" name="Jamin output">
    <plug>a\.master\.out_L|out_L</plug>
@@ -13,7 +13,7 @@
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
-  <socket exclusive="off" client="TiMidity" type="jack-audio" name="TiMidity">
+  <socket exclusive="off" client="TiMidity(|-.[0-9])" type="jack-audio" name="TiMidity">
    <plug>port_1</plug>
    <plug>port_2</plug>
   </socket>
@@ -41,9 +41,9 @@
    <plug>out_.*audiosink[\-0-9]+_1</plug>
    <plug>out_.*audiosink[\-0-9]+_2</plug>
   </socket>
-  <socket exclusive="off" client="flash" type="jack-audio" name="Adobe Flash">
-   <plug>out1</plug>
-   <plug>out2</plug>
+  <socket exclusive="off" client="flash(|-.[0-9])|freshwrapper(|-.[0-9])" type="jack-audio" name="Adobe Flash (NPAPI &amp; PPAPI)">
+   <plug>out1|output1</plug>
+   <plug>out2|output2</plug>
   </socket>
  </output-sockets>
  <input-sockets>
@@ -80,7 +80,7 @@
   <cable output="FIrefox (cubeb)" input="jamin volume boost" type="jack-audio"/>
   <cable output="PA stereo output" input="jamin volume boost" type="jack-audio"/>
   <cable output="all GStreamer players" input="jamin volume boost" type="jack-audio"/>
-  <cable output="Adobe Flash" input="jamin volume boost" type="jack-audio"/>
+  <cable output="Adobe Flash (NPAPI &amp; PPAPI)" input="jamin volume boost" type="jack-audio"/>
  </cables>
 </patchbay>
 
