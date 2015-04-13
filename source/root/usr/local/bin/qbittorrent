@@ -2,4 +2,8 @@
 TMP=/tmp
 TEMP="${TMP}"
 TMPDIR="${TMP}"
-env /usr/bin/qbittorrent "$*"
+if [ -f "${1}" ]; then
+exec /usr/bin/qbittorrent "${1}"
+else
+exec /usr/bin/qbittorrent
+fi
