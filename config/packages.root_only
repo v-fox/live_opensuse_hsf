@@ -150,11 +150,13 @@ fatsort
 fbcat
 fetchmsttfonts
 ffmpeg
+ffmpeg-tools
 file
 filesystem
 filezilla
 firmwarekit
 FirmwareUpdateKit
+flacon
 flashrom
 fontconfig
 fontmatrix
@@ -445,6 +447,7 @@ kwalletmanager
 kwrite
 ladspa
 ladspa-swh-plugins
+lame-mp3rtp
 laptop-mode-tools
 latencytop
 lcdf-typetools
@@ -960,6 +963,7 @@ wpa_supplicant-gui
 wqy-microhei-fonts
 wqy-zenhei-fonts
 wvdial
+x265
 xar
 xbacklight
 xcompmgr
