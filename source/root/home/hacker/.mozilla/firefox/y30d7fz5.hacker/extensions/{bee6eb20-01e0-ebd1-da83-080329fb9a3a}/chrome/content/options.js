@@ -60,7 +60,8 @@ var options = new function() {
     
     // save preferences manually for elements without a preference id (such as textboxes that change via javascript)
     this.save = function() {
-        var downloadsFolder = document.getElementById("fnvfox_downloadsFolderTextbox").value.substring(1); // 'substring' to remove the first space char        
+        var downloadsFolder = document.getElementById("fnvfox_downloadsFolderTextbox").value.substring(1); // 'substring' to remove the first space char
+        downloadsFolder = encodeURI(downloadsFolder);
         this.PrefManager.setPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.DOWNLOADS_FOLDER, downloadsFolder);
         this.saveDownloadsFolderRadiogroupSelectedOption();
     };
@@ -178,6 +179,7 @@ var options = new function() {
     // it checks its preference and set downloads folder textbox accordingly with its path
     this.setDownloadsFolderTextbox = function() {
         var downloadsFolder = this.PrefManager.getPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.DOWNLOADS_FOLDER);
+        downloadsFolder = decodeURI(downloadsFolder);
         if (downloadsFolder == "") { // no location selected
             // gets firefox downloads location instead
             downloadsFolder = this.PrefManager.getFirefoxDownloadsLocation();

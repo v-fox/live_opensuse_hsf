@@ -347,76 +347,43 @@ var flashVideoDownload = new function() {
     };
     
     this.checkVer = function() {
-        try { 
-            try {
-                // Gets the version id for Firefox 4 and later; Mozilla 2 and later
-                Components.utils.import("resource://gre/modules/AddonManager.jsm");
-                AddonManager.getAddonByID("{bee6eb20-01e0-ebd1-da83-080329fb9a3a}", function(addon) {
-                    var addonVersion = addon.version;
-                    self.addonVersion = addonVersion;
-                    // Gets the preferences for Firefox 4 and later / Mozilla 2 and later
-                    Application.getExtensions(function (extensions) {			
-                        let extension = extensions.get("{bee6eb20-01e0-ebd1-da83-080329fb9a3a}");
-                        self.prefs = extension.prefs;		 
-                        var firstRun	    = self.prefs.getValue("firstRun", true);
-                        if (firstRun) {
-                            self.prefs.setValue("firstRun", false);					
-                            self.PrefManager.prefs.setBoolPref("toolbarButton", true);					
-                            self.toolbarButton.addToolbarButton();
-                            self.statusbarButton.addToolbarButton();                   
-                        }
-                        var lastCheckVersion = self.prefs.getValue("addonVersion", "");
-                        var newU		 = self.prefs.getValue("new", true);
-                        if (newU) {
-                            self.prefs.setValue("addonVersion", addonVersion);
-                            self.prefs.setValue("new", false);
-                            window.setTimeout(function(){
-                                var b = getBrowser();
-                                b.selectedTab = b.addTab(self.TY_PAGE_FULL_PATH);
-                            }, 1200);
-                        } else {
-                            if (lastCheckVersion!=addonVersion) {
-                                self.prefs.setValue("addonVersion", addonVersion);
-                                window.setTimeout(function(){
-                                    var b = getBrowser();
-				                    b.selectedTab = b.addTab(self.TY_PAGE_FULL_PATH);
-                                }, 1200);
-                            }
-                        }
-                    });
-                });
-            } catch(ex) {
-                // Firefox 3.6 and before; Mozilla 1.9.2 and before
-                var nsIExtensionManager = Components.classes["@mozilla.org/extensions/manager;1"].getService(Components.interfaces.nsIExtensionManager);			
-                var addonVersion	= nsIExtensionManager.getItemForID("{bee6eb20-01e0-ebd1-da83-080329fb9a3a}").version;
-        		self.addonVersion = addonVersion;
-                var firstRun	= self.prefs.getValue("firstRun", true);
-                if (firstRun) {
-                    self.prefs.setValue("firstRun", false);					
-                    self.PrefManager.prefs.setBoolPref(self.PrefManager.PREFS.GENERAL.INTERFACE.TOOLBAR_BUTTON, true);					
-                    self.toolbarButton.addToolbarButton();
-                    self.statusbarButton.addToolbarButton();
-                }			  
-                var lastCheckVersion = self.prefs.getValue("addonVersion", "");
-                var newU = self.prefs.getValue("new", true);
-    
-                if (newU) {
-                    self.prefs.setValue("addonVersion", addonVersion);
-                    self.prefs.setValue("new", false);
-                    window.setTimeout(function() {
-                        var b = getBrowser();
-                        b.selectedTab = b.addTab(self.TY_PAGE_FULL_PATH);
-                    }, 1200);
-                } else {
-                    if (lastCheckVersion!=addonVersion){
+        try {
+            // Gets the version id for Firefox 4 and later; Mozilla 2 and later
+            Components.utils.import("resource://gre/modules/AddonManager.jsm");
+            AddonManager.getAddonByID("{bee6eb20-01e0-ebd1-da83-080329fb9a3a}", function(addon) {
+                var addonVersion = addon.version;
+                self.addonVersion = addonVersion;
+                // Gets the preferences for Firefox 4 and later / Mozilla 2 and later
+                Application.getExtensions(function (extensions) {			
+                    let extension = extensions.get("{bee6eb20-01e0-ebd1-da83-080329fb9a3a}");
+                    self.prefs = extension.prefs;		 
+                    var firstRun	    = self.prefs.getValue("firstRun", true);
+                    if (firstRun) {
+                        self.prefs.setValue("firstRun", false);					
+                        self.PrefManager.prefs.setBoolPref("toolbarButton", true);					
+                        self.toolbarButton.addToolbarButton();
+                        self.statusbarButton.addToolbarButton();                   
+                    }
+                    var lastCheckVersion = self.prefs.getValue("addonVersion", "");
+                    var newU		 = self.prefs.getValue("new", true);
+                    if (newU) {
                         self.prefs.setValue("addonVersion", addonVersion);
+                        self.prefs.setValue("new", false);
                         window.setTimeout(function(){
                             var b = getBrowser();
                             b.selectedTab = b.addTab(self.TY_PAGE_FULL_PATH);
                         }, 1200);
+                    } else {
+                        if (lastCheckVersion!=addonVersion) {
+                            self.prefs.setValue("addonVersion", addonVersion);
+                            window.setTimeout(function(){
+                                var b = getBrowser();
+			                    b.selectedTab = b.addTab(self.TY_PAGE_FULL_PATH);
+                            }, 1200);
+                        }
                     }
-                }			  
-            }
+                });
+            });
         } catch(ex) {}	
     };
 
