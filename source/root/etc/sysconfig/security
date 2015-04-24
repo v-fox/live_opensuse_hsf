@@ -1,0 +1,58 @@
+## Path:        System/Security/Permissions
+## Description: Configuration of permissions on the system
+## Type:        string
+## Default:     "easy local"
+#
+# Permission settings to use. By default 'easy', 'secure' and
+# 'paranoid' exist. You may define your own though.
+#
+PERMISSION_SECURITY="easy local"
+
+## Description: Use filesystem capabilities for more finegrained permission handling
+## Type:        yesno
+## Default:     "yes"
+#
+# Flag whether to use filesystem capabilities for finegrained
+# access control (compared to setuid) or not.
+#
+PERMISSION_FSCAPS="yes"
+## Path:        System/Security/PolicyKit
+## Description: Configuration of default PolicyKit privileges
+## Type:        list(set,warn,no)
+## Default:     set
+## Config:      set_polkit_default_privs
+#
+# set_polkit_default_privs can check PolicyKit default privileges.
+# Setting this variable to "set" will change privileges that don't match the
+# default. Setting to "warn" only prints a warning and "no" will
+# disable this feature.
+#
+# Defaults to "set" if not specified
+#
+CHECK_POLKIT_PRIVS=""
+
+## Type:        string
+## Default:     "standard"
+## Config:      set_polkit_default_privs
+#
+# SUSE ships with two sets of default privilege settings. These are
+# "standard" and "restrictive".
+#
+# Examples: "standard", "restrictive foo bar"
+#
+# If not set the value depends on the setting of
+# PERMISSION_SECURITY. If PERMISSION_SECURITY contains 'secure' or
+# 'paranoid' the value will be 'restrictive', otherwise 'standard'.
+#
+# The 'local' file is always evaluated and takes precedence over all
+# other files.
+#
+POLKIT_DEFAULT_PRIVS=""
+## Type:        list(yes,yast,no)
+## Default:     yes
+#
+# When working with packages and installation sources, check keys
+# and signatures: yes = in YaST and ZENWorks, yast = in YaST, no =
+# no checking.
+#
+CHECK_SIGNATURES="yes"

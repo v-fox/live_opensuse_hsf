@@ -1,76 +1,98 @@
-## Path: 	Network/DNS/DNSCrypt
-## Description: Configuration for encrypted DNS proxy daemon
-## Type:	string
-## Default:	""
-## ServiceRestart: dnscrypt-proxy
-
-## Type:        string
-## Default:     "--edns-payload-size=4096"
-#
-# Some other options
-#
-DNSCRYPT_OPTIONS="--edns-payload-size=4096"
-
+## Path:        Network/DNS/DNSCrypt
+## Description: Local address
 ## Type:        string
 ## Default:     ""
 #
-# Some other options
+# Address and port where the dnscrypt-proxy daemon listens. Format is
+# address:port, with dnscrypt-proxy's default 127.0.0.1:53 .
 #
-DNSCRYPT_PLUGINS=""
+DNSCRYPT_LOCAL_ADDRESS="[::1]:40"
 
+## Path:        Network/DNS/DNSCrypt
+## Description: Run daemon under specified user
 ## Type:        string
-## Default:     "127.0.0.1"
+## Default:     "dnscrypt"
 #
-# Listening address
+# The recommended user is 'dnscrypt' but the empty value will not pass
+# any --user parameter to dnscrypt-proxy if this is desired by the user.
 #
-DNSCRYPT_LOCALIP="[::1]"
+DNSCRYPT_USER=dnscrypt
 
-## Type: 	integer(0:65535)
-## Default:     "40"
-#
-# Listening port
-#
-DNSCRYPT_LOCALPORT="40"
-
+## Path:        Network/DNS/DNSCrypt
+## Description: Resolver name
 ## Type:        string
-## Default:     "nobody"
+## Default:     "opendns"
 #
-# Process's user
+# Short name of resolver, see /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv
+# for the full list.
 #
-DNSCRYPT_USER="nobody"
+# If the value is empty, the default is substituted.
+#
+DNSCRYPT_RESOLVER_NAME=
 
+## Path:        Network/DNS/DNSCrypt
+## Description: Log file
 ## Type:        string
-## Default:     "2.dnscrypt-cert.opendns.com"
+## Default:     "/var/log/dnscrypt-proxy.log"
 #
-# your actual DNS settings
-# consult with https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv
-# or local, possibly obsolete, /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv !
+# Use the given log file instead of standard out, where the output is possibly
+# grabbed by the system logger.
 #
-DNSCRYPT_PROVIDER_NAME="2.dnscrypt-cert.opendns.com"
+DNSCRYPT_LOGFILE=
 
+## Path:        Network/DNS/DNSCrypt
+## Description: Log level
 ## Type:        string
-## Default:     "B735:1140:206F:225D:3E2B:D822:D7FD:691E:A1C3:3CC8:D666:8D0C:BE04:BFAB:CA43:FB79"
+## Default:     ""
 #
-# your actual DNS settings
-# consult with https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv
-# or local, possibly obsolete, /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv !
+# Don't log events with priority above this level after the service has been
+# started up. Default is the value for LOG_INFO.
 #
-DNSCRYPT_PROVIDER_KEY="B735:1140:206F:225D:3E2B:D822:D7FD:691E:A1C3:3CC8:D666:8D0C:BE04:BFAB:CA43:FB79"
+# NOTE: currently unused
+#
+DNSCRYPT_LOGLEVEL=
 
+## Path:        Network/DNS/DNSCrypt
+## Description: Optional plugin (1)
 ## Type:        string
-## Default:     "208.67.220.220"
+## Default:     ""
 #
-# your actual DNS settings
-# consult with https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv
-# or local, possibly obsolete, /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv !
+# Use the given dnscrypt plugin.
 #
-DNSCRYPT_RESOLVERIP="208.67.220.220"
+DNSCRYPT_PLUGIN1=
 
-## Type: 	integer(0:65535)
-## Default: 	"443"
+## Path:        Network/DNS/DNSCrypt
+## Description: Optional plugin (2)
+## Type:        string
+## Default:     ""
 #
-# your actual DNS settings
-# consult with https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv
-# or local, possibly obsolete, /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv !
+# Use the given dnscrypt plugin.
 #
-DNSCRYPT_RESOLVERPORT="443"
+DNSCRYPT_PLUGIN2=
+
+## Path:        Network/DNS/DNSCrypt
+## Description: Optional plugin (3)
+## Type:        string
+## Default:     ""
+#
+# Use the given dnscrypt plugin.
+#
+DNSCRYPT_PLUGIN3=
+
+## Path:        Network/DNS/DNSCrypt
+## Description: Optional plugin (4)
+## Type:        string
+## Default:     ""
+#
+# Use the given dnscrypt plugin.
+#
+DNSCRYPT_PLUGIN4=
+
+## Path:        Network/DNS/DNSCrypt
+## Description: Other options
+## Type:        string
+## Default:     ""
+#
+# Additional user options
+#
+DNSCRYPT_OPTIONS="--edns-payload-size=4096"
