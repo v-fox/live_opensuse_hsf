@@ -1,4 +1,5 @@
 0.8.1:
+	* LXQt migration to Qt5 / 0.9 update
 	* fix for YaST2-firstboot no-GUI oversight
 	* addition of Tano IPTV player and return of non-beta VLC
 	* removal of vaapi support in gstreamer (it brings more trouble than it's worth)

@@ -103,9 +103,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='62' alias='LXQt' >
 		<source path='obs://X11:lxde/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='60' alias='LXQt-Qt4' >
-		<source path='obs://home:X0F:LXQt-Qt4/openSUSE_13.2'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F'>
 		<source path='obs://home:X0F/openSUSE_13.2'/>
 	</repository>
