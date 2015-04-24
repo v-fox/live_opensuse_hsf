@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=keepnote
+Name=keepnote
+Type=Application
+Version=1.0
+X-LXQt-Need-Tray=true

@@ -80,7 +80,7 @@ It does NOT provide:
 
 Notes:
 ------
-⊙  **the first thing you should do on freshly loaded system is to look at gnote's HSF note**  
+⊙  **the first thing you should do on freshly loaded system is to look at keepnote's HSF note**  
 ⊙ use `locate` to search for files fast and `apropos` to search for commands based on their manual's description  
 ⊙ Firefox and Thunderbird are set up to use Tor by default, *_proxy variables are also globally set, DNS queries are encrypted and funneled to OpenDNS by default  
 ⊙ popular Microsoft fonts are included for web & document compatibility. they may be removed in future  

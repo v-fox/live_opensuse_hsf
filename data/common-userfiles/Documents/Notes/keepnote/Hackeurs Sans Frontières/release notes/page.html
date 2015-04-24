@@ -1,0 +1,130 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Release Notes</title>
+</head><body><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">HSF *IMPORTANT* Notes<br/>
+<ul><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
+<li>hacker's example pgp passphrase: unsafe for work. DON'T actually USE IT</li>
+</ul>
+<ul><li>before using package manager, first thing you NEED to do is:</li>
+<li style="list-style-type: none">∘ `<span style="background-color: #ffff99">sudo zypper --gpg-auto-import-keys</span>` refresh in terminal to get repo-caches _and import all their keys_</li>
+<li>if you have installed HSF, before performing any bandwidth-intensive operations you might want to run `<span style="background-color: #ffff99">yast2 proxy</span>` and disable global proxying so you wouldn't waste Tor's resources needlessly</li>
+<li>/tmp runs on RAM-disk with size of 10% of total RAM capacity, so don't let your apps shit in it. 25% more is used for compressed swap-in-RAM (compcache/zram) by default.</li>
+</ul>
+<ul><li>encryption and security tips:</li>
+<li style="list-style-type: none">∘ all DNS queries are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them to OpenDNS via encrypted connection. if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<span style="background-color: #ffff99">network.proxy.socks_remote_dns</span>' parameter in Firefox, Thunderbird and all Mozilla apps</li>
+<li style="list-style-type: none">∘ for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)</li>
+<li style="list-style-type: none">∘ try not to use Google products and Facebook</li>
+<li style="list-style-type: none">∘ AppArmor systemd service is disabled by default, enable it if you can handle it</li>
+<li style="list-style-type: none">∘ ALWAYS use <span style="background-color: #ffff99">ZRTP</span>&nbsp;in SIP instead of SRTP but if you are going to use SRTP, do it together with TLS</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ or <a href="https://www.acritelli.com/hacking-voip-decrypting-sdes-protected-srtp-phone-calls/">Party Van will come</a></li>
+</ul>
+</li>
+</ul>
+<ul><li>important changes were made to <a href="/etc/zypp/zypp.conf ">/etc/zypp/zypp.conf </a></li>
+<li style="list-style-type: none">∘ '<span style="background-color: #ffff99">solver.allowVendorChange</span>' was set to 'true'.</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ it should be safe due to strict prioritization in repo list, but keep that in mind anyway.</li>
+</ul>
+</li>
+<li style="list-style-type: none">∘ '<span style="background-color: #ffff99">solver.cleandepsOnRemove</span>' was set to 'true'.</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ zypper now is very aggressive on removal of packages, beware.</li>
+</ul>
+</li>
+<li style="list-style-type: none">∘ '<span style="background-color: #ffff99">solver.onlyRequires</span>' was set to 'true'.</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ this is the only way to force YaST not to litter the system with useless crap since there is no option to "always ignore recommended packages" in it.</li>
+</ul>
+</li>
+<li><a href="/etc/zypp/zypper.conf">/etc/zypp/zypper.conf</a>&nbsp;also has been changed:</li>
+<li style="list-style-type: none">∘ '<span style="background-color: #ffff99">installRecommends</span>' was set to 'no'.</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ this forces zypper to install only the bare minimum and may leave some packages being useless in absence of non-compile-time dependencies, like some /usr/share data, for example.</li>
+</ul>
+</li>
+<li>you might want to also check Options-&gt;'<span style="background-color: #ffff99">Ignore recommended packages for already installed packages</span>' in YaST Package Manager to achieve same effect as with 'installRecommends' for zypper and prevent it from installing loads of unnecessary crap (but only for already installed packages)</li>
+</ul>
+<ul><li><span style="background-color: #ffff99">JACK</span>&nbsp;is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality</li>
+<li style="list-style-type: none">∘ note <span style="background-color: #ffff99">QJackCtl</span>, JACK configurator, <span style="background-color: #ffff99">QasMixer</span>, ALSA volume configurator and <span style="background-color: #ffff99">PASysTray</span>, advanced PA configurator, and in your tray</li>
+<li style="list-style-type: none">∘ please, set all your multimedia apps to use JACK with '<span style="background-color: #ffff99">jamin</span>' port by default or disable it and then use naked PA (remove <a href="~/.config/pulse">~/.config/pulse</a>&nbsp;&amp; /etc/profile.d/zzz-jack.*). note that Firefox uses PA shim because its ALSA and JACK support is broken.</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ ALSA-only apps should use '<span style="background-color: #ffff99">default</span>' or '<span style="background-color: #ffff99">sysdefault</span>' ALSA/JACK devices</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li>those that don't like that (aegisub, for example) should try '<span style="background-color: #ffff99">pulse</span>' ALSA/PA/JACK device</li>
+<li>if that also fails, see <a href="~/.asoundrc">~/.asoundrc</a>&nbsp;on how to set up ALSA/JACK aloop</li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="list-style-type: none">‣ note how in the end of 2014 and <a href="http://arunraghavan.net/2014/11/notes-from-the-pulseaudio-mini-summit-2014/">PA devs admit</a>&nbsp;that:</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li>1) realtime support is semibroken</li>
+<li>2) PA still uses software conversions for everything and its a norm because not fucking up sound is just for "audiophiles"</li>
+<li>3) PA devs don't know what's best even for software conversion but have decided to remove option that provided the least distortion</li>
+<li>4) Windows® &amp; MacOS© <a href="https://bugzilla.novell.com/show_bug.cgi?id=718728#c11">mimicry is priority №1 even if it may physically impair a user</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li style="list-style-type: none">∘ tired of volume jumps (especially in flash videos and alike) and muffled sound ? well, i sure do. this is why QJackCtl has custom patchbay for automatic output redirection to JAMin where it's equalized, compressed and limited from exceeding 0dB. if your app is outputting directly to JACK playback, you should add redirection to it there. DO NOT CLOSE IT, or all sound redirected to it will be lost, instead disable the patchbay and change Mplayer's and VLC's settings to default ports.</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ JAMin is started on the second desktop for not to mess with your primary activities</li>
+<li style="list-style-type: none">‣ if you have good, expensive output setup with granular hardware control, then you should probably disable some or all JAMIn's features. or just not directing audio players to it would be a good idea (GStreamer's output is directed by default)</li>
+<li style="list-style-type: none">‣ you should put bass &amp; treble and such switches on your speakers on "zero change" position (min, max or neutral, depending on implementation) and set hardware volume as high as you can tolerate. then control volume and wave form with JAMin</li>
+<li style="list-style-type: none">‣ if sound has too much distortion, first try decreasing "limiter, input" in range from 20 to 0. then fiddle with the equalizer. you may want to disable sound boost anyway since it negates subtle volume transitions in music</li>
+<li style="list-style-type: none">‣ JAMin has been caught in the act of putting garbage in direct rendering surfaces such as paused video players, LibreOffice and Firefox UIs. It seems to be a bug in sound spectre rendering code. To workaround that, <span style="background-color: #ffff99">try selecting any tab other than "HDEQ"</span></li>
+</ul>
+</li>
+<li style="list-style-type: none">∘ for <span style="background-color: #ffff99">better realtime</span>&nbsp;it's recommended to:</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ set <span style="background-color: #ffff99">PM_PROFILER_PROFILE</span>&nbsp;in <a href="/etc/sysconfig/pm-profiler">/etc/sysconfig/pm-profiler</a>&nbsp;to "low_latency" which will change default CPU governor from "ondemand" to "performance"</li>
+</ul>
+</li>
+<li style="list-style-type: none">∘ on systems with HDMI a sound driver for it can load before your main one and QJackCtl will fail. to fix that simply open its settings and select proper card manually</li>
+<li style="list-style-type: none">∘ if JACK gets a lot of XRUNs, try first increasing period size starting from 1024</li>
+<li style="list-style-type: none">∘ if you have an old sound chip and JACK outright doesn't work, try "forcing 16bit" for it and don't forget to set sample format to 's16ne' in PA config too</li>
+</ul>
+<ul><li>in <a href="/etc/systemd/logind.conf">/etc/systemd/logind.conf</a>&nbsp;value of '<span style="background-color: #ffff99">KillUserProcesses</span>' was set to 'yes'. this will ensure that all processes are killed when they should and helps to prevent system hangs, but will break programs like `screen` which act daemon-like</li>
+</ul>
+<ul><li>'Infinality' scripts are used for font antialiasing.</li>
+<li style="list-style-type: none">∘ so select "system defaults / don't change" in your DE's font settings</li>
+<li style="list-style-type: none">∘ or, at least, set 'aa: enable, hinting: slight, subpixel geometry: rgb' for output not to be garbled</li>
+</ul>
+<ul><li>this spin contains only English language by default.</li>
+<li style="list-style-type: none">∘ add your language in `<span style="background-color: #ffff99">yast2 language</span>` and `<span style="background-color: #ffff99">yast2 sw_single</span>` (you may have to allow installing 'recommended' packages for that to work)</li>
+<li style="list-style-type: none">∘ <span style="background-color: #ffff99">ibus</span>&nbsp;input method daemon is launched for 'hacker' user, you can access its preferences via system tray icon and add your keyboard settings there</li>
+<li style="list-style-type: none">∘ to set up non-ibus input you, probably, has to use systemd's new "bicycle" named `<span style="background-color: #ffff99">localectl</span>` (when those assholes would learn to put functional part, like "ctl", of the name first ?)</li>
+</ul>
+<ul><li>important default hotkeys:</li>
+<li style="list-style-type: none">∘ Ctrl+Alt+BackSpace &#09;&#09;&#09;= kill entire graphical session</li>
+<li style="list-style-type: none">∘ Ctrl+Alt+Escape &#09;&#09;&#09;&#09;= `<span style="background-color: #ffff99">xkill</span>` graphical application killer</li>
+<li style="list-style-type: none">∘ Ctrl+` &#09;&#09;&#09;&#09;&#09;&#09;= `<span style="background-color: #ffff99">yakuake</span>` console</li>
+<li style="list-style-type: none">∘ Ctrl+Escape &#09;&#09;&#09;&#09;&#09;= `<span style="background-color: #ffff99">qps</span>` process informer</li>
+<li style="list-style-type: none">∘ Meta/Win+PrintScreen &#09;&#09;&#09;= screenshot entire screen</li>
+<li style="list-style-type: none">∘ Meta/Win+PrintScreen+Shift &#09;= screenshot focused window</li>
+</ul>
+<ul><li><a href="/etc/environment">/etc/environment</a>&nbsp;is the best place for it global variables.</li>
+</ul>
+<ul><li>KDE's KIO</li>
+<li style="list-style-type: none">∘ KDE file management apps (Dolphin, Konqueror, Krusader, etc.) support variety of special protocols other than simple file management:</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ <span style="background-color: #ffff99">remote:/</span>&nbsp;- listing of all local auto-found or known resources</li>
+<li style="list-style-type: none">‣ <span style="background-color: #ffff99">ftp:/</span>/&lt;user&gt;@&lt;proxy_user&gt;:&lt;password&gt;@&lt;proxy_password&gt;@&lt;hostname&gt;:&lt;port&gt;/&lt;path&gt;</li>
+<li style="list-style-type: none">‣ <span style="background-color: #ffff99">sftp|fish:/</span>/&lt;user&gt;@&lt;hostname&gt;/&lt;path&gt;/</li>
+<li style="list-style-type: none">‣ <span style="background-color: #ffff99">smb:/</span>/&lt;user&gt;:&lt;password&gt;@&lt;hostname&gt;/&lt;share_path&gt;</li>
+<li style="list-style-type: none">‣ <span style="background-color: #ffff99">nfs:/</span>/&lt;hostname&gt;:&lt;port&gt;/&lt;path&gt;</li>
+<li style="list-style-type: none">‣ <span style="background-color: #ffff99">webdav:/</span>/&lt;user&gt;@&lt;hostname&gt;/&lt;path&gt;</li>
+<li style="list-style-type: none">‣ stuff to access insides of iso, archives, software packages</li>
+<li style="list-style-type: none">‣ listing and accessing mtp (phones, players, etc.) and camera devices: <span style="background-color: #ffff99">mtp:/</span>&nbsp;and <span style="background-color: #ffff99">camera:/</span>&nbsp;respectively</li>
+</ul>
+</li>
+</ul>
+<ul><li>VDPAU, VA-API and OpenMaX F/OSS video hw-decoding libraries were installed.</li>
+<li style="list-style-type: none">∘ to enable VA-API acceleration on VDPAU-hardware (amd, nvidia) set this environmental variable:</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ <span style="background-color: #ffff99">LIBVA_DRIVER_NAME=vdpau</span></li>
+</ul>
+</li>
+<li style="list-style-type: none">∘ to enable VDPAU/GL acceleration on VA-API-hardware (intel):</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ install 'libvdpau_va_gl1'</li>
+<li style="list-style-type: none">‣ <span style="background-color: #ffff99">VDPAU_DRIVER=va_gl</span>&nbsp;(va_gl1 package tends to hardcode that, this is why it's not installed by default)</li>
+</ul>
+</li>
+</ul>
+<ul><li>'QT_GRAPHICSSYSTEM' is set to 'native', you may want to change it to 'raster' for proprietary drivers</li>
+</ul>
+<br/>
+</span></span></body></html>

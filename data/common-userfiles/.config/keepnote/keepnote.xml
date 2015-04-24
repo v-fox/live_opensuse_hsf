@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<keepnote>
+<pref>
+    <dict>
+        <key>id</key><string>39ca48db-2b30-48d8-ad92-1a7027d347c8</string>
+        <key>language</key><string></string>
+        <key>window</key><dict>
+            <key>keep_above</key><false/>
+            <key>minimize_on_start</key><true/>
+            <key>stick</key><false/>
+            <key>use_systray</key><true/>
+            <key>skip_taskbar</key><true/>
+            <key>window_maximized</key><true/>
+        </dict>
+        <key>autosave</key><true/>
+        <key>autosave_time</key><integer>30000</integer>
+        <key>default_notebook</key><string></string>
+        <key>use_last_notebook</key><false/>
+        <key>recent_notebooks</key><array>
+            <string>~/Documents/Notes/keepnote/Hackeurs Sans Frontières</string>
+        </array>
+        <key>timestamp_formats</key><dict>
+            <key>diff_year</key><string>%a, %b %d, %Y</string>
+            <key>same_year</key><string>%a, %b %d %I:%M %p</string>
+            <key>same_day</key><string>%I:%M %p</string>
+            <key>same_month</key><string>%a, %d %I:%M %p</string>
+        </dict>
+        <key>editors</key><dict>
+            <key>general</key><dict>
+                <key>spell_check</key><false/>
+                <key>image_size_snap_amount</key><integer>50</integer>
+                <key>image_size_snap</key><true/>
+                <key>quote_format</key><string>from &lt;a href="%u"&gt;%t&lt;/a&gt;:&lt;br/&gt;%s</string>
+            </dict>
+        </dict>
+        <key>viewers</key><dict>
+            <key>three_pane_viewer</key><dict>
+                <key>view_mode</key><string>vertical</string>
+                <key>hsash_pos</key><integer>212</integer>
+                <key>vsash_pos</key><integer>122</integer>
+            </dict>
+        </dict>
+        <key>look_and_feel</key><dict>
+            <key>listview_rules</key><true/>
+            <key>use_stock_icons</key><false/>
+            <key>app_font_size</key><real>9.000000</real>
+            <key>treeview_lines</key><true/>
+            <key>use_minitoolbar</key><false/>
+        </dict>
+        <key>default_paths</key><dict>
+            <key>insert_image_path</key><string></string>
+            <key>archive_notebook_path</key><string></string>
+            <key>attach_file_path</key><string></string>
+            <key>new_notebook_path</key><string>~/Documents/Notes/keepnote</string>
+            <key>save_image_path</key><string></string>
+        </dict>
+        <key>external_apps</key><array>
+            <dict>
+                <key>prog</key><string>xdg-open</string>
+                <key>args</key><array>
+                </array>
+                <key>key</key><string>file_launcher</string>
+                <key>title</key><string>File Launcher</string>
+            </dict>
+            <dict>
+                <key>prog</key><string>firefox</string>
+                <key>args</key><array>
+                </array>
+                <key>key</key><string>web_browser</string>
+                <key>title</key><string>Web Browser</string>
+            </dict>
+            <dict>
+                <key>prog</key><string>pcmanfm-qt</string>
+                <key>args</key><array>
+                </array>
+                <key>key</key><string>file_explorer</string>
+                <key>title</key><string>File Explorer</string>
+            </dict>
+            <dict>
+                <key>prog</key><string>kwrite</string>
+                <key>args</key><array>
+                </array>
+                <key>key</key><string>text_editor</string>
+                <key>title</key><string>Text Editor</string>
+            </dict>
+            <dict>
+                <key>prog</key><string>gimp</string>
+                <key>args</key><array>
+                </array>
+                <key>key</key><string>image_editor</string>
+                <key>title</key><string>Image Editor</string>
+            </dict>
+            <dict>
+                <key>prog</key><string>gwenview</string>
+                <key>args</key><array>
+                </array>
+                <key>key</key><string>image_viewer</string>
+                <key>title</key><string>Image Viewer</string>
+            </dict>
+            <dict>
+                <key>prog</key><string>import</string>
+                <key>args</key><array>
+                </array>
+                <key>key</key><string>screen_shot</string>
+                <key>title</key><string>Screen Shot</string>
+            </dict>
+        </array>
+        <key>extension_info</key><dict>
+            <key>disabled</key><array>
+            </array>
+        </dict>
+        <key>extensions</key><dict>
+        </dict>
+        <key>default_notebooks</key><array>
+            <string>~/Documents/Notes/keepnote/Hackeurs Sans Frontières</string>
+        </array>
+        <key>use_fulltext_search</key><true/>
+    </dict>
+</pref>
+</keepnote>

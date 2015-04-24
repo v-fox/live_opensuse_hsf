@@ -2,6 +2,30 @@
 root/etc/skel/.fluidsynth
 root/root/.fluidsynth
 root/home/hacker/.fluidsynth
+root/etc/skel/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/__NOTEBOOK__/index.sqlite
+root/root/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/__NOTEBOOK__/index.sqlite
+root/home/hacker/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/__NOTEBOOK__/index.sqlite
+root/etc/skel/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/node.xml
+root/root/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/node.xml
+root/home/hacker/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/node.xml
+root/etc/skel/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/release\ notes/page.html
+root/root/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/release\ notes/page.html
+root/home/hacker/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/release\ notes/page.html
+root/etc/skel/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/release\ notes/node.xml
+root/root/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/release\ notes/node.xml
+root/home/hacker/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/release\ notes/node.xml
+root/etc/skel/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/trash/node.xml
+root/root/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/trash/node.xml
+root/home/hacker/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/trash/node.xml
+root/etc/skel/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/emulators/page.html
+root/root/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/emulators/page.html
+root/home/hacker/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/emulators/page.html
+root/etc/skel/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/emulators/node.xml
+root/root/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/emulators/node.xml
+root/home/hacker/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/emulators/node.xml
+root/etc/skel/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/notebook.nbk
+root/root/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/notebook.nbk
+root/home/hacker/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/notebook.nbk
 root/etc/skel/.gtkrc-2.0
 root/root/.gtkrc-2.0
 root/home/hacker/.gtkrc-2.0
@@ -11,12 +35,6 @@ root/home/hacker/.dmrc
 root/etc/skel/.icons/default/index.theme
 root/root/.icons/default/index.theme
 root/home/hacker/.icons/default/index.theme
-root/etc/skel/.local/share/gnote/bfd7254e-7b2e-4452-a3d4-d7094cf87b8d.note
-root/root/.local/share/gnote/bfd7254e-7b2e-4452-a3d4-d7094cf87b8d.note
-root/home/hacker/.local/share/gnote/bfd7254e-7b2e-4452-a3d4-d7094cf87b8d.note
-root/etc/skel/.local/share/gnote/eb6b10e8-87b6-4c77-9bd5-530599f1a4ff.note
-root/root/.local/share/gnote/eb6b10e8-87b6-4c77-9bd5-530599f1a4ff.note
-root/home/hacker/.local/share/gnote/eb6b10e8-87b6-4c77-9bd5-530599f1a4ff.note
 root/etc/skel/.local/share/mime/magic
 root/root/.local/share/mime/magic
 root/home/hacker/.local/share/mime/magic
@@ -506,9 +524,6 @@ root/home/hacker/.config/autostart/gnome-keyring-ssh.desktop
 root/etc/skel/.config/autostart/LinPhone.desktop
 root/root/.config/autostart/LinPhone.desktop
 root/home/hacker/.config/autostart/LinPhone.desktop
-root/etc/skel/.config/autostart/gnote.desktop
-root/root/.config/autostart/gnote.desktop
-root/home/hacker/.config/autostart/gnote.desktop
 root/etc/skel/.config/autostart/qasmixer.desktop
 root/root/.config/autostart/qasmixer.desktop
 root/home/hacker/.config/autostart/qasmixer.desktop
@@ -530,6 +545,9 @@ root/home/hacker/.config/autostart/lxqt-policykit-agent.desktop
 root/etc/skel/.config/autostart/lxqt-compton.desktop
 root/root/.config/autostart/lxqt-compton.desktop
 root/home/hacker/.config/autostart/lxqt-compton.desktop
+root/etc/skel/.config/autostart/keepnote.desktop
+root/root/.config/autostart/keepnote.desktop
+root/home/hacker/.config/autostart/keepnote.desktop
 root/etc/skel/.config/autostart/pulseaudio.desktop
 root/root/.config/autostart/pulseaudio.desktop
 root/home/hacker/.config/autostart/pulseaudio.desktop
@@ -548,12 +566,6 @@ root/home/hacker/.config/autostart/z-dispcalGUI-apply-profiles.desktop
 root/etc/skel/.config/autostart/gnome-keyring-gpg.desktop
 root/root/.config/autostart/gnome-keyring-gpg.desktop
 root/home/hacker/.config/autostart/gnome-keyring-gpg.desktop
-root/etc/skel/.config/gnote/addins/global.ini
-root/root/.config/gnote/addins/global.ini
-root/home/hacker/.config/gnote/addins/global.ini
-root/etc/skel/.config/gnote/manifest.xml
-root/root/.config/gnote/manifest.xml
-root/home/hacker/.config/gnote/manifest.xml
 root/etc/skel/.config/freshwrapper.conf
 root/root/.config/freshwrapper.conf
 root/home/hacker/.config/freshwrapper.conf
@@ -566,6 +578,12 @@ root/home/hacker/.config/copyq/copyq.conf
 root/etc/skel/.config/gtk-3.0/settings.ini
 root/root/.config/gtk-3.0/settings.ini
 root/home/hacker/.config/gtk-3.0/settings.ini
+root/etc/skel/.config/keepnote/keepnote.xml
+root/root/.config/keepnote/keepnote.xml
+root/home/hacker/.config/keepnote/keepnote.xml
+root/etc/skel/.config/keepnote/extensions_data/editor_insert_date/config
+root/root/.config/keepnote/extensions_data/editor_insert_date/config
+root/home/hacker/.config/keepnote/extensions_data/editor_insert_date/config
 root/etc/skel/.config/gtk-2.0/gtkfilechooser.ini
 root/root/.config/gtk-2.0/gtkfilechooser.ini
 root/home/hacker/.config/gtk-2.0/gtkfilechooser.ini

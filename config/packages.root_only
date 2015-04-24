@@ -220,7 +220,6 @@ gnome-icon-theme-symbolic
 gnome-keyring
 gnome-keyring-pam
 gnome-media
-gnote
 gnu_ddrescue
 gnu-free-fonts
 goldendict
@@ -419,6 +418,7 @@ kde-oxygen-fonts
 kdiff3
 kdnssd
 keepassx
+keepnote
 kfilemetadata
 khmeros-fonts
 killswitch-applet
