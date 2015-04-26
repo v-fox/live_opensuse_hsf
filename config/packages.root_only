@@ -139,7 +139,6 @@ enigmail
 epson-inkjet-printer-escpr
 ethtool
 evtest
-exfat-nofuse-dkms-git
 exfat-utils
 ext3grep
 ext4magic
@@ -828,7 +827,6 @@ sensors
 sentinella
 setserial
 sg3_utils
-shellementary
 shim
 showfont
 signing-party
