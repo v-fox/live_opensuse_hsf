@@ -1,10 +1,12 @@
 <!-- if you need multiline/carriage return, use a .properties -->
 <!ENTITY prefwindow.title "FireTray preferencias">
 <!ENTITY NOT_IMPLEMENTED_YET "NO IMPLEMENTADO AUN">
+
 <!ENTITY windows_options "Ventanas">
 <!ENTITY icon_options "Icono">
 <!ENTITY mail_options "Correo">
 <!ENTITY chat_options "Chat">
+
 <!ENTITY hides_on_close.label "Cerrar la ventana a la bandeja">
 <!ENTITY hides_on_close.accesskey "C">
 <!ENTITY hides_on_minimize.label "Minimizar ventana a la bandeja">
@@ -83,6 +85,8 @@
 <!ENTITY mail_change_trigger.tooltip "Ruta absoluta del programa para correr cuando la cuenta de mensajes cambia. Este programa obtendrá recibira el contador de nuevos mensajes como primer argumento.">
 <!ENTITY mail_get_attention.label "Window draws attention on new messages">
 <!ENTITY mail_get_attention.accesskey "g">
+<!ENTITY nomail_hides_icon.label "Hide icon when no mail">
+<!ENTITY nomail_hides_icon.accesskey "H">
 <!ENTITY chat_icon_enable.label "Habilitar ícono de chat">
 <!ENTITY chat_icon_enable.accesskey "H">
 <!ENTITY chat_icon_blink.label "Icono de chat parpadea con mensajes nuevos.">

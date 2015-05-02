@@ -10,6 +10,9 @@ Cu.import("resource://firetray/ctypes/linux/gdk.jsm");
 Cu.import("resource://firetray/ctypes/linux/gio.jsm");
 Cu.import("resource://firetray/ctypes/linux/glib.jsm");
 Cu.import("resource://firetray/ctypes/linux/gobject.jsm");
+Cu.import("resource://firetray/ctypes/linux/libc.jsm");
+Cu.import("resource://firetray/ctypes/linux/x11.jsm");
+Cu.import("resource://gre/modules/ctypes.jsm");
 Cu.import("resource://firetray/commons.js");
 firetray.Handler.subscribeLibsForClosing([gdk, gio, glib, gobject]);
 
@@ -38,13 +41,22 @@ firetray.StatusIcon = {
     this.canAppIndicator =
       (appind3.available() && this.dbusNotificationWatcherReady());
     log.info("canAppIndicator="+this.canAppIndicator);
+    /* We can't reliably detect if xembed tray icons are supported, because, for
+     instance, Unity/compiz falsely claims to have support for it through
+     _NET_SYSTEM_TRAY_Sn (compiz). So we end up using the desktop id as a
+     criteria for enabling appindicator. */
+    let desktop = this.getDesktop();
+    log.info("desktop="+JSON.stringify(desktop));
+
     if (firetray.Utils.prefService.getBoolPref('with_appindicator') &&
-        this.canAppIndicator) {
+        this.canAppIndicator &&
+        (desktop.name === 'unity' ||
+         (desktop.name === 'kde' && desktop.ver > 4))) {
+      Cu.import("resource://firetray/linux/FiretrayAppIndicator.jsm");
       /* FIXME: Ubuntu14.04/Unity: successfully closing appind3 crashes FF/TB
        during exit, in Ubuntu's unity-menubar.patch's code.
        https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1393256 */
       // firetray.Handler.subscribeLibsForClosing([appind3]);
-      Cu.import("resource://firetray/linux/FiretrayAppIndicator.jsm");
     } else {
       Cu.import("resource://firetray/linux/FiretrayGtkStatusIcon.jsm");
     }
@@ -96,6 +108,31 @@ firetray.StatusIcon = {
   },
 
   loadImageCustom: function() { }, // done in setIconImageCustom
+
+  getDesktop: function() {
+    let env = Cc["@mozilla.org/process/environment;1"]
+          .createInstance(Ci.nsIEnvironment);
+    let XDG_CURRENT_DESKTOP = env.get("XDG_CURRENT_DESKTOP").toLowerCase();
+    let DESKTOP_SESSION = env.get("DESKTOP_SESSION").toLowerCase();
+
+    let desktop = {name:'unknown', ver:null};
+    if (XDG_CURRENT_DESKTOP === 'unity' || DESKTOP_SESSION === 'ubuntu') {
+      desktop.name = 'unity';
+    }
+    else if (XDG_CURRENT_DESKTOP === 'kde') { // DESKTOP_SESSION kde-plasma, plasme, kf5, ...
+      desktop.name = 'kde';
+      let KDE_SESSION_VERSION = env.get("KDE_SESSION_VERSION");
+      if (KDE_SESSION_VERSION) desktop.ver = parseInt(KDE_SESSION_VERSION, 10);
+    }
+    else if (DESKTOP_SESSION) {
+      desktop.name = DESKTOP_SESSION;
+    }
+    else if (XDG_CURRENT_DESKTOP) {
+      desktop.name = XDG_CURRENT_DESKTOP;
+    }
+
+    return desktop;
+  },
 
   dbusNotificationWatcherReady: function() {
     let watcherReady = false;

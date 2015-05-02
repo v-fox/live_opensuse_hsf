@@ -649,17 +649,6 @@ firetray.Handler.showWindow = firetray.Window.show;
 firetray.Handler.hideWindow = firetray.Window.hide;
 
 firetray.Handler.showAllWindowsAndActivate = firetray.Window.showAllWindowsAndActivate;
-firetray.Handler.activateLastWindowCb = function(gtkStatusIcon, gdkEvent, userData) {
-
-  let gdkEventButton = ctypes.cast(gdkEvent, gdk.GdkEventButton.ptr);
-  if (gdkEventButton.contents.button === 2 && gdkEventButton.contents.type === gdk.GDK_BUTTON_PRESS) {
-
-    firetray.Window.showAllWindowsAndActivate();
-  }
-
-  let stopPropagation = false;
-  return stopPropagation;
-};
 
 /* NOTE: gtk_window_is_active() not reliable, and _NET_ACTIVE_WINDOW may not
    always be set before 'focus-in-event' (gnome-shell/mutter 3.4.1). */

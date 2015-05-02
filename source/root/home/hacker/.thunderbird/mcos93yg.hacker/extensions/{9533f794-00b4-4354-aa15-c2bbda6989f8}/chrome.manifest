@@ -1,5 +1,6 @@
 content		firetray			chrome/content/
 skin		firetray	classic/1.0	chrome/skin/
+locale		firetray	bg		chrome/locale/bg/
 locale		firetray	de-DE		chrome/locale/de-DE/
 locale		firetray	en-US		chrome/locale/en-US/
 locale		firetray	es-AR		chrome/locale/es-AR/
@@ -10,6 +11,8 @@ locale		firetray	nl		chrome/locale/nl/
 locale		firetray	pl-PL		chrome/locale/pl-PL/
 locale		firetray	ru-RU		chrome/locale/ru-RU/
 locale		firetray	sk-SK		chrome/locale/sk-SK/
+locale		firetray	uk-UA		chrome/locale/uk-UA/
+locale		firetray	zh-CN		chrome/locale/zh-CN/
 locale		firetray	zh-TW		chrome/locale/zh-TW/
 resource	firetray			modules/
 

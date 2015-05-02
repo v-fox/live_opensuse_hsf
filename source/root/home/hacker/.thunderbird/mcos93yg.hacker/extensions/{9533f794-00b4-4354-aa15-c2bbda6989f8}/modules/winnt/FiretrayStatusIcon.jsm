@@ -177,7 +177,8 @@ firetray.StatusIcon = {
     nid.hIcon = this.icons.get('app');
     nid.hWnd = hwnd_hidden;
     nid.uCallbackMessage = firetray.Win32.WM_TRAYMESSAGE;
-    nid.uFlags = shell32.NIF_ICON | shell32.NIF_MESSAGE | shell32.NIF_TIP;
+    nid.uFlags = shell32.NIF_MESSAGE | shell32.NIF_ICON | shell32.NIF_TIP |
+      shell32.NIF_STATE;
     nid.uVersion = shell32.NOTIFYICON_VERSION_4;
 
     // Install the icon
@@ -305,7 +306,7 @@ firetray.StatusIcon = {
       nid.hIcon = iconinfo.hicon;
     if (iconinfo.tip)
       nid.szTip = iconinfo.tip;
-    rv = shell32.Shell_NotifyIconW(shell32.NIM_MODIFY, nid.address());
+    let rv = shell32.Shell_NotifyIconW(shell32.NIM_MODIFY, nid.address());
   },
 
   // rgb colors encoded in *bbggrr*
@@ -461,4 +462,11 @@ firetray.Handler.setIconText = function(text, color) {
 };
 
 firetray.Handler.setIconVisibility = function(visible) {
+  let nid = firetray.StatusIcon.notifyIconData;
+  if (visible)
+    nid.dwState = 0;
+  else
+    nid.dwState = shell32.NIS_HIDDEN;
+  nid.dwStateMask = shell32.NIS_HIDDEN;
+  let rv = shell32.Shell_NotifyIconW(shell32.NIM_MODIFY, nid.address());
 };

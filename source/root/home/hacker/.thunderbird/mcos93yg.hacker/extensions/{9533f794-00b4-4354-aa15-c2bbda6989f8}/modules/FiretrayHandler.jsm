@@ -76,7 +76,10 @@ firetray.Handler = {
                Services.vc.compare(this.xulVer,"27.0") < 0) {
       log.error("FireTray needs Gecko 27 and above on Windows.");
       return false;
+    } else if (this.runtimeOS == "freebsd") {
+      this.runtimeOS = "linux";
     }
+
     Cu.import("resource://firetray/"+this.runtimeOS+"/FiretrayStatusIcon.jsm");
     Cu.import("resource://firetray/"+this.runtimeOS+"/FiretrayWindow.jsm");
 
@@ -328,7 +331,7 @@ firetray.Handler = {
   unregisterWindow: function(win) {},
   hideWindow: function(winId) {},
   showWindow: function(winId) {},
-  activateLastWindowCb: function(gtkStatusIcon, gdkEvent, userData) {},
+  showAllWindowsAndActivate:function() {}, // linux
   getActiveWindow: function() {},
   windowGetAttention: function(winId) {},
   showHidePopupMenuItems: function() {}, // linux
@@ -371,12 +374,21 @@ firetray.Handler = {
     return hidden;
   },
 
-  showHideIcon: function() {
-    if (firetray.Utils.prefService.getBoolPref('show_icon_on_hide'))
-      firetray.Handler.setIconVisibility(
-        (firetray.Handler.visibleWindowsCount !== firetray.Handler.windowsCount));
-    else
-      firetray.Handler.setIconVisibility(true);
+  showHideIcon: function(msgCount) {
+    let allWindowsVisible = true;
+    if (firetray.Utils.prefService.getBoolPref('show_icon_on_hide')) {
+      allWindowsVisible =
+        (firetray.Handler.visibleWindowsCount !== firetray.Handler.windowsCount);
+    }
+
+    let msgCountPositive = true;
+    if (firetray.Utils.prefService.getBoolPref('nomail_hides_icon') &&
+        ("undefined" !== typeof(msgCount))) {
+      msgCountPositive = (msgCount > 0);
+      log.info("__msgCountPositive="+msgCountPositive);
+    }
+
+    firetray.Handler.setIconVisibility(allWindowsVisible && msgCountPositive);
   },
 
   /** nsIBaseWindow, nsIXULWindow, ... */
@@ -422,8 +434,14 @@ firetray.Handler = {
         Components.interfaces.nsIPrefLocalizedString).data;
     } catch (e) {}
 
-    // use this if we can't find the pref
-    if (!url) {
+    if (url) {
+      try {
+        Services.io.newURI(url, null, null);
+      } catch (e) {
+        url = "http://" + url;
+      }
+    }
+    else {
       var SBS = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
       var configBundle = SBS.createBundle(firetray.Handler._getBrowserProperties());
       url = configBundle.GetStringFromName(prefDomain);
@@ -499,6 +517,13 @@ firetray.Handler = {
       let branch = Services.prefs.getBranch(pref.branch);
       branch.setBoolPref(pref.pref, pref.bak);
     });
+  },
+
+  excludeOtherShowIconPrefs: function(prefName) {
+    if (prefName !== 'nomail_hides_icon')
+      firetray.Utils.prefService.setBoolPref('nomail_hides_icon', false);
+    if (prefName !== 'show_icon_on_hide')
+      firetray.Utils.prefService.setBoolPref('show_icon_on_hide', false);
   }
 
 }; // firetray.Handler
@@ -514,6 +539,8 @@ firetray.PrefListener = new PrefListener(
       firetray.Handler.showHidePopupMenuItems();
       break;
     case 'show_icon_on_hide':
+      if (firetray.Utils.prefService.getBoolPref(name))
+        firetray.Handler.excludeOtherShowIconPrefs(name);
       firetray.Handler.showHideIcon();
       break;
     case 'mail_notification_enabled':
@@ -538,6 +565,13 @@ firetray.PrefListener = new PrefListener(
     case 'only_favorite_folders':
       firetray.Messaging.updateMsgCountWithCb();
       break;
+    case 'nomail_hides_icon':
+      if (firetray.Utils.prefService.getBoolPref(name))
+        firetray.Handler.excludeOtherShowIconPrefs(name);
+      else
+        firetray.Handler.setIconVisibility(true);
+      firetray.Messaging.updateMsgCountWithCb();
+      break;
     case 'app_mail_icon_names':
     case 'app_browser_icon_names':
     case 'app_default_icon_names':
@@ -549,10 +583,6 @@ firetray.PrefListener = new PrefListener(
       firetray.Handler.setIconImageDefault();
       if (firetray.Handler.inMailApp)
         firetray.Messaging.updateMsgCountWithCb();
-      break;
-
-    case 'middle_click':
-      firetray.StatusIcon.middleClickActionChanged();
       break;
 
     case 'chat_icon_enable':

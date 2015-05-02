@@ -208,6 +208,7 @@ firetray.Messaging = {
       log.error('unknown message count type');
 
     if (msgCount == 0) {
+
       firetray.Handler.setIconImageDefault();
       firetray.Handler.setIconTooltipDefault();
 
@@ -233,6 +234,8 @@ firetray.Messaging = {
     } else {
       throw "negative message count"; // should never happen
     }
+
+    firetray.Handler.showHideIcon(msgCount);
   },
 
   /**
@@ -323,7 +326,8 @@ firetray.Messaging = {
       file.initWithPath(filepath);
 
       // create the process
-      var process = Cc["@mozilla.org/process/util;1"].createInstance(Ci.nsIProcess);
+      var process = Cc["@mozilla.org/process/util;1"]
+            .createInstance(Ci.nsIProcess);
       process.init(file);
 
       process.run(false, args, args.length);
@@ -335,7 +339,7 @@ firetray.Messaging = {
 
 /**
  * Accounts Iterator/Generator for iterating over all account servers.
- * NOTE: MailServices.accounts.allServers exludes hidden and IM servers
+ * NOTE: MailServices.accounts.allServers excludes hidden and IM servers
  * @param sortByTypeAndName: boolean
  * @return a generator over all nsIMsgIncomingServer including hidden and IM ones
  */

@@ -9,3 +9,8 @@ source/root/home/hacker/README.md
 source/root/home/hacker/ChangeLog*
 source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/healthreport.sqlite
 source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/datareporting/state.json
+source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/gmp-gmpopenh264/**
+source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/healthreport/**
+source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/minidumps/**
+source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/sessions/**
+source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/sessionstore-backups/**

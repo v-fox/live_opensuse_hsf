@@ -97,34 +97,16 @@ firetray.GtkStatusIcon = {
     let handlerId = gobject.g_signal_connect(firetray.GtkStatusIcon.trayIcon,
       "activate", firetray.GtkStatusIcon.callbacks.iconActivate, null);
 
-    let pref = firetray.Utils.prefService.getIntPref("middle_click");
-    this.attachMiddleClickCallback(pref);
+    this.attachMiddleClickCallback();
   },
 
-  attachMiddleClickCallback: function(pref) {
-    if (pref === FIRETRAY_MIDDLE_CLICK_ACTIVATE_LAST) {
-      this.callbacks.iconMiddleClick = gtk.GCallbackStatusIconMiddleClick_t(
-        firetray.Handler.activateLastWindowCb, null, FIRETRAY_CB_SENTINEL);
-    } else if (pref === FIRETRAY_MIDDLE_CLICK_SHOW_HIDE) {
-      this.callbacks.iconMiddleClick = gtk.GCallbackStatusIconMiddleClick_t(
-        function(widget, event, data) {firetray.Handler.showHideAllWindows(); return true;},
-        null, FIRETRAY_CB_SENTINEL);
-    } else {
-      log.error("Unknown pref value for 'middle_click': "+pref);
-      return;
-    }
-    this.callbacks.iconMiddleClickId = gobject.g_signal_connect(
+  attachMiddleClickCallback: function() {
+    this.callbacks.iconMiddleClick = gtk.GCallbackStatusIconMiddleClick_t(
+      firetray.GtkStatusIcon.onButtonPressCb, null, FIRETRAY_CB_SENTINEL);
+    let iconMiddleClickId = gobject.g_signal_connect(
       firetray.GtkStatusIcon.trayIcon,
       "button-press-event", firetray.GtkStatusIcon.callbacks.iconMiddleClick,
       null);
-  },
-
-  detachMiddleClickCallback: function() {
-    gobject.g_signal_handler_disconnect(
-      firetray.GtkStatusIcon.trayIcon,
-      gobject.gulong(this.callbacks.iconMiddleClickId)
-    );
-    delete this.callbacks.iconMiddleClickId;
   },
 
   onScroll: function(icon, event, data) {
@@ -140,6 +122,25 @@ firetray.GtkStatusIcon = {
   onClick: function(gtkStatusIcon, userData) {
     firetray.Handler.showHideAllWindows();
     let stopPropagation = true;
+    return stopPropagation;
+  },
+
+  onButtonPressCb: function(widget, event, data) {
+    let gdkEventButton = ctypes.cast(event, gdk.GdkEventButton.ptr);
+    if (gdkEventButton.contents.button === 2 &&
+        gdkEventButton.contents.type === gdk.GDK_BUTTON_PRESS)
+    {
+      let pref = firetray.Utils.prefService.getIntPref("middle_click");
+      if (pref === FIRETRAY_MIDDLE_CLICK_ACTIVATE_LAST) {
+        firetray.Handler.showAllWindowsAndActivate();
+      } else if (pref === FIRETRAY_MIDDLE_CLICK_SHOW_HIDE) {
+        firetray.Handler.showHideAllWindows();
+      } else {
+        log.error("Unknown pref value for 'middle_click': "+pref);
+      }
+    }
+
+    let stopPropagation = false;
     return stopPropagation;
   },
 
@@ -163,12 +164,6 @@ firetray.StatusIcon.initImpl =
 
 firetray.StatusIcon.shutdownImpl =
   firetray.GtkStatusIcon.shutdown.bind(firetray.GtkStatusIcon);
-
-firetray.StatusIcon.middleClickActionChanged = function() {
-  let pref = firetray.Utils.prefService.getIntPref("middle_click");
-  firetray.GtkStatusIcon.detachMiddleClickCallback();
-  firetray.GtkStatusIcon.attachMiddleClickCallback(pref);
-};
 
 
 firetray.Handler.loadIcons = firetray.GtkStatusIcon.loadThemedIcons;

@@ -1,10 +1,12 @@
 <!-- if you need multiline/carriage return, use a .properties -->
 <!ENTITY prefwindow.title "FireTray osobitosti">
 <!ENTITY NOT_IMPLEMENTED_YET "JOŠ NIJE IMPLEMENTIRANO">
+
 <!ENTITY windows_options "Prozori">
 <!ENTITY icon_options "Ikona">
 <!ENTITY mail_options "Pošta">
 <!ENTITY chat_options "Čavrljanje">
+
 <!ENTITY hides_on_close.label "Zatvaranjem se prozor sakriva u traku sustava">
 <!ENTITY hides_on_close.accesskey "C">
 <!ENTITY hides_on_minimize.label "Smanjivanjem se prozor sakriva u traku sustava">
@@ -38,10 +40,10 @@
 <!ENTITY down "↓">
 <!ENTITY hide "sakrij">
 <!ENTITY restore "obnovi">
-<!ENTITY middle_click.label "Mouse middle click action :" >
-<!ENTITY middle_click.accesskey "k" >
-<!ENTITY show_hide "Show/hide" >
-<!ENTITY activate_last "Activate last window" >
+<!ENTITY middle_click.label "Radnja srednjeg klika miša:">
+<!ENTITY middle_click.accesskey "k">
+<!ENTITY show_hide "Show/hide">
+<!ENTITY activate_last "Activate last window">
 <!ENTITY mail_notification_enabled.label "Omogući obavijesti pošte">
 <!ENTITY mail_notification_enabled.accesskey "a">
 <!ENTITY message_count_type.label "broj vrsta poruka:">
@@ -83,6 +85,8 @@
 <!ENTITY mail_change_trigger.tooltip "Potpuna putanja programa koji će se pokrenuti kada se broj poruka promijeni. Taj program će dobiti novi broj poruka kao prvi argument.">
 <!ENTITY mail_get_attention.label "Postavi X11 napomenu hitnosti">
 <!ENTITY mail_get_attention.accesskey "X">
+<!ENTITY nomail_hides_icon.label "Hide icon when no mail">
+<!ENTITY nomail_hides_icon.accesskey "H">
 <!ENTITY chat_icon_enable.label "Omogući ikonu čavrljanja">
 <!ENTITY chat_icon_enable.accesskey "E">
 <!ENTITY chat_icon_blink.label "Ikona čavrljanja blinka kod pristigle poruke">

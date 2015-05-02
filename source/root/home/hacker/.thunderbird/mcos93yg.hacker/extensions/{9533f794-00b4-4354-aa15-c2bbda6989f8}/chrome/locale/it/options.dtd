@@ -1,10 +1,12 @@
 <!-- if you need multiline/carriage return, use a .properties -->
 <!ENTITY prefwindow.title "Preferenze di FireTray">
 <!ENTITY NOT_IMPLEMENTED_YET "Non ancora implementato">
+
 <!ENTITY windows_options "Finestre">
 <!ENTITY icon_options "Icona">
 <!ENTITY mail_options "Posta">
 <!ENTITY chat_options "Chat">
+
 <!ENTITY hides_on_close.label "Riduci a icona quando si chiude il programma">
 <!ENTITY hides_on_close.accesskey "C">
 <!ENTITY hides_on_minimize.label "Riduci a icona quando si riduce la finestra">
@@ -38,10 +40,10 @@
 <!ENTITY down "↓">
 <!ENTITY hide "Nascondi">
 <!ENTITY restore "Ripristina">
-<!ENTITY middle_click.label "Mouse middle click action :" >
-<!ENTITY middle_click.accesskey "k" >
-<!ENTITY show_hide "Show/hide" >
-<!ENTITY activate_last "Activate last window" >
+<!ENTITY middle_click.label "Azione pulsante centrale del mouse:">
+<!ENTITY middle_click.accesskey "R">
+<!ENTITY show_hide "Mostra/nascondi">
+<!ENTITY activate_last "Attiva l'ultima finestra">
 <!ENTITY mail_notification_enabled.label "Attiva notifiche e-mail">
 <!ENTITY mail_notification_enabled.accesskey "a">
 <!ENTITY message_count_type.label "Tipo di contatore messaggi:">
@@ -83,6 +85,8 @@
 <!ENTITY mail_change_trigger.tooltip "Percorso assoluto del programma da lanciare quando viene incrementato il contatore dei messaggi non letti. Il programma utilizzerà il contatore dei nuovi messaggi come primo argomento.">
 <!ENTITY mail_get_attention.label "Window draws attention on new messages">
 <!ENTITY mail_get_attention.accesskey "g">
+<!ENTITY nomail_hides_icon.label "Hide icon when no mail">
+<!ENTITY nomail_hides_icon.accesskey "H">
 <!ENTITY chat_icon_enable.label "Attiva icona della chat">
 <!ENTITY chat_icon_enable.accesskey "E">
 <!ENTITY chat_icon_blink.label "Lampeggiamento dell'icona della chat per nuovi messaggi">
