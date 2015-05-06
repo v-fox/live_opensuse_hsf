@@ -17,7 +17,7 @@
         <key>default_notebook</key><string></string>
         <key>use_last_notebook</key><false/>
         <key>recent_notebooks</key><array>
-            <string>~/Documents/Notes/keepnote/Hackeurs Sans Frontières</string>
+            <string>Documents/Notes/keepnote/Hackeurs Sans Frontières</string>
         </array>
         <key>timestamp_formats</key><dict>
             <key>diff_year</key><string>%a, %b %d, %Y</string>
@@ -51,7 +51,7 @@
             <key>insert_image_path</key><string></string>
             <key>archive_notebook_path</key><string></string>
             <key>attach_file_path</key><string></string>
-            <key>new_notebook_path</key><string>~/Documents/Notes/keepnote</string>
+            <key>new_notebook_path</key><string>Documents/Notes/keepnote</string>
             <key>save_image_path</key><string></string>
         </dict>
         <key>external_apps</key><array>
@@ -112,7 +112,7 @@
         <key>extensions</key><dict>
         </dict>
         <key>default_notebooks</key><array>
-            <string>~/Documents/Notes/keepnote/Hackeurs Sans Frontières</string>
+            <string>Documents/Notes/keepnote/Hackeurs Sans Frontières</string>
         </array>
         <key>use_fulltext_search</key><true/>
     </dict>

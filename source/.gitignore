@@ -539,9 +539,6 @@ root/home/hacker/.config/autostart/gnome-keyring-pkcs11.desktop
 root/etc/skel/.config/autostart/lxqt-desktop.desktop
 root/root/.config/autostart/lxqt-desktop.desktop
 root/home/hacker/.config/autostart/lxqt-desktop.desktop
-root/etc/skel/.config/autostart/lxqt-policykit-agent.desktop
-root/root/.config/autostart/lxqt-policykit-agent.desktop
-root/home/hacker/.config/autostart/lxqt-policykit-agent.desktop
 root/etc/skel/.config/autostart/lxqt-compton.desktop
 root/root/.config/autostart/lxqt-compton.desktop
 root/home/hacker/.config/autostart/lxqt-compton.desktop

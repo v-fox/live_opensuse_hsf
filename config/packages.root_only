@@ -60,7 +60,6 @@ btrfsprogs
 bundle-lang-common-en
 cabextract
 ca-certificates
-caffeine
 cagibi
 calibre
 ccgfs
@@ -131,7 +130,6 @@ easytag
 ebtables
 ecryptfs-utils
 efont-unicode
-efont-unicode-bitmap-fonts
 emount
 enca
 encfs
@@ -418,6 +416,8 @@ kdiff3
 kdnssd
 keepassx
 keepnote
+keepnote-extensions
+keepnote-lang
 kfilemetadata
 khmeros-fonts
 killswitch-applet
@@ -456,7 +456,6 @@ leechcraft
 leechcraft-advancednotifications
 leechcraft-aggregator
 leechcraft-aggregator-bodyfetch
-leechcraft-anhero
 leechcraft-auscrie
 leechcraft-azoth
 leechcraft-azoth-abbrev
@@ -608,6 +607,7 @@ lsof
 luksipc
 lxappearance
 lxappearance-obconf
+lxappearance-obconf-lang
 lynis
 make
 makeself
@@ -755,7 +755,6 @@ pm-utils
 pngcrush
 polipo
 polkit-default-privs
-polkit-gnome
 poppler-data
 poppler-tools
 posixovl
