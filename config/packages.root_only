@@ -151,6 +151,7 @@ ffmpeg-tools
 file
 filesystem
 filezilla
+finch
 firmwarekit
 FirmwareUpdateKit
 flacon
@@ -395,8 +396,6 @@ iptraf-ng
 iputils
 irda
 irqbalance
-irssi
-irssi-otr
 isight-firmware-tools
 ispell-american
 ispell-british
@@ -555,7 +554,6 @@ libpurple-plugin-openfetion
 libpurple-plugin-pack
 libpurple-plugin-pack-extras
 libpurple-plugin-sipe
-libpurple-plugin-tox
 libpurple-plugin-whatsapp
 libregf-tools
 libreoffice-base-drivers-mysql
