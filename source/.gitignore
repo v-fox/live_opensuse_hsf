@@ -899,3 +899,6 @@ root/home/hacker/.Xresources
 root/etc/skel/public_html/.directory
 root/root/public_html/.directory
 root/home/hacker/public_html/.directory
+root/etc/skel/.mednafen/mednafen-09x.cfg
+root/root/.mednafen/mednafen-09x.cfg
+root/home/hacker/.mednafen/mednafen-09x.cfg

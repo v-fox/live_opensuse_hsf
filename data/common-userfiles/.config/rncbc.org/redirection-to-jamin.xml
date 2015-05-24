@@ -9,6 +9,10 @@
    <plug>out_0</plug>
    <plug>out_1</plug>
   </socket>
+  <socket exclusive="off" client="Mednafen" type="jack-audio" name="Mednafen emulator">
+   <plug>output</plug>
+   <plug>output-right</plug>
+  </socket>
   <socket exclusive="off" client="vlc_[0-9]+" type="jack-audio" name="VLC">
    <plug>out_1</plug>
    <plug>out_2</plug>
@@ -81,6 +85,7 @@
   <cable output="PA stereo output" input="jamin volume boost" type="jack-audio"/>
   <cable output="all GStreamer players" input="jamin volume boost" type="jack-audio"/>
   <cable output="Adobe Flash (NPAPI &amp; PPAPI)" input="jamin volume boost" type="jack-audio"/>
+  <cable output="Mednafen emulator" input="jamin volume boost" type="jack-audio"/>
  </cables>
 </patchbay>
 
