@@ -8,7 +8,7 @@ Arch:x86_64-gcc3:$
 libnpsoplugin.so:$
 /usr/lib64/libreoffice/program/libnpsoplugin.so:$
 :$
-1429113625000:0:0:0:$
+1430317531000:0:0:0:$
 LibreOffice Plug-in handles all its documents:$
 LibreOffice Plug-in:$
 44
@@ -546,8 +546,8 @@ KParts Plugin:$
 368:video/x-theora+ogg:Ogg Theora video:ogg:$
 libfreshwrapper-pepperflash.so:$
 /usr/lib64/browser-plugins/libfreshwrapper-pepperflash.so:$
-17.0.0.134:$
-1430226837000:0:0:0:$
+17.0.0.188:$
+1432516690000:0:0:0:$
 Shockwave Flash 17.0 r0:$
 Shockwave Flash:$
 2
