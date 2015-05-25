@@ -43,7 +43,7 @@ such as AntiMicro (for key & axis mapping) and jstest-gtk
 * LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
 Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say)
 * fresh Mozilla Firefox browser and Thunderbird e-mail client;  
-fresh PPAPI Flash abomination with excellent NPAPI shim
+fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
 * mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other console tools
 * networking tools:  

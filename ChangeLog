@@ -4,7 +4,7 @@
 	* addition of Tano IPTV player and return of non-beta VLC
 	* removal of vaapi support in gstreamer (it brings more trouble than it's worth)
 	* removal of XScreenSaver (due to inhibition problem)
-	* replacement of NPAPI flash with PPAPI one and removal of JACK patch for FF due to its quality
+	* replacement of NPAPI flash with PPAPI one
 	* replacement of gnote with keepnote due to newest GNOME idiocity
 	* commencing actual usage of mDNS
 
