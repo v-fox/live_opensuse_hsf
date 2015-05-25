@@ -352,6 +352,7 @@ user_pref("privacy.cpd.siteSettings", true);
 user_pref("privacy.donottrackheader.enabled", true);
 user_pref("privacy.sanitize.migrateFx3Prefs", true);
 user_pref("privacy.sanitize.timeSpan", 0);
+user_pref("privacy.trackingprotection.enabled", true);
 user_pref("services.sync.clients.lastSync", "0");
 user_pref("services.sync.clients.lastSyncLocal", "0");
 user_pref("services.sync.declinedEngines", "");
