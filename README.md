@@ -32,8 +32,8 @@ GStreamer with FFMPEG and JACK output by default
 * printer (via cups), scanner (via x/sane)  
 and analogue video input (via tvtime) support
 * professional screencasting tool SimpleScreenRecorder with native JACK support
-* wide range of gamepad utilities  
-such as AntiMicro (for key & axis mapping) and jstest-gtk
+* wide range of gamepad utilities such as AntiMicro and jstest-gtk;  
+mednafen, the small but feature-rich and JACK-enabled multi-system emulator
 * professional virtualization with libvirt & KVM / LXC  
 (featuring userland virt-manager and SPICE flowing out-of-the-box)
 * professional networking tools and rich connectivity options
