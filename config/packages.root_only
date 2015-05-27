@@ -111,6 +111,8 @@ dconf
 dconf-editor
 ddccontrol
 ddclient
+dd_rescue-lzo
+dd_rhelp
 dejavu-fonts
 delayacct-utils
 deltarpm
@@ -383,6 +385,7 @@ ifuse
 ike-scan
 ImageMagick
 ImageMagick-extra
+imagewriter
 indic-fonts
 innoextract
 intel-gpu-tools
@@ -598,6 +601,8 @@ linuxconsoletools
 linux-ftools
 lirc
 lirc-remotes
+live-fat-stick
+live-usb-gui
 lsb-invalid-mta
 lsb-release
 lsof
@@ -911,7 +916,6 @@ udisks2
 ulogd
 unace
 unbound
-unetbootin
 unidings-fonts
 unionfs-fuse
 unoconv
