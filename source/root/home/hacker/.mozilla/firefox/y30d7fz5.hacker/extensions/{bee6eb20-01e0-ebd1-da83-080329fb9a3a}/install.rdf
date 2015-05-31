@@ -1,7 +1,5 @@
-﻿<?xml version="1.0"?>
-
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
-    xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+<?xml version='1.0' encoding='utf-8'?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
  
     <Description about="urn:mozilla:install-manifest">
 	
@@ -26,7 +24,7 @@
 		<em:creator>Vicente Amor</em:creator>
 		<em:name>Flash and Video Download</em:name>
 		<em:description>Download flash games and videos with a single click.</em:description>
-		<em:version>1.70</em:version>
+		<em:version>1.72.1-signed</em:version>
 		<em:id>{bee6eb20-01e0-ebd1-da83-080329fb9a3a}</em:id>
 		<em:iconURL>chrome://flashVideoDownload/skin/icons/mainIcon.png</em:iconURL>
 		<em:type>2</em:type>
