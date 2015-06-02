@@ -1,4 +1,4 @@
-### [download built images at SourceForge](https://sourceforge.net/p/hackeurs-sans-frontieres), forums are there too  
+### [download built images at SourceForge](https://sourceforge.net/p/hackeurs-sans-frontieres)  
 ![LXQt desktop](https://sourceforge.net/p/hackeurs-sans-frontieres/screenshot/screenshot_4.png)  
 
 This is hybrid live cd/usb openSUSE spin aimed to be fully functional out-of-the-box yet slim desktop system for hackers of all sorts: technical, humanitarian, artistic, social and so on. It's built on "one user-friendliest method for fulfilling every need" principle.  
