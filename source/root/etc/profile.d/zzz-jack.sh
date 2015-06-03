@@ -1,4 +1,4 @@
-unalias sox
+#unalias sox
 export AUDIODRIVER=alsa
 # SDL 1.x and 2.x have different names for PA output in the save variable and we want pulse shim to ensure proper mixing
 unset SDL_AUDIODRIVER

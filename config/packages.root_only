@@ -974,12 +974,14 @@ xdotool
 xev
 xf86-input-evdev
 xf86-input-synaptics
+xf86-input-vmmouse
 xf86-input-wacom
 xf86-video-ati
 xf86-video-dummy
 xf86-video-intel
 xf86-video-nouveau
 xf86-video-qxl
+xf86-video-vmware
 xfontsel
 xfs
 xfsdump
