@@ -49,7 +49,7 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * networking tools:  
   * interconnecting: hostapd, usbip, miredo-client, minicom and rancid
   * looking: {arp-,ike-,ssl}scan, iptraf-ng, nethogs, upnp-inspector, mtr{-gtk}, lft
-  * touching: wireshark-qt, {ze}nmap, wapiti, xprobe2, scapy & {h,n}ping, aircrack-ng, kismet, reaver
+  * touching: wireshark-qt, {ze}nmap, wapiti, xprobe2, scapy & {f,h,n}ping, aircrack-ng, kismet, reaver
   * filesharing: nfs-kernel-server, pure-ftpd, samba
 * filesystem tools:  
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat kernel module

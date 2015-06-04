@@ -164,6 +164,7 @@ fonttools
 fonttosfnt
 foo2zjs
 foremost
+fping
 fprintd-pam
 freenx-client
 free-ttf-fonts
@@ -674,7 +675,6 @@ nfs-client
 nitrogen
 nmap
 nmon
-noping
 npapi-vlc
 nping
 nscd
@@ -705,7 +705,6 @@ openvas-administrator
 openvas-cli
 openvas-manager
 openvas-scanner
-oping
 opus-tools
 oxygen-cursors4
 oxygen-ionized-icon-theme
