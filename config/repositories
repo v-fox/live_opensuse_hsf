@@ -14,7 +14,7 @@
 		<source path='obs://Kernel:stable/standard'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='40' alias='Packman'>
-		<source path='http://packman.inode.at/suse/openSUSE_13.2'/>
+		<source path='http://mirror.karneval.cz/pub/linux/packman/suse/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='30' alias='Mozilla_Factory'>
 		<source path='obs://mozilla:Factory/openSUSE_13.2'/>
