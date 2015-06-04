@@ -838,10 +838,6 @@ sil-padauk-fonts
 simplescreenrecorder
 sipcalc
 siproxd
-sipwitch-plugin-forward
-sipwitch-plugin-scripting
-sipwitch-plugin-subscriber
-sipwitch-plugin-zeroconf
 sleuthkit
 smartmontools
 smestorage
@@ -871,7 +867,6 @@ subtitlecomposer
 subversion
 sudo
 SuSEfirewall2
-switchview
 sysconfig-netconfig
 syslinux
 system-config-printer-applet

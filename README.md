@@ -40,7 +40,7 @@ mednafen, small yet feature-rich JACK-enabled multi-system emulator
 * OpenVAS and ClamAV security systems
 * anti-censorship kit: Tor/Polipo, dnscrypt-proxy/Unbound, proxychains and VPN
 * LeechCraft modular system stripped for only IM and socializing
-* LinPhone & SIP Witch for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
+* LinPhone for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
 Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say)
 * fresh Mozilla Firefox browser and Thunderbird e-mail client;  
 fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
@@ -133,9 +133,9 @@ Notes:
 * font creation  
   * fontforge  
 * OCR (image_of_text-to-real_text conversion)  
-  * yagf (xsane OCR wrapper)  
+  * cuneiform / tesseract-{gui} / gocr{-gui} / orcad / ocropus (OCR systems)  
+  * yagf (xsane-to-OCR wrapper)  
   * djvubind or ocrodjvu/img2djvu (DjVu-centric wrappers for OCR systems)  
-  * tesseract-{gui} / cuneiform / gocr{-gui} / orcad / ocropus (OCR systems)  
 * telephony  
   * sflphone-client-gnome (SIP client that natively supports JACK and has many features... and glitches)  
   * blink (supposedly is "the best real-time communications client using SIP protocol". ALSA-only and crash-prone)  
