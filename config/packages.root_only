@@ -549,6 +549,7 @@ libOSMesa9
 libotr2-tools
 libpoppler-glib8
 libpoppler-qt4-4
+libprojectM-libvisual
 libpurple-meanwhile
 libpurple-plugin-facebookchat
 libpurple-plugin-mrim
@@ -585,6 +586,7 @@ libvirt-daemon-config-network
 libvirt-daemon-config-nwfilter
 libvirt-daemon-qemu
 libvirt-login-shell
+libvisual-plugins
 libvmdk-tools
 libvshadow-tools
 libwpd-tools
@@ -767,6 +769,7 @@ prctl
 primus
 procinfo
 proctail
+projectM-data
 projectM-jack
 proxychains
 proxytunnel
