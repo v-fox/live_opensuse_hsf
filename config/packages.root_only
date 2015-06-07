@@ -127,6 +127,7 @@ dos2unix
 dosfstools
 dpkg
 dstat
+dvb-utils
 e2fsprogs-snapshots
 easytag
 ebtables
@@ -298,11 +299,11 @@ guestfs-data
 guestfs-tools
 gupnp-tools
 gutenprint
-guvcview
 guymager
 gvfs-backends
 gvfs-fuse
 gwenview
+hardinfo
 hashdeep
 hddtemp
 hdparm
@@ -391,6 +392,7 @@ indic-fonts
 innoextract
 intel-gpu-tools
 intlfonts-ttf-fonts
+inxi
 iodine
 iotop
 ipsec-tools
@@ -408,7 +410,6 @@ jack-stdio
 jamin
 java-plugin
 john
-jstest-gtk
 kate
 kbd
 kchmviewer
@@ -797,6 +798,7 @@ qemu-kvm
 qjackctl
 qps
 qt-mobility-pulseaudio
+qv4l2
 radeontop
 radvd
 rancid

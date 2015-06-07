@@ -12,6 +12,7 @@
 	* replacement of obsolete NPAPI flash with slightly less crappy PPAPI one
 	* replacement of gnote with keepnote due to newest GNOME idiocity
 	* replacement of n/oping (which segfaults) with fping
+	* replacement of guvcview (again, which segfaults) with qv4l2
 	* commencing actual usage of mDNS
 
 0.8.0:

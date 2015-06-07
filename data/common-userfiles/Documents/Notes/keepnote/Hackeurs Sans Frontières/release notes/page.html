@@ -3,11 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Release Notes</title>
-</head><body><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">HSF *IMPORTANT* Notes<br/>
-<ul><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
+</head><body><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">HSF *IMPORTANT* Notes<br/>
+</span></span><ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
 <li>hacker's example pgp passphrase: unsafe for work. DON'T actually USE IT</li>
-</ul>
-<ul><li>before using package manager, first thing you NEED to do is:</li>
+</span></span><li><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">use `</span></span><span style="background-color: #ffff99">hardinfo</span>` (GUI), <span style="font-family: DejaVu Sans"><span style="font-size: 9pt">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries</span></span></li>
+<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool but it has insane dependencies, so we have to do without</li>
+</span></span></ul>
+<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><ul><li>before using package manager, first thing you NEED to do is:</li>
 <li style="list-style-type: none">∘ `<span style="background-color: #ffff99">sudo zypper --gpg-auto-import-keys refresh</span>` in terminal to get repo-caches _and import all their keys_</li>
 <li>if you have installed HSF, before performing any bandwidth-intensive operations you might want to run `<span style="background-color: #ffff99">yast2 proxy</span>` and disable global proxying so you wouldn't waste Tor's resources needlessly</li>
 <li>default Firefox and Thunderbird profiles are configured to use proxying via Tor by default, there are addons installed to easily switching it on and off</li>
