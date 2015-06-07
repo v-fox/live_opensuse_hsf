@@ -309,7 +309,6 @@ user_pref("layers.async-pan-zoom.enabled", true);
 user_pref("layers.offmainthreadcomposition.animate-opacity", true);
 user_pref("layers.offmainthreadcomposition.animate-transform", true);
 user_pref("layers.offmainthreadcomposition.async-animations", true);
-user_pref("layers.offmainthreadcomposition.enabled", true);
 user_pref("layout.css.font-features.enabled", true);
 user_pref("layout.css.osx-font-smoothing.enabled", true);
 user_pref("layout.css.text-align-true-value.enabled", true);
