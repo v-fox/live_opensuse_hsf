@@ -13,7 +13,6 @@
 	* replacement of gnote with keepnote due to newest GNOME idiocity
 	* replacement of n/oping (which segfaults) with fping
 	* replacement of guvcview (again, which segfaults) with qv4l2
-	* replacement of msx264-mediastreamer with msopenh264-mediastreamer
 	* commencing actual usage of mDNS
 
 0.8.0:
