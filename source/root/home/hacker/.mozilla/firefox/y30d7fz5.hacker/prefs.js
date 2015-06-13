@@ -298,6 +298,7 @@ user_pref("gfx.canvas.azure.accelerated", true);
 user_pref("gfx.canvas.azure.backends", "skia,cairo");
 user_pref("gfx.canvas.azure.enabled", true);
 user_pref("gfx.color_management.enablev4", true);
+user_pref("gfx.color_management.mode", 1);
 user_pref("gfx.content.azure.enable", true);
 user_pref("gfx.use_text_smoothing_setting", true);
 user_pref("gfx.work-around-driver-bugs", false);
