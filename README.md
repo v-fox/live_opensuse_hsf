@@ -38,7 +38,7 @@ mednafen, small yet feature-rich JACK-enabled multi-system emulator
 (featuring userland virt-manager and SPICE flowing out-of-the-box)
 * professional networking tools and rich connectivity options
 * OpenVAS and ClamAV security systems
-* anti-censorship kit: Tor/Polipo, dnscrypt-proxy/Unbound, proxychains and VPN
+* anti-censorship kit: Tor/Privoxy, dnscrypt-proxy/Unbound, proxychains and VPN
 * LeechCraft modular system stripped for only IM and socializing
 * LinPhone for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
 Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say)

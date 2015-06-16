@@ -756,7 +756,6 @@ pmacct
 pm-profiler
 pm-utils
 pngcrush
-polipo
 polkit-default-privs
 poppler-data
 poppler-tools
@@ -768,6 +767,7 @@ ppp
 ppp-userpass
 prctl
 primus
+privoxy
 procinfo
 proctail
 projectM-data

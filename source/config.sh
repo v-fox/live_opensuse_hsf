@@ -66,7 +66,7 @@ systemctl enable ntp
 systemctl enable dnscrypt-proxy
 systemctl enable unbound
 systemctl enable tor
-systemctl enable polipo
+systemctl enable privoxy
 systemctl enable avahi-daemon
 # linphone provides P2P SIP, so we don't need SIP Witch
 #systemctl enable sipwitch

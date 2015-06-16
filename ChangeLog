@@ -8,6 +8,7 @@
 	* removal of vaapi support in gstreamer (it brings more trouble than it's worth)
 	* removal of XScreenSaver (due to inhibition problem)
 	* removal of SIP Witch (too specific purpose)
+	* replacement of caching polipo with non-caching privoxy Tor-forwarding proxy
 	* replacement of unetbootin with imagewriter & live-{fat-stick,usb-gui}
 	* replacement of obsolete NPAPI flash with slightly less crappy PPAPI one
 	* replacement of gnote with keepnote due to newest GNOME idiocity
