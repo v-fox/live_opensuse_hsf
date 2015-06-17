@@ -5,6 +5,7 @@
 	* fix for YaST2-firstboot no-GUI oversight
 	* addition of Tano IPTV player and return of non-beta VLC
 	* addition of mednafen, JACK-capable multi-system emulator
+	* addition of efitools and UEFITool for manipulating U/EFI crap
 	* removal of vaapi support in gstreamer (it brings more trouble than it's worth)
 	* removal of XScreenSaver (due to inhibition problem)
 	* removal of SIP Witch (too specific purpose)

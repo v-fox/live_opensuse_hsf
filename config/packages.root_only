@@ -132,6 +132,7 @@ e2fsprogs-snapshots
 easytag
 ebtables
 ecryptfs-utils
+efitools
 efont-unicode
 emount
 enca
@@ -910,6 +911,7 @@ udev
 udftools
 udisks
 udisks2
+UEFITool
 ulogd
 unace
 unbound
