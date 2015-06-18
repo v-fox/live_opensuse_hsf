@@ -52,7 +52,7 @@
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='Archiving'>
 		<source path='obs://Archiving/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='80' alias='Virtualization'>
+	<repository type='rpm-md' imageinclude='true' priority='92' alias='Virtualization'>
 		<source path='obs://Virtualization/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_samba_STABLE'>
