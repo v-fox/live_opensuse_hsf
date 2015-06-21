@@ -12,5 +12,6 @@
   <key>info_sort_dir</key><integer>1</integer>
   <key>order</key><integer>0</integer>
   <key>info_sort</key><string>order</string>
+  <key>icon</key><string>important.png</string>
 </dict>
 </node>
