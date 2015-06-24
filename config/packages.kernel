@@ -4,4 +4,3 @@
                 <package name='vhba-kmp-desktop' bootinclude='true'/>
                 <package name='bbswitch-kmp-desktop' bootinclude='true'/>
                 <package name='ipset-kmp-desktop'/>
-                <package name='xtables-addons-kmp-desktop'/>
