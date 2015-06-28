@@ -16,6 +16,9 @@
 	* replacement of n/oping (which segfaults) with fping
 	* replacement of guvcview (again, which segfaults) with qv4l2
 	* commencing actual usage of mDNS
+	* Firefox and TB are forced to use EGL;
+		Firefox also is forced to use OMTC and switch off its driver blacklist
+		(overwise interface is slow and HTML5 video is choppy)
 
 0.8.0:
 	* Transition to OpenSUSE 13.2

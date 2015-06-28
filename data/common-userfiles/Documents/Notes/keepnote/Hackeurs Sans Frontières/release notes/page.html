@@ -3,19 +3,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Release Notes</title>
-</head><body><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">HSF *IMPORTANT* Notes<br/>
-</span></span><ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
+</head><body><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">HSF *IMPORTANT* Notes<br/>
+</span></span><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
 <li>hacker's example pgp passphrase: unsafe for work. DON'T actually USE IT</li>
-</span></span><li><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">use `</span></span><span style="background-color: #ffff99">hardinfo</span>` (GUI), <span style="font-family: DejaVu Sans"><span style="font-size: 9pt">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries</span></span></li>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool but it has insane dependencies, so we have to do without</li>
-</span></span></ul>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><ul><li>before using package manager, first thing you NEED to do is:</li>
+</span></span><li><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">use `</span></span><span style="background-color: #ffff99">hardinfo</span>` (GUI), <span style="font-size: 9pt"><span style="font-family: DejaVu Sans">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries</span></span></li>
+<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool but it has insane dependencies, so we have to do without</li>
+<li>before using package manager, first thing you NEED to do is:</li>
 <li style="list-style-type: none">∘ `<span style="background-color: #ffff99">sudo zypper --gpg-auto-import-keys refresh</span>` in terminal to get repo-caches _and import all their keys_</li>
 <li>if you have installed HSF, before performing any bandwidth-intensive operations you might want to run `<span style="background-color: #ffff99">yast2 proxy</span>` and disable global proxying so you wouldn't waste Tor's resources needlessly</li>
 <li>default Firefox and Thunderbird profiles are configured to use proxying via Tor by default, there are addons installed to easily switching it on and off</li>
 <li>/tmp runs on RAM-disk with size of 10% of total RAM capacity, so don't let your apps shit in it. 25% more is used for compressed swap-in-RAM (compcache/zram) by default.</li>
-</ul>
-<ul><li>encryption and security tips:</li>
+</span></span></ul>
+<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><ul><li>encryption and security tips:</li>
 <li style="list-style-type: none">∘ all DNS queries are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them to OpenDNS via encrypted connection. if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<span style="background-color: #ffff99">network.proxy.socks_remote_dns</span>' parameter in Firefox, Thunderbird and all Mozilla apps</li>
 <li style="list-style-type: none">∘ for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)</li>
 <li style="list-style-type: none">∘ try not to use Google products and Facebook</li>
@@ -92,6 +91,10 @@
 <li style="list-style-type: none">∘ add your language in `<span style="background-color: #ffff99">yast2 language</span>` and `<span style="background-color: #ffff99">yast2 sw_single</span>` (you may have to allow installing 'recommended' packages for that to work)</li>
 <li style="list-style-type: none">∘ <span style="background-color: #ffff99">ibus</span>&nbsp;input method daemon is launched for 'hacker' user, you can access its preferences via system tray icon and add your keyboard settings there</li>
 <li style="list-style-type: none">∘ to set up non-ibus input you, probably, has to use systemd's new "bicycle" named `<span style="background-color: #ffff99">localectl</span>` (when those assholes would learn to put functional part, like "ctl", of the name first ?)</li>
+</ul>
+<ul><li>Firefox and Thunderbird are forced to use EGL for graphical acceleration</li>
+<li style="list-style-type: none">∘ Firefox hates it and tries to block all acceleration activity by enacting its bullshit video driver blacklist but it's is forced off by super-secret '<span style="background-color: #ffff99">MOZ_GLX_IGNORE_BLACKLIST=1</span>' envvar in our build (mozilla.sh)</li>
+<li style="list-style-type: none">∘ Firefox often shits itself while in its full-OpenGL mode (OMTC) by drawing all windows 100% white but without it video playback is horrendous, so it's forced on with secret '<span style="background-color: #ffff99">MOZ_USE_OMTC=1</span>' global envvar</li>
 </ul>
 <ul><li>important default hotkeys:</li>
 <li style="list-style-type: none">∘ Ctrl+Alt+BackSpace &#09;&#09;&#09;= kill entire graphical session</li>
