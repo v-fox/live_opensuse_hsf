@@ -42,8 +42,8 @@
    <plug>front-right</plug>
   </socket>
   <socket exclusive="off" client=".*" type="jack-audio" name="all GStreamer players">
-   <plug>out_.*audiosink[\-0-9]+_1</plug>
-   <plug>out_.*audiosink[\-0-9]+_2</plug>
+   <plug>out_.*audio(sink|out)(|[\-0-9])+_1</plug>
+   <plug>out_.*audio(sink|out)(|[\-0-9])+_2</plug>
   </socket>
   <socket exclusive="off" client="flash(|-.[0-9])|freshwrapper(|-.[0-9])" type="jack-audio" name="Adobe Flash (NPAPI &amp; PPAPI)">
    <plug>out1|output1</plug>
@@ -76,6 +76,7 @@
  <cables>
   <cable output="Jamin output" input="main output" type="jack-audio"/>
   <cable output="mplayer &amp; mpv" input="jamin volume boost" type="jack-audio"/>
+  <cable output="Mednafen emulator" input="jamin volume boost" type="jack-audio"/>
   <cable output="VLC" input="jamin volume boost" type="jack-audio"/>
   <cable output="TiMidity" input="jamin volume boost" type="jack-audio"/>
   <cable output="fluidsynth" input="jamin volume boost" type="jack-audio"/>
@@ -85,7 +86,6 @@
   <cable output="PA stereo output" input="jamin volume boost" type="jack-audio"/>
   <cable output="all GStreamer players" input="jamin volume boost" type="jack-audio"/>
   <cable output="Adobe Flash (NPAPI &amp; PPAPI)" input="jamin volume boost" type="jack-audio"/>
-  <cable output="Mednafen emulator" input="jamin volume boost" type="jack-audio"/>
  </cables>
 </patchbay>
 
