@@ -43,6 +43,7 @@ bash-completion
 bbswitch
 bc
 bcg729-mediastreamer
+beignet
 bindfs
 bind-utils
 bitmap
@@ -546,6 +547,8 @@ libiscsi-utils
 liblnk-tools
 libmsiecf-tools
 libolecf-tools
+libomxil-bellagio
+libomx_mesa
 libopenssl1_0_0-hmac
 libopenvas
 libOSMesa9
@@ -628,6 +631,7 @@ mercurial
 Mesa
 Mesa-demo-egl
 Mesa-demo-x
+Mesa-libOpenCL1
 minicom
 miniupnpc
 miredo-client
@@ -685,7 +689,6 @@ ntfs-3g
 ntp
 ntpclient
 nut-drivers-net
-nvidia-texture-tools
 obexfs
 ocfs2console
 ofono
