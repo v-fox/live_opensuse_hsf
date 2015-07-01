@@ -31,31 +31,21 @@ export GTKCAIRO_BACKEND=gl
 # Libre/OO stuff
 OOO_FORCE_DESKTOP="kde4"
 # atk/gtk missing accessibility crutch. http://debbugs.gnu.org/cgi/bugreport.cgi?bug=15154#11
-NO_AT_BRIDGE=1
+#NO_AT_BRIDGE=1
 # enabling pretty password prompter
 # LXQt:'/usr/bin/lxqt-openssh-askpass', GNOME:'/usr/lib64/seahorse/seahorse-ssh-askpass', KDE:'/usr/lib/ssh/ksshaskpass'
 SUDO_ASKPASS=/usr/bin/lxqt-openssh-askpass
 SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
 GIT_ASKPASS=/usr/bin/lxqt-openssh-askpass
 # enabling texture compression support
-force_s3tc_enable=true
-# open radeon driver goodness
-#R600_STREAMOUT=1
-#R600_GLSL130=1
-#R600_HYPERZ=1
-#R600_TILING=1
-#R600_SURF=1
-# for OpenCL support on pre-HD7xxx cards with LLVM backend (brakes rendering)
-#R600_DEBUG=llvm
-# for better shader rendering but without OpenCL
-#R600_DEBUG=sb
-# for dual-GPU bullshit
+#force_s3tc_enable=true
+# for dual-GPU bullshit, forcing the usage of non-shitty card
 DRI_PRIME=1
 # SDL tuning
 SDL_VIDEO_YUV_HWACCEL=1
 # kmix crutch to prevent it from fiddling with PA
-KMIX_PULSEAUDIO_DISABLE=1
-# PA echo cancellation
+#KMIX_PULSEAUDIO_DISABLE=1
+# for dynamic usage of PA echo cancellation, may not work and that's why we have static configuration in ~/.config/pulse/default.pa
 #PULSE_PROP="filter.want=echo-cancel"
 ## hardware video decoding stuff. READ gnote NOTES before changing !
 # LIBVA is VERY TROUBLESOME: GStreamer apps are always trying to initialize HVD through it even when they clearly can't and fail miserably

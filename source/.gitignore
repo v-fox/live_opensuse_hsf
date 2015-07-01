@@ -884,9 +884,6 @@ root/home/hacker/.config/Trolltech.conf
 root/etc/skel/.config/qBittorrent/qBittorrent.conf
 root/root/.config/qBittorrent/qBittorrent.conf
 root/home/hacker/.config/qBittorrent/qBittorrent.conf
-root/etc/skel/.config/compton.conf
-root/root/.config/compton.conf
-root/home/hacker/.config/compton.conf
 root/etc/skel/.Xresources
 root/root/.Xresources
 root/home/hacker/.Xresources
