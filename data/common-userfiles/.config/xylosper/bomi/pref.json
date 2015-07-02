@@ -13,7 +13,7 @@
         },
         "lines": 1000
     },
-    "app_style": "fusion",
+    "app_style": "gtk+",
     "app_unique": true,
     "audio_autoload": {
         "enabled": true,
@@ -102868,14 +102868,14 @@
                 }
             },
             "font": {
-                "color": "#ffaaff7f",
-                "qfont": "Iomanoid,-1,20,5,50,0,0,0,0,0",
-                "size": 0.059999999999999998
+                "color": "#ff98e170",
+                "qfont": "Joystix,-1,20,5,50,0,0,0,0,0",
+                "size": 0.040000000000000001
             },
             "outline": {
                 "color": "#ff000000",
                 "enabled": true,
-                "width": 0.059999999999999998
+                "width": 0.040000000000000001
             },
             "shadow": {
                 "blur": true,
