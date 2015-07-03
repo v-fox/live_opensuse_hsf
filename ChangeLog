@@ -8,6 +8,7 @@
 	* addition of mednafen, JACK-capable multi-system emulator
 	* addition of efitools and UEFITool for manipulating U/EFI crap
 	* removal of vaapi support in gstreamer (it brings more trouble than it's worth)
+	* removal of basic devel packages for purpose of space conservation
 	* removal of XScreenSaver (due to inhibition problem)
 	* removal of SIP Witch (too specific purpose)
 	* replacement of caching polipo with non-caching privoxy Tor-forwarding proxy
