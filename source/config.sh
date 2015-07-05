@@ -81,17 +81,9 @@ systemctl enable libvirtd
 # preemptively generate unbound keys
 systemctl start unbound-keygen
 # preemptively building our dkms kernel modules
-dkms autoinstall
+#dkms autoinstall
 # preemptively setting up NIS domain name for legacy compatibility
 netconfig update
-
-# making list of installed packages from default user
-OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
-NAME_PRETTY=$(echo "${kiwi_iname}" | sed 's:_: :g')
-eval $(grep --color=no BUILD_ID /etc/os-release)
-PACKAGE_LIST="/home/${OUR_USER}/${NAME_PRETTY} - package list - ${kiwi_iversion}_${BUILD_ID}.txt"
-rpm -qa | sort -fu > "${PACKAGE_LIST}"
-chown ${OUR_USER}:users "${PACKAGE_LIST}"
 
 # updating gtk icon cache in hopes that it'll help with missing icons
 find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -q -t -f "{}" \;
@@ -106,6 +98,21 @@ update-smart-drivedb
 localectl list-x11-keymap-models "evdev"
 localectl list-x11-keymap-options "grp:ctrl_shift_toggle,grp_led:scroll,compose:ralt,terminate:ctrl_alt_bksp"
 
+# force-installing Google-fonts from crapload of packages here instead of the proper place
+zypper --non-interactive --gpg-auto-import-keys refresh
+zypper --non-interactive install "google-*-fonts"
+zypper --non-interactive install "noto-sans*"
+zypper --non-interactive install "noto-serif*"
+rm -rf /var/{cache,log}/zypp/*
+
+# making list of installed packages from default user
+OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
+NAME_PRETTY=$(echo "${kiwi_iname}" | sed 's:_: :g')
+eval $(grep --color=no BUILD_ID /etc/os-release)
+PACKAGE_LIST="/home/${OUR_USER}/${NAME_PRETTY} - package list - ${kiwi_iversion}_${BUILD_ID}.txt"
+rpm -qa | sort -fu > "${PACKAGE_LIST}"
+chown ${OUR_USER}:users "${PACKAGE_LIST}"
+
 #======================================
 # Prune extraneous files
 #--------------------------------------
@@ -117,7 +124,7 @@ find /usr/share/doc/packages -type f -iregex ".*copying*\|.*license*\|.*copyrigh
 #--------------------------------------
 #baseStripLocales \
 #	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
-#baseStripTranslations kiwi.mo
+baseStripTranslations kiwi.mo
 
 #======================================
 # SSL Certificates Configuration
