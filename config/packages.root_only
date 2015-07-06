@@ -60,7 +60,6 @@ bundle-lang-common-en
 cabextract
 ca-certificates
 cagibi
-calibre
 ccgfs
 cddfs
 cdemu-client
@@ -88,6 +87,7 @@ conky-imlib2
 conky-keyring
 conky-nano
 conntrack-tools
+coolreader3-qt5
 copyq
 cpupower
 cpupower-bench
@@ -876,7 +876,6 @@ unidings-fonts
 unionfs-fuse
 unoconv
 unrar
-upnp-inspector
 upower
 usbip
 usb_modeswitch-data

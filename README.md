@@ -18,7 +18,7 @@ or bleeding edge (configured) from pontostroy (git & kernel rc's)
 * LXQt slim desktop environment
 * international collection of fonts and universal iBus input method by default
 * LibreOffice, GIMP and fresh GoldenDict;  
-Calibre, okular, kchmviewer, djvulibre-djview4 and pdfcrack
+CoolReader3-Qt5, Okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
 * bomi/mpv (ex-C/Mplayer) & Tano video & IPTV players, VLC Firefox plugin;  

@@ -122,12 +122,14 @@ chown ${OUR_USER}:users "${PACKAGE_LIST}"
 #--------------------------------------
 # Remove all license files
 find /usr/share/doc/packages -type f -iregex ".*copying*\|.*license*\|.*copyright*" -exec rm -fv "{}" \;
+# Remove all documentation
+rm -rf /usr/share/doc/*
 
 #======================================
 # Keep UTF-8 locale and delete all translations
 #--------------------------------------
-#baseStripLocales \
-#	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
+baseStripLocales \
+	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
 baseStripTranslations kiwi.mo
 
 #======================================

@@ -18,7 +18,8 @@
 	* replacement of gnote with keepnote due to newest GNOME idiocity
 	* replacement of n/oping (which segfaults) with fping
 	* replacement of guvcview (again, which segfaults) with qv4l2
-	* replacement of PeaZip (extreme fatness) with xarchiver
+	* replacement of PeaZip (fatness) with xarchiver
+	* replacement of Calibre (extreme fatness) with CoolReader3-Qt5
 	* commencing actual usage of mDNS
 	* Firefox and TB are forced to use EGL;
 		Firefox also is forced to use OMTC and switch off its driver blacklist
