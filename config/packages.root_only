@@ -4,7 +4,6 @@ acl
 acpid
 AdobeICCProfiles
 adobe-sourcecodepro-fonts
-adobe-sourcesanspro-fonts
 adobe-sourceserifpro-fonts
 aegisub
 aespipe
@@ -20,7 +19,6 @@ aMule
 android-tools
 antimicro
 apparmor-utils
-arabic-fonts
 archivemount
 aria2fe
 arj
@@ -78,7 +76,6 @@ clamtk
 clamtk-kde
 clementine
 clicfs
-cm-unicode-fonts
 colord
 colordiff
 color-filesystem
@@ -105,7 +102,6 @@ cups-filters-cups-browsed
 cups-pdf
 curlftpfs
 curlwwwfs
-cyreal-lobster-cyrillic-fonts
 davfs2
 dc3dd
 dconf
@@ -134,7 +130,6 @@ easytag
 ebtables
 ecryptfs-utils
 efitools
-efont-unicode
 emount
 enca
 encfs
@@ -146,7 +141,6 @@ exfat-utils
 ext3grep
 ext4magic
 f2fs-tools
-farsi-fonts
 fatattr
 fatsort
 fbcat
@@ -193,10 +187,6 @@ gcr-viewer
 gdk-pixbuf-loader-libopenraw
 gdk-pixbuf-loader-rsvg
 gdk-pixbuf-query-loaders
-gdouros-aegean-fonts
-gdouros-analecta-fonts
-gdouros-musica-fonts
-gdouros-symbola-fonts
 gegl-0_2
 GeoIP-data
 get-flash-videos
@@ -369,10 +359,8 @@ ike-scan
 ImageMagick
 ImageMagick-extra
 imagewriter
-indic-fonts
 innoextract
 intel-gpu-tools
-intlfonts-ttf-fonts
 inxi
 iodine
 iotop
@@ -396,7 +384,6 @@ kate
 kbd
 kchmviewer
 kdeartwork4-icons
-kde-oxygen-fonts
 kdiff3
 kdnssd
 keepassx
@@ -404,7 +391,6 @@ keepnote
 keepnote-extensions
 keepnote-lang
 kfilemetadata
-khmeros-fonts
 killswitch-applet
 kio_iso
 kio_kamera
@@ -620,7 +606,6 @@ mlocate
 ModemManager
 modem-manager-gui
 monapo-fonts
-mongolian-fonts
 mozaddon-gnotifier
 MozillaFirefox
 mozilla-kde4-integration
@@ -638,8 +623,6 @@ mtp-tools
 mtr
 mtr-gtk
 myspell-en
-nanum-fonts
-nanum-gothic-coding-fonts
 ncat
 ncdu
 ndiff
@@ -679,7 +662,6 @@ onboard-data
 openal-soft
 openclipart-png
 opengost-otf-fonts
-opengost-ttf-fonts
 open-iscsi
 openldap2-client
 openobex-apps
@@ -745,7 +727,6 @@ polkit-default-privs
 poppler-data
 poppler-tools
 posixovl
-pothana2000-fonts
 powerd
 powertop
 ppp
@@ -803,7 +784,6 @@ rtmpdump
 samba-client
 sane-backends
 sane-backends-autoconfig
-sazanami-fonts
 sbc
 sbl
 scalpel
@@ -819,10 +799,10 @@ sentinella
 setserial
 sg3_utils
 shim
-showfont
 signing-party
 sil-charis-fonts
-sil-padauk-fonts
+sil-doulos-fonts
+sil-gentium-fonts
 simplescreenrecorder
 sipcalc
 siproxd
@@ -832,8 +812,6 @@ smestorage
 snapper
 snapper-zypp-plugin
 snmp-mibs
-sourcesanspro-fonts
-sourceserifpro-fonts
 sox
 spax
 spice-client
@@ -849,6 +827,8 @@ sslscan
 sssd
 stix-fonts
 stix-integrals-fonts
+stix-sizes-fonts
+stix-variants-fonts
 strace
 stress
 subtitlecomposer
@@ -873,10 +853,6 @@ terminfo
 terminus-bitmap-fonts
 testdisk
 tftp
-thai-fonts
-thessalonica-oldstandard-otf-fonts
-thessalonica-theano-otf-fonts
-thryomanes-fonts
 timezone
 tmpwatch
 tor
@@ -889,7 +865,6 @@ tree
 tunctl
 tuxcursors
 tvtime
-ubuntu-fonts
 ucode-intel
 udev
 udftools
@@ -945,8 +920,6 @@ wm-icons
 wminput
 wol
 wpa_supplicant-gui
-wqy-microhei-fonts
-wqy-zenhei-fonts
 wvdial
 x265
 xar
@@ -986,8 +959,6 @@ xorg-x11
 xorg-x11-driver-input
 xorg-x11-driver-video
 xorg-x11-essentials
-xorg-x11-fonts
-xorg-x11-fonts-core
 xorg-x11-libs
 xorg-x11-libX11-ccache
 xorg-x11-server-extra

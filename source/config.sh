@@ -78,6 +78,10 @@ systemctl enable spice-vdagentd
 # needed for it to run VMs
 systemctl enable libvirtd
 
+# systemd locale defaults
+localectl list-x11-keymap-models "evdev"
+localectl list-x11-keymap-options "grp:ctrl_shift_toggle,grp_led:scroll,compose:ralt,terminate:ctrl_alt_bksp"
+
 # preemptively generate unbound keys
 systemctl start unbound-keygen
 # preemptively building our dkms kernel modules
@@ -88,15 +92,16 @@ netconfig update
 # updating gtk icon cache in hopes that it'll help with missing icons
 find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -q -t -f "{}" \;
 
+# making sure that proxy is not used
+for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
+        unset "${i}"
+done
+
 # staying fresh even in deeper places
 update-ca-certificates
 update-pciids
 update-usbids.sh
 update-smart-drivedb
-
-# systemd locale defaults
-localectl list-x11-keymap-models "evdev"
-localectl list-x11-keymap-options "grp:ctrl_shift_toggle,grp_led:scroll,compose:ralt,terminate:ctrl_alt_bksp"
 
 # force-installing Google-fonts from crapload of packages here instead of the proper place
 zypper --non-interactive --gpg-auto-import-keys refresh

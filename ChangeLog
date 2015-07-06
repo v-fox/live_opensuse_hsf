@@ -3,6 +3,7 @@
 		space exhaustion on 2GB USB sticks (you better off just installing it instead)
 	* LXQt migration to Qt5 / 0.9 update
 	* fix for YaST2-firstboot no-GUI oversight
+	* font selection is completely overhauled in favour of Google Noto collection
 	* support for F/OSS OpenMAX IL (AMD & Nvidia) and OpenCL (AMD & Intel)
 	* addition of Tano IPTV player and return of non-beta VLC
 	* addition of mednafen, JACK-capable multi-system emulator
