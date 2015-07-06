@@ -3,13 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Release Notes</title>
-</head><body><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">HSF *IMPORTANT* Notes<br/>
-</span></span><ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
+</head><body><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">HSF *IMPORTANT* Notes<br/>
+</span></span><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
 <li>hacker's example pgp passphrase: unsafe for work. DON'T actually USE IT</li>
-</span></span><li><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">use `</span></span><span style="background-color: #ffff99">hardinfo</span>` (GUI), <span style="font-family: DejaVu Sans"><span style="font-size: 9pt">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries</span></span></li>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool but it has insane dependencies, so we have to do without</li>
-<li>before using package manager, first thing you NEED to do is:</li>
-<li style="list-style-type: none">∘ `<span style="background-color: #ffff99">sudo zypper --gpg-auto-import-keys refresh</span>` in terminal to get repo-caches _and import all their keys_</li>
+</span></span><li><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">use `</span></span><span style="background-color: #ffff99">hardinfo</span>`(GUI), <span style="font-size: 9pt"><span style="font-family: DejaVu Sans">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries</span></span></li>
+<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool but it has insane dependencies, so we have to do without</li>
+<li>before using package manager, you may need to do:</li>
+<li style="list-style-type: none">∘ `<span style="background-color: #ffff99">sudo zypper --gpg-auto-import-keys refresh</span>` in terminal to get repo-caches and import/update all their keys</li>
 <li>if you have installed HSF, before performing any bandwidth-intensive operations you might want to run `<span style="background-color: #ffff99">yast2 proxy</span>` and disable global proxying so you wouldn't waste Tor's resources needlessly</li>
 <li>default Firefox and Thunderbird profiles are configured to use proxying via Tor by default, there are addons installed to easily switching it on and off</li>
 <li>/tmp runs on RAM-disk with size of 10% of total RAM capacity, so don't let your apps shit in it. 25% more is used for compressed swap-in-RAM (compcache/zram) by default.</li>
@@ -22,8 +22,7 @@
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ or <a href="https://www.acritelli.com/hacking-voip-decrypting-sdes-protected-srtp-phone-calls/">Party Van will come</a></li>
 </ul>
 </li>
-</span></span></ul>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><ul><li>important changes were made to <a href="/etc/zypp/zypp.conf ">/etc/zypp/zypp.conf </a></li>
+<li>important changes were made to <a href="/etc/zypp/zypp.conf ">/etc/zypp/zypp.conf </a></li>
 <li style="list-style-type: none">∘ '<span style="background-color: #ffff99">solver.allowVendorChange</span>' was set to 'true'.</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ it should be safe due to strict prioritization in repo list, but keep that in mind anyway.</li>
 </ul>
@@ -42,8 +41,8 @@
 </ul>
 </li>
 <li>you might want to also check Options-&gt;'<span style="background-color: #ffff99">Ignore recommended packages for already installed packages</span>' in YaST Package Manager to achieve same effect as with 'installRecommends' for zypper and prevent it from installing loads of unnecessary crap (but only for already installed packages)</li>
-</ul>
-<ul><li><span style="background-color: #ffff99">JACK</span>&nbsp;is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality</li>
+</span></span></ul>
+<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><ul><li><span style="background-color: #ffff99">JACK</span>&nbsp;is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality</li>
 <li style="list-style-type: none">∘ note <span style="background-color: #ffff99">QJackCtl</span>, JACK configurator, <span style="background-color: #ffff99">QasMixer</span>, ALSA volume configurator and <span style="background-color: #ffff99">PASysTray</span>, advanced PA configurator, and in your tray</li>
 <li style="list-style-type: none">∘ please, set all your multimedia apps to use JACK with '<span style="background-color: #ffff99">jamin</span>' port by default or disable it and then use naked PA (remove <a href="~/.config/pulse">~/.config/pulse</a>&nbsp;&amp; /etc/profile.d/zzz-jack.*). note that Firefox uses PA shim because its ALSA and JACK support is broken.</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ ALSA-only apps should use '<span style="background-color: #ffff99">default</span>' or '<span style="background-color: #ffff99">sysdefault</span>' ALSA/JACK devices</li>
