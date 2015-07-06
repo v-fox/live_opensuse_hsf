@@ -704,8 +704,6 @@ pax-utils
 pbm2l7k
 pcachefs
 pdfcrack-multithread
-peazip
-peazip-kde4
 pgpdump
 phonon4qt5-backend-gstreamer
 phonon-backend-gstreamer
@@ -923,6 +921,7 @@ wpa_supplicant-gui
 wvdial
 x265
 xar
+xarchiver
 xbacklight
 xcompmgr
 xcursor-themes
