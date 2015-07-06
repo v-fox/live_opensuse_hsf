@@ -96,6 +96,7 @@ find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cach
 for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
         unset "${i}"
 done
+alias wget="wget --no-proxy"
 
 # staying fresh even in deeper places
 update-ca-certificates
@@ -148,6 +149,7 @@ c_rehash
 #======================================
 # Umount kernel filesystems
 #--------------------------------------
+umount -f -l /sys/kernel/security
 baseCleanMount
 
 #======================================
