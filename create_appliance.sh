@@ -134,7 +134,7 @@ cat config/packages.kernel >> "${CONFIG}"
 # packages included only in initrd
 while read i; do
 	echo "		<package name='${i}' bootinclude='true' bootdelete='true'/>" >> "${CONFIG}"
-done < config/packages.to_be_deleted_manually_in_scripts_or_some_shit
+done < config/packages.initrd_creation
 # packages included in both initrd and root
 while read i; do
 	echo "		<package name='${i}' bootinclude='true'/>" >> "${CONFIG}"

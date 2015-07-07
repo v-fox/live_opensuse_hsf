@@ -21,7 +21,7 @@ or bleeding edge (configured) from pontostroy (git & kernel rc's)
 CoolReader3-Qt5, Okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
-* bomi/mpv (ex-C/Mplayer) & Tano video & IPTV players, VLC Firefox plugin;  
+* bomi/mpv (ex-C/Mplayer) GUI/CLI media players;  
 SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * professional sound handling with JACK  
 (PA & ALSA, both with OSS emulation, run as JACK's clients)
@@ -52,7 +52,7 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
   * touching: wireshark-qt, {ze}nmap, wapiti, xprobe2, scapy & {f,h,n}ping, aircrack-ng, kismet, reaver
   * filesharing: nfs-kernel-server, pure-ftpd, samba
 * filesystem tools:  
-  * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat kernel module
+  * management: gparted, {f/g}disk, gptfdisk-fixparts, snapper, disktype, exfat kernel module
   * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
   * support for pretty much all filesystems known to man, in kernel or via FUSE
   * U/EFI manipulation via efitools and UEFITool

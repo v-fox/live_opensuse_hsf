@@ -115,6 +115,7 @@ delayacct-utils
 deltarpm
 desktop-translations
 dictd
+disktype
 dispcalGUI
 djvulibre-djview4
 dmidecode
@@ -129,6 +130,7 @@ e2fsprogs-snapshots
 easytag
 ebtables
 ecryptfs-utils
+efibootmgr
 efitools
 emount
 enca
@@ -193,6 +195,7 @@ gegl-0_2
 GeoIP-data
 get-flash-videos
 gettext-tools
+gfxboot-branding-HSF
 gimp
 gimp-gap
 gimp-plugin-dds
@@ -229,6 +232,9 @@ gptfdisk-fixparts
 greenbone-security-assistant
 grub
 grub2
+grub2-branding-HSF
+grub2-i386-pc
+grub2-x86_64-efi
 gsd
 gsettings-backend-dconf
 gsettings-desktop-schemas
@@ -269,8 +275,6 @@ gtk3-immodule-xim
 gtk3-theme-oxygen
 gtk3-tools
 gucharmap
-guestfs-data
-guestfs-tools
 gupnp-tools
 gutenprint
 guymager
@@ -608,6 +612,7 @@ mkcomposecache
 mlocate
 ModemManager
 modem-manager-gui
+mokutil
 monapo-fonts
 mozaddon-gnotifier
 MozillaFirefox
@@ -648,7 +653,6 @@ nfs-client
 nitrogen
 nmap
 nmon
-npapi-vlc
 nping
 nscd
 ntfs-3g
@@ -711,6 +715,7 @@ pgpdump
 phonon4qt5-backend-gstreamer
 phonon-backend-gstreamer
 photorec
+plymouth-branding-HSF
 plymouth-plugin-fade-throbber
 plymouth-plugin-label
 plymouth-plugin-script
@@ -844,7 +849,6 @@ systemd-logger
 systemd-ui
 systemtap
 t6_client
-tano
 tarix
 tcpdump
 tc-play
@@ -895,10 +899,8 @@ vdpau-video
 vhostmd
 virt-manager
 virt-sandbox
-virt-v2v
 virt-viewer
 vlan
-vlc-codecs
 vmfs-tools
 vm-install
 vorbis-tools

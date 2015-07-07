@@ -1,0 +1,10 @@
+efibootmgr
+genisoimage
+gfxboot-branding-HSF
+grub2
+grub2-branding-HSF
+grub2-i386-pc
+grub2-x86_64-efi
+memtest86+
+mokutil
+plymouth-branding-HSF

@@ -5,13 +5,13 @@
 	* fix for YaST2-firstboot no-GUI oversight
 	* font selection is completely overhauled in favour of Google Noto collection
 	* support for F/OSS OpenMAX IL (AMD & Nvidia) and OpenCL (AMD & Intel)
-	* addition of Tano IPTV player and return of non-beta VLC
 	* addition of mednafen, JACK-capable multi-system emulator
 	* addition of efitools and UEFITool for manipulating U/EFI crap
 	* removal of vaapi support in gstreamer (it brings more trouble than it's worth)
 	* removal of basic devel packages for purpose of space conservation
 	* removal of XScreenSaver (due to inhibition problem)
 	* removal of SIP Witch (too specific purpose)
+	* removal of guestfs-tools and virt-v2v for getting into 2GB limit
 	* replacement of caching polipo with non-caching privoxy Tor-forwarding proxy
 	* replacement of unetbootin with imagewriter & live-{fat-stick,usb-gui}
 	* replacement of obsolete NPAPI flash with slightly less crappy PPAPI one
