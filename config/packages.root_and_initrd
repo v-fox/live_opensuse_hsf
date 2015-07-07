@@ -5,11 +5,17 @@ bluez-firmware
 cryptsetup
 crystalhd-firmware
 disktype
+efibootmgr
+gfxboot-branding-HSF
+grub2-branding-HSF
+grub2-i386-pc
+grub2-x86_64-efi
 ipw-firmware
 kernel-firmware
 kexec-tools
 less
 midisport-firmware
+mokutil
 mpt-firmware
 nano
 os-prober

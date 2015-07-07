@@ -1,5 +1,5 @@
 packages.patterns
-packages.initrd_creation
+packages.to_be_deleted_manually_in_scripts_or_some_shit
 packages.root_and_initrd
 packages.root_only
 packages.bootstrap

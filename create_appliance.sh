@@ -131,10 +131,10 @@ while read i; do
 done < config/packages.patterns
 # kernel package
 cat config/packages.kernel >> "${CONFIG}"
-# packages included only in initrd
+# packages included in initrd at first and then deleted with no discernible purpose
 while read i; do
 	echo "		<package name='${i}' bootinclude='true' bootdelete='true'/>" >> "${CONFIG}"
-done < config/packages.initrd_creation
+done < config/packages.weird_initrd_bullshit
 # packages included in both initrd and root
 while read i; do
 	echo "		<package name='${i}' bootinclude='true'/>" >> "${CONFIG}"

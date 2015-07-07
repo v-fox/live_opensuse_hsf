@@ -21,14 +21,14 @@ or bleeding edge (configured) from pontostroy (git & kernel rc's)
 CoolReader3-Qt5, Okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
-* bomi/mpv (ex-C/Mplayer) GUI/CLI media players;  
+* bomi/mpv (ex-C/Mplayer) & Tano video & IPTV players, VLC Firefox plugin;  
 SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * professional sound handling with JACK  
 (PA & ALSA, both with OSS emulation, run as JACK's clients)
 * Clementine audio player, Audacity audio editor/recorder;  
 GStreamer with FFMPEG and JACK output by default
 * professional colour management facilities  
-(consisting of colord, argyllCMS, dispcalGUI and xiccd)
+(consisting of colord and xiccd)
 * printer (via cups), scanner (via x/sane)  
 and analogue video input (via tvtime) support
 * professional screencasting tool SimpleScreenRecorder with native JACK support
@@ -52,12 +52,12 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
   * touching: wireshark-qt, {ze}nmap, wapiti, xprobe2, scapy & {f,h,n}ping, aircrack-ng, kismet, reaver
   * filesharing: nfs-kernel-server, pure-ftpd, samba
 * filesystem tools:  
-  * management: gparted, {f/g}disk, gptfdisk-fixparts, snapper, disktype, exfat kernel module
+  * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat kernel module
   * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
   * support for pretty much all filesystems known to man, in kernel or via FUSE
   * U/EFI manipulation via efitools and UEFITool
 * security/forensics tools:  
-  * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
+  * autopsy/sleuthkit, scalpel, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
 * encryption tools:  
   * tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx
 * useful things that I've put there but forgot to mention

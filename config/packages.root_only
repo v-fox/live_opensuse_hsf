@@ -115,8 +115,6 @@ delayacct-utils
 deltarpm
 desktop-translations
 dictd
-disktype
-dispcalGUI
 djvulibre-djview4
 dmidecode
 dnscrypt-proxy
@@ -130,7 +128,6 @@ e2fsprogs-snapshots
 easytag
 ebtables
 ecryptfs-utils
-efibootmgr
 efitools
 emount
 enca
@@ -195,7 +192,6 @@ gegl-0_2
 GeoIP-data
 get-flash-videos
 gettext-tools
-gfxboot-branding-HSF
 gimp
 gimp-gap
 gimp-plugin-dds
@@ -232,9 +228,6 @@ gptfdisk-fixparts
 greenbone-security-assistant
 grub
 grub2
-grub2-branding-HSF
-grub2-i386-pc
-grub2-x86_64-efi
 gsd
 gsettings-backend-dconf
 gsettings-desktop-schemas
@@ -275,6 +268,8 @@ gtk3-immodule-xim
 gtk3-theme-oxygen
 gtk3-tools
 gucharmap
+guestfs-data
+guestfs-tools
 gupnp-tools
 gutenprint
 guymager
@@ -506,25 +501,15 @@ libcap-progs
 libclutter-gst-2_0-0
 libcryptsetup4-hmac
 liberation-fonts
-libesedb-tools
-libevdev-tools
-libevt-tools
-libevtx-tools
-libewf-tools
-libflashsupport
 libfreerdp-1_0-plugins
 libgcrypt20-hmac
 libhmac-tools
 libiscsi-utils
-liblnk-tools
-libmsiecf-tools
-libolecf-tools
 libomxil-bellagio
 libomx_mesa
 libopenssl1_0_0-hmac
 libopenvas
 libOSMesa9
-libotr2-tools
 libpoppler-glib8
 libpoppler-qt4-4
 libprojectM-libvisual
@@ -536,7 +521,6 @@ libpurple-plugin-pack
 libpurple-plugin-pack-extras
 libpurple-plugin-sipe
 libpurple-plugin-whatsapp
-libregf-tools
 libreoffice-base-drivers-mysql
 libreoffice-branding-openSUSE
 libreoffice-calc-extensions
@@ -550,8 +534,6 @@ libreoffice-templates-labels-a4
 libreoffice-templates-labels-letter
 libreoffice-templates-presentation-layouts
 libreoffice-writer-extensions
-libsecret-tools
-libsmdev-tools
 libtxc_dxtn
 libva-egl1
 libvdpau_nouveau
@@ -565,9 +547,6 @@ libvirt-daemon-config-nwfilter
 libvirt-daemon-qemu
 libvirt-login-shell
 libvisual-plugins
-libvmdk-tools
-libvshadow-tools
-libwpd-tools
 libXaw3d8
 libXRes1
 libXTrap6
@@ -603,7 +582,6 @@ mercurial
 Mesa
 Mesa-demo-egl
 Mesa-demo-x
-Mesa-libOpenCL1
 minicom
 miniupnpc
 miredo-client
@@ -612,7 +590,6 @@ mkcomposecache
 mlocate
 ModemManager
 modem-manager-gui
-mokutil
 monapo-fonts
 mozaddon-gnotifier
 MozillaFirefox
@@ -653,6 +630,7 @@ nfs-client
 nitrogen
 nmap
 nmon
+npapi-vlc
 nping
 nscd
 ntfs-3g
@@ -715,7 +693,6 @@ pgpdump
 phonon4qt5-backend-gstreamer
 phonon-backend-gstreamer
 photorec
-plymouth-branding-HSF
 plymouth-plugin-fade-throbber
 plymouth-plugin-label
 plymouth-plugin-script
@@ -760,8 +737,6 @@ pulseaudio-utils
 pulseaudio-zsh-completion
 pure-ftpd
 pwgen
-python-plaso
-python-scapy
 python-SpiceClientGtk
 qasmixer
 qbittorrent
@@ -849,6 +824,7 @@ systemd-logger
 systemd-ui
 systemtap
 t6_client
+tano
 tarix
 tcpdump
 tc-play
@@ -899,8 +875,10 @@ vdpau-video
 vhostmd
 virt-manager
 virt-sandbox
+virt-v2v
 virt-viewer
 vlan
+vlc-codecs
 vmfs-tools
 vm-install
 vorbis-tools
