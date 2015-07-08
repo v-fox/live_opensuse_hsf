@@ -9,7 +9,14 @@
 	* support for OpenCL (AMD & Intel)
 	* support for high-quality midi playback via fluidsynth
 	* addition of wine with native Gallium DirectX 9 support
-	* addition of well working gaming emulators
+	* addition of more working gaming emulators:
+		OpenMSX for MSX®
+		PPSSPP for Sony© PSP®
+		PCSX-R for Sony© PlayStation®
+		PCSX 2 for Sony© PlayStation® 2
+		Dolphin-Emu for Nintendo© Gamecube® & Wii®
+		Mupen64Plus for Nintendo© N64®
+		Yabause for Sega© Saturn®
 
 0.8.1:
         * file persistency is disabled again due to extreme system slowness and

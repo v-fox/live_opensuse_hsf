@@ -1,4 +1,6 @@
 apparmor
+devel_basis
+devel_rpm_build
 enhanced_base
 enhanced_base_opt
 fonts
@@ -12,5 +14,3 @@ x11
 x11_yast
 yast2_basis
 yast2_install_wf
-devel_basis
-devel_rpm_build

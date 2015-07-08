@@ -34,7 +34,8 @@ GStreamer with FFMPEG and JACK output by default
 and analogue video input (via tvtime) support
 * professional screencasting tool SimpleScreenRecorder with native JACK support
 * wide range of gamepad utilities such as AntiMicro and jstest-gtk;  
-mednafen, small yet feature-rich JACK-enabled multi-system emulator
+Mednafen, small yet feature-rich JACK-enabled multi-system emulator;
+emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
 * professional virtualization with libvirt & KVM / LXC  
 (featuring userland virt-manager and SPICE flowing out-of-the-box)
 * Windows® compatibility through Wine 32 & 64 with native Gallium DirectX 9
