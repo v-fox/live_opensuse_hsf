@@ -106,7 +106,8 @@ update-smart-drivedb
 
 # force-installing Google-fonts from crapload of packages here instead of the proper place
 zypper --non-interactive --gpg-auto-import-keys refresh
-zypper --non-interactive install "google-*-fonts"
+#zypper --non-interactive install "google-*-fonts"
+#zypper --non-interactive install --from security_forensics "*-tools"
 rm -rf /var/{cache,log}/zypp/*
 
 # making list of installed packages from default user

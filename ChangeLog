@@ -1,18 +1,27 @@
+0.9.0:
+	* dropping 2GB limit and not considering anything less than 4GB:
+		keeping file persistency enabled;
+		keeping basic devel packages since OpenCL wants half of them anyway;
+		installing all translations and not shunning away from 32bit packages
+	* font selection is completely overhauled in favour of Google Noto collection
+	* support for OpenCL (AMD & Intel)
+	* support for high-quality midi playback
+	* addition of wine with native Gallium DirectX 9 support
+	* addition of well working gaming emulators
+
 0.8.1:
         * file persistency is disabled again due to extreme system slowness and
                 space exhaustion on 2GB USB sticks
-	* removal of dispcalGUI and plaso kit for making under 2GB size limit
+	* removal of basic devel packages for purpose of space conservation
 
 0.8.1 & 0.9.0:
 	* LXQt migration to Qt5 / 0.9 update
 	* fix for YaST2-firstboot no-GUI oversight
-	* font selection is completely overhauled in favour of Google Noto collection
 	* support for F/OSS OpenMAX IL (AMD & Nvidia)
 	* addition of Tano IPTV player and return of non-beta VLC
 	* addition of mednafen, JACK-capable multi-system emulator
 	* addition of efitools and UEFITool for manipulating U/EFI crap
 	* removal of vaapi support in gstreamer (it brings more trouble than it's worth)
-	* removal of basic devel packages for purpose of space conservation
 	* removal of XScreenSaver (due to inhibition problem)
 	* removal of SIP Witch (too specific purpose)
 	* replacement of caching polipo with non-caching privoxy Tor-forwarding proxy

@@ -28,7 +28,7 @@ SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * Clementine audio player, Audacity audio editor/recorder;  
 GStreamer with FFMPEG and JACK output by default
 * professional colour management facilities  
-(consisting of colord and xiccd)
+(consisting of colord, argyllCMS, dispcalGUI and xiccd)
 * printer (via cups), scanner (via x/sane)  
 and analogue video input (via tvtime) support
 * professional screencasting tool SimpleScreenRecorder with native JACK support
@@ -57,7 +57,7 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
   * support for pretty much all filesystems known to man, in kernel or via FUSE
   * U/EFI manipulation via efitools and UEFITool
 * security/forensics tools:  
-  * autopsy/sleuthkit, scalpel, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
+  * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
 * encryption tools:  
   * tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx
 * useful things that I've put there but forgot to mention

@@ -115,6 +115,7 @@ delayacct-utils
 deltarpm
 desktop-translations
 dictd
+dispcalGUI
 djvulibre-djview4
 dmidecode
 dnscrypt-proxy
@@ -501,6 +502,7 @@ libcap-progs
 libclutter-gst-2_0-0
 libcryptsetup4-hmac
 liberation-fonts
+libflashsupport
 libfreerdp-1_0-plugins
 libgcrypt20-hmac
 libhmac-tools
@@ -737,6 +739,8 @@ pulseaudio-utils
 pulseaudio-zsh-completion
 pure-ftpd
 pwgen
+python-plaso
+python-scapy
 python-SpiceClientGtk
 qasmixer
 qbittorrent
@@ -995,3 +999,19 @@ zuluCrypt
 zypper
 zypper-aptitude
 zypper-log
+adobe-sourcesanspro-fonts
+arabic-fonts
+efont-unicode
+farsi-fonts
+indic-fonts
+intlfonts-ttf-fonts
+khmeros-fonts
+mongolian-fonts
+nanum-fonts
+pothana2000-fonts
+sazanami-fonts
+sil-padauk-fonts
+thai-fonts
+thryomanes-fonts
+wqy-microhei-fonts
+wqy-zenhei-fonts
