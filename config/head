@@ -4,7 +4,7 @@
 		<specification>Big, useful desktop appliance with slim DEs</specification>
 	</description>
 	<preferences>
-		<type image='iso' primary='true' checkprebuilt='false' boot='isoboot/suse-13.2' firmware='efi' bootprofile='custom' bootkernel='desktop' fsnocheck='true' flags='overlay' hybrid='true' hybridpersistent='false' kernelcmdline='splash=verbose apparmor=0'>
+		<type image='iso' primary='true' checkprebuilt='false' boot='isoboot/suse-13.2' firmware='uefi' bootprofile='custom' bootkernel='desktop' fsnocheck='true' flags='overlay' hybrid='true' hybridpersistent='true' kernelcmdline='splash=verbose apparmor=0'>
 			<split>
 				<temporary>
 					<file name='/*'/>

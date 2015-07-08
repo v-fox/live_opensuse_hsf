@@ -16,7 +16,8 @@ It provides:
 * fresh (enabled) OSS video stack from X11 repo (rc's)  
 or bleeding edge (configured) from pontostroy (git & kernel rc's)
 * LXQt slim desktop environment
-* international collection of fonts and universal iBus input method by default
+* international (Google Noto set) collection of fonts  
+and universal iBus input method by default
 * LibreOffice, GIMP and fresh GoldenDict;  
 CoolReader3-Qt5, Okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
@@ -36,6 +37,7 @@ and analogue video input (via tvtime) support
 mednafen, small yet feature-rich JACK-enabled multi-system emulator
 * professional virtualization with libvirt & KVM / LXC  
 (featuring userland virt-manager and SPICE flowing out-of-the-box)
+* Windows® compatibility through Wine 32 & 64 with native Gallium DirectX 9
 * professional networking tools and rich connectivity options
 * OpenVAS and ClamAV security systems
 * anti-censorship kit: Tor/Privoxy, dnscrypt-proxy/Unbound, proxychains and VPN
@@ -66,7 +68,6 @@ and recent though mostly stable updates
 
 It does NOT provide:
 --------------------
-— Windows® compatibility, wine (because it requires shitload of 32bit packages)  
 — proprietary video drivers (because they suck and are pain in the ass).  
   or video driver support for anything without KMS, for that matter  
 — whole KDE or Gnome (because of how fat the former and how ugly the later are)  
@@ -112,8 +113,6 @@ Notes:
 ⊙ Some specialty apps that were not included but you may be interested in installing manually  
 * music works  
   * ardour3, rosegarden, qtractor, hydrogen, mixxx, rakarrack, OpenOctaveMidi, vmpk  
-* high-quality midi playback  
-  * fluid-soundfont-gs, fluidsynth, qsynth, kmid  
 * video editing  
   * cinelerra, LiVES, openshot, avidemux, kino  
 * 3D modeling  
@@ -128,14 +127,11 @@ Notes:
 * painting  
   * cinepaint, mtpaint  
 * vector drawing  
-  * inkscape, sk1  
-* vector drawing utilities  
-  * autotrace, uniconvertor/uniconvw  
+  * sk1  
 * font creation  
   * fontforge  
 * OCR (image_of_text-to-real_text conversion)  
-  * cuneiform / tesseract-{gui} / gocr{-gui} / orcad / ocropus (OCR systems)  
-  * yagf (xsane-to-OCR wrapper)  
+  * tesseract-{gui} / gocr{-gui} / orcad / ocropus (OCR systems)  
   * djvubind or ocrodjvu/img2djvu (DjVu-centric wrappers for OCR systems)  
 * telephony  
   * sflphone-client-gnome (SIP client that natively supports JACK and has many features... and glitches)  

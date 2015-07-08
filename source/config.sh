@@ -106,8 +106,11 @@ update-smart-drivedb
 
 # force-installing Google-fonts from crapload of packages here instead of the proper place
 zypper --non-interactive --gpg-auto-import-keys refresh
-#zypper --non-interactive install "google-*-fonts"
-#zypper --non-interactive install --from security_forensics "*-tools"
+zypper --non-interactive install "google-*-fonts"
+# and installing all forensic tools while we're at it
+zypper --non-interactive install --from security_forensics "*-tools"
+# and YaST translations
+zypper --non-interactive install "yast2-trans-*"
 rm -rf /var/{cache,log}/zypp/*
 
 # making list of installed packages from default user
@@ -124,14 +127,14 @@ chown ${OUR_USER}:users "${PACKAGE_LIST}"
 # Remove all license files
 find /usr/share/doc/packages -type f -iregex ".*copying*\|.*license*\|.*copyright*" -exec rm -fv "{}" \;
 # Remove all documentation
-rm -rf /usr/share/doc/*
+#rm -rf /usr/share/doc/*
 
 #======================================
 # Keep UTF-8 locale and delete all translations
 #--------------------------------------
-baseStripLocales \
-	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
-baseStripTranslations kiwi.mo
+#baseStripLocales \
+#	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
+#baseStripTranslations kiwi.mo
 
 #======================================
 # SSL Certificates Configuration

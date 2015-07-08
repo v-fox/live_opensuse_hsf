@@ -34,6 +34,7 @@ audacity
 autofs
 autopsy
 autossh
+autotrace
 avahi
 avahi-autoipd
 avahi-utils
@@ -95,6 +96,7 @@ cracklib-dict-full
 crda
 cromfs
 Crystalcursors
+cuneiform
 cups-backend-kerberized-smb
 cups-backends
 cups-filters
@@ -154,6 +156,8 @@ firmwarekit
 FirmwareUpdateKit
 flacon
 flashrom
+fluid-soundfont-gs
+fluidsynth
 fontconfig
 fontmatrix
 fonts-config
@@ -362,6 +366,9 @@ ike-scan
 ImageMagick
 ImageMagick-extra
 imagewriter
+inkscape-extensions-dia
+inkscape-extensions-extra
+inkscape-extensions-gimp
 innoextract
 intel-gpu-tools
 inxi
@@ -387,6 +394,7 @@ kate
 kbd
 kchmviewer
 kdeartwork4-icons
+kdenlive
 kdiff3
 kdnssd
 keepassx
@@ -410,6 +418,7 @@ kiwi-instsource-plugins-openSUSE-13-2
 kiwi-pxeboot
 kiwi-templates
 kiwi-tools
+kmid
 kmscon
 knutclient
 kparts-plugin
@@ -425,6 +434,8 @@ lame-mp3rtp
 laptop-mode-tools
 latencytop
 lcdf-typetools
+lcms
+lcms2
 ldapfuse
 leechcraft
 leechcraft-advancednotifications
@@ -584,6 +595,7 @@ mercurial
 Mesa
 Mesa-demo-egl
 Mesa-demo-x
+Mesa-libOpenCL1
 minicom
 miniupnpc
 miredo-client
@@ -647,7 +659,7 @@ okular
 onboard
 onboard-data
 openal-soft
-openclipart-png
+openclipart-svg
 opengost-otf-fonts
 open-iscsi
 openldap2-client
@@ -742,12 +754,14 @@ pwgen
 python-plaso
 python-scapy
 python-SpiceClientGtk
+q4wine
 qasmixer
 qbittorrent
 qemu-guest-agent
 qemu-kvm
 qjackctl
 qps
+qsynth
 qt-mobility-pulseaudio
 qv4l2
 radeontop
@@ -820,6 +834,8 @@ subtitlecomposer
 subversion
 sudo
 SuSEfirewall2
+svgcleaner
+svgpart
 sysconfig-netconfig
 syslinux
 system-config-printer-applet
@@ -859,8 +875,10 @@ UEFITool
 ulogd
 unace
 unbound
+uniconvw
 unidings-fonts
 unionfs-fuse
+unmass
 unoconv
 unrar
 upower
@@ -896,6 +914,12 @@ webcore-fonts-vista
 wget
 which
 whois
+wine
+wine-32bit
+wineasio
+wineasio-32bit
+wine-gecko
+wine-mp3
 wireless-regdb
 wireless-tools
 wireshark
@@ -958,6 +982,7 @@ xsane
 xsetmode
 xsetpointer
 xvinfo
+yagf
 yakuake
 yast2-apparmor
 yast2-branding-openSUSE
@@ -999,19 +1024,3 @@ zuluCrypt
 zypper
 zypper-aptitude
 zypper-log
-adobe-sourcesanspro-fonts
-arabic-fonts
-efont-unicode
-farsi-fonts
-indic-fonts
-intlfonts-ttf-fonts
-khmeros-fonts
-mongolian-fonts
-nanum-fonts
-pothana2000-fonts
-sazanami-fonts
-sil-padauk-fonts
-thai-fonts
-thryomanes-fonts
-wqy-microhei-fonts
-wqy-zenhei-fonts
