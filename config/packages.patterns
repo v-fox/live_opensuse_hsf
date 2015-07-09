@@ -3,8 +3,6 @@ devel_basis
 devel_rpm_build
 enhanced_base
 enhanced_base_opt
-fonts
-fonts_opt
 kvm_server
 LXQT
 office

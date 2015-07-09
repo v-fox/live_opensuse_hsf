@@ -198,6 +198,7 @@ gegl-0_2
 GeoIP-data
 get-flash-videos
 gettext-tools
+ghostscript-fonts-other
 gimp
 gimp-gap
 gimp-plugin-dds
@@ -303,6 +304,7 @@ hunspell-tools
 hwinfo
 hydra-gtk
 i2c-tools
+iberation-fonts
 ibus
 ibus-anthy
 ibus-chewing
