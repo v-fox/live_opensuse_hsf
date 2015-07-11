@@ -91,8 +91,8 @@ Notes:
 ⊙ can be put on flash USB sticks and such from within itself by  
 * simple `dd bs=<your flash's write block size, like 64K> if=<image or even cdrom device that you have booted it on> of=/dev/<target_device>`,
 * glamorous GUI tools like SUSE's `imagewriter` (included) or Ubuntu's `win32diskimager`
-* or hacky [`live-fat-stick` script and its GUI, `live-usb-gui`](https://en.opensuse.org/SDB:Live_USB_stick#Using_live-fat-stick_.28Command_line_or_GUI_way.29), that allows to use all redundant space of a device
 * (`unetbootin` is NOT recommended due to its outdatedness and broken device selection)
+* but **be wary that it will format all redundant space as ext2 for its R/W support**
 
 ⊙ DE-specific apps are included for the lack of adequate analogues  
 * KDE:  

@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: OTucaZSn/TM9A332uQIOaw==
-SHA1-Digest: mZPfXLNWXwJ/GBQ/ZFLozVokleg=
+MD5-Digest: hlxpKtSGDYrmXQMlfcYHUA==
+SHA1-Digest: GUGKqpY/KPkgA6Zmdo/XzAEk4/k=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
@@ -42,8 +42,8 @@ SHA1-Digest: dY0ZaKbIJoRZUkBGX8R16LYspKc=
 
 Name: chrome/content/overlay.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: XuwlntZ1lVcRIokp/y9zyA==
-SHA1-Digest: 5rEt0eDBYwkgvDdiUUunZR+bht8=
+MD5-Digest: mKmeaEdb9G66vNBTPeaiQg==
+SHA1-Digest: UWUyO3hMC81ooEaD9DH2hdwJJZc=
 
 Name: chrome/content/overlay.xul
 Digest-Algorithms: MD5 SHA1

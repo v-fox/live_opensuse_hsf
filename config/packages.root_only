@@ -116,6 +116,7 @@ dejavu-fonts
 delayacct-utils
 deltarpm
 desktop-translations
+desmume
 dictd
 dispcalGUI
 djvulibre-djview4
@@ -576,8 +577,6 @@ linuxconsoletools
 linux-ftools
 lirc
 lirc-remotes
-live-fat-stick
-live-usb-gui
 lsb-invalid-mta
 lsb-release
 lsof

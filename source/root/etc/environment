@@ -49,7 +49,7 @@ SDL_VIDEO_YUV_HWACCEL=1
 #PULSE_PROP="filter.want=echo-cancel"
 ## hardware video decoding stuff. READ gnote NOTES before changing !
 # LIBVA is VERY TROUBLESOME: GStreamer apps are always trying to initialize HVD through it even when they clearly can't and fail miserably
-#LIBVA_DRIVER_NAME=vdpau
+LIBVA_DRIVER_NAME=gallium
 # vdpau driver auto-identification tends to work well... unless libvdpau_va_gl1 screws it up
 #VDPAU_DRIVER=va_gl
 # needed for LADSPA-using programs

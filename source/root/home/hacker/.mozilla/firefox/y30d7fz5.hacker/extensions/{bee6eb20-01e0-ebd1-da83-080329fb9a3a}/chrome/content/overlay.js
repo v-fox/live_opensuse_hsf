@@ -435,17 +435,18 @@ var flashVideoDownload = new function() {
         observe: function(aSubject, aTopic, aData) {            
             if ((aTopic=="http-on-examine-response") || (aTopic=="http-on-modify-request")
                 || (aTopic=="http-on-examine-cached-response")) {
-                try {				
-                    aSubject.QueryInterface(Components.interfaces.nsIRequest);
-                    var url		= aSubject.name;                    
-                    var contentType	= aSubject.contentType;
-                    var contentLength 	= aSubject.contentLength;
+                try {
+                    var request = aSubject.QueryInterface(Components.interfaces.nsIRequest);
+                    var url		= request.name;                
+                    var contentType	= request.contentType;
+                    var contentLength 	= request.contentLength;
                     var fileType 	= self.Classes.MediaFile.getFileType(contentType, url);
-                    aSubject.QueryInterface(Components.interfaces.nsIChannel);
-        		    var browser = self.getBrowser(aSubject, aSubject);
+                    var httpChannel = aSubject.QueryInterface(Components.interfaces.nsIHttpChannel);
+        		    var browser = self.getBrowser(httpChannel);
+                    if (!browser) { browser = self.getBrowserOld(httpChannel); }
                     if (!browser) { return; }
         		    var doc    = browser.contentDocument;
-		    
+                    // console.log(doc);
                     self.Classes.YouTubeVideoFile.checkIfYouTube(doc);
             		//    if (self.Classes.YouTubeVideoFile.isYouTube && self.Classes.YouTubeVideoFile.urlType == self.Classes.YouTubeVideoFile.YOUTUBE_URL_TYPE.CHANNELS) {
             		//	self.Classes.YouTubeVideoFile.checkForChannelsPreviewVideos(doc, window, self);			
@@ -490,11 +491,11 @@ var flashVideoDownload = new function() {
             throw Components.results.NS_NOINTERFACE;
         }
     };
-    
-    this.getBrowser = function(aChannel, aSubject) {
+
+    this.getBrowserOld = function(aChannel) {
         try {
             var notificationCallbacks = 
-                aChannel.notificationCallbacks ? aChannel.notificationCallbacks : aSubject.loadGroup.notificationCallbacks;
+                aChannel.notificationCallbacks ? aChannel.notificationCallbacks : aChannel.loadGroup.notificationCallbacks;
       
             if (!notificationCallbacks) { return null; }
             var callback = notificationCallbacks.getInterface(Components.interfaces.nsIDOMWindow);
@@ -505,6 +506,40 @@ var flashVideoDownload = new function() {
             return null;
         } 
     };
+
+    this.getBrowser = function(aChannel) {
+        try {
+            var notificationCallbacks = 
+                aChannel.notificationCallbacks ? aChannel.notificationCallbacks : aChannel.loadGroup.notificationCallbacks;
+            if (!notificationCallbacks) { return null; }
+            var callback = notificationCallbacks.getInterface(Ci.nsIDOMWindow);
+            return callback.top.document ? 
+                gBrowser.getBrowserForDocument(callback.top.document) : null;
+        }
+        catch(ex) {
+            try {
+                try {
+                    var loadContext = aChannel.notificationCallbacks.getInterface(Ci.nsILoadContext);
+                } catch(ex) { 
+                    loadContext = aChannel.loadGroup.notificationCallbacks.getInterface(Ci.nsILoadContext); 
+                }
+                if (loadContext) {
+                    var contentWindow = loadContext.associatedWindow; // this is the HTML window of the page that just loaded
+                    var aDOMWindow = contentWindow.top
+                        .QueryInterface(Ci.nsIInterfaceRequestor)
+                        .getInterface(Ci.nsIWebNavigation)
+                        .QueryInterface(Ci.nsIDocShellTreeItem).rootTreeItem
+                        .QueryInterface(Ci.nsIInterfaceRequestor)
+                        .getInterface(Ci.nsIDOMWindow);
+                    var gBrowser = aDOMWindow.gBrowser; // this is the gBrowser object of the firefox window this tab is in
+                    var aTab = gBrowser._getTabForContentWindow(contentWindow.top); //this is the clickable tab xul element, the one found in the tab strip of the firefox window, aTab.linkedBrowser is same as browser var above //can stylize tab like aTab.style.backgroundColor = 'blue'; //can stylize the tab like aTab.style.fontColor = 'red';
+                    var browser = aTab.linkedBrowser; // this is the browser within the tab //this is what the example in the previous section gives
+                    return browser;
+                }
+                return null;
+            } catch(ex) { return null; }
+        }
+    };    
 
     this.clearStatusBar = function() {
         // log("clearing from: " + from);

@@ -5,6 +5,10 @@
    <plug>a\.master\.out_L|out_L</plug>
    <plug>a\.master\.out_R|out_R</plug>
   </socket>
+  <socket exclusive="off" client="PortAudio" type="jack-audio" name="portaudio (for stereo)">
+   <plug>out_[0-9]*[02468]</plug>
+   <plug>out_[0-9]*[13579]</plug>
+  </socket>
   <socket exclusive="off" client="MPlayer \[[0-9]+\]|mpv(|-.[0-9])" type="jack-audio" name="mplayer &amp; mpv">
    <plug>out_0</plug>
    <plug>out_1</plug>
@@ -86,6 +90,7 @@
   <cable output="PA stereo output" input="jamin volume boost" type="jack-audio"/>
   <cable output="all GStreamer players" input="jamin volume boost" type="jack-audio"/>
   <cable output="Adobe Flash (NPAPI &amp; PPAPI)" input="jamin volume boost" type="jack-audio"/>
+  <cable output="portaudio (for stereo)" input="jamin volume boost" type="jack-audio"/>
  </cables>
 </patchbay>
 
