@@ -1,0 +1,3 @@
+/usr/lib64/bellagio/libomx_mesa.so
+ ==> OMX.mesa.video_decoder ==> OMX.mesa.video_decoder.mpeg2:OMX.mesa.video_decoder.avc:
+ ==> OMX.mesa.video_encoder ==> OMX.mesa.video_encoder.avc:

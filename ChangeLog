@@ -6,6 +6,8 @@
 		not shunning away from 32bit packages anymore;
 		openclipart is now svg instead of png
 	* font selection is completely overhauled in favour of Google Noto collection
+	* Mesa's OpenMAX IL implementation now loads by default for GStreamer;
+		also Gallium vaapi implementation is now default and vdpau is inactive
 	* support for OpenCL (AMD & Intel)
 	* support for high-quality midi playback via fluidsynth
 	* addition of wine with native Gallium DirectX 9 support
@@ -18,6 +20,7 @@
 		Desmume for Nintendo© DS®
 		Mupen64Plus for Nintendo© N64®
 		Yabause for Sega© Saturn®
+	* removal of live-{fat-stick,usb-gui} because of low usefulness for our case
 
 0.8.1:
         * file persistency is disabled again due to extreme system slowness and

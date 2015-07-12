@@ -258,7 +258,6 @@ gstreamer-plugin-gstclutter
 gstreamer-plugins-bad
 gstreamer-plugins-bad-orig-addon
 gstreamer-plugins-base
-gstreamer-plugins-farstream
 gstreamer-plugins-good
 gstreamer-plugins-good-extra
 gstreamer-plugins-libav
@@ -571,6 +570,7 @@ libyui-ncurses-pkg6
 libyui-qt-pkg6
 lightdm
 lightdm-gtk-greeter
+lightdm-gtk-greeter-branding-upstream
 linphone
 linssid
 linuxconsoletools

@@ -35,6 +35,9 @@ root/home/hacker/.dmrc
 root/etc/skel/.icons/default/index.theme
 root/root/.icons/default/index.theme
 root/home/hacker/.icons/default/index.theme
+root/etc/skel/.local/share/.omxregister
+root/root/.local/share/.omxregister
+root/home/hacker/.local/share/.omxregister
 root/etc/skel/.local/share/mime/magic
 root/root/.local/share/mime/magic
 root/home/hacker/.local/share/mime/magic
