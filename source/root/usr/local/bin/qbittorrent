@@ -5,5 +5,5 @@ TMPDIR="${TMP}"
 if [ -f "${1}" ]; then
 exec /usr/bin/qbittorrent "${1}"
 else
-exec /usr/bin/qbittorrent
+exec /usr/bin/qbittorrent "$@"
 fi
