@@ -10,6 +10,7 @@
 		also Gallium vaapi implementation is now default and vdpau is inactive
 	* support for OpenCL (AMD & Intel)
 	* support for high-quality midi playback via fluidsynth
+	* backport of kernel 4.3 hid_sony patch for elimination of bogus input
 	* addition of wine with native Gallium DirectX 9 support
 	* addition of more working gaming emulators:
 		OpenMSX for MSX®

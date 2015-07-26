@@ -3,24 +3,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Release Notes</title>
-</head><body><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">HSF *IMPORTANT* Notes<br/>
-</span></span><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><ul><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
+</head><body><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">HSF *IMPORTANT* Notes</span></span><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
 <li>hacker's example pgp passphrase: unsafe for work. DON'T actually USE IT</li>
-</ul>
-</span></span><ul><li><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">use `</span></span><span style="background-color: #ffff99">hardinfo</span>`(GUI), <span style="font-family: DejaVu Sans"><span style="font-size: 9pt">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries</span></span></li>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool but it has insane dependencies, so we have to do without</li>
 </span></span></ul>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><ul><li>before using package manager, you may need to do:</li>
+<ul><li><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">use `</span></span><span style="background-color: #ffff99">hardinfo</span>`(GUI), <span style="font-size: 9pt"><span style="font-family: DejaVu Sans">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries</span></span></li>
+<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool but it has insane dependencies, so we have to do without</li>
+<li>before using package manager, you may need to do:</li>
 <li style="list-style-type: none">∘ `<span style="background-color: #ffff99">sudo zypper --gpg-auto-import-keys refresh</span>` in terminal to get repo-caches and import/update all their keys</li>
 <li>if you have installed HSF, before performing any bandwidth-intensive operations you might want to run `<span style="background-color: #ffff99">yast2 proxy</span>` and disable global proxying so you wouldn't waste Tor's resources needlessly</li>
 <li>default Firefox and Thunderbird profiles are configured to use proxying via Tor by default, there are addons installed to easily switching it on and off</li>
 <li>/tmp runs on RAM-disk with size of 10% of total RAM capacity, so don't let your apps shit in it. 25% more is used for compressed swap-in-RAM (compcache/zram) by default.</li>
-</ul>
-<ul><li>encryption and security tips:</li>
+</span></span></ul>
+<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><ul><li>encryption and security tips:</li>
 <li style="list-style-type: none">∘ all DNS queries are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them to OpenDNS via encrypted connection. if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<span style="background-color: #ffff99">network.proxy.socks_remote_dns</span>' parameter in Firefox, Thunderbird and all Mozilla apps</li>
 <li style="list-style-type: none">∘ for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)</li>
 <li style="list-style-type: none">∘ try not to use Google products and Facebook</li>
-<li style="list-style-type: none">∘ AppArmor systemd service is disabled by default, enable it if you can handle it</li>
+<li style="list-style-type: none">∘ AppArmor systemd service and kernel subsystem are disabled by default, enable them if you can handle it. see the default kernel boot options and `<span style="background-color: #ffff99">yast2 apparmor</span>`</li>
+<li style="list-style-type: none">∘ Firewall is inactive by default because connectivity is more important than false sense of security, carefully tweak it to your needs yourself in `<span style="background-color: #ffff99">yast2 firewall</span>`</li>
 <li style="list-style-type: none">∘ ALWAYS use <span style="background-color: #ffff99">ZRTP</span>&nbsp;in SIP instead of SRTP but if you are going to use SRTP, do it together with TLS</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ or <a href="https://www.acritelli.com/hacking-voip-decrypting-sdes-protected-srtp-phone-calls/">Party Van will come</a></li>
 </ul>
@@ -88,35 +87,34 @@
 <li style="list-style-type: none">∘ so select "system defaults / don't change" in your DE's font settings</li>
 <li style="list-style-type: none">∘ or, at least, set 'aa: enable, hinting: slight, subpixel geometry: rgb' for output not to be garbled</li>
 </ul>
-<ul><li>this spin contains only English language by default.</li>
+</span></span><ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li>this spin contains only English language by default.</li>
 <li style="list-style-type: none">∘ add your language in `<span style="background-color: #ffff99">yast2 language</span>` and `<span style="background-color: #ffff99">yast2 sw_single</span>` (you may have to allow installing 'recommended' packages for that to work)</li>
 <li style="list-style-type: none">∘ <span style="background-color: #ffff99">ibus</span>&nbsp;input method daemon is launched on user session start, you can access its preferences via system tray icon and add your keyboard settings there</li>
 <li style="list-style-type: none">∘ to set up non-ibus input you, probably, has to use systemd's new "bicycle" named `<span style="background-color: #ffff99">localectl</span>` (when those assholes would learn to put functional part, like "ctl", of the name first ?)</li>
-</ul>
-</span></span><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li><a href="/etc/environment">/etc/environment</a>&nbsp;is the best place for it global variables.</li>
+</span></span></ul>
+<ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li><a href="/etc/environment">/etc/environment</a>&nbsp;is the best place for it global variables.</li>
 <li style="list-style-type: none">∘ by default <span style="background-color: #ffff99">DRI_PRIME</span>&nbsp;is set to 1 which should force everything to use a better GPU in dual-GPU abominations</li>
 <li style="list-style-type: none">∘ <span style="background-color: #ffff99">force_s3tc_enable</span>&nbsp;is not forced and you may have to change that... or not</li>
 <li style="list-style-type: none">∘ in <a href="/etc/X11/xorg.conf.d/50-device.conf">/etc/X11/xorg.conf.d/50-device.conf</a>&nbsp;<span style="background-color: #ffff99">glamor</span>&nbsp;and <span style="background-color: #ffff99">DRI3</span>&nbsp;is forced for everything and that should be good but you may want to check</li>
 <li style="list-style-type: none">∘ `<span style="background-color: #ffff99">compton</span>` compositor is autolaunched by default on session start to decrease tearing with glamor</li>
 </span></span></ul>
-<ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>VDPAU, VA-API and OpenMaX F/OSS video hw-decoding libraries were installed.</li>
+<ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li>VDPAU, VA-API and OpenMaX F/OSS video hw-decoding libraries were installed.</li>
 <li style="list-style-type: none">∘ by default <span style="background-color: #ffff99">VA-API</span>&nbsp;is forced to use <span style="background-color: #ffff99">gallium</span>, you may want to change that if you are using an Intel card</li>
 <li style="list-style-type: none">∘ to enable VA-API acceleration for VDPAU-hardware (amd, nvidia), which may be less reliable than gallium, or for intel set this environmental variable:</li>
-</span></span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">‣ <span style="background-color: #ffff99">LIBVA_DRIVER_NAME</span>&nbsp;to '<span style="background-color: #ffff99">vdpau</span>' </span></span>or '<span style="background-color: #ffff99">i965</span>' accordingly</li>
+</span></span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">‣ <span style="background-color: #ffff99">LIBVA_DRIVER_NAME</span>&nbsp;to '<span style="background-color: #ffff99">vdpau</span>' </span></span>or '<span style="background-color: #ffff99">i965</span>' accordingly</li>
 </ul>
 </li>
-<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ to enable VDPAU/GL acceleration on VA-API-hardware (intel):</li>
+<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ to enable VDPAU/GL acceleration on VA-API-hardware (intel):</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ install 'libvdpau_va_gl1'</li>
 <li style="list-style-type: none">‣ <span style="background-color: #ffff99">VDPAU_DRIVER=va_gl</span>&nbsp;(va_gl1 package tends to hardcode that, this is why it's not installed by default)</li>
 </ul>
 </li>
 <li style="list-style-type: none">∘ <u>GStreamer VA-API support is not installed</u>&nbsp;because it brings libva hangs to every gst application and that's no good, but instead there is <span style="background-color: #ffff99">gst-omx</span></li>
-</span></span></ul>
-<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><ul><li>Firefox and Thunderbird are forced to use EGL for graphical acceleration</li>
+<li>Firefox and Thunderbird are forced to use EGL for graphical acceleration</li>
 <li style="list-style-type: none">∘ Firefox hates it and tries to block all acceleration activity by enacting its bullshit video driver blacklist but it's is forced off by super-secret '<span style="background-color: #ffff99">MOZ_GLX_IGNORE_BLACKLIST=1</span>' envvar in our build (mozilla.sh)</li>
 <li style="list-style-type: none">∘ Firefox often shits itself while in its full-OpenGL mode (OMTC) by drawing all windows 100% white but without it video playback is horrendous, so it's forced on with secret '<span style="background-color: #ffff99">MOZ_USE_OMTC=1</span>' global envvar</li>
-</ul>
-<ul><li>To monitor GPU driver performance in your GPU-accelerated apps your can use Gallium HUD by launching them with special envvar, like this:</li>
+</span></span></ul>
+<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><ul><li>To monitor GPU driver performance in your GPU-accelerated apps your can use Gallium HUD by launching them with special envvar, like this:</li>
 <li style="list-style-type: none">∘ `<span style="background-color: #ffff99">env GALLIUM_HUD=".c120.dfps,cpu,GPU-load;requested-VRAM+VRAM-usage,requested-GTT+GTT-usage,primitives-generated+clipper-primitives-generated;draw-calls,buffer-wait-time" glxgears</span>`</li>
 <li style="list-style-type: none">∘ get all available options by running `<span style="background-color: #ffff99">env GALLIUM_HUD=help &lt;any DRI-using app&gt;</span>`</li>
 <li style="list-style-type: none">∘ for AMD cards also `<span style="background-color: #ffff99">radeontop</span>` tool is available</li>

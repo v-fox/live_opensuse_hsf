@@ -91,19 +91,19 @@
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='filesystems'>
 		<source path='opensuse://filesystems/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='3' alias='home_X0F_branches_emulators'>
+	<repository type='rpm-md' imageinclude='true' priority='4' alias='home_X0F_branches_emulators'>
 		<source path='opensuse://home:X0F:branches:Emulators/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='2' alias='home_X0F_branches_multimedia'>
+	<repository type='rpm-md' imageinclude='true' priority='3' alias='home_X0F_branches_multimedia'>
 		<source path='opensuse://home:X0F:branches:multimedia/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F_branches_network'>
+	<repository type='rpm-md' imageinclude='true' priority='2' alias='home_X0F_branches_network'>
 		<source path='opensuse://home:X0F:branches:network/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='62' alias='LXQt' >
 		<source path='opensuse://X11:lxde/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='1' alias='home_X0F'>
+	<repository type='rpm-md' imageinclude='true' priority='5' alias='home_X0F'>
 		<source path='opensuse://home:X0F/openSUSE_13.2'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres'>
