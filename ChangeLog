@@ -1,4 +1,6 @@
 0.9.0:
+	* new type of persistency is enacted:
+		BTRFS file on FAT partition out of redundant space of your R/W medium
 	* dropping 2GB limit and not considering anything less than 4GB:
 		keeping file persistency enabled;
 		keeping documentation and locales;

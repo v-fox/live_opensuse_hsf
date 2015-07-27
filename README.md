@@ -92,7 +92,7 @@ Notes:
 * simple `dd bs=<your flash's write block size, like 64K> if=<image or even cdrom device that you have booted it on> of=/dev/<target_device>`,
 * glamorous GUI tools like SUSE's `imagewriter` (included) or Ubuntu's `win32diskimager`
 * (`unetbootin` is NOT recommended due to its outdatedness and broken device selection)
-* but **be wary that it will format all redundant space as ext2 for its R/W support**
+* but **be wary that it will format all redundant space as FAT and make BTRFS file on it for its R/W support**
 
 ⊙ DE-specific apps are included for the lack of adequate analogues  
 * KDE:  
