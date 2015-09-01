@@ -11,7 +11,7 @@
 # Load this console font on bootup:
 # (/usr/share/kbd/consolefonts/)
 # 
-CONSOLE_FONT="ter-u16n.psfu"
+CONSOLE_FONT="ter-v16v.psfu"
 
 ## Type:	string
 ## Default:	""

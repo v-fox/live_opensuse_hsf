@@ -7,7 +7,10 @@
 		keeping basic devel packages since OpenCL wants half of them anyway;
 		not shunning away from 32bit packages anymore;
 		openclipart is now svg instead of png
-	* font selection is completely overhauled in favour of Google Noto collection
+	* font selection is completely overhauled in favour of Google Noto collection;
+		Terminus font is used by default in KMS&GUI terminals;
+		DejaVu-based Hack font is used in text editors;
+		DejaVu font family is still generally used in GUI
 	* Mesa's OpenMAX IL implementation now loads by default for GStreamer;
 		also Gallium vaapi implementation is now default and vdpau is inactive
 	* support for OpenCL (AMD & Intel)

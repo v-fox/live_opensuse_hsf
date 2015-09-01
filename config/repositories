@@ -55,6 +55,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='Virtualization'>
 		<source path='opensuse://Virtualization/openSUSE_13.2'/>
 	</repository>
+        <repository type='rpm-md' imageinclude='true' priority='82' alias='Multilingualization_Fonts'>
+                <source path='opensuse://M17N:fonts/openSUSE_13.2'/>
+        </repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_samba_STABLE'>
 		<source path='opensuse://network:samba:STABLE/openSUSE_13.2'/>
 	</repository>

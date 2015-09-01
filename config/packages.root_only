@@ -64,7 +64,6 @@ cagibi
 ccgfs
 cddfs
 cdemu-client
-cdrkit-cdrtools-compat
 cfv
 checkit
 chkrootkit
@@ -283,6 +282,7 @@ guymager
 gvfs-backends
 gvfs-fuse
 gwenview
+hack-font
 hardinfo
 hashdeep
 hddtemp
@@ -859,6 +859,7 @@ tcpreen
 telnet
 terminfo
 terminus-bitmap-fonts
+terminus-ttf-fonts
 testdisk
 tftp
 timezone

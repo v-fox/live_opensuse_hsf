@@ -1,2 +1,11 @@
 [Normal]
+Font=Hack,10,-1,5,50,0,0,0,0,0
+dummy=prevent-empty-group
+
+[kate - Normal]
+Font=Hack,10,-1,5,50,0,0,0,0,0
+dummy=prevent-empty-group
+
+[kwrite - Normal]
+Font=Hack,10,-1,5,50,0,0,0,0,0
 dummy=prevent-empty-group
