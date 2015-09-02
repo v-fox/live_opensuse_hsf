@@ -770,6 +770,7 @@ qjackctl
 qps
 qsynth
 qt-mobility-pulseaudio
+qtox
 qv4l2
 radeontop
 radvd
@@ -865,8 +866,7 @@ tftp
 timezone
 tmpwatch
 tor
-tox-gui-Toxic
-tox-gui-uTox
+toxic
 traceroute
 trackma-qt
 translation-update
