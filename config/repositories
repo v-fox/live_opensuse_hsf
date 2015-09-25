@@ -103,9 +103,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='2' alias='home_X0F_branches_network'>
 		<source path='opensuse://home:X0F:branches:network/openSUSE_13.2'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='62' alias='LXQt' >
-		<source path='opensuse://X11:LXQt/openSUSE_13.2'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='5' alias='home_X0F'>
 		<source path='opensuse://home:X0F/openSUSE_13.2'/>
 	</repository>
