@@ -106,6 +106,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='5' alias='home_X0F'>
 		<source path='opensuse://home:X0F/openSUSE_13.2'/>
 	</repository>
+        <repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres-LXQt'>
+                <source path='opensuse://home:X0F:LXQt/openSUSE_13.2'/>
+        </repository>
 	<repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres'>
 		<source path='opensuse://home:X0F:HSF/openSUSE_13.2'/>
 	</repository>
