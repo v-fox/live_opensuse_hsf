@@ -62,7 +62,7 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * security/forensics tools:  
   * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
 * encryption tools:  
-  * tc-play (TrueCrypt reimplementation), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx
+  * veracrypt (TrueCrypt fork), aespipe, emount/zuluCrypt/cryptsetup, seahorse/gnome-keyring, keepassx
 * useful things that I've put there but forgot to mention
 * bunch of repos pre-configured (but disabled) for games, emulators  
 and recent though mostly stable updates

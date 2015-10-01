@@ -28,6 +28,7 @@
 		Yabause for Sega© Saturn®
 	* removal of live-{fat-stick,usb-gui} because of low usefulness for our case
 	* replacement of kernel-desktop with kernel-default by openSUSE maintainers
+	* replacement of tc-play with veracrypt
 	* replacement of uTox with qTox
 	* Firefox and TB are unbranded in hopes to disable mandatory signing
 

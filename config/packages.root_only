@@ -854,7 +854,6 @@ t6_client
 tano
 tarix
 tcpdump
-tc-play
 tcpreen
 telnet
 terminfo
@@ -901,6 +900,7 @@ vde2
 vde2-cryptcab
 vde2-slirp
 vdpau-video
+veracrypt
 vhostmd
 virt-manager
 virt-sandbox
