@@ -27,7 +27,9 @@
 		Mupen64Plus for Nintendo© N64®
 		Yabause for Sega© Saturn®
 	* removal of live-{fat-stick,usb-gui} because of low usefulness for our case
+	* replacement of kernel-desktop with kernel-default by openSUSE maintainers
 	* replacement of uTox with qTox
+	* Firefox and TB are unbranded in hopes to disable mandatory signing
 
 0.8.1:
         * file persistency is disabled again due to extreme system slowness and
