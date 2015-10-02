@@ -2,8 +2,8 @@ var options = new function() {
     var self = this;
 
     // consts
-    this.TOOLBAR_BUTTON      = "fnvfox_toolbarButton";
-    this.STATUSBAR_BUTTON    = "fnvfox_statusbarButton";
+    const TOOLBAR_BUTTON      = "fnvfox_toolbarButton";
+    const STATUSBAR_BUTTON    = "fnvfox_statusbarButton";
     
     // properties
     this.PrefManager         = null;
@@ -70,10 +70,10 @@ var options = new function() {
     // also checks for anything that might affect the default state of to options when they are loaded (such as checking if "dta" is installed)
     this.setStartupOptions = function() {
         if (!this.VersionInfo.isVersion29()) {
-            if (this.VersionInfo.isVersion4()) { this.setToolbarButtonOptionCheckbox(this.STATUSBAR_BUTTON, "fnvfox_statusbarButtonOption", this.PrefManager.PREFS.GENERAL.INTERFACE.STATUSBAR_BUTTON); }
-            else { this.setToolbarButtonOptionCheckboxOldVer(this.STATUSBAR_BUTTON, "fnvfox_statusbarButtonOption", this.PrefManager.PREFS.GENERAL.INTERFACE.STATUSBAR_BUTTON); }
+            if (this.VersionInfo.isVersion4()) { this.setToolbarButtonOptionCheckbox(STATUSBAR_BUTTON, "fnvfox_statusbarButtonOption", this.PrefManager.PREFS.GENERAL.INTERFACE.STATUSBAR_BUTTON); }
+            else { this.setToolbarButtonOptionCheckboxOldVer(STATUSBAR_BUTTON, "fnvfox_statusbarButtonOption", this.PrefManager.PREFS.GENERAL.INTERFACE.STATUSBAR_BUTTON); }
             
-            this.setToolbarButtonOptionCheckbox(this.TOOLBAR_BUTTON, "fnvfox_toolbarButtonOption", this.PrefManager.PREFS.GENERAL.INTERFACE.TOOLBAR_BUTTON);
+            this.setToolbarButtonOptionCheckbox(TOOLBAR_BUTTON, "fnvfox_toolbarButtonOption", this.PrefManager.PREFS.GENERAL.INTERFACE.TOOLBAR_BUTTON);
         }
         this.setDtaOptionCheckbox();        
         this.setDownloadsFolderTextbox();

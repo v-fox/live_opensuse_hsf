@@ -1,6 +1,6 @@
 var EXPORTED_SYMBOLS = ["ToolbarButton"];
 
-function ToolbarButton(window, versionInfo, buttonName, toolbarName, label, tooltip) {
+var ToolbarButton = function(window, versionInfo, buttonName, toolbarName, label, tooltip) {
 	this.init = function(window, versionInfo, buttonName, toolbarName, label, tooltip) {
 		this.window = window;
 		this.versionInfo = versionInfo;
@@ -12,6 +12,10 @@ function ToolbarButton(window, versionInfo, buttonName, toolbarName, label, tool
 		this.isTypeStatusButton = false;
 	};
 
+	this.init(window, versionInfo, buttonName, toolbarName, label, tooltip);
+};
+
+ToolbarButton.prototype = new function() {
 	this.getStringBundle = function(window) {
 		return window.document.getElementById("flashVideoDownload_stringbundle");
 	};
@@ -94,7 +98,5 @@ function ToolbarButton(window, versionInfo, buttonName, toolbarName, label, tool
 	// applies only for "Status Bar" buttons (they do not exist in version 29 or higher)
     this.hideStatusbarButton = function() {
     	this.window.document.getElementById(this.buttonName).parentNode.hidden = true;
-    };    
-
-	this.init(window, versionInfo, buttonName, toolbarName, label, tooltip);
+    };
 };

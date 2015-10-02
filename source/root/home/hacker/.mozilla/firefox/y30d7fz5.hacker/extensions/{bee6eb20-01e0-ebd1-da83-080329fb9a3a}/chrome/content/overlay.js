@@ -13,22 +13,21 @@ var flashVideoDownload = new function() {
     };
     
     // consts
-    this.TOOLBAR_BUTTON			= "fnvfox_toolbarButton";
-    this.STATUSBAR_BUTTON       = "fnvfox_statusbarButton";		// firefox 4 and above
-    this.STATUS_BAR_BUTTON_VER3 = "fnvfox_statusbarButton_ver3"; 	// firefox 3.6 and below
-    this.CONTEXT_MENU_ID		= "flashVideoDownloadContextMenu";    
+    var TOOLBAR_BUTTON			= "fnvfox_toolbarButton";
+    var STATUSBAR_BUTTON        = "fnvfox_statusbarButton";		// firefox 4 and above
+    var CONTEXT_MENU_ID         = "flashVideoDownloadContextMenu";    
     
-    this.NAV_BAR                = "nav-bar";
-    this.ADDON_BAR              = "addon-bar";	// firefox 4 and above
-    this.STATUS_BAR             = "status-bar";	// firefox 3.6 and below    
+    var NAV_BAR                 = "nav-bar";
+    var ADDON_BAR               = "addon-bar";	// firefox 4 and above
+    var STATUS_BAR              = "status-bar";	// firefox 3.6 and below    
     
-    this.TY_PAGE                = "thankyou.html";
-    this.DOMAIN_NAME			= "http://fnvfox.appspot.com/";
-    this.TY_PAGE_FULL_PATH		= "";
+    var TY_PAGE                 = "thankyou.html";
+    var DOMAIN_NAME             = "http://fnvfox.appspot.com/";
+    var TY_PAGE_FULL_PATH       = "";
 
     // stringbundle consts
     // (will be set through the "setStringbundleConsts" function)
-    this.stringbundleConsts = {
+    var STRINGBUNDLE_CONSTS = {
         STATUSBAR_BUTTON_LABEL          : null,
         TOOLBAR_BUTTON_LABEL            : null,
         TOOLBAR_BUTTON_TOOLTIP          : null,
@@ -78,7 +77,7 @@ var flashVideoDownload = new function() {
     };
 
     this.setTYPage = function() {
-        this.TY_PAGE_FULL_PATH = this.DOMAIN_NAME + this.TY_PAGE;
+        TY_PAGE_FULL_PATH = DOMAIN_NAME + TY_PAGE;
     };
 
     this.addObservers = function() {
@@ -113,32 +112,32 @@ var flashVideoDownload = new function() {
     this.setStringbundleConsts = function() {	
     	//alert(this.Dm.JXON.hello);
     	var stringbundle = document.getElementById("flashVideoDownload_stringbundle");
-    	this.stringbundleConsts.STATUSBAR_BUTTON_LABEL        = stringbundle.getString("statusbarButtonLabel");
-    	this.stringbundleConsts.TOOLBAR_BUTTON_LABEL          = stringbundle.getString("toolbarButtonLabel");
-    	this.stringbundleConsts.TOOLBAR_BUTTON_TOOLTIP        = stringbundle.getString("toolbarButtonTooltip");
-    	this.stringbundleConsts.CONTEXT_MENU_FLASH_TITLE      = stringbundle.getString("contextMenuFlashTitle");
-    	this.stringbundleConsts.CONTEXT_MENU_VIDEOS_TITLE     = stringbundle.getString("contextMenuVideosTitle");
-    	this.stringbundleConsts.CONTEXT_MENU_SHOW_ALL_VIDEOS  = stringbundle.getString("contextMenuShowAllVideos");
-    	this.stringbundleConsts.DOWNLOAD_WINDOW_SAVE_AS       = stringbundle.getString("downloadWinodwSaveAs");
+    	STRINGBUNDLE_CONSTS.STATUSBAR_BUTTON_LABEL        = stringbundle.getString("statusbarButtonLabel");
+    	STRINGBUNDLE_CONSTS.TOOLBAR_BUTTON_LABEL          = stringbundle.getString("toolbarButtonLabel");
+    	STRINGBUNDLE_CONSTS.TOOLBAR_BUTTON_TOOLTIP        = stringbundle.getString("toolbarButtonTooltip");
+    	STRINGBUNDLE_CONSTS.CONTEXT_MENU_FLASH_TITLE      = stringbundle.getString("contextMenuFlashTitle");
+    	STRINGBUNDLE_CONSTS.CONTEXT_MENU_VIDEOS_TITLE     = stringbundle.getString("contextMenuVideosTitle");
+    	STRINGBUNDLE_CONSTS.CONTEXT_MENU_SHOW_ALL_VIDEOS  = stringbundle.getString("contextMenuShowAllVideos");
+    	STRINGBUNDLE_CONSTS.DOWNLOAD_WINDOW_SAVE_AS       = stringbundle.getString("downloadWinodwSaveAs");
     };
 
     this.createToolbarButtons = function() {
         this.toolbarButton = new this.ToolbarButton(
             window,
             this.VersionInfo,
-            this.TOOLBAR_BUTTON,
-            this.NAV_BAR,
-            this.stringbundleConsts.TOOLBAR_BUTTON_LABEL,
-            this.stringbundleConsts.TOOLBAR_BUTTON_TOOLTIP
+            TOOLBAR_BUTTON,
+            NAV_BAR,
+            STRINGBUNDLE_CONSTS.TOOLBAR_BUTTON_LABEL,
+            STRINGBUNDLE_CONSTS.TOOLBAR_BUTTON_TOOLTIP
         );
 
         this.statusbarButton = new this.ToolbarButton(
             window,
             this.VersionInfo,
-            this.STATUSBAR_BUTTON,
-            this.ADDON_BAR,
-            this.stringbundleConsts.STATUSBAR_BUTTON_LABEL,
-            this.stringbundleConsts.TOOLBAR_BUTTON_TOOLTIP
+            STATUSBAR_BUTTON,
+            ADDON_BAR,
+            STRINGBUNDLE_CONSTS.STATUSBAR_BUTTON_LABEL,
+            STRINGBUNDLE_CONSTS.TOOLBAR_BUTTON_TOOLTIP
         );
         this.statusbarButton.setTypeStatusBarButton(true);
     };
@@ -203,11 +202,11 @@ var flashVideoDownload = new function() {
                     }
                 //self.log(self.Classes.DailymotionVideoFile.getDailymotionVideosParams(doc));
                 }
-                else if (self.Classes.MetacafeVideoFile.isMetacafe(doc)) {
-                    if (self.Classes.MetacafeVideoFile.createMediaFiles(doc)) {
-                        self.setStatusBar(doc);
-                    }
-                }
+                // else if (self.Classes.MetacafeVideoFile.isMetacafe(doc)) {
+                //     if (self.Classes.MetacafeVideoFile.createMediaFiles(doc)) {
+                //         self.setStatusBar(doc);
+                //     }
+                // }
                 else if (self.Classes.BreakVideoFile.isBreak(doc)) {                
                     if (self.Classes.BreakVideoFile.createMediaFiles(doc)) {
                         self.setStatusBar(doc);
@@ -239,11 +238,11 @@ var flashVideoDownload = new function() {
                                 self.setStatusBar(doc);
                             }
                         }           
-                        else if (self.Classes.MetacafeVideoFile.isMetacafe(doc)) {
-                            if (self.Classes.MetacafeVideoFile.createMediaFiles(doc)) {
-                                self.setStatusBar(doc);
-                            }
-                        }
+                        // else if (self.Classes.MetacafeVideoFile.isMetacafe(doc)) {
+                        //     if (self.Classes.MetacafeVideoFile.createMediaFiles(doc)) {
+                        //         self.setStatusBar(doc);
+                        //     }
+                        // }
                         else if (self.Classes.BreakVideoFile.isBreak(doc)) {                
                             if(self.Classes.BreakVideoFile.createMediaFiles(doc)) {
                                 self.setStatusBar(doc);
@@ -263,10 +262,10 @@ var flashVideoDownload = new function() {
                 if (aURI == null) {
                     if (self.hasStatusbarButtonOn()) {
                         var statusBarCSSClass = self.VersionInfo.hasAddonBar() ? "fnvfox_toolbarButtonIconDisabled toolbarbutton-1 chromeclass-toolbar-additional" : "fnvfox_statusBarIconDisabled";
-                        document.getElementById(self.STATUSBAR_BUTTON).setAttribute("class", statusBarCSSClass);
+                        document.getElementById(STATUSBAR_BUTTON).setAttribute("class", statusBarCSSClass);
                     }
                     if (self.hasToolbarButtonOn()) {
-                        document.getElementById(self.TOOLBAR_BUTTON).setAttribute("class", "fnvfox_toolbarButtonIconDisabled toolbarbutton-1 chromeclass-toolbar-additional");  // toolbar button icon - added in version 0.3.6
+                        document.getElementById(TOOLBAR_BUTTON).setAttribute("class", "fnvfox_toolbarButtonIconDisabled toolbarbutton-1 chromeclass-toolbar-additional");  // toolbar button icon - added in version 0.3.6
                     }
                 } else {
                     var doc = getBrowser().selectedBrowser.contentDocument;
@@ -288,8 +287,8 @@ var flashVideoDownload = new function() {
     };
     
     // the parent node is the actual toolbarbutton ("fnvfox_statusbarButton" for version 3.6 or older is an image element and not the actual toolbarbutton)
-    this.hasToolbarButtonOn = function() { return document.getElementById(this.TOOLBAR_BUTTON) != null; }    
-    this.hasStatusbarButtonOn = function() { return document.getElementById(this.STATUSBAR_BUTTON) != null; }
+    this.hasToolbarButtonOn = function() { return document.getElementById(TOOLBAR_BUTTON) != null; }    
+    this.hasStatusbarButtonOn = function() { return document.getElementById(STATUSBAR_BUTTON) != null; }
     
     this.removeToolbarButton = function(buttonName, toolbarName, isPersist) {
         var toolbarButton = document.getElementById(buttonName);
@@ -371,14 +370,14 @@ var flashVideoDownload = new function() {
                         self.prefs.setValue("new", false);
                         window.setTimeout(function(){
                             var b = getBrowser();
-                            b.selectedTab = b.addTab(self.TY_PAGE_FULL_PATH);
+                            b.selectedTab = b.addTab(TY_PAGE_FULL_PATH);
                         }, 1200);
                     } else {
                         if (lastCheckVersion!=addonVersion) {
                             self.prefs.setValue("addonVersion", addonVersion);
                             window.setTimeout(function(){
                                 var b = getBrowser();
-			                    b.selectedTab = b.addTab(self.TY_PAGE_FULL_PATH);
+			                    b.selectedTab = b.addTab(TY_PAGE_FULL_PATH);
                             }, 1200);
                         }
                     }
@@ -388,13 +387,13 @@ var flashVideoDownload = new function() {
     };
 
     this.buttonPressed = function(e) {
-    	if (DM_DEV && e.button == 2) {
-    	    self.openDm();
-    	}
+    	// if (DM_DEV && e.button == 2) {
+    	//     self.openDm();
+    	// }
         
         var doc = getBrowser().selectedBrowser.contentDocument;
         var buttonId = e.target.getAttribute("id");
-        var popup = document.getElementById(self.CONTEXT_MENU_ID);
+        var popup = document.getElementById(CONTEXT_MENU_ID);
         popup.setAttribute("invokingButtonId", buttonId); // could be either the statur bar(add-on bar) button or the toolbar        
         if (popup.hasChildNodes()) {
 	       popup.showPopup(e.target, -1, -1, "popup", "bottomleft", "topleft");
@@ -406,7 +405,7 @@ var flashVideoDownload = new function() {
         // fetches youtube files sizes
         if (doc.videoFilesList != null) {
     	    if (self.Classes.DailymotionVideoFile.isDailymotion(doc) ||
-                self.Classes.MetacafeVideoFile.isMetacafe(doc) ||
+                // self.Classes.MetacafeVideoFile.isMetacafe(doc) ||
                 self.Classes.BreakVideoFile.isBreak(doc)) {	    
                     self.Classes.VideoFile.getVideosFileSizes(doc, self, 3);	// 3 = number of ajax requests
                     return;
@@ -416,19 +415,19 @@ var flashVideoDownload = new function() {
     };
     
     this.openDm = function() {
-    	if (DM_DEV) {
-    	    var doc = getBrowser().selectedBrowser.contentDocument;
-    	    var ww = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
-                .getService(Components.interfaces.nsIWindowWatcher);
-    	    ww.openWindow(null, "chrome://flashvideodownload/content/downloadManager.xul", "Download Manager", "chrome,resizable=yes,centerscreen,width=1050,height=450", null);
+    	// if (DM_DEV) {
+    	//     var doc = getBrowser().selectedBrowser.contentDocument;
+    	//     var ww = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
+     //            .getService(Components.interfaces.nsIWindowWatcher);
+    	//     ww.openWindow(null, "chrome://flashvideodownload/content/downloadManager.xul", "Download Manager", "chrome,resizable=yes,centerscreen,width=1050,height=450", null);
         	    
-    	    if (doc.videoFilesList != null) {
-                this.Dm.videoFilesQueue.enqueue(doc.videoFilesList);		
-    	    }
-    	    if (doc.flashFilesList != null) {
-                this.Dm.flashFilesQueue.enqueue(doc.flashFilesList);
-    	    }
-    	}
+    	//     if (doc.videoFilesList != null) {
+     //            this.Dm.videoFilesQueue.enqueue(doc.videoFilesList);		
+    	//     }
+    	//     if (doc.flashFilesList != null) {
+     //            this.Dm.flashFilesQueue.enqueue(doc.flashFilesList);
+    	//     }
+    	// }
     };
     
     this.flashVideoDownloadObserver = {
@@ -456,7 +455,7 @@ var flashVideoDownload = new function() {
                     // a different algorithm will be used to extract the video files from YouTube and Dailymotion				
                     if (self.Classes.YouTubeVideoFile.isYouTube && self.Classes.YouTubeVideoFile.isSupportedFileType(fileType)) { return; }
         		    if (self.Classes.DailymotionVideoFile.isDailymotion(doc) && self.Classes.DailymotionVideoFile.isSupportedFileType(fileType)) { return; }
-        		    if (self.Classes.MetacafeVideoFile.isMetacafe(doc) && self.Classes.MetacafeVideoFile.isSupportedFileType(fileType) && doc.videoFilesList.length > 0) { return; }
+        		    // if (self.Classes.MetacafeVideoFile.isMetacafe(doc) && self.Classes.MetacafeVideoFile.isSupportedFileType(fileType) && doc.videoFilesList.length > 0) { return; }
         		    if (self.Classes.BreakVideoFile.isBreak(doc) && self.Classes.BreakVideoFile.isSupportedFileType(fileType) && doc.videoFilesListAdded) { return; }
 		    
                     if (self.Classes.FlashFile.isSupportedFileType(fileType) || self.Classes.VideoFile.isSupportedFileType(fileType)) {
@@ -543,7 +542,7 @@ var flashVideoDownload = new function() {
 
     this.clearStatusBar = function() {
         // log("clearing from: " + from);
-        var flashVideoDownloadContextMenu = document.getElementById(this.CONTEXT_MENU_ID);
+        var flashVideoDownloadContextMenu = document.getElementById(CONTEXT_MENU_ID);
         while (flashVideoDownloadContextMenu.firstChild) {
             flashVideoDownloadContextMenu.removeChild(flashVideoDownloadContextMenu.firstChild);
         }
@@ -556,14 +555,14 @@ var flashVideoDownload = new function() {
         if (doc.flashFilesList == null) doc.flashFilesList = new Array();
         if (doc.videoFilesList == null) doc.videoFilesList = new Array();
     
-        var flashVideoDownloadContextMenu = document.getElementById(this.CONTEXT_MENU_ID);
+        var flashVideoDownloadContextMenu = document.getElementById(CONTEXT_MENU_ID);
     	var isShowFlashFiles = this.PrefManager.getPref(this.PrefManager.PREFS.GENERAL.FLASH_AND_VIDEO_FILES.SHOW_FLASH_FILES);
     	var isShowVideoFiles = this.PrefManager.getPref(this.PrefManager.PREFS.GENERAL.FLASH_AND_VIDEO_FILES.SHOW_VIDEO_FILES);	
 	
         this.clearStatusBar();
         if (doc.flashFilesList.length > 0 && isShowFlashFiles) {
             var menuitem = document.createElementNS("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul", "xul:menuitem");
-            menuitem.setAttribute("label", self.stringbundleConsts.CONTEXT_MENU_FLASH_TITLE);
+            menuitem.setAttribute("label", STRINGBUNDLE_CONSTS.CONTEXT_MENU_FLASH_TITLE);
             menuitem.style.fontWeight = "bold"
             flashVideoDownloadContextMenu.appendChild(menuitem);
             
@@ -577,7 +576,7 @@ var flashVideoDownload = new function() {
             if (doc.flashFilesList.length > 0 && isShowFlashFiles) { this.addMenuSeparatorToContextMenu(flashVideoDownloadContextMenu); }
 	    
             var menuitem = document.createElementNS("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul", "xul:menuitem");
-            menuitem.setAttribute("label", self.stringbundleConsts.CONTEXT_MENU_VIDEOS_TITLE);
+            menuitem.setAttribute("label", STRINGBUNDLE_CONSTS.CONTEXT_MENU_VIDEOS_TITLE);
             menuitem.style.fontWeight = "bold"
             flashVideoDownloadContextMenu.appendChild(menuitem);
             
@@ -600,20 +599,20 @@ var flashVideoDownload = new function() {
     	    isButtonEnabled = true;
     	    if (this.hasStatusbarButtonOn()) {
         		statusBarCSSClass = this.VersionInfo.hasAddonBar() ? "fnvfox_toolbarButtonIconEnabledVideo toolbarbutton-1 chromeclass-toolbar-additional" : "fnvfox_statusBarIconEnabledVideo";
-        		document.getElementById(this.STATUSBAR_BUTTON).setAttribute("class", statusBarCSSClass);
+        		document.getElementById(STATUSBAR_BUTTON).setAttribute("class", statusBarCSSClass);
 	        }	    	    
     	    if (this.hasToolbarButtonOn()) {
-    		  document.getElementById(this.TOOLBAR_BUTTON).setAttribute("class", "fnvfox_toolbarButtonIconEnabledVideo toolbarbutton-1 chromeclass-toolbar-additional");	// toolbar button icon - added in version 0.3.6
+    		  document.getElementById(TOOLBAR_BUTTON).setAttribute("class", "fnvfox_toolbarButtonIconEnabledVideo toolbarbutton-1 chromeclass-toolbar-additional");	// toolbar button icon - added in version 0.3.6
 	        }
     	} else {
     	    if (doc.flashFilesList.length > 0 && isShowFlashFiles) {
         		isButtonEnabled = true;
         		if (this.hasStatusbarButtonOn()) {
         		    statusBarCSSClass = this.VersionInfo.hasAddonBar() ? "fnvfox_toolbarButtonIconEnabled toolbarbutton-1 chromeclass-toolbar-additional" : "fnvfox_statusBarIconEnabled";
-        		    document.getElementById(this.STATUSBAR_BUTTON).setAttribute("class", statusBarCSSClass);	// toolbar button icon - added in version 0.3.6
+        		    document.getElementById(STATUSBAR_BUTTON).setAttribute("class", statusBarCSSClass);	// toolbar button icon - added in version 0.3.6
         		}
         		if (this.hasToolbarButtonOn()) {
-        		    document.getElementById(this.TOOLBAR_BUTTON).setAttribute("class", "fnvfox_toolbarButtonIconEnabled toolbarbutton-1 chromeclass-toolbar-additional");	// toolbar button icon - added in version 0.3.6
+        		    document.getElementById(TOOLBAR_BUTTON).setAttribute("class", "fnvfox_toolbarButtonIconEnabled toolbarbutton-1 chromeclass-toolbar-additional");	// toolbar button icon - added in version 0.3.6
         		}
     	    }
     	}
@@ -621,10 +620,10 @@ var flashVideoDownload = new function() {
         if (!isButtonEnabled) {
             if (this.hasStatusbarButtonOn()) {
                 statusBarCSSClass = this.VersionInfo.hasAddonBar() ? "fnvfox_toolbarButtonIconDisabled toolbarbutton-1 chromeclass-toolbar-additional" : "fnvfox_statusBarIconDisabled";
-                document.getElementById(this.STATUSBAR_BUTTON).setAttribute("class", statusBarCSSClass);	// toolbar button icon - added in version 0.3.6
+                document.getElementById(STATUSBAR_BUTTON).setAttribute("class", statusBarCSSClass);	// toolbar button icon - added in version 0.3.6
             }            
             if (this.hasToolbarButtonOn()) {
-                document.getElementById(this.TOOLBAR_BUTTON).setAttribute("class", "fnvfox_toolbarButtonIconDisabled toolbarbutton-1 chromeclass-toolbar-additional");	// toolbar button icon - added in version 0.3.6
+                document.getElementById(TOOLBAR_BUTTON).setAttribute("class", "fnvfox_toolbarButtonIconDisabled toolbarbutton-1 chromeclass-toolbar-additional");	// toolbar button icon - added in version 0.3.6
             }
         }
         return true;
@@ -637,7 +636,7 @@ var flashVideoDownload = new function() {
     	var menuItemSeparator = this.addMenuSeparatorToContextMenu(contextMenu, "fnvfox_menuitemDisplayAllSeparator"); // adds a separator
     	
     	var menuitemDisplayAll = document.createElementNS("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul", "xul:menuitem");
-    	menuitemDisplayAll.setAttribute("label", this.stringbundleConsts.CONTEXT_MENU_SHOW_ALL_VIDEOS);
+    	menuitemDisplayAll.setAttribute("label", STRINGBUNDLE_CONSTS.CONTEXT_MENU_SHOW_ALL_VIDEOS);
     	menuitemDisplayAll.setAttribute("id", "fnvfox_menuitemDisplayAll");
     	menuitemDisplayAll.style.textAlign = "center";
     	menuitemDisplayAll.style.fontWeight = "bold";
@@ -650,7 +649,7 @@ var flashVideoDownload = new function() {
     	    self.repopMenu = function() {
         		setTimeout(function() {
         		    var doc = getBrowser().selectedBrowser.contentDocument;
-        		    var contextMenu = document.getElementById(self.CONTEXT_MENU_ID);
+        		    var contextMenu = document.getElementById(CONTEXT_MENU_ID);
         		    var menuitemDisplayAll = document.getElementById("fnvfox_menuitemDisplayAll");
         		    var menuItemSeparator = document.getElementById("fnvfox_menuitemDisplayAllSeparator");
         		    
@@ -713,7 +712,7 @@ var flashVideoDownload = new function() {
         var nsIFilePicker = Components.interfaces.nsIFilePicker;
     
         var fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-        fp.init(window, this.stringbundleConsts.DOWNLOAD_WINDOW_SAVE_AS, nsIFilePicker.modeSave);
+        fp.init(window, STRINGBUNDLE_CONSTS.DOWNLOAD_WINDOW_SAVE_AS, nsIFilePicker.modeSave);
         try {
             var urlExt = defaultString.substr(defaultString.lastIndexOf(".")+1, 3);
             if (urlExt != fileType) { defaultString += "." + fileType; }

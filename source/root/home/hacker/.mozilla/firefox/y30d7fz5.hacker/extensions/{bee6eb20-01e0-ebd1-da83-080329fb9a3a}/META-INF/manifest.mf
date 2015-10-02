@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: hlxpKtSGDYrmXQMlfcYHUA==
-SHA1-Digest: GUGKqpY/KPkgA6Zmdo/XzAEk4/k=
+MD5-Digest: sxGRkzgySm0cvxDRnWyQwA==
+SHA1-Digest: lTKFD3eC2OzWHAhUvtALbHp96YI=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
@@ -32,8 +32,8 @@ SHA1-Digest: eyyCPntsOS0qsixYJKtHVzYX+g4=
 
 Name: chrome/content/options.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: d/YyY2ELxWE6fwzQX/RNlg==
-SHA1-Digest: QEF4V5X7DQl1YPMnPs82miHc4nM=
+MD5-Digest: Gxq+kGOpKri0QPKlhRNObA==
+SHA1-Digest: 8KbkuLuNecHHlIYq4IKnzydBIHI=
 
 Name: chrome/content/options.xul
 Digest-Algorithms: MD5 SHA1
@@ -42,8 +42,8 @@ SHA1-Digest: dY0ZaKbIJoRZUkBGX8R16LYspKc=
 
 Name: chrome/content/overlay.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: mKmeaEdb9G66vNBTPeaiQg==
-SHA1-Digest: UWUyO3hMC81ooEaD9DH2hdwJJZc=
+MD5-Digest: auHbm/Xq0uHwrVBqCgkAAA==
+SHA1-Digest: G+4Gaxf8nD8FYYpD+iBmULcw+TM=
 
 Name: chrome/content/overlay.xul
 Digest-Algorithms: MD5 SHA1
@@ -157,8 +157,8 @@ SHA1-Digest: kniAsCemMCM/2NxRjyci67WG1oM=
 
 Name: chrome/skin/options.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: mpxcuN9BohKkDZ85PUa7Aw==
-SHA1-Digest: RF287/Ry5W0CKTUlnIkKy3zJWmg=
+MD5-Digest: g8wGNqHRnLVD4dQC6i5HyQ==
+SHA1-Digest: pw3juezH6UVM6huU4k7PuN4YdmY=
 
 Name: chrome/skin/icons/flash_icon.png
 Digest-Algorithms: MD5 SHA1
@@ -247,8 +247,8 @@ SHA1-Digest: GoTMC4hrCXDh9GwN0wk2FJu52tE=
 
 Name: modules/ToolbarButton.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: daiiwF5+EXf3xERz0CgYQg==
-SHA1-Digest: w/oke2EkxG8LWwNSInUulcf/EPs=
+MD5-Digest: xl5nXp6hQBN/qTxm+HnzCQ==
+SHA1-Digest: VZKkH7qgOTKjjhAHBghAJ4L2WZk=
 
 Name: modules/TreeDOM.js
 Digest-Algorithms: MD5 SHA1
