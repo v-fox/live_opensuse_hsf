@@ -8,7 +8,7 @@ Arch:x86_64-gcc3:$
 libnpsoplugin.so:$
 /usr/lib64/libreoffice/program/libnpsoplugin.so:$
 :$
-1430317531000:0:0:0:$
+1438699560000:0:0:0:$
 LibreOffice Plug-in handles all its documents:$
 LibreOffice Plug-in:$
 44
@@ -69,54 +69,11 @@ DjView-4.9:$
 3:image/x-dejavu:DjVu File::$
 4:image/x-iw44:DjVu File::$
 5:image/vnd.djvu:DjVu File::$
-IcedTeaPlugin.so:$
-/usr/lib64/java-1_8_0-openjdk-plugin/lib/IcedTeaPlugin.so:$
-:$
-1413546082000:0:0:0:$
-The <a href="http://icedtea.classpath.org/wiki/IcedTea-Web">IcedTea-Web Plugin</a> executes Java applets.:$
-IcedTea-Web Plugin (using IcedTea-Web 1.5.1 (suse-4.1-x86_64)):$
-36
-0:application/x-java-vm:IcedTea:class,jar:$
-1:application/x-java-applet:IcedTea:class,jar:$
-2:application/x-java-applet;version=1.1:IcedTea:class,jar:$
-3:application/x-java-applet;version=1.1.1:IcedTea:class,jar:$
-4:application/x-java-applet;version=1.1.2:IcedTea:class,jar:$
-5:application/x-java-applet;version=1.1.3:IcedTea:class,jar:$
-6:application/x-java-applet;version=1.2:IcedTea:class,jar:$
-7:application/x-java-applet;version=1.2.1:IcedTea:class,jar:$
-8:application/x-java-applet;version=1.2.2:IcedTea:class,jar:$
-9:application/x-java-applet;version=1.3:IcedTea:class,jar:$
-10:application/x-java-applet;version=1.3.1:IcedTea:class,jar:$
-11:application/x-java-applet;version=1.4:IcedTea:class,jar:$
-12:application/x-java-applet;version=1.4.1:IcedTea:class,jar:$
-13:application/x-java-applet;version=1.4.2:IcedTea:class,jar:$
-14:application/x-java-applet;version=1.5:IcedTea:class,jar:$
-15:application/x-java-applet;version=1.6:IcedTea:class,jar:$
-16:application/x-java-applet;version=1.7:IcedTea:class,jar:$
-17:application/x-java-applet;jpi-version=1.7.0_50:IcedTea:class,jar:$
-18:application/x-java-bean:IcedTea:class,jar:$
-19:application/x-java-bean;version=1.1:IcedTea:class,jar:$
-20:application/x-java-bean;version=1.1.1:IcedTea:class,jar:$
-21:application/x-java-bean;version=1.1.2:IcedTea:class,jar:$
-22:application/x-java-bean;version=1.1.3:IcedTea:class,jar:$
-23:application/x-java-bean;version=1.2:IcedTea:class,jar:$
-24:application/x-java-bean;version=1.2.1:IcedTea:class,jar:$
-25:application/x-java-bean;version=1.2.2:IcedTea:class,jar:$
-26:application/x-java-bean;version=1.3:IcedTea:class,jar:$
-27:application/x-java-bean;version=1.3.1:IcedTea:class,jar:$
-28:application/x-java-bean;version=1.4:IcedTea:class,jar:$
-29:application/x-java-bean;version=1.4.1:IcedTea:class,jar:$
-30:application/x-java-bean;version=1.4.2:IcedTea:class,jar:$
-31:application/x-java-bean;version=1.5:IcedTea:class,jar:$
-32:application/x-java-bean;version=1.6:IcedTea:class,jar:$
-33:application/x-java-bean;version=1.7:IcedTea:class,jar:$
-34:application/x-java-bean;jpi-version=1.7.0_50:IcedTea:class,jar:$
-35:application/x-java-vm-npruntime:IcedTea::$
 libvlcplugin.so:$
 /usr/lib64/browser-plugins/libvlcplugin.so:$
 :$
-1425309865000:0:0:0:$
-VLC media player Web Plugin 2.2.1 Terry Pratchett (Weatherwax)<br />Copyright © 2002-2014 VLC authors and VideoLAN<br /><a href="http://www.videolan.org/vlc/">http://www.videolan.org/vlc/</a>:$
+1425316413000:0:0:0:$
+VLC media player Web Plugin 3.0.0-git Vetinari<br />Copyright © 2002-2014 VLC authors and VideoLAN<br /><a href="http://www.videolan.org/vlc/">http://www.videolan.org/vlc/</a>:$
 VLC Web Plugin:$
 49
 0:audio/mpeg:MPEG audio:mp2,mp3,mpga,mpega:$
@@ -171,10 +128,10 @@ VLC Web Plugin:$
 libkpartsplugin.so:$
 /usr/lib64/browser-plugins/libkpartsplugin.so:$
 :$
-1433531224000:0:0:0:$
+1435697816000:0:0:0:$
 File viewer using KDE's KParts technology (2012-07-23):$
 KParts Plugin:$
-370
+374
 0:application/epub+zip:electronic book document:epub:$
 1:application/gml+xml:GML document:gml:$
 2:application/javascript:JavaScript program:js:$
@@ -294,262 +251,311 @@ KParts Plugin:$
 116:application/x-homebank:HomeBank File:xhb:$
 117:application/x-ica:Citrix ICA settings file:ica:$
 118:application/x-it87:IT 8.7 color calibration file:it87:$
-119:application/x-kgetlist:KGet download list:kgt:$
-120:application/x-khtml-adaptor:KHTML Extension Adaptor::$
-121:application/x-kommander:Kommander file:kmdr:$
-122:application/x-kvtml:vocabulary trainer document:kvtml:$
-123:application/x-lyx:LyX document:lyx:$
-124:application/x-m4:M4 macro:m4:$
-125:application/x-magicpoint:MagicPoint presentation:mgp:$
-126:application/x-markaby:Markaby script:mab:$
-127:application/x-matroska:Matroska stream::$
-128:application/x-mmg-settings:mkvmerge GUI settings:mmg:$
-129:application/x-mobipocket-ebook:Mobipocket e-book:mobi:$
-130:application/x-mozilla-bookmarks:Mozilla bookmarks::$
-131:application/x-nautilus-link:Nautilus link::$
-132:application/x-netshow-channel:Windows Media Station file:nsc:$
-133:application/x-nzb:NewzBin usenet index:nzb:$
-134:application/x-osm+xml:OSM Data:osm:$
-135:application/x-pem-file:Openssl PEM format:pem:$
-136:application/x-pem-key:Private Key in PEM format::$
-137:application/x-perl:Perl script:pl:$
-138:application/x-profile:profiler results::$
-139:application/x-qtiplot:QtiPlot document:qti:$
-140:application/x-quanta:Quanta project:quanta:$
-141:application/x-quicktime-media-link:QuickTime metalink playlist:qtl:$
-142:application/x-ruby:Ruby script:rb:$
-143:application/x-sami:SAMI subtitles:smi:$
-144:application/x-shared-library-la:libtool shared library:la:$
-145:application/x-shellscript:shell script:sh:$
-146:application/x-smb-server:Windows server::$
-147:application/x-smb-workgroup:Windows workgroup::$
-148:application/x-spkac+base64:SPKAC Certificate Request in OpenSSL format::$
-149:application/x-subrip:SubRip subtitles:srt:$
-150:application/x-theme:theme:theme:$
-151:application/x-trig:TriG RDF document:trig:$
-152:application/x-troff-man:Troff document:man:$
-153:application/x-turtle:Turtle RDF document::$
-154:application/x-ufraw:UFRaw ID image:ufraw:$
-155:application/x-virt-viewer:Virt-Viewer connection file:vv:$
-156:application/x-vlc-plugin:VLC plug-in::$
-157:application/x-wais-source:WAIS source code:src:$
-158:application/x-wwf:WWF document:wwf:$
-159:application/x-xbel:XBEL bookmarks:xbel:$
-160:application/x-xliff:XLIFF translation file:xlf:$
-161:application/x-yaml:YAML document:yaml:$
-162:application/xhtml+xml:XHTML page:xhtml:$
-163:application/xml:XML document:xml:$
-164:application/xml-dtd:DTD file:dtd:$
-165:application/xml-external-parsed-entity:XML entities document:ent:$
-166:application/xsd:W3C XML schema:xsd:$
-167:application/xslt+xml:XSLT stylesheet:xsl:$
-168:application/xspf+xml:XSPF playlist:xspf:$
-169:audio/amr:AMR audio:amr:$
-170:audio/flac:FLAC audio:flac:$
-171:audio/m4a:MPEG-4 audio::$
-172:audio/midi:MIDI audio:mid:$
-173:audio/mp4:MPEG-4 audio:m4a:$
-174:audio/mpeg:MP3 audio:mp3:$
-175:audio/ogg:Ogg Audio:oga:$
-176:audio/webm:WebM audio::$
-177:audio/x-flac+ogg:Ogg FLAC audio:oga:$
-178:audio/x-m4b:MPEG-4 audio book:m4b:$
-179:audio/x-matroska:Matroska audio:mka:$
-180:audio/x-mpegurl:MP3 audio:m3u:$
-181:audio/x-ms-asx:Microsoft ASX playlist:asx:$
-182:audio/x-ms-wma:Windows Media audio:wma:$
-183:audio/x-opus+ogg:Opus audio:opus:$
-184:audio/x-realaudio:Real Media Audio::$
-185:audio/x-speex+ogg:Ogg Speex audio:oga:$
-186:audio/x-vorbis+ogg:Ogg Vorbis audio:oga:$
-187:audio/x-wav:WAV audio:wav:$
-188:image/bmp:Windows BMP image:bmp:$
-189:image/djvu:DjVu File::$
-190:image/fax-g3:CCITT G3 fax:g3:$
-191:image/g3fax:G3 fax image::$
-192:image/gif:GIF image:gif:$
-193:image/jp2:JPEG-2000 image:jp2:$
-194:image/jpeg:JPEG Image:jpeg:$
-195:image/png:PNG image:png:$
-196:image/svg+xml:SVG image:svg:$
-197:image/tiff:TIFF image:tif:$
-198:image/vnd.adobe.photoshop:Photoshop image:psd:$
-199:image/vnd.djvu:DjVu image:djvu:$
-200:image/vnd.microsoft.icon:Windows icon:ico:$
-201:image/x-adobe-dng:Adobe DNG negative:dng:$
-202:image/x-bzeps:EPS image:eps.bz2:$
-203:image/x-canon-cr2:Canon CR2 raw image:cr2:$
-204:image/x-dds:DirectDraw surface:dds:$
-205:image/x-dejavu:DjVu File::$
-206:image/x-eps:EPS image:eps:$
-207:image/x-exr:EXR image:exr:$
-208:image/x-gzeps:EPS image:eps.gz:$
-209:image/x-hdr:HDR image:hdr:$
-210:image/x-iw44:DjVu File::$
-211:image/x-jng:JNG image:jng:$
-212:image/x-kodak-dcr:Kodak DCR raw image:dcr:$
-213:image/x-kodak-k25:Kodak K25 raw image:k25:$
-214:image/x-kodak-kdc:Kodak KDC raw image:kdc:$
-215:image/x-nikon-nef:Nikon NEF raw image:nef:$
-216:image/x-pcx:PCX image:pcx:$
-217:image/x-pentax-pef:Pentax PEF raw image:pef:$
-218:image/x-portable-bitmap:PBM image:pbm:$
-219:image/x-portable-graymap:PGM image:pgm:$
-220:image/x-portable-pixmap:PPM image:ppm:$
-221:image/x-rgb:RGB image:rgb:$
-222:image/x-sony-arw:Sony ARW raw image:arw:$
-223:image/x-sony-sr2:Sony SR2 raw image:sr2:$
-224:image/x-sony-srf:Sony SRF raw image:srf:$
-225:image/x-tga:TGA image:icb:$
-226:image/x-tiff-multipage:Multi-page TIFF image::$
-227:image/x-webp:WebP image:webp:$
-228:image/x-xbitmap:XBM image:xbm:$
-229:image/x-xcf:GIMP image:xcf:$
-230:image/x-xpixmap:XPM image:xpm:$
-231:model/vrml:VRML document:vrm:$
-232:text/cache-manifest:Web application cache manifest:manifest:$
-233:text/calendar:VCS/ICS calendar:vcs:$
-234:text/css:CSS stylesheet:css:$
-235:text/csv:CSV document:csv:$
-236:text/enriched:enriched text document::$
-237:text/html:HTML document:html:$
-238:text/htmlh:help page::$
-239:text/markdown:Markdown document:md:$
-240:text/plain:plain text document:txt:$
-241:text/rfc822-headers:email headers::$
-242:text/richtext:rich text document:rtx:$
-243:text/sgml:SGML document:sgml:$
-244:text/spreadsheet:spreadsheet interchange document:sylk:$
-245:text/tab-separated-values:TSV document:tsv:$
-246:text/troff:Troff document:tr:$
-247:text/vcard:electronic business card:vcard:$
-248:text/vnd.abc:abc musical notation file:abc:$
-249:text/vnd.cgats:CGATS color measurements:cgats:$
-250:text/vnd.graphviz:Graphviz DOT graph:gv:$
-251:text/vnd.rn-realtext:RealText document:rt:$
-252:text/vnd.sun.j2me.app-descriptor:JAD document:jad:$
-253:text/vnd.trolltech.linguist:message catalog:ts:$
-254:text/vnd.wap.wml:WML document:wml:$
-255:text/vnd.wap.wmlscript:WMLScript program:wmls:$
-256:text/vtt:WebVTT subtitles:vtt:$
-257:text/x-adasrc:Ada source code:adb:$
-258:text/x-ass:Advanced SubStation Alpha subtitles:ass:$
-259:text/x-authors:author list::$
-260:text/x-bibtex:BibTeX document:bib:$
-261:text/x-c++hdr:C++ header:hh:$
-262:text/x-c++src:C++ source code:cpp:$
-263:text/x-changelog:ChangeLog document::$
-264:text/x-chdr:C header:h:$
-265:text/x-cmake:CMake source code:cmake:$
-266:text/x-cobol:COBOL source file:cbl:$
-267:text/x-component::htc:$
-268:text/x-copying:license terms::$
-269:text/x-credits:author credits::$
-270:text/x-csharp:C# source code:cs:$
-271:text/x-csrc:C source code:c:$
-272:text/x-dcl:DCL script:dcl:$
-273:text/x-dsl:DSSSL document:dsl:$
-274:text/x-dsrc:D source code:d:$
-275:text/x-eiffel:Eiffel source code:e:$
-276:text/x-emacs-lisp:Emacs Lisp source code:el:$
-277:text/x-erlang:Erlang source code:erl:$
-278:text/x-fortran:Fortran source code:f:$
-279:text/x-genie:Genie source code:gs:$
-280:text/x-gettext-translation:translation file:po:$
-281:text/x-gettext-translation-template:translation template:pot:$
-282:text/x-go:Go source code:go:$
-283:text/x-google-video-pointer:Google Video Pointer:gvp:$
-284:text/x-haskell:Haskell source code:hs:$
-285:text/x-hex:Intel® hexadecimal object file:hex:$
-286:text/x-idl:IDL document:idl:$
-287:text/x-imelody:iMelody ringtone:imy:$
-288:text/x-install:installation instructions::$
-289:text/x-iptables:iptables configuration file:iptables:$
-290:text/x-java:Java source code:java:$
-291:text/x-katefilelist:Kate file list loader plugin list:katefl:$
-292:text/x-ldif:LDIF address book:ldif:$
-293:text/x-lilypond:Lilypond music sheet:ly:$
-294:text/x-literate-haskell:LHS source code:lhs:$
-295:text/x-log:application log:log:$
-296:text/x-lua:Lua script:lua:$
-297:text/x-makefile:Makefile:mk:$
-298:text/x-matlab:MATLAB script/function:m:$
-299:text/x-microdvd:MicroDVD subtitles:sub:$
-300:text/x-moc:Qt MOC file:moc:$
-301:text/x-modelica:Modelica model:mo:$
-302:text/x-mof:Managed Object Format:mof:$
-303:text/x-mplsub:MPLSub subtitles:mpl:$
-304:text/x-mpsub:MPSub subtitles:sub:$
-305:text/x-mrml:MRML playlist:mrml:$
-306:text/x-ms-regedit:Windows Registry extract:reg:$
-307:text/x-mup:Mup publication:mup:$
-308:text/x-nfo:NFO document:nfo:$
-309:text/x-objchdr:Objective-C header::$
-310:text/x-objcsrc:Objective-C source code:m:$
-311:text/x-ocaml:OCaml source code:ml:$
-312:text/x-ocl:OCL file:ocl:$
-313:text/x-ooc:OOC source code:ooc:$
-314:text/x-opml+xml:OPML syndication feed:opml:$
-315:text/x-pascal:Pascal source code:p:$
-316:text/x-patch:differences between files:diff:$
-317:text/x-python:Python script:py:$
-318:text/x-qml:Qt Markup Language file:qml:$
-319:text/x-readme:README document::$
-320:text/x-reject:rejected patch:rej:$
-321:text/x-rpm-spec:RPM spec file:spec:$
-322:text/x-scala:Scala source code:scala:$
-323:text/x-scheme:Scheme source code:scm:$
-324:text/x-scons:SCons configuration file::$
-325:text/x-setext:Setext document:etx:$
-326:text/x-ssa:SubStation Alpha subtitles:ssa:$
-327:text/x-subviewer:SubViewer subtitles:sub:$
-328:text/x-suse-ymp:YaST Meta Package:ymp:$
-329:text/x-suse-ymu:URL of a YaST Meta Package:ymu:$
-330:text/x-svhdr:SystemVerilog header:svh:$
-331:text/x-svsrc:SystemVerilog source code:sv:$
-332:text/x-tcl:Tcl script:tcl:$
-333:text/x-tex:TeX document:tex:$
-334:text/x-texinfo:TeXInfo document:texi:$
-335:text/x-tmplayer:TMPlayer subtitles:sub:$
-336:text/x-tmplayer+:TMPlayer+ subtitles:sub:$
-337:text/x-troff-me:Troff ME input document:me:$
-338:text/x-troff-mm:Troff MM input document:mm:$
-339:text/x-troff-ms:Troff MS input document:ms:$
-340:text/x-txt2tags:txt2tags document:t2t:$
-341:text/x-uil:X-Motif UIL table:uil:$
-342:text/x-uri:resource location::$
-343:text/x-uuencode:uuencoded file:uue:$
-344:text/x-vala:Vala source code:vala:$
-345:text/x-verilog:Verilog source code:v:$
-346:text/x-vhdl:VHDL source code:vhd:$
-347:text/x-xmi:XMI file:xmi:$
-348:text/x-xslfo:XSL FO file:fo:$
-349:text/xmcd:XMCD CD database::$
-350:video/3gpp:3GPP multimedia file:3gp:$
-351:video/3gpp2:3GPP2 multimedia file:3g2:$
-352:video/mp4:MPEG-4 video:mp4:$
-353:video/mpeg:MPEG video:mpeg:$
-354:video/mpeg-system:MPEG video::$
-355:video/ogg:Ogg Video:ogv:$
-356:video/quicktime:QuickTime video:qt:$
-357:video/vnd.mpegurl:MPEG video:m1u:$
-358:video/webm:WebM video:webm:$
-359:video/x-flv:Flash video:flv:$
-360:video/x-matroska:Matroska video:mkv:$
-361:video/x-matroska-3d:Matroska 3D video:mk3d:$
-362:video/x-mng:MNG animation:mng:$
-363:video/x-mpeg-system:MPEG video::$
-364:video/x-ms-asf-plugin:Windows Media Video::$
-365:video/x-ms-wmp:Microsoft Media Format:wmp:$
-366:video/x-ms-wmv:Windows Media video:wmv:$
-367:video/x-msvideo:AVI video:avi:$
-368:video/x-ogm+ogg:OGM video:ogm:$
-369:video/x-theora+ogg:Ogg Theora video:ogg:$
+119:application/x-kdenlive:Kdenlive video project document:kdenlive:$
+120:application/x-kdenlivetitle:Kdenlive video title:kdenlivetitle:$
+121:application/x-kgetlist:KGet download list:kgt:$
+122:application/x-khtml-adaptor:KHTML Extension Adaptor::$
+123:application/x-kommander:Kommander file:kmdr:$
+124:application/x-kvtml:vocabulary trainer document:kvtml:$
+125:application/x-lyx:LyX document:lyx:$
+126:application/x-m4:M4 macro:m4:$
+127:application/x-magicpoint:MagicPoint presentation:mgp:$
+128:application/x-markaby:Markaby script:mab:$
+129:application/x-matroska:Matroska stream::$
+130:application/x-mkvtoolnix-gui-settings:MKVToolNix GUI settings:mtxcfg:$
+131:application/x-mobipocket-ebook:Mobipocket e-book:mobi:$
+132:application/x-mozilla-bookmarks:Mozilla bookmarks::$
+133:application/x-nautilus-link:Nautilus link::$
+134:application/x-netshow-channel:Windows Media Station file:nsc:$
+135:application/x-nzb:NewzBin usenet index:nzb:$
+136:application/x-osm+xml:OSM Data:osm:$
+137:application/x-pem-file:Openssl PEM format:pem:$
+138:application/x-pem-key:Private Key in PEM format::$
+139:application/x-perl:Perl script:pl:$
+140:application/x-profile:profiler results::$
+141:application/x-qtiplot:QtiPlot document:qti:$
+142:application/x-quanta:Quanta project:quanta:$
+143:application/x-quicktime-media-link:QuickTime metalink playlist:qtl:$
+144:application/x-ruby:Ruby script:rb:$
+145:application/x-sami:SAMI subtitles:smi:$
+146:application/x-shared-library-la:libtool shared library:la:$
+147:application/x-shellscript:shell script:sh:$
+148:application/x-smb-server:Windows server::$
+149:application/x-smb-workgroup:Windows workgroup::$
+150:application/x-spkac+base64:SPKAC Certificate Request in OpenSSL format::$
+151:application/x-subrip:SubRip subtitles:srt:$
+152:application/x-theme:theme:theme:$
+153:application/x-trig:TriG RDF document:trig:$
+154:application/x-troff-man:Troff document:man:$
+155:application/x-turtle:Turtle RDF document::$
+156:application/x-ufraw:UFRaw ID image:ufraw:$
+157:application/x-virt-viewer:Virt-Viewer connection file:vv:$
+158:application/x-vlc-plugin:VLC plug-in::$
+159:application/x-wais-source:WAIS source code:src:$
+160:application/x-wwf:WWF document:wwf:$
+161:application/x-xbel:XBEL bookmarks:xbel:$
+162:application/x-xliff:XLIFF translation file:xlf:$
+163:application/x-yaml:YAML document:yaml:$
+164:application/xhtml+xml:XHTML page:xhtml:$
+165:application/xml:XML document:xml:$
+166:application/xml-dtd:DTD file:dtd:$
+167:application/xml-external-parsed-entity:XML entities document:ent:$
+168:application/xsd:W3C XML schema:xsd:$
+169:application/xslt+xml:XSLT stylesheet:xsl:$
+170:application/xspf+xml:XSPF playlist:xspf:$
+171:audio/amr:AMR audio:amr:$
+172:audio/flac:FLAC audio:flac:$
+173:audio/m4a:MPEG-4 audio::$
+174:audio/midi:MIDI audio:mid:$
+175:audio/mp4:MPEG-4 audio:m4a:$
+176:audio/mpeg:MP3 audio:mp3:$
+177:audio/ogg:Ogg Audio:oga:$
+178:audio/webm:WebM audio::$
+179:audio/x-flac+ogg:Ogg FLAC audio:oga:$
+180:audio/x-m4b:MPEG-4 audio book:m4b:$
+181:audio/x-matroska:Matroska audio:mka:$
+182:audio/x-mpegurl:MP3 audio:m3u:$
+183:audio/x-ms-asx:Microsoft ASX playlist:asx:$
+184:audio/x-ms-wma:Windows Media audio:wma:$
+185:audio/x-opus+ogg:Opus audio:opus:$
+186:audio/x-realaudio:Real Media Audio::$
+187:audio/x-speex+ogg:Ogg Speex audio:oga:$
+188:audio/x-vorbis+ogg:Ogg Vorbis audio:oga:$
+189:audio/x-wav:WAV audio:wav:$
+190:image/bmp:Windows BMP image:bmp:$
+191:image/djvu:DjVu File::$
+192:image/fax-g3:CCITT G3 fax:g3:$
+193:image/g3fax:G3 fax image::$
+194:image/gif:GIF image:gif:$
+195:image/jp2:JPEG-2000 image:jp2:$
+196:image/jpeg:JPEG Image:jpeg:$
+197:image/png:PNG image:png:$
+198:image/svg+xml:SVG image:svg:$
+199:image/svg+xml-compressed:compressed SVG image:svgz:$
+200:image/tiff:TIFF image:tif:$
+201:image/vnd.adobe.photoshop:Photoshop image:psd:$
+202:image/vnd.djvu:DjVu image:djvu:$
+203:image/vnd.microsoft.icon:Windows icon:ico:$
+204:image/x-adobe-dng:Adobe DNG negative:dng:$
+205:image/x-bzeps:EPS image:eps.bz2:$
+206:image/x-canon-cr2:Canon CR2 raw image:cr2:$
+207:image/x-dds:DirectDraw surface:dds:$
+208:image/x-dejavu:DjVu File::$
+209:image/x-eps:EPS image:eps:$
+210:image/x-exr:EXR image:exr:$
+211:image/x-gzeps:EPS image:eps.gz:$
+212:image/x-hdr:HDR image:hdr:$
+213:image/x-iw44:DjVu File::$
+214:image/x-jng:JNG image:jng:$
+215:image/x-kodak-dcr:Kodak DCR raw image:dcr:$
+216:image/x-kodak-k25:Kodak K25 raw image:k25:$
+217:image/x-kodak-kdc:Kodak KDC raw image:kdc:$
+218:image/x-nikon-nef:Nikon NEF raw image:nef:$
+219:image/x-pcx:PCX image:pcx:$
+220:image/x-pentax-pef:Pentax PEF raw image:pef:$
+221:image/x-portable-bitmap:PBM image:pbm:$
+222:image/x-portable-graymap:PGM image:pgm:$
+223:image/x-portable-pixmap:PPM image:ppm:$
+224:image/x-rgb:RGB image:rgb:$
+225:image/x-sony-arw:Sony ARW raw image:arw:$
+226:image/x-sony-sr2:Sony SR2 raw image:sr2:$
+227:image/x-sony-srf:Sony SRF raw image:srf:$
+228:image/x-tga:TGA image:icb:$
+229:image/x-tiff-multipage:Multi-page TIFF image::$
+230:image/x-webp:WebP image:webp:$
+231:image/x-xbitmap:XBM image:xbm:$
+232:image/x-xcf:GIMP image:xcf:$
+233:image/x-xpixmap:XPM image:xpm:$
+234:model/vrml:VRML document:vrm:$
+235:text/cache-manifest:Web application cache manifest:manifest:$
+236:text/calendar:VCS/ICS calendar:vcs:$
+237:text/css:CSS stylesheet:css:$
+238:text/csv:CSV document:csv:$
+239:text/enriched:enriched text document::$
+240:text/html:HTML document:html:$
+241:text/htmlh:help page::$
+242:text/markdown:Markdown document:md:$
+243:text/plain:plain text document:txt:$
+244:text/rfc822-headers:email headers::$
+245:text/richtext:rich text document:rtx:$
+246:text/sgml:SGML document:sgml:$
+247:text/spreadsheet:spreadsheet interchange document:sylk:$
+248:text/tab-separated-values:TSV document:tsv:$
+249:text/troff:Troff document:tr:$
+250:text/vcard:electronic business card:vcard:$
+251:text/vnd.abc:abc musical notation file:abc:$
+252:text/vnd.cgats:CGATS color measurements:cgats:$
+253:text/vnd.graphviz:Graphviz DOT graph:gv:$
+254:text/vnd.rn-realtext:RealText document:rt:$
+255:text/vnd.sun.j2me.app-descriptor:JAD document:jad:$
+256:text/vnd.trolltech.linguist:message catalog:ts:$
+257:text/vnd.wap.wml:WML document:wml:$
+258:text/vnd.wap.wmlscript:WMLScript program:wmls:$
+259:text/vtt:WebVTT subtitles:vtt:$
+260:text/x-adasrc:Ada source code:adb:$
+261:text/x-ass:Advanced SubStation Alpha subtitles:ass:$
+262:text/x-authors:author list::$
+263:text/x-bibtex:BibTeX document:bib:$
+264:text/x-c++hdr:C++ header:hh:$
+265:text/x-c++src:C++ source code:cpp:$
+266:text/x-changelog:ChangeLog document::$
+267:text/x-chdr:C header:h:$
+268:text/x-cmake:CMake source code:cmake:$
+269:text/x-cobol:COBOL source file:cbl:$
+270:text/x-component::htc:$
+271:text/x-copying:license terms::$
+272:text/x-credits:author credits::$
+273:text/x-csharp:C# source code:cs:$
+274:text/x-csrc:C source code:c:$
+275:text/x-dcl:DCL script:dcl:$
+276:text/x-dsl:DSSSL document:dsl:$
+277:text/x-dsrc:D source code:d:$
+278:text/x-eiffel:Eiffel source code:e:$
+279:text/x-emacs-lisp:Emacs Lisp source code:el:$
+280:text/x-erlang:Erlang source code:erl:$
+281:text/x-fortran:Fortran source code:f:$
+282:text/x-genie:Genie source code:gs:$
+283:text/x-gettext-translation:translation file:po:$
+284:text/x-gettext-translation-template:translation template:pot:$
+285:text/x-go:Go source code:go:$
+286:text/x-google-video-pointer:Google Video Pointer:gvp:$
+287:text/x-haskell:Haskell source code:hs:$
+288:text/x-hex:Intel® hexadecimal object file:hex:$
+289:text/x-idl:IDL document:idl:$
+290:text/x-imelody:iMelody ringtone:imy:$
+291:text/x-install:installation instructions::$
+292:text/x-iptables:iptables configuration file:iptables:$
+293:text/x-java:Java source code:java:$
+294:text/x-katefilelist:Kate file list loader plugin list:katefl:$
+295:text/x-ldif:LDIF address book:ldif:$
+296:text/x-lilypond:Lilypond music sheet:ly:$
+297:text/x-literate-haskell:LHS source code:lhs:$
+298:text/x-log:application log:log:$
+299:text/x-lua:Lua script:lua:$
+300:text/x-makefile:Makefile:mk:$
+301:text/x-matlab:MATLAB script/function:m:$
+302:text/x-microdvd:MicroDVD subtitles:sub:$
+303:text/x-moc:Qt MOC file:moc:$
+304:text/x-modelica:Modelica model:mo:$
+305:text/x-mof:Managed Object Format:mof:$
+306:text/x-mplsub:MPLSub subtitles:mpl:$
+307:text/x-mpsub:MPSub subtitles:sub:$
+308:text/x-mrml:MRML playlist:mrml:$
+309:text/x-ms-regedit:Windows Registry extract:reg:$
+310:text/x-mup:Mup publication:mup:$
+311:text/x-nfo:NFO document:nfo:$
+312:text/x-objchdr:Objective-C header::$
+313:text/x-objcsrc:Objective-C source code:m:$
+314:text/x-ocaml:OCaml source code:ml:$
+315:text/x-ocl:OCL file:ocl:$
+316:text/x-ooc:OOC source code:ooc:$
+317:text/x-opml+xml:OPML syndication feed:opml:$
+318:text/x-pascal:Pascal source code:p:$
+319:text/x-patch:differences between files:diff:$
+320:text/x-python:Python script:py:$
+321:text/x-qml:Qt Markup Language file:qml:$
+322:text/x-readme:README document::$
+323:text/x-reject:rejected patch:rej:$
+324:text/x-rpm-spec:RPM spec file:spec:$
+325:text/x-scala:Scala source code:scala:$
+326:text/x-scheme:Scheme source code:scm:$
+327:text/x-scons:SCons configuration file::$
+328:text/x-setext:Setext document:etx:$
+329:text/x-ssa:SubStation Alpha subtitles:ssa:$
+330:text/x-subviewer:SubViewer subtitles:sub:$
+331:text/x-suse-ymp:YaST Meta Package:ymp:$
+332:text/x-suse-ymu:URL of a YaST Meta Package:ymu:$
+333:text/x-svhdr:SystemVerilog header:svh:$
+334:text/x-svsrc:SystemVerilog source code:sv:$
+335:text/x-tcl:Tcl script:tcl:$
+336:text/x-tex:TeX document:tex:$
+337:text/x-texinfo:TeXInfo document:texi:$
+338:text/x-tmplayer:TMPlayer subtitles:sub:$
+339:text/x-tmplayer+:TMPlayer+ subtitles:sub:$
+340:text/x-troff-me:Troff ME input document:me:$
+341:text/x-troff-mm:Troff MM input document:mm:$
+342:text/x-troff-ms:Troff MS input document:ms:$
+343:text/x-txt2tags:txt2tags document:t2t:$
+344:text/x-uil:X-Motif UIL table:uil:$
+345:text/x-uri:resource location::$
+346:text/x-uuencode:uuencoded file:uue:$
+347:text/x-vala:Vala source code:vala:$
+348:text/x-verilog:Verilog source code:v:$
+349:text/x-vhdl:VHDL source code:vhd:$
+350:text/x-xmi:XMI file:xmi:$
+351:text/x-xslfo:XSL FO file:fo:$
+352:text/xmcd:XMCD CD database::$
+353:video/3gpp:3GPP multimedia file:3gp:$
+354:video/3gpp2:3GPP2 multimedia file:3g2:$
+355:video/mlt-playlist:MLT video playlist:westley:$
+356:video/mp4:MPEG-4 video:mp4:$
+357:video/mpeg:MPEG video:mpeg:$
+358:video/mpeg-system:MPEG video::$
+359:video/ogg:Ogg Video:ogv:$
+360:video/quicktime:QuickTime video:qt:$
+361:video/vnd.mpegurl:MPEG video:m1u:$
+362:video/webm:WebM video:webm:$
+363:video/x-flv:Flash video:flv:$
+364:video/x-matroska:Matroska video:mkv:$
+365:video/x-matroska-3d:Matroska 3D video:mk3d:$
+366:video/x-mng:MNG animation:mng:$
+367:video/x-mpeg-system:MPEG video::$
+368:video/x-ms-asf-plugin:Windows Media Video::$
+369:video/x-ms-wmp:Microsoft Media Format:wmp:$
+370:video/x-ms-wmv:Windows Media video:wmv:$
+371:video/x-msvideo:AVI video:avi:$
+372:video/x-ogm+ogg:OGM video:ogm:$
+373:video/x-theora+ogg:Ogg Theora video:ogg:$
+IcedTeaPlugin.so:$
+/usr/lib64/java-1_8_0-openjdk-plugin/lib/IcedTeaPlugin.so:$
+:$
+1442310336000:0:0:0:$
+The <a href="http://icedtea.classpath.org/wiki/IcedTea-Web">IcedTea-Web Plugin</a> executes Java applets.:$
+IcedTea-Web Plugin (using IcedTea-Web 1.6.1 (suse-6.2-x86_64)):$
+38
+0:application/x-java-vm:IcedTea:class,jar:$
+1:application/x-java-applet:IcedTea:class,jar:$
+2:application/x-java-applet;version=1.1:IcedTea:class,jar:$
+3:application/x-java-applet;version=1.1.1:IcedTea:class,jar:$
+4:application/x-java-applet;version=1.1.2:IcedTea:class,jar:$
+5:application/x-java-applet;version=1.1.3:IcedTea:class,jar:$
+6:application/x-java-applet;version=1.2:IcedTea:class,jar:$
+7:application/x-java-applet;version=1.2.1:IcedTea:class,jar:$
+8:application/x-java-applet;version=1.2.2:IcedTea:class,jar:$
+9:application/x-java-applet;version=1.3:IcedTea:class,jar:$
+10:application/x-java-applet;version=1.3.1:IcedTea:class,jar:$
+11:application/x-java-applet;version=1.4:IcedTea:class,jar:$
+12:application/x-java-applet;version=1.4.1:IcedTea:class,jar:$
+13:application/x-java-applet;version=1.4.2:IcedTea:class,jar:$
+14:application/x-java-applet;version=1.5:IcedTea:class,jar:$
+15:application/x-java-applet;version=1.6:IcedTea:class,jar:$
+16:application/x-java-applet;version=1.7:IcedTea:class,jar:$
+17:application/x-java-applet;version=1.8:IcedTea:class,jar:$
+18:application/x-java-applet;jpi-version=1.8.0_50:IcedTea:class,jar:$
+19:application/x-java-bean:IcedTea:class,jar:$
+20:application/x-java-bean;version=1.1:IcedTea:class,jar:$
+21:application/x-java-bean;version=1.1.1:IcedTea:class,jar:$
+22:application/x-java-bean;version=1.1.2:IcedTea:class,jar:$
+23:application/x-java-bean;version=1.1.3:IcedTea:class,jar:$
+24:application/x-java-bean;version=1.2:IcedTea:class,jar:$
+25:application/x-java-bean;version=1.2.1:IcedTea:class,jar:$
+26:application/x-java-bean;version=1.2.2:IcedTea:class,jar:$
+27:application/x-java-bean;version=1.3:IcedTea:class,jar:$
+28:application/x-java-bean;version=1.3.1:IcedTea:class,jar:$
+29:application/x-java-bean;version=1.4:IcedTea:class,jar:$
+30:application/x-java-bean;version=1.4.1:IcedTea:class,jar:$
+31:application/x-java-bean;version=1.4.2:IcedTea:class,jar:$
+32:application/x-java-bean;version=1.5:IcedTea:class,jar:$
+33:application/x-java-bean;version=1.6:IcedTea:class,jar:$
+34:application/x-java-bean;version=1.7:IcedTea:class,jar:$
+35:application/x-java-bean;version=1.8:IcedTea:class,jar:$
+36:application/x-java-bean;jpi-version=1.8.0_50:IcedTea:class,jar:$
+37:application/x-java-vm-npruntime:IcedTea::$
 libfreshwrapper-pepperflash.so:$
 /usr/lib64/browser-plugins/libfreshwrapper-pepperflash.so:$
-18.0.0.160:$
-1434550911000:0:0:0:$
-Shockwave Flash 18.0 r0:$
+19.0.0.185:$
+1443455330000:0:0:0:$
+Shockwave Flash 19.0 r0:$
 Shockwave Flash:$
 2
 0:application/x-shockwave-flash:Shockwave Flash:swf:$
