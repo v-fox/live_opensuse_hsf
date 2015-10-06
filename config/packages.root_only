@@ -415,7 +415,7 @@ kiwi-config-openSUSE
 kiwi-desc-isoboot
 kiwi-desc-netboot
 kiwi-desc-oemboot
-kiwi-instsource-plugins-openSUSE-13-2
+kiwi-instsource
 kiwi-pxeboot
 kiwi-templates
 kiwi-tools
