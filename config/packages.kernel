@@ -1,5 +1,7 @@
 		<package name='kernel-default' bootinclude='true'/>
-                <package name='exfat-nofuse-kmp-default' bootinclude='true'/>
-                <package name='crash-kmp-default' bootinclude='true'/>
-                <package name='vhba-kmp-default' bootinclude='true'/>
-                <package name='bbswitch-kmp-default' bootinclude='true'/>
+		<package name='exfat-nofuse-kmp-default' bootinclude='true'/>
+		<package name='crash-kmp-default' bootinclude='true'/>
+		<package name='vhba-kmp-default' bootinclude='true'/>
+		<package name='bbswitch-kmp-default' bootinclude='true'/>
+		<package name='zfsonlinux-spl-kmp-default' bootinclude='true'/>
+		<package name='zfsonlinux-zfs-kmp-default' bootinclude='true'/>

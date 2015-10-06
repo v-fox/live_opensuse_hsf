@@ -55,9 +55,9 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
   * touching: wireshark-qt, {ze}nmap, wapiti, xprobe2, scapy & {f,h,n}ping, aircrack-ng, kismet, reaver
   * filesharing: nfs-kernel-server, pure-ftpd, samba
 * filesystem tools:  
-  * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, exfat kernel module
+  * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype
   * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
-  * support for pretty much all filesystems known to man, in kernel or via FUSE
+  * support for pretty much all filesystems known to man, in kernel or via FUSE; exFAT & ZFS kernel modules
   * U/EFI manipulation via efitools and UEFITool
 * security/forensics tools:  
   * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
