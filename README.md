@@ -13,8 +13,8 @@ It provides:
 ------------
 * complete toolkit that created it
 * fresh stable kernel from Kernel:stable repo
-* fresh (enabled) OSS video stack from X11 repo (rc's)  
-or bleeding edge (configured) from pontostroy (git & kernel rc's)
+* fresh video stack with open OpenCL support from X11 repo with option  
+to switch to bleeding edge from pontostroy (git & kernel rc's) repoes
 * LXQt slim desktop environment
 * international (Google Noto set) collection of fonts  
 and universal iBus input method by default

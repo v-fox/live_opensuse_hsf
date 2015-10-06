@@ -13,7 +13,7 @@
 		DejaVu font family is still generally used in GUI
 	* Mesa's OpenMAX IL implementation now loads by default for GStreamer;
 		also Gallium vaapi implementation is now default and vdpau is inactive
-	* support for OpenCL (AMD, no Intel yet)
+	* support for OpenCL (AMD & Intel)
 	* support for high-quality midi playback via fluidsynth
 	* backport of kernel 4.3 hid_sony patch for elimination of bogus input
 	* addition of wine with native Gallium DirectX 9 support
