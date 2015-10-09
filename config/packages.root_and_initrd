@@ -5,7 +5,9 @@ bluez-firmware
 cryptsetup
 crystalhd-firmware
 disktype
+dosfstools
 efibootmgr
+exfat-utils
 gfxboot-branding-HSF
 grub2-branding-HSF
 grub2-i386-pc
