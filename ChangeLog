@@ -1,6 +1,6 @@
 0.9.0:
 	* new type of persistency is enacted:
-		BTRFS file on FAT partition out of redundant space of your R/W medium
+		BTRFS file on exFAT partition out of redundant space of your R/W medium
 	* dropping 2GB limit and not considering anything less than 4GB:
 		keeping file persistency enabled;
 		keeping documentation and locales;
@@ -31,7 +31,9 @@
 	* replacement of kernel-desktop with kernel-default by openSUSE maintainers
 	* replacement of tc-play with veracrypt
 	* replacement of uTox with qTox
-	* Firefox and TB are unbranded in hopes to disable mandatory signing
+	* Firefox and TB are unbranded in hopes to disable mandatory signing;
+		FF is built with GTK3, TB — with GTK2 due to non-compilation;
+		mozilla-kde4-integration is removed, kde4 hacks are disabled
 
 0.8.1:
         * file persistency is disabled again due to extreme system slowness and

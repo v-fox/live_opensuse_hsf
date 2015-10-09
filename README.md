@@ -72,7 +72,8 @@ It does NOT provide:
 — proprietary video drivers (because they suck and are pain in the ass).  
   or video driver support for anything without KMS, for that matter  
 — whole KDE or Gnome (because of how fat the former and how ugly the later are)  
-— any language translation packages (for space conservation)  
+— any language translation packages (for space conservation and due to lack of  
+  ability in zypper & YaST to install them without all "recommended" garbage)  
 — Wayland packages (because it's too raw yet)  
 — many cd/dvd/bluray and whatever disk tools (because spinning media must die).  
   cdrkit-cdrtools-compat and cdemu are included though  
@@ -92,7 +93,7 @@ Notes:
 * simple `dd bs=<your flash's write block size, like 64K> if=<image or even cdrom device that you have booted it on> of=/dev/<target_device>`,
 * glamorous GUI tools like SUSE's `imagewriter` (included) or Ubuntu's `win32diskimager`
 * (`unetbootin` is NOT recommended due to its outdatedness and broken device selection)
-* but **be wary that it will format all redundant space as FAT and make BTRFS file on it for its R/W support**
+* but **be wary that it will format all redundant space as exFAT and make BTRFS file on it for its R/W support**
 
 ⊙ DE-specific apps are included for the lack of adequate analogues  
 * KDE:  
