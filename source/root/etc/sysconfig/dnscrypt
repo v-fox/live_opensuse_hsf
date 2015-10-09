@@ -16,12 +16,12 @@ DNSCRYPT_LOCAL_ADDRESS="[::1]:40"
 # The recommended user is 'dnscrypt' but the empty value will not pass
 # any --user parameter to dnscrypt-proxy if this is desired by the user.
 #
-DNSCRYPT_USER=dnscrypt
+DNSCRYPT_USER=
 
 ## Path:        Network/DNS/DNSCrypt
 ## Description: Resolver name
 ## Type:        string
-## Default:     "opendns"
+## Default:     "dnscrypt.eu-nl-port5353"
 #
 # Short name of resolver, see /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv
 # for the full list.
@@ -96,3 +96,12 @@ DNSCRYPT_PLUGIN4=
 # Additional user options
 #
 DNSCRYPT_OPTIONS="--edns-payload-size=4096"
+
+## Path:        Network/DNS/DNSCrypt
+## Description: Use ephemeral keys
+## Type:        boolean
+## Default:     "yes"
+#
+# Enable ephemeral keys for connections.
+#
+DNSCRYPT_EPHEMERAL_KEYS=
