@@ -27,7 +27,7 @@ XMODIFIERS=@im=ibus
 #QT_GRAPHICSSYSTEM=raster
 #QT_STYLE_OVERRIDE=GTK+
 # for GTK/Cairo
-export GTKCAIRO_BACKEND=gl
+GTKCAIRO_BACKEND=gl
 # Libre/OO stuff
 OOO_FORCE_DESKTOP="kde4"
 # atk/gtk missing accessibility crutch. http://debbugs.gnu.org/cgi/bugreport.cgi?bug=15154#11
@@ -57,5 +57,7 @@ LADSPA_PATH=/usr/lib64/ladspa
 # steam crutches. read up on http://en.opensuse.org/Steam
 #STEAM_RUNTIME=0
 #STEAM_FRAME_FORCE_CLOSE=1
-# Firefox acceleration
+# Firefox: GPU acceleration
 MOZ_USE_OMTC=1
+# Firefox: proper input
+MOZ_USE_XINPUT2=1
