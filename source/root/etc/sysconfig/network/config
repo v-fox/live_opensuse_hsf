@@ -278,7 +278,7 @@ NETCONFIG_DNS_STATIC_SEARCHLIST="local union"
 # nameservers causing the glibc to use the name server on the local
 # machine (the forwarder). See also netconfig(8) manual page.
 #
-NETCONFIG_DNS_STATIC_SERVERS="::1 127.0.0.1 2620:0:ccd::2 208.67.220.220 2001:4860:4860::8844 8.8.4.4 4.2.2.5"
+NETCONFIG_DNS_STATIC_SERVERS="::1 127.0.0.1"
 
 ## Type:        string
 ## Default:     "auto"
