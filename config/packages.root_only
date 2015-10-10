@@ -662,6 +662,7 @@ onboard
 onboard-data
 openal-soft
 openclipart-svg
+opendnssec
 opengost-otf-fonts
 open-iscsi
 openldap2-client
@@ -821,6 +822,7 @@ smestorage
 snapper
 snapper-zypp-plugin
 snmp-mibs
+softhsm
 sox
 spax
 spice-client
