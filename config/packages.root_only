@@ -126,7 +126,6 @@ dnscrypt-proxy
 dnstop
 dolphin-emu
 dos2unix
-dosfstools
 dpkg
 dstat
 dvb-utils
@@ -142,7 +141,6 @@ enigmail
 epson-inkjet-printer-escpr
 ethtool
 evtest
-exfat-utils
 ext3grep
 ext4magic
 f2fs-tools
