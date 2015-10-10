@@ -237,7 +237,7 @@ NETCONFIG_MODULES_ORDER="dns-resolver dns-dnsmasq dns-bind nis ntp-runtime"
 # Defines the DNS merge policy as documented in netconfig(8) manual page.
 # Set to "" to disable DNS configuration.
 #
-NETCONFIG_DNS_POLICY="auto"
+NETCONFIG_DNS_POLICY=""
 
 ## Type:        string(resolver,bind,dnsmasq,)
 ## Default:     "resolver"
