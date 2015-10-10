@@ -44,7 +44,8 @@ emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
 * anti-censorship kit: Tor/Privoxy, dnscrypt-proxy/Unbound, proxychains and VPN
 * LeechCraft modular system stripped for only IM and socializing
 * LinPhone for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
-Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say)
+Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say);  
+Skype for compatibility with stubborn fools (use with extreme causion !)
 * fresh Mozilla Firefox browser and Thunderbird e-mail client;  
 fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
