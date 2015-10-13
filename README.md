@@ -41,7 +41,9 @@ emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
 * Windows® compatibility through Wine 32 & 64 with native Gallium DirectX 9
 * professional networking tools and rich connectivity options
 * OpenVAS and ClamAV security systems
-* anti-censorship kit: Tor/Privoxy, dnscrypt-proxy/Unbound, proxychains and VPN
+* anti-censorship kit: Tor/Privoxy, DNSCrypt-proxy/Unbound, proxychains and VPN  
+(Privoxy is also I2P-aware, all i2p-links will be proxy-chained into it;  
+Unbound uses multiple DNSSEC-capable DNSCrypt instances for different resolvers)
 * LeechCraft modular system stripped for only IM and socializing
 * LinPhone for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
 Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say);  

@@ -1,12 +1,23 @@
 ## Path:        Network/DNS/DNSCrypt
 ## Description: Local address
 ## Type:        string
+## Default:     "localhost"
+#
+# Address where the dnscrypt-proxy daemon listens. Format is <address>,
+# with dnscrypt-proxy's default 'localhost'.
+#
+DNSCRYPT_LOCAL_ADDRESS="[::1]"
+
+## Path:        Network/DNS/DNSCrypt
+## Description: Local port
+## Type:        string
 ## Default:     ""
 #
-# Address and port where the dnscrypt-proxy daemon listens. Format is
-# address:port, with dnscrypt-proxy's default 127.0.0.1:53 .
+# First port where the dnscrypt-proxy daemon listens. Format is <port>,
+# with dnscrypt-proxy's default '53'. Port for every next instance will be
+# an increment of the previous one.
 #
-DNSCRYPT_LOCAL_ADDRESS="[::1]:40"
+DNSCRYPT_LOCAL_PORT="40"
 
 ## Path:        Network/DNS/DNSCrypt
 ## Description: Run daemon under specified user
@@ -26,31 +37,30 @@ DNSCRYPT_USER=
 # Short name of resolver, see /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv
 # for the full list.
 #
-# If the value is empty, the default is substituted.
+# If the value is empty, the default is substituted. If there are multiple
+# space-separated ones then every next one listens on a higher port number.
 #
-DNSCRYPT_RESOLVER_NAME=
+DNSCRYPT_RESOLVER_NAME="dnscrypt.eu-nl-port5353 dnscrypt.org-fr dnscrypt.eu-dk-port5353 soltysiak"
 
 ## Path:        Network/DNS/DNSCrypt
 ## Description: Log file
 ## Type:        string
-## Default:     "/var/log/dnscrypt-proxy.log"
+## Default:     "/var/log/dnscrypt-proxy"
 #
-# Use the given log file instead of standard out, where the output is possibly
-# grabbed by the system logger.
+# Base filename for logs of each instance.
+# The default gives '/var/log/dnscrypt-proxy_<resolver-name>.log' files.
 #
 DNSCRYPT_LOGFILE=
 
 ## Path:        Network/DNS/DNSCrypt
 ## Description: Log level
-## Type:        string
-## Default:     ""
+## Type:        number
+## Default:     "6"
 #
 # Don't log events with priority above this level after the service has been
 # started up. Default is the value for LOG_INFO.
 #
-# NOTE: currently unused
-#
-DNSCRYPT_LOGLEVEL=
+DNSCRYPT_LOGLEVEL=5
 
 ## Path:        Network/DNS/DNSCrypt
 ## Description: Optional plugin (1)
