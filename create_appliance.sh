@@ -224,7 +224,7 @@ if [ -d "${dst}" ]; then
 fi
 	
 echo "** Creating appliance..."
-command="$kiwi --verbose 3 --build ${src}/ -d ${dst}"
+command="$kiwi --verbose 3 --gzip-cmd=lzop --build ${src}/ -d ${dst}"
 echo "$command"
 $command
 if [ $? -ne 0 ]; then

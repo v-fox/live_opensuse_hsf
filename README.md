@@ -12,7 +12,8 @@ I recommend using smart SATA boxes and usb drives with legacy (floppy / CD / vir
 It provides:
 ------------
 * complete toolkit that created it
-* fresh stable kernel from Kernel:stable repo
+* fresh stable kernel based on ones from Kernel:stable repo  
+configured for low latency and maximum hardware support
 * fresh video stack with open OpenCL support from X11 repo with option  
 to switch to bleeding edge from pontostroy (git & kernel rc's) repoes
 * LXQt slim desktop environment
