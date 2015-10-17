@@ -94,6 +94,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='filesystems'>
 		<source path='opensuse://filesystems/openSUSE_13.2'/>
 	</repository>
+        <repository type='rpm-md' imageinclude='true' priority='98' alias='devel_gcc'>
+                <source path='opensuse://devel:gcc/openSUSE_13.2'/>
+        </repository>
 	<repository type='rpm-md' imageinclude='true' priority='4' alias='home_X0F_branches_emulators'>
 		<source path='opensuse://home:X0F:branches:Emulators/openSUSE_13.2'/>
 	</repository>
