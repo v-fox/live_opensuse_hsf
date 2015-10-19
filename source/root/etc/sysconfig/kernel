@@ -7,7 +7,7 @@
 # ramdisk by calling the script "mkinitrd"
 # (like drivers for scsi-controllers, for lvm or reiserfs)
 #
-INITRD_MODULES="crash bbswitch vhba"
+INITRD_MODULES="bbswitch exfat vhba"
 
 ## Type:        yesno
 ## Default:     ""
