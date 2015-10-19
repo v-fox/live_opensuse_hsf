@@ -1,6 +1,5 @@
 		<package name='kernel-HSF' bootinclude='true'/>
 		<package name='exfat-nofuse-kmp-HSF' bootinclude='true'/>
-		<package name='crash-kmp-HSF' bootinclude='true'/>
 		<package name='vhba-kmp-HSF' bootinclude='true'/>
 		<package name='bbswitch-kmp-HSF' bootinclude='true'/>
 		<package name='zfsonlinux-spl-kmp-HSF' bootinclude='true'/>

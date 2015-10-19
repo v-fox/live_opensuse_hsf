@@ -99,6 +99,7 @@ Notes:
 * glamorous GUI tools like SUSE's `imagewriter` (included) or Ubuntu's `win32diskimager`
 * (`unetbootin` is NOT recommended due to its outdatedness and broken device selection)
 * but **be wary that it will format all redundant space as exFAT and make BTRFS file on it for its R/W support**
+* you may need to disable "Secure Boot" DRM and enable "BIOS-compatibility mode" to boot via U/EFI
 
 ⊙ DE-specific apps are included for the lack of adequate analogues  
 * KDE:  
