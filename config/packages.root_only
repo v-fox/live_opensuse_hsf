@@ -771,6 +771,7 @@ qsynth
 qt-mobility-pulseaudio
 qtox
 qv4l2
+radeon-profile
 radeontop
 radvd
 rancid
@@ -925,6 +926,8 @@ webcore-fonts-vista
 wget
 which
 whois
+wimax
+wimax-tools
 wine
 wine-32bit
 wineasio
