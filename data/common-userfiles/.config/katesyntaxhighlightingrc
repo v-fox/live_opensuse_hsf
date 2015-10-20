@@ -1,0 +1,110 @@
+[Default Item Styles - Schema Solarized Dark]
+Alert=ffdc322f,ff002b36,1,,,,,ffdc322f,,,---
+Base-N Integer=ff2aa198,ff002b36,,,,,,ff2aa198,,,---
+Character=ff2aa198,ff002b36,,,,,,ff2aa198,,,---
+Comment=ff586e75,ff002b36,,1,,,,ff586e75,,,---
+Data Type=ffb58900,ff002b36,,,,,,ffb58900,,,---
+Decimal/Value=ff2aa198,ff002b36,,,,,,ff2aa198,,,---
+Error=ffdc322f,ff002b36,,,1,,,ffdc322f,,,---
+Floating Point=ff2aa198,ff002b36,,,,,,ff2aa198,,,---
+Function=ff268bd2,ff002b36,,,,,,ff268bd2,,,---
+Keyword=ff859900,ff002b36,1,,,,,ff859900,,,---
+Normal=ff839496,ff93a1a1,,,,,,ff073642,,,---
+Others=ffcb4b16,ff002b36,,,,,,ffcb4b16,,,---
+Region Marker=ff6c71c4,ff002b36,,,,,,ff6c71c4,,,---
+String=ff2aa198,ff002b36,,,,,,ff2aa198,,,---
+
+[Default Item Styles - Schema Solarized Light]
+Alert=ffdc322f,fffdf6e3,1,,,,,ffdc322f,,,---
+Base-N Integer=ff2aa198,fffdf6e3,,,,,,ff2aa198,,,---
+Character=ff2aa198,fffdf6e3,,,,,,ff2aa198,,,---
+Comment=ff93a1a1,fffdf6e3,,1,,,,ff93a1a1,,,---
+Data Type=ffb58900,fffdf6e3,,,,,,ffb58900,,,---
+Decimal/Value=ff2aa198,fffdf6e3,,,,,,ff2aa198,,,---
+Error=ffdc322f,fffdf6e3,,,1,,,ffdc322f,,,---
+Floating Point=ff2aa198,fffdf6e3,,,,,,ff2aa198,,,---
+Function=ff268bd2,fffdf6e3,,,,,,ff268bd2,,,---
+Keyword=ff859900,fffdf6e3,1,,,,,ff859900,,,---
+Normal=ff657b83,ff586e75,,,,,,ffeee8d5,,,---
+Others=ffcb4b16,fffdf6e3,,,,,,ffcb4b16,,,---
+Region Marker=ff6c71c4,fffdf6e3,,,,,,ff6c71c4,,,---
+String=ff2aa198,fffdf6e3,,,,,,ff2aa198,,,---
+
+[Default Item Styles - Schema openSUSE 13.1]
+Alert=ffbf0303,ff9c0e0e,1,,,,fff7e6e6,-,,---
+Annotation=ff9b525e,ff452886,,,,,-,-,,---
+Attribute=ff006e28,ff00316e,,,,,-,-,,---
+Base-N Integer=ffb08000,ffffe044,,,,,-,-,,---
+Built-in=ff9b525e,ff452886,,,,,-,-,,---
+Character=ffa0a028,fffff97e,,,,,-,-,,---
+Comment=ff757474,ffb5efac,,,,,-,-,,---
+Comment Variable=ff9b525e,ff452886,,,,,-,-,,---
+Constant=ff141312,ffffffff,1,,,,-,-,,---
+Control Flow=ff141312,ffffffff,1,,,,-,-,,---
+Data Type=ff006e28,ff00316e,,,,,-,-,,---
+Decimal/Value=ffb08000,ffffe044,,,,,-,-,,---
+Documentation=ffbf0303,ff9c0e0e,,,,,-,-,,---
+Extension=ff0095ff,ffffffff,1,,,,-,-,,---
+Floating Point=ffb08000,ffffe044,,,,,-,-,,---
+Function=ffb08000,ffffe044,,,,,-,-,,---
+Import=ff9b525e,ff452886,,,,,-,-,,---
+Information=ffb08000,ffffe044,,,,,-,-,,---
+Keyword=ff141312,ffffffff,1,,,,-,-,,---
+Normal=ff141312,ffffffff,,,,,-,-,,---
+Operator=ff141312,ffffffff,,,,,-,-,,---
+Others=ff006e28,ff448844,,,,,-,-,,---
+Preprocessor=ff006e28,ff448844,,,,,-,-,,---
+Region Marker=ff006e28,ff00316e,,,,,ffbaf9ce,-,,---
+Special Character=ffa0a028,fffff97e,,,,,-,-,,---
+Special String=ffbf0303,ff9c0e0e,,,,,-,-,,---
+String=ffbf0303,ff9c0e0e,,,,,-,-,,---
+Variable=ff006e28,ff00316e,,,,,-,-,,---
+Verbatim String=ffbf0303,ff9c0e0e,,,,,-,-,,---
+Warning=ffbf0303,ff9c0e0e,,,,,-,-,,---
+
+[Highlighting None - Schema Normal]
+Normal Text=0,,,,,,,,,,---
+
+[Highlighting RPM Spec - Schema Normal]
+Alerts:Alert Level 1=28,ffe85848,ffe85848,,,,,ff451e1a,,,---
+Alerts:Alert Level 2=28,ffca9219,ffca9219,,,,,ff451e1a,,,---
+Alerts:Alert Level 3=28,ff81ca2d,ff81ca2d,,,,,,,,---
+Alerts:Normal Text=0,,,,,,,,,,---
+Alerts:Region Marker=25,,,,,,,,,,---
+RPM Spec:Comment=21,,,,,,,,,,---
+RPM Spec:Enumeration=29,,,,,,,,,,---
+RPM Spec:Error=30,,,,,,,,,,---
+RPM Spec:Escaped character=10,,,,,,,,,,---
+RPM Spec:Fallback for separator spaces=0,,,,,,,,,,---
+RPM Spec:Hint=30,,,,,,,,,,---
+RPM Spec:Integer=17,,,,,,,,,,---
+RPM Spec:Keyword=1,,,,,,,,,,---
+RPM Spec:Line break=1,,,,,,,,,,---
+RPM Spec:Macro call=2,,,,,,,,,,---
+RPM Spec:Section=25,,,,,,,,,,---
+RPM Spec:Shell commands=0,,,,,,,,,,---
+RPM Spec:String=12,,,,,,,,,,---
+RPM Spec:Tag=16,,,,,,,,,,---
+RPM Spec:Warning=30,,,,,,,,,,---
+
+[Highlighting RPM Spec - Schema openSUSE 13.1]
+Alerts:Alert Level 1=28,ffe85848,ffe85848,,,,,ff451e1a,,,---
+Alerts:Alert Level 2=28,ffca9219,ffca9219,,,,,ff451e1a,,,---
+Alerts:Alert Level 3=28,ff81ca2d,ff81ca2d,,,,,,,,---
+Alerts:Normal Text=0,,,,,,,,,,---
+Alerts:Region Marker=25,,,,,,,,,,---
+RPM Spec:Comment=21,,,,,,,,,,---
+RPM Spec:Enumeration=29,,,,,,,,,,---
+RPM Spec:Error=30,,,,,,,,,,---
+RPM Spec:Escaped character=10,,,,,,,,,,---
+RPM Spec:Fallback for separator spaces=0,,,,,,,,,,---
+RPM Spec:Hint=30,,,,,,,,,,---
+RPM Spec:Integer=17,,,,,,,,,,---
+RPM Spec:Keyword=1,,,,,,,,,,---
+RPM Spec:Line break=1,,,,,,,,,,---
+RPM Spec:Macro call=2,,,,,,,,,,---
+RPM Spec:Section=25,,,,,,,,,,---
+RPM Spec:Shell commands=0,,,,,,,,,,---
+RPM Spec:String=12,,,,,,,,,,---
+RPM Spec:Tag=16,,,,,,,,,,---
+RPM Spec:Warning=30,,,,,,,,,,---

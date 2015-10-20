@@ -1,0 +1,172 @@
+[$Version]
+update_info=kate-2.4.upd:kate2.4
+
+[Colors]
+CurrentPalette=Forty Colors
+
+[Desktop Entry]
+DefaultProfile=Shell.profile
+
+[General]
+Config Revision=10
+Days Meta Infos=30
+Last Session=
+Modified Notification=false
+Recent File List Entry Count=10
+Restore Window Configuration=true
+Save Meta Infos=true
+Show Full Path in Title=true
+Show Menu Bar=true
+Show Status Bar=true
+Show Tab Bar=true
+Startup Session=last
+
+[Kate Document Defaults]
+Allow End of Line Detection=true
+Allow Simple Mode=true
+Automatically Insert Closing Brackets=false
+BOM=false
+Backup Config Flags=0
+Backup Flags=0
+Backup Prefix=
+Backup Suffix=~
+Encoding=UTF-8
+End of Line=0
+Indent On Backspace=true
+Indent On Tab=true
+Indent On Text Paste=false
+Indentation Mode=normal
+Indentation Width=8
+Keep Extra Spaces=true
+Line Length Limit=10000
+Newline At EOF=false
+No sync=false
+On-The-Fly Spellcheck=false
+Overwrite Mode=false
+PageUp/PageDown Moves Cursor=false
+Remove Spaces=0
+RemoveTrailingDyn=false
+ReplaceTabsDyn=false
+Search Dir Config Depth=3
+Show Spaces=true
+Show Tabs=true
+Smart Home=true
+Tab Handling=2
+Tab Width=8
+Word Wrap=false
+Word Wrap Column=80
+Wrap Cursor=true
+
+[Kate Part Defaults]
+Encoding Prober Type=1
+
+[Kate Plugins]
+kate_kttsd=false
+katebacktracebrowserplugin=false
+katebuildplugin=false
+katecloseexceptplugin=true
+katectagsplugin=false
+katefilebrowserplugin=false
+katefiletemplates=false
+katefiletreeplugin=true
+kategdbplugin=false
+katekonsoleplugin=false
+katemailfilesplugin=false
+kateopenheaderplugin=false
+katepateplugin=false
+kateprojectplugin=true
+katequickdocumentswitcherplugin=false
+katereplicodeplugin=false
+katesearchplugin=false
+katesnippets_tngplugin=false
+katesnippetsplugin=false
+katesqlplugin=false
+katesymbolviewerplugin=false
+katetabbarextensionplugin=false
+katetabifyplugin=false
+katetextfilterplugin=false
+katexmlcheckplugin=false
+katexmltoolsplugin=false
+
+[Kate Renderer Defaults]
+Animate Bracket Matching=true
+Schema=kate - Normal
+Show Indentation Lines=true
+Show Whole Bracket Expression=true
+Word Wrap Marker=true
+
+[Kate Vi Input Mode Settings]
+Command Mode Mapping Keys=
+Command Mode Mappings=
+Command Mode Mappings Recursion=
+Insert Mode Mapping Keys=
+Insert Mode Mappings=
+Insert Mode Mappings Recursion=
+Macro Completions=
+Macro Contents=
+Macro Registers=
+Normal Mode Mapping Keys=
+Normal Mode Mappings=
+Normal Mode Mappings Recursion=
+Visual Mode Mapping Keys=
+Visual Mode Mappings=
+Visual Mode Mappings Recursion=
+
+[Kate View Defaults]
+Allow Mark Menu=true
+Auto Center Lines=0
+Auto Completion=true
+Bookmark Menu Sorting=0
+Default Mark Type=1
+Dynamic Word Wrap=false
+Dynamic Word Wrap Align Indent=80
+Dynamic Word Wrap Indicators=1
+Fold First Line=false
+Folding Bar=true
+Icon Bar=true
+Keyword Completion=true
+Line Modification=true
+Line Numbers=true
+Maximum Search History Size=100
+Persistent Selection=false
+Scroll Bar Marks=true
+Scroll Bar Mini Map=true
+Scroll Bar Mini Map All=false
+Scroll Bar Mini Map Width=100
+Scroll Past End=false
+Show Scrollbars=0
+Smart Copy Cut=false
+Vi Input Mode=false
+Vi Input Mode Emulate Command Bar=false
+Vi Input Mode Hide Status Bar=false
+Vi Input Mode Steal Keys=false
+Vi Relative Line Numbers=false
+Word Completion=true
+Word Completion Minimal Word Length=3
+Word Completion Remove Tail=true
+
+[Konsole]
+AutoSyncronize=true
+SetEditor=false
+
+[Plugin:katecloseexceptplugin:menu]
+ShowConfirmation=true
+
+[Spelling]
+backgroundCheckerEnabled=true
+checkUppercase=true
+checkerEnabledByDefault=false
+defaultClient=
+defaultLanguage=en_GB
+skipRunTogether=true
+
+[TipOfDay]
+RunOnStart=false
+
+[filetree]
+editShade=248,203,221
+listMode=false
+shadingEnabled=true
+showFullPathOnRoots=false
+sortRole=0
+viewShade=185,178,206

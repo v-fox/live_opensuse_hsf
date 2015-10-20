@@ -14,13 +14,13 @@ ColorAmount=0
 ColorEffect=2
 ContrastAmount=0.1
 ContrastEffect=2
-Enable=true
+Enable=false
 IntensityAmount=0
 IntensityEffect=0
 
 [Colors:Button]
-BackgroundAlternate=221,220,221
-BackgroundNormal=242,240,242
+BackgroundAlternate=224,223,222
+BackgroundNormal=236,235,235
 DecorationFocus=93,153,45
 DecorationHover=111,153,38
 ForegroundActive=101,97,49
@@ -34,21 +34,21 @@ ForegroundVisited=155,82,94
 
 [Colors:Selection]
 BackgroundAlternate=62,138,204
-BackgroundNormal=200,222,196
+BackgroundNormal=131,175,119
 DecorationFocus=93,153,45
 DecorationHover=111,153,38
-ForegroundActive=163,163,75
-ForegroundInactive=119,205,104
+ForegroundActive=255,249,126
+ForegroundInactive=181,239,172
 ForegroundLink=0,49,110
 ForegroundNegative=156,14,14
-ForegroundNeutral=184,162,49
-ForegroundNormal=0,0,0
+ForegroundNeutral=255,224,68
+ForegroundNormal=255,255,255
 ForegroundPositive=68,136,68
 ForegroundVisited=69,40,134
 
 [Colors:Tooltip]
 BackgroundAlternate=196,224,255
-BackgroundNormal=240,249,246
+BackgroundNormal=28,33,34
 DecorationFocus=93,153,45
 DecorationHover=111,153,38
 ForegroundActive=147,143,72
@@ -56,13 +56,13 @@ ForegroundInactive=136,135,134
 ForegroundLink=0,87,174
 ForegroundNegative=191,3,3
 ForegroundNeutral=176,128,0
-ForegroundNormal=11,84,91
+ForegroundNormal=231,253,255
 ForegroundPositive=0,110,40
 ForegroundVisited=100,74,155
 
 [Colors:View]
-BackgroundAlternate=226,224,226
-BackgroundNormal=249,246,249
+BackgroundAlternate=248,247,246
+BackgroundNormal=255,255,255
 DecorationFocus=93,153,45
 DecorationHover=111,153,38
 ForegroundActive=160,160,40
@@ -75,8 +75,8 @@ ForegroundPositive=0,110,40
 ForegroundVisited=155,82,94
 
 [Colors:Window]
-BackgroundAlternate=219,218,219
-BackgroundNormal=238,236,238
+BackgroundAlternate=218,217,216
+BackgroundNormal=232,231,231
 DecorationFocus=93,153,45
 DecorationHover=111,153,38
 ForegroundActive=23,136,26
@@ -89,12 +89,12 @@ ForegroundPositive=41,94,25
 ForegroundVisited=155,82,94
 
 [General]
-ColorScheme=openSUSElight - HSF
-Name=openSUSElight - HSF
+ColorScheme=openSUSElight
+Name=openSUSElight
 shadeSortColumn=true
 
 [KDE]
-contrast=6
+contrast=7
 
 [WM]
 activeBackground=131,175,119
