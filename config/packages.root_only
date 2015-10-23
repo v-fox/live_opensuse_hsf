@@ -854,6 +854,8 @@ systemd-bash-completion
 systemd-logger
 systemd-ui
 systemtap
+systemtap-sdt-devel
+systemtap-server
 t6_client
 tano
 tarix
@@ -874,6 +876,8 @@ trackma-qt
 translation-update
 tree
 tunctl
+tuned-utils
+tuned-utils-systemtap
 tuxcursors
 tvtime
 ucode-intel
