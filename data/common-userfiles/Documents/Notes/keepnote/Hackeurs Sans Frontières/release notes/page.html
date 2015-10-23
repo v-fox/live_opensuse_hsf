@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Release Notes</title>
-</head><body><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">HSF *IMPORTANT* Notes</span></span><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
+</head><body><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">HSF *IMPORTANT* Notes</span></span><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
 <li>hacker's example pgp passphrase: unsafe for work. DON'T actually USE IT</li>
 <li>if you've put HSF on <span style="background-color: #ffff99">R/W medium</span>&nbsp;such as USB flash stick it will create second partition out of all the redundant space but would give it ID '1' and format in <span style="background-color: #ffff99">exFAT</span>&nbsp;to <span style="background-color: #ffff99">fool Windows®</span>&nbsp;into believing it's the first one so to compel it to try to mount it</li>
 <li style="list-style-type: none">∘ it will also create BTRFS <span style="background-color: #ffff99">persistency</span>&nbsp;image file the size half of that partition to be used as R/W layer of overlayfs, instead of RAM as is the case with R/O medium</li>
 </span></span></ul>
-<ul><li><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">use `</span></span><span style="background-color: #ffff99">hardinfo</span>`(GUI), <span style="font-size: 9pt"><span style="font-family: DejaVu Sans">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries</span></span></li>
+<ul><li><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">use `</span></span><span style="background-color: #ffff99">hardinfo</span>`(GUI), <span style="font-size: 9pt"><span style="font-family: DejaVu Sans">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries. try `</span></span><span style="background-color: #ffff99">conky-colors</span><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">` to generate fancy `<span style="background-color: #ffff99">conky</span>` config for you</span></span></li>
 <span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool but it has insane dependencies, so we have to do without</li>
 <li>before using package manager, you may need to do:</li>
 <li style="list-style-type: none">∘ `<span style="background-color: #ffff99">sudo zypper --gpg-auto-import-keys refresh</span>` in terminal to get repo-caches and import/update all their keys</li>
@@ -16,11 +16,11 @@
 <li>default Firefox and Thunderbird profiles are configured to use proxying via Tor by default, there are addons installed to easily switching it on and off</li>
 <li>/tmp runs on RAM-disk with size of 10% of total RAM capacity, so don't let your apps shit in it. 25% more is used for compressed swap-in-RAM (compcache/zram) by default.</li>
 <li>encryption and security tips:</li>
-<li style="list-style-type: none">∘ <b>all DNS queries</b>&nbsp;are cached by `unbound` and then forwarded to `dnscrypt-proxy` which in turn funnels them via encrypted connection to one of the servers from <a href="/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv">/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv</a>, preferrably one without logging/spying (definitely not a Cisco one) and with DNSSEC support. so, if your DNS queries are not answered for some reason it's most likely because that server has failed and you need to select another one. <a href="https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv">up to date</a>&nbsp;list is in dnscrypt-proxy repository, just temporary edit <a href="/etc/resolv.conf">/etc/resolv.conf</a></li>
+<li style="list-style-type: none">∘ <b>all DNS queries</b>&nbsp;are cached by `<span style="background-color: #ffff99">unbound</span>` and then forwarded to `<span style="background-color: #ffff99">dnscrypt-proxy</span>` which in turn funnels them via several encrypted connections to non-logging DNSSEC-equipped servers from <a href="/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv">/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv</a>&nbsp;(definitely not Cisco ones). <a href="https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv">up to date</a>&nbsp;list is in dnscrypt-proxy repository. just temporary put some public servers in <a href="/etc/resolv.conf">/etc/resolv.conf</a>&nbsp;or <a href="/etc/unbound/unbound.conf">/etc/unbound/unbound.conf</a>&nbsp;if your queries aren't answered for some reason</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<span style="background-color: #ffff99">network.proxy.socks_remote_dns</span>' parameter in Firefox, Thunderbird and all Mozilla apps</li>
 </ul>
 </li>
-<li style="list-style-type: none">∘ for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say)</li>
+<li style="list-style-type: none">∘ for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say) and you should not use auto-login</li>
 <li style="list-style-type: none">∘ try not to use Google products and Facebook. and you definitely shouldn't use Skype, proprietary server-centric services and anything without end-to-end encryption in general</li>
 <li style="list-style-type: none">∘ AppArmor systemd service and kernel subsystem are disabled by default, enable them if you can handle it. see the default kernel boot options and `<span style="background-color: #ffff99">yast2 apparmor</span>`</li>
 <li style="list-style-type: none">∘ Firewall is inactive by default because connectivity is more important than false sense of security, carefully tweak it to your needs yourself in `<span style="background-color: #ffff99">yast2 firewall</span>`</li>
@@ -48,7 +48,7 @@
 </li>
 <li>you might want to also check Options-&gt;'<span style="background-color: #ffff99">Ignore recommended packages for already installed packages</span>' in YaST Package Manager to achieve same effect as with 'installRecommends' for zypper and prevent it from installing loads of unnecessary crap (but only for already installed packages)</li>
 </span></span></ul>
-<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"></span></span><ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li><span style="background-color: #ffff99">JACK</span>&nbsp;is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality</li>
+<ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li><span style="background-color: #ffff99">JACK</span>&nbsp;is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality</li>
 <li style="list-style-type: none">∘ note <span style="background-color: #ffff99">QJackCtl</span>, JACK configurator, <span style="background-color: #ffff99">QasMixer</span>, ALSA volume configurator and <span style="background-color: #ffff99">PASysTray</span>, advanced PA configurator, and in your tray</li>
 <li style="list-style-type: none">∘ please, set all your multimedia apps to use JACK with '<span style="background-color: #ffff99">jamin</span>' port by default or disable it and then use naked PA (remove <a href="~/.config/pulse">~/.config/pulse</a>&nbsp;&amp; /etc/profile.d/zzz-jack.*). note that Firefox uses PA shim because its ALSA and JACK support is broken.</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ ALSA-only apps should use '<span style="background-color: #ffff99">default</span>' or '<span style="background-color: #ffff99">sysdefault</span>' ALSA/JACK devices</li>
@@ -128,8 +128,7 @@
 <li style="list-style-type: none">∘ Ctrl+Escape &#09;&#09;&#09;&#09;&#09;= `<span style="background-color: #ffff99">qps</span>` process informer</li>
 <li style="list-style-type: none">∘ Meta/Win+PrintScreen &#09;&#09;&#09;= screenshot entire screen</li>
 <li style="list-style-type: none">∘ Meta/Win+PrintScreen+Shift &#09;= screenshot focused window</li>
-</span></span></ul>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><ul><li>KDE's KIO</li>
+<li>KDE's KIO</li>
 <li style="list-style-type: none">∘ KDE file management apps (Dolphin, Konqueror, Krusader, etc.) support variety of special protocols other than simple file management:</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ <span style="background-color: #ffff99">remote:/</span>&nbsp;- listing of all local auto-found or known resources</li>
 <li style="list-style-type: none">‣ <span style="background-color: #ffff99">ftp:/</span>/&lt;user&gt;@&lt;proxy_user&gt;:&lt;password&gt;@&lt;proxy_password&gt;@&lt;hostname&gt;:&lt;port&gt;/&lt;path&gt;</li>
@@ -141,9 +140,8 @@
 <li style="list-style-type: none">‣ listing and accessing mtp (phones, players, etc.) and camera devices: <span style="background-color: #ffff99">mtp:/</span>&nbsp;and <span style="background-color: #ffff99">camera:/</span>&nbsp;respectively</li>
 </ul>
 </li>
-</ul>
-<ul><li>both GNU <span style="background-color: #ffff99">ddrescue</span>&nbsp;and original dd_rescue are installed</li>
+<li>both GNU <span style="background-color: #ffff99">ddrescue</span>&nbsp;and original dd_rescue are installed</li>
 <li style="list-style-type: none">∘ ddrescue is much more preferable but if you want to use dd_rescue for some reason, do it via `<span style="background-color: #ffff99">dd_rhelp</span>` crutch</li>
-</ul>
-<br/>
+</span></span></ul>
+<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><br/>
 </span></span></body></html>
