@@ -2,6 +2,6 @@
 LastConfiguredApp=Accessibility
 
 [Sounds]
-External player[$e]=play -v 0.75
-No sound=false
+External player[$e]=play -v 0.15
+No sound=true
 Use external player=true

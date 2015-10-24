@@ -1,7 +1,7 @@
 [Icon Theme]
 Name=Plataro
 Comment=A colorful flat icon set
-Inherits=Shadow,hicolor,Vivacious-Colors,Vibrancy-Colors,gnome
+Inherits=OxyElegantBase,gnome-colors-common,hicolor
 Hidden=true
 Example=x-directory-normal
 

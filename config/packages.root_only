@@ -676,6 +676,7 @@ openvas-cli
 openvas-manager
 openvas-scanner
 opus-tools
+oxy_elegant-icon-theme
 oxygen-cursors4
 oxygen-ionized-icon-theme-v1
 p7zip
@@ -806,7 +807,6 @@ sensors
 sentinella
 setserial
 sg3_utils
-shadow-icon-theme
 shim
 signing-party
 sil-charis-fonts
@@ -913,12 +913,10 @@ vde2-slirp
 vdpau-video
 veracrypt
 vhostmd
-vibrancy_colors-icon-theme
 virt-manager
 virt-sandbox
 virt-v2v
 virt-viewer
-vivacious_colors-icon-theme
 vlan
 vlc-codecs
 vmfs-tools
