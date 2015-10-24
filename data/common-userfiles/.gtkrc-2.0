@@ -3,7 +3,7 @@
 
 include "/home/fox/.gtkrc-2.0.mine"
 gtk-theme-name="oxygen-gtk"
-gtk-icon-theme-name="MegaMix"
+gtk-icon-theme-name="MIX"
 gtk-font-name="DejaVu Sans 10"
 gtk-cursor-theme-name="ComixCursors-Green"
 gtk-cursor-theme-size=0

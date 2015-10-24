@@ -7,5 +7,5 @@
 #
 # This is a default for openSUSE:
 gtk-theme-name = oxygen-gtk
-gtk-icon-theme-name = Vivacious-NonMono-Light-Green
+gtk-icon-theme-name = MIX
 gtk-fallback-icon-theme = gnome-wise

@@ -4,3 +4,4 @@ Session=lxqt
 [User]
 XSession=lxqt
 SystemAccount=false
+Icon=/var/lib/AccountsService/icons/hacker.png

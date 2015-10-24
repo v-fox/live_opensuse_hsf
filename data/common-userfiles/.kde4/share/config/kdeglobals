@@ -15,7 +15,7 @@ toolBarFont=DejaVu Sans,9,-1,5,50,0,0,0,0,0
 widgetStyle=gtk+
 
 [Icons]
-Theme=MegaMix
+Theme=MIX
 
 [KDE]
 NaturalSorting=false

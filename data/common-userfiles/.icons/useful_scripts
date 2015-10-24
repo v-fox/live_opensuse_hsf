@@ -1,6 +1,6 @@
 # kate $(find . -iname index.theme)
 
-# for iconset in */*/*; do [ -d "$iconset" ] && mkdir -p MegaMix/${iconset#*/}; done
+# for iconset in */*/*; do [ -d "$iconset" ] && mkdir -p MIX/${iconset#*/}; done
 
 # for theme in $(find . -mindepth 1 -maxdepth 1 -type d); do for iconset in $(find /usr/share/icons/${theme} -mindepth 1 -maxdepth 1 -type d); do ln -s $iconset ${theme}/$(basename $iconset); done; done
 

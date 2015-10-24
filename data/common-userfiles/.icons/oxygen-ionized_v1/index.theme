@@ -92,7 +92,7 @@ Comment[x-test]=xxOxygen Teamxx
 Comment[zh_CN]=Oxygen 团队
 Comment[zh_TW]=Oxygen 開發團隊
 
-Inherits=gnome-colors-common,Vivacious-Colors-NonMono-Light,Vibrancy-Colors-NonMono-Light,Plataro,Shadow,hicolor,Vivacious-Colors,Vibrancy-Colors,gnome
+Inherits=gnome-colors-common,hicolor
 Hidden=true
 DisplayDepth=32
 
