@@ -432,7 +432,6 @@ kwrite
 ladspa
 ladspa-swh-plugins
 lame-mp3rtp
-laptop-mode-tools
 latencytop
 lcdf-typetools
 lcms
@@ -723,7 +722,6 @@ plymouth-scripts
 plymouth-utils
 plymouth-x11-renderer
 pmacct
-pm-utils
 pngcrush
 polkit-default-privs
 poppler-data

@@ -34,7 +34,7 @@
 		tuned for low latency and packing almost all in-kernel drivers;
 		lzo is used by default for kernel and initrd to gain boot speed;
 		backport of hid_sony patch for elimination of bogus input
-	* replacement of pm-profiler with tuned/systemtap/powertop
+	* replacement of LMT/pm-profiler/pm-utils with tuned/systemtap/powertop
 	* replacement of tc-play with veracrypt
 	* replacement of uTox with qTox
 	* commencing usage of multiple dnscrypt instances
