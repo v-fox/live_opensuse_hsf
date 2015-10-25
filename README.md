@@ -20,7 +20,7 @@ to switch to bleeding edge from pontostroy (git & kernel rc's) repoes
 * international (Google Noto set) collection of fonts  
 and universal iBus input method by default
 * LibreOffice, GIMP and fresh GoldenDict;  
-CoolReader3-Qt5, Okular, kchmviewer, djvulibre-djview4 and pdfcrack
+CoolReader3-Qt, Okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
 * bomi/mpv (ex-C/Mplayer) & Tano video & IPTV players, VLC Firefox plugin;  
