@@ -28,6 +28,7 @@
 		Mupen64Plus for Nintendo© N64®
 		Yabause for Sega© Saturn®
 	* addition of Skype and skyperious (Skype data viewer)
+	* addition of Steam installer/launcher and its crutch-wrapper
 	* addition of ZFS support (may be removed at any time)
 	* removal of live-{fat-stick,usb-gui} because of low usefulness for our case
 	* replacement of dropped kernel-desktop with our kernel-HSF:

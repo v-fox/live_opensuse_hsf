@@ -56,8 +56,11 @@ LIBVA_DRIVER_NAME=gallium
 LADSPA_PATH=/usr/lib64/ladspa
 # steam crutches. read up on http://en.opensuse.org/Steam
 #STEAM_RUNTIME=0
-#STEAM_FRAME_FORCE_CLOSE=1
+STEAM_FRAME_FORCE_CLOSE=1
 # Firefox: GPU acceleration
 MOZ_USE_OMTC=1
 # Firefox: proper input
 MOZ_USE_XINPUT2=1
+# making root apps obey
+XCURSOR_THEME=ComixCursors-Green
+XCURSOR_SIZE=40

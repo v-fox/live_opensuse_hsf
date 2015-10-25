@@ -39,7 +39,8 @@ Mednafen, small yet feature-rich JACK-enabled multi-system emulator;
 emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
 * professional virtualization with libvirt & KVM / LXC  
 (featuring userland virt-manager and SPICE flowing out-of-the-box)
-* Windows® compatibility through Wine 32 & 64 with native Gallium DirectX 9
+* Windows® compatibility through Wine 32 & 64 with native Gallium DirectX 9;  
+Steam installer/launcher is present
 * professional networking tools and rich connectivity options
 * OpenVAS and ClamAV security systems
 * anti-censorship kit: Tor/Privoxy, DNSCrypt-proxy/Unbound, proxychains and VPN  
@@ -68,9 +69,8 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * encryption tools:  
   * YaST partitioner's built-in crypt{setup,config} / LUKS encryption capabilities
   * veracrypt (TrueCrypt fork), aespipe, emount/zuluCrypt, seahorse/gnome-keyring, keepassx
+* bunch of repos pre-configured (but disabled) for recent though mostly stable updates
 * useful things that I've put there but forgot to mention
-* bunch of repos pre-configured (but disabled) for games, emulators  
-and recent though mostly stable updates
 
 It does NOT provide:
 --------------------
