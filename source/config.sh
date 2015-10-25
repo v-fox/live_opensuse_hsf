@@ -44,9 +44,9 @@ systemctl disable rsyslog
 systemctl disable apparmor
 systemctl disable SuSEfirewall2
 systemctl disable wicked.service
-# we don't want it to run by default and its modules are broken anyway
-systemctl disable zfs
-systemctl enable pm-profiler
+# we don't want it to run by default and its modules are broken anyway... or do we ?
+#systemctl disable zfs
+systemctl enable tuned
 systemctl enable rtkit-daemon
 systemctl enable compcache
 systemctl enable irq_balancer

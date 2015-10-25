@@ -723,7 +723,6 @@ plymouth-scripts
 plymouth-utils
 plymouth-x11-renderer
 pmacct
-pm-profiler
 pm-utils
 pngcrush
 polkit-default-privs
