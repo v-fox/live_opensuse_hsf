@@ -82,15 +82,16 @@ systemctl enable libvirtd
 localectl list-x11-keymap-models "evdev"
 localectl list-x11-keymap-options "grp:ctrl_shift_toggle,grp_led:scroll,compose:ralt,terminate:ctrl_alt_bksp"
 
-# preemptively generate unbound keys
-systemctl start unbound-keygen
+# making use of pam_schroedinger
+pam-config -a --unix-nodelay
+
 # preemptively building our dkms kernel modules
 #dkms autoinstall
 # preemptively setting up NIS domain name for legacy compatibility
 netconfig update
 
 # updating gtk icon cache in hopes that it'll help with missing icons
-find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -q -t -f "{}" \;
+#find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -q -t -f "{}" \;
 
 # making sure that proxy is not used
 for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
