@@ -881,7 +881,7 @@ tuned-utils-systemtap
 tuxcursors
 tvtime
 ucode-intel
-udev
+udev-configure-printer
 udftools
 udisks
 udisks2
