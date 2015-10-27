@@ -107,11 +107,11 @@ update-smart-drivedb
 
 # force-installing Google-fonts from crapload of packages here instead of the proper place
 zypper --non-interactive --gpg-auto-import-keys refresh
-zypper --non-interactive install "google-*-fonts"
+zypper --non-interactive install "google-*-fonts" || exit 1
 # and installing all forensic tools while we're at it
-zypper --non-interactive install --from security_forensics "*-tools"
+zypper --non-interactive install --from security_forensics "*-tools" || exit 1
 # and YaST translations
-zypper --non-interactive install "yast2-trans-*"
+zypper --non-interactive install "yast2-trans-*" || exit 1
 rm -rf /var/{cache,log}/zypp/*
 
 # making list of installed packages from default user
