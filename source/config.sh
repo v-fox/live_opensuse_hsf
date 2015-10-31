@@ -77,6 +77,9 @@ systemctl enable xdm
 systemctl enable spice-vdagentd
 # needed for it to run VMs
 systemctl enable libvirtd
+# enabling tracefs and avoiding debugfs (https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=681418)
+#systemctl mask sys-kernel-debug.mount
+systemctl enable sys-kernel-tracing.mount
 
 # systemd locale defaults
 localectl list-x11-keymap-models "evdev"
