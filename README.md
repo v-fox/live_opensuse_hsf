@@ -23,7 +23,7 @@ and universal iBus input method by default
 CoolReader3-Qt, Okular, kchmviewer, djvulibre-djview4 and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
-* bomi/mpv (ex-C/Mplayer) & Tano video & IPTV players, VLC Firefox plugin;  
+* Bomi mpv fork and Xt7 mpv GUI, Tano IPTV player, VLC Firefox plugin;  
 SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * professional sound handling with JACK  
 (PA & ALSA, both with OSS emulation, run as JACK's clients)

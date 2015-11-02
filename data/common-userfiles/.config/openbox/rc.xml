@@ -312,6 +312,12 @@
         <direction>down</direction>
       </action>
     </keybind>
+    <keybind key="W-F11">
+      <action name="Reconfigure"/>
+    </keybind>
+    <keybind key="W-F12">
+      <action name="Restart"/>
+    </keybind>
     <!-- Keybindings for running applications -->
     <!-- Screenshot -->
     <keybind key="Print">
@@ -776,16 +782,25 @@
 -->
     <!-- for JAMin to not get in the way -->
     <application class="Jamin"
-    		 type="normal">
-      <desktop>2</desktop>
+		 type="normal">
+      <position force="no">
+        <!-- <monitor>2</monitor> -->
+      </position>
+      <desktop>3</desktop>
       <focus>no</focus>
-      <maximized>true</maximized>
+      <maximized>yes</maximized>
     </application>
     <!-- for Firefox to be borderless (and "maximize vertical space") -->
     <application role="browser"
-    		 name="Navigator">
+		 name="Navigator">
       <decor>no</decor>
-      <maximized>true</maximized>
+      <maximized>yes</maximized>
+    </application>
+    <!-- for xt7-player-mpv's main window to be always maximized and borderless -->
+    <application class="Xt7-player-mpv.gambas"
+		 role="FMain">
+      <decor>no</decor>
+      <maximized>yes</maximized>
     </application>
   </applications>
 </openbox_config>
