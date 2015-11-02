@@ -551,9 +551,16 @@ IcedTea-Web Plugin (using IcedTea-Web 1.6.1 (suse-6.2-x86_64)):$
 35:application/x-java-bean;version=1.8:IcedTea:class,jar:$
 36:application/x-java-bean;jpi-version=1.8.0_50:IcedTea:class,jar:$
 37:application/x-java-vm-npruntime:IcedTea::$
+libfreshwrapper-flashplayer.so:$
+/usr/lib64/browser-plugins/libfreshwrapper-flashplayer.so:$
+19.0.0.226:$
+1446245027000:0:0:0:$
+Shockwave Flash 19.0 r0:$
+Shockwave Flash:$
+2
+0:application/x-shockwave-flash:Shockwave Flash:swf:$
+1:application/futuresplash:FutureSplash Player:spl:$
 
 [INVALID]
-/usr/lib64/browser-plugins/libfreshwrapper-flashplayer.so:$
-1445574875000:$
 /home/fox/.mozilla/plugins/liblightsparkplugin.so:$
 0:$

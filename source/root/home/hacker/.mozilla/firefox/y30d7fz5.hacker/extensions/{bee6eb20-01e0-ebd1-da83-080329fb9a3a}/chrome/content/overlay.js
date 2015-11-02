@@ -62,7 +62,6 @@ var flashVideoDownload = new function() {
         this.addProgressListener();
         this.setStringbundleConsts();
         this.createToolbarButtons();
-        this.loadUserPrefs();
         this.loadYouTubeFormatsPrefs();
         this.loadYouTubeQualitiesPrefs();
         this.loadYouTubeEmbeddedVideosPrefs();
@@ -304,14 +303,6 @@ var flashVideoDownload = new function() {
         return true;
     };
     
-    this.loadUserPrefs = function() {
-        try {
-            var Application = Components.classes["@mozilla.org/fuel/application;1"].getService(Components.interfaces.fuelIApplication);
-            var Extension = Application.extensions.get("{bee6eb20-01e0-ebd1-da83-080329fb9a3a}");
-            this.prefs = Extension.prefs;
-        } catch(ex) { }
-    };
-    
     // sets the displayed formats for youtube
     this.loadYouTubeFormatsPrefs = function() {
     	var formats = this.Classes.MediaFile.FORMATS;
@@ -347,43 +338,49 @@ var flashVideoDownload = new function() {
     
     this.checkVer = function() {
         try {
+            var prefs = Components.classes["@mozilla.org/preferences-service;1"]
+                .getService(Components.interfaces.nsIPrefService)
+                .getBranch("extensions.{bee6eb20-01e0-ebd1-da83-080329fb9a3a}.");
+
+            var isPrefExist = function(prefName) {
+                return prefs.getPrefType(prefName) != prefs.PREF_INVALID;
+            };
+
             // Gets the version id for Firefox 4 and later; Mozilla 2 and later
             Components.utils.import("resource://gre/modules/AddonManager.jsm");
             AddonManager.getAddonByID("{bee6eb20-01e0-ebd1-da83-080329fb9a3a}", function(addon) {
                 var addonVersion = addon.version;
                 self.addonVersion = addonVersion;
-                // Gets the preferences for Firefox 4 and later / Mozilla 2 and later
-                Application.getExtensions(function (extensions) {			
-                    let extension = extensions.get("{bee6eb20-01e0-ebd1-da83-080329fb9a3a}");
-                    self.prefs = extension.prefs;		 
-                    var firstRun	    = self.prefs.getValue("firstRun", true);
-                    if (firstRun) {
-                        self.prefs.setValue("firstRun", false);					
-                        self.PrefManager.prefs.setBoolPref("toolbarButton", true);					
-                        self.toolbarButton.addToolbarButton();
-                        self.statusbarButton.addToolbarButton();                   
-                    }
-                    var lastCheckVersion = self.prefs.getValue("addonVersion", "");
-                    var newU		 = self.prefs.getValue("new", true);
-                    if (newU) {
-                        self.prefs.setValue("addonVersion", addonVersion);
-                        self.prefs.setValue("new", false);
-                        window.setTimeout(function(){
-                            var b = getBrowser();
-                            b.selectedTab = b.addTab(TY_PAGE_FULL_PATH);
-                        }, 1200);
-                    } else {
-                        if (lastCheckVersion!=addonVersion) {
-                            self.prefs.setValue("addonVersion", addonVersion);
-                            window.setTimeout(function(){
-                                var b = getBrowser();
-			                    b.selectedTab = b.addTab(TY_PAGE_FULL_PATH);
-                            }, 1200);
-                        }
-                    }
-                });
+
+                var firstRun;
+                var firstRunExists = isPrefExist("firstRun");
+
+                if (!firstRunExists) { firstRun = true; }
+                else { firstRun = prefs.getBoolPref("firstRun"); }
+
+                if (firstRun) {
+                    prefs.setBoolPref("firstRun", false);
+                    self.PrefManager.prefs.setBoolPref("toolbarButton", true);
+                    self.toolbarButton.addToolbarButton();
+                    self.statusbarButton.addToolbarButton();
+                    window.setTimeout(function(){
+                        var b = getBrowser();
+                        b.selectedTab = b.addTab(TY_PAGE_FULL_PATH);
+                    }, 1200);
+                    prefs.setCharPref("addonVersion", addonVersion);
+                    return;
+                }
+
+                var lastCheckVersion = prefs.getCharPref("addonVersion");
+                if (lastCheckVersion != addonVersion) {
+                    prefs.setCharPref("addonVersion", addonVersion);
+                    window.setTimeout(function(){
+                        var b = getBrowser();
+                        b.selectedTab = b.addTab(TY_PAGE_FULL_PATH);
+                    }, 1200);
+                }
             });
-        } catch(ex) {}	
+        } catch(ex) { }	
     };
 
     this.buttonPressed = function(e) {

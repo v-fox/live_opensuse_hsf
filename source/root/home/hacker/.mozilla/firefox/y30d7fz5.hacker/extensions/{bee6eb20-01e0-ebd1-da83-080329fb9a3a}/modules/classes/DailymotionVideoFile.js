@@ -68,46 +68,80 @@ DailymotionVideoFile.getVideoDocumentViaAjax = function(videoId, callback) {
 };
 
 DailymotionVideoFile.setVideoFilesList = function(responseText, doc) {
-	var info = /var *info *= *(.*),/.exec(responseText);
-	var links = DailymotionVideoFile.getVideoLinks(info);
-	if (!links) { return false; }
-	var icon = MediaFile.getWebsiteIcon(doc);
-	
-	var params = new Array();
-	for (var i in links) {
-	    params.push({
-			url : links[i].url,
-			fileType : links[i].fileType,
-			doc : doc,
-			contentLength : 0,
-			title : doc.title,
-			icon : icon,
-			quality : links[i].resolution	    
-	    });
+	var urlsPerQuality = responseText.match(/\"qualities\": *(\{.+\}),"reporting"/);
+	if (!urlsPerQuality) {
+		urlsPerQuality = responseText.match(/\"qualities\": *(\{.+\}),"sharing"/);
 	}
-	return params;
+	urlsPerQuality = urlsPerQuality ? urlsPerQuality[1] : null;
+	if (!urlsPerQuality) { return false; }
+
+	urlsPerQuality = JSON.parse(urlsPerQuality);
+	var paramsList = [];
+	var icon = MediaFile.getWebsiteIcon(doc);
+	for (var quality in urlsPerQuality) {
+		var urlPerQuality = urlsPerQuality[quality];
+		if (parseInt(quality)) {
+			paramsList.push({
+				url: urlPerQuality[0].url,
+				fileType: "mp4",
+				doc: doc,
+				title: doc.title,
+				icon: icon,
+				quality: quality,
+				contentLength: 0
+			});
+		}
+	}
+
+	return paramsList.length > 0 ? paramsList : false;	
+
+
+
+
+
+
+
+
+	// var info = /var *info *= *(.*),/.exec(responseText);
+	// var links = DailymotionVideoFile.getVideoLinks(info);
+	// if (!links) { return false; }
+	// var icon = MediaFile.getWebsiteIcon(doc);
+	
+	// var params = new Array();
+	// for (var i in links) {
+	//     params.push({
+	// 		url : links[i].url,
+	// 		fileType : links[i].fileType,
+	// 		doc : doc,
+	// 		contentLength : 0,
+	// 		title : doc.title,
+	// 		icon : icon,
+	// 		quality : links[i].resolution	    
+	//     });
+	// }
+	// return params;
 };
 
-DailymotionVideoFile.getVideoLinks = function(info) {
-	if (!info) { return false; }
+// DailymotionVideoFile.getVideoLinks = function(info) {
+// 	if (!info) { return false; }
 	
-	var links = new Array();
+// 	var links = new Array();
 	
-	info = JSON.parse(info[1]);            
-	var url = null;            
-	for (var i in DailymotionVideoFile.QUALITIES) {                
-	    url = info["stream_h264_" + DailymotionVideoFile.QUALITIES[i]];
-	    if (url != null) {                    
-			links.push({
-			    url         : url,
-			    quality     : i,     // key
-			    fileType    : "mp4",
-			    resolution  : DailymotionVideoFile.RESOLUTIONS[i]                        
-			});
-	    }
-	}
-	return links;  
-};   
+// 	info = JSON.parse(info[1]);            
+// 	var url = null;            
+// 	for (var i in DailymotionVideoFile.QUALITIES) {                
+// 	    url = info["stream_h264_" + DailymotionVideoFile.QUALITIES[i]];
+// 	    if (url != null) {                    
+// 			links.push({
+// 			    url         : url,
+// 			    quality     : i,     // key
+// 			    fileType    : "mp4",
+// 			    resolution  : DailymotionVideoFile.RESOLUTIONS[i]                        
+// 			});
+// 	    }
+// 	}
+// 	return links;  
+// };   
 
 DailymotionVideoFile.getVideoIdFromDoc = function(doc) {
 	var metas = doc.getElementsByTagName("meta");            
@@ -144,23 +178,23 @@ DailymotionVideoFile.createMediaFiles = function(doc) {
 	return true;
 };
 
-DailymotionVideoFile.QUALITIES = {
-    H264_512x384    : "url",
-    H264_320x240    : "ld_url",
-    H264_848x480    : "hq_url",
-    H264_1280x720   : "hd_url",
-    H264_1280x720_2 : "hd720_url",
-    H264_1920x1080  : "hd1080_url"
-};
+// DailymotionVideoFile.QUALITIES = {
+//     H264_512x384    : "url",
+//     H264_320x240    : "ld_url",
+//     H264_848x480    : "hq_url",
+//     H264_1280x720   : "hd_url",
+//     H264_1280x720_2 : "hd720_url",
+//     H264_1920x1080  : "hd1080_url"
+// };
 
-DailymotionVideoFile.RESOLUTIONS = {
-    H264_320x240       : "240",
-	H264_512x384       : "380",
-    H264_848x480       : "480",
-    H264_1280x720      : "720",
-    H264_1280x720_2    : "720",
-    H264_1920x1080     : "1080"
-};      
+// DailymotionVideoFile.RESOLUTIONS = {
+//     H264_320x240       : "240",
+// 	H264_512x384       : "380",
+//     H264_848x480       : "480",
+//     H264_1280x720      : "720",
+//     H264_1280x720_2    : "720",
+//     H264_1920x1080     : "1080"
+// };      
 
 DailymotionVideoFile.isDailymotion = function(doc) {
 	return (doc && doc.domain && doc.domain.indexOf("dailymotion.com") != -1); 

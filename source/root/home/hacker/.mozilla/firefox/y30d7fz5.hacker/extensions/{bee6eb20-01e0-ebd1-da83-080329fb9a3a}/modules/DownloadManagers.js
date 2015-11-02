@@ -46,37 +46,16 @@ var DownloadManagers = {
         // private methods
         checkIfInstalled : function() {
             // Firefox 4 and later; Mozilla 2 and later
-            try {                
-                var Application = Components.classes["@mozilla.org/fuel/application;1"].getService(Components.interfaces.fuelIApplication);
-                Application.getExtensions(function(extensions) {
-                    var e = extensions.get(DownloadManagers.dta.id);
-                    if (e && e.enabled) {
+            try {
+                DownloadManagers.dta.isAddonInstalled = false;
+                Components.utils.import("resource://gre/modules/AddonManager.jsm");
+                AddonManager.getAddonByID(DownloadManagers.dta.id, function(addon) {
+                    if (addon) {
                         DownloadManagers.dta.isAddonInstalled = true;
-                    }
-                    else {
-                        DownloadManagers.dta.isAddonInstalled = false;
-                        Components.utils.import("resource://gre/modules/AddonManager.jsm");
-                        AddonManager.getAddonByID(DownloadManagers.dta.id, function(addon) {
-                            if (addon) {
-                                DownloadManagers.dta.isAddonInstalled = true;
-                            }
-                        });
                     }
                 });
-            }
-            // Firefox 3.6 and before; Mozilla 1.9.2 and before
-            catch(e) {
+            } catch(ex) {
                 try {
-                    var Application = Components.classes["@mozilla.org/fuel/application;1"].getService(Components.interfaces.fuelIApplication);
-                    var ex = Application.extensions.get(DownloadManagers.dta.id);
-                    if (ex && ex.enabled){
-                        DownloadManagers.dta.isAddonInstalled = true;
-                    }
-                    else {
-                        DownloadManagers.dta.isAddonInstalled = false;
-                    }
-                // SeaMonkey 2.1 and above
-                } catch(e) {
                     var Application = Components.classes["@mozilla.org/smile/application;1"].getService(Components.interfaces.smileIApplication);
                     Application.getExtensions(function(extensions) {
                         var e = extensions.get(DownloadManagers.dta.id);
@@ -87,9 +66,10 @@ var DownloadManagers = {
                             DownloadManagers.dta.isAddonInstalled = false;
                         }
                     });
-                }
+                } catch(ex) {}
             }
         },
+
         checkIfUserEnabled : function() {
             var flashVideoDownloadPrefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService).getBranch("extensions.fnvfox.");
             DownloadManagers.dta.isUserEnabled = flashVideoDownloadPrefs.getBoolPref("general.downloadManagers.dta");
