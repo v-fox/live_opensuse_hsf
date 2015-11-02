@@ -19,6 +19,7 @@
 	* support for high-quality midi playback via fluidsynth
 	* addition of wine with native Gallium DirectX 9 support
 	* addition of more working gaming emulators:
+		DOSBox for IBM© PC/DOS
 		OpenMSX for MSX®
 		PPSSPP for Sony© PSP®
 		PCSX-R for Sony© PlayStation®

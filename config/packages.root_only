@@ -80,6 +80,7 @@ color-filesystem
 ComixCursors
 command-not-found
 compcache
+compton
 conky
 conky-cairo
 conky-clementine
@@ -126,8 +127,11 @@ dnscrypt-proxy
 dnstop
 dolphin-emu
 dos2unix
+dosbox
 dpkg
 dstat
+dvb
+dvbsnoop
 dvb-utils
 e2fsprogs-snapshots
 easytag
@@ -950,6 +954,7 @@ x265
 xar
 xarchiver
 xbacklight
+xbindkeys
 xcompmgr
 xcursor-themes
 xdmbgrd
