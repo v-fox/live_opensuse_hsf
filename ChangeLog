@@ -29,14 +29,15 @@
 		Desmume for Nintendo© DS®
 		Mupen64Plus for Nintendo© N64®
 		Yabause for Sega© Saturn®
+	* addition of K3B disk burner just for the hell of it
 	* addition of Skype and skyperious (Skype data viewer)
 	* addition of Steam installer/launcher and its crutch-wrapper
 	* addition of ZFS support (may be removed at any time)
+	* removal of toxic because we don't support console messaging
 	* removal of live-{fat-stick,usb-gui} because of low usefulness for our case
 	* replacement of dropped kernel-desktop with our kernel-HSF:
 		tuned for low latency and packing almost all in-kernel drivers;
-		lzo is used by default for kernel and initrd to gain boot speed;
-		backport of hid_sony patch for elimination of bogus input
+		lzo is used by default for kernel and initrd to gain boot speed
 	* replacement of LMT/pm-profiler/pm-utils with tuned/systemtap/powertop
 	* replacement of tc-play with veracrypt
 	* replacement of uTox with qTox

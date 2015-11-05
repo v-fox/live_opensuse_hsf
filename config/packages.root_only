@@ -82,10 +82,8 @@ command-not-found
 compcache
 compton
 conky
-conky-cairo
 conky-clementine
 conky-colors
-conky-imlib2
 conky-keyring
 conky-nano
 conntrack-tools
@@ -395,6 +393,7 @@ jamin
 java-plugin
 john
 jstest-gtk
+k3b
 kate
 kbd
 kchmviewer
@@ -874,7 +873,6 @@ tftp
 timezone
 tmpwatch
 tor
-toxic
 traceroute
 trackma-qt
 translation-update

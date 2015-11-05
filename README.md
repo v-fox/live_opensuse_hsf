@@ -48,8 +48,8 @@ Steam installer/launcher is present
 Unbound uses multiple DNSSEC-capable DNSCrypt instances for different resolvers)
 * LeechCraft modular system stripped for only IM and socializing
 * LinPhone for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
-Tox network clients for Tor/BitTorrent-like P2P A/V telephony (or so they say);  
-Skype for compatibility with stubborn fools (use with extreme causion !)
+Tox network client for Tor/BitTorrent-like P2P A/V telephony (or so they say);  
+Skype for compatibility with stubborn fools (use with extreme caution !)
 * fresh Mozilla Firefox browser and Thunderbird e-mail client;  
 fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
@@ -80,8 +80,6 @@ It does NOT provide:
 — any language translation packages (for space conservation and due to lack of  
   ability in zypper & YaST to install them without all "recommended" garbage)  
 — Wayland packages (because it's too raw yet)  
-— many cd/dvd/bluray and whatever disk tools (because spinning media must die).  
-  cdrkit-cdrtools-compat and cdemu are included though  
 — accessibility features (because I have no idea how to setup them right)  
   but there is `onboard` virtual keyboard  
 — security hardening (because it requires strict and thorough testing  
@@ -109,6 +107,7 @@ Notes:
   * okular (useful doc viewer, integrated in Firefox via kparts-plugin)  
   * kchmviewer (MS chm viewer), because sometimes okular screws up  
   * gwenview + kipi-plugins (highly-capable image viewer)  
+  * k3b (rich disk burner), because some people still are into this stuff)  
 * GNOME:  
   * nm-applet (this is _the only_ NM GUI that can launch in any DE)  
   * blueman (bluez5 control)  
