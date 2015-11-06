@@ -4,12 +4,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_Lazy_Kent'>
 		<source path='opensuse://home:Lazy_Kent/openSUSE_Tumbleweed'/>
 	</repository>
-	<repository type='yast2' imageinclude='true' priority='90' alias='openSUSE'>
-		<source path='http://download.opensuse.org/tumbleweed/repo/oss'/>
-	</repository>
-	<repository type='yast2' imageinclude='true' priority='90' alias='openSUSE_NonFree'>
-		<source path='http://download.opensuse.org/tumbleweed/repo/non-oss'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='Archiving'>
 		<source path='opensuse://Archiving/openSUSE_Factory'/>
 	</repository>
@@ -69,6 +63,12 @@
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='75' alias='GNOME_Apps'>
 		<source path='opensuse://GNOME:Apps/openSUSE_Factory'/>
+	</repository>
+	<repository type='yast2' imageinclude='true' priority='69' alias='openSUSE'>
+		<source path='http://download.opensuse.org/tumbleweed/repo/oss'/>
+	</repository>
+	<repository type='yast2' imageinclude='true' priority='69' alias='openSUSE_NonFree'>
+		<source path='http://download.opensuse.org/tumbleweed/repo/non-oss'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
 		<source path='opensuse://X11:Utilities/openSUSE_Factory'/>
