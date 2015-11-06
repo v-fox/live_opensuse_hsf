@@ -1,6 +1,3 @@
-	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_XRevan86'>
-		<source path='opensuse://home:XRevan86/openSUSE_Tumbleweed'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_Lazy_Kent'>
 		<source path='opensuse://home:Lazy_Kent/openSUSE_Tumbleweed'/>
 	</repository>

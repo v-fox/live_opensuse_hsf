@@ -2,7 +2,8 @@
 	* new type of persistency is enacted:
 		EXT4 file on exFAT partition out of redundant space of your R/W medium;
 		but, for now, this is incompatible with U/EFI booting
-	* transition to openSUSE Tumbleweed
+	* transition to openSUSE Tumbleweed;
+		repository list is overhauled to give priority to the «release» ones
 	* dropping 2GB limit and not considering anything less than 4GB:
 		keeping file persistency enabled;
 		keeping documentation and locales;
