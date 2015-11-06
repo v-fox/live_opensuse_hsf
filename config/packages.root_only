@@ -39,7 +39,6 @@ avahi
 avahi-autoipd
 avahi-utils
 bash-completion
-bbswitch
 bc
 bcg729-mediastreamer
 beignet
@@ -736,7 +735,6 @@ ppp
 ppp-userpass
 ppsspp
 prctl
-primus
 privoxy
 procinfo
 proctail
