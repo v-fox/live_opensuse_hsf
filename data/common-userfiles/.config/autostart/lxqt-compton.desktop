@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment=A X compositor
 Comment[pt]=Compositor para o servidor X
-Exec=compton --dbus --backend=xrender --vsync=drm --glx-swap-method=copy --no-fading-openclose -D 0 -I 1 -O 1 -i 0.98 -e 0.92 -m 0.95
+Exec=compton --dbus --backend=glx --vsync=opengl-swc --glx-swap-method=buffer-age --no-fading-openclose -D 0 -I 1 -O 1 -i 0.98 -e 0.92 -m 0.95
 GenericName=X compositor
 GenericName[pt]=Compositor X
 Name=Compton (X Compositor)
