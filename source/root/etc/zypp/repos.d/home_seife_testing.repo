@@ -2,5 +2,6 @@
 name=home_seife_testing
 enabled=0
 autorefresh=0
-baseurl=http://download.opensuse.org/repositories/home:seife:testing/openSUSE_13.2
+baseurl=http://download.opensuse.org/repositories/home:seife:testing/openSUSE_Tumbleweed
 type=rpm-md
+keeppackages=0

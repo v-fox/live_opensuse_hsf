@@ -1,117 +1,108 @@
-	<repository type='yast2' imageinclude='true' priority='90' alias='openSUSE'>
-		<source path='http://download.opensuse.org/distribution/13.2/repo/oss'/>
+	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_XRevan86'>
+		<source path='opensuse://home:XRevan86/openSUSE_Tumbleweed'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_Update'>
-		<source path='http://download.opensuse.org/update/13.2'/>
+	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_Lazy_Kent'>
+		<source path='opensuse://home:Lazy_Kent/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='yast2' imageinclude='true' priority='90' alias='openSUSE'>
+		<source path='http://download.opensuse.org/tumbleweed/repo/oss'/>
 	</repository>
 	<repository type='yast2' imageinclude='true' priority='90' alias='openSUSE_NonFree'>
-		<source path='http://download.opensuse.org/distribution/13.2/repo/non-oss'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='85' alias='openSUSE_NonFree_Update'>
-		<source path='http://download.opensuse.org/update/13.2-non-oss'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='60' alias='Kernel_stable'>
-		<source path='opensuse://Kernel:stable/standard'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='40' alias='Packman'>
-		<source path='http://mirror.karneval.cz/pub/linux/packman/suse/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='30' alias='Mozilla_Factory'>
-		<source path='opensuse://mozilla:Factory/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='50' alias='X11_XOrg'>
-		<source path='opensuse://X11:XOrg/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
-		<source path='opensuse://X11:Utilities/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='network'>
-		<source path='opensuse://network/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_utilities'>
-		<source path='opensuse://network:utilities/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='security'>
-		<source path='opensuse://security/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='security_forensics'>
-		<source path='opensuse://security:forensics/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='98' alias='server_http'>
-		<source path='opensuse://server:http/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='98' alias='server_database'>
-		<source path='opensuse://server:database/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_dns'>
-		<source path='opensuse://server:dns/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_monitoring'>
-		<source path='opensuse://server:monitoring/openSUSE_13.2'/>
+		<source path='http://download.opensuse.org/tumbleweed/repo/non-oss'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='Archiving'>
-		<source path='opensuse://Archiving/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='92' alias='Virtualization'>
-		<source path='opensuse://Virtualization/openSUSE_13.2'/>
-	</repository>
-        <repository type='rpm-md' imageinclude='true' priority='82' alias='Multilingualization_Fonts'>
-                <source path='opensuse://M17N:fonts/openSUSE_13.2'/>
-        </repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_samba_STABLE'>
-		<source path='opensuse://network:samba:STABLE/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='Printing'>
-		<source path='opensuse://Printing/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='multimedia_apps'>
-		<source path='opensuse://multimedia:apps/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='multimedia_libs'>
-		<source path='opensuse://multimedia:libs/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='multimedia_color_management'>
-		<source path='opensuse://multimedia:color_management/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Extra'>
-		<source path='opensuse://KDE:Extra/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='62' alias='GNOME_Apps'>
-		<source path='opensuse://GNOME:Apps/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_aevseev'>
-		<source path='opensuse://home:aevseev/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='92' alias='home_XRevan86'>
-		<source path='opensuse://home:XRevan86/openSUSE_13.2'/>
-	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='98' alias='home_Lazy_Kent'>
-		<source path='opensuse://home:Lazy_Kent/openSUSE_13.2'/>
+		<source path='opensuse://Archiving/openSUSE_Factory'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='emulators'>
-		<source path='opensuse://Emulators/openSUSE_13.2'/>
+		<source path='opensuse://Emulators/openSUSE_Factory'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='filesystems'>
-		<source path='opensuse://filesystems/openSUSE_13.2'/>
+		<source path='opensuse://filesystems/openSUSE_Factory'/>
 	</repository>
-        <repository type='rpm-md' imageinclude='true' priority='98' alias='devel_gcc'>
-                <source path='opensuse://devel:gcc/openSUSE_13.2'/>
+        <repository type='rpm-md' imageinclude='true' priority='82' alias='Multilingualization_Fonts'>
+                <source path='opensuse://M17N:fonts/openSUSE_Tumbleweed'/>
         </repository>
-	<repository type='rpm-md' imageinclude='true' priority='4' alias='home_X0F_branches_emulators'>
-		<source path='opensuse://home:X0F:branches:Emulators/openSUSE_13.2'/>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='multimedia_apps'>
+		<source path='opensuse://multimedia:apps/openSUSE_Tumbleweed'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='3' alias='home_X0F_branches_multimedia'>
-		<source path='opensuse://home:X0F:branches:multimedia/openSUSE_13.2'/>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='multimedia_color_management'>
+		<source path='opensuse://multimedia:color_management/openSUSE_Tumbleweed'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='2' alias='home_X0F_branches_network'>
-		<source path='opensuse://home:X0F:branches:network/openSUSE_13.2'/>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='multimedia_libs'>
+		<source path='opensuse://multimedia:libs/openSUSE_Tumbleweed'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='5' alias='home_X0F'>
-		<source path='opensuse://home:X0F/openSUSE_13.2'/>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='network'>
+		<source path='opensuse://network/openSUSE_Tumbleweed'/>
 	</repository>
-        <repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres-LXQt'>
-                <source path='opensuse://home:X0F:LXQt/openSUSE_13.2'/>
-        </repository>
-	<repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres'>
-		<source path='opensuse://home:X0F:HSF/openSUSE_13.2'/>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='network_utilities'>
+		<source path='opensuse://network:utilities/openSUSE_Factory'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='Printing'>
+		<source path='opensuse://Printing/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='science'>
+		<source path='opensuse://science/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='security'>
+		<source path='opensuse://security/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='security_forensics'>
+		<source path='opensuse://security:forensics/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_database'>
+		<source path='opensuse://server:database/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_dns'>
+		<source path='opensuse://server:dns/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_http'>
+		<source path='opensuse://server:http/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_monitoring'>
+		<source path='opensuse://server:monitoring/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='Virtualization'>
+		<source path='opensuse://Virtualization/openSUSE_Factory'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='75' alias='KDE_Extra'>
+		<source path='opensuse://KDE:Extra/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='75' alias='GNOME_Apps'>
+		<source path='opensuse://GNOME:Apps/openSUSE_Factory'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='60' alias='X11_Utilities'>
+		<source path='opensuse://X11:Utilities/openSUSE_Factory'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='50' alias='X11_XOrg'>
+		<source path='opensuse://X11:XOrg/openSUSE_Factory'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='45' alias='X11_LXQt'>
+		<source path='opensuse://X11:LXQt/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='40' alias='Packman'>
+		<source path='http://mirror.karneval.cz/pub/linux/packman/suse/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='30' alias='Mozilla_Factory'>
+		<source path='opensuse://mozilla:Factory/openSUSE_Factory'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='20' alias='Kernel_stable'>
+		<source path='opensuse://Kernel:stable/standard'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='6' alias='home_X0F'>
+		<source path='opensuse://home:X0F/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='5' alias='home_X0F_branches_emulators'>
+		<source path='opensuse://home:X0F:branches:Emulators/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='4' alias='home_X0F_branches_multimedia'>
+		<source path='opensuse://home:X0F:branches:multimedia/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='3' alias='home_X0F_branches_network'>
+		<source path='opensuse://home:X0F:branches:network/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='2' alias='Hackeurs_Sans_Frontieres'>
+		<source path='opensuse://home:X0F:HSF/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres-Kernel'>
+		<source path='opensuse://home:X0F:HSF:Kernel/openSUSE_Tumbleweed'/>
 	</repository>

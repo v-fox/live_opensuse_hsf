@@ -2,6 +2,7 @@
 name=X11_Enlightenment_Factory
 enabled=0
 autorefresh=0
-baseurl=http://download.opensuse.org/repositories/X11:Enlightenment:Factory/openSUSE_13.2
+baseurl=http://download.opensuse.org/repositories/X11:Enlightenment:Factory/openSUSE_Tumbleweed
 type=rpm-md
 priority=65
+keeppackages=0

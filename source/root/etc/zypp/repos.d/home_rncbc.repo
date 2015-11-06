@@ -2,6 +2,7 @@
 name=home_rncbc
 enabled=0
 autorefresh=0
-baseurl=http://download.opensuse.org/repositories/home:/rncbc/openSUSE_13.2
+baseurl=http://download.opensuse.org/repositories/home:/rncbc/openSUSE_Tumbleweed
 type=rpm-md
 priority=95
+keeppackages=0

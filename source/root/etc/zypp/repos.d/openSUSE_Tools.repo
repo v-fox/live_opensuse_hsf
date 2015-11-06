@@ -2,6 +2,7 @@
 name=openSUSE_Tools
 enabled=0
 autorefresh=0
-baseurl=http://download.opensuse.org/repositories/openSUSE:Tools/openSUSE_13.2
+baseurl=http://download.opensuse.org/repositories/openSUSE:Tools/openSUSE_Tumbleweed
 type=rpm-md
 priority=85
+keeppackages=0

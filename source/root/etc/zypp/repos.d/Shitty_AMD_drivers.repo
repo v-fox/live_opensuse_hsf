@@ -2,5 +2,6 @@
 name=Shitty_AMD_drivers
 enabled=0
 autorefresh=0
-baseurl=http://geeko.ioda.net/mirror/amd-fglrx/openSUSE_13.2
+baseurl=http://geeko.ioda.net/mirror/amd-fglrx/openSUSE_Tumbleweed
 type=rpm-md
+priority=45

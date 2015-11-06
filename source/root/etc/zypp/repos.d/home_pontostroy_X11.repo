@@ -1,7 +1,8 @@
 [home_pontostroy_X11]
 name=home_pontostroy_X11
-enabled=1
+enabled=0
 autorefresh=0
-baseurl=http://download.opensuse.org/repositories/home:pontostroy:X11/openSUSE_13.2
+baseurl=http://download.opensuse.org/repositories/home:pontostroy:X11/openSUSE_Tumbleweed
 type=rpm-md
-priority=95
+priority=45
+keeppackages=0

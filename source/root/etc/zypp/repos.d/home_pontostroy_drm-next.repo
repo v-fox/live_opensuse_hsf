@@ -2,6 +2,7 @@
 name=home_pontostroy_drm-next
 enabled=0
 autorefresh=0
-baseurl=http://download.opensuse.org/repositories/home:/pontostroy:/drm-next/openSUSE_13.2
+baseurl=http://download.opensuse.org/repositories/home:/pontostroy:/drm-next/openSUSE_Tumbleweed
 type=rpm-md
-priority=95
+priority=45
+keeppackages=0

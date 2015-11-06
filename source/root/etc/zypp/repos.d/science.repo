@@ -1,9 +1,0 @@
-[science]
-name=science
-enabled=0
-autorefresh=0
-baseurl=http://download.opensuse.org/repositories/science/openSUSE_13.2
-path=/
-type=rpm-md
-priority=82
-keeppackages=0

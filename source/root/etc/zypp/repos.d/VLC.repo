@@ -2,7 +2,7 @@
 name=VLC
 enabled=0
 autorefresh=0
-baseurl=http://download.videolan.org/pub/vlc/SuSE/13.2
+baseurl=http://download.videolan.org/pub/vlc/SuSE/Tumbleweed
 path=/
 type=rpm-md
 priority=45
