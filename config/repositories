@@ -82,9 +82,6 @@
 	<repository type='rpm-md' imageinclude='true' priority='30' alias='Mozilla_Factory'>
 		<source path='opensuse://mozilla:Factory/openSUSE_Factory'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='20' alias='Kernel_stable'>
-		<source path='opensuse://Kernel:stable/standard'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='6' alias='home_X0F'>
 		<source path='opensuse://home:X0F/openSUSE_Tumbleweed'/>
 	</repository>

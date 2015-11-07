@@ -1,0 +1,8 @@
+[Kernel_stable]
+name=Kernel_stable
+enabled=0
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/Kernel:stable/standard
+type=rpm-md
+priority=20
+keeppackages=0
