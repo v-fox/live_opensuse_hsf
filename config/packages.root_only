@@ -405,6 +405,8 @@ keepnote-extensions
 keepnote-lang
 kfilemetadata
 killswitch-applet
+kinit
+kio-extras
 kio_iso
 kio_kamera
 kio-locate
@@ -429,7 +431,6 @@ krusader
 ktimer
 kvm
 kwalletmanager
-kwrite
 ladspa
 ladspa-swh-plugins
 lame-mp3rtp
@@ -563,8 +564,8 @@ libvisual-plugins
 libXaw3d8
 libXRes1
 libXTrap6
-libyui-ncurses-pkg6
-libyui-qt-pkg6
+libyui-ncurses-pkg
+libyui-qt-pkg
 lightdm
 lightdm-gtk-greeter
 lightdm-gtk-greeter-branding-upstream
