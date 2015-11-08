@@ -395,6 +395,7 @@ kate
 kbd
 kchmviewer
 kdeartwork4-icons
+kdebase4-workspace-addons
 kdenlive
 kdiff3
 kdnssd
@@ -745,6 +746,7 @@ psmisc
 ptools
 ptunnel
 pulseaudio-bash-completion
+pulseaudio-dlna
 pulseaudio-esound-compat
 pulseaudio-module-bluetooth
 pulseaudio-module-gconf
