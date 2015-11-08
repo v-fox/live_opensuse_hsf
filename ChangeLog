@@ -19,7 +19,6 @@
 		also Gallium vaapi implementation is now default and vdpau is inactive
 	* support for OpenCL (AMD & Intel)
 	* support for high-quality midi playback via fluidsynth
-	* addition of xt7-player-mpv, the only mpv-centric GUI
 	* addition of wine with native Gallium DirectX 9 support
 	* addition of more working gaming emulators:
 		DOSBox for IBM© PC/DOS
@@ -38,6 +37,7 @@
 	* removal of Bumblebee/Primus/VirtualGL/bbswitch in favour of PRIME/DRI3
 	* removal of toxic because we don't support console messaging
 	* removal of live-{fat-stick,usb-gui} because of low usefulness for our case
+	* replacement of bomi with xt7-player-mpv
 	* replacement of dropped kernel-desktop with our kernel-HSF:
 		tuned for low latency and packing almost all in-kernel drivers;
 		lzo is used by default for kernel and initrd to gain boot speed
