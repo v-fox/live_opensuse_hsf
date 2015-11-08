@@ -1,8 +1,8 @@
 HSplit1
-.layout=445,416,
+.layout=454,407,
 .tag=
 .visible=T
-#79
+#70
 .visible=T
 VBox2
 PanelOSD
@@ -50,7 +50,7 @@ HBox11
 .visible=T
 OutlineCHK2
 .visible=T
-.Value=0
+.Value=-1
 BorderColorBox2
 .background=-1
 .Foreground=-1
@@ -111,9 +111,9 @@ FontStyleCHK
 .visible=T
 .Value=-1
 FontString
-.font.name=DejaVu Sans
-.font.size=36
-.font.bold=T
+.font.name=Noto Sans
+.font.size=48
+.font.bold=
 .font.italic=
 .visible=T
 FontChooseBTN
