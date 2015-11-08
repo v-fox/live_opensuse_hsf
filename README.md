@@ -38,7 +38,7 @@ and analogue video input (via tvtime) support
 Mednafen, small yet feature-rich JACK-enabled multi-system emulator;
 emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
 * professional virtualization with libvirt & KVM / LXC  
-(featuring userland virt-manager and SPICE flowing out-of-the-box)
+(featuring userland virt-manager, Docker and SPICE flowing out-of-the-box)
 * Windows® compatibility through Wine 32 & 64 with native Gallium DirectX 9;  
 Steam installer/launcher is present
 * professional networking tools and rich connectivity options
