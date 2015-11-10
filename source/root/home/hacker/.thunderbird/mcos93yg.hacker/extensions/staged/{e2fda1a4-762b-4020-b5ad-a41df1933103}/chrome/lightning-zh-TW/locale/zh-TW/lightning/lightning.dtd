@@ -1,0 +1,90 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!-- WARNING! This file contains UTF-8 encoded characters!
+   - If this ==> … <== doesn't look like an ellipsis (three dots in a row),
+   - your editor isn't using UTF-8 encoding and may munge up the document!
+  -->
+
+<!-- Tools menu -->
+<!ENTITY lightning.preferencesLabel "行事曆">
+
+<!-- New menu popup in File menu -->
+<!ENTITY lightning.menupopup.new.event.label    "事件…">
+<!ENTITY lightning.menupopup.new.event.accesskey "E">
+<!ENTITY lightning.menupopup.new.task.label     "工作…">
+<!ENTITY lightning.menupopup.new.task.accesskey "T">
+<!ENTITY lightning.menupopup.new.calendar.label "行事曆…">
+<!ENTITY lightning.menupopup.new.calendar.accesskey "n">
+
+<!-- Open menu popup in File menu -->
+<!ENTITY lightning.menupopup.open.label               "開啟">
+<!ENTITY lightning.menupopup.open.accesskey           "O">
+<!ENTITY lightning.menupopup.open.message.label       "儲存的訊息…">
+<!ENTITY lightning.menupopup.open.message.accesskey   "M">
+<!ENTITY lightning.menupopup.open.calendar.label      "行事曆檔案…">
+<!ENTITY lightning.menupopup.open.calendar.accesskey  "C">
+
+<!-- View Menu -->
+<!ENTITY lightning.menu.view.calendar.label            "行事曆">
+<!ENTITY lightning.menu.view.calendar.accesskey        "n">
+<!ENTITY lightning.menu.view.tasks.label               "工作">
+<!ENTITY lightning.menu.view.tasks.accesskey           "k">
+
+<!-- Events and Tasks menu -->
+<!ENTITY lightning.menu.eventtask.label                "事件與工作">
+<!ENTITY lightning.menu.eventtask.accesskey            "n">
+
+<!-- properties dialog, calendar creation wizard -->
+<!ENTITY lightning.calendarproperties.email.label               "電子郵件:">
+
+<!-- iMIP Bar (meeting support) -->
+<!ENTITY lightning.imipbar.btnAccept.label                                  "接受">
+<!ENTITY lightning.imipbar.btnAccept2.tooltiptext                           "接受事件邀請">
+<!ENTITY lightning.imipbar.btnAcceptRecurrences.label                       "全部接受">
+<!ENTITY lightning.imipbar.btnAcceptRecurrences2.tooltiptext                "接受重複的事件當中所有事件的邀請">
+<!ENTITY lightning.imipbar.btnAdd.label                                     "新增">
+<!ENTITY lightning.imipbar.btnAdd.tooltiptext                               "將活動新增至行事曆">
+<!ENTITY lightning.imipbar.btnDecline.label                                 "拒絕">
+<!ENTITY lightning.imipbar.btnDecline2.tooltiptext                          "拒絕事件邀請">
+<!ENTITY lightning.imipbar.btnDeclineRecurrences.label                      "全部拒絕">
+<!ENTITY lightning.imipbar.btnDeclineRecurrences2.tooltiptext               "拒絕重複的事件當中所有事件的邀請">
+<!ENTITY lightning.imipbar.btnDelete.label                                  "刪除">
+<!ENTITY lightning.imipbar.btnDelete.tooltiptext                            "自行事曆刪除">
+<!ENTITY lightning.imipbar.btnDetails.label                                 "詳細資訊…">
+<!ENTITY lightning.imipbar.btnDetails.tooltiptext                           "顯示活動詳情">
+<!ENTITY lightning.imipbar.btnMore.label                                    "更多">
+<!ENTITY lightning.imipbar.btnMore.tooltiptext                              "點擊此處顯示更多選項">
+<!ENTITY lightning.imipbar.btnReconfirm2.label                              "重新確認">
+<!ENTITY lightning.imipbar.btnReconfirm.tooltiptext                         "傳送重新確認通知給召集人">
+<!ENTITY lightning.imipbar.btnSaveCopy.label                                "儲存副本">
+<!ENTITY lightning.imipbar.btnSaveCopy.tooltiptext                          "將事件副本另外儲存於行事曆，而不直接回覆召集人，參與者清單將被清除。">
+<!ENTITY lightning.imipbar.btnTentative.label                               "暫定">
+<!ENTITY lightning.imipbar.btnTentative2.tooltiptext                        "暫時接受事件邀請">
+<!ENTITY lightning.imipbar.btnTentativeRecurrences.label                    "暫定接受參與所有活動">
+<!ENTITY lightning.imipbar.btnTentativeRecurrences2.tooltiptext             "暫時接受重複的事件當中所有事件的邀請">
+<!ENTITY lightning.imipbar.btnUpdate.label                                  "更新">
+<!ENTITY lightning.imipbar.btnUpdate.tooltiptext                            "更新行事曆中的活動">
+<!ENTITY lightning.imipbar.description                                      "此郵件包含事件的邀請。">
+
+<!-- Lightning specific keybindings -->
+<!ENTITY lightning.keys.event.showCalendar.key "C">
+<!ENTITY lightning.keys.event.showTasks.key "D">
+<!ENTITY lightning.keys.event.new "I">
+<!ENTITY lightning.keys.todo.new "D">
+
+<!-- Account Central page -->
+<!ENTITY lightning.acctCentral.newCalendar.label "建立新的行事曆">
+
+<!-- today-pane-specific -->
+<!ENTITY todaypane.showMinimonth.label "顯示迷你月曆">
+<!ENTITY todaypane.showMinimonth.accesskey "M">
+<!ENTITY todaypane.showMiniday.label "顯示迷你日曆">
+<!ENTITY todaypane.showMiniday.accesskey  "D">
+<!ENTITY todaypane.showNone.label "不顯示">
+<!ENTITY todaypane.showNone.accesskey "N">
+<!ENTITY todaypane.showTodayPane.label "顯示今日視窗">
+<!ENTITY todaypane.showTodayPane.accesskey "o">
+<!ENTITY todaypane.statusButton.label "今日窗格">
+

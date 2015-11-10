@@ -37,6 +37,7 @@ firetray.Handler = {
   inMailApp: false,
   appHasChat: false,
   appStarted: false,
+  useAppind: false,             // initialized in StatusIcon
   windows: {},
   get windowsCount() {return Object.keys(this.windows).length;},
   get visibleWindowsCount() {
@@ -49,11 +50,15 @@ firetray.Handler = {
   observedTopics: {},
   ctypesLibs: {},               // {"lib1": lib1, "lib2": lib2}
 
-  appId:      (function(){return Services.appinfo.ID;})(),
-  appName:    (function(){return Services.appinfo.name;})(),
-  xulVer:     (function(){return Services.appinfo.platformVersion;})(), // Services.vc.compare(xulVer,"2.0a")>=0
-  runtimeABI: (function(){return Services.appinfo.XPCOMABI;})(),
-  runtimeOS:  (function(){return Services.appinfo.OS.toLowerCase();})(), // "WINNT", "Linux", "Darwin"
+  app: (function(){return {
+    id: Services.appinfo.ID,
+    name: Services.appinfo.name,
+    // Services.vc.compare(version,"2.0a")>=0
+    version: Services.appinfo.platformVersion,
+    ABI: Services.appinfo.XPCOMABI,
+    OS: Services.appinfo.OS.toLowerCase(), // "WINNT", "Linux", "Darwin"
+    widgetTk: Services.appinfo.widgetToolkit,
+  };})(),
   addonRootDir: (function(){
     let uri = Services.io.newURI(Components.stack.filename, null, null);
     if (uri instanceof Ci.nsIFileURL) {
@@ -67,34 +72,39 @@ firetray.Handler = {
     firetray.PrefListener.register(false);
     firetray.MailChatPrefListener.register(false);
 
-    log.info("OS=" + this.runtimeOS + ", ABI=" + this.runtimeABI + ", XULrunner=" + this.xulVer);
-    if (FIRETRAY_OS_SUPPORT.indexOf(this.runtimeOS) < 0) {
+    log.info("OS=" + this.app.OS +
+             ", ABI=" + this.app.ABI +
+             ", platformVersion=" + this.app.version +
+             ", widgetToolkit=" + this.app.widgetTk);
+    if (FIRETRAY_OS_SUPPORT.indexOf(this.app.OS) < 0) {
       let platforms = FIRETRAY_OS_SUPPORT.join(", ");
       log.error("Only "+platforms+" platform(s) supported at this time. Firetray not loaded");
       return false;
-    } else if (this.runtimeOS == "winnt" &&
-               Services.vc.compare(this.xulVer,"27.0") < 0) {
+    } else if (this.app.OS == "winnt" &&
+               Services.vc.compare(this.app.version,"27.0") < 0) {
       log.error("FireTray needs Gecko 27 and above on Windows.");
       return false;
-    } else if (this.runtimeOS == "freebsd") {
-      this.runtimeOS = "linux";
+    } else if (this.app.OS == "freebsd") {
+      this.app.OS = "linux";
     }
 
-    Cu.import("resource://firetray/"+this.runtimeOS+"/FiretrayStatusIcon.jsm");
-    Cu.import("resource://firetray/"+this.runtimeOS+"/FiretrayWindow.jsm");
+    Cu.import("resource://firetray/"+this.app.OS+"/FiretrayStatusIcon.jsm");
+    log.info("useAppind="+firetray.Handler.useAppind);
+    Cu.import("resource://firetray/"+this.app.OS+"/FiretrayWindow.jsm");
 
-    this.support['chat']  = ['linux'].indexOf(this.runtimeOS) > -1;
-    this.support['winnt'] = ['winnt']
-      .indexOf(firetray.Handler.runtimeOS) > -1;
+    this.support['chat']  =
+      ['linux'].indexOf(this.app.OS) > -1 && !this.useAppind;
+    this.support['winnt'] =
+      ['winnt'].indexOf(firetray.Handler.app.OS) > -1;
 
-    if (this.appId === FIRETRAY_APP_DB['thunderbird']['id'] ||
-        this.appId === FIRETRAY_APP_DB['seamonkey']['id'])
+    if (this.app.id === FIRETRAY_APP_DB['thunderbird']['id'] ||
+        this.app.id === FIRETRAY_APP_DB['seamonkey']['id'])
       this.inMailApp = true;
-    if (this.appId === FIRETRAY_APP_DB['firefox']['id'] ||
-        this.appId === FIRETRAY_APP_DB['seamonkey']['id'])
+    if (this.app.id === FIRETRAY_APP_DB['firefox']['id'] ||
+        this.app.id === FIRETRAY_APP_DB['seamonkey']['id'])
       this.inBrowserApp = true;
-    if (this.appId === FIRETRAY_APP_DB['thunderbird']['id'] &&
-        Services.vc.compare(this.xulVer,"15.0")>=0)
+    if (this.app.id === FIRETRAY_APP_DB['thunderbird']['id'] &&
+        Services.vc.compare(this.app.version,"15.0")>=0)
       this.appHasChat = true;
     log.info('inMailApp='+this.inMailApp+', inBrowserApp='+this.inBrowserApp+
       ', appHasChat='+this.appHasChat);
@@ -122,23 +132,23 @@ firetray.Handler = {
     if (chatIsProvided) {
       if (this.support['chat']) {
         Cu.import("resource://firetray/FiretrayMessaging.jsm"); // needed for existsChatAccount
-        Cu.import("resource://firetray/"+this.runtimeOS+"/FiretrayChat.jsm");
+        Cu.import("resource://firetray/"+this.app.OS+"/FiretrayChat.jsm");
         firetray.Utils.addObservers(firetray.Handler, [
           "account-added", "account-removed"]);
         if (firetray.Utils.prefService.getBoolPref("chat_icon_enable") &&
             this.existsChatAccount())
           firetray.Chat.init();
       } else {
-        log.warn("Chat not supported for this platform. Chat not loaded");
+        log.warn("Chat not supported for this environment. Chat not loaded");
       }
     }
 
     firetray.Utils.addObservers(firetray.Handler,
       [ "xpcom-will-shutdown", "profile-change-teardown" ]);
-    if (this.appId === FIRETRAY_APP_DB['firefox']['id'] ||
-        this.appId === FIRETRAY_APP_DB['seamonkey']['id']) {
+    if (this.app.id === FIRETRAY_APP_DB['firefox']['id'] ||
+        this.app.id === FIRETRAY_APP_DB['seamonkey']['id']) {
       firetray.Utils.addObservers(firetray.Handler, [ "sessionstore-windows-restored" ]);
-    } else if (this.appId === FIRETRAY_APP_DB['thunderbird']['id']) {
+    } else if (this.app.id === FIRETRAY_APP_DB['thunderbird']['id']) {
       this.restoredWindowsCount = this.readTBRestoreWindowsCount();
       log.info("restoredWindowsCount="+this.restoredWindowsCount);
       if (!this.restoredWindowsCount) {
@@ -320,6 +330,7 @@ firetray.Handler = {
 
   // these get overridden in OS-specific Icon/Window handlers
   loadIcons: function() {},
+  loadImageCustom: function(prefname) {},
   setIconImageDefault: function() {},
   setIconImageNewMail: function() {},
   setIconImageCustom: function(prefname) {},
@@ -419,9 +430,9 @@ firetray.Handler = {
   },
 
   _getBrowserProperties: function() {
-    if (firetray.Handler.appId === FIRETRAY_APP_DB['firefox']['id'])
+    if (firetray.Handler.app.id === FIRETRAY_APP_DB['firefox']['id'])
       return "chrome://branding/locale/browserconfig.properties";
-    else if (firetray.Handler.appId === FIRETRAY_APP_DB['seamonkey']['id'])
+    else if (firetray.Handler.app.id === FIRETRAY_APP_DB['seamonkey']['id'])
       return "chrome://navigator-region/locale/region.properties";
     else return null;
   },
@@ -506,9 +517,11 @@ firetray.Handler = {
   disablePrefsTmp: function() {
     this.prefsDisable.forEach(function(pref){
       if (!pref.cond()) return;
-      let branch = Services.prefs.getBranch(pref.branch);
-      pref.bak = branch.getBoolPref(pref.pref);
-      branch.setBoolPref(pref.pref, false);
+      try {
+        let branch = Services.prefs.getBranch(pref.branch);
+        pref.bak = branch.getBoolPref(pref.pref);
+        branch.setBoolPref(pref.pref, false);
+      } catch(x) {}
     });
   },
   restorePrefsTmp: function() {
@@ -557,7 +570,7 @@ firetray.PrefListener = new PrefListener(
       firetray.Messaging.updateIcon();
       break;
     case 'new_mail_icon_names':
-      this.loadIcons();
+      firetray.Handler.loadIcons();
     case 'excluded_folders_flags':
     case 'folder_count_recursive':
     case 'mail_accounts':
@@ -575,10 +588,11 @@ firetray.PrefListener = new PrefListener(
     case 'app_mail_icon_names':
     case 'app_browser_icon_names':
     case 'app_default_icon_names':
-      this.loadIcons(); // linux
+      firetray.Handler.loadIcons(); // linux
     case 'app_icon_custom':
     case 'mail_icon_custom':
-      firetray.StatusIcon.loadImageCustom(name);
+      firetray.Handler.loadImageCustom(name); // winnt
+      firetray.Handler.setIconImageCustom(name);
     case 'app_icon_type':
       firetray.Handler.setIconImageDefault();
       if (firetray.Handler.inMailApp)
@@ -649,15 +663,15 @@ firetray.VersionChangeHandler = {
   },
 
   openTab: function(url) {
-    log.info("appId="+firetray.Handler.appId);
-    if (firetray.Handler.appId === FIRETRAY_APP_DB['thunderbird']['id'])
+    log.info("app.id="+firetray.Handler.app.id);
+    if (firetray.Handler.app.id === FIRETRAY_APP_DB['thunderbird']['id'])
       this.openMailTab(url);
 
-    else if (firetray.Handler.appId === FIRETRAY_APP_DB['firefox']['id'] ||
-             firetray.Handler.appId === FIRETRAY_APP_DB['seamonkey']['id'])
+    else if (firetray.Handler.app.id === FIRETRAY_APP_DB['firefox']['id'] ||
+             firetray.Handler.app.id === FIRETRAY_APP_DB['seamonkey']['id'])
       this.openBrowserTab(url);
 
-    else if (firetray.Handler.appId === FIRETRAY_APP_DB['zotero']['id']) {
+    else if (firetray.Handler.app.id === FIRETRAY_APP_DB['zotero']['id']) {
       let win = null;
       if (win = Services.wm.getMostRecentWindow("zotero:basicViewer")) {
         win.loadURI(uri);

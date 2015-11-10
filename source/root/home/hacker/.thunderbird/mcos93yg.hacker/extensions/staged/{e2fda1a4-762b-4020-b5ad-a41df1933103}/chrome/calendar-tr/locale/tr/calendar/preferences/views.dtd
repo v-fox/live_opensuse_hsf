@@ -1,0 +1,37 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!-- WARNING! This file contains UTF-8 encoded characters!
+   - If this ==> … <== doesn't look like an ellipsis (three dots in a row),
+   - your editor isn't using UTF-8 encoding and may munge up the document!
+  -->
+
+
+<!ENTITY pref.calendar.view.allview.caption "Genel">
+<!ENTITY pref.calendar.view.dayandweekviews.caption "Gün ve Hafta Görünümü">
+<!ENTITY pref.calendar.view.multiweekview.caption "Çok Haftalı Görünüm">
+<!ENTITY pref.calendar.view.workweek.caption "Çalışma Günleri">
+
+<!ENTITY pref.weekstarts.label "Hafta başlangıcı:">
+<!ENTITY pref.weekstarts.accesskey "f">
+<!ENTITY pref.daysoff.label "Bu günleri de çalışma günlerine et:">
+
+<!ENTITY pref.calendar.view.daystart.label "Gün başlangıcı:">
+<!ENTITY pref.calendar.view.daystart.accesskey "G">
+<!ENTITY pref.calendar.view.dayend.label "Gün bitişi:">
+<!ENTITY pref.calendar.view.dayend.accesskey "n">
+<!ENTITY pref.calendar.view.visiblehours.label "Göster:">
+<!ENTITY pref.calendar.view.visiblehours.accesskey "t">
+<!ENTITY pref.calendar.view.visiblehoursend.label "Bir süredeki saat">
+
+<!ENTITY pref.numberofweeks.label "Varsayılan hafta görünümü (önceki haftalarıda içerir):">
+<!ENTITY pref.numberofweeks.accesskey "e">
+<!ENTITY pref.numberofpreviousweeks.label "Önceki hafta sayısı:">
+<!ENTITY pref.numberofpreviousweeks.accesskey "c">
+<!ENTITY pref.numberofweeks.0 "yok">
+<!ENTITY pref.numberofweeks.1 "1 hafta">
+<!ENTITY pref.numberofweeks.2 "2 hafta">
+<!ENTITY pref.numberofweeks.3 "3 hafta">
+<!ENTITY pref.numberofweeks.4 "4 hafta">
+<!ENTITY pref.numberofweeks.5 "5 hafta">
+<!ENTITY pref.numberofweeks.6 "6 hafta">

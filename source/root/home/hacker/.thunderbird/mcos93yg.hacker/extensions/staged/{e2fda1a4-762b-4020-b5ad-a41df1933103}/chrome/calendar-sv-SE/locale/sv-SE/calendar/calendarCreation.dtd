@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "Skapa ny kalender" >
+<!ENTITY wizard.label             "Skapa en ny kalender" >
+<!ENTITY wizard.description       "Placering av kalender" >
+
+<!ENTITY initialpage.description    "Din kalender kan lagras på din dator eller på en filserver. Du kan då fjärransluta till den eller dela ut den så att vänner eller kollegor kan se den." >
+<!ENTITY initialpage.computer.label  "På min dator">
+<!ENTITY initialpage.network.label  "I nätverket">
+
+<!ENTITY locationpage.description         "Ange nödvändig information för åtkomst till ej lokal kalender" >
+<!ENTITY locationpage.login.description   "Frivilligt: ange användarnamn och lösenord" >
+<!ENTITY locationpage.username.label      "Användarnamn:" >
+<!ENTITY locationpage.password.label      "Lösenord:" >
+
+<!ENTITY custompage.shortdescription  "Anpassa din kalender" >
+<!ENTITY custompage.longdescription   "Du kan ge din kalender ett smeknamn samt färglägga händelser från denna kalender" >
+
+<!ENTITY finishpage.shortdescription  "Kalender skapad" >
+<!ENTITY finishpage.longdescription   "Din kalender har blivit skapad" >

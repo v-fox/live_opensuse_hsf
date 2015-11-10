@@ -1,0 +1,2 @@
+binary-component Linux_x86-gcc3/libcalbasecomps.so abi=Linux_x86-gcc3
+binary-component Linux_x86_64-gcc3/libcalbasecomps.so abi=Linux_x86_64-gcc3

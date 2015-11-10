@@ -7,15 +7,15 @@ const Ci = Components.interfaces;
 const Cu = Components.utils;
 
 Cu.import("resource://gre/modules/ctypes.jsm");
+Cu.import("resource://firetray/commons.js"); // first for Handler.app !
 Cu.import("resource://firetray/ctypes/linux/cairo.jsm");
-Cu.import("resource://firetray/ctypes/linux/gdk.jsm");
 Cu.import("resource://firetray/ctypes/linux/gio.jsm");
 Cu.import("resource://firetray/ctypes/linux/gobject.jsm");
-Cu.import("resource://firetray/ctypes/linux/gtk.jsm");
+Cu.import("resource://firetray/ctypes/linux/"+firetray.Handler.app.widgetTk+"/gdk.jsm");
+Cu.import("resource://firetray/ctypes/linux/"+firetray.Handler.app.widgetTk+"/gtk.jsm");
 Cu.import("resource://firetray/ctypes/linux/pango.jsm");
 Cu.import("resource://firetray/ctypes/linux/pangocairo.jsm");
 Cu.import("resource://firetray/linux/FiretrayGtkIcons.jsm");
-Cu.import("resource://firetray/commons.js");
 firetray.Handler.subscribeLibsForClosing([cairo, gdk, gio, gobject, gtk, pango,
   pangocairo]);
 
@@ -157,16 +157,22 @@ firetray.GtkStatusIcon = {
     gtk.gtk_status_icon_set_from_gicon(firetray.GtkStatusIcon.trayIcon, gicon);
   },
 
+  setIconImageCustom: function(prefname) {
+    let prefCustomIconPath = firetray.Utils.prefService.getCharPref(prefname);
+    firetray.GtkStatusIcon.setIconImageFromFile(prefCustomIconPath);
+  },
+
 };                              // GtkStatusIcon
 
-firetray.StatusIcon.initImpl =
-  firetray.GtkStatusIcon.init.bind(firetray.GtkStatusIcon);
+firetray.StatusIcon.initImpl = firetray.GtkStatusIcon.init
+  .bind(firetray.GtkStatusIcon);
 
-firetray.StatusIcon.shutdownImpl =
-  firetray.GtkStatusIcon.shutdown.bind(firetray.GtkStatusIcon);
+firetray.StatusIcon.shutdownImpl = firetray.GtkStatusIcon.shutdown
+  .bind(firetray.GtkStatusIcon);
 
 
-firetray.Handler.loadIcons = firetray.GtkStatusIcon.loadThemedIcons;
+firetray.Handler.loadIcons = firetray.GtkStatusIcon.loadThemedIcons
+  .bind(firetray.GtkStatusIcon);
 
 firetray.Handler.setIconImageDefault = function() {
   if (!firetray.GtkStatusIcon.themedIconApp)
@@ -176,7 +182,7 @@ firetray.Handler.setIconImageDefault = function() {
     firetray.GtkStatusIcon.setIconImageFromGIcon(
       firetray.GtkStatusIcon.themedIconApp);
   } else if (appIconType === FIRETRAY_APPLICATION_ICON_TYPE_CUSTOM) {
-    firetray.Handler.setIconImageCustom("app_icon_custom");
+    firetray.GtkStatusIcon.setIconImageCustom("app_icon_custom");
   }
 };
 
@@ -185,10 +191,7 @@ firetray.Handler.setIconImageNewMail = function() {
     firetray.GtkStatusIcon.themedIconNewMail);
 };
 
-firetray.Handler.setIconImageCustom = function(prefname) {
-  let prefCustomIconPath = firetray.Utils.prefService.getCharPref(prefname);
-  firetray.GtkStatusIcon.setIconImageFromFile(prefCustomIconPath);
-};
+firetray.Handler.setIconImageCustom = firetray.GtkStatusIcon.setIconImageCustom;
 
 // GTK bug: Gdk-CRITICAL **: IA__gdk_window_get_root_coords: assertion `GDK_IS_WINDOW (window)' failed
 firetray.Handler.setIconTooltip = function(toolTipStr) {
@@ -205,7 +208,7 @@ firetray.Handler.setIconTooltip = function(toolTipStr) {
   return true;
 };
 
-firetray.Handler.setIconText = function(text, color) { // FIXME: function too long
+firetray.Handler.setIconText = function(text, color) {
   if (typeof(text) != "string")
     throw new TypeError();
 
@@ -218,26 +221,39 @@ firetray.Handler.setIconText = function(text, color) { // FIXME: function too lo
     let h = gdk.gdk_pixbuf_get_height(specialIcon);
 
     // prepare colors/alpha
-    let colorMap = gdk.gdk_screen_get_system_colormap(gdk.gdk_screen_get_default());
-    let visual = gdk.gdk_colormap_get_visual(colorMap);
-    let visualDepth = visual.contents.depth;
+/* FIXME: draw everything with cairo when dropping gtk2 support. Use
+ gdk_pixbuf_get_from_surface(). */
+if (firetray.Handler.app.widgetTk == "gtk2") {
+    var colorMap = gdk.gdk_screen_get_system_colormap(gdk.gdk_screen_get_default());
+    var visual = gdk.gdk_colormap_get_visual(colorMap);
+    var visualDepth = visual.contents.depth;
+}
     let fore = new gdk.GdkColor;
     fore.pixel = fore.red = fore.green = fore.blue = 0;
     let alpha  = new gdk.GdkColor;
     alpha.pixel = alpha.red = alpha.green = alpha.blue = 0xFFFF;
     if (!fore || !alpha)
-      log.warn("Undefined GdkColor fore or alpha");
+      log.warn("Undefined fore or alpha GdkColor");
     gdk.gdk_color_parse(color, fore.address());
     if(fore.red == alpha.red && fore.green == alpha.green && fore.blue == alpha.blue) {
       alpha.red=0; // make sure alpha is different from fore
     }
+if (firetray.Handler.app.widgetTk == "gtk2") {
     gdk.gdk_colormap_alloc_color(colorMap, fore.address(), true, true);
     gdk.gdk_colormap_alloc_color(colorMap, alpha.address(), true, true);
+}
 
-    // build pixmap with rectangle
-    let pm = gdk.gdk_pixmap_new(null, w, h, visualDepth);
-    let pmDrawable = ctypes.cast(pm, gdk.GdkDrawable.ptr);
-    let cr = gdk.gdk_cairo_create(pmDrawable);
+    // build text rectangle
+    let cr;
+if (firetray.Handler.app.widgetTk == "gtk2") {
+    var pm = gdk.gdk_pixmap_new(null, w, h, visualDepth);
+    var pmDrawable = ctypes.cast(pm, gdk.GdkDrawable.ptr);
+    cr = gdk.gdk_cairo_create(pmDrawable);
+} else {
+    // FIXME: gtk3 text position is incorrect.
+    var surface = cairo.cairo_image_surface_create(cairo.CAIRO_FORMAT_ARGB32, w, h);
+    cr = cairo.cairo_create(surface);
+}
     gdk.gdk_cairo_set_source_color(cr, alpha.address());
     cairo.cairo_rectangle(cr, 0, 0, w, h);
     cairo.cairo_set_source_rgb(cr, 1, 1, 1);
@@ -247,9 +263,9 @@ firetray.Handler.setIconText = function(text, color) { // FIXME: function too lo
     let scratch = gtk.gtk_window_new(gtk.GTK_WINDOW_TOPLEVEL);
     let layout = gtk.gtk_widget_create_pango_layout(scratch, null);
     gtk.gtk_widget_destroy(scratch);
-    let fnt = pango.pango_font_description_from_string("Sans 18");
-    pango.pango_font_description_set_weight(fnt,pango.PANGO_WEIGHT_SEMIBOLD);
-    pango.pango_layout_set_spacing(layout,0);
+    let fnt = pango.pango_font_description_from_string("Sans 32");
+    pango.pango_font_description_set_weight(fnt, pango.PANGO_WEIGHT_SEMIBOLD);
+    pango.pango_layout_set_spacing(layout, 0);
     pango.pango_layout_set_font_description(layout, fnt);
     pango.pango_layout_set_text(layout, text,-1);
     let tw = new ctypes.int;
@@ -260,12 +276,12 @@ firetray.Handler.setIconText = function(text, color) { // FIXME: function too lo
     // fit text to the icon by decreasing font size
     while ( tw.value > (w - border) || th.value > (h - border) ) {
       sz = pango.pango_font_description_get_size(fnt);
-      if(sz < firetray.GtkStatusIcon.MIN_FONT_SIZE) {
+      if (sz < firetray.GtkStatusIcon.MIN_FONT_SIZE) {
         sz = firetray.GtkStatusIcon.MIN_FONT_SIZE;
         break;
       }
       sz -= pango.PANGO_SCALE;
-      pango.pango_font_description_set_size(fnt,sz);
+      pango.pango_font_description_set_size(fnt, sz);
       pango.pango_layout_set_font_description(layout, fnt);
       pango.pango_layout_get_pixel_size(layout, tw.address(), th.address());
     }
@@ -281,8 +297,15 @@ firetray.Handler.setIconText = function(text, color) { // FIXME: function too lo
     cairo.cairo_destroy(cr);
     gobject.g_object_unref(layout);
 
-    let buf = gdk.gdk_pixbuf_get_from_drawable(null, pmDrawable, null, 0, 0, 0, 0, w, h);
+    let buf = null;
+if (firetray.Handler.app.widgetTk == "gtk2") {
+    buf = gdk.gdk_pixbuf_get_from_drawable(null, pmDrawable, null, 0, 0, 0, 0, w, h);
     gobject.g_object_unref(pm);
+}
+else {
+    buf = gdk.gdk_pixbuf_get_from_surface(surface, 0, 0, w, h);
+    cairo.cairo_surface_destroy(surface);
+}
     let alphaRed = gobject.guint16(alpha.red);
     let alphaRed_guchar = ctypes.cast(alphaRed, gobject.guchar);
     let alphaGreen = gobject.guint16(alpha.green);

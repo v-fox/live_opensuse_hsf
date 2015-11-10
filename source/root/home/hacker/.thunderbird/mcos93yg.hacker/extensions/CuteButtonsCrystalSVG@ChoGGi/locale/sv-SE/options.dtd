@@ -1,0 +1,20 @@
+<!ENTITY Options "Inställningar">
+<!ENTITY Enable "Aktivera">
+<!ENTITY Disable "Inaktivera">
+<!ENTITY BlurDisabled "Gör inaktiva ikoner suddiga">
+<!ENTITY RotateIcons "Rotera ikoner">
+<!ENTITY StatusBar "Statusfältsikoner">
+<!ENTITY Icons "Ikoner">
+<!ENTITY Mosaic "Mosaik (byt ikoner)">
+<!ENTITY MosaicTip "Kräver att Mozilla-programmet startas om">
+<!ENTITY Default "Standard">
+<!ENTITY Brighter "Ljusare">
+<!ENTITY BrighterReversed "Skarpare">
+<!ENTITY Gray "Gråskala">
+<!ENTITY Normal "Normal (ingen toning)">
+<!ENTITY Menu "Meny">
+<!ENTITY Button "Knapp">
+<!ENTITY CuteButtonsSVG "CuteButtons - Crystal SVG">
+<!ENTITY CuteButtons "CuteButtons">
+<!ENTITY ButtonIcons "Knapp Ikoner">
+<!ENTITY MenuIcons "Meny Ikoner">

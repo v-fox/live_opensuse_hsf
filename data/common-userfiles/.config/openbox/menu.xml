@@ -6,7 +6,7 @@
 <menu id="ob-menu" label="Openbox Preferences">
   <item label="Openbox Configuration Manager">
     <action name="Execute">
-      <command>obconf</command>
+      <command>obconf-qt</command>
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>

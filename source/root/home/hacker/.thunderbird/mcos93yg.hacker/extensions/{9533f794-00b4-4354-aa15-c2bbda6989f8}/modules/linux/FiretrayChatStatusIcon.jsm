@@ -9,14 +9,14 @@ const Cu = Components.utils;
 Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/ctypes.jsm");
+Cu.import("resource://firetray/commons.js"); // first for Handler.app !
 Cu.import("resource://firetray/ctypes/ctypesMap.jsm");
-Cu.import("resource://firetray/ctypes/linux/gdk.jsm");
 Cu.import("resource://firetray/ctypes/linux/gio.jsm");
 Cu.import("resource://firetray/ctypes/linux/gobject.jsm");
-Cu.import("resource://firetray/ctypes/linux/gtk.jsm");
+Cu.import("resource://firetray/ctypes/linux/"+firetray.Handler.app.widgetTk+"/gdk.jsm");
+Cu.import("resource://firetray/ctypes/linux/"+firetray.Handler.app.widgetTk+"/gtk.jsm");
 Cu.import("resource://firetray/linux/FiretrayGtkIcons.jsm");
 Cu.import("resource://firetray/linux/FiretrayWindow.jsm");
-Cu.import("resource://firetray/commons.js");
 firetray.Handler.subscribeLibsForClosing([gdk, gio, gobject, gtk]);
 
 if ("undefined" == typeof(firetray.Handler))
@@ -35,7 +35,6 @@ firetray.ChatStatusIcon = {
 
   initialized: false,
   trayIcon: null,
-  appId:      (function(){return Services.appinfo.ID;})(),
   themedIcons: (function(){let o = {};
     o[FIRETRAY_IM_STATUS_AVAILABLE] = null;
     o[FIRETRAY_IM_STATUS_AWAY] = null;
@@ -131,7 +130,11 @@ firetray.ChatStatusIcon = {
 
     // create pixbuf
     let pixbuf = gdk.gdk_pixbuf_copy(gtk.gtk_icon_info_load_icon(icon_info, null));
-    gtk.gtk_icon_info_free(icon_info);   // gobject.g_object_unref(icon_info) in 3.8
+if (gtk.gtk_get_major_version() == 3 && gtk.gtk_get_minor_version() >= 8) { // gtk3
+    gobject.g_object_unref(icon_info);
+} else {
+    gtk.gtk_icon_info_free(icon_info);
+}
 
     // checks
     if (gdk.gdk_pixbuf_get_colorspace(pixbuf) != gdk.GDK_COLORSPACE_RGB)
@@ -286,7 +289,7 @@ firetray.ChatStatusIcon = {
   },
 
   setIconTooltipDefault: function() {
-    this.setIconTooltip(firetray.Handler.appName+" Chat");
+    this.setIconTooltip(firetray.Handler.app.name+" Chat");
   }
 
   // TODO: onclick/activate -> chatHandler.showCurrentConversation()

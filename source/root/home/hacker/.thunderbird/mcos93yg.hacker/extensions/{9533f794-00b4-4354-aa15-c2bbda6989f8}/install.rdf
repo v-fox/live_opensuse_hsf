@@ -1,4 +1,5 @@
-<?xml version='1.0' encoding='utf-8'?>
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /* SCM-REVISION: bf30dad  DO NOT REMOVE */ -->
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
     <em:id>{9533f794-00b4-4354-aa15-c2bbda6989f8}</em:id>
@@ -6,7 +7,7 @@
     <em:multiprocessCompatible>true</em:multiprocessCompatible>
     <em:type>2</em:type>
     <em:name>FireTray</em:name>
-    <em:version>0.5.6.1-signed</em:version> <!-- change FIRETRAY_VERSION accordingly ! -->
+    <em:version>0.6.0</em:version> <!-- change FIRETRAY_VERSION accordingly ! -->
     <em:creator>Hua Luo, Francesco Solero, Foudil BRÉTEL</em:creator>
     <em:contributor>Hua Luo, Francesco Solero (Firetray original authors)</em:contributor>
     <em:homepageURL>https://github.com/foudfou/firetray</em:homepageURL>

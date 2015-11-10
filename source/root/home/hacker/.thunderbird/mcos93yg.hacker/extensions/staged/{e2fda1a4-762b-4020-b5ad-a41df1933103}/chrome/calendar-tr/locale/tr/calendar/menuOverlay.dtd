@@ -1,0 +1,56 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!-- Event Menu -->
+
+<!ENTITY event.new.event                        "Yeni etkinlik…">
+<!ENTITY event.new.event.accesskey              "Y">
+
+<!ENTITY event.new.task                         "Yeni görev…">
+<!ENTITY event.new.task.accesskey               "k">
+
+<!ENTITY calendar.import.label                  "İçe aktar…">
+<!ENTITY calendar.import.accesskey              "e">
+
+<!ENTITY calendar.export.label                  "Seçimi dışa aktar…">
+<!ENTITY calendar.export.accesskey              "e">
+
+<!ENTITY calendar.publish.label                 "Yayımla…">
+<!ENTITY calendar.publish.accesskey             "Y">
+
+<!ENTITY calendar.deletecalendar.label          "Seçili takvimi sil">
+<!ENTITY calendar.deletecalendar.accesskey      "l">
+
+
+<!-- LOCALIZATION NOTE (calendar.removecalendar.label): Removing the calendar
+      is the general action of removing it, while deleting means to clear the
+      data and unsubscribing means just taking it out of the calendar list. -->
+
+
+
+<!ENTITY calendar.menu.customize.label          "Özelleştir…">
+<!ENTITY calendar.menu.customize.accesskey      "z">
+
+<!ENTITY showUnifinderCmd.label                 "Etkinlikleri bul">
+<!ENTITY showUnifinderCmd.accesskey             "b">
+
+<!ENTITY calendar.displaytodos.checkbox.label       "Görevleri takvim içinde göster">
+<!ENTITY calendar.displaytodos.checkbox.accesskey   "t">
+
+<!ENTITY goTodayCmd.label                       "Bugün">
+<!ENTITY goTodayCmd.accesskey                   "B">
+
+<!ENTITY showCurrentView.label                  "Güncel görünüm">
+<!ENTITY showCurrentView.accesskey              "G">
+
+<!ENTITY calendar.properties.label              "Takvim özellikleri…">
+<!ENTITY calendar.properties.accesskey          "k">
+
+<!ENTITY calendar.removecalendar.accesskey      "R">
+
+<!-- LOCALIZATION NOTE (calendar.removecalendar.label): Removing the calendar
+      is the general action of removing it, while deleting means to clear the
+      data and unsubscribing means just taking it out of the calendar list. -->
+<!ENTITY calendar.removecalendar.label          "Remove Selected Calendar…">
+<!ENTITY calendar.unsubscribecalendar.accesskey "U">
+<!ENTITY calendar.unsubscribecalendar.label     "Unsubscribe Selected Calendar…">

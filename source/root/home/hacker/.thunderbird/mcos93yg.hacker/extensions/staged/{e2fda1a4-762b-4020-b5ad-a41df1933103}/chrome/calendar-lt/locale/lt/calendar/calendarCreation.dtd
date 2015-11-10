@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "Naujo kalendoriaus kūrimas" >
+<!ENTITY wizard.label             "Naujo kalendoriaus kūrimas" >
+<!ENTITY wizard.description       "Nurodykite kalendoriaus vietą" >
+
+<!ENTITY initialpage.description    "Kalendorius gali būti saugomas jūsų kompiuteryje arba tinklo serveryje, jei norite jį pasiekti iš kitur, arba dalintis juo su draugais." >
+<!ENTITY initialpage.computer.label  "Mano kompiuteryje">
+<!ENTITY initialpage.network.label  "Tinkle">
+
+<!ENTITY locationpage.description         "Įveskite informaciją apie kuriamą nuotolinį kalendorių" >
+<!ENTITY locationpage.login.description   "Galite įvesti abonento vardą ir slaptažodį" >
+<!ENTITY locationpage.username.label      "Abonento vardas:" >
+<!ENTITY locationpage.password.label      "Slaptažodis:" >
+
+<!ENTITY custompage.shortdescription  "Individualizuokite kalendorių" >
+<!ENTITY custompage.longdescription   "Savo kuriamam kalendoriui galite suteikti pavadinimą, o jo įvykiams priskirti spalvą." >
+
+<!ENTITY finishpage.shortdescription  "Kalendorius sukurtas" >
+<!ENTITY finishpage.longdescription   "Jūsų kalendorius sukurtas." >

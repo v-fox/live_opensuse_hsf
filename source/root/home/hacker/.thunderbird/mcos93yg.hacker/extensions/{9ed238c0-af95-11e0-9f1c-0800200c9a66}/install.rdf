@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+  <Description about="urn:mozilla:install-manifest">
+  <em:type>4</em:type>  
+  <em:id>{9ed238c0-af95-11e0-9f1c-0800200c9a66}</em:id>
+    <em:version>10.0.3</em:version>
+  
+<!-- Target Application this extension can install into, 
+         with minimum and maximum supported versions. --> 
+
+<em:targetApplication>
+    <Description>
+      <!-- Thunderbird's UUID // DO NOT CHANGE-->
+      <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id>
+       <!-- End Thunderbird's UUID // -->
+      <em:minVersion>38.0</em:minVersion>
+      <em:maxVersion>39.*</em:maxVersion>
+    </Description>
+  </em:targetApplication>
+  <em:unpack>true</em:unpack>
+  
+  <!-- Front End MetaData -->
+  <!-- My_Theme -->
+  <em:name>TT DeepDark</em:name>
+  <em:description>Smooth dark theme for Thunderbird</em:description>
+  <em:creator>Stefano</em:creator>
+  <em:contributor>Stefano</em:contributor>
+  <em:homepageURL>http://www.stefrosselli.com</em:homepageURL>
+  
+  <em:internalName>ttdeepdark</em:internalName>
+  </Description>      
+
+</RDF>

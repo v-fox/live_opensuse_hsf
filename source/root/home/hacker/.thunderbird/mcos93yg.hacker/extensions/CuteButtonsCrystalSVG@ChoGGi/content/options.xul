@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE dialog [
+  <!ENTITY % optionsDTD SYSTEM "chrome://cutebuttons/locale/options.dtd">
+  %optionsDTD;
+]>
+
+<dialog
+  id="cutebuttons"
+  title="&CuteButtonsSVG; &Options;"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  onload="cutebuttons.options.init()"
+  windowtype="cutebuttonsOptions"
+  style="padding:0"
+  buttons="accept"
+  ondialogaccept="return true"
+  persist="screenX screenY width height sizemode">
+
+  <script type="application/x-javascript" src="chrome://cutebuttons/content/options.js"/>
+
+  <vbox flex="1" style="overflow-y:auto">
+
+    <groupbox>
+      <caption label="&Icons;"/>
+        <radiogroup id="IconsRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cutebuttons.options.radioChange(true,'icons');this.parentNode.selectedIndex = 1"/>
+            <radio label="&Disable;" value="0" onmousedown="cutebuttons.options.radioChange(false,'icons');this.parentNode.selectedIndex = 0"/>
+        </radiogroup>
+    </groupbox>
+<!--
+    <groupbox>
+      <caption label="&MenuIcons;"/>
+        <radiogroup id="MenuRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cutebuttons.options.radioChange(false,'menuicons');this.parentNode.selectedIndex = 1"/>
+            <radio label="&Disable;" value="0" onmousedown="cutebuttons.options.radioChange(true,'menuicons');this.parentNode.selectedIndex = 0"/>
+        </radiogroup>
+    </groupbox>
+-->
+    <groupbox>
+      <caption label="&ButtonIcons;"/>
+        <radiogroup id="ButtonRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cutebuttons.options.radioChange(false,'buttonicons');this.parentNode.selectedIndex = 1"/>
+            <radio label="&Disable;" value="0" onmousedown="cutebuttons.options.radioChange(true,'buttonicons');this.parentNode.selectedIndex = 0"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&RotateIcons;"/>
+        <radiogroup id="RotateIconsRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cutebuttons.options.radioChange(true,'rotateicons');this.parentNode.selectedIndex = 1"/>
+            <radio label="&Disable;" value="0" onmousedown="cutebuttons.options.radioChange(false,'rotateicons');this.parentNode.selectedIndex = 0"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&BlurDisabled;"/>
+        <radiogroup id="BlurDisabledRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cutebuttons.options.radioChange(true,'blurdisabled');this.parentNode.selectedIndex = 1"/>
+            <radio label="&Disable;" value="0" onmousedown="cutebuttons.options.radioChange(false,'blurdisabled');this.parentNode.selectedIndex = 0"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&StatusBar;"/>
+        <radiogroup id="StatusbarRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cutebuttons.options.radioChange(true,'statusbar');this.parentNode.selectedIndex = 1"/>
+            <radio label="&Disable;" value="0" onmousedown="cutebuttons.options.radioChange(false,'statusbar');this.parentNode.selectedIndex = 0"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&Mosaic;" tooltiptext="&MosaicTip;"/>
+        <radiogroup id="MosaicRadio" orient="vertical" value="" tooltiptext="&MosaicTip;">
+            <radio label="&Default;" value="0" onmousedown="cutebuttons.options.mosaic(0);this.parentNode.selectedIndex = 0"/>
+            <radio label="&Normal;" value="4" onmousedown="cutebuttons.options.mosaic(4);this.parentNode.selectedIndex = 4"/>
+            <radio label="&Brighter;" value="1" onmousedown="cutebuttons.options.mosaic(1);this.parentNode.selectedIndex = 1"/>
+            <radio label="&BrighterReversed;" value="2" onmousedown="cutebuttons.options.mosaic(2);this.parentNode.selectedIndex = 2"/>
+            <radio label="&Gray;" value="3" onmousedown="cutebuttons.options.mosaic(3);this.parentNode.selectedIndex = 3"/>
+        </radiogroup>
+    </groupbox>
+
+  </vbox>
+</dialog>

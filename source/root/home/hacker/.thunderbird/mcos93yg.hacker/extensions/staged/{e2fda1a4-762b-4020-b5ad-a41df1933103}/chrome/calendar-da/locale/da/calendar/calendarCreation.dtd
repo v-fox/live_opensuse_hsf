@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title "Opret ny kalender">
+<!ENTITY wizard.label "Opret en ny kalender">
+<!ENTITY wizard.description "Find din kalender">
+
+<!ENTITY initialpage.description "Din kalender kan gemmes på din computer eller på en server, så du kan dele den med familie, venner eller kolleger.">
+<!ENTITY initialpage.computer.label "På denne computer">
+<!ENTITY initialpage.network.label "På netværket">
+
+<!ENTITY locationpage.description "Angiv oplysninger for at få adgang til en fjernkalender."> 
+<!ENTITY locationpage.login.description "Valgfrit: angiv brugernavn  og adgangskode">
+<!ENTITY locationpage.username.label "Brugernavn:">
+<!ENTITY locationpage.password.label "Adgangskode:">
+
+<!ENTITY custompage.shortdescription "Tilpas din kalender">
+<!ENTITY custompage.longdescription "Du kan give din kalender et navn og farvelægge begivenhederne i den.">
+
+<!ENTITY finishpage.shortdescription "Kalender oprettet">
+<!ENTITY finishpage.longdescription   "Din kalender er oprettet">

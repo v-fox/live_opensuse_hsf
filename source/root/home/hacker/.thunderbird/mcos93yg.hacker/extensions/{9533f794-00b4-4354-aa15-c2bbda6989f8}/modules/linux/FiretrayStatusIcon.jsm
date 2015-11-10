@@ -6,14 +6,14 @@ const Cc = Components.classes;
 const Ci = Components.interfaces;
 const Cu = Components.utils;
 
-Cu.import("resource://firetray/ctypes/linux/gdk.jsm");
+Cu.import("resource://gre/modules/ctypes.jsm");
+Cu.import("resource://firetray/commons.js"); // first for Handler.app !
+Cu.import("resource://firetray/ctypes/linux/"+firetray.Handler.app.widgetTk+"/gdk.jsm");
 Cu.import("resource://firetray/ctypes/linux/gio.jsm");
 Cu.import("resource://firetray/ctypes/linux/glib.jsm");
 Cu.import("resource://firetray/ctypes/linux/gobject.jsm");
 Cu.import("resource://firetray/ctypes/linux/libc.jsm");
 Cu.import("resource://firetray/ctypes/linux/x11.jsm");
-Cu.import("resource://gre/modules/ctypes.jsm");
-Cu.import("resource://firetray/commons.js");
 firetray.Handler.subscribeLibsForClosing([gdk, gio, glib, gobject]);
 
 let log = firetray.Logging.getLogger("firetray.StatusIcon");
@@ -29,38 +29,21 @@ firetray.StatusIcon = {
   prefNewMailIconNames: null,
   defaultAppIconName: null,
   defaultNewMailIconName: null,
-  canAppIndicator: null,
+  THEME_ICON_PATH: (function(){return firetray.Utils.chromeToPath(
+    "chrome://firetray/skin/icons/linux");})(),
 
   init: function() {
     this.defineIconNames();
 
-    // PopupMenu g_connect's some Handler functions. As these are overridden is
-    // StatusIcon implementations, PopupMenu must be initialized *after*
-    // implemenations are imported.
-    Cu.import("resource://firetray/ctypes/linux/appindicator.jsm");
-    this.canAppIndicator =
-      (appind3.available() && this.dbusNotificationWatcherReady());
-    log.info("canAppIndicator="+this.canAppIndicator);
-    /* We can't reliably detect if xembed tray icons are supported, because, for
-     instance, Unity/compiz falsely claims to have support for it through
-     _NET_SYSTEM_TRAY_Sn (compiz). So we end up using the desktop id as a
-     criteria for enabling appindicator. */
-    let desktop = this.getDesktop();
-    log.info("desktop="+JSON.stringify(desktop));
-
-    if (firetray.Utils.prefService.getBoolPref('with_appindicator') &&
-        this.canAppIndicator &&
-        (desktop.name === 'unity' ||
-         (desktop.name === 'kde' && desktop.ver > 4))) {
+    if (firetray.Handler.useAppind) {
       Cu.import("resource://firetray/linux/FiretrayAppIndicator.jsm");
-      /* FIXME: Ubuntu14.04/Unity: successfully closing appind3 crashes FF/TB
-       during exit, in Ubuntu's unity-menubar.patch's code.
-       https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1393256 */
-      // firetray.Handler.subscribeLibsForClosing([appind3]);
     } else {
       Cu.import("resource://firetray/linux/FiretrayGtkStatusIcon.jsm");
     }
 
+    // PopupMenu g_connect's some Handler functions. As these are overridden is
+    // StatusIcon implementations, PopupMenu must be initialized *after*
+    // implemenations are imported.
     Cu.import("resource://firetray/linux/FiretrayPopupMenu.jsm");
     if (!firetray.PopupMenu.init())
       return false;
@@ -88,7 +71,7 @@ firetray.StatusIcon = {
         return "app_default_icon_names";
       }
     })();
-    this.defaultAppIconName = firetray.Handler.appName.toLowerCase();
+    this.defaultAppIconName = firetray.Handler.app.name.toLowerCase();
 
     this.prefNewMailIconNames = "new_mail_icon_names";
     this.defaultNewMailIconName = "mail-unread";
@@ -107,7 +90,33 @@ firetray.StatusIcon = {
     return newMailIconNames;
   },
 
-  loadImageCustom: function() { }, // done in setIconImageCustom
+  appindEnable: function() {
+    Cu.import("resource://firetray/ctypes/linux/"+
+              firetray.Handler.app.widgetTk+"/appindicator.jsm");
+    /* FIXME: Ubuntu14.04/Unity: successfully closing appind crashes FF/TB
+     during exit, in Ubuntu's unity-menubar.patch's code.
+     https://bugs.launchpad.net/ubuntu/+source/firefox/+bug/1393256 */
+    // firetray.Handler.subscribeLibsForClosing([appind]);
+
+    /* We can't reliably detect if xembed tray icons are supported, because,
+     for instance, Unity/compiz falsely claims to have support for it through
+     _NET_SYSTEM_TRAY_Sn (compiz). So we end up using the desktop id as a
+     criteria for enabling appindicator. */
+    let desktop = this.getDesktop();
+    log.info("desktop="+JSON.stringify(desktop));
+    let isAppindDesktop = (desktop.name === 'unity' ||
+                           (desktop.name === 'kde' && desktop.ver > 4));
+    if (isAppindDesktop && !appind.available()) {
+      log.error("Missing libappindicator for "+firetray.Handler.app.widgetTk);
+      return false;
+    }
+
+    let canAppIndicator = (appind.available() &&
+                           this.dbusNotificationWatcherReady());
+
+    return (firetray.Utils.prefService.getBoolPref('with_appindicator') &&
+            canAppIndicator && isAppindDesktop);
+  },
 
   getDesktop: function() {
     let env = Cc["@mozilla.org/process/environment;1"]
@@ -119,10 +128,12 @@ firetray.StatusIcon = {
     if (XDG_CURRENT_DESKTOP === 'unity' || DESKTOP_SESSION === 'ubuntu') {
       desktop.name = 'unity';
     }
-    else if (XDG_CURRENT_DESKTOP === 'kde') { // DESKTOP_SESSION kde-plasma, plasme, kf5, ...
+    // can't test DESKTOP_SESSION for kde: kde-plasma, plasme, kf5, ...
+    else if (XDG_CURRENT_DESKTOP === 'kde') {
       desktop.name = 'kde';
       let KDE_SESSION_VERSION = env.get("KDE_SESSION_VERSION");
-      if (KDE_SESSION_VERSION) desktop.ver = parseInt(KDE_SESSION_VERSION, 10);
+      if (KDE_SESSION_VERSION)
+        desktop.ver = parseInt(KDE_SESSION_VERSION, 10);
     }
     else if (DESKTOP_SESSION) {
       desktop.name = DESKTOP_SESSION;
@@ -158,9 +169,9 @@ firetray.StatusIcon = {
         gio.G_BUS_TYPE_SESSION,
         flags,
         null, /* GDBusInterfaceInfo */
-        appind3.NOTIFICATION_WATCHER_DBUS_ADDR,
-        appind3.NOTIFICATION_WATCHER_DBUS_OBJ,
-        appind3.NOTIFICATION_WATCHER_DBUS_IFACE,
+        appind.NOTIFICATION_WATCHER_DBUS_ADDR,
+        appind.NOTIFICATION_WATCHER_DBUS_OBJ,
+        appind.NOTIFICATION_WATCHER_DBUS_IFACE,
         null, /* GCancellable */
         err.address());
       if (error(err)) return watcherReady;
@@ -197,6 +208,9 @@ firetray.StatusIcon = {
       else if (scroll_mode === "up_hides")
         firetray.Handler.showAllWindows();
       break;
+    case gdk.GDK_SCROLL_SMOOTH:
+      // ignore
+      break;
     default:
       log.error("SCROLL UNKNOWN");
     }
@@ -207,10 +221,14 @@ firetray.StatusIcon = {
 }; // firetray.StatusIcon
 
 
+firetray.Handler.useAppind = firetray.StatusIcon.appindEnable();
+
 firetray.Handler.setIconTooltipDefault = function() {
-  if (!this.appName)
+  if (!this.app.name)
     throw "application name not initialized";
-  this.setIconTooltip(this.appName);
+  this.setIconTooltip(this.app.name);
 };
+
+firetray.Handler.setIconImageCustom = function(prefname) { };
 
 firetray.Handler.setIconTooltip = function(toolTipStr) { };

@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "Nije aginda meitsje" >
+<!ENTITY wizard.label             "In nije aginda meitsje" >
+<!ENTITY wizard.description       "Jo aginda lokalisearje" >
+
+<!ENTITY initialpage.description    "Jo aginda kin op jo eigen kompjûter of op in oare kompjûter bewarre wurde, sadat dizze op ôfstân berikber is foar bygelyks freonen of kollega’s." >
+<!ENTITY initialpage.computer.label  "Op myn kompjûter">
+<!ENTITY initialpage.network.label  "Op it netwurk">
+
+<!ENTITY locationpage.description         "Ynformaasje opjaan om tagong te krijen ta jo aginda op in oare kompjûter" >
+<!ENTITY locationpage.login.description   "Opsjoneel: brûkersnamme en wachtwurd ynfiere" >
+<!ENTITY locationpage.username.label      "Brûkersnamme:" >
+<!ENTITY locationpage.password.label      "Wachtwurd:" >
+
+<!ENTITY custompage.shortdescription  "Jo aginda oanpasse" >
+<!ENTITY custompage.longdescription   "Jo kinne jo aginda in eigen namme jaan, en de barrens yn dizze aginda in eigen kleur." >
+
+<!ENTITY finishpage.shortdescription  "Aginda makke" >
+<!ENTITY finishpage.longdescription   "Jo aginda is makke." >

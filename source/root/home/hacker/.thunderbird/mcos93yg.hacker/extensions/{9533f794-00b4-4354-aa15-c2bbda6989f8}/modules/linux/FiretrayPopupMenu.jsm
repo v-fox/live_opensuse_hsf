@@ -9,9 +9,9 @@ const Cu = Components.utils;
 Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/ctypes.jsm");
+Cu.import("resource://firetray/commons.js"); // first for Handler.app !
 Cu.import("resource://firetray/ctypes/linux/gobject.jsm");
-Cu.import("resource://firetray/ctypes/linux/gtk.jsm");
-Cu.import("resource://firetray/commons.js");
+Cu.import("resource://firetray/ctypes/linux/"+firetray.Handler.app.widgetTk+"/gtk.jsm");
 firetray.Handler.subscribeLibsForClosing([gobject, gtk]);
 
 let log = firetray.Logging.getLogger("firetray.PopupMenu");
@@ -85,8 +85,20 @@ firetray.PopupMenu = {
     this.initialized = false;
   },
 
+  /* FIXME: gtk3 "GtkImageMenuItem has been deprecated since GTK+ 3.10".
+   GtkWidget *box = gtk_box_new (GTK_ORIENTATION_HORIZONTAL, 6);
+   GtkWidget *icon = gtk_image_new_from_icon_name ("folder-music-symbolic", GTK_ICON_SIZE_MENU);
+   GtkWidget *label = gtk_label_new ("Music");
+   GtkWidget *menu_item = gtk_menu_item_new ();
+   gtk_container_add (GTK_CONTAINER (box), icon);
+   gtk_container_add (GTK_CONTAINER (box), label);
+   gtk_container_add (GTK_CONTAINER (menu_item), box);
+   gtk_widget_show_all (menu_item);
+   */
   addItem: function(it) {
-    var menuItemLabel = firetray.Utils.strings.GetStringFromName("popupMenu.itemLabel."+it.itemName); // shouldn't need to convert to utf8 later thank to js-ctypes
+    // shouldn't need to convert to utf8 later thank to js-ctypes
+    var menuItemLabel = firetray.Utils.strings
+          .GetStringFromName("popupMenu.itemLabel."+it.itemName);
     var menuItem = gtk.gtk_image_menu_item_new_with_label(menuItemLabel);
     var menuItemIcon = gtk.gtk_image_new_from_stock(it.iconName, gtk.GTK_ICON_SIZE_MENU);
     gtk.gtk_image_menu_item_set_image(menuItem, menuItemIcon);

@@ -266,12 +266,13 @@ gstreamer-utils
 gtk2-branding-openSUSE
 gtk2-data
 gtk2-immodule-xim
+gtk2-metatheme-vertex
 gtk2-theme-oxygen
 gtk2-tools
 gtk3-branding-openSUSE
 gtk3-data
 gtk3-immodule-xim
-gtk3-theme-oxygen
+gtk3-metatheme-vertex
 gtk3-tools
 gucharmap
 guestfs-data
@@ -768,6 +769,9 @@ qemu-kvm
 qjackctl
 qps
 qsynth
+qtcurve-gtk2
+qtcurve-kde4
+qtcurve-qt5
 qt-mobility-pulseaudio
 qtox
 qv4l2
@@ -823,6 +827,7 @@ snapper
 snapper-zypp-plugin
 snmp-mibs
 softhsm
+sonar-icon-theme
 sox
 spax
 spice-client
@@ -859,6 +864,7 @@ systemtap
 systemtap-sdt-devel
 systemtap-server
 t6_client
+tango-icon-theme
 tano
 tarix
 tcpdump

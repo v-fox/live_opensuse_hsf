@@ -3,61 +3,61 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Release Notes</title>
-</head><body><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">HSF *IMPORTANT* Notes</span></span><ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li>default credentials: root:<span style="background-color: #ffff99">linux</span>, hacker:<span style="background-color: #ffff99">&lt;empty&gt;</span></li>
+</head><body><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">HSF *IMPORTANT* Notes</span></span><ul><span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li>default credentials: root:<span style="background-color: #4b4b10">linux</span>, hacker:<span style="background-color: #4b4b10">&lt;empty&gt;</span></li>
 <li>hacker's example pgp passphrase: unsafe for work. DON'T actually USE IT</li>
-<li>if you've put HSF on <span style="background-color: #ffff99">R/W medium</span>&nbsp;such as USB flash stick it will create second partition out of all the redundant space but would give it ID '1' and format in <span style="background-color: #ffff99">exFAT</span>&nbsp;to <span style="background-color: #ffff99">fool Windows®</span>&nbsp;into believing it's the first one so to compel it to try to mount it</li>
-<li style="list-style-type: none">∘ it will also create BTRFS <span style="background-color: #ffff99">persistency</span>&nbsp;image file the size half of that partition to be used as R/W layer of overlayfs, instead of RAM as is the case with R/O medium</li>
+<li>if you've put HSF on <span style="background-color: #4b4b10">R/W medium</span>&nbsp;such as USB flash stick it will create second partition out of all the redundant space but would give it ID '1' and format in <span style="background-color: #4b4b10">exFAT</span>&nbsp;to <span style="background-color: #4b4b10">fool Windows®</span>&nbsp;into believing it's the first one so to compel it to try to mount it</li>
+<li style="list-style-type: none">∘ it will also create BTRFS <span style="background-color: #4b4b10">persistency</span>&nbsp;image file the size half of that partition to be used as R/W layer of overlayfs, instead of RAM as is the case with R/O medium</li>
 </span></span></ul>
-<ul><li><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">use `</span></span><span style="background-color: #ffff99">hardinfo</span>`(GUI), <span style="font-family: DejaVu Sans"><span style="font-size: 9pt">`<span style="background-color: #ffff99">hwinfo</span>` and `<span style="background-color: #ffff99">inxi</span>` (CLI) for getting nice hardware summaries. try `</span></span><span style="background-color: #ffff99">conky-colors</span><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">` to generate fancy `<span style="background-color: #ffff99">conky</span>` config for you</span></span></li>
+<ul><li><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">use `</span></span><span style="background-color: #4b4b10">hardinfo</span>`(GUI), <span style="font-family: DejaVu Sans"><span style="font-size: 9pt">`<span style="background-color: #4b4b10">hwinfo</span>` and `<span style="background-color: #4b4b10">inxi</span>` (CLI) for getting nice hardware summaries. try `</span></span><span style="background-color: #4b4b10">conky-colors</span><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">` to generate fancy `<span style="background-color: #4b4b10">conky</span>` config for you</span></span></li>
 <span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool but it has insane dependencies, so we have to do without</li>
 <li>before using package manager, you may need to do:</li>
-<li style="list-style-type: none">∘ `<span style="background-color: #ffff99">sudo zypper --gpg-auto-import-keys refresh</span>` in terminal to get repo-caches and import/update all their keys</li>
-<li>if you have installed HSF, <b>before performing any bandwidth-intensive operations</b>&nbsp;you might want to run `<span style="background-color: #ffff99">yast2 proxy</span>` and disable global proxying so you wouldn't waste Tor's resources needlessly</li>
+<li style="list-style-type: none">∘ `<span style="background-color: #4b4b10">sudo zypper --gpg-auto-import-keys refresh</span>` in terminal to get repo-caches and import/update all their keys</li>
+<li>if you have installed HSF, <b>before performing any bandwidth-intensive operations</b>&nbsp;you might want to run `<span style="background-color: #4b4b10">yast2 proxy</span>` and disable global proxying so you wouldn't waste Tor's resources needlessly</li>
 <li>default Firefox and Thunderbird profiles are configured to use proxying via Tor by default, there are addons installed to easily switching it on and off</li>
 <li>/tmp runs on RAM-disk with size of 10% of total RAM capacity, so don't let your apps shit in it. 25% more is used for compressed swap-in-RAM (compcache/zram) by default.</li>
 <li>encryption and security tips:</li>
-<li style="list-style-type: none">∘ <b>all DNS queries</b>&nbsp;are cached by `<span style="background-color: #ffff99">unbound</span>` and then forwarded to `<span style="background-color: #ffff99">dnscrypt-proxy</span>` which in turn funnels them via several encrypted connections to non-logging DNSSEC-equipped servers from <a href="/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv">/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv</a>&nbsp;(definitely not Cisco ones). <a href="https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv">up to date</a>&nbsp;list is in dnscrypt-proxy repository. just temporary put some public servers in <a href="/etc/resolv.conf">/etc/resolv.conf</a>&nbsp;or <a href="/etc/unbound/unbound.conf">/etc/unbound/unbound.conf</a>&nbsp;if your queries aren't answered for some reason</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<span style="background-color: #ffff99">network.proxy.socks_remote_dns</span>' parameter in Firefox, Thunderbird and all Mozilla apps</li>
+<li style="list-style-type: none">∘ <b>all DNS queries</b>&nbsp;are cached by `<span style="background-color: #4b4b10">unbound</span>` and then forwarded to `<span style="background-color: #4b4b10">dnscrypt-proxy</span>` which in turn funnels them via several encrypted connections to non-logging DNSSEC-equipped servers from <a href="/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv">/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv</a>&nbsp;(definitely not Cisco ones). <a href="https://github.com/jedisct1/dnscrypt-proxy/blob/master/dnscrypt-resolvers.csv">up to date</a>&nbsp;list is in dnscrypt-proxy repository. just temporary put some public servers in <a href="/etc/resolv.conf">/etc/resolv.conf</a>&nbsp;or <a href="/etc/unbound/unbound.conf">/etc/unbound/unbound.conf</a>&nbsp;if your queries aren't answered for some reason</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ if you want to disabled such DNS encryption but still use Tor, it's advised to enable '<span style="background-color: #4b4b10">network.proxy.socks_remote_dns</span>' parameter in Firefox, Thunderbird and all Mozilla apps</li>
 </ul>
 </li>
 <li style="list-style-type: none">∘ for gnome-keyring auto-unlock via PAM its password should be the same as your login password (or so they say) and you should not use auto-login</li>
 <li style="list-style-type: none">∘ try not to use Google products and Facebook. and you definitely shouldn't use Skype, proprietary server-centric services and anything without end-to-end encryption in general</li>
-<li style="list-style-type: none">∘ AppArmor systemd service and kernel subsystem are disabled by default, enable them if you can handle it. see the default kernel boot options and `<span style="background-color: #ffff99">yast2 apparmor</span>`</li>
-<li style="list-style-type: none">∘ Firewall is inactive by default because connectivity is more important than false sense of security, carefully tweak it to your needs yourself in `<span style="background-color: #ffff99">yast2 firewall</span>`</li>
-<li style="list-style-type: none">∘ ALWAYS use <span style="background-color: #ffff99">ZRTP</span>&nbsp;in SIP instead of SRTP but if you are going to use SRTP, do it together with TLS</li>
+<li style="list-style-type: none">∘ AppArmor systemd service and kernel subsystem are disabled by default, enable them if you can handle it. see the default kernel boot options and `<span style="background-color: #4b4b10">yast2 apparmor</span>`</li>
+<li style="list-style-type: none">∘ Firewall is inactive by default because connectivity is more important than false sense of security, carefully tweak it to your needs yourself in `<span style="background-color: #4b4b10">yast2 firewall</span>`</li>
+<li style="list-style-type: none">∘ ALWAYS use <span style="background-color: #4b4b10">ZRTP</span>&nbsp;in SIP instead of SRTP but if you are going to use SRTP, do it together with TLS</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ or <a href="https://www.acritelli.com/hacking-voip-decrypting-sdes-protected-srtp-phone-calls/">Party Van will come</a></li>
 </ul>
 </li>
 <li>important changes were made to <a href="/etc/zypp/zypp.conf ">/etc/zypp/zypp.conf </a></li>
-<li style="list-style-type: none">∘ '<span style="background-color: #ffff99">solver.allowVendorChange</span>' was set to 'true'</li>
+<li style="list-style-type: none">∘ '<span style="background-color: #4b4b10">solver.allowVendorChange</span>' was set to 'true'</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ it should be safe due to strict prioritization in repo list, but keep that in mind anyway</li>
 </ul>
 </li>
-<li style="list-style-type: none">∘ '<span style="background-color: #ffff99">solver.cleandepsOnRemove</span>' was set to 'true'</li>
+<li style="list-style-type: none">∘ '<span style="background-color: #4b4b10">solver.cleandepsOnRemove</span>' was set to 'true'</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ zypper now is very aggressive on removal of packages, beware</li>
 </ul>
 </li>
-<li style="list-style-type: none">∘ '<span style="background-color: #ffff99">solver.onlyRequires</span>' was set to 'true'</li>
+<li style="list-style-type: none">∘ '<span style="background-color: #4b4b10">solver.onlyRequires</span>' was set to 'true'</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ this is the only way to force YaST not to litter the system with useless crap since there is no option to "always ignore recommended packages" in it</li>
 </ul>
 </li>
 <li><a href="/etc/zypp/zypper.conf">/etc/zypp/zypper.conf</a>&nbsp;also has been changed:</li>
-<li style="list-style-type: none">∘ '<span style="background-color: #ffff99">installRecommends</span>' was set to 'no'</li>
+<li style="list-style-type: none">∘ '<span style="background-color: #4b4b10">installRecommends</span>' was set to 'no'</li>
 </span></span><li style="list-style-type: none"><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">‣ this forces zypper to install only the bare minimum and may leave some packages being useless in absence of non-compile-time dependencies, like some /usr/share data, for example</li>
 </span></span></ul>
 </li>
-<li><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">you might want to also check Options-&gt;'<span style="background-color: #ffff99">Ignore recommended packages for already installed packages</span>' in YaST Package Manager to achieve same effect as with 'installRecommends' for zypper and prevent it from installing loads of unnecessary crap (but only for already installed packages)</span></span></li>
+<li><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">you might want to also uncheck Options-&gt;'<span style="background-color: #4b4b10">Install Recommended Packages</span>' in YaST Package Manager to achieve same effect as with 'installRecommends' for zypper and prevent it from installing loads of unnecessary crap (but only for already installed packages)</span></span></li>
 </ul>
 <ul><li><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">this spin contains only English language by default.</span></span></li>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ add your language in `<span style="background-color: #ffff99">yast2 language</span>` and `<span style="background-color: #ffff99">yast2 sw_single</span>` (you may have to allow installing 'recommended' packages for that to work)</li>
-<li style="list-style-type: none">∘ <span style="background-color: #ffff99">ibus</span>&nbsp;input method daemon is launched on user session start, you can access its preferences via system tray icon and add your keyboard settings there</li>
-</span></span><li style="list-style-type: none"><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">∘ to set up non-ibus input you, probably, has to use systemd's new "bicycle" named `<span style="background-color: #ffff99">localectl</span>` (when those assholes would learn to put functional part, like "ctl", of the name first ?)</span></span></li>
+<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ add your language in `<span style="background-color: #4b4b10">yast2 language</span>` and `<span style="background-color: #4b4b10">yast2 sw_single</span>` (you may have to allow installing 'recommended' packages for that to work)</li>
+<li style="list-style-type: none">∘ <span style="background-color: #4b4b10">ibus</span>&nbsp;input method daemon is launched on user session start, you can access its preferences via system tray icon and add your keyboard settings there</li>
+</span></span><li style="list-style-type: none"><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">∘ to set up non-ibus input you, probably, has to use systemd's new "bicycle" named `<span style="background-color: #4b4b10">localectl</span>` (when those assholes would learn to put functional part, like "ctl", of the name first ?)</span></span></li>
 </ul>
-<ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li><span style="background-color: #ffff99">JACK</span>&nbsp;is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality</li>
-<li style="list-style-type: none">∘ note <span style="background-color: #ffff99">QJackCtl</span>, JACK configurator, <span style="background-color: #ffff99">QasMixer</span>, ALSA volume configurator and <span style="background-color: #ffff99">PASysTray</span>, advanced PA configurator, and in your tray</li>
-<li style="list-style-type: none">∘ please, set all your multimedia apps to use JACK with '<span style="background-color: #ffff99">jamin</span>' port by default or disable it and then use naked PA (remove <a href="~/.config/pulse">~/.config/pulse</a>&nbsp;&amp; /etc/profile.d/zzz-jack.*). note that Firefox uses PA shim because its ALSA and JACK support is broken.</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ ALSA-only apps should use '<span style="background-color: #ffff99">default</span>' or '<span style="background-color: #ffff99">sysdefault</span>' ALSA/JACK devices</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li>those that don't like that (aegisub, for example) should try '<span style="background-color: #ffff99">pulse</span>' ALSA/PA/JACK device</li>
+<ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li><span style="background-color: #4b4b10">JACK</span>&nbsp;is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality</li>
+<li style="list-style-type: none">∘ note <span style="background-color: #4b4b10">QJackCtl</span>, JACK configurator, <span style="background-color: #4b4b10">QasMixer</span>, ALSA volume configurator and <span style="background-color: #4b4b10">PASysTray</span>, advanced PA configurator, and in your tray</li>
+<li style="list-style-type: none">∘ please, set all your multimedia apps to use JACK with '<span style="background-color: #4b4b10">jamin</span>' port by default or disable it and then use naked PA (remove <a href="~/.config/pulse">~/.config/pulse</a>&nbsp;&amp; /etc/profile.d/zzz-jack.*). note that Firefox uses PA shim because its ALSA and JACK support is broken.</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ ALSA-only apps should use '<span style="background-color: #4b4b10">default</span>' or '<span style="background-color: #4b4b10">sysdefault</span>' ALSA/JACK devices</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none"><ul><li>those that don't like that (aegisub, for example) should try '<span style="background-color: #4b4b10">pulse</span>' ALSA/PA/JACK device</li>
 <li>if that also fails, see <a href="~/.asoundrc">~/.asoundrc</a>&nbsp;on how to set up ALSA/JACK aloop</li>
 </ul>
 </li>
@@ -79,10 +79,10 @@
 <li style="list-style-type: none">‣ if you have good, expensive output setup with granular hardware control, then you should probably disable some or all JAMIn's features. or just not directing audio players to it would be a good idea (GStreamer's output is directed by default)</li>
 <li style="list-style-type: none">‣ you should put bass &amp; treble and such switches on your speakers on "zero change" position (min, max or neutral, depending on implementation) and set hardware volume as high as you can tolerate. then control volume and wave form with JAMin</li>
 <li style="list-style-type: none">‣ if sound has too much distortion, first try decreasing "limiter, input" in range from 20 to 0. then fiddle with the equalizer. you may want to disable sound boost anyway since it negates subtle volume transitions in music</li>
-<li style="list-style-type: none">‣ JAMin has been caught in the act of putting garbage in direct rendering surfaces such as paused video players, LibreOffice and Firefox UIs. It seems to be a bug in sound spectre rendering code. To workaround that, <span style="background-color: #ffff99">try selecting any tab other than "HDEQ"</span></li>
+<li style="list-style-type: none">‣ JAMin has been caught in the act of putting garbage in direct rendering surfaces such as paused video players, LibreOffice and Firefox UIs. It seems to be a bug in sound spectre rendering code. To workaround that, <span style="background-color: #4b4b10">try selecting any tab other than "HDEQ"</span></li>
 </ul>
 </li>
-<li style="list-style-type: none">∘ for <span style="background-color: #ffff99">better realtime</span>&nbsp;it's recommended to:</li>
+<li style="list-style-type: none">∘ for <span style="background-color: #4b4b10">better realtime</span>&nbsp;it's recommended to:</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ set CPU governor from "ondemand" to "performance" in profile <a href="/etc/tuned/latency-balanced/tuned.conf">/etc/tuned/latency-balanced/tuned.conf </a></li>
 </ul>
 </li>
@@ -91,61 +91,60 @@
 <li style="list-style-type: none">∘ if you have an old sound chip and JACK outright doesn't work, try "forcing 16bit" for it and don't forget to set sample format to 's16ne' in PA config too</li>
 </span></span></ul>
 <ul><li><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">To monitor GPU driver performance in your GPU-accelerated apps your can use Gallium HUD by launching them with special envvar, like this:</span></span></li>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ `<span style="background-color: #ffff99">env GALLIUM_HUD=".c120.dfps,cpu,GPU-load;requested-VRAM+VRAM-usage,requested-GTT+GTT-usage,primitives-generated+clipper-primitives-generated;draw-calls,buffer-wait-time" glxgears</span>`</li>
-<li style="list-style-type: none">∘ get all available options by running `<span style="background-color: #ffff99">env GALLIUM_HUD=help &lt;any DRI-using app&gt;</span>`</li>
-<li style="list-style-type: none">∘ for AMD cards also `<span style="background-color: #ffff99">radeontop</span>` tool is available</li>
-</span></span><li style="list-style-type: none"><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">∘ for Intel cards `<span style="background-color: #ffff99">intel-gpu-overlay</span>` may come in handy, along with the rest of intel-gpu-tools package</span></span></li>
+<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ `<span style="background-color: #4b4b10">env GALLIUM_HUD=".c120.dfps,cpu,GPU-load;requested-VRAM+VRAM-usage,requested-GTT+GTT-usage,primitives-generated+clipper-primitives-generated;draw-calls,buffer-wait-time" glxgears</span>`</li>
+<li style="list-style-type: none">∘ get all available options by running `<span style="background-color: #4b4b10">env GALLIUM_HUD=help &lt;any DRI-using app&gt;</span>`</li>
+<li style="list-style-type: none">∘ for AMD cards also `<span style="background-color: #4b4b10">radeontop</span>` tool is available</li>
+</span></span><li style="list-style-type: none"><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">∘ for Intel cards `<span style="background-color: #4b4b10">intel-gpu-overlay</span>` may come in handy, along with the rest of intel-gpu-tools package</span></span></li>
 <li><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">VDPAU, VA-API and OpenMaX F/OSS video hw-decoding libraries were installed.</span></span></li>
-<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ by default <span style="background-color: #ffff99">VA-API</span>&nbsp;is forced to use <span style="background-color: #ffff99">gallium</span>, you may want to change that if you are using an Intel card</li>
+<span style="font-size: 9pt"><span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ by default <span style="background-color: #4b4b10">VA-API</span>&nbsp;is forced to use <span style="background-color: #4b4b10">gallium</span>, you may want to change that if you are using an Intel card</li>
 <li style="list-style-type: none">∘ to enable VA-API acceleration for VDPAU-hardware (amd, nvidia), which may be less reliable than gallium, or for intel set this environmental variable:</li>
-</span></span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">‣ <span style="background-color: #ffff99">LIBVA_DRIVER_NAME</span>&nbsp;to '<span style="background-color: #ffff99">vdpau</span>' </span></span>or '<span style="background-color: #ffff99">i965</span>' accordingly</li>
+</span></span><li style="list-style-type: none"><ul><li style="list-style-type: none"><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">‣ <span style="background-color: #4b4b10">LIBVA_DRIVER_NAME</span>&nbsp;to '<span style="background-color: #4b4b10">vdpau</span>' </span></span>or '<span style="background-color: #4b4b10">i965</span>' accordingly</li>
 </ul>
 </li>
 <span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">∘ to enable VDPAU/GL acceleration on VA-API-hardware (intel):</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ install 'libvdpau_va_gl1'</li>
-<li style="list-style-type: none">‣ <span style="background-color: #ffff99">VDPAU_DRIVER=va_gl</span>&nbsp;(va_gl1 package tends to hardcode that, this is why it's not installed by default)</li>
+<li style="list-style-type: none">‣ <span style="background-color: #4b4b10">VDPAU_DRIVER=va_gl</span>&nbsp;(va_gl1 package tends to hardcode that, this is why it's not installed by default)</li>
 </ul>
 </li>
-<li style="list-style-type: none">∘ <u>GStreamer VA-API support is not installed</u>&nbsp;because it brings libva hangs to every gst application and that's no good, but instead there is <span style="background-color: #ffff99">gst-omx</span></li>
-<li>in <a href="/etc/X11/xorg.conf.d/50-device.conf">/etc/X11/xorg.conf.d/50-device.conf</a>&nbsp;<span style="background-color: #ffff99">glamor</span>&nbsp;and <span style="background-color: #ffff99">DRI3</span>&nbsp;is forced for everything and that should be good but you may want to check</li>
-<li style="list-style-type: none">∘ by default <span style="background-color: #ffff99">DRI_PRIME</span>&nbsp;is <span style="background-color: #ffff99">unset</span>&nbsp;for safety while setting it to '1' could force everything to use a better GPU in dual-GPU abominations</li>
-<li style="list-style-type: none">∘ <span style="background-color: #ffff99">force_s3tc_enable</span>&nbsp;is not forced and you may have to change that... or not</li>
-<li style="list-style-type: none">∘ `<span style="background-color: #ffff99">compton</span>` compositor is autolaunched by default on session start to decrease tearing and artefacts with glamor</li>
+<li style="list-style-type: none">∘ <u>GStreamer VA-API support is not installed</u>&nbsp;because it brings libva hangs to every gst application and that's no good, but instead there is <span style="background-color: #4b4b10">gst-omx</span></li>
+<li>in <a href="/etc/X11/xorg.conf.d/50-device.conf">/etc/X11/xorg.conf.d/50-device.conf</a>&nbsp;<span style="background-color: #4b4b10">glamor</span>&nbsp;and <span style="background-color: #4b4b10">DRI3</span>&nbsp;is forced for everything and that should be good but you may want to check</li>
+<li style="list-style-type: none">∘ by default <span style="background-color: #4b4b10">DRI_PRIME</span>&nbsp;is <span style="background-color: #4b4b10">unset</span>&nbsp;for safety while setting it to '1' could force everything to use a better GPU in dual-GPU abominations</li>
+<li style="list-style-type: none">∘ <span style="background-color: #4b4b10">force_s3tc_enable</span>&nbsp;is not forced and you may have to change that... or not</li>
+<li style="list-style-type: none">∘ `<span style="background-color: #4b4b10">compton</span>` compositor is autolaunched by default on session start to decrease tearing and artefacts with glamor</li>
 <li>Firefox and Thunderbird are forced to use EGL for graphical acceleration</li>
-<li style="list-style-type: none">∘ Firefox hates it and tries to block all acceleration activity by enacting its bullshit video driver blacklist but it's is forced off by super-secret '<span style="background-color: #ffff99">MOZ_GLX_IGNORE_BLACKLIST=1</span>' envvar in our build (mozilla.sh)</li>
-<li style="list-style-type: none">∘ Firefox often shits itself while in its full-OpenGL mode (OMTC) by drawing all windows 100% white but without it video playback is horrendous, so it's forced on with secret '<span style="background-color: #ffff99">MOZ_USE_OMTC=1</span>' global envvar</li>
+<li style="list-style-type: none">∘ Firefox hates it and tries to block all acceleration activity by enacting its bullshit video driver blacklist but it's is forced off by super-secret '<span style="background-color: #4b4b10">MOZ_GLX_IGNORE_BLACKLIST=1</span>' envvar in our build (mozilla.sh)</li>
+<li style="list-style-type: none">∘ Firefox often shits itself while in its full-OpenGL mode (OMTC) by drawing all windows 100% white but without it video playback is horrendous, so it's forced on with secret '<span style="background-color: #4b4b10">MOZ_USE_OMTC=1</span>' global envvar</li>
 </span></span></ul>
-<ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>'<span style="background-color: #ffff99">Infinality</span>' scripts are used for font antialiasing.</li>
+<ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>'<span style="background-color: #4b4b10">Infinality</span>' scripts are used for font antialiasing.</li>
 <li style="list-style-type: none">∘ so select "system defaults / don't change" in your DE's font settings</li>
-<li style="list-style-type: none">∘ or, at least, set '<span style="background-color: #ffff99">aa: enable, hinting: slight, subpixel geometry: rgb</span>' for output not to be garbled</li>
-</span></span><li><span style="background-color: #ffff99"><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">xiccd</span></span></span><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">, <span style="background-color: #ffff99">colord</span>, </span></span><span style="background-color: #ffff99"><span style="font-family: Verdana">argyllcms</span></span><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">&nbsp;and <span style="background-color: #ffff99"><span style="font-family: Verdana">dispcalGUI</span></span><span style="font-family: Verdana">&nbsp;are installed for full-scale colour management, they should be able to automatically export EDID-based colour profiles for your monitors</span></span></span></li>
-<li style="list-style-type: none"><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">∘ </span></span>but they may fail, so to make sure it's done launch dispcalGUI and select Options-&gt;'<span style="background-color: #ffff99">Create profile from extended display identification data...</span>'</li>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>in <a href="/etc/systemd/logind.conf">/etc/systemd/logind.conf</a>&nbsp;value of '<span style="background-color: #ffff99">KillUserProcesses</span>' was set to 'yes'. this will ensure that all processes are killed when they should and helps to prevent system hangs, but will break programs like `screen` which act daemon-like</li>
+<li style="list-style-type: none">∘ or, at least, set '<span style="background-color: #4b4b10">aa: enable, hinting: slight, subpixel geometry: rgb</span>' for output not to be garbled</li>
+</span></span><li><span style="background-color: #4b4b10"><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">xiccd</span></span></span><span style="font-family: DejaVu Sans"><span style="font-size: 9pt">, <span style="background-color: #4b4b10">colord</span>, </span></span><span style="background-color: #4b4b10"><span style="font-family: Verdana">argyllcms</span></span><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">&nbsp;and <span style="background-color: #4b4b10"><span style="font-family: Verdana">dispcalGUI</span></span><span style="font-family: Verdana">&nbsp;are installed for full-scale colour management, they should be able to automatically export EDID-based colour profiles for your monitors</span></span></span></li>
+<li style="list-style-type: none"><span style="font-size: 9pt"><span style="font-family: DejaVu Sans">∘ </span></span>but they may fail, so to make sure it's done launch dispcalGUI and select Options-&gt;'<span style="background-color: #4b4b10">Create profile from extended display identification data...</span>'</li>
+<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>in <a href="/etc/systemd/logind.conf">/etc/systemd/logind.conf</a>&nbsp;value of '<span style="background-color: #4b4b10">KillUserProcesses</span>' was set to 'yes'. this will ensure that all processes are killed when they should and helps to prevent system hangs, but will break programs like `screen` which act daemon-like</li>
 <li><a href="/etc/environment">/etc/environment</a>&nbsp;is the best place for it global variables.</li>
-</span></span></ul>
-<span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><ul><li>important default hotkeys:</li>
+<li>important default hotkeys:</li>
 <li style="list-style-type: none">∘ Ctrl+Alt+BackSpace &#09;&#09;&#09;= kill entire graphical session</li>
-<li style="list-style-type: none">∘ Ctrl+Alt+Escape &#09;&#09;&#09;&#09;= `<span style="background-color: #ffff99">xkill</span>` graphical application killer</li>
-<li style="list-style-type: none">∘ Ctrl+` &#09;&#09;&#09;&#09;&#09;&#09;= `<span style="background-color: #ffff99">yakuake</span>` console</li>
-<li style="list-style-type: none">∘ Ctrl+Escape &#09;&#09;&#09;&#09;&#09;= `<span style="background-color: #ffff99">qps</span>` process informer</li>
+<li style="list-style-type: none">∘ Ctrl+Alt+Escape &#09;&#09;&#09;&#09;= `<span style="background-color: #4b4b10">xkill</span>` graphical application killer</li>
+<li style="list-style-type: none">∘ Ctrl+` &#09;&#09;&#09;&#09;&#09;&#09;= `<span style="background-color: #4b4b10">yakuake</span>` console</li>
+<li style="list-style-type: none">∘ Ctrl+Escape &#09;&#09;&#09;&#09;&#09;= `<span style="background-color: #4b4b10">qps</span>` process informer</li>
 <li style="list-style-type: none">∘ Meta/Win+PrintScreen &#09;&#09;&#09;= screenshot entire screen</li>
 <li style="list-style-type: none">∘ Meta/Win+PrintScreen+Shift &#09;= screenshot focused window</li>
-</ul>
-</span></span><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>KDE's KIO</li>
+</span></span></ul>
+<ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>KDE's KIO</li>
 <li style="list-style-type: none">∘ KDE file management apps (Dolphin, Konqueror, Krusader, etc.) support variety of special protocols other than simple file management:</li>
-</span></span><li style="list-style-type: none"><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">‣ <span style="background-color: #ffff99">remote:/</span>&nbsp;- listing of all local auto-found or known resources</li>
-<li style="list-style-type: none">‣ <span style="background-color: #ffff99">ftp:/</span>/&lt;user&gt;@&lt;proxy_user&gt;:&lt;password&gt;@&lt;proxy_password&gt;@&lt;hostname&gt;:&lt;port&gt;/&lt;path&gt;</li>
-<li style="list-style-type: none">‣ <span style="background-color: #ffff99">sftp|fish:/</span>/&lt;user&gt;@&lt;hostname&gt;/&lt;path&gt;/</li>
-<li style="list-style-type: none">‣ <span style="background-color: #ffff99">smb:/</span>/&lt;user&gt;:&lt;password&gt;@&lt;hostname&gt;/&lt;share_path&gt;</li>
-<li style="list-style-type: none">‣ <span style="background-color: #ffff99">nfs:/</span>/&lt;hostname&gt;:&lt;port&gt;/&lt;path&gt;</li>
-<li style="list-style-type: none">‣ <span style="background-color: #ffff99">webdav:/</span>/&lt;user&gt;@&lt;hostname&gt;/&lt;path&gt;</li>
+</span></span><li style="list-style-type: none"><ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li style="list-style-type: none">‣ <span style="background-color: #4b4b10">remote:/</span>&nbsp;- listing of all local auto-found or known resources</li>
+<li style="list-style-type: none">‣ <span style="background-color: #4b4b10">ftp:/</span>/&lt;user&gt;@&lt;proxy_user&gt;:&lt;password&gt;@&lt;proxy_password&gt;@&lt;hostname&gt;:&lt;port&gt;/&lt;path&gt;</li>
+<li style="list-style-type: none">‣ <span style="background-color: #4b4b10">sftp|fish:/</span>/&lt;user&gt;@&lt;hostname&gt;/&lt;path&gt;/</li>
+<li style="list-style-type: none">‣ <span style="background-color: #4b4b10">smb:/</span>/&lt;user&gt;:&lt;password&gt;@&lt;hostname&gt;/&lt;share_path&gt;</li>
+<li style="list-style-type: none">‣ <span style="background-color: #4b4b10">nfs:/</span>/&lt;hostname&gt;:&lt;port&gt;/&lt;path&gt;</li>
+<li style="list-style-type: none">‣ <span style="background-color: #4b4b10">webdav:/</span>/&lt;user&gt;@&lt;hostname&gt;/&lt;path&gt;</li>
 <li style="list-style-type: none">‣ stuff to access insides of iso, archives, software packages</li>
-<li style="list-style-type: none">‣ listing and accessing mtp (phones, players, etc.) and camera devices: <span style="background-color: #ffff99">mtp:/</span>&nbsp;and <span style="background-color: #ffff99">camera:/</span>&nbsp;respectively</li>
+<li style="list-style-type: none">‣ listing and accessing mtp (phones, players, etc.) and camera devices: <span style="background-color: #4b4b10">mtp:/</span>&nbsp;and <span style="background-color: #4b4b10">camera:/</span>&nbsp;respectively</li>
 </span></span></ul>
 </li>
 </ul>
-<ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>both GNU <span style="background-color: #ffff99">ddrescue</span>&nbsp;and original dd_rescue are installed</li>
-<li style="list-style-type: none">∘ ddrescue is much more preferable but if you want to use dd_rescue for some reason, do it via `<span style="background-color: #ffff99">dd_rhelp</span>` crutch</li>
+<ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>both GNU <span style="background-color: #4b4b10">ddrescue</span>&nbsp;and original dd_rescue are installed</li>
+<li style="list-style-type: none">∘ ddrescue is much more preferable but if you want to use dd_rescue for some reason, do it via `<span style="background-color: #4b4b10">dd_rhelp</span>` crutch</li>
 </span></span></ul>
 <ul><span style="font-family: DejaVu Sans"><span style="font-size: 9pt"><li>steam installer/launcher is present but it's wrapped by <a href="/usr/local/bin/steam">/usr/local/bin/steam</a>&nbsp;script with bullshit workarounds for dumb steam glitches</li>
 </span></span></ul>

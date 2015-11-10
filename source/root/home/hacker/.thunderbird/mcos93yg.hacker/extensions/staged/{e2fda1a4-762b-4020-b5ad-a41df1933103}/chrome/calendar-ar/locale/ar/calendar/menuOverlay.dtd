@@ -1,0 +1,79 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!-- Event Menu -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- LOCALIZATION NOTE (calendar.removecalendar.label): Removing the calendar
+      is the general action of removing it, while deleting means to clear the
+      data and unsubscribing means just taking it out of the calendar list. -->
+
+
+
+<!ENTITY calendar.menu.customize.label          "خصص…">
+<!ENTITY calendar.menu.customize.accesskey      "ص">
+
+
+
+
+
+
+
+
+
+
+
+<!ENTITY calendar.deletecalendar.accesskey      "D">
+
+<!ENTITY calendar.deletecalendar.label          "Delete Selected Calendar…">
+<!ENTITY calendar.displaytodos.checkbox.accesskey   "T">
+
+<!ENTITY calendar.displaytodos.checkbox.label       "Show Tasks in Calendar">
+<!ENTITY calendar.export.accesskey              "E">
+
+<!ENTITY calendar.export.label                  "Export…">
+<!ENTITY calendar.import.accesskey              "I">
+
+<!ENTITY calendar.import.label                  "Import…">
+<!ENTITY calendar.properties.accesskey          "C">
+
+<!ENTITY calendar.properties.label              "Calendar Properties…">
+<!ENTITY calendar.publish.accesskey             "b">
+
+<!ENTITY calendar.publish.label                 "Publish…">
+<!ENTITY calendar.removecalendar.accesskey      "R">
+
+<!-- LOCALIZATION NOTE (calendar.removecalendar.label): Removing the calendar
+      is the general action of removing it, while deleting means to clear the
+      data and unsubscribing means just taking it out of the calendar list. -->
+<!ENTITY calendar.removecalendar.label          "Remove Selected Calendar…">
+<!ENTITY calendar.unsubscribecalendar.accesskey "U">
+<!ENTITY calendar.unsubscribecalendar.label     "Unsubscribe Selected Calendar…">
+
+
+<!-- Event Menu -->
+<!ENTITY event.new.event                        "New Event…">
+<!ENTITY event.new.event.accesskey              "N">
+
+<!ENTITY event.new.task                         "New Task…">
+<!ENTITY event.new.task.accesskey               "k">
+<!ENTITY goTodayCmd.accesskey                   "T">
+
+<!ENTITY goTodayCmd.label                       "Today">
+<!ENTITY showCurrentView.accesskey              "V">
+
+<!ENTITY showCurrentView.label                  "Current View">
+<!ENTITY showUnifinderCmd.accesskey             "F">
+
+<!ENTITY showUnifinderCmd.label                 "Find Events">

@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "Krijoni Kalendar të Ri" >
+<!ENTITY wizard.label             "Krijoni kalendar të ri" >
+<!ENTITY wizard.description       "Vendosni kalendarin tuaj" >
+
+<!ENTITY initialpage.description    "Kalendari juaj mund të depozitohet te kompjuteri juaj ose te një shërbyes që të mund ta përdorni së largëti ose ta ndani me shokë apo kolegë tuajt." >
+<!ENTITY initialpage.computer.label  "Në Kompjuterin Tim">
+<!ENTITY initialpage.network.label  "Në Rrjet">
+
+<!ENTITY locationpage.description         "Jepni të dhëna rreth çka është e nevojshme për të hyrë në kalendarin tuaj të largët" >
+<!ENTITY locationpage.login.description   "Opsionale: jepni emër përdoruesi dhe fjalëkalim" >
+<!ENTITY locationpage.username.label      "Emër përdoruesi:" >
+<!ENTITY locationpage.password.label      "Fjalëkalim:" >
+
+<!ENTITY custompage.shortdescription  "Përshtateni kalendarin tuaj" >
+<!ENTITY custompage.longdescription   "Mund t&apos;i jepni kalendarit tuaj një nofkë dhe veprimtarive prej këtij kalendari ngjyra." >
+
+<!ENTITY finishpage.shortdescription  "Kalendari u Krijua" >
+<!ENTITY finishpage.longdescription   "Kalendari juaj u krijua." >

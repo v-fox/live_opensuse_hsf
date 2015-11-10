@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "Uue kalendri loomine" >
+<!ENTITY wizard.label             "Loo uus kalender" >
+<!ENTITY wizard.description       "Määra kalendri asukoht" >
+
+<!ENTITY initialpage.description    "Kalender võib asuda nii sinu arvutis kui ka serveris, mis võimaldab kaugligipääsu sellele ning jagamist sõprade või töökaaslastega." >
+<!ENTITY initialpage.computer.label  "minu arvutis">
+<!ENTITY initialpage.network.label  "võrgus">
+
+<!ENTITY locationpage.description         "Sisesta kalendrile ligipääsuks vajalik info" >
+<!ENTITY locationpage.login.description   "Valikuline: sisesta kasutajanimi ja parool" >
+<!ENTITY locationpage.username.label      "kasutajanimi:" >
+<!ENTITY locationpage.password.label      "parool:" >
+
+<!ENTITY custompage.shortdescription  "Kalendri häälestamine" >
+<!ENTITY custompage.longdescription   "Kalendrile saab anda hüüdnime ning kalendri sündmustele ja ülesannetele värvi valida." >
+
+<!ENTITY finishpage.shortdescription  "Kalender loodud" >
+<!ENTITY finishpage.longdescription   "Sinu kalender on loodud." >

@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "Új naptár létrehozása" >
+<!ENTITY wizard.label             "Új naptár létrehozása" >
+<!ENTITY wizard.description       "A naptár helye" >
+
+<!ENTITY initialpage.description    "A naptár tárolható a saját számítógépen vagy egy kiszolgálón, hogy távolról is elérhető legyen, illetve megosztható legyen az ismerősökkel vagy munkatársakkal." >
+<!ENTITY initialpage.computer.label  "A saját gépen">
+<!ENTITY initialpage.network.label  "A hálózaton">
+
+<!ENTITY locationpage.description         "Adja meg a távoli naptár eléréséhez szükséges adatokat" >
+<!ENTITY locationpage.login.description   "Opcionális: adja meg felhasználónevet és jelszót" >
+<!ENTITY locationpage.username.label      "Felhasználónév:" >
+<!ENTITY locationpage.password.label      "Jelszó:" >
+
+<!ENTITY custompage.shortdescription  "A naptár testreszabása" >
+<!ENTITY custompage.longdescription   "A naptárnak nevet adhat, és kiszínezheti az ebből a naptárból származó eseményeket." >
+
+<!ENTITY finishpage.shortdescription  "A naptár létrejött" >
+<!ENTITY finishpage.longdescription   "Elkészült a naptárja." >

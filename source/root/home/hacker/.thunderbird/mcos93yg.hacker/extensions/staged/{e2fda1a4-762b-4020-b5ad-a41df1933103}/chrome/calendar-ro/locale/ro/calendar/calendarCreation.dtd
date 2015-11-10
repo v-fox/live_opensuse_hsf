@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "Creare calendar nou" >
+<!ENTITY wizard.label             "Creează un calendar nou" >
+<!ENTITY wizard.description       "Localizați calendarul" >
+
+<!ENTITY initialpage.description    "Calendarul poate fi stocat pe calculatorul dumneavoastră sau pe un server pentru a-l accesa de la distanță sau pentru a-l împărtăși cu prietenii sau colegii." >
+<!ENTITY initialpage.computer.label  "Pe calculatorul meu">
+<!ENTITY initialpage.network.label  "În rețea">
+
+<!ENTITY locationpage.description         "Furnizați informațiile necesare pentru a accesa calendarul de la distanță" >
+<!ENTITY locationpage.login.description   "Dacă e nevoie, introduceți utilizatorul și parola" >
+<!ENTITY locationpage.username.label      "Utilizator:" >
+<!ENTITY locationpage.password.label      "Parolă:" >
+
+<!ENTITY custompage.shortdescription  "Personalizați calendarul" >
+<!ENTITY custompage.longdescription   "Puteți da un pseudonim calendarului și să colorați evenimentele din el." >
+
+<!ENTITY finishpage.shortdescription  "Calendar creat" >
+<!ENTITY finishpage.longdescription   "Calendarul dumneavoastră a fost creat." >

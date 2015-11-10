@@ -2,28 +2,23 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: gi5YyMVNVV7glxa8NFOTLw==
-SHA1-Digest: pRdLCWCOyXJuoHiaLKiO6/ofJT0=
+MD5-Digest: s6UdiqbSeeaCRM3RS5Bxkw==
+SHA1-Digest: 0/SEOjLvA/Vxi87iRthgqOornN0=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: hu7/vkKoUwPBMDa3nIvGLA==
 SHA1-Digest: soOM2MF4Jmue9v4xtTKno7FV19M=
 
-Name: chrome/content/frame-script.js
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: N7lnpwwNoeYYMaciPQya8w==
-SHA1-Digest: DiuTLT//s5uHGQqCtwpRvQuvPlQ=
-
 Name: chrome/content/options.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 6ManiKBAbTSYylkqfF2AuA==
-SHA1-Digest: t0P4j31W4nNUtkfF9FjS7jP7t7I=
+MD5-Digest: 7cEs6dMiKSEZ9Jhd+iYm+g==
+SHA1-Digest: UDb9GtC1D+IeyqGlQBj8CZPYQlc=
 
 Name: chrome/content/options.xul
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: bFLCmzuyzKf7JIjSBdsO2Q==
-SHA1-Digest: k1Ml0L40Zkw1YAei8fCi/T8i9tQ=
+MD5-Digest: xvKAhh5470KrC/PIonn1Yg==
+SHA1-Digest: plkzie79WvRF/4bcR+qDX68BXUI=
 
 Name: chrome/content/overlay.js
 Digest-Algorithms: MD5 SHA1
@@ -37,8 +32,8 @@ SHA1-Digest: E0Z0YmY3xNZf9or9bUSzMeRY+N4=
 
 Name: chrome/locale/bg/options.dtd
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: q7YbDLphjLMPwhjJ5FAUkQ==
-SHA1-Digest: Nq9kOmlgtNRW5Fy4gsNnUG9sKpU=
+MD5-Digest: 0+DepbqVeWMfs2uSpWhmyg==
+SHA1-Digest: lo3MP7YH5M/6zcm7LjuRNcoJTa4=
 
 Name: chrome/locale/bg/options.properties
 Digest-Algorithms: MD5 SHA1
@@ -57,13 +52,13 @@ SHA1-Digest: f1rHLgXM6C2euZN32XfZbgiCi2U=
 
 Name: chrome/locale/de-DE/options.dtd
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 3LCHrWQAeL5ggswqs0HGvA==
-SHA1-Digest: vRGXbm0JdbrYYCNez5m8tk46FAs=
+MD5-Digest: GrDo5/9ZwMdNkYuUeklGVg==
+SHA1-Digest: 4BP1ubGszcxRJNSRo/86LTSTqL8=
 
 Name: chrome/locale/de-DE/options.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: ljvs5yqgQjiuoVpnBWyZxw==
-SHA1-Digest: u/0ieKONiEcYA+9rsnuP1XwWBPo=
+MD5-Digest: qxLfkJ5+/wk2+PlgBcc3Pw==
+SHA1-Digest: aXMN5CZPURdURDUx/+mwPuiPU6w=
 
 Name: chrome/locale/de-DE/overlay.dtd
 Digest-Algorithms: MD5 SHA1
@@ -72,8 +67,8 @@ SHA1-Digest: qdW59tziUspkydy1BN+YtdHPooI=
 
 Name: chrome/locale/de-DE/overlay.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: YmHb08BC01dV2QFj/p8CFg==
-SHA1-Digest: C/IuWxc55TJv+GSIAqkJga1GjJs=
+MD5-Digest: VAJ/cV/Ui35rHScKlW1dyg==
+SHA1-Digest: jM7aii/qOFBH/TmSGHEeTpBwsJE=
 
 Name: chrome/locale/en-US/options.dtd
 Digest-Algorithms: MD5 SHA1
@@ -297,8 +292,8 @@ SHA1-Digest: +O1o+RJB8dU+uy51JtMQYwoaE8k=
 
 Name: chrome/locale/zh-TW/options.dtd
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: IY61XJ3jgmJk7yuqZGaIvQ==
-SHA1-Digest: eDRD3GS08iA4aPCdwkkYxL8etQU=
+MD5-Digest: Ut/LcXAq4ZzVWqFcfKyLig==
+SHA1-Digest: FdmeJlAO3WCzuIleEmcYxyTqQcY=
 
 Name: chrome/locale/zh-TW/options.properties
 Digest-Algorithms: MD5 SHA1
@@ -312,8 +307,8 @@ SHA1-Digest: qdW59tziUspkydy1BN+YtdHPooI=
 
 Name: chrome/locale/zh-TW/overlay.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: hKrQQFiqHv+eyi2JybZyDw==
-SHA1-Digest: CEjX7gChkmciCOEoKwyFAlVLQ3E=
+MD5-Digest: V7drf2nUwtHkERhcmJTIbg==
+SHA1-Digest: V1DGqbXrkwkAyM06y4hEJgr7QJM=
 
 Name: chrome/skin/overlay.css
 Digest-Algorithms: MD5 SHA1
@@ -467,13 +462,13 @@ SHA1-Digest: 0Nv6ANhuNisfe31ghUVjr9D1+Sk=
 
 Name: modules/commons.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: rcDLWOsTlEbclLz4yS+b4g==
-SHA1-Digest: ud9v1npJDQ0eXnWySbhs9gUlSxI=
+MD5-Digest: KPA4q85PmfgxayNCUNz/Wg==
+SHA1-Digest: cdceCozGJ1yB0/ATjdvFpey/Skk=
 
 Name: modules/FiretrayHandler.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: CCAJt9xK3IBwqdg36DIwxA==
-SHA1-Digest: svoEzSS8j+9J2NgzcMjwwFs7Uw4=
+MD5-Digest: Bj5xLCCLAq+LHbf/uyQqBg==
+SHA1-Digest: NSPhCkO46AmzcLPHDpqj7a6aQ3M=
 
 Name: modules/FiretrayMessaging.jsm
 Digest-Algorithms: MD5 SHA1
@@ -482,8 +477,8 @@ SHA1-Digest: MzqtSCfJ7zud4xbsyY6/4U51OFw=
 
 Name: modules/FiretrayWindow.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: fsZBSmgGc+izD5NpHV4Faw==
-SHA1-Digest: RzHBNpqW0gOIeudl5R0Jffm7CUE=
+MD5-Digest: fVaKix5Wk5cNHrP2sMalFQ==
+SHA1-Digest: zHYamSOon3z1uFYZlBjQybsMj58=
 
 Name: modules/log4moz.js
 Digest-Algorithms: MD5 SHA1
@@ -507,8 +502,8 @@ SHA1-Digest: LT7zjb3IQDfl34a0tyK4e/wMgiU=
 
 Name: modules/ctypes/ctypes-utils.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: hrxvxPKJDJ4vpBqDJ3br8g==
-SHA1-Digest: Ph+Ancbjwug3qfnVv1PsBxFkZpE=
+MD5-Digest: hcydlQ+luAthn15FWmDfKA==
+SHA1-Digest: UdQYtLpwmqxjicU0A9p9Eqhe+tA=
 
 Name: modules/ctypes/ctypesMap.jsm
 Digest-Algorithms: MD5 SHA1
@@ -520,20 +515,15 @@ Digest-Algorithms: MD5 SHA1
 MD5-Digest: Aoz5WofgRCnH5t7m+RpU4Q==
 SHA1-Digest: e8pffXl44tU12tg0skk9Q0v+XWQ=
 
-Name: modules/ctypes/linux/appindicator.jsm
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: wQ+AF/Amjw5++IPRJP23gw==
-SHA1-Digest: rPdRr5W/rDa7FWZw85/Y/mkatHM=
-
 Name: modules/ctypes/linux/cairo.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: KZ4ah5r8edwXC2icYGCidQ==
-SHA1-Digest: CWPu+0EHy0iiEXE0PTmNGEVi8P4=
+MD5-Digest: SatIPC//cO7yGVKJC5dGVQ==
+SHA1-Digest: 9ntsUyM7ywX3uajYkGrdU6Sc+sw=
 
-Name: modules/ctypes/linux/gdk.jsm
+Name: modules/ctypes/linux/gdk23.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: PYZGCxbrcuTIKbEECUcJ8Q==
-SHA1-Digest: LgraP46uAxbC61EznQX+RZ5lU94=
+MD5-Digest: 0W1j09YF0i/kr93muLQRNg==
+SHA1-Digest: itE4bstzxNz4f4AKl8I4w6niqgE=
 
 Name: modules/ctypes/linux/gio.jsm
 Digest-Algorithms: MD5 SHA1
@@ -550,10 +540,10 @@ Digest-Algorithms: MD5 SHA1
 MD5-Digest: rOxrZFf0PdhDDMn/6cDbXg==
 SHA1-Digest: GyiJlNocf1QbObWR/5w0w/Lqwvc=
 
-Name: modules/ctypes/linux/gtk.jsm
+Name: modules/ctypes/linux/gtk23.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: BgHx4tnivxgs0+Ij9Wg2cQ==
-SHA1-Digest: njTV89eoNfTop84Ho8wd++GtsUo=
+MD5-Digest: kmOd5P41sAf/KKSG1TAURw==
+SHA1-Digest: rYclfIylyVGJaLbl3fYQUllwWRw=
 
 Name: modules/ctypes/linux/libc.jsm
 Digest-Algorithms: MD5 SHA1
@@ -574,6 +564,36 @@ Name: modules/ctypes/linux/x11.jsm
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: 5b2y6WI1tb+pdMZXctW6vg==
 SHA1-Digest: 0bLTEqUez1M7YJgU4vR5d47kEg4=
+
+Name: modules/ctypes/linux/gtk2/appindicator.jsm
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 1DWg0bFfzRZsznXwvrrFFw==
+SHA1-Digest: nLu9ranmtz8lfVixmVodfqUaWRg=
+
+Name: modules/ctypes/linux/gtk2/gdk.jsm
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: XBXpxjaKghoFid+HXIRomQ==
+SHA1-Digest: flNrPMzXpNqqaq3+ZB0t72TR9/Q=
+
+Name: modules/ctypes/linux/gtk2/gtk.jsm
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: hxSBky5MOEAwl9ec2QpiYQ==
+SHA1-Digest: AbL34QLSQmEZRRKLbegkji1l3Sk=
+
+Name: modules/ctypes/linux/gtk3/appindicator.jsm
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: /4gretq6BIbnlq5Lm343bA==
+SHA1-Digest: XhwiCnto2KaUr1MF5VbulG/Dxwk=
+
+Name: modules/ctypes/linux/gtk3/gdk.jsm
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: VnCi+t1p+FrTy3S/KzXHBQ==
+SHA1-Digest: ISUQfPp2ix64AziiZxbkKbBynZo=
+
+Name: modules/ctypes/linux/gtk3/gtk.jsm
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: QN3Cz+UTu47MjbSsl30rGA==
+SHA1-Digest: aZDVTRlqlMMnFyzdCPg8hvoaduc=
 
 Name: modules/ctypes/winnt/gdi32.jsm
 Digest-Algorithms: MD5 SHA1
@@ -602,8 +622,8 @@ SHA1-Digest: pyOxaLz/J5zWdjvqCfR6P5xQ8Fc=
 
 Name: modules/linux/FiretrayAppIndicator.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: x6F14oJ30lxOaemcE9iV+w==
-SHA1-Digest: Fce44AIprMh9TY5HJg314zbCCJ8=
+MD5-Digest: DeTAf3WlMLJjcsDmy1rA2g==
+SHA1-Digest: uSag5aqFsHyy7ngNhk9yOqdZdTU=
 
 Name: modules/linux/FiretrayChat.jsm
 Digest-Algorithms: MD5 SHA1
@@ -612,33 +632,33 @@ SHA1-Digest: 3sLOoJoFIKmhrBnxQPk7tolIq9M=
 
 Name: modules/linux/FiretrayChatStatusIcon.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: I/qsJZT2cwOSHBp6aaFTfQ==
-SHA1-Digest: RHRBi0ATpuXDZTxhGVeJezp68NY=
+MD5-Digest: S99JmO50zxIuOQY46tzeug==
+SHA1-Digest: UBR/6nKbM+F5KH7b7N8FYrLWqeY=
 
 Name: modules/linux/FiretrayGtkIcons.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: oTfc6henYxTbYw+xLOrU9Q==
-SHA1-Digest: j+Q2+0poeHL+SWRx0dP3wDVR07o=
+MD5-Digest: o4/kb8y2qdLvA4Vt5kLiBg==
+SHA1-Digest: R3bmF9TiHLfHyvapShDdgrrtW4U=
 
 Name: modules/linux/FiretrayGtkStatusIcon.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: YRo2epJJRHKppJb7DeBXqw==
-SHA1-Digest: hPk+xj3WW/PEfvTU9L0nUb98Qnw=
+MD5-Digest: 7kI8PICL3MGgTEzuzpOEHg==
+SHA1-Digest: WvjC5NZ8P6xtXYLbReNIueDrblI=
 
 Name: modules/linux/FiretrayPopupMenu.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: IQMVFDzEXNlqiMKMNV6dUg==
-SHA1-Digest: kO+xJ8Qo/4zIlLCk4SeGyBrtjDE=
+MD5-Digest: nh1ffyFVVcJ9OEJYaQEyQQ==
+SHA1-Digest: DK7vuC1nVDYn1EXlii6pGx+M8E0=
 
 Name: modules/linux/FiretrayStatusIcon.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: cWUK4ySC3P8H6z/orR60/g==
-SHA1-Digest: 27MPmSKM/ptNth7yUenmeOj/ceg=
+MD5-Digest: RKzBfB6gAxIGSnykWnkCvQ==
+SHA1-Digest: DvvdqwGhiCym7b0GB6vKWw0nRgU=
 
 Name: modules/linux/FiretrayWindow.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: NPu4VVW7ccSo9zBRyaL67A==
-SHA1-Digest: drcSJI/gqqYqeQFFJuhkzDbymhM=
+MD5-Digest: rd0UCE9s+ClG4rn3xTjzvg==
+SHA1-Digest: 4VhXF9Jbd6yzFGG4kEiKOcteyc0=
 
 Name: modules/winnt/FiretrayPopupMenu.jsm
 Digest-Algorithms: MD5 SHA1
@@ -647,8 +667,8 @@ SHA1-Digest: OkZXe9XLknfJaAKzIJxcR7N9UVM=
 
 Name: modules/winnt/FiretrayStatusIcon.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: PcpRn4UF8Qvvb6KRJLobkw==
-SHA1-Digest: GyLqI/2mjDp9GHKLGJWNFpYjsBA=
+MD5-Digest: K61rtfmkixWIHVUBQUdVww==
+SHA1-Digest: q7Xe1Gw/lxNWdGpjosb0z/gRvXM=
 
 Name: modules/winnt/FiretrayWin32.jsm
 Digest-Algorithms: MD5 SHA1
@@ -657,8 +677,8 @@ SHA1-Digest: VjakWYJIsKYFxL21UzeCCm/B8VU=
 
 Name: modules/winnt/FiretrayWindow.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: lI39doN4rqaU6MAE/koLvA==
-SHA1-Digest: GggVqFZzls7MiXSS1qR4yfpIkbw=
+MD5-Digest: 75ZlxRO7J1+KVjmIHtKWWA==
+SHA1-Digest: US5GVFqTQPCZRwoWGd1k4atsc48=
 
 Name: LICENSE
 Digest-Algorithms: MD5 SHA1

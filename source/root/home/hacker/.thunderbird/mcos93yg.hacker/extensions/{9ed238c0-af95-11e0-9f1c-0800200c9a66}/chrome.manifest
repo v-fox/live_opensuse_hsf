@@ -1,0 +1,14 @@
+skin	editor          		ttdeepdark	jar:chrome/tt_deepdark.jar!/editor/
+skin	global          		ttdeepdark	jar:chrome/tt_deepdark.jar!/global/
+skin	messenger				ttdeepdark	jar:chrome/tt_deepdark.jar!/messenger/
+skin	messenger-newsblog		ttdeepdark	jar:chrome/tt_deepdark.jar!/messenger-newsblog/
+skin	mozapps         		ttdeepdark	jar:chrome/tt_deepdark.jar!/mozapps/
+
+skin	os_target        		ttdeepdark	jar:chrome/tt_deepdark.jar!/os_target/common/
+skin	os_target        		ttdeepdark	jar:chrome/tt_deepdark.jar!/os_target/linux/ os=Linux
+skin	os_target        		ttdeepdark	jar:chrome/tt_deepdark.jar!/os_target/macosx/osx/ os=Darwin
+skin	os_target        		ttdeepdark	jar:chrome/tt_deepdark.jar!/os_target/macosx/lion/ os=Darwin osversion>=10.7
+skin	os_target        		ttdeepdark	jar:chrome/tt_deepdark.jar!/os_target/winXP/ os=WINNT osversion<6
+skin	os_target        		ttdeepdark	jar:chrome/tt_deepdark.jar!/os_target/win7/ os=WINNT osversion>=6
+
+skin	app_version     		ttdeepdark	jar:chrome/tt_deepdark.jar!/app_version/38/ appversion<39.0a1

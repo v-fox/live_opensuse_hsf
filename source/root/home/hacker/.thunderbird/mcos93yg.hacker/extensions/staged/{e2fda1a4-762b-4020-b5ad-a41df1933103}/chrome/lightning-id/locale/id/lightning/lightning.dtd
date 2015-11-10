@@ -1,0 +1,140 @@
+<!-- ***** BEGIN LICENSE BLOCK *****
+   - Version: MPL 1.1/GPL 2.0/LGPL 2.1
+   -
+   - The contents of this file are subject to the Mozilla Public License Version
+   - 1.1 (the "License"); you may not use this file except in compliance with
+   - the License. You may obtain a copy of the License at
+   - http://www.mozilla.org/MPL/
+   -
+   - Software distributed under the License is distributed on an "AS IS" basis,
+   - WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
+   - for the specific language governing rights and limitations under the
+   - License.
+   -
+   - The Original Code is calendar views.
+   -
+   - The Initial Developer of the Original Code is
+   - Oracle Corporation.
+   - Portions created by the Initial Developer are Copyright (C) 2005
+   - the Initial Developer. All Rights Reserved.
+   -
+   - Contributor(s):
+   -   Mike Shaver <shaver@mozilla.org>
+   -   Simon Paquet <bugzilla@babylonsounds.com>
+   -   Matthew Willis <mattwillis@mac.com>
+   -   Philipp Kewisch <mozilla@kewis.ch>
+   -   Martin Schroeder <mschroeder@mozilla.x-home.org>
+   -   Berend Cornelius <berend.cornelius@sun.com>
+   -
+   - Alternatively, the contents of this file may be used under the terms of
+   - either the GNU General Public License Version 2 or later (the "GPL"), or
+   - the GNU Lesser General Public License Version 2.1 or later (the "LGPL"),
+   - in which case the provisions of the GPL or the LGPL are applicable instead
+   - of those above. If you wish to allow use of your version of this file only
+   - under the terms of either the GPL or the LGPL, and not to allow others to
+   - use your version of this file under the terms of the MPL, indicate your
+   - decision by deleting the provisions above and replace them with the notice
+   - and other provisions required by the LGPL or the GPL. If you do not delete
+   - the provisions above, a recipient may use your version of this file under
+   - the terms of any one of the MPL, the GPL or the LGPL.
+   -
+   - ***** END LICENSE BLOCK ***** -->
+
+<!-- WARNING! This file contains UTF-8 encoded characters!
+   - If this ==> … <== doesn't look like an ellipsis (three dots in a row),
+   - your editor isn't using UTF-8 encoding and may munge up the document!
+  -->
+
+<!-- Tools menu -->
+<!ENTITY lightning.taskLabel "Lightning">
+
+<!-- New menu popup in File menu -->
+<!ENTITY lightning.menupopup.new.event.label    "Acara…">
+<!ENTITY lightning.menupopup.new.event.accesskey "A">
+<!ENTITY lightning.menupopup.new.task.label     "Tugas…">
+<!ENTITY lightning.menupopup.new.task.accesskey "T">
+<!ENTITY lightning.menupopup.new.calendar.label "Kalender…">
+<!ENTITY lightning.menupopup.new.calendar.accesskey "n">
+
+<!-- Open menu popup in File menu -->
+<!ENTITY lightning.menupopup.open.label               "Buka">
+<!ENTITY lightning.menupopup.open.accesskey           "B">
+<!ENTITY lightning.menupopup.open.message.label       "Simpanan Pesan…">
+<!ENTITY lightning.menupopup.open.message.accesskey   "S">
+<!ENTITY lightning.menupopup.open.calendar.label      "Berkas Kalender…">
+<!ENTITY lightning.menupopup.open.calendar.accesskey  "k">
+
+<!-- View Menu -->
+<!ENTITY lightning.menu.view.calendar.label            "Kalender">
+<!ENTITY lightning.menu.view.calendar.accesskey        "K">
+<!ENTITY lightning.menu.view.tasks.label               "Tugas">
+<!ENTITY lightning.menu.view.tasks.accesskey           "T">
+
+<!-- Events and Tasks menu -->
+<!ENTITY lightning.menu.eventtask.label                "Acara dan Tugas">
+<!ENTITY lightning.menu.eventtask.accesskey            "A">
+
+
+<!-- properties dialog, calendar creation wizard -->
+<!ENTITY lightning.calendarproperties.email.label               "Email:">
+
+<!-- iMIP Bar (meeting support) -->
+<!ENTITY lightning.imipbar.description "Pesan in berisi undangan sebuah acara.">
+
+<!-- Lightning specific keybindings -->
+<!ENTITY lightning.keys.event.showCalendar.key "C">
+<!ENTITY lightning.keys.event.showTasks.key "D">
+<!ENTITY lightning.keys.event.new "U">
+<!ENTITY lightning.keys.todo.new "D">
+
+<!-- Account Central page -->
+<!ENTITY lightning.acctCentral.newCalendar.label "Buat kalender baru">
+
+<!-- today-pane-specific -->
+<!ENTITY todaypane.showMinimonth.label "Tampilkan Bulan-Mini">
+<!ENTITY todaypane.showMinimonth.accesskey "m">
+<!ENTITY todaypane.showMiniday.label "Tampilkan Hari-Mini">
+<!ENTITY todaypane.showMiniday.accesskey  "H">
+<!ENTITY todaypane.showNone.label "Tak Ada Tampilan">
+<!ENTITY todaypane.showNone.accesskey "a">
+<!ENTITY todaypane.showTodayPane.label "Tampilkan Panel Hari Ini">
+<!ENTITY todaypane.showTodayPane.accesskey "i">
+<!ENTITY todaypane.statusButton.label "Panel Hari Ini">
+
+
+<!-- iMIP Bar (meeting support) -->
+<!ENTITY lightning.imipbar.btnAccept.label                                  "Accept">
+<!ENTITY lightning.imipbar.btnAccept2.tooltiptext                           "Accept event invitation">
+<!ENTITY lightning.imipbar.btnAcceptRecurrences.label                       "Accept all">
+<!ENTITY lightning.imipbar.btnAcceptRecurrences2.tooltiptext                "Accept event invitation for all occurrences of the event">
+<!ENTITY lightning.imipbar.btnAdd.label                                     "Add">
+<!ENTITY lightning.imipbar.btnAdd.tooltiptext                               "Add the event to the calendar">
+<!ENTITY lightning.imipbar.btnDecline.label                                 "Decline">
+<!ENTITY lightning.imipbar.btnDecline2.tooltiptext                          "Decline event invitation">
+<!ENTITY lightning.imipbar.btnDeclineRecurrences.label                      "Decline all">
+<!ENTITY lightning.imipbar.btnDeclineRecurrences2.tooltiptext               "Decline event invitation for all occurrences of the event">
+<!ENTITY lightning.imipbar.btnDelete.label                                  "Delete">
+<!ENTITY lightning.imipbar.btnDelete.tooltiptext                            "Delete from calendar">
+<!ENTITY lightning.imipbar.btnDetails.label                                 "Details…">
+<!ENTITY lightning.imipbar.btnDetails.tooltiptext                           "Show event details">
+<!ENTITY lightning.imipbar.btnMore.label                                    "More">
+<!ENTITY lightning.imipbar.btnMore.tooltiptext                              "Click to show more options">
+<!ENTITY lightning.imipbar.btnReconfirm.tooltiptext                         "Sends a reconfirmation to the organizer">
+<!ENTITY lightning.imipbar.btnReconfirm2.label                              "Reconfirm">
+<!ENTITY lightning.imipbar.btnSaveCopy.label                                "Save a copy">
+<!ENTITY lightning.imipbar.btnSaveCopy.tooltiptext                          "Save a copy of the event to the calendar independently of replying to the organizer. The list of attendees will be cleared.">
+<!ENTITY lightning.imipbar.btnTentative.label                               "Tentative">
+<!ENTITY lightning.imipbar.btnTentative2.tooltiptext                        "Accept event invitation tentatively">
+<!ENTITY lightning.imipbar.btnTentativeRecurrences.label                    "Tentative all">
+<!ENTITY lightning.imipbar.btnTentativeRecurrences2.tooltiptext             "Accept event invitation tentatively for all occurrences of the event">
+<!ENTITY lightning.imipbar.btnUpdate.label                                  "Update">
+<!ENTITY lightning.imipbar.btnUpdate.tooltiptext                            "Update event in calendar">
+
+
+<!-- WARNING! This file contains UTF-8 encoded characters!
+   - If this ==> … <== doesn't look like an ellipsis (three dots in a row),
+   - your editor isn't using UTF-8 encoding and may munge up the document!
+  -->
+
+<!-- Tools menu -->
+<!ENTITY lightning.preferencesLabel "Calendar">

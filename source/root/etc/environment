@@ -40,6 +40,7 @@ GIT_ASKPASS=/usr/bin/lxqt-openssh-askpass
 # enabling texture compression support
 #force_s3tc_enable=true
 # for dual-GPU bullshit, forcing the usage of non-shitty card
+# may lead to unintended consequences, like having artifacts or no vsync
 #DRI_PRIME=1
 # SDL tuning
 SDL_VIDEO_YUV_HWACCEL=1

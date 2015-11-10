@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "새 캘린더 만들기" >
+<!ENTITY wizard.label             "새 캘린더를 만듭니다." >
+<!ENTITY wizard.description       "캘린더의 위치를 지정하십시오." >
+
+<!ENTITY initialpage.description    "캘린더는 내 컴퓨터에 저장하거나 또는 다른 사람과 공유하기 위해 리모트 서버에 저장할 수 있습니다." >
+<!ENTITY initialpage.computer.label  "내 컴퓨터에 저장">
+<!ENTITY initialpage.network.label  "네트워크 상에 저장">
+
+<!ENTITY locationpage.description         "리모트 캘린더에 접근하기 위한 정보를 제공합니다." >
+<!ENTITY locationpage.login.description   "선택 사항: 사용자 이름과 비밀번호를 입력하십시오." >
+<!ENTITY locationpage.username.label      "사용자 이름:" >
+<!ENTITY locationpage.password.label      "비밀번호:" >
+
+<!ENTITY custompage.shortdescription  "사용자에 따라 캘린더를 설정합니다." >
+<!ENTITY custompage.longdescription   "캘린더에 별명을 부여하거나 이벤트에 색상을 설정할 수 있습니다." >
+
+<!ENTITY finishpage.shortdescription  "캘린더 만들기 완료" >
+<!ENTITY finishpage.longdescription   "새 캘린더가 만들어졌습니다." >

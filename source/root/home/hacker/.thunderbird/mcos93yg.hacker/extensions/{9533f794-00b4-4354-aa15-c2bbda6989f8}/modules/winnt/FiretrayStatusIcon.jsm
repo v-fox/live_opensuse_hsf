@@ -173,7 +173,7 @@ firetray.StatusIcon = {
 
     nid = new shell32.NOTIFYICONDATAW();
     nid.cbSize = shell32.NOTIFYICONDATAW_SIZE();
-    nid.szTip = firetray.Handler.appName;
+    nid.szTip = firetray.Handler.app.name;
     nid.hIcon = this.icons.get('app');
     nid.hWnd = hwnd_hidden;
     nid.uCallbackMessage = firetray.Win32.WM_TRAYMESSAGE;
@@ -424,6 +424,8 @@ firetray.StatusIcon = {
 
 }; // firetray.StatusIcon
 
+firetray.Handler.loadImageCustom = firetray.StatusIcon.loadImageCustom
+  .bind(firetray.StatusIcon);
 
 firetray.Handler.setIconImageDefault = function() {
   let appIconType = firetray.Utils.prefService.getIntPref("app_icon_type");
@@ -450,7 +452,7 @@ firetray.Handler.setIconTooltip = function(toolTipStr) {
 };
 
 firetray.Handler.setIconTooltipDefault = function() {
-  firetray.StatusIcon.setIcon({tip:this.appName});
+  firetray.StatusIcon.setIcon({tip:this.app.name});
 };
 
 firetray.Handler.setIconText = function(text, color) {

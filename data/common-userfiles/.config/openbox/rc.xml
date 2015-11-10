@@ -39,7 +39,7 @@
                   'Active' - where the active window is -->
   </placement>
   <theme>
-    <name>Clearlooks-Olive</name>
+    <name>Artwiz-boxed</name>
     <titleLayout>NLDIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -55,7 +55,7 @@
     <animateIconify>yes</animateIconify>
     <font place="ActiveWindow">
       <name>DejaVu Sans</name>
-      <size>9</size>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -64,7 +64,7 @@
     </font>
     <font place="InactiveWindow">
       <name>DejaVu Sans</name>
-      <size>9</size>
+      <size>10</size>
       <!-- font size in points -->
       <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
@@ -329,9 +329,9 @@
   <mouse>
     <dragThreshold>1</dragThreshold>
     <!-- number of pixels the mouse must move before a drag begins -->
-    <doubleClickTime>500</doubleClickTime>
+    <doubleClickTime>250</doubleClickTime>
     <!-- in milliseconds (1000 = 1 second) -->
-    <screenEdgeWarpTime>400</screenEdgeWarpTime>
+    <screenEdgeWarpTime>500</screenEdgeWarpTime>
     <!-- Time before changing desktops when the pointer touches the edge of the
        screen while moving a window, in milliseconds (1000 = 1 second).
        Set this to 0 to disable warping -->
@@ -781,8 +781,7 @@
   # end of the example
 -->
     <!-- for JAMin to not get in the way -->
-    <application class="Jamin"
-		 type="normal">
+    <application class="Jamin" type="normal">
       <position force="no">
         <!-- <monitor>2</monitor> -->
       </position>
@@ -791,16 +790,19 @@
       <maximized>yes</maximized>
     </application>
     <!-- for Firefox to be borderless (and "maximize vertical space") -->
-    <application role="browser"
-		 name="Navigator">
+    <application role="browser" name="Navigator">
       <decor>no</decor>
       <maximized>yes</maximized>
     </application>
     <!-- for xt7-player-mpv's main window to be always maximized and borderless -->
-    <application class="Xt7-player-mpv.gambas"
-		 role="FMain">
+    <application class="Xt7-player-mpv.gambas" role="FMain">
       <decor>no</decor>
       <maximized>yes</maximized>
+    </application>
+    <!-- for gkrellm not to clutter the panel -->
+    <application class="Gkrellm">
+      <skip_pager>yes</skip_pager>
+      <skip_taskbar>yes</skip_taskbar>
     </application>
   </applications>
 </openbox_config>

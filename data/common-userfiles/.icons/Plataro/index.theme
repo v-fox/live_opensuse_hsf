@@ -1,8 +1,8 @@
 [Icon Theme]
 Name=Plataro
 Comment=A colorful flat icon set
-Inherits=OxyElegantBase,gnome-colors-common,hicolor
-Hidden=true
+Inherits=Sonar,Tango,OxyElegantBase,gnome-colors-common,hicolor
+
 Example=x-directory-normal
 
 Directories=actions/scalable,apps/scalable,categories/scalable,emblems/scalable,devices/scalable,places/scalable,mimetypes/scalable,status/scalable

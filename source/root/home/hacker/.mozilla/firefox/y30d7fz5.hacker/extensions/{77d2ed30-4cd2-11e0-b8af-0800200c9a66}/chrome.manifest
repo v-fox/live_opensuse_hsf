@@ -1,0 +1,16 @@
+skin    browser         ftdeepdark 		jar:chrome/ft_deepdark.jar!/browser/
+skin    communicator  	ftdeepdark 		jar:chrome/ft_deepdark.jar!/communicator/
+skin    global          ftdeepdark 		jar:chrome/ft_deepdark.jar!/global/
+skin    mozapps         ftdeepdark 		jar:chrome/ft_deepdark.jar!/mozapps/
+skin    webide          ftdeepdark      jar:chrome/ft_deepdark.jar!/webide/
+
+skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/common/
+skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/linux/ os=Linux
+skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/macosx/osx/ os=Darwin
+skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/macosx/lion/ os=Darwin osversion>=10.7
+skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/winXP/ os=WINNT osversion<6
+skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/win7/ os=WINNT osversion>=6
+skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/win10/ os=WINNT osversion>=10
+
+skin    app_version     ftdeepdark    	jar:chrome/ft_deepdark.jar!/app_version/41/ appversion<42.0a1
+skin    app_version     ftdeepdark    	jar:chrome/ft_deepdark.jar!/app_version/beta/ appversion>=42.0a1

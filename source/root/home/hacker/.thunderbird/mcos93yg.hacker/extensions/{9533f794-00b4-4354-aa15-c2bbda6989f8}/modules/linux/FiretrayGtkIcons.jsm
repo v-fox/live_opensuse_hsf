@@ -6,8 +6,8 @@ const Cc = Components.classes;
 const Ci = Components.interfaces;
 const Cu = Components.utils;
 
-Cu.import("resource://firetray/ctypes/linux/gtk.jsm");
-Cu.import("resource://firetray/commons.js");
+Cu.import("resource://firetray/commons.js"); // first for Handler.app !
+Cu.import("resource://firetray/ctypes/linux/"+firetray.Handler.app.widgetTk+"/gtk.jsm");
 firetray.Handler.subscribeLibsForClosing([gtk]);
 
 if ("undefined" == typeof(firetray.StatusIcon))
@@ -40,7 +40,6 @@ firetray.GtkIcons = {
   },
 
   appendSearchPath: function() {
-    this.GTK_THEME_ICON_PATH = firetray.Utils.chromeToPath("chrome://firetray/skin/icons/linux");
     let gtkIconTheme = gtk.gtk_icon_theme_get_default();
     gtk.gtk_icon_theme_append_search_path(gtkIconTheme, this.GTK_THEME_ICON_PATH);
 

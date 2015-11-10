@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "Yeni takvim oluştur" >
+<!ENTITY wizard.label             "Yeni bir takvim oluştur" >
+<!ENTITY wizard.description       "Takvim konumunu seçin" >
+
+<!ENTITY initialpage.description    "Takviminiz bilgisayarınızda yerel olarak depolanabilir veya bir sunucuya kaydedilebilir. Böylece ona uzaktan erişebilir ve onu arkadaşlarınızla paylaşabilirsiniz." >
+<!ENTITY initialpage.computer.label  "Bilgisayarımda">
+<!ENTITY initialpage.network.label  "Ağ üzerinde">
+
+<!ENTITY locationpage.description         "Uzaktaki takviminize ulaşmak için gerekli bilgileri sağlayın" >
+<!ENTITY locationpage.login.description   "Tercihe bağlı: Kullanıcı ve parola girin" >
+<!ENTITY locationpage.username.label      "Kullanıcı adı:" >
+<!ENTITY locationpage.password.label      "Parola:" >
+
+<!ENTITY custompage.shortdescription  "Takviminizi özelleştiririn" >
+<!ENTITY custompage.longdescription   "Takviminize bir takma ad verebilir ve bu takvimdeki etkinlikleri reklendirebilirsiniz." >
+
+<!ENTITY finishpage.shortdescription  "Takvim oluşturuldu" >
+<!ENTITY finishpage.longdescription   "Takviminiz oluşturuldu." >

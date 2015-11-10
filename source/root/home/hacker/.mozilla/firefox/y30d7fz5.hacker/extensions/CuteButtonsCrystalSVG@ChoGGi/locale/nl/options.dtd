@@ -1,0 +1,20 @@
+<!ENTITY Options "Opties">
+<!ENTITY Enable "Inschakelen">
+<!ENTITY Disable "Uitschakelen">
+<!ENTITY BlurDisabled "Uitgeschakelde menu items onleesbaar maken">
+<!ENTITY RotateIcons "Aangewezen pictogrammen draaien">
+<!ENTITY StatusBar "Statusbalk pictogrammen">
+<!ENTITY Icons "Pictogrammen">
+<!ENTITY Mosaic "Mosaic (pictogrammen wijzigen)">
+<!ENTITY MosaicTip "Herstarten is noodzakelijk">
+<!ENTITY Default "Standaard">
+<!ENTITY Brighter "Helderder">
+<!ENTITY BrighterReversed "Minder helder">
+<!ENTITY Gray "Grijs">
+<!ENTITY Normal "Normaal (geen vervaging)">
+<!ENTITY Menu "Menu">
+<!ENTITY Button "Knop">
+<!ENTITY CuteButtonsSVG "CuteButtons - Crystal SVG">
+<!ENTITY CuteButtons "CuteButtons">
+<!ENTITY ButtonIcons "Knop Pictogrammen">
+<!ENTITY MenuIcons "Menu Pictogrammen">

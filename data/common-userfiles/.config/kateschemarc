@@ -73,6 +73,14 @@ Color Template Focused Editable Placeholder=101,123,131
 Color Template Not Editable Placeholder=7,54,66
 Color Word Wrap Marker=147,161,161
 
-[openSUSE 13.1]
+[Vim (dark)]
+Color Background=32,36,40
+Color Code Folding=0,52,46
+Color Icon Bar=22,25,28
+Color Line Number=0,139,181
+Color Replace Highlight=21,65,21
+Color Search Highlight=79,79,1
+Color Selection=150,150,150
+Color Spelling Mistake Line=117,0,0
 Font=Hack,10,-1,5,50,0,0,0,0,0
 dummy=prevent-empty-group

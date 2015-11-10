@@ -1,0 +1,20 @@
+<!ENTITY Options "Opções">
+<!ENTITY Enable "Ativar">
+<!ENTITY Disable "Desativar">
+<!ENTITY BlurDisabled "Desfocar os Ã­cones desabilitados">
+<!ENTITY RotateIcons "Girar Ãcones">
+<!ENTITY StatusBar "Ãcones da Barra de Status">
+<!ENTITY Icons "Ãcones">
+<!ENTITY Mosaic "Estilo dos Ícones (Requer Reinicio)">
+<!ENTITY MosaicTip "Ã© necessÃ¡rio reiniciar">
+<!ENTITY Default "PadrÃ£o">
+<!ENTITY Brighter "Mais brilhante">
+<!ENTITY BrighterReversed "Brilho Invertido">
+<!ENTITY Gray "Cinza">
+<!ENTITY Normal "Normal (sem suavizar)">
+<!ENTITY Menu "Menu">
+<!ENTITY Button "Botão">
+<!ENTITY CuteButtonsSVG "CuteButtons - Crystal SVG">
+<!ENTITY CuteButtons "CuteButtons">
+<!ENTITY ButtonIcons "Ícones dos Botões">
+<!ENTITY MenuIcons "Ícones dos Menu">

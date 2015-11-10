@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title "Vytváření nového kalendáře" >
+<!ENTITY wizard.label "Vytvořit nový kalendář" >
+<!ENTITY wizard.description "Zvolte umístění pro nový kalendář" >
+
+<!ENTITY initialpage.description "Kalendář může být vytvořen na tomto počítači nebo na serveru v síti, odkud k němu můžete přistupovat nebo ho sdílet se svými přáteli či spolupracovníky." >
+<!ENTITY initialpage.computer.label "Na tomto počítači">
+<!ENTITY initialpage.network.label "V síti">
+
+<!ENTITY locationpage.description "Sdělte informace o tom, co je potřebné pro přístup k vzdálenému kalendáři" >
+<!ENTITY locationpage.login.description "Nepovinné: zadejte jméno a heslo" >
+<!ENTITY locationpage.username.label "Jméno:" >
+<!ENTITY locationpage.password.label "Heslo:" >
+
+<!ENTITY custompage.shortdescription "Upravit možnosti kalendáře" >
+<!ENTITY custompage.longdescription "Kalendáři můžete dát přezdívku a události z tohoto kalendáře barevně odlišit od ostatních." >
+
+<!ENTITY finishpage.shortdescription "Kalendář byl vytvořen" >
+<!ENTITY finishpage.longdescription "Váš kalendář byl vytvořen." >

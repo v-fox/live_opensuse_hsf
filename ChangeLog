@@ -14,7 +14,7 @@
 		Terminus font is used by default in KMS&GUI terminals;
 		DejaVu-based Hack font is used in text editors;
 		DejaVu font family is still generally used in GUI
-	* UI's look is overhauled with new icons & cursors and tweaked color scheme
+	* UI's look is overhauled for darkness without bleakness
 	* Mesa's OpenMAX IL implementation now loads by default for GStreamer;
 		also Gallium vaapi implementation is now default and vdpau is inactive
 	* support for OpenCL (AMD & Intel)

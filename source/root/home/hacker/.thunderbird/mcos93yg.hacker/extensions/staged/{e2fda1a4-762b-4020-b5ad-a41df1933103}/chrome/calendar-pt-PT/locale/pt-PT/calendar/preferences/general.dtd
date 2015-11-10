@@ -1,0 +1,42 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!-- WARNING! This file contains UTF-8 encoded characters!
+   - If this ==> … <== doesn't look like an ellipsis (three dots in a row),
+   - your editor isn't using UTF-8 encoding and may munge up the document!
+  -->
+
+<!ENTITY pref.mainbox.label "Definições gerais" >
+<!ENTITY pref.dateformat.label "Formato de texto da data:" >
+<!ENTITY pref.dateformat.accesskey "d">
+<!ENTITY pref.dateformat.long "Longo" >
+<!ENTITY pref.dateformat.short "Curto"  >
+
+<!ENTITY pref.timezones.caption "Fuso horário">
+<!ENTITY pref.timezones.label "Selecione a cidade mais próxima do seu fuso horário:">
+<!ENTITY pref.timezones.accesskey "S">
+
+<!ENTITY pref.defaults.label "Valores pré-definidos para novos itens">
+<!ENTITY pref.events.label "Eventos">
+<!ENTITY pref.tasks.label "Tarefas">
+
+<!ENTITY pref.default_event_length.label "Tamanho pré-definido:" >
+<!ENTITY pref.default_event_length.accesskey "e">
+
+<!ENTITY pref.default_task_none.label "Nenhum">
+<!ENTITY pref.default_task_start_of_day.label "Início do dia">
+<!ENTITY pref.default_task_end_of_day.label "Fim do dia">
+<!ENTITY pref.default_task_tomorrow.label "Amanhã">
+<!ENTITY pref.default_task_next_week.label "Próxima semana">
+<!ENTITY pref.default_task_offset_current.label "Relativo à hora atual">
+<!ENTITY pref.default_task_offset_start.label "Relativo ao início">
+<!ENTITY pref.default_task_offset_next_hour.label "Relativo à próxima hora">
+
+<!ENTITY pref.calendar.todaypane.agenda.caption "Painel Hoje">
+<!ENTITY pref.soondays.label "A secção seguinte mostra:">
+<!ENTITY pref.soondays.accesskey "g">
+
+<!ENTITY pref.accessibility.label "Acessibilidade" >
+<!ENTITY pref.systemcolors.label "Optimizar cores para acessibilidade" >
+<!ENTITY pref.systemcolors.accesskey "c">

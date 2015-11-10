@@ -1,0 +1,46 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY lightning.toolbar.calendar.name "Barra de ferramentas do calendario">
+<!ENTITY lightning.toolbar.calendar.name.accesskey "c">
+<!ENTITY lightning.toolbar.task.name "Barra de ferramentas das tarefas">
+<!ENTITY lightning.toolbar.task.name.accesskey "t">
+
+<!ENTITY lightning.toolbar.sync.label "Sincronizar">
+<!ENTITY lightning.toolbar.delete.label "Eliminar">
+<!ENTITY lightning.toolbar.edit.label "Editar">
+<!ENTITY lightning.toolbar.gototoday.label "Ir ao día actual">
+<!ENTITY lightning.toolbar.print.label "Imprimir">
+
+<!-- Mode Toolbar -->
+<!ENTITY lightning.toolbar.calendar.label     "Calendario">
+<!ENTITY lightning.toolbar.calendar.tooltip   "Cambiar á lapela calendario">
+<!ENTITY lightning.toolbar.calendar.accesskey "C">
+<!ENTITY lightning.toolbar.task.label         "Tarefas">
+<!ENTITY lightning.toolbar.task.tooltip       "Cambiar á lapela tarefas">
+<!ENTITY lightning.toolbar.task.accesskey     "T">
+
+<!-- Toolbar write button -->
+<!ENTITY lightning.toolbar.newevent.label     "Evento">
+<!ENTITY lightning.toolbar.newtask.label      "Tarefa">
+
+<!-- Calendar and Task Mode Toolbar -->
+<!ENTITY lightning.toolbar.day.label                 "Día">
+<!ENTITY lightning.toolbar.day.accesskey             "D">
+<!ENTITY lightning.toolbar.week.label                "Semana">
+<!ENTITY lightning.toolbar.week.accesskey            "S">
+<!ENTITY lightning.toolbar.multiweek.label           "Varias semanas">
+<!ENTITY lightning.toolbar.multiweek.accesskey       "V">
+<!ENTITY lightning.toolbar.month.label               "Mes">
+<!ENTITY lightning.toolbar.month.accesskey           "M">
+<!-- LOCALIZATION NOTE: the same as appmenuButton.label and appmenuButton.tooltip
+     from messenger.dtd -->
+<!ENTITY lightning.toolbar.appmenuButton.label       "Menú do aplicativo">
+<!ENTITY lightning.toolbar.appmenuButton.tooltip     "Amosa o menú do aplicativo">
+
+<!ENTITY lightning.toolbar.appmenuButton1.tooltip    "Display the &brandShortName; Menu">
+<!ENTITY lightning.toolbar.calendarmenu.accesskey    "P">
+<!ENTITY lightning.toolbar.calendarmenu.label        "Calendar Pane">
+<!ENTITY lightning.toolbar.calendarpane.accesskey    "P">
+<!ENTITY lightning.toolbar.calendarpane.label        "Show Calendar Pane">

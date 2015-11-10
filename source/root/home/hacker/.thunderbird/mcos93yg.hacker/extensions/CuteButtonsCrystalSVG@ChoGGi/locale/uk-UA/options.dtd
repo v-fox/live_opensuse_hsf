@@ -1,0 +1,20 @@
+<!ENTITY Options "Параметри">
+<!ENTITY Enable "Увімкнути">
+<!ENTITY Disable "Вимкнути">
+<!ENTITY BlurDisabled "Розмивати неактивні значки">
+<!ENTITY RotateIcons "Повертати значки при наведені">
+<!ENTITY StatusBar "Значки на рядку стану">
+<!ENTITY Icons "Значки">
+<!ENTITY Mosaic "Мозаїка (зміна значків)">
+<!ENTITY MosaicTip "потрібен перезапуск mozilla">
+<!ENTITY Default "Типова">
+<!ENTITY Brighter "Світліша">
+<!ENTITY BrighterReversed "Зворотно світліша">
+<!ENTITY Gray "Сіра">
+<!ENTITY Normal "Нормально (без розмиття)">
+<!ENTITY Menu "Меню">
+<!ENTITY Button "На кнопках">
+<!ENTITY CuteButtonsSVG "CuteButtons - Crystal SVG">
+<!ENTITY CuteButtons "CuteButtons">
+<!ENTITY ButtonIcons "На кнопках Значки">
+<!ENTITY MenuIcons "Меню Значки">

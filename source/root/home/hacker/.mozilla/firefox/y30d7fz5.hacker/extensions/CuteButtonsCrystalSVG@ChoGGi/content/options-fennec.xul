@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE dialog [
+  <!ENTITY % optionsDTD SYSTEM "chrome://cutebuttons/locale/options.dtd">
+  %optionsDTD;
+]>
+
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <setting pref="extensions.cutebuttons.icons" title="&Icons;" type="bool"/>
+  <setting pref="extensions.cutebuttons.rotateicons" title="&RotateIcons;" type="bool"/>
+  <setting title="&Mosaic;" type="control">
+  <menulist oncommand="cutebuttons.options.mosaic(this.value);">
+    <menupopup>
+      <menuitem value="0" label="&Default;"/>
+      <menuitem value="4" label="&Normal;"/>
+      <menuitem value="1" label="&Brighter;"/>
+      <menuitem value="2" label="&BrighterReversed;"/>
+      <menuitem value="3" label="&Gray;"/>
+    </menupopup>
+  </menulist>
+</setting>
+</vbox>

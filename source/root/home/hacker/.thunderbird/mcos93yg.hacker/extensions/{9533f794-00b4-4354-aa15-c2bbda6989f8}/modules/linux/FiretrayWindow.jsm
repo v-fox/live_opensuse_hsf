@@ -16,14 +16,14 @@ const Cu = Components.utils;
 Cu.import("resource://gre/modules/Services.jsm");
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://gre/modules/ctypes.jsm");
+Cu.import("resource://firetray/commons.js"); // first for Handler.app !
 Cu.import("resource://firetray/ctypes/ctypesMap.jsm");
 Cu.import("resource://firetray/ctypes/linux/gobject.jsm");
-Cu.import("resource://firetray/ctypes/linux/gdk.jsm");
-Cu.import("resource://firetray/ctypes/linux/gtk.jsm");
+Cu.import("resource://firetray/ctypes/linux/"+firetray.Handler.app.widgetTk+"/gdk.jsm");
+Cu.import("resource://firetray/ctypes/linux/"+firetray.Handler.app.widgetTk+"/gtk.jsm");
 Cu.import("resource://firetray/ctypes/linux/libc.jsm");
 Cu.import("resource://firetray/ctypes/linux/x11.jsm");
 Cu.import("resource://firetray/FiretrayWindow.jsm");
-Cu.import("resource://firetray/commons.js");
 firetray.Handler.subscribeLibsForClosing([gobject, gdk, gtk, libc, x11, glib]);
 
 let log = firetray.Logging.getLogger("firetray.Window");
@@ -153,14 +153,33 @@ firetray.Window.getGdkWindowFromGtkWindow = function(gtkWin) {
   return null;
 };
 
-firetray.Window.getXIDFromGdkWindow = function(gdkWin) {
-  return gdk.gdk_x11_drawable_get_xid(ctypes.cast(gdkWin, gdk.GdkDrawable.ptr));
-};
+if (firetray.Handler.app.widgetTk == "gtk2") {
 
-firetray.Window.getXIDFromGtkWidget = function(gtkWid) {
-  let gdkWin = gtk.gtk_widget_get_window(gtkWid);
-  return gdk.gdk_x11_drawable_get_xid(ctypes.cast(gdkWin, gdk.GdkDrawable.ptr));
-};
+  firetray.Window.getXIDFromGdkWindow = function(gdkWin) {
+    return gdk.gdk_x11_drawable_get_xid(ctypes.cast(gdkWin, gdk.GdkDrawable.ptr));
+  };
+
+  firetray.Window.getXIDFromGtkWidget = function(gtkWid) {
+    let gdkWin = gtk.gtk_widget_get_window(gtkWid);
+    return gdk.gdk_x11_drawable_get_xid(ctypes.cast(gdkWin, gdk.GdkDrawable.ptr));
+  };
+
+}
+else if (firetray.Handler.app.widgetTk == "gtk3") {
+
+  firetray.Window.getXIDFromGdkWindow = function(gdkWin) {
+    return gdk.gdk_x11_window_get_xid(gdkWin);
+  };
+
+  firetray.Window.getXIDFromGtkWidget = function(gtkWid) {
+    let gdkWin = gtk.gtk_widget_get_window(gtkWid);
+    return gdk.gdk_x11_window_get_xid(gdkWin);
+  };
+
+}
+else {
+  log.error("Unhandled widgetTk: "+firetray.Handler.app.widgetTk);
+}
 
 firetray.Window.addrPointedByInHex = function(ptr) {
   return "0x"+ctypes.cast(ptr, ctypes.uintptr_t.ptr).contents.toString(16);
@@ -467,14 +486,13 @@ firetray.Window.getXWindowDesktop = function(xwin) {
   return desktop;
 };
 
-firetray.Window.checkSubscribedEventMasks = function(xid) {
-  let xWindowAttributes = new x11.XWindowAttributes;
-  let status = x11.XGetWindowAttributes(x11.current.Display, xid, xWindowAttributes.address());
-  let xEventMask = xWindowAttributes.your_event_mask;
-  let xEventMaskNeeded = x11.VisibilityChangeMask|x11.StructureNotifyMask|
-        x11.FocusChangeMask|x11.PropertyChangeMask;
-  if ((xEventMask & xEventMaskNeeded) !== xEventMaskNeeded) {
-    log.error("missing mandatory event-masks"); // change with gdk_window_set_events()
+firetray.Window.correctSubscribedEventMasks = function(gdkWin) {
+  let eventMask = gdk.gdk_window_get_events(gdkWin);
+  let eventMaskNeeded = gdk.GDK_STRUCTURE_MASK | gdk.GDK_PROPERTY_CHANGE_MASK |
+        gdk.GDK_VISIBILITY_NOTIFY_MASK;
+  if ((eventMask & eventMaskNeeded) !== eventMaskNeeded) {
+    log.info("subscribing window to missing mandatory event-masks");
+    gdk.gdk_window_set_events(gdkWin, eventMask|eventMaskNeeded);
   }
 };
 
@@ -599,7 +617,7 @@ firetray.Handler.registerWindow = function(win) {
   Object.defineProperties(this.windows[xid], {
     "visible": { get: function(){return firetray.Window.getVisibility(xid);} }
   });
-  firetray.Window.checkSubscribedEventMasks(xid);
+  firetray.Window.correctSubscribedEventMasks(gdkWin);
   try {
     this.gtkWindows.insert(xid, gtkWin);
     this.gdkWindows.insert(xid, gdkWin);
@@ -608,7 +626,7 @@ firetray.Handler.registerWindow = function(win) {
     if (x.name === "RangeError") // instanceof not working :-(
       win.alert(x+"\n\nYou seem to have more than "+FIRETRAY_WINDOW_COUNT_MAX
                 +" windows open. This breaks FireTray and most probably "
-                +firetray.Handler.appName+".");
+                +firetray.Handler.app.name+".");
   }
   // NOTE: shouldn't be necessary to gtk_widget_add_events(gtkWin, gdk.GDK_ALL_EVENTS_MASK);
 

@@ -1,0 +1,22 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+
+<!ENTITY wizard.title             "Luo uusi kalenteri" >
+<!ENTITY wizard.label             "Luo uusi kalenteri" >
+<!ENTITY wizard.description       "Määritä kalenterin sijainti" >
+
+<!ENTITY initialpage.description    "Kalenterin voi tallentaa joko tälle tietokoneelle tai palvelimelle, jolloin sitä voi lukea verkon yli. Voit myös jakaa jonkin kalenterin ystäviesi tai työtovereidesi kanssa." >
+<!ENTITY initialpage.computer.label  "Tällä tietokoneella">
+<!ENTITY initialpage.network.label  "Verkossa">
+
+<!ENTITY locationpage.description         "Määritä tiedot, jotka tarvitaan kalenterin avaamiseen" >
+<!ENTITY locationpage.login.description   "Valinnainen: kirjoita käyttäjätunnus ja salasana" >
+<!ENTITY locationpage.username.label      "Käyttäjätunnus:" >
+<!ENTITY locationpage.password.label      "Salasana:" >
+
+<!ENTITY custompage.shortdescription  "Kustomoi kalenteri" >
+<!ENTITY custompage.longdescription   "Voit antaa tälle kalenterille lempinimen sekä määrittää tämän kalenterin tapahtumat tietyn värisiksi." >
+
+<!ENTITY finishpage.shortdescription  "Kalenteri on luotu" >
+<!ENTITY finishpage.longdescription   "Kalenteri on luotu." >

@@ -28,23 +28,6 @@ var firetrayUIOptions = {
     if (!this.prefwindow)
       log.error("pref window not found");
 
-    if (firetray.Handler.inMailApp) {
-      Cu.import("resource:///modules/mailServices.js");
-      Cu.import("resource://firetray/FiretrayMessaging.jsm");
-      this.initMailControls();
-    } else {
-      this.hidePrefPane("pref-pane-mail");
-    }
-
-    if (firetray.Handler.isChatProvided() &&
-        firetray.Handler.support['chat'] &&
-        !firetray.AppIndicator) {
-      Cu.import("resource://firetray/"+firetray.Handler.runtimeOS+"/FiretrayChat.jsm");
-      this.initChatControls();
-    } else {
-      this.hidePrefPane("pref-pane-chat");
-    };
-
     this.updateWindowAndIconOptions();
     this.updateScrollOptions();
     this.initAppIconType();
@@ -64,6 +47,23 @@ var firetrayUIOptions = {
       if (firetray.Handler.inMailApp)
         this.initNewMailIconNames();
     }
+
+    if (firetray.Handler.inMailApp) {
+      Cu.import("resource:///modules/mailServices.js");
+      Cu.import("resource://firetray/FiretrayMessaging.jsm");
+      this.initMailControls();
+    } else {
+      this.removePrefPane("pref-pane-mail");
+    }
+
+    if (firetray.Handler.isChatProvided() &&
+        firetray.Handler.support['chat'] &&
+        !firetray.AppIndicator) {
+      Cu.import("resource://firetray/"+firetray.Handler.app.OS+"/FiretrayChat.jsm");
+      this.initChatControls();
+    } else {
+      this.removePrefPane("pref-pane-chat");
+    };
 
     window.sizeToContent();
   },
@@ -106,14 +106,21 @@ var firetrayUIOptions = {
       };
     });
 
-
   },
 
-  hidePrefPane: function(name){
-    let radio = document.getAnonymousElementByAttribute(this.prefwindow, "pane", name);
-    if (radio.selected)
-      this.prefwindow.showPane(document.getElementById(PREF_DEFAULT_PANE));
-    radio.hidden = true;
+  // addPane would probably be smarter but is hardly achievable (loadOverlay?).
+  removePrefPane: function(name){
+    // FIXME: uncatchable exception "this.preferences.rootBranchInternal is
+    // undefined". See toolkit/content/widgets/preferences.xml during
+    // <preference> destruction. Deleting each preference beforehand doesn't
+    // help.
+
+    let pane = document.getElementById(name);
+    pane.parentNode.removeChild(pane);
+
+    let radio = document
+      .getAnonymousElementByAttribute(this.prefwindow, "pane", name);
+    radio.parentNode.removeChild(radio);
   },
 
   hideChildren: function(group, hiddenval) {
@@ -382,7 +389,7 @@ var firetrayUIOptions = {
 
   chooseAppIconFile: function() {
     let updateIcon = firetray.Handler.setIconImageDefault.bind(firetray.Handler);
-    this._chooseIconFile("app_icon_custom_filename");
+    this._chooseIconFile("app_icon_custom_filename", updateIcon);
   },
 
   chooseMailIconFile: function() {
@@ -407,7 +414,7 @@ var firetrayUIOptions = {
     }};
 
     filePicker.init(window, "Select Icon", nsIFilePicker.modeOpen); // FIXME: i18n
-    if (firetray.Handler.runtimeOS === "winnt")
+    if (firetray.Handler.app.OS === "winnt")
       filePicker.appendFilter("Icon", "*.bmp; *.ico"); // TODO: support more formats ?
     else
       filePicker.appendFilters(nsIFilePicker.filterImages);

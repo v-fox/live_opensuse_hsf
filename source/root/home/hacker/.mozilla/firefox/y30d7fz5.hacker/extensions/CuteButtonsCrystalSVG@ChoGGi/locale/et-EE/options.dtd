@@ -1,0 +1,20 @@
+<!ENTITY Options "Valikud">
+<!ENTITY Enable "Luba">
+<!ENTITY Disable "Keela">
+<!ENTITY BlurDisabled "Udused keelatud ikoonid">
+<!ENTITY RotateIcons "Keera Ikoone">
+<!ENTITY StatusBar "Olekuriba Ikoonid">
+<!ENTITY Icons "Ikoonid">
+<!ENTITY Mosaic "Mosaiik (muuda ikoone)">
+<!ENTITY MosaicTip "mozilla taaskäivitamist on vaja">
+<!ENTITY Default "Tavaline">
+<!ENTITY Brighter "Heledam">
+<!ENTITY BrighterReversed "Eredamad Tagurpidi">
+<!ENTITY Gray "Hall">
+<!ENTITY Normal "Normaalne (ei tuhmu)">
+<!ENTITY Menu "Menüü">
+<!ENTITY Button "Nupp">
+<!ENTITY CuteButtonsSVG "CuteButtons - Crystal SVG">
+<!ENTITY CuteButtons "CuteButtons">
+<!ENTITY ButtonIcons "Nupp Ikoonid">
+<!ENTITY MenuIcons "Menüü Ikoonid">

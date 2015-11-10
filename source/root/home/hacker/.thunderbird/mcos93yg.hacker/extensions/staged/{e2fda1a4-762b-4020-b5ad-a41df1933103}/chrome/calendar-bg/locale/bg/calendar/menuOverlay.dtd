@@ -1,0 +1,49 @@
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<!-- Event Menu -->
+
+<!ENTITY event.new.event                        "Ново събитие…">
+<!ENTITY event.new.event.accesskey              "с">
+
+<!ENTITY event.new.task                         "Нова задача…">
+<!ENTITY event.new.task.accesskey               "з">
+
+<!ENTITY calendar.import.label                  "Импортиране…">
+<!ENTITY calendar.import.accesskey              "И">
+
+<!ENTITY calendar.export.label                  "Експортиране…">
+<!ENTITY calendar.export.accesskey              "Е">
+
+<!ENTITY calendar.publish.label                 "Публикуване…">
+<!ENTITY calendar.publish.accesskey             "б">
+
+<!ENTITY calendar.deletecalendar.label          "Изтриване на избрания календар…">
+<!ENTITY calendar.deletecalendar.accesskey      "И">
+
+<!ENTITY calendar.menu.customize.label          "Персонализиране…">
+<!ENTITY calendar.menu.customize.accesskey      "П">
+
+<!ENTITY showUnifinderCmd.label                 "Намиране на събития">
+<!ENTITY showUnifinderCmd.accesskey             "м">
+
+<!ENTITY calendar.displaytodos.checkbox.label       "Показване на задачите в календара">
+<!ENTITY calendar.displaytodos.checkbox.accesskey   "з">
+
+<!ENTITY goTodayCmd.label                       "Днес">
+<!ENTITY goTodayCmd.accesskey                   "Д">
+
+<!ENTITY showCurrentView.label                  "Текущ излгед">
+<!ENTITY showCurrentView.accesskey              "и">
+
+<!ENTITY calendar.properties.label              "Свойства на календара…">
+<!ENTITY calendar.properties.accesskey          "С">
+
+<!ENTITY calendar.removecalendar.accesskey      "R">
+
+<!-- LOCALIZATION NOTE (calendar.removecalendar.label): Removing the calendar
+      is the general action of removing it, while deleting means to clear the
+      data and unsubscribing means just taking it out of the calendar list. -->
+<!ENTITY calendar.removecalendar.label          "Remove Selected Calendar…">
+<!ENTITY calendar.unsubscribecalendar.accesskey "U">
+<!ENTITY calendar.unsubscribecalendar.label     "Unsubscribe Selected Calendar…">

@@ -7,7 +7,7 @@ Comment=based on oxygen by Oxygen Team & oxygencolors by blupenguin
 DisplayDepth=32
 
 Inherits=gnome-colors-common,hicolor
-Hidden=true
+
 Example=folder
 
 LinkOverlay=link

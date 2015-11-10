@@ -12,7 +12,7 @@ Indent On Text Paste=false
 Indentation Mode=normal
 Indentation Width=8
 Keep Extra Spaces=true
-Line Length Limit=4096
+Line Length Limit=0
 Newline At EOF=false
 On-The-Fly Spellcheck=false
 Overwrite Mode=false
@@ -36,7 +36,7 @@ Fallback Encoding=ISO-8859-15
 
 [Renderer]
 Animate Bracket Matching=true
-Schema=Normal
+Schema=Vim (dark)
 Show Indentation Lines=true
 Show Whole Bracket Expression=true
 Word Wrap Marker=true
@@ -64,7 +64,7 @@ Scroll Bar Mini Map=true
 Scroll Bar Mini Map All=false
 Scroll Bar Mini Map Width=100
 Scroll Past End=false
-Search/Replace Flags=1036
+Search/Replace Flags=140
 Show Scrollbars=0
 Show Word Count=false
 Smart Copy Cut=false

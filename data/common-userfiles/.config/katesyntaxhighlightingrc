@@ -30,6 +30,41 @@ Others=ffcb4b16,fffdf6e3,,,,,,ffcb4b16,,,---
 Region Marker=ff6c71c4,fffdf6e3,,,,,,ff6c71c4,,,---
 String=ff2aa198,fffdf6e3,,,,,,ff2aa198,,,---
 
+[Default Item Styles - Schema Vim (dark)]
+Normal=ffd3d3d3,ffb7f0b3,1,0,,,-,-,,---
+
+[Default Item Styles - Schema Vim (dark) - HSF]
+Alert=ffbf0303,ff9c0e0e,1,,,,ffeed0d0,-,,---
+Annotation=ff644a9b,ff452886,,,,,-,-,,---
+Attribute=ff3c9356,ff3c9356,,,,,-,-,,---
+Base-N Integer=ffb08000,ffffdd00,,,,,-,-,,---
+Built-in=ff644a9b,ff452886,,,,,-,-,,---
+Character=ffff80e0,ffff80e0,,,,,-,-,,---
+Comment=ffaac8ef,ffa5c1e4,,,,,-,-,,---
+Comment Variable=ff644a9b,ff452886,,,,,-,-,,---
+Constant=ff221f1e,ffffffff,1,,,,-,-,,---
+Control Flow=ff221f1e,ffffffff,1,,,,-,-,,---
+Data Type=ff3c9356,ff3c9356,,,,,-,-,,---
+Decimal/Value=ffb08000,ffffdd00,,,,,-,-,,---
+Documentation=ffbf0303,ff9c0e0e,,,,,-,-,,---
+Extension=ff0095ff,ffffffff,1,,,,-,-,,---
+Floating Point=ffb08000,ffffdd00,,,,,-,-,,---
+Function=ffb08000,ffffdd00,,,,,-,-,,---
+Import=ff644a9b,ff452886,,,,,-,-,,---
+Information=ffb08000,ffffdd00,,,,,-,-,,---
+Keyword=ff221f1e,ffffffff,1,,,,-,-,,---
+Normal=ff221f1e,ffffffff,,,,,-,-,,---
+Operator=ff221f1e,ffffffff,,,,,-,-,,---
+Others=ff006e28,ff80ff80,,,,,-,-,,---
+Preprocessor=ff006e28,ff80ff80,,,,,-,-,,---
+Region Marker=ff3c9356,ff3c9356,,,,,ffa5ecba,-,,---
+Special Character=ffff80e0,ffff80e0,,,,,-,-,,---
+Special String=ffbf0303,ff9c0e0e,,,,,-,-,,---
+String=ffbf0303,ff9c0e0e,,,,,-,-,,---
+Variable=ff3c9356,ff3c9356,,,,,-,-,,---
+Verbatim String=ffbf0303,ff9c0e0e,,,,,-,-,,---
+Warning=ffbf0303,ff9c0e0e,,,,,-,-,,---
+
 [Default Item Styles - Schema openSUSE 13.1]
 Alert=ffbf0303,ff9c0e0e,1,,,,fff7e6e6,-,,---
 Annotation=ff9b525e,ff452886,,,,,-,-,,---
@@ -62,7 +97,38 @@ Variable=ff006e28,ff00316e,,,,,-,-,,---
 Verbatim String=ffbf0303,ff9c0e0e,,,,,-,-,,---
 Warning=ffbf0303,ff9c0e0e,,,,,-,-,,---
 
+[Highlighting CSS - Schema Vim (dark)]
+Alerts:Alert Level 1=28,fff5c1be,fff5c1be,,,,,ff451e1a,,,---
+Alerts:Alert Level 2=28,fffbce80,fffbce80,,,,,ff451e1a,,,---
+Alerts:Alert Level 3=28,ffa8f055,ffa8f055,,,,,,,,---
+Alerts:Normal Text=0,,,,,,,,,,---
+Alerts:Region Marker=25,,,,,,,,,,---
+CSS:At Rule=17,,,,,,,,,,---
+CSS:Comment=21,,,,,,,,,,---
+CSS:Error=30,,,,,,,,,,---
+CSS:Important=1,,,,,,,,,,---
+CSS:Media=17,,,1,,,,,,,---
+CSS:Normal Text=0,,,,,,,,,,---
+CSS:Property=1,,,,,,,,,,---
+CSS:Region Marker=25,,,,,,,,,,---
+CSS:Selector Attr=10,,,,,,,,,,---
+CSS:Selector Class=19,,,,,,,,,,---
+CSS:Selector Id=19,,,1,,,,,,,---
+CSS:Selector Pseudo=17,,,,,,,,,,---
+CSS:String=12,,,,,,,,,,---
+CSS:Unknown Property=1,,,,1,,,,,,---
+CSS:Value=16,,,,,,,,,,---
+
 [Highlighting None - Schema Normal]
+Normal Text=0,,,,,,,,,,---
+
+[Highlighting None - Schema Vim (dark)]
+Normal Text=0,,,,,,,,,,---
+
+[Highlighting None - Schema Vim (dark) - HSF]
+Normal Text=0,,,,,,,,,,---
+
+[Highlighting None - Schema openSUSE 13.1]
 Normal Text=0,,,,,,,,,,---
 
 [Highlighting RPM Spec - Schema Normal]
