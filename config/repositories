@@ -98,5 +98,5 @@
 		<source path='opensuse://home:X0F:HSF/openSUSE_Tumbleweed'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='1' alias='Hackeurs_Sans_Frontieres-Kernel'>
-		<source path='opensuse://home:X0F:HSF:Kernel/openSUSE_Tumbleweed'/>
+		<source path='opensuse://home:X0F:HSF:Kernel/standard'/>
 	</repository>
