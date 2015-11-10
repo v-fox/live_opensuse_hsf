@@ -37,8 +37,11 @@
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='security'>
 		<source path='opensuse://security/openSUSE_Tumbleweed'/>
 	</repository>
-	<repository type='rpm-md' imageinclude='true' priority='82' alias='security_forensics'>
-		<source path='opensuse://security:forensics/openSUSE_Tumbleweed'/>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='security'>
+		<source path='opensuse://security/openSUSE_Tumbleweed'/>
+	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='82' alias='security_OpenVAS_STABLE_v8'>
+		<source path='opensuse://security:OpenVAS:STABLE:v8/openSUSE_Tumbleweed'/>
 	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='82' alias='server_database'>
 		<source path='opensuse://server:database/openSUSE_Tumbleweed'/>
