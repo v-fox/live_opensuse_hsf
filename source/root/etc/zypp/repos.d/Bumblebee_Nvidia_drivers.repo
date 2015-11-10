@@ -5,4 +5,4 @@ autorefresh=0
 baseurl=http://download.opensuse.org/repositories/home:Bumblebee-Project:nVidia:latest/openSUSE_Tumbleweed
 type=rpm-md
 keeppackages=0
-priority=45
+priority=44

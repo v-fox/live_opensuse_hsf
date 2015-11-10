@@ -4,5 +4,5 @@ enabled=0
 autorefresh=0
 baseurl=http://download.opensuse.org/repositories/games/openSUSE_Tumbleweed
 type=rpm-md
-priority=82
+priority=88
 keeppackages=0

@@ -4,4 +4,4 @@ enabled=0
 autorefresh=0
 baseurl=http://geeko.ioda.net/mirror/amd-fglrx/openSUSE_Tumbleweed
 type=rpm-md
-priority=45
+priority=44

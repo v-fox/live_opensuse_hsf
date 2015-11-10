@@ -4,5 +4,5 @@ enabled=0
 autorefresh=0
 baseurl=http://download.opensuse.org/repositories/Emulators:Wine/openSUSE_Tumbleweed
 type=rpm-md
-priority=65
+priority=66
 keeppackages=0

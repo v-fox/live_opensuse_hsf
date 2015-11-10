@@ -4,5 +4,5 @@ enabled=0
 autorefresh=0
 baseurl=http://download.opensuse.org/repositories/Kernel:stable/standard
 type=rpm-md
-priority=20
+priority=22
 keeppackages=0
