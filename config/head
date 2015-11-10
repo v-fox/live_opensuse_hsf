@@ -4,7 +4,7 @@
 		<specification>Big, useful desktop appliance with slim DEs</specification>
 	</description>
 	<preferences>
-		<type image='iso' primary='true' checkprebuilt='false' boot='suse-tumbleweed' firmware='bios' bootprofile='custom' bootkernel='HSF' fsnocheck='true' flags='overlay' hybrid='true' hybridpersistent_filesystem='exfat' kernelcmdline='splash=verbose apparmor=0 kiwi_hybridpersistent=true'>
+		<type image='iso' primary='true' checkprebuilt='false' boot='isoboot/suse-tumbleweed' firmware='bios' bootprofile='custom' bootkernel='HSF' fsnocheck='true' flags='overlay' hybrid='true' hybridpersistent_filesystem='exfat' kernelcmdline='splash=verbose apparmor=0 kiwi_hybridpersistent=true'>
 			<split>
 				<temporary>
 					<file name='/*'/>
