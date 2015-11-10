@@ -49,7 +49,6 @@ blueman
 bluez
 bluez-cups
 bonnie++
-bootcycle
 branding-openSUSE
 bridge-utils
 btrfsmaintenance
@@ -235,7 +234,6 @@ gptfdisk-fixparts
 greenbone-security-assistant
 grub
 grub2
-gsd
 gsettings-backend-dconf
 gsettings-desktop-schemas
 gst123
@@ -544,10 +542,6 @@ libreoffice-icon-theme-oxygen
 libreoffice-kde4
 libreoffice-l10n-en
 libreoffice-officebean
-libreoffice-templates-en
-libreoffice-templates-labels-a4
-libreoffice-templates-labels-letter
-libreoffice-templates-presentation-layouts
 libreoffice-writer-extensions
 libtxc_dxtn
 libva-egl1
@@ -661,7 +655,7 @@ okular
 onboard
 onboard-data
 openal-soft
-openclipart-svg
+openclipart-png
 opendnssec
 opengost-otf-fonts
 open-iscsi
