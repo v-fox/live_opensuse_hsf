@@ -112,8 +112,8 @@ for directory in clamav openvas/{cert-data,plugins,scap-data}; do
 		rm -rf "${dir}/source/root/var/lib/${directory}" || exit 1
 	fi
 	if [ -e "/var/lib/${directory}" ]; then
-		echo "  copying '${directory}'"
-		cp -fa "/var/lib/${directory}" -t "${dir}/source/root/var/lib" || exit 1
+		echo "  copying system '${directory}'"
+		cp -fa "/var/lib/${directory}" -T "${dir}/source/root/var/lib/${directory}" || exit 1
 	fi
 done
 
