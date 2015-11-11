@@ -37,6 +37,7 @@
 	* addition of Steam installer/launcher and its crutch-wrapper
 	* addition of ZFS support (may be removed at any time)
 	* removal of Bumblebee/Primus/VirtualGL/bbswitch in favour of PRIME/DRI3
+	* removal of conky due to its low practicality from out-of-the-box
 	* removal of toxic because we don't support console messaging
 	* removal of live-{fat-stick,usb-gui} because of low usefulness for our case
 	* replacement of bomi with xt7-player-mpv
@@ -47,7 +48,7 @@
 	* replacement of tc-play with veracrypt
 	* replacement of uTox with qTox
 	* commencing usage of multiple dnscrypt instances
-	* commencing usage of ClamAV and OpenVAS out-of-the-box
+	* commencing usage of ClamAV and OpenVAS from out-of-the-box
 	* Firefox and TB are unbranded in hopes to disable mandatory signing;
 		FF is built with GTK3, TB — with GTK2 due to non-compilation;
 		mozilla-kde4-integration is removed, kde4 hacks are disabled
