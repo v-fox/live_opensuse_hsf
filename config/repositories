@@ -71,11 +71,14 @@
 		<source path='opensuse://GNOME:Apps/openSUSE_Factory'/>
 	</repository>
 	<repository type='yast2' imageinclude='true' priority='69' alias='openSUSE'>
-		<source path='http://download.opensuse.org/tumbleweed/repo/oss'/>
+		<source path='opensuse://openSUSE:Factory/snapshot'/>
 	</repository>
 	<repository type='yast2' imageinclude='true' priority='69' alias='openSUSE_NonFree'>
-		<source path='http://download.opensuse.org/tumbleweed/repo/non-oss'/>
+		<source path='opensuse://openSUSE:Factory:NonFree/standard'/>
 	</repository>
+        <repository type='yast2' imageinclude='true' priority='66' alias='openSUSE_Update'>
+                <source path='opensuse://openSUSE:Factory:Update/standard'/>
+        </repository>
 	<repository type='rpm-md' imageinclude='true' priority='55' alias='X11_LXQt'>
 		<source path='opensuse://X11:LXQt/openSUSE_Tumbleweed'/>
 	</repository>
