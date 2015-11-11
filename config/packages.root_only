@@ -405,7 +405,7 @@ keepnote-lang
 kfilemetadata
 killswitch-applet
 kinit
-kio-extras
+kio-extras5
 kio_iso
 kio_kamera
 kio-locate
@@ -666,7 +666,6 @@ OpenPrintingPPDs-postscript
 openssh
 openssh-askpass
 openssh-helpers
-openvas-administrator
 openvas-cli
 openvas-manager
 openvas-scanner
@@ -1024,7 +1023,6 @@ yast2-iscsi-client
 yast2-journal
 yast2-kdump
 yast2-live-installer
-yast2-lxc
 yast2-metapackage-handler
 yast2-nfs-client
 yast2-nfs-server
