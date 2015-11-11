@@ -117,6 +117,26 @@ zypper --non-interactive install --from security_forensics "*-tools" || exit 1
 zypper --non-interactive install "yast2-trans-*" || exit 1
 rm -rf /var/{cache,log}/zypp/*
 
+# setup/updates for ClamAV
+systemctl enable clamd.service
+freshclam
+# setup/updates for OpenVAS
+#openvas-setup
+systemctl enable redis@openvas.service
+openvas-mkcert -q
+openvas-mkcert-client -n -i
+openvas-nvt-sync
+openvas-certdata-sync
+openvas-scapdata-sync
+openvasmd --rebuild --progress
+openvasmd --create-user=admin --role=Admin
+openvasmd --user=admin --new-password=DeusExMachina
+systemctl redis@openvas.service
+systemctl enable openvas-scanner.service
+systemctl enable openvas-manager.service
+systemctl enable openvas-administrator.service
+systemctl enable greenbone-security-assistant.service
+
 # making list of installed packages from default user
 OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
 NAME_PRETTY=$(echo "${kiwi_iname}" | sed 's:_: :g')

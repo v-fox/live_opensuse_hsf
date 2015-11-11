@@ -9,6 +9,7 @@ aespipe
 afuse
 aiccu
 aircrack-ng
+alien
 alsa-oss
 alsa-plugins
 alsa-plugins-jack
@@ -142,6 +143,7 @@ evtest
 ext3grep
 ext4magic
 f2fs-tools
+fakeroot
 fatattr
 fatsort
 fbcat
@@ -643,6 +645,7 @@ nmon
 npapi-vlc
 nping
 nscd
+nsis
 ntfs-3g
 ntp
 ntpclient
@@ -774,6 +777,7 @@ radvd
 rancid
 rar
 reaver
+redis
 reiser4progs
 remmina-plugin-rdp
 remmina-plugin-vnc

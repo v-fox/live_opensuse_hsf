@@ -88,7 +88,7 @@ while read i; do
 		if [ -n "${f}" ]; then
 			if [ -e "${f}" ]; then
 				echo "  removing '${f}'"
-				rm -rf "${f}"
+				rm -rf "${f}" || exit 1
 			else
 				echo "  skipping non-existent '${f}'"
 			fi
@@ -103,6 +103,14 @@ cd "${dir}/data"
 ./common-userfiles_1-generate-gitignore.sh
 ./common-userfiles_2-populate-root.sh
 cd "${dir}"
+
+echo "** Copying ClamAV and OpenVAS databases from system..."
+for directory in clamav openvas/{cert-data,plugins,scap-data}; do
+	if [ -e "/var/lib/${directory}" ]; then
+		echo "  copying '${directory}'"
+		cp -R "/var/lib/${directory}" "source/root/var/lib/${directory}" || exit 1
+	fi
+done
 
 ## config.xml generation.
 echo "** Generating ${CONFIG}..."

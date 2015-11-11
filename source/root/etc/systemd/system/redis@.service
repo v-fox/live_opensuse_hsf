@@ -1,0 +1,20 @@
+[Unit]
+Description=Redis
+After=network.target
+PartOf=redis.target
+
+[Service]
+Type=simple
+User=redis
+Group=redis
+PrivateTmp=true
+PIDFile=/var/run/redis/%i.pid
+ExecStart=/usr/sbin/redis-server /etc/redis/%i.conf --daemonize no
+Restart=on-failure
+
+#ExecStart=/usr/sbin/openvpn --daemon --suppress-timestamps --writepid /var/run/openvpn/%i.pid --cd /etc/openvpn/ --config %i.conf
+#ExecReload=/sbin/killproc -p /var/run/openvpn/%i.pid -HUP /usr/sbin/openvpn
+
+[Install]
+WantedBy=multi-user.target redis.target
+

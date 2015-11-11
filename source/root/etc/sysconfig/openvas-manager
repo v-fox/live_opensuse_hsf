@@ -1,0 +1,29 @@
+#
+# The file the OpenVAS Manager will use as database.
+#
+
+DATABASE_FILE=/var/lib/openvas/mgr/tasks.db
+
+#
+# The address the OpenVAS Manager will listen on.
+#
+
+MANAGER_ADDRESS=localhost
+
+#
+# The port the OpenVAS Manager will listen on.
+#
+
+MANAGER_PORT=9390
+
+#
+# The address the OpenVAS Scanner is listening on.
+#
+
+SCANNER_ADDRESS=localhost
+
+#
+# The port the OpenVAS Scanner is listening on.
+#
+
+SCANNER_PORT=9391
