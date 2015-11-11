@@ -51,7 +51,7 @@ fi
 
 # Variables.
 echo "** Setting up versioning variables..."
-VERSION_DIST="13.2"
+VERSION_DIST="Tumbleweed"
 read VERSION_CONFIG < config/version
 CONFIG="source/config.xml"
 BUILD_DATE="$(date +%Y%m%d)"
@@ -85,13 +85,11 @@ echo "** Cleaning up auto-generated files..."
 IFS=$'\n'
 while read i; do
 	for f in $(eval "ls --color=never -1 ${i} 2> /dev/null"); do
-		if [ -n "${f}" ]; then
-			if [ -e "${f}" ]; then
-				echo "  removing '${f}'"
-				rm -rf "${f}" || exit 1
-			else
-				echo "  skipping non-existent '${f}'"
-			fi
+		if [ -e "${f}" ]; then
+			echo "  removing '${f}'"
+			rm -rf "${f}" || exit 1
+		else
+			echo "  skipping non-existent '${f}'"
 		fi
 	done
 done < config/generated
@@ -104,8 +102,14 @@ cd "${dir}/data"
 ./common-userfiles_2-populate-root.sh
 cd "${dir}"
 
-echo "** Copying ClamAV and OpenVAS databases from system..."
+echo "** Transplanting system ClamAV and OpenVAS databases..."
 for directory in clamav openvas/{cert-data,plugins,scap-data}; do
+	if [ -e "source/root/var/lib/${directory}" ]; then
+		if [ -e "${f}" ]; then
+			echo "  removing old '${directory}'"
+			rm -rf "/var/lib/${directory}" || exit 1
+		fi
+	fi
 	if [ -e "/var/lib/${directory}" ]; then
 		echo "  copying '${directory}'"
 		cp -R "/var/lib/${directory}" "source/root/var/lib/${directory}" || exit 1
