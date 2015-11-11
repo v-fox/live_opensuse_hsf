@@ -612,10 +612,10 @@ OuterBox
 .visible=T
 VideoBox
 .visible=T
-bp
-.visible=
 thumblevideo
 .visible=T
+bp
+.visible=
 BottomVbox
 .visible=T
 ControlFrame
