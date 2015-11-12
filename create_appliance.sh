@@ -103,17 +103,17 @@ cd "${dir}/data"
 cd "${dir}"
 
 echo "** Transplanting system ClamAV and OpenVAS databases..."
-for directory in clamav openvas/{cert-data,plugins,scap-data}; do
-	if [ ! -e "${dir}/source/root/var/lib" ]; then
-		mkdir -p "${dir}/source/root/var/lib"
+for directory in lib/clamav lib/openvas/{cert-data,plugins,scap-data} cache/openvas; do
+	if [ ! -e "${dir}/source/root/var/$(dirname ${directory})" ]; then
+		mkdir -p "${dir}/source/root/var/$(dirname ${directory})"
 	fi
-	if [ -e "${dir}/source/root/var/lib/${directory}" ]; then
+	if [ -e "${dir}/source/root/var/${directory}" ]; then
 		echo "  removing old '${directory}'"
-		rm -rf "${dir}/source/root/var/lib/${directory}" || exit 1
+		rm -rf "${dir}/source/root/var/${directory}" || exit 1
 	fi
-	if [ -e "/var/lib/${directory}" ]; then
+	if [ -e "/var/${directory}" ]; then
 		echo "  copying system '${directory}'"
-		cp -fa "/var/lib/${directory}" -T "${dir}/source/root/var/lib/${directory}" || exit 1
+		cp -fa "/var/${directory}" -T "${dir}/source/root/var/${directory}" || exit 1
 	fi
 done
 
