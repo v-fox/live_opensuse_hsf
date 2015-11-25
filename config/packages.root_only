@@ -552,7 +552,6 @@ libvirt
 libvirt-daemon-config-network
 libvirt-daemon-config-nwfilter
 libvirt-daemon-qemu
-libvirt-login-shell
 libvisual-plugins
 libXaw3d8
 libXRes1
