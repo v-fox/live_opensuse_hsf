@@ -17,5 +17,6 @@ source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/sessions/**
 source/root/home/hacker/.mozilla/firefox/y30d7fz5.hacker/sessionstore-backups/**
 source/root/home/hacker/.thunderbird/mcos93yg.hacker/crashes/**
 source/root/home/hacker/.thunderbird/mcos93yg.hacker/minidumps/**
+source/root/var/cache/openvas/**
 source/root/var/lib/clamav/**
 source/root/var/lib/openvas/**
