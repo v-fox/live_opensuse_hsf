@@ -316,6 +316,6 @@ include "/usr/share/nano/sh.nanorc"
 ## XML-type files
 include "/usr/share/nano/xml.nanorc"
 
-include "/usr/share/nano/conky.nanorc"
+#include "/usr/share/nano/conky.nanorc"
 include "/usr/share/nano/spec.nanorc"
 include "/usr/share/nano/cmake.nanorc"
