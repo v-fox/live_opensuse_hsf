@@ -1,3 +1,3 @@
-vo=opengl=scale=ewa_lanczossharp:cscale=spline36:dscale=mitchell:temporal-dither:dither-depth=auto:correct-downscaling:sigmoid-upscaling:deband:backend=x11:fbo-format=rgba32f:pbo:alpha=yes:icc-profile-auto,opengl=scale=spline36:cscale=spline36:dscale=mitchell:dither-depth=auto:fancy-downscaling:sigmoid-upscaling,xv
+vo=opengl=scale=ewa_lanczossharp:cscale=spline36:dscale=mitchell:temporal-dither:dither-depth=auto:correct-downscaling:sigmoid-upscaling:deband:backend=x11egl:fbo-format=rgba32f:icc-profile-auto,opengl=scale=spline36:cscale=spline36:dscale=mitchell:dither-depth=auto:fancy-downscaling:sigmoid-upscaling,xv
 ao=jack=port=jamin,pulse=latency-hacks=yes
 af-add=scaletempo

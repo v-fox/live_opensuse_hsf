@@ -112,8 +112,8 @@ FontStyleCHK
 .Value=-1
 FontString
 .font.name=Noto Sans
-.font.size=48
-.font.bold=
+.font.size=44
+.font.bold=T
 .font.italic=
 .visible=T
 FontChooseBTN
