@@ -39,7 +39,7 @@ suseImportBuildKey
 #======================================
 # CUSTOMIZATION
 #--------------------------------------
-suseActivateDefaultServices
+#suseActivateDefaultServices
 systemctl disable rsyslog
 systemctl disable apparmor
 systemctl disable SuSEfirewall2
@@ -119,6 +119,7 @@ rm -rf /var/{cache,log}/zypp/*
 
 # setup/update ClamAV
 systemctl enable clamd
+chown -R vscan:vscan /var/lib/clamav
 freshclam
 # setup/update OpenVAS
 #openvas-setup
@@ -133,7 +134,6 @@ openvasmd --user=admin --new-password=DeusExMachina
 systemctl enable redis@openvas
 systemctl enable openvas-scanner
 systemctl enable openvas-manager
-systemctl enable openvas-administrator
 systemctl enable greenbone-security-assistant
 
 # making list of installed packages from default user
