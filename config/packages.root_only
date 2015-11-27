@@ -128,6 +128,7 @@ easytag
 ebtables
 ecryptfs-utils
 efitools
+efivar
 emount
 enca
 encfs
@@ -668,6 +669,7 @@ openvas-cli
 openvas-manager
 openvas-scanner
 opus-tools
+ovmf
 oxy_elegant-icon-theme
 oxygen-cursors4
 oxygen-ionized-icon-theme-v1
@@ -757,6 +759,7 @@ qasmixer
 qbittorrent
 qemu-guest-agent
 qemu-kvm
+qemu-ovmf-x86_64
 qjackctl
 qps
 qsynth
