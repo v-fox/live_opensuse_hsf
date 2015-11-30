@@ -369,6 +369,7 @@ inkscape-extensions-dia
 inkscape-extensions-extra
 inkscape-extensions-gimp
 innoextract
+install-initrd
 intel-gpu-tools
 inxi
 iodine
@@ -554,6 +555,7 @@ libvirt
 libvirt-daemon-config-network
 libvirt-daemon-config-nwfilter
 libvirt-daemon-qemu
+libvirt-daemon-xen
 libvisual-plugins
 libXaw3d8
 libXRes1
@@ -956,6 +958,7 @@ xcompmgr
 xcursor-themes
 xdmbgrd
 xdotool
+xen-tools
 xev
 xf86-input-evdev
 xf86-input-synaptics

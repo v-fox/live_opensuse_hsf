@@ -37,7 +37,7 @@ and analogue video input (via tvtime) support
 * wide range of gamepad utilities such as AntiMicro and jstest-gtk;  
 Mednafen, small yet feature-rich JACK-enabled multi-system emulator;
 emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
-* professional virtualization with libvirt & KVM / LXC  
+* professional virtualization with libvirt & KVM / Xen / LXC  
 (featuring userland virt-manager, Docker and SPICE flowing out-of-the-box)
 * Windows® compatibility through Wine 32 & 64 with native Gallium DirectX 9;  
 Steam installer/launcher is present
