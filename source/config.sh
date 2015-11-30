@@ -40,46 +40,46 @@ suseImportBuildKey
 # CUSTOMIZATION
 #--------------------------------------
 #suseActivateDefaultServices
-systemctl disable rsyslog
-systemctl disable apparmor
-systemctl disable SuSEfirewall2
-systemctl disable wicked.service
+baseRemoveService rsyslog
+baseRemoveService apparmor
+baseRemoveService SuSEfirewall2
+baseRemoveService wicked.service
 # we don't want it to run by default and its modules are broken anyway... or do we ?
-#systemctl disable zfs
-systemctl enable tuned
-systemctl enable rtkit-daemon
-systemctl enable compcache
-systemctl enable irq_balancer
-systemctl enable upower
-systemctl enable gpm
+#baseRemoveService zfs
+baseInsertService tuned
+baseInsertService rtkit-daemon
+baseInsertService compcache
+baseInsertService irq_balancer
+baseInsertService upower
+baseInsertService gpm
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
 # greatly slows down boot up
-#systemctl enable autofs
+#baseInsertService autofs
 # $(sensors-detect) should be launched first manually to make sure that it's safe
-#systemctl enable lm_sensors
-systemctl enable hddtemp
-systemctl enable dkms
-systemctl enable bluetooth
-systemctl enable ModemManager
-systemctl enable NetworkManager
-systemctl enable ntp
-systemctl enable dnscrypt-proxy
-systemctl enable unbound
-systemctl enable tor
-systemctl enable privoxy
-systemctl enable avahi-daemon
+#baseInsertService lm_sensors
+baseInsertService hddtemp
+baseInsertService dkms
+baseInsertService bluetooth
+baseInsertService ModemManager
+baseInsertService NetworkManager
+baseInsertService ntp
+baseInsertService dnscrypt-proxy
+baseInsertService unbound
+baseInsertService tor
+baseInsertService privoxy
+baseInsertService avahi-daemon
 # linphone provides P2P SIP, so we don't need SIP Witch
-#systemctl enable sipwitch
-systemctl enable miredo-client
-systemctl enable colord
-systemctl enable xdm
+#baseInsertService sipwitch
+baseInsertService miredo-client
+baseInsertService colord
+baseInsertService xdm
 # needed for it to be properly run in VM
-systemctl enable spice-vdagentd
+baseInsertService spice-vdagentd
 # needed for it to run VMs
-systemctl enable libvirtd
+baseInsertService libvirtd
 # enabling tracefs and avoiding debugfs (https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=681418)
 #systemctl mask sys-kernel-debug.mount
-systemctl enable sys-kernel-tracing.mount
+baseInsertService sys-kernel-tracing.mount
 
 # systemd locale defaults
 localectl list-x11-keymap-models "evdev"
@@ -94,7 +94,7 @@ pam-config -a --unix-nodelay
 netconfig update
 
 # updating gtk icon cache in hopes that it'll help with missing icons
-#find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -q -t -f "{}" \;
+find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -f "{}" \;
 
 # making sure that proxy is not used
 for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
@@ -115,10 +115,12 @@ zypper --non-interactive install "google-*-fonts" || exit 1
 zypper --non-interactive install --from security_forensics "*-tools" || exit 1
 # and YaST translations
 zypper --non-interactive install "yast2-trans-*" || exit 1
+# removing unwanted packages (but why we would even have them in the first place ?)
+suseRemovePackagesMarkedForDeletion
 rm -rf /var/{cache,log}/zypp/*
 
 # setup/update ClamAV
-systemctl enable clamd
+baseInsertService clamd
 chown -R vscan:vscan /var/lib/clamav
 freshclam
 # setup/update OpenVAS
@@ -131,10 +133,10 @@ openvas-scapdata-sync
 openvasmd --rebuild
 openvasmd --create-user=admin --role=Admin
 openvasmd --user=admin --new-password=DeusExMachina
-systemctl enable redis@openvas
-systemctl enable openvas-scanner
-systemctl enable openvas-manager
-systemctl enable greenbone-security-assistant
+baseInsertService redis@openvas
+baseInsertService openvas-scanner
+baseInsertService openvas-manager
+baseInsertService greenbone-security-assistant
 
 # making list of installed packages from default user
 OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
@@ -174,6 +176,11 @@ c_rehash
 # Creating manual database
 #--------------------------------------
 /etc/cron.daily/suse-do_mandb
+
+#======================================
+# Making sure of proper permissions
+#--------------------------------------
+baseSetupUserPermissions
 
 #======================================
 # Umount kernel filesystems
