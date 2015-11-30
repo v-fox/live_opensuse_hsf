@@ -1,0 +1,7 @@
+[krusader]
+_k_friendly_name=Krusader
+bring_main_window_to_top=none,none,Bring Main Window to Top
+
+[yakuake]
+_k_friendly_name=Yakuake
+toggle-window-state=Ctrl+`,F12,Open/Retract Yakuake
