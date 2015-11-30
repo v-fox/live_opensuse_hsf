@@ -1,2 +1,21 @@
 [$Version]
 update_info=okular.upd:sep_settings
+
+[Core General]
+ObeyDRM=false
+
+[Core Performance]
+MemoryLevel=Greedy
+TextHinting=Enabled
+
+[General]
+UseKTTSD=false
+
+[Main View]
+SplitterSizes=476,1352
+
+[Search]
+SearchFromCurrentPage=false
+
+[Zoom]
+ZoomMode=3

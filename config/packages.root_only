@@ -74,6 +74,7 @@ clementine
 clicfs
 colord
 colordiff
+colord-kde
 color-filesystem
 ComixCursors
 command-not-found
@@ -654,6 +655,7 @@ ocfs2console
 ofono
 oggvideotools
 okular
+okular-backend-mupdf
 onboard
 onboard-data
 openal-soft
@@ -1056,4 +1058,3 @@ zuluCrypt
 zypper
 zypper-aptitude
 zypper-log
-colord-kde

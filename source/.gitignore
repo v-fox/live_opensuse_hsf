@@ -866,6 +866,9 @@ root/home/hacker/.config/gtk-3.0/gtk-spinner.css
 root/etc/skel/.config/gtk-3.0/special-icons
 root/root/.config/gtk-3.0/special-icons
 root/home/hacker/.config/gtk-3.0/special-icons
+root/etc/skel/.config/kglobalshortcutsrc
+root/root/.config/kglobalshortcutsrc
+root/home/hacker/.config/kglobalshortcutsrc
 root/etc/skel/.config/kdeglobals
 root/root/.config/kdeglobals
 root/home/hacker/.config/kdeglobals
