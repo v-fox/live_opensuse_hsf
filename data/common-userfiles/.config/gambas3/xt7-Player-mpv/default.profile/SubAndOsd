@@ -112,7 +112,7 @@ FontStyleCHK
 .Value=-1
 FontString
 .font.name=Noto Sans
-.font.size=44
+.font.size=36
 .font.bold=T
 .font.italic=
 .visible=T
@@ -132,7 +132,7 @@ FontColorBox
 .background=-1
 .Foreground=-1
 .visible=T
-.Value=16777087
+.Value=8355647
 Button
 .visible=T
 .Value=
@@ -150,7 +150,7 @@ BorderColorBox
 .background=-1
 .Foreground=-1
 .visible=T
-.Value=0
+.Value=657930
 Button
 .visible=T
 .Value=

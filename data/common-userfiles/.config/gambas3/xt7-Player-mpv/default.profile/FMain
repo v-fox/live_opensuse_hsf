@@ -61,7 +61,7 @@ PoweroffBTN
 .visible=T
 .Value=
 HSplit1
-.layout=1004,916,
+.layout=919,1001,
 .tag=
 .visible=T
 #4
