@@ -50,7 +50,7 @@ var DownloadManagers = {
                 DownloadManagers.dta.isAddonInstalled = false;
                 Components.utils.import("resource://gre/modules/AddonManager.jsm");
                 AddonManager.getAddonByID(DownloadManagers.dta.id, function(addon) {
-                    if (addon) {
+                    if (addon && addon.isActive) {
                         DownloadManagers.dta.isAddonInstalled = true;
                     }
                 });

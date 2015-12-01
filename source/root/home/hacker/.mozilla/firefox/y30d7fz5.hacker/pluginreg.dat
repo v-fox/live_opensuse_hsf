@@ -18,12 +18,68 @@ DjView-4.10:$
 3:image/x-dejavu:DjVu File::$
 4:image/x-iw44:DjVu File::$
 5:image/vnd.djvu:DjVu File::$
+libvlcplugin.so:$
+/usr/lib64/browser-plugins/libvlcplugin.so:$
+:$
+1446413391000:0:0:0:$
+VLC media player Web Plugin 3.0.0-git Vetinari<br />Copyright © 2002-2014 VLC authors and VideoLAN<br /><a href="http://www.videolan.org/vlc/">http://www.videolan.org/vlc/</a>:$
+VLC Web Plugin:$
+49
+0:audio/mpeg:MPEG audio:mp2,mp3,mpga,mpega:$
+1:audio/x-mpeg:MPEG audio:mp2,mp3,mpga,mpega:$
+2:video/mpeg:MPEG video:mpg,mpeg,mpe:$
+3:video/x-mpeg:MPEG video:mpg,mpeg,mpe:$
+4:video/mpeg-system:MPEG video:mpg,mpeg,mpe,vob:$
+5:video/x-mpeg-system:MPEG video:mpg,mpeg,mpe,vob:$
+6:audio/mp4:MPEG-4 audio:aac,mp4,mpg4:$
+7:audio/x-m4a:MPEG-4 audio:m4a:$
+8:audio/m4a:MPEG-4 audio:m4a:$
+9:video/mp4:MPEG-4 video:mp4,mpg4:$
+10:application/mpeg4-iod:MPEG-4 video:mp4,mpg4:$
+11:application/mpeg4-muxcodetable:MPEG-4 video:mp4,mpg4:$
+12:video/x-m4v:MPEG-4 video:m4v:$
+13:video/x-msvideo:AVI video:avi:$
+14:video/quicktime:QuickTime video:mov,qt:$
+15:application/ogg:Ogg stream:ogg:$
+16:video/ogg:Ogg video:ogv:$
+17:audio/ogg:Ogg audio:oga:$
+18:application/x-ogg:Ogg stream:ogg:$
+19:audio/ogg;codecs=opus:Opus audio:opus:$
+20:application/x-vlc-plugin:VLC plug-in::$
+21:video/x-ms-asf-plugin:Windows Media Video:asf,asx:$
+22:video/x-ms-asf:Windows Media Video:asf,asx:$
+23:application/x-mplayer2:Windows Media::$
+24:video/x-ms-wmv:Windows Media:wmv:$
+25:video/x-ms-wvx:Windows Media Video:wvx:$
+26:audio/x-ms-wma:Windows Media Audio:wma:$
+27:application/x-google-vlc-plugin:Google VLC plug-in::$
+28:audio/wav:WAV audio:wav:$
+29:audio/x-wav:WAV audio:wav:$
+30:audio/3gpp:3GPP audio:3gp,3gpp:$
+31:video/3gpp:3GPP video:3gp,3gpp:$
+32:audio/3gpp2:3GPP2 audio:3g2,3gpp2:$
+33:video/3gpp2:3GPP2 video:3g2,3gpp2:$
+34:video/divx:DivX video:divx:$
+35:video/flv:FLV video:flv:$
+36:video/x-flv:FLV video:flv:$
+37:application/x-matroska:Matroska video:mkv:$
+38:video/x-matroska:Matroska video:mkv:$
+39:audio/x-matroska:Matroska audio:mka:$
+40:application/xspf+xml:Playlist xspf:xspf:$
+41:audio/x-mpegurl:MPEG audio:m3u:$
+42:video/webm:WebM video:webm:$
+43:audio/webm:WebM audio:webm:$
+44:application/vnd.rn-realmedia:Real Media File:rm:$
+45:audio/x-realaudio:Real Media Audio:ra:$
+46:audio/amr:AMR audio:amr:$
+47:audio/x-flac:FLAC audio:flac:$
+48:audio/flac:FLAC audio:flac:$
 IcedTeaPlugin.so:$
 /usr/lib64/java-1_8_0-openjdk-plugin/lib/IcedTeaPlugin.so:$
 :$
-1442476230000:0:0:0:$
+1447374434000:0:0:0:$
 The <a href="http://icedtea.classpath.org/wiki/IcedTea-Web">IcedTea-Web Plugin</a> executes Java applets.:$
-IcedTea-Web Plugin (using IcedTea-Web 1.6.1 (suse-1.1-x86_64)):$
+IcedTea-Web Plugin (using IcedTea-Web 1.6.1 (suse-2.1-x86_64)):$
 38
 0:application/x-java-vm:IcedTea:class,jar:$
 1:application/x-java-applet:IcedTea:class,jar:$
@@ -66,7 +122,7 @@ IcedTea-Web Plugin (using IcedTea-Web 1.6.1 (suse-1.1-x86_64)):$
 libkpartsplugin.so:$
 /usr/lib64/browser-plugins/libkpartsplugin.so:$
 :$
-1446381232000:0:0:0:$
+1448694112000:0:0:0:$
 File viewer using KDE's KParts technology (2012-07-23):$
 KParts Plugin:$
 298
@@ -368,66 +424,10 @@ KParts Plugin:$
 295:video/mlt-playlist:MLT video playlist:westley:$
 296:video/vnd.mpegurl:MPEG video:m1u:$
 297:video/x-mng:MNG animation:mng:$
-libvlcplugin.so:$
-/usr/lib64/browser-plugins/libvlcplugin.so:$
-:$
-1446413391000:0:0:0:$
-VLC media player Web Plugin 3.0.0-git Vetinari<br />Copyright © 2002-2014 VLC authors and VideoLAN<br /><a href="http://www.videolan.org/vlc/">http://www.videolan.org/vlc/</a>:$
-VLC Web Plugin:$
-49
-0:audio/mpeg:MPEG audio:mp2,mp3,mpga,mpega:$
-1:audio/x-mpeg:MPEG audio:mp2,mp3,mpga,mpega:$
-2:video/mpeg:MPEG video:mpg,mpeg,mpe:$
-3:video/x-mpeg:MPEG video:mpg,mpeg,mpe:$
-4:video/mpeg-system:MPEG video:mpg,mpeg,mpe,vob:$
-5:video/x-mpeg-system:MPEG video:mpg,mpeg,mpe,vob:$
-6:audio/mp4:MPEG-4 audio:aac,mp4,mpg4:$
-7:audio/x-m4a:MPEG-4 audio:m4a:$
-8:audio/m4a:MPEG-4 audio:m4a:$
-9:video/mp4:MPEG-4 video:mp4,mpg4:$
-10:application/mpeg4-iod:MPEG-4 video:mp4,mpg4:$
-11:application/mpeg4-muxcodetable:MPEG-4 video:mp4,mpg4:$
-12:video/x-m4v:MPEG-4 video:m4v:$
-13:video/x-msvideo:AVI video:avi:$
-14:video/quicktime:QuickTime video:mov,qt:$
-15:application/ogg:Ogg stream:ogg:$
-16:video/ogg:Ogg video:ogv:$
-17:audio/ogg:Ogg audio:oga:$
-18:application/x-ogg:Ogg stream:ogg:$
-19:audio/ogg;codecs=opus:Opus audio:opus:$
-20:application/x-vlc-plugin:VLC plug-in::$
-21:video/x-ms-asf-plugin:Windows Media Video:asf,asx:$
-22:video/x-ms-asf:Windows Media Video:asf,asx:$
-23:application/x-mplayer2:Windows Media::$
-24:video/x-ms-wmv:Windows Media:wmv:$
-25:video/x-ms-wvx:Windows Media Video:wvx:$
-26:audio/x-ms-wma:Windows Media Audio:wma:$
-27:application/x-google-vlc-plugin:Google VLC plug-in::$
-28:audio/wav:WAV audio:wav:$
-29:audio/x-wav:WAV audio:wav:$
-30:audio/3gpp:3GPP audio:3gp,3gpp:$
-31:video/3gpp:3GPP video:3gp,3gpp:$
-32:audio/3gpp2:3GPP2 audio:3g2,3gpp2:$
-33:video/3gpp2:3GPP2 video:3g2,3gpp2:$
-34:video/divx:DivX video:divx:$
-35:video/flv:FLV video:flv:$
-36:video/x-flv:FLV video:flv:$
-37:application/x-matroska:Matroska video:mkv:$
-38:video/x-matroska:Matroska video:mkv:$
-39:audio/x-matroska:Matroska audio:mka:$
-40:application/xspf+xml:Playlist xspf:xspf:$
-41:audio/x-mpegurl:MPEG audio:m3u:$
-42:video/webm:WebM video:webm:$
-43:audio/webm:WebM audio:webm:$
-44:application/vnd.rn-realmedia:Real Media File:rm:$
-45:audio/x-realaudio:Real Media Audio:ra:$
-46:audio/amr:AMR audio:amr:$
-47:audio/x-flac:FLAC audio:flac:$
-48:audio/flac:FLAC audio:flac:$
 libfreshwrapper-flashplayer.so:$
 /usr/lib64/browser-plugins/libfreshwrapper-flashplayer.so:$
 19.0.0.226:$
-1446870859000:0:0:0:$
+1448891047000:0:0:0:$
 Shockwave Flash 19.0 r0:$
 Shockwave Flash:$
 2
@@ -435,7 +435,7 @@ Shockwave Flash:$
 1:application/futuresplash:FutureSplash Player:spl:$
 
 [INVALID]
-/home/fox/.mozilla/plugins/libnpsoplugin.so:$
-0:$
 /home/fox/.mozilla/plugins/liblightsparkplugin.so:$
+0:$
+/home/fox/.mozilla/plugins/libnpsoplugin.so:$
 0:$

@@ -12,5 +12,5 @@ skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/win
 skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/win7/ os=WINNT osversion>=6
 skin   	os_target       ftdeepdark    	jar:chrome/ft_deepdark.jar!/os_target/win10/ os=WINNT osversion>=10
 
-skin    app_version     ftdeepdark    	jar:chrome/ft_deepdark.jar!/app_version/41/ appversion<42.0a1
-skin    app_version     ftdeepdark    	jar:chrome/ft_deepdark.jar!/app_version/beta/ appversion>=42.0a1
+skin    app_version     ftdeepdark    	jar:chrome/ft_deepdark.jar!/app_version/42/ appversion<43.0a1
+skin    app_version     ftdeepdark    	jar:chrome/ft_deepdark.jar!/app_version/beta/ appversion>=43.0a1
