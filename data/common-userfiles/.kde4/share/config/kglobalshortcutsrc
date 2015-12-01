@@ -1,0 +1,14 @@
+[$Version]
+update_info=konsole_remove_background_mode.upd:2.11.0-remove-background-mode
+
+[KDE Keyboard Layout Switcher]
+Switch to Next Keyboard Layout=Ctrl+Alt+K,Ctrl+Alt+K,Switch to Next Keyboard Layout
+_k_friendly_name=KDE Keyboard Layout Switcher
+
+[krusader]
+_k_friendly_name=Krusader
+bring_main_window_to_top=none,none,Bring Main Window to Top
+
+[yakuake]
+_k_friendly_name=Yakuake
+toggle-window-state=Ctrl+`,F12,Open/Retract Yakuake
