@@ -155,7 +155,8 @@ find /usr/share/doc/packages -type f -iregex ".*copying*\|.*license*\|.*copyrigh
 #rm -rf /usr/share/doc/*
 
 #======================================
-# Keep UTF-8 locale and delete all translations
+# Keep UTF-8 locale and
+# delete all translations
 #--------------------------------------
 #baseStripLocales \
 #	$(for i in $(echo $kiwi_language | tr "," " ");do echo -n "$i.utf8 ";done)
@@ -181,6 +182,14 @@ c_rehash
 # Making sure of proper permissions
 #--------------------------------------
 baseSetupUserPermissions
+
+#======================================
+# Preventing systemd from
+# holding off boot up
+# https://github.com/manjaro/release-plan/issues/17
+#--------------------------------------
+echo 'This is systemd anti-dumbassery hack. See systemd-update-done.service(8).' \
+	| tee /etc/.updated > /var/.updated
 
 #======================================
 # Umount kernel filesystems
