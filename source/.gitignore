@@ -563,6 +563,9 @@ root/home/hacker/.kde4/share/config/kwinrc
 root/etc/skel/.kde4/share/config/ktrashrc
 root/root/.kde4/share/config/ktrashrc
 root/home/hacker/.kde4/share/config/ktrashrc
+root/etc/skel/.kde4/share/config/kglobalshortcutsrc
+root/root/.kde4/share/config/kglobalshortcutsrc
+root/home/hacker/.kde4/share/config/kglobalshortcutsrc
 root/etc/skel/.kde4/share/config/colors/Solarized\ Colors
 root/root/.kde4/share/config/colors/Solarized\ Colors
 root/home/hacker/.kde4/share/config/colors/Solarized\ Colors

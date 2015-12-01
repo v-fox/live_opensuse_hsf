@@ -240,13 +240,13 @@ echo "** Creating appliance..."
 command="$kiwi --verbose 3 --gzip-cmd=lzop --build ${src}/ -d ${dst}"
 echo "$command"
 $command
-if [ $? -ne 0 ]; then
-	echo "** Appliance creation failed!"
-	exit 1
-else
+#if [ $? -ne 0 ]; then
+#	echo "** Appliance creation failed!"
+#	exit 1
+#else
 	echo -n "** Copying package list to the top: "
 	cp -v "${PACKAGE_LIST}" "${PACKAGE_LIST_PROPER}"
-fi
+#fi
 
 # And we're done!
 echo -n "** Moving iso-file: "
