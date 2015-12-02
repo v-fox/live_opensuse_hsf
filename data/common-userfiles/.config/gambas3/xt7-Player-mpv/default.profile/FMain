@@ -606,7 +606,7 @@ buttonshowtooltips
 .Value=T
 TogglePls
 .visible=T
-.Value=
+.Value=T
 RightSidePanel
 .visible=T
 ToolbarBackground
@@ -690,7 +690,7 @@ volumecontainer
 .visible=T
 SaveVolumeSlider
 .visible=T
-.Value=100
+.Value=60
 StatusLabelLeft
 .visible=T
 StatusLabelRight

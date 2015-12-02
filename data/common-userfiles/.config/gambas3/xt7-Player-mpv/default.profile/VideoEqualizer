@@ -44,10 +44,10 @@ ToolButton3
 .Value=
 Slider3
 .visible=T
-.Value=10
+.Value=5
 SpinBox3
 .visible=T
-.Value=10
+.Value=5
 HBox4
 .visible=T
 PictureBox4
@@ -102,7 +102,7 @@ Slider7
 .Value=3
 SpinBox7
 .visible=T
-.Value=8
+.Value=3
 HBox8
 .visible=T
 VBox1
