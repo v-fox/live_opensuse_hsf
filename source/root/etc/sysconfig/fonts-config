@@ -118,7 +118,7 @@ USE_EMBEDDED_BITMAPS="yes"
 # If you want to use embedded bitmaps for *all* languages, set this variable
 # to the empty string "" or to "no".
 #
-EMBEDDED_BITMAPS_LANGUAGES="ja:ko:zh-CN:zh-TW:zh-HK:zh-SG"
+EMBEDDED_BITMAPS_LANGUAGES="zh:zh-CN:zh-HK:zh-SG:zh-TW:ja:ko"
 
 ## Path:        Desktop
 ## Description: Display font configuration
@@ -138,7 +138,7 @@ EMBEDDED_BITMAPS_LANGUAGES="ja:ko:zh-CN:zh-TW:zh-HK:zh-SG"
 # 
 # PREFER_SANS_FAMILIES="Adobe Helvetica:B&H Lucida:Efont Biwidth:Efont Fixed:Efont Fixed Wide:Arabic Newspaper:Gnu Unifont:WenQuanYi WenQuanYi Bitmap Song"
 #
-PREFER_SANS_FAMILIES=""
+PREFER_SANS_FAMILIES="Noto Sans:Source Sans Pro:DejaVu Sans:FreeSans"
 
 ## Path:        Desktop
 ## Description: Display font configuration
@@ -158,7 +158,7 @@ PREFER_SANS_FAMILIES=""
 # 
 # PREFER_SERIF_FAMILIES="Adobe Times:Adobe New Century Schoolbook:Adobe Utopia:B&H LucidaBright:MUTT ClearlyU Wide:MUTT ClearlyU PUA:MUTT ClearlyU Alternate Glyphs Wide"
 #
-PREFER_SERIF_FAMILIES=""
+PREFER_SERIF_FAMILIES="Noto Serif:Source Serif Pro:DejaVu Serif:FreeSerif"
 
 ## Path:        Desktop
 ## Description: Display font configuration
@@ -178,7 +178,7 @@ PREFER_SERIF_FAMILIES=""
 #
 # PREFER_MONO_FAMILIES="Adobe Courier:B&H LucidaTypewriter:Efont Fixed:Efont Fixed Wide:Gnu Unifont Mono:Misc Fixed:Misc Fixed Wide:Schumacher Clean:xos4 Terminus:WenQuanYi WenQuanYi Bitmap Song"
 #
-PREFER_MONO_FAMILIES=""
+PREFER_MONO_FAMILIES="Hack:Source Code Pro:DejaVu Sans Mono:FreeMono:Terminus (TTF)"
 
 ## Path:        Desktop
 ## Description: Display font configuration
