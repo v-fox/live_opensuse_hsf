@@ -17,7 +17,6 @@
 	* UI's look is overhauled for darkness without bleakness
 	* Mesa's OpenMAX IL implementation now loads by default for GStreamer;
 		also Gallium vaapi implementation is now default and vdpau is inactive
-	* support for Xen virtualization
 	* support for OpenCL (AMD & Intel)
 	* support for high-quality midi playback via fluidsynth
 	* support for UPnP for PulseAudio
