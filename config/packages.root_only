@@ -592,7 +592,7 @@ mednafen
 mercurial
 Mesa
 Mesa-demo-x
-Mesa-libOpenCL1
+Mesa-libOpenCL
 minicom
 miniupnpc
 miredo-client
@@ -978,7 +978,6 @@ xfsdump
 xfsinfo
 xfsprogs
 xgamma
-xiccd
 xinetd
 xinput
 xkbevd
