@@ -30,7 +30,7 @@ SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * Clementine audio player, Audacity audio editor/recorder;  
 GStreamer with FFMPEG and JACK output by default
 * professional colour management facilities  
-(consisting of colord, argyllCMS, dispcalGUI and xiccd)
+(consisting of colord{-kde}, argyllCMS and dispcalGUI)
 * printer (via cups), scanner (via x/sane)  
 and analogue video input (via tvtime) support
 * professional screencasting tool SimpleScreenRecorder with native JACK support
