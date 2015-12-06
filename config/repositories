@@ -58,6 +58,9 @@
 	<repository type='rpm-md' imageinclude='true' priority='88' alias='Virtualization'>
 		<source path='opensuse://Virtualization/openSUSE_Factory'/>
 	</repository>
+	<repository type='rpm-md' imageinclude='true' priority='77' alias='X11_LXQt'>
+		<source path='opensuse://X11:LXQt/openSUSE_Tumbleweed'/>
+	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='77' alias='X11_Utilities'>
 		<source path='opensuse://X11:Utilities/openSUSE_Factory'/>
 	</repository>
@@ -79,9 +82,6 @@
         <repository type='rpm-md' imageinclude='true' priority='66' alias='openSUSE_Update'>
                 <source path='http://download.opensuse.org/repositories/openSUSE:/Factory:/Update/standard'/>
         </repository>
-	<repository type='rpm-md' imageinclude='true' priority='55' alias='X11_LXQt'>
-		<source path='opensuse://X11:LXQt/openSUSE_Tumbleweed'/>
-	</repository>
 	<repository type='rpm-md' imageinclude='true' priority='44' alias='Packman'>
 		<source path='http://mirror.karneval.cz/pub/linux/packman/suse/openSUSE_Tumbleweed'/>
 	</repository>
