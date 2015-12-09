@@ -146,7 +146,6 @@ fatattr
 fatsort
 fbcat
 ffmpeg
-ffmpeg-tools
 file
 filesystem
 filezilla
