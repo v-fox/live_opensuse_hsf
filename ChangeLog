@@ -49,7 +49,6 @@
 	* replacement of tc-play with veracrypt
 	* replacement of uTox with qTox
 	* commencing usage of multiple dnscrypt instances
-	* commencing usage of ClamAV and OpenVAS from out-of-the-box
 	* Firefox and TB are unbranded in hopes to disable mandatory signing;
 		FF is built with GTK3, TB — with GTK2 due to non-compilation;
 		mozilla-kde4-integration is removed, kde4 hacks are disabled

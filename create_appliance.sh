@@ -102,20 +102,20 @@ cd "${dir}/data"
 ./common-userfiles_2-populate-root.sh
 cd "${dir}"
 
-echo "** Transplanting system ClamAV and OpenVAS databases..."
-for directory in lib/clamav lib/openvas/{cert-data,plugins,scap-data} cache/openvas; do
-	if [ ! -e "${dir}/source/root/var/$(dirname ${directory})" ]; then
-		mkdir -p "${dir}/source/root/var/$(dirname ${directory})"
-	fi
-	if [ -e "${dir}/source/root/var/${directory}" ]; then
-		echo "  removing old '${directory}'"
-		rm -rf "${dir}/source/root/var/${directory}" || exit 1
-	fi
-	if [ -e "/var/${directory}" ]; then
-		echo "  copying system '${directory}'"
-		cp -fa "/var/${directory}" -T "${dir}/source/root/var/${directory}" || exit 1
-	fi
-done
+#echo "** Transplanting system ClamAV and OpenVAS databases..."
+#for directory in lib/clamav lib/openvas/{cert-data,plugins,scap-data} cache/openvas; do
+#	if [ ! -e "${dir}/source/root/var/$(dirname ${directory})" ]; then
+#		mkdir -p "${dir}/source/root/var/$(dirname ${directory})"
+#	fi
+#	if [ -e "${dir}/source/root/var/${directory}" ]; then
+#		echo "  removing old '${directory}'"
+#		rm -rf "${dir}/source/root/var/${directory}" || exit 1
+#	fi
+#	if [ -e "/var/${directory}" ]; then
+#		echo "  copying system '${directory}'"
+#		cp -fa "/var/${directory}" -T "${dir}/source/root/var/${directory}" || exit 1
+#	fi
+#done
 
 ## config.xml generation.
 echo "** Generating ${CONFIG}..."
@@ -244,17 +244,23 @@ $command
 #	echo "** Appliance creation failed!"
 #	exit 1
 #else
+if [ -f "${PACKAGE_LIST}" ]; then
 	echo -n "** Copying package list to the top: "
 	cp -v "${PACKAGE_LIST}" "${PACKAGE_LIST_PROPER}"
+fi
 #fi
 
 # And we're done!
-echo -n "** Moving iso-file: "
-mv -v "${IMAGE}" "${IMAGE_PROPER}"
+if [ -f "${IMAGE}" ]; then
+    echo -n "** Moving iso-file: "
+    mv -v "${IMAGE}" "${IMAGE_PROPER}"
+fi
 
 echo "** Creating sha256 checksum..."
 cd "${img}"
+if [ -f "$(basename "${IMAGE_PROPER}")" ]; then
 sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
+fi
 
 # Cleaning up #2.
 echo "** Cleaning up duplicate files..."

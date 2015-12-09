@@ -119,25 +119,6 @@ zypper --non-interactive install "yast2-trans-*" || exit 1
 suseRemovePackagesMarkedForDeletion
 rm -rf /var/{cache,log}/zypp/*
 
-# setup/update ClamAV
-baseInsertService clamd
-chown -R vscan:vscan /var/lib/clamav
-freshclam
-# setup/update OpenVAS
-#openvas-setup
-openvas-mkcert -q
-openvas-mkcert-client -n -i
-openvas-nvt-sync
-openvas-certdata-sync
-openvas-scapdata-sync
-openvasmd --rebuild
-openvasmd --create-user=admin --role=Admin
-openvasmd --user=admin --new-password=DeusExMachina
-baseInsertService redis@openvas
-baseInsertService openvas-scanner
-baseInsertService openvas-manager
-baseInsertService greenbone-security-assistant
-
 # making list of installed packages from default user
 OUR_USER="$(getent passwd "1000" | cut -d: -f1)"
 NAME_PRETTY=$(echo "${kiwi_iname}" | sed 's:_: :g')
