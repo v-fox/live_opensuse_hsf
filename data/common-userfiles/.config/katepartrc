@@ -10,7 +10,7 @@ Indent On Backspace=true
 Indent On Tab=true
 Indent On Text Paste=false
 Indentation Mode=normal
-Indentation Width=8
+Indentation Width=4
 Keep Extra Spaces=true
 Line Length Limit=0
 Newline At EOF=false
@@ -18,7 +18,7 @@ On-The-Fly Spellcheck=false
 Overwrite Mode=false
 PageUp/PageDown Moves Cursor=false
 Remove Spaces=0
-ReplaceTabsDyn=false
+ReplaceTabsDyn=true
 Show Spaces=true
 Show Tabs=true
 Smart Home=true
@@ -43,6 +43,7 @@ Word Wrap Marker=true
 
 [View]
 Allow Mark Menu=true
+Auto Brackets=false
 Auto Center Lines=0
 Auto Completion=true
 Bookmark Menu Sorting=0

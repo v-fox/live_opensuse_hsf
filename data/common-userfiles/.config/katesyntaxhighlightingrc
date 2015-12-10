@@ -31,6 +31,7 @@ Region Marker=ff6c71c4,fffdf6e3,,,,,,ff6c71c4,,,---
 String=ff2aa198,fffdf6e3,,,,,,ff2aa198,,,---
 
 [Default Item Styles - Schema Vim (dark)]
+Alert=ffaf0202,ffc80303,1,0,,,ff191717,-,,---
 Normal=ffd3d3d3,ffb7f0b3,1,0,,,-,-,,---
 
 [Default Item Styles - Schema Vim (dark) - HSF]
@@ -97,6 +98,41 @@ Variable=ff006e28,ff00316e,,,,,-,-,,---
 Verbatim String=ffbf0303,ff9c0e0e,,,,,-,-,,---
 Warning=ffbf0303,ff9c0e0e,,,,,-,-,,---
 
+[Highlighting Bash - Schema Vim (dark)]
+Alerts:Alert Level 1=28,fff5c1be,fff5c1be,,,,,ff451e1a,,,---
+Alerts:Alert Level 2=28,fffbce80,fffbce80,,,,,ff451e1a,,,---
+Alerts:Alert Level 3=28,ffa8f055,ffa8f055,,,,,,,,---
+Alerts:Normal Text=0,,,,,,,,,,---
+Alerts:Region Marker=25,,,,,,,,,,---
+Bash:Backquote=1,,,,,,,,,,---
+Bash:Builtin=1,fff881f8,,,,,,,,,---
+Bash:Command=1,fffbaafb,,,,,,,,,---
+Bash:Comment=21,,,,,,,,,,---
+Bash:Control=1,,,,,,,,,,---
+Bash:Error=30,,,,,,,,,,---
+Bash:Escape=16,,,,,,,,,,---
+Bash:Expression=29,,,,,,,,,,---
+Bash:Function=2,,,,,,,,,,---
+Bash:Keyword=1,,,,,,,,,,---
+Bash:Normal Text=0,,,,,,,,,,---
+Bash:Option=0,,,,,,,,,,---
+Bash:OtherCommand=1,ffe346e3,,,,,,,,,---
+Bash:Path=0,,,,,,,,,,---
+Bash:Redirection=1,ff959dd6,,,,,,,,,---
+Bash:String DoubleQ=12,,,,,,,,,,---
+Bash:String Escape=16,,,,,,,,,,---
+Bash:String SingleQ=12,,,,,,,,,,---
+Bash:String Transl.=12,,,,,,,,,,---
+Bash:Variable=29,,,,,,,,,,---
+Modelines:Comment=21,,,,,,,,,,---
+Modelines:Keyword=1,,,,,,,,,,---
+Modelines:Number=17,,,,,,,,,,---
+Modelines:Option OFF=29,,,,,,,,,,---
+Modelines:Option ON=29,,,,,,,,,,---
+Modelines:String=12,,,,,,,,,,---
+Modelines:Value=29,,,,,,,,,,---
+Modelines:Variable=2,,,,,,,,,,---
+
 [Highlighting CSS - Schema Vim (dark)]
 Alerts:Alert Level 1=28,fff5c1be,fff5c1be,,,,,ff451e1a,,,---
 Alerts:Alert Level 2=28,fffbce80,fffbce80,,,,,ff451e1a,,,---
@@ -135,6 +171,28 @@ Normal Text=0,,,,,,,,,,---
 Alerts:Alert Level 1=28,ffe85848,ffe85848,,,,,ff451e1a,,,---
 Alerts:Alert Level 2=28,ffca9219,ffca9219,,,,,ff451e1a,,,---
 Alerts:Alert Level 3=28,ff81ca2d,ff81ca2d,,,,,,,,---
+Alerts:Normal Text=0,,,,,,,,,,---
+Alerts:Region Marker=25,,,,,,,,,,---
+RPM Spec:Comment=21,,,,,,,,,,---
+RPM Spec:Enumeration=29,,,,,,,,,,---
+RPM Spec:Error=30,,,,,,,,,,---
+RPM Spec:Escaped character=10,,,,,,,,,,---
+RPM Spec:Fallback for separator spaces=0,,,,,,,,,,---
+RPM Spec:Hint=30,,,,,,,,,,---
+RPM Spec:Integer=17,,,,,,,,,,---
+RPM Spec:Keyword=1,,,,,,,,,,---
+RPM Spec:Line break=1,,,,,,,,,,---
+RPM Spec:Macro call=2,,,,,,,,,,---
+RPM Spec:Section=25,,,,,,,,,,---
+RPM Spec:Shell commands=0,,,,,,,,,,---
+RPM Spec:String=12,,,,,,,,,,---
+RPM Spec:Tag=16,,,,,,,,,,---
+RPM Spec:Warning=30,,,,,,,,,,---
+
+[Highlighting RPM Spec - Schema Vim (dark)]
+Alerts:Alert Level 1=28,fff5c1be,fff5c1be,,,,,ff451e1a,,,---
+Alerts:Alert Level 2=28,fffbce80,fffbce80,1,,,,ff4b201c,,,---
+Alerts:Alert Level 3=28,ffa8f055,ffa8f055,1,,,,ff642925,,,---
 Alerts:Normal Text=0,,,,,,,,,,---
 Alerts:Region Marker=25,,,,,,,,,,---
 RPM Spec:Comment=21,,,,,,,,,,---
