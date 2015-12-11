@@ -36,6 +36,7 @@
 	* addition of Skype and skyperious (Skype data viewer)
 	* addition of Steam installer/launcher and its crutch-wrapper
 	* addition of ZFS support (may be removed at any time)
+	* return of PeaZip (until p7zip GUI decides to compile)
 	* removal of xiccd because it makes broken colour profiles
 	* removal of Bumblebee/Primus/VirtualGL/bbswitch in favour of PRIME/DRI3
 	* removal of conky due to its low practicality from out-of-the-box

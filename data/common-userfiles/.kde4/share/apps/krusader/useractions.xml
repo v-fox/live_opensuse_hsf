@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE KrusaderUserActions>
+<KrusaderUserActions>
+ <deletedAction name="filename_to_clipboard"/>
+ <deletedAction name="sample_amarok_enqueue"/>
+ <deletedAction name="sort_by_modified"/>
+ <deletedAction name="sort_by_size"/>
+ <deletedAction name="sample_newmount"/>
+ <deletedAction name="backup_current"/>
+ <deletedAction name="sample_panesize"/>
+ <deletedAction name="sort_by_extension"/>
+ <deletedAction name="sort_by_name"/>
+ <action name="sample_edit_as_root">
+  <title>Edit &amp;as root</title>
+  <tooltip>Edit a file as root</tooltip>
+  <icon>kate</icon>
+  <description>Edit a file with root permissions</description>
+  <command run_as="root">kate %aCurrent%</command>
+  <defaultshortcut>Ctrl+E</defaultshortcut>
+ </action>
+ <action enabled="false" name="J7Z_extract">
+  <title>&amp;Extract</title>
+  <tooltip>Extract</tooltip>
+  <icon>utilities-file-archiver</icon>
+  <category>J7Z</category>
+  <description>Extract archive with J7Z</description>
+  <command>J7Z.sh e %aList("Selected")%</command>
+ </action>
+ <action enabled="false" name="J7Z_extract_beneath">
+  <title>Extract &amp;Beneath</title>
+  <tooltip>Extract Beneath</tooltip>
+  <icon>utilities-file-archiver</icon>
+  <category>J7Z</category>
+  <description>Extract archive with J7Z</description>
+  <command>J7Z.sh ae -p %aList("Selected")%</command>
+ </action>
+ <action enabled="false" name="J7Z_create_archive">
+  <title>&amp;Create archive</title>
+  <tooltip>Create archive</tooltip>
+  <icon>utilities-file-archiver</icon>
+  <category>J7Z</category>
+  <description>Create archive with J7Z</description>
+  <command>J7Z.sh c %aList("Selected")%</command>
+ </action>
+ <action enabled="false" name="J7Z_extract_test">
+  <title>&amp;Test Extraction</title>
+  <tooltip>Test Extraction</tooltip>
+  <icon>utilities-file-archiver</icon>
+  <category>J7Z</category>
+  <description>Test Extraction of an archive with J7Z</description>
+  <command>J7Z.sh at %aList("Selected")%</command>
+ </action>
+ <action name="peazip_create">
+  <title>Create archive</title>
+  <tooltip>Create archive</tooltip>
+  <icon>add-folder-to-archive</icon>
+  <category>PeaZip</category>
+  <description>Create archive with PeaZip</description>
+  <command>peazip -add2archive %aList("Selected")%</command>
+ </action>
+ <action name="peazip_open">
+  <title>Open as archive</title>
+  <tooltip>Open as archive</tooltip>
+  <icon>utilities-file-archiver</icon>
+  <category>PeaZip</category>
+  <description>Open as archive in PeaZip</description>
+  <command>peazip -ext2browse %aList("Selected")%</command>
+ </action>
+ <action name="peazip_extract">
+  <title>Extract archive</title>
+  <tooltip>Extract archive</tooltip>
+  <icon>extract-archive</icon>
+  <category>PeaZip</category>
+  <description>Extract as archive with PeaZip</description>
+  <command>peazip -ext2full %aList("Selected")%</command>
+ </action>
+ <action name="peazip_extract_here">
+  <title>Extract archive here</title>
+  <tooltip>Extract archive here</tooltip>
+  <icon>archive-extract</icon>
+  <category>PeaZip</category>
+  <description>Extract as archive here with PeaZip</description>
+  <command>peazip -ext2here %aList("Selected")%</command>
+ </action>
+ <action name="peazip_extract_folder">
+  <title>Extract archive here to new folder</title>
+  <tooltip>Extract archive here to new folder</tooltip>
+  <icon>folder-download-important</icon>
+  <category>PeaZip</category>
+  <description>Extract as archive here to new folder with PeaZip</description>
+  <command>peazip -ext2folder %aList("Selected")%</command>
+ </action>
+</KrusaderUserActions>

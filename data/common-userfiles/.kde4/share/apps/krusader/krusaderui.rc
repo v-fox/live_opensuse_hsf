@@ -1,0 +1,230 @@
+<!DOCTYPE kpartgui>
+<kpartgui version="21" name="krusader">
+ <MenuBar alreadyVisited="1">
+  <Menu noMerge="1" name="file" alreadyVisited="1">
+   <text>&amp;File</text>
+   <Action name="edit_new_file"/>
+   <Action name="F7_Mkdir"/>
+   <Action name="new symlink"/>
+   <Separator/>
+   <Action name="F3_View"/>
+   <Action name="F4_Edit"/>
+   <Action name="F5_Copy"/>
+   <Action name="F6_Move"/>
+   <Separator/>
+   <Action name="pack"/>
+   <Action name="unpack"/>
+   <Action name="test archives"/>
+   <Separator/>
+   <Action name="compare"/>
+   <Action name="multirename"/>
+   <Separator/>
+   <Action name="create checksum"/>
+   <Action name="match checksum"/>
+   <Separator/>
+   <Action name="split"/>
+   <Action name="combine"/>
+   <Separator/>
+   <Action name="std_quit"/>
+   <Separator weakSeparator="1"/>
+   <Action name="file_quit"/>
+  </Menu>
+  <Menu noMerge="1" name="edit" alreadyVisited="1">
+   <text>&amp;Edit</text>
+   <Action name="edit_cut"/>
+   <Action name="edit_copy"/>
+   <Action name="edit_paste"/>
+   <Separator weakSeparator="1"/>
+   <Action name="std_cut"/>
+   <Action name="std_copy"/>
+   <Action name="std_paste"/>
+   <Action name="F9_Rename"/>
+   <Action name="F8_Delete"/>
+   <Separator/>
+   <Action name="select group"/>
+   <Action name="unselect group"/>
+   <Action name="select all"/>
+   <Action name="unselect all"/>
+   <Action name="invert"/>
+   <Action name="restore_selection"/>
+   <Separator/>
+   <Action name="compare dirs"/>
+   <Menu noMerge="1" name="compare setup">
+    <text>Compare Se&amp;tup</text>
+    <Action name="select_newer_and_single"/>
+    <Action name="select_single"/>
+    <Action name="select_newer"/>
+    <Action name="select_different_and_single"/>
+    <Action name="select_different"/>
+   </Menu>
+   <Separator/>
+   <Action name="calculate"/>
+   <Action name="properties"/>
+  </Menu>
+  <Menu noMerge="1" name="go" alreadyVisited="1">
+   <text>&amp;Go</text>
+   <Action name="go_up"/>
+   <Action name="go_back"/>
+   <Action name="go_forward"/>
+   <Action name="go_home"/>
+   <Separator weakSeparator="1"/>
+   <Action name="root"/>
+   <Action name="Popular_Urls"/>
+   <Separator/>
+   <Action name="set_jump_back"/>
+   <Action name="jump_back"/>
+  </Menu>
+  <Menu noMerge="1" name="myview">
+   <text>&amp;View</text>
+   <Action name="zoom_in"/>
+   <Action name="zoom_out"/>
+   <Action name="default_zoom"/>
+   <Separator/>
+   <ActionList name="view_actionlist"/>
+   <Separator/>
+   <Action name="toggle hidden files"/>
+   <Action name="all files"/>
+   <Action name="exec files"/>
+   <Action name="custom files"/>
+   <Separator/>
+   <Action name="toggle previews"/>
+   <Separator/>
+   <Action name="changeremoteencoding"/>
+   <Separator/>
+   <Action name="std_redisplay"/>
+   <Separator/>
+   <Action name="view_save_default_settings"/>
+   <Action name="view_apply_settings_to_others"/>
+  </Menu>
+  <Action name="useractionmenu">
+   <!--
+   <text>User&amp;actions</text>
+   <Action name="manage useractions" />
+   <Separator/>
+   -->
+  </Action>
+  <Menu noMerge="1" name="_tools">
+   <!-- FIXME tools menu won't show up before the options menu, but does when the name attribute is renamed?! -->
+   <text>&amp;Tools</text>
+   <Action name="find"/>
+   <Action name="locate"/>
+   <Separator/>
+   <Action name="sync dirs"/>
+   <Action name="mountman"/>
+   <Action name="disk usage"/>
+   <Action name="queue manager"/>
+   <Separator/>
+   <Action name="ftp new connection"/>
+   <Action name="ftp disconnect"/>
+   <Separator/>
+   <Action name="terminal@home"/>
+   <Action name="F2_Terminal"/>
+   <Action name="root krusader"/>
+   <Separator/>
+   <Action name="emptytrash"/>
+   <Separator/>
+   <Action name="JS_Console"/>
+   <!-- <Action name="user menu" /> -->
+   <!--
+   <Separator/>
+   <Action name="add tool" />
+   <Separator/>
+   -->
+  </Menu>
+  <Menu noMerge="1" name="window">
+   <text>&amp;Window</text>
+   <Action name="new tab"/>
+   <Action name="lock tab"/>
+   <Action name="duplicate tab"/>
+   <Action name="move_tab_to_other_side"/>
+   <Action name="close tab"/>
+   <Action name="close inactive tabs"/>
+   <Action name="close duplicated tabs"/>
+   <Action name="next tab"/>
+   <Action name="previous tab"/>
+   <Separator/>
+   <Action name="profile"/>
+   <Separator/>
+   <Action name="swap panels"/>
+   <Action name="toggle swap sides"/>
+   <Action name="toggle vertical mode"/>
+   <Separator/>
+   <Action name="switch_fullscreen_te"/>
+   <Action name="save position"/>
+  </Menu>
+  <Separator weakSeparator="1"/>
+  <Menu noMerge="1" name="settings" alreadyVisited="1">
+   <text>&amp;Settings</text>
+   <!-- Show Menubar -->
+   <Action name="options_show_menubar"/>
+   <Action name="options_show_toolbar"/>
+   <Action name="toggle actions toolbar"/>
+   <Action name="options_show_statusbar"/>
+   <Action name="toggle fn bar"/>
+   <Action name="toggle terminal emulator"/>
+   <Action name="toggle command line"/>
+   <Menu noMerge="1" name="command_execution_mode">
+    <text>Command Execution Mode Se&amp;tup</text>
+    <Action name="exec_start_and_forget"/>
+    <Action name="exec_collect_separate"/>
+    <Action name="exec_collect_together"/>
+    <Action name="exec_terminal_external"/>
+    <Action name="exec_terminal_embedded"/>
+   </Menu>
+   <Separator/>
+   <Action name="options_configure_keybinding"/>
+   <Action name="options_configure_toolbars"/>
+   <!-- <Action name="tools setup" /> -->
+   <Action name="konfigurator"/>
+  </Menu>
+  <Separator weakSeparator="1"/>
+  <Menu noMerge="1" name="help" alreadyVisited="1">
+   <text>&amp;Help</text>
+   <Action name="help_contents"/>
+   <Action name="help_whats_this"/>
+   <Separator weakSeparator="1"/>
+   <Action name="help_report_bug"/>
+   <Separator weakSeparator="1"/>
+   <Action name="switch_application_language"/>
+   <Separator weakSeparator="1"/>
+   <Action name="help_about_app"/>
+   <Action name="help_about_kde"/>
+  </Menu>
+ </MenuBar>
+ <ToolBar iconText="icononly" noMerge="1" fullWidth="true" name="mainToolBar" alreadyVisited="1">
+  <text>Main Toolbar</text>
+  <Action name="go_back"/>
+  <Action name="go_forward"/>
+  <Action name="go_up"/>
+  <Action name="go_home"/>
+  <Action name="std_redisplay"/>
+  <Separator name="separator_0"/>
+  <Action name="select all"/>
+  <Action name="unselect all"/>
+  <Action name="select group"/>
+  <Separator name="separator_1"/>
+  <Action name="find"/>
+  <Action name="edit_new_file"/>
+  <Action name="compare"/>
+  <Action name="unpack"/>
+  <Action name="pack"/>
+  <Separator name="separator_2"/>
+  <Action name="mountman"/>
+  <Action name="ftp connect"/>
+  <Action name="ftp new connection"/>
+  <Action name="profile"/>
+  <Action name="trashbin"/>
+  <Separator name="separator_3"/>
+  <Action name="zoom_in"/>
+  <Action name="zoom_out"/>
+  <Separator name="separator_4"/>
+  <Action name="toggle terminal emulator"/>
+ </ToolBar>
+ <ToolBar iconText="icononly" noMerge="1" fullWidth="false" name="actionsToolBar">
+  <text>Actions Toolbar</text>
+ </ToolBar>
+ <ActionProperties>
+  <Action accel="" name="sysinfo"/>
+  <Action icon="package_system_terminal" name="toggle terminal emulator"/>
+ </ActionProperties>
+</kpartgui>
