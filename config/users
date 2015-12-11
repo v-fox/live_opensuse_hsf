@@ -1,7 +1,6 @@
-	<users group='users'>
-		<user name='hacker' pwd='' pwdformat='plain' home='/home/hacker' shell='/usr/bin/zsh'/>
+	<users group="users">
+		<user name="hacker" pwd="" pwdformat="plain" home="/home/hacker" shell="/usr/bin/zsh"/>
 	</users>
-	<users group='root'>
-		<user name='root' pwd='linux' pwdformat='plain' home='/root' shell='/bin/bash'/>
+	<users group="root">
+		<user name="root" pwd="linux" pwdformat="plain" home="/root" shell="/bin/bash"/>
 	</users>
-	
