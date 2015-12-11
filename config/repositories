@@ -8,7 +8,7 @@
 		<source path="opensuse://Emulators/openSUSE_Factory"/>
 	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="88" alias="filesystems">
-		<source path="opensuse://filesystems/openSUSE_Factory"/>
+		<source path="opensuse://filesystems/openSUSE_Tumbleweed"/>
 	</repository>
         <repository type="rpm-md" imageinclude="true" priority="88" alias="Multilingualization_Fonts">
                 <source path="opensuse://M17N:fonts/openSUSE_Tumbleweed"/>
