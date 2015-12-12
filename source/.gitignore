@@ -512,6 +512,12 @@ root/home/hacker/.kde4/share/apps/konsole/WhiteOnBlack.colorscheme
 root/etc/skel/.kde4/share/apps/konsole/Solarized\ Dark.colorscheme
 root/root/.kde4/share/apps/konsole/Solarized\ Dark.colorscheme
 root/home/hacker/.kde4/share/apps/konsole/Solarized\ Dark.colorscheme
+root/etc/skel/.kde4/share/apps/krusader/useractions.xml
+root/root/.kde4/share/apps/krusader/useractions.xml
+root/home/hacker/.kde4/share/apps/krusader/useractions.xml
+root/etc/skel/.kde4/share/apps/krusader/krusaderui.rc
+root/root/.kde4/share/apps/krusader/krusaderui.rc
+root/home/hacker/.kde4/share/apps/krusader/krusaderui.rc
 root/etc/skel/.kde4/share/icons
 root/root/.kde4/share/icons
 root/home/hacker/.kde4/share/icons
