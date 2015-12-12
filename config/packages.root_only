@@ -130,7 +130,6 @@ dstat
 dvb
 dvbsnoop
 dvb-utils
-e2fsprogs-snapshots
 easytag
 ebtables
 ecryptfs-utils
