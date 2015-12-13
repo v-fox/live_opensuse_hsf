@@ -160,11 +160,6 @@ c_rehash
 /etc/cron.daily/suse-do_mandb
 
 #======================================
-# Making sure of proper permissions
-#--------------------------------------
-baseSetupUserPermissions
-
-#======================================
 # Preventing systemd from
 # holding off boot up
 # https://github.com/manjaro/release-plan/issues/17
