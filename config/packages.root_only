@@ -548,6 +548,7 @@ libreoffice-officebean
 libreoffice-writer-extensions
 libtxc_dxtn
 libva-egl1
+libva-glx1
 libvdpau_nouveau
 libvdpau_r300
 libvdpau_r600
@@ -593,6 +594,7 @@ mercurial
 Mesa
 Mesa-demo-x
 Mesa-libOpenCL
+Mesa-libva
 minicom
 miniupnpc
 miredo-client
