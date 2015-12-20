@@ -32,6 +32,7 @@
 		Desmume for Nintendo© DS®
 		Mupen64Plus for Nintendo© N64®
 		Yabause for Sega© Saturn®
+	* addition of rEFInd (graphical probing EFI bootloader)
 	* addition of K3B disk burner just for the hell of it
 	* addition of Skype and skyperious (Skype data viewer)
 	* addition of Steam installer/launcher and its crutch-wrapper
