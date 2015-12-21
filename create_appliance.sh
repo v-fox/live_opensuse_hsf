@@ -255,9 +255,9 @@ if [ -f "${IMAGE}" ]; then
     mv -v "${IMAGE}" "${IMAGE_PROPER}"
 fi
 
+if [ -f "$(basename "${IMAGE_PROPER}")" ]; then
 echo "** Creating sha256 checksum..."
 cd "${img}"
-if [ -f "$(basename "${IMAGE_PROPER}")" ]; then
 sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
 fi
 
@@ -266,4 +266,6 @@ echo "** Cleaning up duplicate files..."
 cd "${dir}/data"
 ./common-userfiles_3-clean-root.sh
 
+if [ -f "$(basename "${IMAGE_PROPER}")" ]; then
 echo "** Everything is done, now look into '${img}' !"
+fi
