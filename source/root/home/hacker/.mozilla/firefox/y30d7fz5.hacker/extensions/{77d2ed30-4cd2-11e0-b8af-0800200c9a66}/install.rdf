@@ -1,12 +1,10 @@
-<?xml version="1.0"?>
-
-<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+<?xml version='1.0' encoding='utf-8'?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
   <Description about="urn:mozilla:install-manifest">
   <em:type>4</em:type>  
   <em:id>{77d2ed30-4cd2-11e0-b8af-0800200c9a66}</em:id>
-    <em:version>13.2.1</em:version>
+    <em:version>13.2.1.1-signed</em:version>
   
 <!-- Target Application this extension can install into, 
          with minimum and maximum supported versions. --> 

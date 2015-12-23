@@ -9,7 +9,7 @@ if ("undefined" == typeof(Ci)) var Ci = Components.interfaces;
 if ("undefined" == typeof(Cu)) var Cu = Components.utils;
 
 // can't use 'log': don't pollute global (chrome) namespace
-let firetray_log = firetray.Logging.getLogger("firetray.Chrome");
+var firetray_log = firetray.Logging.getLogger("firetray.Chrome");
 
 // https://groups.google.com/group/mozilla.dev.extensions/browse_thread/thread/e89e9c2a834ff2b6#
 var firetrayChrome = { // each new window gets a new firetrayChrome !

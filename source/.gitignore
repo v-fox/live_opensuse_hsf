@@ -824,6 +824,9 @@ root/home/hacker/.config/autostart/pasystray.desktop
 root/etc/skel/.config/autostart/switchview-autostart.desktop
 root/root/.config/autostart/switchview-autostart.desktop
 root/home/hacker/.config/autostart/switchview-autostart.desktop
+root/etc/skel/.config/autostart/z-dispcalGUI-apply-profiles.desktop
+root/root/.config/autostart/z-dispcalGUI-apply-profiles.desktop
+root/home/hacker/.config/autostart/z-dispcalGUI-apply-profiles.desktop
 root/etc/skel/.config/autostart/gnome-keyring-gpg.desktop
 root/root/.config/autostart/gnome-keyring-gpg.desktop
 root/home/hacker/.config/autostart/gnome-keyring-gpg.desktop

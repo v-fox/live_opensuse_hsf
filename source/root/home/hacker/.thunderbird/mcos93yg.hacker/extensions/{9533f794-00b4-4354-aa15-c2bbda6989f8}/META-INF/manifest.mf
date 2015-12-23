@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: s6UdiqbSeeaCRM3RS5Bxkw==
-SHA1-Digest: 0/SEOjLvA/Vxi87iRthgqOornN0=
+MD5-Digest: 3FtN7jfCnzaAa4KPyu88sA==
+SHA1-Digest: 4/XOfHmtNZkAxdB3L3CHnT8vbG8=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
@@ -12,8 +12,8 @@ SHA1-Digest: soOM2MF4Jmue9v4xtTKno7FV19M=
 
 Name: chrome/content/options.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 7cEs6dMiKSEZ9Jhd+iYm+g==
-SHA1-Digest: UDb9GtC1D+IeyqGlQBj8CZPYQlc=
+MD5-Digest: Z7y1FKt7e4bRKoURu9gBuQ==
+SHA1-Digest: rhzPHuu0pZrGwQOeNIen7ZAoGxI=
 
 Name: chrome/content/options.xul
 Digest-Algorithms: MD5 SHA1
@@ -22,8 +22,8 @@ SHA1-Digest: plkzie79WvRF/4bcR+qDX68BXUI=
 
 Name: chrome/content/overlay.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: ouoFxtFGmBgUP0iB/6AcAg==
-SHA1-Digest: AIlak8xudrvDhM2ME6GmUjzz+zY=
+MD5-Digest: v00stBgGtvQZcdopxjfuQw==
+SHA1-Digest: Rmnxk7lvN6ZpLkRYU+0N4jg1HrU=
 
 Name: chrome/content/overlay.xul
 Digest-Algorithms: MD5 SHA1
@@ -452,8 +452,8 @@ SHA1-Digest: xOAuNIWr/m7tNa/jNV5wVDV7HZw=
 
 Name: components/firetray-clhandler.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 04ZHgGPulC9mYfAc7Gpr+A==
-SHA1-Digest: w8ZhX3NQ/jhS0QZ5xDLyyI6XOF4=
+MD5-Digest: uCKCru/ESVifV5yOXNZcHw==
+SHA1-Digest: SMWgGJ+BBDNKcNc/GpEougAwu+Y=
 
 Name: defaults/preferences/prefs.js
 Digest-Algorithms: MD5 SHA1
@@ -462,8 +462,8 @@ SHA1-Digest: 0Nv6ANhuNisfe31ghUVjr9D1+Sk=
 
 Name: modules/commons.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: KPA4q85PmfgxayNCUNz/Wg==
-SHA1-Digest: cdceCozGJ1yB0/ATjdvFpey/Skk=
+MD5-Digest: ybM5qIDImvRbaghNSB+58g==
+SHA1-Digest: 6Vjgt3xPv4KBRP63b8iZuofslQc=
 
 Name: modules/FiretrayHandler.jsm
 Digest-Algorithms: MD5 SHA1
@@ -482,8 +482,8 @@ SHA1-Digest: zHYamSOon3z1uFYZlBjQybsMj58=
 
 Name: modules/log4moz.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: JIQvfgLXaHQc5TERnhPBJg==
-SHA1-Digest: LAzQhdgqj+qHbv0jpgu6V+f7LW4=
+MD5-Digest: qX7kiJsNivocH+au41UJYw==
+SHA1-Digest: NL4MGmxo8AF3o6PAwqlgSDY5Cww=
 
 Name: modules/logging.jsm
 Digest-Algorithms: MD5 SHA1

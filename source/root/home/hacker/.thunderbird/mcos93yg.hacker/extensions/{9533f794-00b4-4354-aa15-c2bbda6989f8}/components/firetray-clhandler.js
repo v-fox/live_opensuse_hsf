@@ -1,14 +1,14 @@
 // https://developer.mozilla.org/en/Chrome/Command_Line
 
-const Cc = Components.classes;
-const Ci = Components.interfaces;
-const Cu = Components.utils;
+var   Cc = Components.classes;
+var   Ci = Components.interfaces;
+var   Cu = Components.utils;
 
 Cu.import("resource://gre/modules/XPCOMUtils.jsm");
 Cu.import("resource://firetray/logging.jsm");
 Cu.import("resource://firetray/FiretrayHandler.jsm");
 
-let log = firetray.Logging.getLogger("firetray.clhandler");
+var log = firetray.Logging.getLogger("firetray.clhandler");
 
 function firetayCommandLineHandler() {}
 firetayCommandLineHandler.prototype = {

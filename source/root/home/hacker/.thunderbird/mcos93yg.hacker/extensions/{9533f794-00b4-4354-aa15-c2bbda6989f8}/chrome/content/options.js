@@ -1,21 +1,21 @@
 /* -*- Mode: js2; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
 
-const Cc = Components.classes;
-const Ci = Components.interfaces;
-const Cu = Components.utils;
+var   Cc = Components.classes;
+var   Ci = Components.interfaces;
+var   Cu = Components.utils;
 
 Cu.import("resource://firetray/FiretrayHandler.jsm");
 Cu.import("resource://firetray/commons.js");
 
-const TREEROW_ACCOUNT_OR_SERVER_TYPE_NAME     = 0;
-const TREEROW_ACCOUNT_OR_SERVER_TYPE_EXCLUDED = 1;
-const TREEROW_ACCOUNT_OR_SERVER_TYPE_ORDER    = 2;
-const TREELEVEL_SERVER_TYPES      = 0;
-const TREELEVEL_EXCLUDED_ACCOUNTS = 1;
+var   TREEROW_ACCOUNT_OR_SERVER_TYPE_NAME     = 0;
+var   TREEROW_ACCOUNT_OR_SERVER_TYPE_EXCLUDED = 1;
+var   TREEROW_ACCOUNT_OR_SERVER_TYPE_ORDER    = 2;
+var   TREELEVEL_SERVER_TYPES      = 0;
+var   TREELEVEL_EXCLUDED_ACCOUNTS = 1;
 
-const PREF_DEFAULT_PANE = "pref-pane-windows";
+var   PREF_DEFAULT_PANE = "pref-pane-windows";
 
-let log = firetray.Logging.getLogger("firetray.UIOptions");
+var log = firetray.Logging.getLogger("firetray.UIOptions");
 
 var firetrayUIOptions = {
   strings: null,

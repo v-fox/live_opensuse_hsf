@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<blocklist xmlns="http://www.mozilla.org/2006/addons-blocklist" lastupdate="1447108959000">
+<blocklist xmlns="http://www.mozilla.org/2006/addons-blocklist" lastupdate="1447453044000">
   <emItems>
       <emItem  blockID="i58" id="webmaster@buzzzzvideos.info">
                         <versionRange  minVersion="0" maxVersion="*">
@@ -2757,6 +2757,18 @@
       <pluginItem  blockID="p1052">
                   <match name="filename" exp="JavaAppletPlugin\.plugin" />                      <versionRange  minVersion="Java 7 Update 11" maxVersion="Java 7 Update 11" severity="0" vulnerabilitystatus="1"></versionRange>
                             <infoURL>https://java.com/</infoURL>
+          </pluginItem>
+      <pluginItem  blockID="p1053">
+                  <match name="filename" exp="nprpplugin\.dll" />                      <versionRange  minVersion="0" maxVersion="17.0.10.7" severity="0" vulnerabilitystatus="1"></versionRange>
+                            <infoURL>https://real.com/</infoURL>
+          </pluginItem>
+      <pluginItem  blockID="p1054">
+                  <match name="filename" exp="np32dsw_[0-9]+\.dll" />                      <versionRange  minVersion="0" maxVersion="12.2.0.162" severity="0" vulnerabilitystatus="1"></versionRange>
+                            <infoURL>https://get.adobe.com/shockwave/</infoURL>
+          </pluginItem>
+      <pluginItem  blockID="p1055">
+                  <match name="filename" exp="DirectorShockwave\.plugin" />                      <versionRange  minVersion="0" maxVersion="12.2.0.162" severity="0" vulnerabilitystatus="1"></versionRange>
+                            <infoURL>https://get.adobe.com/shockwave/</infoURL>
           </pluginItem>
     </pluginItems>
 
