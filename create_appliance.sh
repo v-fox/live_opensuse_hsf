@@ -266,6 +266,6 @@ echo "** Cleaning up duplicate files..."
 cd "${dir}/data"
 ./common-userfiles_3-clean-root.sh
 
-if [ -f "$(basename "${IMAGE_PROPER}")" ]; then
+if [ -f "${IMAGE_PROPER}")" ]; then
 echo "** Everything is done, now look into '${img}' !"
 fi
