@@ -526,5 +526,6 @@ user_pref("webgl.enable-draft-extensions", true);
 user_pref("webgl.enable-prototype-webgl2", true);
 user_pref("webgl.force-enabled", true);
 user_pref("webgl.msaa-force", true);
+user_pref("xpinstall.signatures.required", false);
 user_pref("xpinstall.whitelist.add", "");
 user_pref("xpinstall.whitelist.add.180", "");
