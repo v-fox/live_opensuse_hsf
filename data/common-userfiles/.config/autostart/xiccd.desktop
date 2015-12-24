@@ -1,0 +1,12 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+X-SuSE-translate=true
+Version=1.0
+Type=Application
+Name=X11 ICC Daemon
+Comment=Start the XICCD
+Categories=Utility;
+Exec=sh -c "sleep 10; xiccd"
+Icon=preferences-system
+StartupNotify=false
+NoDisplay=true

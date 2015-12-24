@@ -452,6 +452,9 @@ root/home/hacker/.jamin/global-output.jam
 root/etc/skel/.jamin/jamin-defaults
 root/root/.jamin/jamin-defaults
 root/home/hacker/.jamin/jamin-defaults
+root/etc/skel/.gimp-2.8/gimprc
+root/root/.gimp-2.8/gimprc
+root/home/hacker/.gimp-2.8/gimprc
 root/etc/skel/.jackdrc
 root/root/.jackdrc
 root/home/hacker/.jackdrc
@@ -770,6 +773,9 @@ root/home/hacker/.config/autostart/qjackctl.desktop
 root/etc/skel/.config/autostart/yakuake.desktop
 root/root/.config/autostart/yakuake.desktop
 root/home/hacker/.config/autostart/yakuake.desktop
+root/etc/skel/.config/autostart/xiccd.desktop
+root/root/.config/autostart/xiccd.desktop
+root/home/hacker/.config/autostart/xiccd.desktop
 root/etc/skel/.config/autostart/gnome-keyring-secrets.desktop
 root/root/.config/autostart/gnome-keyring-secrets.desktop
 root/home/hacker/.config/autostart/gnome-keyring-secrets.desktop

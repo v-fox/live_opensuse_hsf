@@ -16,9 +16,6 @@
 	<repository type="rpm-md" imageinclude="true" priority="88" alias="multimedia_apps">
 		<source path="opensuse://multimedia:apps/openSUSE_Tumbleweed"/>
 	</repository>
-	<repository type="rpm-md" imageinclude="true" priority="88" alias="multimedia_color_management">
-		<source path="opensuse://multimedia:color_management/openSUSE_Tumbleweed"/>
-	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="88" alias="multimedia_libs">
 		<source path="opensuse://multimedia:libs/openSUSE_Tumbleweed"/>
 	</repository>
@@ -82,6 +79,9 @@
         <repository type="rpm-md" imageinclude="true" priority="66" alias="openSUSE_Update">
                 <source path="http://download.opensuse.org/repositories/openSUSE:/Factory:/Update/standard"/>
         </repository>
+	<repository type="rpm-md" imageinclude="true" priority="55" alias="multimedia_color_management">
+		<source path="opensuse://multimedia:color_management/openSUSE_Tumbleweed"/>
+	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="44" alias="Packman">
 		<source path="http://mirror.karneval.cz/pub/linux/packman/suse/openSUSE_Tumbleweed"/>
 	</repository>
