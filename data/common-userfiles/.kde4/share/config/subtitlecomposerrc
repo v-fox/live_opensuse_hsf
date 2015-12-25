@@ -18,7 +18,7 @@ MinDurationPerCharacter=30
 [GStreamer]
 AudioSink=jackaudiosink
 ExperimentalFeatures=true
-VideoSink=glvideosink
+VideoSink=glimagesink
 
 [General]
 AutomaticVideoLoad=true

@@ -241,7 +241,6 @@ grub2
 gsettings-backend-dconf
 gsettings-desktop-schemas
 gst123
-gst-omx
 gstreamer-0_10-libnice
 gstreamer-0_10-plugin-crystalhd
 gstreamer-0_10-plugins-bad
