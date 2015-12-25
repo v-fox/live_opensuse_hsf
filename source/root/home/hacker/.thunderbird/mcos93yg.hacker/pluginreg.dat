@@ -378,15 +378,6 @@ KParts Plugin:$
 294:video/mlt-playlist:MLT video playlist:westley:$
 295:video/vnd.mpegurl:MPEG video:m1u:$
 296:video/x-mng:MNG animation:mng:$
-libfreshwrapper-flashplayer.so:$
-/usr/lib64/browser-plugins/libfreshwrapper-flashplayer.so:$
-19.0.0.245:$
-1450062682000:0:0:0:$
-Shockwave Flash 19.0 r0:$
-Shockwave Flash:$
-2
-0:application/x-shockwave-flash:Shockwave Flash:swf:$
-1:application/futuresplash:FutureSplash Player:spl:$
 IcedTeaPlugin.so:$
 /usr/lib64/java-1_8_0-openjdk-plugin/lib/IcedTeaPlugin.so:$
 :$
@@ -432,9 +423,18 @@ IcedTea-Web Plugin (using IcedTea-Web 1.6.1 (suse-2.2-x86_64)):$
 35:application/x-java-bean;version=1.8:IcedTea:class,jar:$
 36:application/x-java-bean;jpi-version=1.8.0_50:IcedTea:class,jar:$
 37:application/x-java-vm-npruntime:IcedTea::$
+libfreshwrapper-flashplayer.so:$
+/usr/lib64/browser-plugins/libfreshwrapper-flashplayer.so:$
+19.0.0.245:$
+1450930351000:0:0:0:$
+Shockwave Flash 19.0 r0:$
+Shockwave Flash:$
+2
+0:application/x-shockwave-flash:Shockwave Flash:swf:$
+1:application/futuresplash:FutureSplash Player:spl:$
 
 [INVALID]
-/home/fox/.mozilla/plugins/libnpsoplugin.so:$
-0:$
 /home/fox/.mozilla/plugins/liblightsparkplugin.so:$
+0:$
+/home/fox/.mozilla/plugins/libnpsoplugin.so:$
 0:$

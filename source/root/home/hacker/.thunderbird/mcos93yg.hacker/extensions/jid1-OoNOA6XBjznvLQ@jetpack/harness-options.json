@@ -1,0 +1,173 @@
+{
+ "abort_on_missing": false, 
+ "check_memory": false, 
+ "enable_e10s": false, 
+ "is-sdk-bundled": false, 
+ "jetpackID": "jid1-OoNOA6XBjznvLQ@jetpack", 
+ "loader": "addon-sdk/lib/sdk/loader/cuddlefish.js", 
+ "main": "main", 
+ "mainPath": "gnotifier/main", 
+ "manifest": {
+  "gnotifier/linux": {
+   "docsSHA256": null, 
+   "jsSHA256": "d46797d55b5643ab147a5d050ab30f065c8e3d49b91d54ca8965776f3baa9e98", 
+   "moduleName": "linux", 
+   "packageName": "gnotifier", 
+   "requirements": {
+    "./utils": "gnotifier/utils", 
+    "chrome": "chrome", 
+    "sdk/l10n": "sdk/l10n", 
+    "utils.js": "gnotifier/utils"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "gnotifier/main": {
+   "docsSHA256": "b5ccfb0b81cf5e7a1beb1459f93d3062e1ad0ebbf171fc690275a19b4efe63af", 
+   "jsSHA256": "e709592c2b319c8f3b7d3cfb97f285434d27d5f14e9be9d5ecb37e8eec5e7f77", 
+   "moduleName": "main", 
+   "packageName": "gnotifier", 
+   "requirements": {
+    "./linux": "gnotifier/linux", 
+    "./osx": "gnotifier/osx", 
+    "./thunderbird": "gnotifier/thunderbird", 
+    "./utils": "gnotifier/utils", 
+    "./windows": "gnotifier/windows", 
+    "chrome": "chrome", 
+    "sdk/l10n": "sdk/l10n", 
+    "sdk/notifications": "sdk/notifications", 
+    "sdk/preferences/service": "sdk/preferences/service", 
+    "sdk/self": "sdk/self", 
+    "sdk/simple-prefs": "sdk/simple-prefs", 
+    "sdk/system": "sdk/system"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "gnotifier/osx": {
+   "docsSHA256": null, 
+   "jsSHA256": "bfef7b42fc8893dfc28be008ed660f1ed86bec5cabed77fe9033d51afcc6d69d", 
+   "moduleName": "osx", 
+   "packageName": "gnotifier", 
+   "requirements": {
+    "chrome": "chrome", 
+    "sdk/system": "sdk/system"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "gnotifier/thunderbird": {
+   "docsSHA256": null, 
+   "jsSHA256": "9d871a44dfaf0f848cc782f7d6fc1737fc2d401e2e01249e3fb8e73b3b8f3419", 
+   "moduleName": "thunderbird", 
+   "packageName": "gnotifier", 
+   "requirements": {
+    "./linux": "gnotifier/linux", 
+    "./utils": "gnotifier/utils", 
+    "chrome": "chrome", 
+    "sdk/l10n": "sdk/l10n", 
+    "sdk/notifications": "sdk/notifications", 
+    "sdk/preferences/service": "sdk/preferences/service", 
+    "sdk/simple-prefs": "sdk/simple-prefs", 
+    "sdk/system": "sdk/system"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "gnotifier/utils": {
+   "docsSHA256": null, 
+   "jsSHA256": "cb811397053b9b8f77ffe6f13c8be501f8081307ef68698d81b815bafc810700", 
+   "moduleName": "utils.js", 
+   "packageName": "gnotifier", 
+   "requirements": {
+    "chrome": "chrome", 
+    "sdk/l10n": "sdk/l10n", 
+    "sdk/simple-prefs": "sdk/simple-prefs", 
+    "sdk/system": "sdk/system"
+   }, 
+   "sectionName": "lib"
+  }, 
+  "gnotifier/windows": {
+   "docsSHA256": null, 
+   "jsSHA256": "e3974cfbdcdfb4384f1644ba4af2bd15c7546aca6787c43052527cfb305e07a2", 
+   "moduleName": "windows", 
+   "packageName": "gnotifier", 
+   "requirements": {
+    "chrome": "chrome", 
+    "sdk/system": "sdk/system"
+   }, 
+   "sectionName": "lib"
+  }
+ }, 
+ "metadata": {
+  "addon-sdk": {
+   "description": "Add-on development made easy.", 
+   "keywords": [
+    "javascript", 
+    "engine", 
+    "addon", 
+    "extension", 
+    "xulrunner", 
+    "firefox", 
+    "browser"
+   ], 
+   "license": "MPL 2.0", 
+   "name": "addon-sdk"
+  }, 
+  "gnotifier": {
+   "author": "Michal Kosciesza <michal@mkiol.net>", 
+   "contributors": [
+    "Alexander Schlarb <alexander1066@xmine128.tk>", 
+    "Joe Simpson <headbangerkenny@gmail.com>", 
+    "Andrew Nagle <kabili@zyrenth.com>"
+   ], 
+   "description": "GNotifier integrates Firefox/Thunderbird's notifications with the native notification system. It supports most Linux desktops and Windows 8.", 
+   "license": "GPL 3.0", 
+   "main": "main", 
+   "name": "gnotifier", 
+   "version": "1.9.1"
+  }
+ }, 
+ "name": "gnotifier", 
+ "parseable": false, 
+ "preferences": [
+  {
+   "description": "'Downloads Complete' notification will be shown everytime when downloading is finished.", 
+   "name": "downloadCompleteAlert", 
+   "title": "Download complete notification", 
+   "type": "bool", 
+   "value": true
+  }, 
+  {
+   "description": "Defines action on click for download complete notification. If your notification system supports buttons, this parameter defines which button is first.", 
+   "name": "clickOption", 
+   "options": [
+    {
+     "label": "Open folder", 
+     "value": "0"
+    }, 
+    {
+     "label": "Open file", 
+     "value": "1"
+    }
+   ], 
+   "title": "Default click action", 
+   "type": "menulist", 
+   "value": 1
+  }, 
+  {
+   "description": "New mail notification will not contain details like subject or sender address.", 
+   "name": "simpleNewMail", 
+   "title": "Simple New mail notification", 
+   "type": "bool", 
+   "value": false
+  }, 
+  {
+   "description": "Defines Icon used in notifications. For example: 'firefox', 'web-browser' or 'iceweasel'. If value is set to 'default' then icon will be set based on system name.", 
+   "name": "notifyIcon", 
+   "title": "Notification Icon", 
+   "type": "string", 
+   "value": "default"
+  }
+ ], 
+ "preferencesBranch": "jid1-OoNOA6XBjznvLQ@jetpack", 
+ "sdkVersion": "1.17", 
+ "staticArgs": {}, 
+ "verbose": false
+}
