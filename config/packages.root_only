@@ -633,6 +633,8 @@ netlabel-tools
 netperf
 net-snmp
 NetworkManager-gnome
+NetworkManager-iodine-gnome
+NetworkManager-l2tp-gnome
 NetworkManager-openconnect-gnome
 NetworkManager-openvpn-gnome
 NetworkManager-pptp-gnome
