@@ -43,7 +43,11 @@ suseImportBuildKey
 baseRemoveService rsyslog
 baseRemoveService apparmor
 baseRemoveService SuSEfirewall2
+# get rid of systemd's NM knock-off... with extreme prejudice
 baseRemoveService wicked.service
+systemctl mask wicked
+systemctl mask wickedd
+baseInsertService NetworkManager
 # we don't want it to run by default and its modules are broken anyway... or do we ?
 #baseRemoveService zfs
 baseInsertService tuned
@@ -61,7 +65,6 @@ baseInsertService hddtemp
 baseInsertService dkms
 baseInsertService bluetooth
 baseInsertService ModemManager
-baseInsertService NetworkManager
 baseInsertService ntp
 baseInsertService dnscrypt-proxy
 baseInsertService unbound
