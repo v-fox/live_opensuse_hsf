@@ -239,6 +239,7 @@ echo "** Creating appliance..."
 command="$kiwi --verbose 3 --gzip-cmd=lzop --build ${src}/ -d ${dst}"
 echo "$command"
 $command
+# this should work but kiwi sometimes gives out error codes for good builds
 #if [ $? -ne 0 ]; then
 #	echo "** Appliance creation failed!"
 #	exit 1
@@ -251,21 +252,15 @@ fi
 
 # And we're done!
 if [ -f "${IMAGE}" ]; then
-    echo -n "** Moving iso-file: "
-    mv -v "${IMAGE}" "${IMAGE_PROPER}"
-fi
-
-if [ -f "$(basename "${IMAGE_PROPER}")" ]; then
-echo "** Creating sha256 checksum..."
-cd "${img}"
-sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
+	echo -n "** Moving iso-file: "
+	mv -v "${IMAGE}" "${IMAGE_PROPER}"
+	echo "** Creating sha256 checksum..."
+	cd "${img}"
+	sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
+	echo "** Everything is built, look into '${img}' !"
 fi
 
 # Cleaning up #2.
 echo "** Cleaning up duplicate files..."
 cd "${dir}/data"
 ./common-userfiles_3-clean-root.sh
-
-if [ -f "${IMAGE_PROPER}" ]; then
-echo "** Everything is done, now look into '${img}' !"
-fi
