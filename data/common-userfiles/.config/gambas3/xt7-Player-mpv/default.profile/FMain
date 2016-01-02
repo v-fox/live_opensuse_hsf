@@ -61,7 +61,7 @@ PoweroffBTN
 .visible=T
 .Value=
 HSplit1
-.layout=919,1001,
+.layout=692,1228,
 .tag=
 .visible=T
 #4
@@ -580,7 +580,7 @@ Scrollbar
 .Value=0
 Scrollbar
 .visible=T
-.Value=0
+.Value=1140
 #9
 .visible=T
 shadeup
@@ -615,10 +615,10 @@ OuterBox
 .visible=T
 VideoBox
 .visible=T
-thumblevideo
-.visible=T
 bp
 .visible=
+thumblevideo
+.visible=T
 BottomVbox
 .visible=T
 ControlFrame
@@ -690,7 +690,7 @@ volumecontainer
 .visible=T
 SaveVolumeSlider
 .visible=T
-.Value=60
+.Value=100
 StatusLabelLeft
 .visible=T
 StatusLabelRight
