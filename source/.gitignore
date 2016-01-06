@@ -32,6 +32,9 @@ root/home/hacker/.gtkrc-2.0
 root/etc/skel/.dmrc
 root/root/.dmrc
 root/home/hacker/.dmrc
+root/etc/skel/.gtkrc-2.0-jamin
+root/root/.gtkrc-2.0-jamin
+root/home/hacker/.gtkrc-2.0-jamin
 root/etc/skel/.icons/hicolor/512x512
 root/root/.icons/hicolor/512x512
 root/home/hacker/.icons/hicolor/512x512
