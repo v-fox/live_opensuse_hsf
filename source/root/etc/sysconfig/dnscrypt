@@ -40,7 +40,7 @@ DNSCRYPT_USER=
 # If the value is empty, the default is substituted. If there are multiple
 # space-separated ones then every next one listens on a higher port number.
 #
-DNSCRYPT_RESOLVER_NAME="dnscrypt.eu-nl-port5353 dnscrypt.org-fr dnscrypt.eu-dk-port5353 soltysiak"
+DNSCRYPT_RESOLVER_NAME="dnscrypt.eu-dk dnscrypt.org-fr dnscrypt.me soltysiak dnscrypt.eu-nl-ipv6"
 
 ## Path:        Network/DNS/DNSCrypt
 ## Description: Log file
