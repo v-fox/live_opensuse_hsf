@@ -580,7 +580,7 @@ Scrollbar
 .Value=0
 Scrollbar
 .visible=T
-.Value=1140
+.Value=0
 #9
 .visible=T
 shadeup
@@ -606,7 +606,7 @@ buttonshowtooltips
 .Value=T
 TogglePls
 .visible=T
-.Value=T
+.Value=
 RightSidePanel
 .visible=T
 ToolbarBackground
@@ -615,10 +615,10 @@ OuterBox
 .visible=T
 VideoBox
 .visible=T
-bp
-.visible=
 thumblevideo
 .visible=T
+bp
+.visible=
 BottomVbox
 .visible=T
 ControlFrame
@@ -656,6 +656,8 @@ ProgressFrame
 .visible=T
 DrawingArea
 .visible=T
+progresscache
+.visible=T
 progressshadow
 .visible=T
 Progress
@@ -690,7 +692,7 @@ volumecontainer
 .visible=T
 SaveVolumeSlider
 .visible=T
-.Value=100
+.Value=98
 StatusLabelLeft
 .visible=T
 StatusLabelRight
