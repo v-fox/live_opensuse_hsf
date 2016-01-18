@@ -57,7 +57,8 @@ DailymotionVideoFile.getVideoDocumentViaAjax = function(videoId, callback) {
 	    try {
 			if (this.readyState == 4) {
 			    if (this.status == 200) {
-					callback(this.responseText);                           
+					callback(this.responseText);
+					// MediaFile.log(this.responseText);
 			    }
 			}
 	    } catch (ex) { }
@@ -153,6 +154,12 @@ DailymotionVideoFile.getVideoIdFromDoc = function(doc) {
 			var content = metas[i].getAttribute("content");
 			var startIndex = content.indexOf("video/") + 6;
 			var endIndex = content.indexOf("?", startIndex);
+			if (endIndex === -1) {
+				endIndex = content.indexOf("_", startIndex);
+			}
+			// if (endIndex === -1) {
+			// 	endIndex = startIndex + 7;
+			// }
 			return content.substring(startIndex, endIndex);
 	    }
 	}
@@ -163,6 +170,7 @@ DailymotionVideoFile.createMediaFiles = function(doc) {
 	// MediaFile.log("DailymotionVideoFile createMediaFiles");
 	if (doc.videoFilesList.length > 0) { return false; }	
 	var videoId = DailymotionVideoFile.getVideoIdFromDoc(doc);
+	MediaFile.log(videoId);
 	DailymotionVideoFile.getVideoDocumentViaAjax(videoId, function(responseText){
 		MediaFile.log("DailymotionVideoFile getVideoDocumentViaAjax callback");
 	    var params = DailymotionVideoFile.setVideoFilesList(responseText, doc);

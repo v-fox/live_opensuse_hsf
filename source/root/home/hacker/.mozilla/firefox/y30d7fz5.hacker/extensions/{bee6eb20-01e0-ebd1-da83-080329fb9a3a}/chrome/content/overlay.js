@@ -4,7 +4,6 @@ var flashVideoDownload = new function() {
     // private consts
     // switches for development
     var DEBUG = false;
-    var DM_DEV = false;
     var OFFLINE_YOUTUBE = false;
 
     // private methods
@@ -43,7 +42,6 @@ var flashVideoDownload = new function() {
     this.DownloadManagers   = null;	// will be imported from a module
     this.Classes			= null;	// will be imported from a module
     this.addonVersion       = null;	// gets value from "checkVer" function    
-    this.Dm                 = null; // will be imported from a module - this module will be used to transfer info from the main window (browser.xul) to the downloadManager.xul window
     this.VersionInfo        = null;
     
     // methods
@@ -97,19 +95,16 @@ var flashVideoDownload = new function() {
         Components.utils.import("resource://flashVideoDownload/DownloadManagers.js", this);
     	Components.utils.import("resource://flashVideoDownload/Classes.js", this);
     	Components.utils.import("resource://flashVideoDownload/PrefManager.js", this);
-    	Components.utils.import("resource://flashVideoDownload/Dm.js", this);
         Components.utils.import("resource://flashVideoDownload/VersionInfo.js", this);
         Components.utils.import("resource://flashVideoDownload/ToolbarButton.js", this);
         this.DownloadManagers.dta.init();
     	this.Classes.main = this;
     	this.PrefManager.main = this;
-    	this.Dm.main = this;
     	this.Classes.setWindow(window);
         this.Classes.setDebugOn(DEBUG);
     };
     
     this.setStringbundleConsts = function() {	
-    	//alert(this.Dm.JXON.hello);
     	var stringbundle = document.getElementById("flashVideoDownload_stringbundle");
     	STRINGBUNDLE_CONSTS.STATUSBAR_BUTTON_LABEL        = stringbundle.getString("statusbarButtonLabel");
     	STRINGBUNDLE_CONSTS.TOOLBAR_BUTTON_LABEL          = stringbundle.getString("toolbarButtonLabel");
@@ -199,13 +194,7 @@ var flashVideoDownload = new function() {
                     if (self.Classes.DailymotionVideoFile.createMediaFiles(doc) == true) {
                         self.setStatusBar(doc);
                     }
-                //self.log(self.Classes.DailymotionVideoFile.getDailymotionVideosParams(doc));
                 }
-                // else if (self.Classes.MetacafeVideoFile.isMetacafe(doc)) {
-                //     if (self.Classes.MetacafeVideoFile.createMediaFiles(doc)) {
-                //         self.setStatusBar(doc);
-                //     }
-                // }
                 else if (self.Classes.BreakVideoFile.isBreak(doc)) {                
                     if (self.Classes.BreakVideoFile.createMediaFiles(doc)) {
                         self.setStatusBar(doc);
@@ -237,11 +226,6 @@ var flashVideoDownload = new function() {
                                 self.setStatusBar(doc);
                             }
                         }           
-                        // else if (self.Classes.MetacafeVideoFile.isMetacafe(doc)) {
-                        //     if (self.Classes.MetacafeVideoFile.createMediaFiles(doc)) {
-                        //         self.setStatusBar(doc);
-                        //     }
-                        // }
                         else if (self.Classes.BreakVideoFile.isBreak(doc)) {                
                             if(self.Classes.BreakVideoFile.createMediaFiles(doc)) {
                                 self.setStatusBar(doc);
@@ -384,10 +368,6 @@ var flashVideoDownload = new function() {
     };
 
     this.buttonPressed = function(e) {
-    	// if (DM_DEV && e.button == 2) {
-    	//     self.openDm();
-    	// }
-        
         var doc = getBrowser().selectedBrowser.contentDocument;
         var buttonId = e.target.getAttribute("id");
         var popup = document.getElementById(CONTEXT_MENU_ID);
@@ -402,29 +382,12 @@ var flashVideoDownload = new function() {
         // fetches youtube files sizes
         if (doc.videoFilesList != null) {
     	    if (self.Classes.DailymotionVideoFile.isDailymotion(doc) ||
-                // self.Classes.MetacafeVideoFile.isMetacafe(doc) ||
                 self.Classes.BreakVideoFile.isBreak(doc)) {	    
                     self.Classes.VideoFile.getVideosFileSizes(doc, self, 3);	// 3 = number of ajax requests
                     return;
                 }
             self.Classes.VideoFile.getVideosFileSizes(doc, self);   
         }
-    };
-    
-    this.openDm = function() {
-    	// if (DM_DEV) {
-    	//     var doc = getBrowser().selectedBrowser.contentDocument;
-    	//     var ww = Components.classes["@mozilla.org/embedcomp/window-watcher;1"]
-     //            .getService(Components.interfaces.nsIWindowWatcher);
-    	//     ww.openWindow(null, "chrome://flashvideodownload/content/downloadManager.xul", "Download Manager", "chrome,resizable=yes,centerscreen,width=1050,height=450", null);
-        	    
-    	//     if (doc.videoFilesList != null) {
-     //            this.Dm.videoFilesQueue.enqueue(doc.videoFilesList);		
-    	//     }
-    	//     if (doc.flashFilesList != null) {
-     //            this.Dm.flashFilesQueue.enqueue(doc.flashFilesList);
-    	//     }
-    	// }
     };
     
     this.flashVideoDownloadObserver = {
@@ -452,7 +415,6 @@ var flashVideoDownload = new function() {
                     // a different algorithm will be used to extract the video files from YouTube and Dailymotion				
                     if (self.Classes.YouTubeVideoFile.isYouTube && self.Classes.YouTubeVideoFile.isSupportedFileType(fileType)) { return; }
         		    if (self.Classes.DailymotionVideoFile.isDailymotion(doc) && self.Classes.DailymotionVideoFile.isSupportedFileType(fileType)) { return; }
-        		    // if (self.Classes.MetacafeVideoFile.isMetacafe(doc) && self.Classes.MetacafeVideoFile.isSupportedFileType(fileType) && doc.videoFilesList.length > 0) { return; }
         		    if (self.Classes.BreakVideoFile.isBreak(doc) && self.Classes.BreakVideoFile.isSupportedFileType(fileType) && doc.videoFilesListAdded) { return; }
 		    
                     if (self.Classes.FlashFile.isSupportedFileType(fileType) || self.Classes.VideoFile.isSupportedFileType(fileType)) {
