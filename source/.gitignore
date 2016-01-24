@@ -944,6 +944,9 @@ root/home/hacker/.config/PCSX2/inis/USBnull.ini
 root/etc/skel/.config/PCSX2/inis/spu2-x.ini
 root/root/.config/PCSX2/inis/spu2-x.ini
 root/home/hacker/.config/PCSX2/inis/spu2-x.ini
+root/etc/skel/.config/PCSX2/inis_1.4.0
+root/root/.config/PCSX2/inis_1.4.0
+root/home/hacker/.config/PCSX2/inis_1.4.0
 root/etc/skel/.config/fontconfig/fonts.conf
 root/root/.config/fontconfig/fonts.conf
 root/home/hacker/.config/fontconfig/fonts.conf
