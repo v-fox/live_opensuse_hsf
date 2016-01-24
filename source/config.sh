@@ -50,6 +50,8 @@ systemctl mask wickedd
 baseInsertService NetworkManager
 # we don't want it to run by default and its modules are broken anyway... or do we ?
 #baseRemoveService zfs
+# for some unfathomable reason these BTRFS crutches are not enabled by default
+baseInsertService btrfsmaintenance-refresh
 baseInsertService tuned
 baseInsertService rtkit-daemon
 baseInsertService compcache
