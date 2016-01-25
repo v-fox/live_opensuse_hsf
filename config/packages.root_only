@@ -727,7 +727,7 @@ plymouth-plugin-space-flares
 plymouth-plugin-throbgress
 plymouth-plugin-two-step
 plymouth-scripts
-plymouth-utils
+plymouth-theme-tribar
 plymouth-x11-renderer
 pmacct
 pngcrush
