@@ -1,6 +1,6 @@
-#        Sample Configuration File for Privoxy 3.0.23
+#        Sample Configuration File for Privoxy 3.0.24
 #
-#  $Id: config,v 1.107 2015/01/24 16:44:20 fabiankeil Exp $
+#  $Id: config,v 1.108 2016/01/17 14:33:03 fabiankeil Exp $
 #
 #  Copyright (C) 2001-2014 Privoxy Developers http://www.privoxy.org/
 #
@@ -1361,7 +1361,7 @@ enable-proxy-authentication-forwarding 0
 #
 #       forward           localhost/     .
 #
-# funnel everything except local and i2p to Tor
+# funnel everything but local and i2p to Tor
 forward-socks5t / 127.0.0.1:9050 .
 forward                 .i2p     localhost:4444
 forward         192.168.*.*/     .
@@ -1418,7 +1418,7 @@ forward    100.[64-127].*.*/     .
 #
 #      forwarded-connect-retries 1
 #
-forwarded-connect-retries  0
+forwarded-connect-retries 1
 #
 #  6. MISCELLANEOUS
 #  =================
@@ -1462,7 +1462,7 @@ forwarded-connect-retries  0
 #
 #      accept-intercepted-requests 1
 #
-accept-intercepted-requests 0
+accept-intercepted-requests 1
 #
 #  6.2. allow-cgi-request-crunching
 #  =================================
@@ -1597,7 +1597,7 @@ split-large-forms 0
 #
 #      keep-alive-timeout 300
 #
-keep-alive-timeout 5
+#keep-alive-timeout 300
 #
 #  6.5. tolerate-pipelining
 #  =========================
@@ -1855,7 +1855,7 @@ socket-timeout 300
 #
 #      max-client-connections 256
 #
-#max-client-connections 256
+max-client-connections 256
 #
 #  6.10. handle-as-empty-doc-returns-ok
 #  =====================================
