@@ -1,0 +1,51 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/*so we can use custom radio icons*/
+menuitem[type="radio"]:not([oncommand^="QLSOverlay."])>.menu-iconic-left,
+menuitem[type="radio"]:not([oncommand^="QLSOverlay."])
+{-moz-appearance:menuitem!important}
+menuitem[type="radio"]:not([oncommand^="QLSOverlay."])>.menu-iconic-left>.menu-iconic-icon
+{display:-moz-box!important}
+
+/*radio>.radio-check{-moz-appearance:radio-container!important}
+radio>.radio-check>.radio-check-box2,*/
+/*radio{background:none transparent!important;border:none!important;-moz-appearance:radiomenuitem!important}*/
+radio>.radio-check-box1>.radio-check-box2,radio>.radio-check-box1{height:auto!important;border:none!important;-moz-appearance:none!important}
+radio>.radio-check-box1>.radio-check-box2{padding:0!important}
+radio>.radio-check-box1{background:none transparent!important}
+radio>.radio-check{border:none!important}
+
+
+/*hide firefox radio icon, but not for lastpass*/
+/*radiogroup:not([id^="ctraddon_"]):not(.Color-Presets-RadioGroup):not(#position-history):not(#position-bookmarks):not(#iconchoice)>radio>.radio-check-box1,*/
+/*fix for radios under linux*/
+radio>.radio-spacer-box
+{display:none!important}
+
+/*radio checked*/
+
+/*radiogroup:not([id^="ctraddon_"]):not(.Color-Presets-RadioGroup):not([preference^="sf-"]):not(#iconchoice):not(#viewGroup):not(.chromeclass-toolbar):not(.easydragtogo-Menu) radio[selected="true"],*/
+radio>.radio-check[selected="true"],
+radio>.radio-check-box1[selected="true"]>.radio-check-box2,
+menuitem[type="radio"][checked="true"]:not([oncommand^="QLSOverlay."]):not(.unified-nav-current)
+{-moz-image-region:rect(336px 384px 352px 368px)!important;list-style-image:url("mosaic.png")!important}
+
+/*radiogroup:not([id^="ctraddon_"]):not(.Color-Presets-RadioGroup):not([preference^="sf-"]):not(#iconchoice):not(#viewGroup):not(.chromeclass-toolbar):not(.easydragtogo-Menu) radio[selected="true"]:hover,*/
+radio:hover>.radio-check[selected="true"],
+radio:hover>.radio-check-box1[selected="true"]>.radio-check-box2,
+menuitem[type="radio"][checked="true"]:hover:not([oncommand^="QLSOverlay."]):not(.unified-nav-current)
+{-moz-image-region:rect(336px 128px 352px 112px)!important}
+
+/*radio unchecked*/
+
+/*radiogroup:not([id^="ctraddon_"]):not(.Color-Presets-RadioGroup):not([preference^="sf-"]):not(#iconchoice):not(#viewGroup):not(.chromeclass-toolbar):not(.easydragtogo-Menu) radio:not([selected="true"]),*/
+radio>.radio-check,
+radio>.radio-check-box1>.radio-check-box2,
+menuitem[type="radio"]:not([checked="true"]):not([oncommand^="QLSOverlay."]):not(.unified-nav-current)
+{-moz-image-region:rect(304px 320px 320px 304px)!important;list-style-image:url("mosaic.png")!important}
+
+/*radiogroup:not([id^="ctraddon_"]):not(.Color-Presets-RadioGroup):not([preference^="sf-"]):not(#iconchoice):not(#viewGroup):not(.chromeclass-toolbar):not(.easydragtogo-Menu) radio:not([selected="true"]):hover,*/
+radio:hover>.radio-check,
+radio:hover>.radio-check-box1>.radio-check-box2,
+menuitem[type="radio"]:not([checked="true"]):hover:not([oncommand^="QLSOverlay."]):not(.unified-nav-current)
+{-moz-image-region:rect(304px 64px 320px 48px)!important}

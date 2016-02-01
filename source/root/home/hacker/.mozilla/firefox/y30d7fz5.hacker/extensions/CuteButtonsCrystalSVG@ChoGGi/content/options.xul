@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+
+<!DOCTYPE dialog [
+  <!ENTITY % optionsDTD SYSTEM "chrome://cutebuttons/locale/options.dtd">
+  %optionsDTD;
+]>
+
+<dialog
+  id="cutebuttons"
+  title="&CuteButtons; &Options;"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  onload="cbOptions.init()"
+  windowtype="cutebuttonsOptions"
+  style="padding:0"
+  buttons="accept"
+  ondialogaccept="return true"
+  persist="screenX screenY width height sizemode">
+
+  <script type="application/x-javascript" src="chrome://cutebuttons/content/options.js"/>
+
+  <vbox flex="1" style="overflow-y:auto">
+
+    <groupbox>
+      <caption label="&CuteButtons; &Icons;"/>
+        <radiogroup id="IconsRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'icons',this,1)"/>
+            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'icons',this,0)"/>
+        </radiogroup>
+    </groupbox>
+<!--
+    <groupbox>
+      <caption label="&Menu; &Icons;"/>
+        <radiogroup id="MenuRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(false,'menuicons',this,1)"/>
+            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(true,'menuicons',this,0)"/>
+        </radiogroup>
+    </groupbox>
+-->
+    <groupbox>
+      <caption label="&Button; &Icons;"/>
+        <radiogroup id="ButtonRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(false,'buttonicons',this,1)"/>
+            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(true,'buttonicons',this,0)"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&Checkbox; &Icons;"/>
+        <radiogroup id="CheckboxIconsRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'checkboxicons',this,1)"/>
+            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'checkboxicons',this,0)"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&Radio; &Icons;"/>
+        <radiogroup id="RadioIconsRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'radioicons',this,1)"/>
+            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'radioicons',this,0)"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&Rotate; &Icons;"/>
+        <radiogroup id="RotateIconsRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'rotateicons',this,1)"/>
+            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'rotateicons',this,0)"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&BlurDisabled;"/>
+        <radiogroup id="BlurDisabledRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'blurdisabled',this,1)"/>
+            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'blurdisabled',this,0)"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&StatusBar;"/>
+        <radiogroup id="StatusbarRadio" orient="horizontal" value="">
+            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'statusbar',this,1)"/>
+            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'statusbar',this,0)"/>
+        </radiogroup>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&Mosaic;" tooltiptext="&MosaicTip;"/>
+        <radiogroup id="MosaicRadio" orient="vertical" value="" tooltiptext="&MosaicTip;">
+            <radio label="&Default;" value="0" onmousedown="cbOptions.mosaic(0,this)"/>
+            <radio label="&Normal;" value="4" onmousedown="cbOptions.mosaic(4,this)"/>
+            <radio label="&Brighter;" value="1" onmousedown="cbOptions.mosaic(1,this)"/>
+            <radio label="&BrighterReversed;" value="2" onmousedown="cbOptions.mosaic(2,this)"/>
+            <radio label="&Gray;" value="3" onmousedown="cbOptions.mosaic(3,this)"/>
+        </radiogroup>
+    </groupbox>
+
+  </vbox>
+</dialog>

@@ -1,0 +1,66 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+/*so we can use custom checkmark icons*/
+menuitem[id][checked],menuitem[id][type="checkbox"],menuitem[label][checked],menuitem[label][type="checkbox"]{-moz-binding:url("chrome://global/content/bindings/menu.xml#menuitem-iconic")!important}
+/*
+menuitem[type="checkbox"]>.menu-iconic-left>.menu-iconic-icon,
+menuitem[checked]:not([type="radio"])>.menu-iconic-left>.menu-iconic-icon,
+*/
+menuitem[type="checkbox"]>.menu-iconic-left,
+menuitem[type="checkbox"],
+menuitem[checked]:not([type="radio"])>.menu-iconic-left,
+menuitem[checked]:not([type="radio"])
+{-moz-appearance:menuitem!important}
+
+menuitem[type="checkbox"]>.menu-iconic-left>.menu-iconic-icon,
+menuitem[checked]:not([type="radio"])>.menu-iconic-left>.menu-iconic-icon{display:-moz-box!important}
+/*remove block background from checkmarks*/
+checkbox:not(treenode-checkbox):not([preference="sf-leftsidestar"])>.checkbox-check
+{background:none transparent!important;border:none!important;-moz-appearance:none!important}
+
+/*fix for checkboxes under linux
+might need fix? check before release....
+(added checkbox to :not)
+*/
+checkbox:not([preference="sf-leftsidestar"])>.checkbox-check,
+checkbox:not([preference="sf-leftsidestar"])>.checkbox-spacer-box
+{-moz-appearance:none!important}
+
+/*fix for custom checkboxes*/
+checkbox>.checkbox-label-box>.checkbox-icon,
+/*fix for Gmail Watcher radio*/
+#gmailwatcherOptions-groupSound>hbox>radio>.radio-check-box1,
+/*hides config icon in gmail manager options*/
+#gm-prefs-general-hide-tools-menu>.checkbox-label-box>.checkbox-icon
+{display:none!important}
+
+/*checkmark red (X)*/
+checkbox:not([checked="true"]):not([preference="sf-leftsidestar"])>.checkbox-spacer-box>.checkbox-check,
+checkbox:not([checked="true"]):not([preference="sf-leftsidestar"])>.checkbox-spacer-box,
+checkbox:not([preference="sf-leftsidestar"])>.checkbox-spacer-box>.checkbox-check,
+checkbox:not([preference="sf-leftsidestar"])>.checkbox-check,
+menuitem[type="checkbox"]:not([checked="true"]):not([oncommand*="Sidebar"]),
+menuitem[checked="false"]:not([type="radio"])
+{-moz-image-region:rect(160px 304px 176px 288px)!important;list-style-image:url("mosaic.png")!important}
+
+checkbox:hover:not([checked="true"]):not([preference="sf-leftsidestar"])>.checkbox-spacer-box>.checkbox-check,
+checkbox:hover:not([checked="true"]):not([preference="sf-leftsidestar"])>.checkbox-spacer-box,
+checkbox:hover:not([preference="sf-leftsidestar"])>.checkbox-spacer-box>.checkbox-check,
+checkbox:hover:not([preference="sf-leftsidestar"])>.checkbox-check,
+menuitem[type="checkbox"]:not([checked="true"]):not([oncommand*="Sidebar"]):hover,
+menuitem[checked="false"]:not([type="radio"]):hover
+{-moz-image-region:rect(160px 48px 176px 32px)!important}
+
+/*checkmark green*/
+
+checkbox[checked="true"]:not([preference="sf-leftsidestar"])>.checkbox-spacer-box>.checkbox-check,
+checkbox[checked="true"]:not([preference="sf-leftsidestar"])>.checkbox-check,
+menuitem[type="checkbox"][checked="true"]:not(.unified-nav-current):not([oncommand*="Sidebar"]),
+menuitem[checked="true"]:not([type="radio"]):not(.unified-nav-current):not([oncommand*="Sidebar"])
+{-moz-image-region:rect(176px 416px 192px 400px)!important;list-style-image:url("mosaic.png")!important}
+
+checkbox[checked="true"]:hover:not([preference="sf-leftsidestar"])>.checkbox-spacer-box>.checkbox-check,
+checkbox[checked="true"]:hover:not([preference="sf-leftsidestar"])>.checkbox-check,
+menuitem[type="checkbox"][checked="true"]:not(.unified-nav-current):not([oncommand*="Sidebar"]):hover,
+menuitem[checked="true"]:not([type="radio"]):not(.unified-nav-current):not([oncommand*="Sidebar"]):hover
+{-moz-image-region:rect(176px 160px 192px 144px)!important}

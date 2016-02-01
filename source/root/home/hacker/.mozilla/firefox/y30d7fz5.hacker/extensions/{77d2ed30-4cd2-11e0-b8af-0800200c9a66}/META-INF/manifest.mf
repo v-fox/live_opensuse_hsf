@@ -2,13 +2,13 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: YdrNmBKXFRBa/dDZwEHxxg==
-SHA1-Digest: DxK6piVk5MRsMq+y66z/7ZwICQI=
+MD5-Digest: pMpCtsh3AtZ8/FhGActUeQ==
+SHA1-Digest: mxszWC6RJvuLAFySV/vO9ZRclc4=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: yNVA/uHiyd3iNR0aNFhZKw==
-SHA1-Digest: r9Rsf4kGT4uiVgA2yoO3V4WeqrE=
+MD5-Digest: XGnai9BXAZ7nzY4DVzGF5w==
+SHA1-Digest: ytjdaGs9q58v486gcWoNsxTXHnQ=
 
 Name: icon.png
 Digest-Algorithms: MD5 SHA1
@@ -17,8 +17,8 @@ SHA1-Digest: lOIkhmFZJ/6qXr1Pmf8o9fjemc0=
 
 Name: preview.png
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: +xnvd1plRW6zsBaWdeuLMw==
-SHA1-Digest: Fr0UPa9uTSKw1jDG5eEOQsadyss=
+MD5-Digest: q7YDrt02crrApUE+DKjILA==
+SHA1-Digest: xj4DjRyLWpHkFX635VuYlmf4YSw=
 
 Name: README_LICENSE.txt
 Digest-Algorithms: MD5 SHA1
@@ -27,6 +27,6 @@ SHA1-Digest: UgLXw7wgxH113fczbLQI5Zi/dDs=
 
 Name: chrome/ft_deepdark.jar
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: +JcKvksVwbBMJU1fE/loGw==
-SHA1-Digest: nVxWk5hr85D6z8HSzVeYOWDd1ks=
+MD5-Digest: Gsh+mtXbinVMP4PAidtAiA==
+SHA1-Digest: Koo9T/J1VIqDZbEPYruVgCo1FdQ=
 

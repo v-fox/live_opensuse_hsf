@@ -1,0 +1,3 @@
+/*fix drop markers having extra icon under ubuntu*/
+button[type="menu-button"]>.button-menubutton-dropmarker,
+button[type="menu"]>.button-box>.button-menu-dropmarker{list-style-image:none!important}
