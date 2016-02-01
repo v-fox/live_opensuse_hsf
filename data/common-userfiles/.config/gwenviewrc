@@ -1,0 +1,9 @@
+[General]
+HistoryEnabled=true
+ViewBackgroundValue=54
+
+[ImageView]
+MouseWheelBehavior=MouseWheelBehavior::Browse
+
+[SideBar]
+PreferredMetaInfoKeyList=General.Size,General.Time,General.ImageSize,General.Comment,Exif.Sony1.ColorReproduction,Exif.Photo.FNumber,Exif.Photo.FileSource,Exif.Photo.ExposureTime,Exif.Thumbnail.Compression,Exif.Photo.ColorSpace,Exif.Photo.ISOSpeedRatings

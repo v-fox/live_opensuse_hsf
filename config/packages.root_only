@@ -112,6 +112,7 @@ deltarpm
 desktop-translations
 desmume
 dictd
+digikam5
 dispcalGUI
 djvulibre-djview4
 dmidecode
@@ -283,7 +284,7 @@ gutenprint
 guymager
 gvfs-backends
 gvfs-fuse
-gwenview
+gwenview5
 hack-fonts
 hardinfo
 hashdeep
@@ -398,8 +399,8 @@ k3b
 kate
 kbd
 kchmviewer
-kdeartwork4-icons
 kdebase4-workspace-addons
+kdelibs4support
 kdenlive
 kdiff3
 kdnssd
@@ -414,8 +415,6 @@ kio_iso
 kio_kamera
 kio-locate
 kio_mtp
-kipi-plugins
-kipi-plugins-geolocation
 kismet
 kiwi-config-openSUSE
 kiwi-desc-isoboot

@@ -106,7 +106,7 @@ Notes:
   * kate/kwrite (great simple editor)  
   * okular (useful doc viewer, integrated in Firefox via kparts-plugin)  
   * kchmviewer (MS chm viewer), because sometimes okular screws up  
-  * gwenview + kipi-plugins (highly-capable image viewer)  
+  * gwenview5 + digikam5/showfoto (highly-capable image viewers)  
   * k3b (rich disk burner), because some people still are into this stuff)  
 * GNOME:  
   * nm-applet (this is _the only_ NM GUI that can launch in any DE)  

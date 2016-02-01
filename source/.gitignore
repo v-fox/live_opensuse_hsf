@@ -749,6 +749,9 @@ root/home/hacker/.config/razor/deskicons.conf
 root/etc/skel/.config/razor/razor-autosuspend.conf
 root/root/.config/razor/razor-autosuspend.conf
 root/home/hacker/.config/razor/razor-autosuspend.conf
+root/etc/skel/.config/gwenviewrc
+root/root/.config/gwenviewrc
+root/home/hacker/.config/gwenviewrc
 root/etc/skel/.config/enchant/en_GB.exc
 root/root/.config/enchant/en_GB.exc
 root/home/hacker/.config/enchant/en_GB.exc
