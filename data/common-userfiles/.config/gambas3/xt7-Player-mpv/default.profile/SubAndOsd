@@ -45,7 +45,7 @@ FontColorAlphaLabel2
 .visible=T
 FontColorSpinBox2
 .visible=T
-.Value=25
+.Value=20
 HBox11
 .visible=T
 OutlineCHK2
@@ -132,7 +132,7 @@ FontColorBox
 .background=-1
 .Foreground=-1
 .visible=T
-.Value=8355647
+.Value=10921552
 Button
 .visible=T
 .Value=
@@ -140,7 +140,7 @@ FontColorAlphaLabel
 .visible=T
 FontColorSpinBox
 .visible=T
-.Value=25
+.Value=10
 HBox3
 .visible=T
 OutlineCHK
@@ -150,7 +150,7 @@ BorderColorBox
 .background=-1
 .Foreground=-1
 .visible=T
-.Value=657930
+.Value=328965
 Button
 .visible=T
 .Value=
@@ -158,12 +158,12 @@ BorderSizeLabel
 .visible=T
 OutLineSpinBox
 .visible=T
-.Value=3
+.Value=5
 BorderColorAlphaLabel2
 .visible=T
 BorderColorSpinBox
 .visible=T
-.Value=10
+.Value=20
 HBox1
 .visible=T
 ShadowCHK
@@ -206,7 +206,7 @@ AlignmentHBox
 .visible=T
 AlignmentCHK
 .visible=T
-.Value=-1
+.Value=0
 ComboAlignment
 .text=2) Bottom/Center
 .visible=T
@@ -214,7 +214,7 @@ PositionHBox
 .visible=T
 MarginVCHK
 .visible=T
-.Value=-1
+.Value=0
 MarginVSpinBox
 .visible=T
 .Value=100
