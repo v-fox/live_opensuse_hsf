@@ -4,7 +4,7 @@
 
 # If you change this file, run 'grub2-mkconfig -o /boot/grub2/grub.cfg' afterwards to update
 # /boot/grub2/grub.cfg.
-GRUB_DISTRIBUTOR=
+#GRUB_DISTRIBUTOR=
 # Uncomment to automatically save last booted menu entry in GRUB2 environment
 # variable `saved_entry'
 GRUB_SAVEDEFAULT="true"

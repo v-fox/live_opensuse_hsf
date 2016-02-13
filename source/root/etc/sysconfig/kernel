@@ -29,7 +29,7 @@ NO_KMS_IN_INITRD="no"
 # drivers for virtual block and network devices in addition to filesystem
 # and device-mapper modules.
 #
-DOMU_INITRD_MODULES="xennet xenblk"
+DOMU_INITRD_MODULES=""
 
 ## Type:        string
 ## Default:     ""
