@@ -1,5 +1,5 @@
 include "/usr/share/themes/QtCurve/gtk-2.0/gtkrc"
-gtk-theme-name="oxygen-gtk"
+gtk-theme-name="QtCurve"
 gtk-icon-theme-name="MIX"
 gtk-font-name="DejaVu Sans  10"
 gtk-cursor-theme-name="ComixCursors-Green"
