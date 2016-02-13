@@ -622,6 +622,7 @@ mtr-gtk
 mupen64plus
 mupen64plus-ui-console
 myspell-en
+nbd
 ncat
 ncdu
 ndiff
@@ -765,6 +766,7 @@ pwgen
 python-plaso
 python-scapy
 python-SpiceClientGtk
+python-volatility
 q4wine
 qasmixer
 qbittorrent

@@ -65,7 +65,7 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
   * support for pretty much all filesystems known to man, in kernel or via FUSE; exFAT & ZFS kernel modules
   * rEFInd bootloader and U/EFI manipulation via efitools and UEFITool
 * security/forensics tools:  
-  * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
+  * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis, volatility
 * encryption tools:  
   * YaST partitioner's built-in crypt{setup,config} / LUKS encryption capabilities
   * veracrypt (TrueCrypt fork), aespipe, emount/zuluCrypt, seahorse/gnome-keyring, keepassx
