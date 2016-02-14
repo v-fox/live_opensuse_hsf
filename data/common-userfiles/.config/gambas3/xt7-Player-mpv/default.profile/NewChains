@@ -652,7 +652,7 @@ NOPARSEdynaudnorm9.toolbutton
 .Value=
 dynaudnorm110.NoparseBox
 .visible=T
-#157
+#147
 .visible=T
 NOPARSEdynaudnorm110.CommentLabel
 .visible=T
@@ -1008,7 +1008,7 @@ NOPARSEvdpaurb0.CommentLabel
 .visible=T
 vdpaurb1.NoparseBox
 .visible=T
-#220
+#210
 .visible=T
 NOPARSEvdpaurb1.CommentLabel
 .visible=T
@@ -1840,7 +1840,7 @@ NOPARSEvdpaupp8.toolbutton
 .Value=
 vdpaupp9.NoparseBox
 .visible=T
-#264
+#254
 .visible=T
 NOPARSEvdpaupp9.CommentLabel
 .visible=T
@@ -1879,7 +1879,7 @@ NOPARSEvavpp2.toolbutton
 .Value=
 vavpp3.NoparseBox
 .visible=T
-#269
+#259
 .visible=T
 NOPARSEvavpp3.CommentLabel
 .visible=T
@@ -2188,7 +2188,7 @@ Label12
 HBox2
 .visible=T
 TextBox5cv
-.text=opengl=scale=ewa_lanczossharp:cscale=spline36:dscale=mitchell:correct-downscaling:sigmoid-upscaling:dither-depth=auto:deband:backend=x11:es=no:fbo-format=rgba16:alpha=yes:icc-profile-auto:interpolation
+.text=opengl=scale=ewa_lanczossharp:cscale=spline36:dscale=mitchell:correct-downscaling:sigmoid-upscaling:dither-depth=auto:deband:backend=x11:es=no:alpha=blend:icc-profile-auto:interpolation
 .visible=T
 HBox1
 .visible=T
