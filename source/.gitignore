@@ -332,9 +332,6 @@ root/home/hacker/.icons/Sonar/256x256
 root/etc/skel/.icons/Sonar/48x48
 root/root/.icons/Sonar/48x48
 root/home/hacker/.icons/Sonar/48x48
-root/etc/skel/.local/share/icons
-root/root/.local/share/icons
-root/home/hacker/.local/share/icons
 root/etc/skel/.local/share/konsole/Shell.profile
 root/root/.local/share/konsole/Shell.profile
 root/home/hacker/.local/share/konsole/Shell.profile
