@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+<?xml-stylesheet href="chrome://completeyoutubesaver/skin/cysOverlay.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://completeyoutubesaver/locale/saveDialog.dtd">
+<dialog id="cys-SmallSaveDialog" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		onload="cysSmallSaveDialog.smallSaveDialog_onload()"
+		buttons="extra1,cancel"
+      buttonlabelextra1="&openfolder;"
+		ondialogcancel="return cysSmallSaveDialog.doCancel();"
+      ondialogextra1="cysSmallSaveDialog.cmenu('openfolder');"
+		title="&title;"
+      context="cys-ssavecontext"
+		width="500" height="150">
+	<script src="cysCommons.js" type="application/x-javascript"/>
+	<script src="smallSaveDialog.js" type="application/x-javascript"/>
+	<label id="projectLabel" value="..." crop="end" />
+	<progressmeter id="cysprogressbar" mode="determined" max="100" value="0"/>
+	<label id="progressLabel" value="..."/>
+   <!--
+   <separator class="thin"/>
+   <hbox>
+      <label value="&dlthreads;"/>
+      <spacer width="10px"/>
+      <hbox>
+         <textbox id="LED1" class="cys-led" disabled="true" value=""/>
+         <textbox id="LED2" class="cys-led" disabled="true" value=""/>
+         <textbox id="LED3" class="cys-led" disabled="true" value=""/>
+         <textbox id="LED4" class="cys-led" disabled="true" value=""/>
+         <textbox id="LED5" class="cys-led" disabled="true" value=""/>
+         <textbox id="LED6" class="cys-led" disabled="true" value=""/>
+         <textbox id="LED7" class="cys-led" disabled="true" value=""/>
+         <textbox id="LED8" class="cys-led" disabled="true" value=""/>
+         <textbox id="LED9" class="cys-led" disabled="true" value=""/>
+         <textbox id="LED10" class="cys-led" disabled="true" value=""/>
+      </hbox>
+      <spacer width="10px"/>
+      <textbox id="threadspinner" type="number" size="1" min="1" max="10" flex="0" oncommand="cysSmallSaveDialog.setmaxDL();"/> 
+   </hbox>
+   -->
+   <separator class="thin"/>
+ 	<menupopup id="cys-ssavecontext">
+      <menuitem id="cys-ss0" label="&alwaysontop;" type="checkbox" checked="false" oncommand="cysSmallSaveDialog.cmenu('toggletopmost')" />
+		<menuitem id="cys-ss1" label="&openprojectfolder;" oncommand="cysSmallSaveDialog.cmenu('openfolder')" />
+      <menuitem id="cys-ss2" label="&cancelcomments;" oncommand="cysSmallSaveDialog.cmenu('cancelcomments')" />
+	</menupopup>
+</dialog>
+<!--Copyright (c) 2016, Carlos Garcia. All rights reserved.-->

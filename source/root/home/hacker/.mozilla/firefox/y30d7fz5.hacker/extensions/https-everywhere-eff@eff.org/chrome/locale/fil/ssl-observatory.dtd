@@ -86,7 +86,7 @@ looked at.  Mouseover the options for further details:">
 
 <!ENTITY ssl-observatory.prefs.show "Show advanced options">
 
-<!ENTITY ssl-observatory.prefs.title "SSL Observatory Preferences">
+<!ENTITY ssl-observatory.prefs.title "Mga Preference sa SSL Observatory">
 
 <!ENTITY ssl-observatory.prefs.use "Gamitin ang Observatory?">
 <!ENTITY ssl-observatory.warning.title "BABALA mula sa SSL Observatory ng EFF">

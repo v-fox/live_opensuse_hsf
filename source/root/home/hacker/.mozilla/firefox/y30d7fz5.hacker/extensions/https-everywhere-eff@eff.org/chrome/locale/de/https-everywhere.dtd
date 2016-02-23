@@ -3,8 +3,11 @@
 <!ENTITY https-everywhere.about.ext_description "Verschlüsselt das Internet! Nutzen Sie HTTPS-Sicherheit automatisch auf vielen Webseiten.">
 <!ENTITY https-everywhere.about.version "Version">
 <!ENTITY https-everywhere.about.created_by "Entwickelt von">
+<!ENTITY https-everywhere.about.and ", und">
 <!ENTITY https-everywhere.about.librarians "Regelsatz-Bibliothekare">
 <!ENTITY https-everywhere.about.thanks "Dank an">
+<!ENTITY https-everywhere.about.many_contributors "Viele, viele Mitwirkende, darunter">
+<!ENTITY https-everywhere.about.noscript "Teile von HTTPS Everywhere basieren auf dem Code von NoScript von Giorgio Maone und anderen. Wir sind dankbar für ihre exzellente Arbeit!">
 <!ENTITY https-everywhere.about.contribute  "Wenn Sie HTTPS Everywhere mögen, sollten Sie sich dieses ansehen">
 <!ENTITY https-everywhere.about.donate_tor "An Tor spenden">
 <!ENTITY https-everywhere.about.tor_lang_code "de">
@@ -34,17 +37,7 @@
 <!ENTITY https-everywhere.prefs.reset_default "Auf Standardeinstellung zurücksetzen">
 <!ENTITY https-everywhere.prefs.view_xml_source "XML-Quelltext ansehen">
 
-<!ENTITY https-everywhere.source.downloading "Lade herunter">
-<!ENTITY https-everywhere.source.filename "Dateiname">
-<!ENTITY https-everywhere.source.unable_to_download "Quelle konnte nicht heruntergeladen werden.">
-
-<!ENTITY https-everywhere.popup.title "Nachricht von HTTPS Everywhere 4.0development.11">
-<!ENTITY https-everywhere.popup.paragraph1 "Huch. Sie haben die stabile Version von HTTPS Everywhere benutzt, aber wir haben Sie möglicherweise in unserer letzten Aktualisierung auf eine Entwicklerversion aktualisiert.">
-<!ENTITY https-everywhere.popup.paragraph2 "Möchten Sie zurück zur stabilen Version?">
-<!ENTITY https-everywhere.popup.paragraph3 "Wir würden uns freuen, wenn Sie weiterhin die Entwicklerversion benutzen würden, um uns zu helfen, HTTPS Everywhere zu verbessern! Es könnte sein, dass Sie hier und da einige Fehler finden, welche Sie an https-everywhere@eff.org melden können. Entschuldigen Sie die Unannehmlichkeit und danke, dass Sie HTTPS Everywhere benutzen.">
-<!ENTITY https-everywhere.popup.keep "Bei der Entwicklerversion bleiben">
-<!ENTITY https-everywhere.popup.revert "Die letzte stabile Version herunterladen">
-
-<!ENTITY https-everywhere.ruleset-tests.status_title "HTTPS-Everywhere-Regelsatztests">
-<!ENTITY https-everywhere.ruleset-tests.status_cancel_button "Abbrechen">
-<!ENTITY https-everywhere.ruleset-tests.status_start_button "Start">
+<!ENTITY https-everywhere.chrome.stable_rules "Funktionierende Regeln">
+<!ENTITY https-everywhere.chrome.stable_rules_description "Erzwingen Sie eine verschlüsselte Verbindung zu diesen Webseiten:">
+<!ENTITY https-everywhere.chrome.experimental_rules "Experimentelle Regeln">
+<!ENTITY https-everywhere.chrome.experimental_rules_description "Kann Warnungen oder Abstürze verursachen. Standardmäßig deaktiviert.">

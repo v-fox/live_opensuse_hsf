@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://completeyoutubesaver/skin/cysOverlay.css"?>
+<!DOCTYPE window SYSTEM "chrome://completeyoutubesaver/locale/cysOverlay.dtd">
+<prefwindow id="cys-pref-window" title="&options.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+   onload="setTimeout(window.close, 10);"
+   onunload="try{Components.classes[ '@mozilla.org/appshell/window-mediator;1' ].getService().QueryInterface(Components.interfaces.nsIWindowMediator).getMostRecentWindow('navigator:browser').cysOverlay.openOptions();}catch(ex){}">
+	<prefpane label=""></prefpane>
+</prefwindow>
+<!--Copyright (c) 2016, Carlos Garcia. All rights reserved.-->

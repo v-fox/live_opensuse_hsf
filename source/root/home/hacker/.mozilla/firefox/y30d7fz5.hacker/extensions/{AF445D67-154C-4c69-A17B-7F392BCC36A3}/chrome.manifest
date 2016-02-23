@@ -1,0 +1,10 @@
+content    completeyoutubesaver                            chrome/content/
+style      chrome://global/content/customizeToolbar.xul    chrome://completeyoutubesaver/skin/cysOverlay.css
+skin       completeyoutubesaver                            classic/1.0              chrome/skin/
+overlay    chrome://browser/content/browser.xul            chrome://completeyoutubesaver/content/cysOverlay.xul
+overlay    chrome://navigator/content/navigator.xul        chrome://completeyoutubesaver/content/cysOverlay.xul
+locale     completeyoutubesaver                            en-US                    chrome/locale/en-US/
+
+component {982B8CD3-4310-410a-82CB-55C50728415C} components/vdhCompleteYouTubeSaverProcessor.js
+contract @completeyoutubesaver.com/completeyoutubesaver-processor;1 {982B8CD3-4310-410a-82CB-55C50728415C}
+category profile-after-change @completeyoutubesaver.com/completeyoutubesaver-processor;1  @completeyoutubesaver.com/completeyoutubesaver-processor;1 

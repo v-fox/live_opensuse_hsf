@@ -131,7 +131,7 @@ IcedTea-Web Plugin (using IcedTea-Web 1.6.2 (suse-1.1-x86_64)):$
 libkpartsplugin.so:$
 /usr/lib64/browser-plugins/libkpartsplugin.so:$
 :$
-1455103315000:0:0:0:$
+1455727560000:0:0:0:$
 File viewer using KDE's KParts technology (2012-07-23):$
 KParts Plugin:$
 290
@@ -427,7 +427,7 @@ KParts Plugin:$
 289:video/x-mng:MNG animation:mng:$
 
 [INVALID]
-/home/hacker/.mozilla/plugins/libnpsoplugin.so:$
-0:$
 /home/hacker/.mozilla/plugins/liblightsparkplugin.so:$
+0:$
+/home/hacker/.mozilla/plugins/libnpsoplugin.so:$
 0:$

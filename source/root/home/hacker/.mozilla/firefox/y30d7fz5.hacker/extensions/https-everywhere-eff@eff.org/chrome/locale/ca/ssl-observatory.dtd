@@ -1,11 +1,11 @@
 <!-- Observatory popup window -->
-<!ENTITY ssl-observatory.popup.details "Detalls i privacitat de la Informació">
+<!ENTITY ssl-observatory.popup.details "Detalls i informació de Privadesa">
 <!ENTITY ssl-observatory.popup.later "Pregunta-ho més endavant">
 <!ENTITY ssl-observatory.popup.no "No">
 
-<!ENTITY ssl-observatory.popup.text "HTTPS a tot arreu pot detectar atacs 
-contra el seu navegador mitjançant l'enviament dels certificats que hagin estat
-atorgats a l'Observatori. Activar aquest paràmetre?">
+<!ENTITY ssl-observatory.popup.text "L'HTTPS Everywhere pot detectar atacs 
+contra el navegador enviant a l'Observatori els certificats que heu rebut.
+Voleu activar aquest paràmetre?">
 
 <!--<!ENTITY ssl-observatory.popup.text 
 "EFF's SSL Observatory can detect attacks against HTTPS websites by collecting
@@ -13,18 +13,18 @@ and auditing the certificates being presented to your browser. Would you like
 to turn it on?">-->
 
 <!ENTITY ssl-observatory.popup.title 
-"Hauria HTTPS utilitzar a tot arreu el SSL Observatory?">
+"L'HTTPS Everywhere pot usar l'Observatori SSL?">
 
 <!ENTITY ssl-observatory.popup.yes "Sí">
 
 <!-- Observatory preferences dialog -->
 
 <!ENTITY ssl-observatory.prefs.adv_priv_opts1
-"Es segur permetre això, excepte si utilitza una
+"És segur activar-ho, excepte si utilitzeu una
 xarxa corporativa molt intrusiva.">
 
 <!ENTITY ssl-observatory.prefs.adv_priv_opts2
-"Segur, excepte si utilitza una xarxa corporativa amb noms secrets d'intranet.">
+"És segur, excepte si utilitzeu una xarxa corporativa amb noms secrets d'intranet.">
 
 <!ENTITY ssl-observatory.prefs.alt_roots 
 "Submet i comprova els certificats firmats per arrels no estàndards CAs">

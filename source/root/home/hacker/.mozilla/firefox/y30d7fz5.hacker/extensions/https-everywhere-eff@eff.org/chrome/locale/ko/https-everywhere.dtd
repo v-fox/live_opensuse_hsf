@@ -4,8 +4,11 @@
 <!ENTITY https-everywhere.about.ext_description "웹 암호화! 자동으로 여러 사이트에 HTTPS 보안을 사용합니다.">
 <!ENTITY https-everywhere.about.version "Version">
 <!ENTITY https-everywhere.about.created_by "작성">
+<!ENTITY https-everywhere.about.and ", and">
 <!ENTITY https-everywhere.about.librarians "규칙설정 라이브러리">
 <!ENTITY https-everywhere.about.thanks "Thanks to">
+<!ENTITY https-everywhere.about.many_contributors "Many many contributors, including">
+<!ENTITY https-everywhere.about.noscript "Also, portions of HTTPS Everywhere are based on code from NoScript, by Giorgio Maone and others.  We are grateful for their excellent work!">
 <!ENTITY https-everywhere.about.contribute  "모든곳에서 HTTPS를 사용하려면, 고려해 보십시오">
 <!ENTITY https-everywhere.about.donate_tor "Tor에 기부하기">
 <!ENTITY https-everywhere.about.tor_lang_code "영어">
@@ -35,17 +38,7 @@
 <!ENTITY https-everywhere.prefs.reset_default "기본값으로 다시 설정">
 <!ENTITY https-everywhere.prefs.view_xml_source "XML 소스 보기">
 
-<!ENTITY https-everywhere.source.downloading "다운로드">
-<!ENTITY https-everywhere.source.filename "파일명">
-<!ENTITY https-everywhere.source.unable_to_download "소스를 다운로드할 수 없습니다.">
-
-<!ENTITY https-everywhere.popup.title "HTTPS Everywhere 4.0 신제품.11 알립니다.">
-<!ENTITY https-everywhere.popup.paragraph1 "아, 지금까지 HTTPS Everywhere 안정화 버전을 사용하셨죠? 업그레이드 하실 수도 있습니다.">
-<!ENTITY https-everywhere.popup.paragraph2 "안정화를 원하시나요?">
-<!ENTITY https-everywhere.popup.paragraph3 "저희 제품을 이용해 주심에 늘 감사드립니다. 저희는 HTTPS Everywhere를 늘 개선하고 있습니다. 혹시 오류가 여기저기에서 발생한다면 https-everywhere@eff.org에 보고해 주시면 되고 불편을 끼쳐 드려 죄송합니다.">
-<!ENTITY https-everywhere.popup.keep "현재 버전으로 유지">
-<!ENTITY https-everywhere.popup.revert "최신 안정화 버전 다운로드">
-
-<!ENTITY https-everywhere.ruleset-tests.status_title "HTTPS Everywhere 룰셋 테스트">
-<!ENTITY https-everywhere.ruleset-tests.status_cancel_button "취소">
-<!ENTITY https-everywhere.ruleset-tests.status_start_button "시작">
+<!ENTITY https-everywhere.chrome.stable_rules "Stable rules">
+<!ENTITY https-everywhere.chrome.stable_rules_description "Force encrypted connections to these websites:">
+<!ENTITY https-everywhere.chrome.experimental_rules "Experimental rules">
+<!ENTITY https-everywhere.chrome.experimental_rules_description "May cause warnings or breakage. Disabled by default.">

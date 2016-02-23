@@ -55,7 +55,7 @@ Uheldigvis kan vi ikke garantere at vi vil flagge alle sertifikater som er opphe
 
 <!ENTITY ssl-observatory.prefs.explanation 
 "HTTPS Everywhere kan bruke EFF's SSL Observatory.  Dette gjør to ting: (1)
-sender kopier av HTTPS sertifikater til Observatory, for å hjelpe oss å
+sender kopier av HTTPS-sertifikater til Observatory, for å hjelpe oss å
 avsløre 'mellommann'-angrep og forbedre sikkerheten på nettet; og (2)
 lar oss advare deg mot usikre tilkoblinger og angrep på nettleseren din.">
 

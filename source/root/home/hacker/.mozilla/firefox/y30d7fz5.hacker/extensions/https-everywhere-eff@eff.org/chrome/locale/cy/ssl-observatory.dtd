@@ -1,11 +1,11 @@
 <!-- Observatory popup window -->
 <!ENTITY ssl-observatory.popup.details "Manylion a Gwybodaeth Preifatrwydd">
-<!ENTITY ssl-observatory.popup.later "Ask Me Later">
+<!ENTITY ssl-observatory.popup.later "Gofyn Wrthyf Nes Ymlaen">
 <!ENTITY ssl-observatory.popup.no "Na">
 
-<!ENTITY ssl-observatory.popup.text "HTTPS Everywhere can detect attacks
-against your browser by sending the certificates you receive to the
-Observatory.  Turn this on?">
+<!ENTITY ssl-observatory.popup.text "Gall HTTPS Everywhere rwystro ymosodiadau
+en erbyn eich porwr wrth anfon y tystysgrifau a dderbynwch i'r
+Observatory. Galluogi hyn?">
 
 <!--<!ENTITY ssl-observatory.popup.text 
 "EFF's SSL Observatory can detect attacks against HTTPS websites by collecting

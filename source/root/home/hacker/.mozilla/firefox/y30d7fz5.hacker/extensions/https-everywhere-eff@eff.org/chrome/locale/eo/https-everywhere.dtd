@@ -3,8 +3,11 @@
 <!ENTITY https-everywhere.about.ext_description "Ĉifrigu la reton! Aŭtomate uzu HTTPS‐sekurecon ĉe multaj retejoj.">
 <!ENTITY https-everywhere.about.version "Versio">
 <!ENTITY https-everywhere.about.created_by "Kreita de">
+<!ENTITY https-everywhere.about.and ", and">
 <!ENTITY https-everywhere.about.librarians "Libraristoj pri regularo">
 <!ENTITY https-everywhere.about.thanks "Dankoj al">
+<!ENTITY https-everywhere.about.many_contributors "Many many contributors, including">
+<!ENTITY https-everywhere.about.noscript "Also, portions of HTTPS Everywhere are based on code from NoScript, by Giorgio Maone and others.  We are grateful for their excellent work!">
 <!ENTITY https-everywhere.about.contribute  "Se vi ŝatas HTTPS-Ĉie, vi devus konsideri">
 <!ENTITY https-everywhere.about.donate_tor "Donaci al Tor">
 <!ENTITY https-everywhere.about.tor_lang_code "eo">
@@ -34,17 +37,7 @@
 <!ENTITY https-everywhere.prefs.reset_default "Reŝargi al aprioroj">
 <!ENTITY https-everywhere.prefs.view_xml_source "Vidi XML-fonton">
 
-<!ENTITY https-everywhere.source.downloading "Elŝutante">
-<!ENTITY https-everywhere.source.filename "Dosiernomo">
-<!ENTITY https-everywhere.source.unable_to_download "Fonto ne elŝuteblas.">
-
-<!ENTITY https-everywhere.popup.title "Atentigo pri HTTPS-Ĉie 4.0development.11">
-<!ENTITY https-everywhere.popup.paragraph1 "Oops. Vi estas uzanta la stabilan version de HTTPS-Ĉie sed ni eble erare ĝisdatigis vin al evoluigan version dum nia lasta eldono.">
-<!ENTITY https-everywhere.popup.paragraph2 "Ĉu vi volas reiri al stabila versio?">
-<!ENTITY https-everywhere.popup.paragraph3 "Ni deziras, ke vi uzas nian evoluigan version por helpi nin plibonigi HTTPS-Ĉie! Vi eble trovas kelkajn cimojn, kiujn vi povas raporti per https-everywhere@eff.org. Ni pardonpetas por la malagrablo kaj dankas vin por uzi HTTPS-Ĉie.">
-<!ENTITY https-everywhere.popup.keep "Teni min al evoluiga versio">
-<!ENTITY https-everywhere.popup.revert "Elŝutu la lastan stabilan version">
-
-<!ENTITY https-everywhere.ruleset-tests.status_title "Provoj de HTTPS-Ĉie Regularoj">
-<!ENTITY https-everywhere.ruleset-tests.status_cancel_button "Rezigni">
-<!ENTITY https-everywhere.ruleset-tests.status_start_button "Ek">
+<!ENTITY https-everywhere.chrome.stable_rules "Stable rules">
+<!ENTITY https-everywhere.chrome.stable_rules_description "Force encrypted connections to these websites:">
+<!ENTITY https-everywhere.chrome.experimental_rules "Experimental rules">
+<!ENTITY https-everywhere.chrome.experimental_rules_description "May cause warnings or breakage. Disabled by default.">

@@ -3,8 +3,11 @@
 <!ENTITY https-everywhere.about.ext_description "Encrypt laman sesawang! Gunakan HTTPS secara automatik di kebanyakan laman sesawang.">
 <!ENTITY https-everywhere.about.version "Versi">
 <!ENTITY https-everywhere.about.created_by "Dihasilkan oleh">
+<!ENTITY https-everywhere.about.and ", and">
 <!ENTITY https-everywhere.about.librarians "Pustaka set aturan">
 <!ENTITY https-everywhere.about.thanks "Terima kasih kepada">
+<!ENTITY https-everywhere.about.many_contributors "Many many contributors, including">
+<!ENTITY https-everywhere.about.noscript "Also, portions of HTTPS Everywhere are based on code from NoScript, by Giorgio Maone and others.  We are grateful for their excellent work!">
 <!ENTITY https-everywhere.about.contribute  "Sekiranya anda menyukai HTTPS Everywhere, anda mungkin ingin mempertimbangkan untuk">
 <!ENTITY https-everywhere.about.donate_tor "Menderma kepada Tor">
 <!ENTITY https-everywhere.about.tor_lang_code "ms-MY">
@@ -34,17 +37,7 @@
 <!ENTITY https-everywhere.prefs.reset_default "Tetapan semula kepada asal">
 <!ENTITY https-everywhere.prefs.view_xml_source "Papar Sumber XML">
 
-<!ENTITY https-everywhere.source.downloading "Sedang memuat turun">
-<!ENTITY https-everywhere.source.filename "Nama fail">
-<!ENTITY https-everywhere.source.unable_to_download "Gagal untuk memuat turun sumber.">
-
-<!ENTITY https-everywhere.popup.title "Pemberitahuan HTTPS Everywhere 4.0development.11">
-<!ENTITY https-everywhere.popup.paragraph1 "Oops. Anda telah menggunakan versi stabil HTTPS Everywhere, tetapi kami mungkin secara tidak sengaja telah menaik taraf anda untuk versi pembangunan dalam siaran pengeluaran terakhir kami.">
-<!ENTITY https-everywhere.popup.paragraph2 "Adakah anda ingin kembali ke versi stabil?">
-<!ENTITY https-everywhere.popup.paragraph3 "Kami akan sentiasa senang jika anda terus menggunakan versi pembangunan kami dan membantu kami membuatkan HTTPS Everywhere menjadi lebih baik! Anda mungkin mendapati terdapat beberapa lagi kelemahan yang terdapat pada versi ini, dan anda boleh melaporkan kelemahan yang anda dapati di https-everywhere@eff.org. Minta maaf atas kesulitan yang anda alami, dan terima kasih kerana menggunakan HTTPS Everywhere.">
-<!ENTITY https-everywhere.popup.keep "Biarkan saya dalam versi pembangunan">
-<!ENTITY https-everywhere.popup.revert "Muat turun versi stabil terbaru">
-
-<!ENTITY https-everywhere.ruleset-tests.status_title "Jalankan ujian Set Peraturan HTTPS Dimana Sahaja">
-<!ENTITY https-everywhere.ruleset-tests.status_cancel_button "Batal">
-<!ENTITY https-everywhere.ruleset-tests.status_start_button "Mula">
+<!ENTITY https-everywhere.chrome.stable_rules "Stable rules">
+<!ENTITY https-everywhere.chrome.stable_rules_description "Force encrypted connections to these websites:">
+<!ENTITY https-everywhere.chrome.experimental_rules "Experimental rules">
+<!ENTITY https-everywhere.chrome.experimental_rules_description "May cause warnings or breakage. Disabled by default.">

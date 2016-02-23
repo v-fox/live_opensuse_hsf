@@ -1,0 +1,30 @@
+<!ENTITY title "Complete YouTube Saver">
+<!ENTITY settings "Settings">
+<!ENTITY details "Links">
+<!ENTITY more "More...">
+<!ENTITY less "Less...">
+<!ENTITY pname "Project Name:">
+<!ENTITY savedir "Save in:">
+<!ENTITY savecomments "Save Comments Viewed">
+<!ENTITY savecomments.all "All">
+<!ENTITY savecomments.pages "Pages:">
+<!ENTITY savecomments.count "(max 700 / ?)">
+<!ENTITY savevideo "Save Video/Audio">
+<!ENTITY savestats "Save Statistics">
+<!ENTITY savesubtitles "Save Subtitles (if available)">
+<!ENTITY ignoreautosubtitles "Ignore auto-generated subtitles">
+<!ENTITY save.dta "Download Video with DownThemAll!">
+<!ENTITY videourl "Video:">
+<!ENTITY pageurl "Page:">
+<!ENTITY format "&videourl;">
+<!ENTITY btnbrowse "Browse for folder...">
+<!ENTITY alwaysontop "Always on top">
+<!ENTITY openfolder "Open Folder">
+<!ENTITY openprojectfolder "Open project folder">
+<!ENTITY cancelcomments "Cancel comments, continue video download">
+<!ENTITY dlthreads "Download Threads:">
+<!ENTITY switch2custom "Switch to customized folder list">
+<!ENTITY switch2history "Switch to folder history list">
+<!ENTITY comments.relevant "Most Relevant">
+<!ENTITY comments.latest "Latest">
+<!ENTITY comments.avatars "Avatars">

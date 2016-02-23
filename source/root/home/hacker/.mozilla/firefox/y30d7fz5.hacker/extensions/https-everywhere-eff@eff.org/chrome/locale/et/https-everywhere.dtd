@@ -3,8 +3,11 @@
 <!ENTITY https-everywhere.about.ext_description "Krüpteeri veeb! Kasuta HTTPS turvalaiendust automaatselt paljudel lehtedel.">
 <!ENTITY https-everywhere.about.version "Versioon">
 <!ENTITY https-everywhere.about.created_by "Loodud">
+<!ENTITY https-everywhere.about.and ", and">
 <!ENTITY https-everywhere.about.librarians "Reeglistiku haldajad">
 <!ENTITY https-everywhere.about.thanks "Tänud">
+<!ENTITY https-everywhere.about.many_contributors "Many many contributors, including">
+<!ENTITY https-everywhere.about.noscript "Also, portions of HTTPS Everywhere are based on code from NoScript, by Giorgio Maone and others.  We are grateful for their excellent work!">
 <!ENTITY https-everywhere.about.contribute  "Kui sulle meeldib HTTPS Everywhere, võiksid kaaluda">
 <!ENTITY https-everywhere.about.donate_tor "Annetust Tor-ile">
 <!ENTITY https-everywhere.about.tor_lang_code "et">
@@ -34,17 +37,7 @@
 <!ENTITY https-everywhere.prefs.reset_default "Taasta vaikeväärtused">
 <!ENTITY https-everywhere.prefs.view_xml_source "Vaata XML lähtekoodi">
 
-<!ENTITY https-everywhere.source.downloading "Allalaadimine">
-<!ENTITY https-everywhere.source.filename "Failinimi">
-<!ENTITY https-everywhere.source.unable_to_download "Lähtekoodi allalaadimine ebaõnnestus">
-
-<!ENTITY https-everywhere.popup.title "HTTPS Everywhere 4.0development.11 teavitus">
-<!ENTITY https-everywhere.popup.paragraph1 "Oih. Sa kasutasid HTTPS Everwhere stabiilset versiooni aga oleme ekslikult uuendanud sind arendus versioonile.">
-<!ENTITY https-everywhere.popup.paragraph2 "Kas sa soovid minna tagasi stabiilsele versioonile?">
-<!ENTITY https-everywhere.popup.paragraph3 "Meile meeldiks kui sa jätkaksid arendus verisooni kasutamist ja aitaks meil HTTPS Everywherei parendada. Sa võid leida mõne väikse vea siin või seal, sellisel juhul palun raporteeri need https-everywhere@eff.org. Vabandame ebamugavuste pärast ja täname et kasutate HTTPS Everywhere-i.">
-<!ENTITY https-everywhere.popup.keep "Hoia mind arendus verisoonil">
-<!ENTITY https-everywhere.popup.revert "Lae alla viimane stabiilne versioon">
-
-<!ENTITY https-everywhere.ruleset-tests.status_title "HTTPS Everywhere reeglistikku test">
-<!ENTITY https-everywhere.ruleset-tests.status_cancel_button "Katkesta">
-<!ENTITY https-everywhere.ruleset-tests.status_start_button "Käivita">
+<!ENTITY https-everywhere.chrome.stable_rules "Stable rules">
+<!ENTITY https-everywhere.chrome.stable_rules_description "Force encrypted connections to these websites:">
+<!ENTITY https-everywhere.chrome.experimental_rules "Experimental rules">
+<!ENTITY https-everywhere.chrome.experimental_rules_description "May cause warnings or breakage. Disabled by default.">

@@ -3,8 +3,11 @@
 <!ENTITY https-everywhere.about.ext_description "Brongla alnetið! Brúka HTTPS-trygd sjávvirkandi á fleiri síðum.">
 <!ENTITY https-everywhere.about.version "Útgáva">
 <!ENTITY https-everywhere.about.created_by "Stovna hevur">
+<!ENTITY https-everywhere.about.and ", and">
 <!ENTITY https-everywhere.about.librarians "Ruleset Librarians">
 <!ENTITY https-everywhere.about.thanks "Tøkk til">
+<!ENTITY https-everywhere.about.many_contributors "Many many contributors, including">
+<!ENTITY https-everywhere.about.noscript "Also, portions of HTTPS Everywhere are based on code from NoScript, by Giorgio Maone and others.  We are grateful for their excellent work!">
 <!ENTITY https-everywhere.about.contribute  "Dámar tær HTTPS Allastaðni, átti tú at">
 <!ENTITY https-everywhere.about.donate_tor "latið Tor eitt oyra">
 <!ENTITY https-everywhere.about.tor_lang_code "fo">
@@ -34,17 +37,7 @@
 <!ENTITY https-everywhere.prefs.reset_default "Nullstilla">
 <!ENTITY https-everywhere.prefs.view_xml_source "Vís XML-keldu">
 
-<!ENTITY https-everywhere.source.downloading "Tekur niður">
-<!ENTITY https-everywhere.source.filename "Fílunavn">
-<!ENTITY https-everywhere.source.unable_to_download "Fær ikki tikið kelduna niður.">
-
-<!ENTITY https-everywhere.popup.title "HTTPS Allastaðni 4,0framleiðsu.11 fráboðan">
-<!ENTITY https-everywhere.popup.paragraph1 "Ups. Tú brúkaði støðugu útgávuna av HTTPS Allastaðni, men vit hava við óvart dagført teg at brúka nýggjastu framleiðaraútgávu.">
-<!ENTITY https-everywhere.popup.paragraph2 "Vilt tú fara aftur til støðugu útgávuna?">
-<!ENTITY https-everywhere.popup.paragraph3 "Okkum hevði dámt, um tú helt fram at brúka framleiðaraútgávuna og hjálpti okkum at betra um HTTPS Allastaðni. Tú finnur sikkur villur og lýti, men tað er til at melda tílíkt til https-everywhere@eff.org. Haldið okkum til góðum, og takk fyri, at tú brúka HTTPS Allastaðni.">
-<!ENTITY https-everywhere.popup.keep "Hald fram við framleiðaraútgávuni">
-<!ENTITY https-everywhere.popup.revert "Tak nýggjastu støðugu útgávu niður">
-
-<!ENTITY https-everywhere.ruleset-tests.status_title "Reglusett-roynd fyri HTTPS Allastaðni">
-<!ENTITY https-everywhere.ruleset-tests.status_cancel_button "Angra">
-<!ENTITY https-everywhere.ruleset-tests.status_start_button "Starta">
+<!ENTITY https-everywhere.chrome.stable_rules "Stable rules">
+<!ENTITY https-everywhere.chrome.stable_rules_description "Force encrypted connections to these websites:">
+<!ENTITY https-everywhere.chrome.experimental_rules "Experimental rules">
+<!ENTITY https-everywhere.chrome.experimental_rules_description "May cause warnings or breakage. Disabled by default.">

@@ -3,8 +3,11 @@
 <!ENTITY https-everywhere.about.ext_description "Enkripteer die Web! Gebruik HTTPS sekuriteit automaties op baie plekke.">
 <!ENTITY https-everywhere.about.version "Weergawe">
 <!ENTITY https-everywhere.about.created_by "Geskep deur">
+<!ENTITY https-everywhere.about.and ", and">
 <!ENTITY https-everywhere.about.librarians "Ruleset Librarians">
 <!ENTITY https-everywhere.about.thanks "Te danke aan">
+<!ENTITY https-everywhere.about.many_contributors "Many many contributors, including">
+<!ENTITY https-everywhere.about.noscript "Also, portions of HTTPS Everywhere are based on code from NoScript, by Giorgio Maone and others.  We are grateful for their excellent work!">
 <!ENTITY https-everywhere.about.contribute  "Indien jy van HTTPS Everywhere hou, mag jy die volgende oorweeg">
 <!ENTITY https-everywhere.about.donate_tor "Ondersteun Tor met 'n donasie">
 <!ENTITY https-everywhere.about.tor_lang_code "en">
@@ -34,17 +37,7 @@
 <!ENTITY https-everywhere.prefs.reset_default "Reset to Default">
 <!ENTITY https-everywhere.prefs.view_xml_source "View XML Source">
 
-<!ENTITY https-everywhere.source.downloading "Aflaai">
-<!ENTITY https-everywhere.source.filename "Leêrnaam">
-<!ENTITY https-everywhere.source.unable_to_download "Unable to download source.">
-
-<!ENTITY https-everywhere.popup.title "HTTPS Everywhere 4.0development.11 notification">
-<!ENTITY https-everywhere.popup.paragraph1 "Oops. You were using the stable version of HTTPS Everywhere, but we might have accidentally upgraded you to the development version in our last release.">
-<!ENTITY https-everywhere.popup.paragraph2 "Would you like to go back to stable?">
-<!ENTITY https-everywhere.popup.paragraph3 "Ons wil graag hê dat jy ons ontwikkeling weergawe aanhou gebruik en ons help om HTTPS Everywhere beter te maak! Jy mag dalk vind dat daar nog hier en daar 'n paar foutjies is, wat gerapporteer kan word by https-everywhere@eff.org. Ons vra om verskoning vir die ongerief, en bedank jou vir die gebruik van HTTPS Everywhere. ">
-<!ENTITY https-everywhere.popup.keep "Hou my op die ontwikkeling weergawe">
-<!ENTITY https-everywhere.popup.revert "Laai die nuutste stabiele weergawe af">
-
-<!ENTITY https-everywhere.ruleset-tests.status_title "HTTPS Everywhere Ruleset Tests">
-<!ENTITY https-everywhere.ruleset-tests.status_cancel_button "Kanselleer">
-<!ENTITY https-everywhere.ruleset-tests.status_start_button "Begin">
+<!ENTITY https-everywhere.chrome.stable_rules "Stable rules">
+<!ENTITY https-everywhere.chrome.stable_rules_description "Force encrypted connections to these websites:">
+<!ENTITY https-everywhere.chrome.experimental_rules "Experimental rules">
+<!ENTITY https-everywhere.chrome.experimental_rules_description "May cause warnings or breakage. Disabled by default.">

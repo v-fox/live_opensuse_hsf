@@ -20,8 +20,8 @@ to turn it on?">-->
 <!-- Observatory preferences dialog -->
 
 <!ENTITY ssl-observatory.prefs.adv_priv_opts1
-"It is safe to enable this, unless you use a very
-intrusive corporate network:">
+"Es seguro habilitar esta opción, a menos que
+se encuentre en una red corporativa muy invasiva:">
 
 <!ENTITY ssl-observatory.prefs.adv_priv_opts2
 "Seguro, a menos que utilice una red corporativa con nombres secretos de servidor de intranet:">

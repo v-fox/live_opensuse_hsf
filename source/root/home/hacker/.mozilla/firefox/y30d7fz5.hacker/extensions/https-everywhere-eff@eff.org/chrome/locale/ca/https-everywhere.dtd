@@ -3,8 +3,11 @@
 <!ENTITY https-everywhere.about.ext_description "Xifra la Web! Fes servir automàticament la seguretat HTTPS a molts llocs.">
 <!ENTITY https-everywhere.about.version "Versió">
 <!ENTITY https-everywhere.about.created_by "Creat per">
+<!ENTITY https-everywhere.about.and ", and">
 <!ENTITY https-everywhere.about.librarians "Bibliotecaris de normes">
 <!ENTITY https-everywhere.about.thanks "Gràcies a">
+<!ENTITY https-everywhere.about.many_contributors "Many many contributors, including">
+<!ENTITY https-everywhere.about.noscript "Also, portions of HTTPS Everywhere are based on code from NoScript, by Giorgio Maone and others.  We are grateful for their excellent work!">
 <!ENTITY https-everywhere.about.contribute  "Si us agrada HTTPS Everywhere, podríeu considerar">
 <!ENTITY https-everywhere.about.donate_tor "Fer una donació a Tor">
 <!ENTITY https-everywhere.about.tor_lang_code "en">
@@ -34,17 +37,7 @@
 <!ENTITY https-everywhere.prefs.reset_default "Tornar a la opció per defecte">
 <!ENTITY https-everywhere.prefs.view_xml_source "Veure el codi XML">
 
-<!ENTITY https-everywhere.source.downloading "Descarregant">
-<!ENTITY https-everywhere.source.filename "Nom d'arxiu">
-<!ENTITY https-everywhere.source.unable_to_download "No es pot descarregar la font.">
-
-<!ENTITY https-everywhere.popup.title "Notificació de HTTPS Everywhere 4.0development.11">
-<!ENTITY https-everywhere.popup.paragraph1 "Ups, estàveu usant la versió estable de HTTPS Everywhere, però possiblement us hem actualitzat sense voler a la versió de desenvolupadors.">
-<!ENTITY https-everywhere.popup.paragraph2 "Voleu tornar a la versió estable?">
-<!ENTITY https-everywhere.popup.paragraph3 "Ens agradaria que continuéssiu usant la versió de desenvolupador per a ajudar-nos a millorar-la. Potser hi trobeu alguns errors, que ens podeu indicar a https-everywhere@eff.org. Disculpeu les molèsties, i gràcies per usar HTTPS Everywhere.">
-<!ENTITY https-everywhere.popup.keep "Vull continuar amb la versió de desenvolupador.">
-<!ENTITY https-everywhere.popup.revert "Descarrega l'última versió estable.">
-
-<!ENTITY https-everywhere.ruleset-tests.status_title "Prova de normes d'HTTPS Everywhere">
-<!ENTITY https-everywhere.ruleset-tests.status_cancel_button "Cancel·la">
-<!ENTITY https-everywhere.ruleset-tests.status_start_button "Inicia">
+<!ENTITY https-everywhere.chrome.stable_rules "Stable rules">
+<!ENTITY https-everywhere.chrome.stable_rules_description "Force encrypted connections to these websites:">
+<!ENTITY https-everywhere.chrome.experimental_rules "Experimental rules">
+<!ENTITY https-everywhere.chrome.experimental_rules_description "May cause warnings or breakage. Disabled by default.">

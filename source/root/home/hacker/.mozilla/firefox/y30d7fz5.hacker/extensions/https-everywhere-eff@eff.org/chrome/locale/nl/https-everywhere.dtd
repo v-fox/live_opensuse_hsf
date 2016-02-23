@@ -3,8 +3,11 @@
 <!ENTITY https-everywhere.about.ext_description "Versleutel het web! Gebruik HTTPS-beveiliging automatisch op vele sites.">
 <!ENTITY https-everywhere.about.version "Versie">
 <!ENTITY https-everywhere.about.created_by "Gemaakt door">
+<!ENTITY https-everywhere.about.and ", en">
 <!ENTITY https-everywhere.about.librarians "Regelsetbibliothecarissen">
 <!ENTITY https-everywhere.about.thanks "Met dank aan">
+<!ENTITY https-everywhere.about.many_contributors "Vele vrijwilligers, waaronder">
+<!ENTITY https-everywhere.about.noscript "Ook delen van HTTPS Everywhere zijn gebaseerd op code van NoScript, gemaakt door Giorgio Maone en anderen. We zijn dankbaar voor hun fantastisch werk!">
 <!ENTITY https-everywhere.about.contribute  "Als HTTPS Everywhere u bevalt, kunt u overwegen">
 <!ENTITY https-everywhere.about.donate_tor "te doneren aan Tor">
 <!ENTITY https-everywhere.about.tor_lang_code "en">
@@ -34,17 +37,7 @@
 <!ENTITY https-everywhere.prefs.reset_default "Standaardwaarden herstellen">
 <!ENTITY https-everywhere.prefs.view_xml_source "XML-broncode bekijken">
 
-<!ENTITY https-everywhere.source.downloading "Bezig met downloaden">
-<!ENTITY https-everywhere.source.filename "Bestandsnaam">
-<!ENTITY https-everywhere.source.unable_to_download "Kan broncode niet downloaden.">
-
-<!ENTITY https-everywhere.popup.title "HTTPS Everywhere 4.0development.11 bericht">
-<!ENTITY https-everywhere.popup.paragraph1 "Oeps! U gebruikte de stabiele versie van HTTPS Everywhere, maar het is mogelijk dat we u tijdens de laatste uitgave per ongeluk naar de ontwikkelversie hebben geupgrade.">
-<!ENTITY https-everywhere.popup.paragraph2 "Wilt u teruggaan naar de stabiele versie?">
-<!ENTITY https-everywhere.popup.paragraph3 "We zouden het op prijs stellen als u doorging met het gebruik van onze ontwikkelaars versie en ons hielp met het verbeteren van HTTPS Everywhere! U zult hier en daar wat bugs tegenkomen, die u kunt melden aan https-everywhere@eff.org. Excuses voor het ongemak, en veel dank voor het gebruik van HTTPS Everywhere.">
-<!ENTITY https-everywhere.popup.keep "Blijf gebruik maken van de ontwikkelaars versie">
-<!ENTITY https-everywhere.popup.revert "Download de meest recenste stabiele uitgave.">
-
-<!ENTITY https-everywhere.ruleset-tests.status_title "HTTPS Everywhere Regels Testen">
-<!ENTITY https-everywhere.ruleset-tests.status_cancel_button "Annuleren">
-<!ENTITY https-everywhere.ruleset-tests.status_start_button "Start">
+<!ENTITY https-everywhere.chrome.stable_rules "Stabiele regels">
+<!ENTITY https-everywhere.chrome.stable_rules_description "Forceer versleutelde connecties naar deze websites:">
+<!ENTITY https-everywhere.chrome.experimental_rules "Experimentele regels">
+<!ENTITY https-everywhere.chrome.experimental_rules_description "Kan schade aanrichten of waarschuwingen tonen. Standaard is deze uitgeschakeld.">

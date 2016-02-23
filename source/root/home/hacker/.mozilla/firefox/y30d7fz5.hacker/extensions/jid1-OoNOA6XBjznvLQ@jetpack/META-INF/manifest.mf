@@ -2,188 +2,208 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: GoM+npjpqrioTx3UsjP38w==
-SHA1-Digest: C+61YgiK2Fz80aBOV2Tf9W5XR9o=
+MD5-Digest: zXMf3we1p6a0kl7OBFRojw==
+SHA1-Digest: ysZ5+0fu8yITFPghq++r0DvKxMg=
+
+Name: .jpmignore
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: ldBPga/kTGiaR8nlTOWw5g==
+SHA1-Digest: p1gVLRimEaTmktYQUtpFH6L0p6g=
 
 Name: bootstrap.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 7e6z9LJUzPhqfgyfhRMzhA==
-SHA1-Digest: TWD0b5BkAoKXr56l0Tt3AkKBy8s=
+MD5-Digest: 7bXGjs354WXP08z1LJmaUQ==
+SHA1-Digest: hBvzrYsRacNpTOCOH+GOhYBn2mE=
 
-Name: harness-options.json
+Name: package.json
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: s6dCefA894Da2AOPhKiAxg==
-SHA1-Digest: ZzFCM0v5GrbqBXTizk77DoW+nmE=
+MD5-Digest: xHhWa7+VwsUT3pfTqrV93g==
+SHA1-Digest: 8/n1cTHaCVGp21222x5TYgNH9ms=
 
-Name: locales.json
+Name: lib/linux.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: AtNqQ9SYHXfx5vQYh+zNgw==
-SHA1-Digest: rqGQ858hVKzApxhnE9WGZrvR0LY=
+MD5-Digest: u6d4VQ4tKD9zPkuGys8/Ng==
+SHA1-Digest: 1Sa48dMeglTquxZ2uwZe7RnBCUU=
 
-Name: options.xul
+Name: lib/main.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: nARvoL2Cod13MGOIaLuPew==
-SHA1-Digest: 6nvWZ9v0EccVnpdzSD71ZMYjtBI=
+MD5-Digest: YBmdAHeFqAAO+UTSuf+n/w==
+SHA1-Digest: Dcydq/zz+VTiWccBPGjbWGwQxw0=
 
-Name: defaults/preferences/prefs.js
+Name: lib/osx.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: SLvEpti1k6qBIwwUFtvEMg==
-SHA1-Digest: 3QCLd8LEkXXZPNUTTp0sz5Hk4wc=
+MD5-Digest: xYzM9ME0VgQlNf6jx+St6g==
+SHA1-Digest: qC0Du526nT8pI2DUl4hnAAHbwA4=
 
-Name: locale/ar.json
+Name: lib/thunderbird.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 8pjo6iJkn5iwkS4f0BVU/w==
-SHA1-Digest: ZlTw9OVTpFkNhc7Q7kdXey+Soes=
+MD5-Digest: Rdk0hPavtmbViAKn2qmE1w==
+SHA1-Digest: zEDzDSH8YEfNBe4TftPEAKghO04=
 
-Name: locale/be.json
+Name: lib/utils.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: gU1EK98xZWD7LKFp6YF0Mw==
-SHA1-Digest: oonvh1zWKM1nrXMMtCs9mkYe9aE=
+MD5-Digest: Krbl6I2VfFUjmF1OGMAhNw==
+SHA1-Digest: 2oMz5pl2ZnMsLSGPfqci8z+OzcE=
 
-Name: locale/bg.json
+Name: lib/windows.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: yKCnUSomSsfFOINLzqc8Gw==
-SHA1-Digest: yyBCCqd+ke+68zI7b3ym1fYI4+s=
+MD5-Digest: aL37Vz9RIhMtWQ/k+hiJWA==
+SHA1-Digest: WsqDUwSsXCU9892V1S3+Wh5LbwY=
 
-Name: locale/cs.json
+Name: locale/ar.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: yhAaaRUlzTgaQRHS1sw/UA==
-SHA1-Digest: U7IB4Rjtln3FGVKmnSnGuwrGeyQ=
+MD5-Digest: ulPWDYeQaPk/TF0Ei81tKg==
+SHA1-Digest: EsC/PehOOPzcd3204b1riCANeH8=
 
-Name: locale/de.json
+Name: locale/be.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: VSwVjnbMKbK+zifOwcd5Xw==
-SHA1-Digest: qJnMter4bpENea18BGj+/LYk8/Y=
+MD5-Digest: Yekbmd7OTpN024pASfyUSQ==
+SHA1-Digest: hfgRr7r0/4g/Xyd2MigYItGNlD0=
 
-Name: locale/el.json
+Name: locale/bg.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: RRL0dQMOuvRghxzLLGysbw==
-SHA1-Digest: J18qF/bFL+1wrXsbzZLsMJywotE=
+MD5-Digest: Q5PD20URVmpZn+tPrq+BUg==
+SHA1-Digest: y7tLjk0SdkLQSU1G4G25esWN5p0=
 
-Name: locale/en.json
+Name: locale/cs.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 2otUP4aFYHZDELfQkaZ0Ng==
-SHA1-Digest: 5H2Vk0fWcZLnMlo18OGOvJc7RDY=
+MD5-Digest: YMSf8TYc32v5lMC/RsuVPQ==
+SHA1-Digest: j5re50YNn60zfo6U0Gyhjbu/Gbs=
 
-Name: locale/es.json
+Name: locale/de.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: Jee+AO+4saxMVC5Co+dtRw==
-SHA1-Digest: KRSD9AfCwO4b4ua+hR5iiNQfR8Q=
+MD5-Digest: i9dzPQVZQvsN5RafAL9Kww==
+SHA1-Digest: eE02sbW4iKQGNN1iYFCoipxnG7Y=
 
-Name: locale/et.json
+Name: locale/el.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: ZMmhqhz/H2+ECpR3iEv/aQ==
-SHA1-Digest: zpT6P/+YNWmR5vxGn0Iucwm3r7M=
+MD5-Digest: VEGjgJi3dJpQesnrL573gA==
+SHA1-Digest: W/gEggdV9Dk0TvjbpbDRhgNswGw=
 
-Name: locale/fa.json
+Name: locale/en.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: gNiAtHqsiVz7X/JEXW/jzQ==
-SHA1-Digest: xtrxDEGad8RPko/gOIrbxjNMm+c=
+MD5-Digest: nihWuJxLmYVyYIWEKjnqNA==
+SHA1-Digest: bqgQj9oDjwogksIMzW18DrU/+Ug=
 
-Name: locale/fi.json
+Name: locale/es.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: NEQdwIEEJDjywjNf+abNSQ==
-SHA1-Digest: zfmorN8w6k5pyJn+LL2zAv6d6Js=
+MD5-Digest: ZwaFSDkJQ5rSHR4L6ys28Q==
+SHA1-Digest: MRI2ZqqsqXYnKuh9F5Cne/Jt6OA=
 
-Name: locale/fr.json
+Name: locale/et.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: eS7H6HBoI1dtQoWYu4zzBA==
-SHA1-Digest: SG2zAXZHi5xSQE+8tSyaDDbi0Wg=
+MD5-Digest: lMNzMgbUYDR+LyVnT5jwoA==
+SHA1-Digest: 2AOJVdkLcwJNzRQdx/u6gQEZRcQ=
 
-Name: locale/hr.json
+Name: locale/fa.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: KUv85aBF9LHONQmKxP1NwQ==
-SHA1-Digest: EcVpN2gnnABci06eHnxxYemg9Xw=
+MD5-Digest: mDhbNFI+M0mz85bxPcG+Ew==
+SHA1-Digest: gR+SPnB+LfKfSIQ+UhQRjWCl0lc=
 
-Name: locale/hu-HU.json
+Name: locale/fi.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: iX54y1BT50tTx6lqeTFvaQ==
-SHA1-Digest: J7xzReptC9gtRSTs+3GGQWzVsT8=
+MD5-Digest: 3IldJKrHzsULSaflAoEYFw==
+SHA1-Digest: ir0iPjgkvo9JBZNc1OENID3uDF4=
 
-Name: locale/it-IT.json
+Name: locale/fr.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: jOrM4EIDB3ZGlW3AUux/DQ==
-SHA1-Digest: fd22HVvHMO1VODcFueU235D156o=
+MD5-Digest: 58grcUgr1uNzuhF4SSbfsw==
+SHA1-Digest: eQd85wWhlxzR5Drd4fc/4hh8A0w=
 
-Name: locale/ja.json
+Name: locale/hr.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: zqOqM3jpaPNju+RYnaU8Tw==
-SHA1-Digest: KwsIh02TNSoZ6sxsMjA2PuqFDmA=
+MD5-Digest: it2QQ1S6BpI5hZHOCwuqcg==
+SHA1-Digest: lnF8tqZL5b+s1DIHEZxfXfbYxlg=
 
-Name: locale/ko.json
+Name: locale/hu-HU.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: fUWXFQ6Nij3MNyyQk1xleA==
-SHA1-Digest: hrHYunv6KP6uQoYm9g/Jm2ll0Gw=
+MD5-Digest: R/yNCk1U/ozlEKzqA+2VkA==
+SHA1-Digest: uuF2vjDZQQybOakj1BoARmrkBmU=
 
-Name: locale/nb-NO.json
+Name: locale/it-IT.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: xndAmGwhyEv9WyfFfqS+9A==
-SHA1-Digest: PGX90MayBbJ99kS+hKW6ZwM4aFk=
+MD5-Digest: 3SxwxFrl/97sY7CaICBWQQ==
+SHA1-Digest: 6EXf6SeMVhQb1+1mBOwYuvvX3b4=
 
-Name: locale/nl.json
+Name: locale/ja.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: cuIQDBZKMGw0iLbj0iDpkA==
-SHA1-Digest: QZo74DpqIKpKIWroo8BGGyE77co=
+MD5-Digest: QNBt3RqfLiYzYXRwy2OUTw==
+SHA1-Digest: RNfpwM9iVfJXxBbTTRUjrXH7snQ=
 
-Name: locale/pl.json
+Name: locale/ko.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: LZbgluwZg+Mbs3e92t1BZQ==
-SHA1-Digest: ojRxom2RTRP+o/h0QItdwcoI5rM=
+MD5-Digest: lQIQsILEfzeEVN7IO0CM6g==
+SHA1-Digest: 14ffcjJCKt/pjZD2TiTbjlQyMu0=
 
-Name: locale/pt-BR.json
+Name: locale/nb-NO.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: RyDO6L2ZIDaZNo8uxysxqw==
-SHA1-Digest: ILI6DNYIjh5jv/iXM/75b7rp9q8=
+MD5-Digest: 7qHUgwSvDPoynnJi6dXYTw==
+SHA1-Digest: PKMdEIh+VGLC6ygYSqv4GFjGFNg=
 
-Name: locale/pt-PT.json
+Name: locale/nl.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: zPNbw261V8bsckPbkEoHaw==
-SHA1-Digest: hSk8F0cqZG+GzfErggTWUuZeVkw=
+MD5-Digest: EKgJegWYzcFi5TSoEU5EXA==
+SHA1-Digest: y6bNnp+Z8lPpmh+6sbnHDRd68R0=
 
-Name: locale/ro.json
+Name: locale/pl.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: DLG97baTRW5fnq2gDtZHwg==
-SHA1-Digest: ygRQD+PfqFb3v462cxBcBgygypg=
+MD5-Digest: t9IsNPKC0X3NV2w+uautcQ==
+SHA1-Digest: iY4TTmCWe2J05HK8y1dzW0kohqg=
 
-Name: locale/ru-RU.json
+Name: locale/pt-BR.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: O7TauFeKVlzIL+RYg1+EIA==
-SHA1-Digest: ZVtY94G4q0SqXi6jSBieuT1R7fM=
+MD5-Digest: OCDycMXYFB9akx/8085QSA==
+SHA1-Digest: BeBq+WDpdoDeIS/Jv9MjA7DEdG0=
 
-Name: locale/sk.json
+Name: locale/pt-PT.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: S39oYxxd1KbdP0YbkeJJLQ==
-SHA1-Digest: BUQbjIM+w1AINHnSly3cGWz7TI4=
+MD5-Digest: pqmNrTT/OCKD4uhlhzibjA==
+SHA1-Digest: pTXHmRiP4g8uMkQUQf9/M8jfX3o=
 
-Name: locale/sr.json
+Name: locale/ro.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: l3g2ofAuw3ndVA+uHiuh+w==
-SHA1-Digest: 6aKOPr8VFGBbBxA1xNjnjmncg5Q=
+MD5-Digest: /1wAxj9lW2X7O0L3LCxe+g==
+SHA1-Digest: bfynN0ZGd9rEM4nK8xwlJZG39Go=
 
-Name: locale/sv-SE.json
+Name: locale/ru-RU.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: c0PdjuYfNMpL2et4zOfmJA==
-SHA1-Digest: sKvJNfOZtD3j3aLqdUi7dvYetww=
+MD5-Digest: 5tA8NWtmpQuMsWeKxsfUag==
+SHA1-Digest: hV7XQkkZhmoZa6zE6qQGCL/83A0=
 
-Name: locale/tr.json
+Name: locale/sk.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 4SWpOQSsu/AeZtR/7vsT6g==
-SHA1-Digest: 5mNWJ/uFD03GJgzmobwgiyKtNys=
+MD5-Digest: v6XU/3rb8h25a1rcvpN2FQ==
+SHA1-Digest: tVC+xQOb0S0LYl9fgEC9fPeb5NQ=
 
-Name: locale/uk.json
+Name: locale/sr.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: A33IwEMlq9CjrGGcyARCYA==
-SHA1-Digest: xyKwMmSKCeLMBfzeZ9P5wn64yF0=
+MD5-Digest: BZaW/+jJOKDLUgwbZ4iLfw==
+SHA1-Digest: p7BeAwlwaj7k1QrLvIST8cgp7B8=
 
-Name: locale/zn-CN.json
+Name: locale/sv-SE.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: ai3wpvHe0za30vjYyfXvoA==
-SHA1-Digest: rfKyFTA0gtLF7jsILhtmXBNwUG8=
+MD5-Digest: OVFvpw+U7xa3kIFOGaYypQ==
+SHA1-Digest: /Iw1nJ8/clmj+RIFJwjpmGOzzMs=
 
-Name: locale/zn-TW.json
+Name: locale/tr.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: zQkP//x6/jW1rW0YpYN3QQ==
-SHA1-Digest: 2YvdF/ILcFjXn6a6du4NPD3XQn4=
+MD5-Digest: +hDc3ATU10FNy+NZOjxjrw==
+SHA1-Digest: 5pAbXoBsV1P8qlwodf3/oNFJ+cg=
+
+Name: locale/uk.properties
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 4qjONx9DQwSJx6LAlpqvUA==
+SHA1-Digest: TdQ5xk8Ihccyz+zz3puqslQO8Nw=
+
+Name: locale/zh-TW.properties
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 05HKvR76ueoktbCyUJvmkw==
+SHA1-Digest: 3gEMFPl2EnGV755eiGsKaZ8x/lw=
+
+Name: locale/zn-CN.properties
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: GB5KLHHQfr+NNlpdeNy0jw==
+SHA1-Digest: C4XPB95FAQawI3P2oPqHufqQ7js=
 
 Name: resources/gnotifier/data/ToastNotification.dll
 Digest-Algorithms: MD5 SHA1
@@ -194,34 +214,4 @@ Name: resources/gnotifier/data/ToastNotification64.dll
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: pEBXaJOL0bPzLSDCKyHB5w==
 SHA1-Digest: PSYqMRvCWstcHE9HfQy4rElpwHA=
-
-Name: resources/gnotifier/lib/linux.js
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: FJsIcHpLBvrr8dgryVXalw==
-SHA1-Digest: ntcNQlABvXtYtZe/RKN78D48ES0=
-
-Name: resources/gnotifier/lib/main.js
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: TSASS3U9JD2Ve4eFO2vwgw==
-SHA1-Digest: aRVltb/OfOSw+s7dR1T9Z2sYm+g=
-
-Name: resources/gnotifier/lib/osx.js
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: CY461xqCgDpooZV39WXvuA==
-SHA1-Digest: uJqt5Ab4USluHI8VfT6RG/tue0Q=
-
-Name: resources/gnotifier/lib/thunderbird.js
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: cVxes3VXvlMFP1mEuKqMNw==
-SHA1-Digest: HOdyzfb1LOBGsPlL6kMp3dGkKEs=
-
-Name: resources/gnotifier/lib/utils.js
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: Krbl6I2VfFUjmF1OGMAhNw==
-SHA1-Digest: 2oMz5pl2ZnMsLSGPfqci8z+OzcE=
-
-Name: resources/gnotifier/lib/windows.js
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: m8I7920WoIJ9IuAkVzKIsg==
-SHA1-Digest: 0JtJvSpBX4Zi2aLkJSyvI5QA4UE=
 

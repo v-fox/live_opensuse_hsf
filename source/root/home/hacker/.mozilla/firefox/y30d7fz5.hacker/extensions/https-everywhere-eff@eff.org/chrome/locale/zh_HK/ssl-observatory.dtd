@@ -86,7 +86,7 @@ looked at.  Mouseover the options for further details:">
 
 <!ENTITY ssl-observatory.prefs.show "Show advanced options">
 
-<!ENTITY ssl-observatory.prefs.title "SSL Observatory Preferences">
+<!ENTITY ssl-observatory.prefs.title "SSL 觀測站設定">
 
 <!ENTITY ssl-observatory.prefs.use "Use the Observatory?">
 <!ENTITY ssl-observatory.warning.title "WARNING from EFF's SSL Observatory">
