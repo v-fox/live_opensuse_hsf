@@ -851,6 +851,12 @@ root/home/hacker/.config/katepartpluginsrc
 root/etc/skel/.config/mpv/mpv.conf
 root/root/.config/mpv/mpv.conf
 root/home/hacker/.config/mpv/mpv.conf
+root/etc/skel/.config/mpv/mvtools.vpy
+root/root/.config/mpv/mvtools.vpy
+root/home/hacker/.config/mpv/mvtools.vpy
+root/etc/skel/.config/mpv/motioninterpolation.vpy
+root/root/.config/mpv/motioninterpolation.vpy
+root/home/hacker/.config/mpv/motioninterpolation.vpy
 root/etc/skel/.config/krusaderrc
 root/root/.config/krusaderrc
 root/home/hacker/.config/krusaderrc

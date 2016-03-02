@@ -606,7 +606,7 @@ buttonshowtooltips
 .Value=T
 TogglePls
 .visible=T
-.Value=
+.Value=T
 RightSidePanel
 .visible=T
 ToolbarBackground
@@ -654,13 +654,13 @@ Panel9
 .visible=T
 ProgressFrame
 .visible=T
+Progress
+.visible=T
 DrawingArea
 .visible=T
 progresscache
 .visible=T
 progressshadow
-.visible=T
-Progress
 .visible=T
 ABLoopButton
 .text=
