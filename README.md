@@ -119,13 +119,13 @@ Notes:
 
 ⊙ Some specialty apps that were not included but you may be interested in installing manually  
 * music works  
-  * ardour3, rosegarden, qtractor, hydrogen, mixxx, rakarrack, OpenOctaveMidi, vmpk  
+  * ardour, rosegarden, qtractor, hydrogen, mixxx, rakarrack, OpenOctaveMidi, vmpk  
 * video editing  
   * cinelerra, LiVES, openshot, avidemux, kino  
 * 3D modeling  
   * blender  
 * design  
-  * OpenCASCADE, FreeCAD, librecad, qcad, openscad, kicad, QCADesigner  
+  * OpenCASCADE, geda-gaf, librecad, qcad, openscad, kicad, FreeCAD, QCADesigner  
 * publishing  
   * scribus  
 * office works utilities  

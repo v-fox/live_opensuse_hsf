@@ -34,6 +34,7 @@
 		Yabause for Sega© Saturn®
 	* addition of rEFInd (graphical probing EFI bootloader)
 	* addition of K3B disk burner just for the hell of it
+	* addition of Marble, the map viewer
 	* addition of Skype and skyperious (Skype data viewer)
 	* addition of Steam installer/launcher and its crutch-wrapper
 	* addition of ZFS support (disabled by default and may be removed at any time)
