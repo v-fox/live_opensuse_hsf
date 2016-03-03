@@ -36,7 +36,7 @@
 	* addition of K3B disk burner just for the hell of it
 	* addition of Skype and skyperious (Skype data viewer)
 	* addition of Steam installer/launcher and its crutch-wrapper
-	* addition of ZFS support (may be removed at any time)
+	* addition of ZFS support (disabled by default and may be removed at any time)
 	* addition of volatility (forensic tool for RAM analysis)
 	* return of PeaZip (until p7zip GUI decides to compile)
 	* removal of Bumblebee/Primus/VirtualGL/bbswitch in favour of PRIME/DRI3
