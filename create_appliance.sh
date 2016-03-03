@@ -68,6 +68,7 @@ IMAGE_PROPER="${img}/Linux Live - HSF - ${VERSION_CONFIG}_${BUILD_DATE}.iso"
 PACKAGE_LIST="${dst}/build/image-root/home/${OUR_USER}/${NAME_PRETTY} - package list - ${VERSION_CONFIG}_${BUILD_DATE}.txt"
 PACKAGE_LIST_PROPER=${img}/$(basename "${IMAGE_PROPER}" .iso).packages
 HASHFILE=$(basename "${IMAGE_PROPER}" .iso).sha256
+LOGFILE=$(basename "${IMAGE_PROPER}" .iso).log
 
 # No proxy.
 echo "** Unsetting proxy variables (because kiwi otherwise shits itself)..."
@@ -257,7 +258,10 @@ if [ -f "${IMAGE}" ]; then
 	echo "** Creating sha256 checksum..."
 	cd "${img}"
 	sha256sum -b "$(basename "${IMAGE_PROPER}")" > "${HASHFILE}"
-	echo "** Everything is built, look into '${img}' !"
+	echo -n "** Moving and compressing the build log: "
+	mv -v "${dst}/build/image-root.log" "${LOGFILE}"
+	gzip -v "${LOGFILE}"
+	echo "** Everything is done, look into '${img}' !"
 fi
 
 # Cleaning up #2.
