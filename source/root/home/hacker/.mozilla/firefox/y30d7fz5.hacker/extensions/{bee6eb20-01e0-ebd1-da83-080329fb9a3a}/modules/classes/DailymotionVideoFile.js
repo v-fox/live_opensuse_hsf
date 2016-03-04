@@ -94,64 +94,17 @@ DailymotionVideoFile.setVideoFilesList = function(responseText, doc) {
 		}
 	}
 
-	return paramsList.length > 0 ? paramsList : false;	
-
-
-
-
-
-
-
-
-	// var info = /var *info *= *(.*),/.exec(responseText);
-	// var links = DailymotionVideoFile.getVideoLinks(info);
-	// if (!links) { return false; }
-	// var icon = MediaFile.getWebsiteIcon(doc);
-	
-	// var params = new Array();
-	// for (var i in links) {
-	//     params.push({
-	// 		url : links[i].url,
-	// 		fileType : links[i].fileType,
-	// 		doc : doc,
-	// 		contentLength : 0,
-	// 		title : doc.title,
-	// 		icon : icon,
-	// 		quality : links[i].resolution	    
-	//     });
-	// }
-	// return params;
+	return paramsList.length > 0 ? paramsList : false;
 };
 
-// DailymotionVideoFile.getVideoLinks = function(info) {
-// 	if (!info) { return false; }
-	
-// 	var links = new Array();
-	
-// 	info = JSON.parse(info[1]);            
-// 	var url = null;            
-// 	for (var i in DailymotionVideoFile.QUALITIES) {                
-// 	    url = info["stream_h264_" + DailymotionVideoFile.QUALITIES[i]];
-// 	    if (url != null) {                    
-// 			links.push({
-// 			    url         : url,
-// 			    quality     : i,     // key
-// 			    fileType    : "mp4",
-// 			    resolution  : DailymotionVideoFile.RESOLUTIONS[i]                        
-// 			});
-// 	    }
-// 	}
-// 	return links;  
-// };   
-
 DailymotionVideoFile.getVideoIdFromDoc = function(doc) {
-	var metas = doc.getElementsByTagName("meta");            
-	var propAttr;
+	var metas = doc.getElementsByTagName("meta");
 	for (var i in metas) {
 	    if (!metas[i]["getAttribute"]) { continue; }
-	    propAttr = metas[i].getAttribute("property");
-	    if (propAttr == "og:video") {
-			var content = metas[i].getAttribute("content");
+	    var propAttr = metas[i].getAttribute("property");
+	    var name = metas[i].getAttribute("name");
+	    var content = metas[i].getAttribute("content");
+	    if (content && propAttr == "og:video") {
 			var startIndex = content.indexOf("video/") + 6;
 			var endIndex = content.indexOf("?", startIndex);
 			if (endIndex === -1) {
@@ -162,7 +115,32 @@ DailymotionVideoFile.getVideoIdFromDoc = function(doc) {
 			// }
 			return content.substring(startIndex, endIndex);
 	    }
+	    if (content && (propAttr == "og:url" 
+	    	|| name == "twitter:app:url:googleplay")) {
+	    	var videoId = content.split("/")[4];
+	    	if (videoId.length == 7 || videoId.length == 6) { return videoId; }
+	    }
+	    if (content && (propAttr == "al:ios:ur" 
+	    	|| propAttr == "al:android:url" 
+	    	|| name == "twitter:app:url:iphone"
+	    	|| name == "twitter:app:url:ipad")) {
+	    	var videoId = content.split("/")[3];
+	    	if (videoId.length == 7 || videoId.length == 6) { return videoId; }
+	    }
+	    if (content && name == "twitter:player") {
+	    	var videoId = content.split("/")[5];
+	    	if (videoId.length == 7 || videoId.length == 6) { return videoId; }
+	    }
 	}
+	// check the document's URL
+	var startIndex = doc.URL.indexOf("video/") + 6;
+	var endIndex = doc.URL.indexOf("?", startIndex);
+	if (endIndex === -1) {
+		endIndex = doc.URL.indexOf("_", startIndex);
+	}
+	var videoId = doc.URL.substring(startIndex, endIndex);	
+	if (videoId && (videoId.length == 7 || videoId.length == 6)) { return videoId; }
+
 	return false;
 };   
 

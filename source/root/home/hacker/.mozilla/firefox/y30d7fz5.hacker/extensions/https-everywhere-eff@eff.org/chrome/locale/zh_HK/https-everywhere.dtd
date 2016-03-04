@@ -14,6 +14,7 @@
 <!ENTITY https-everywhere.about.or "或">
 <!ENTITY https-everywhere.about.donate_eff "捐款給電子前哨基金會">
 
+<!ENTITY https-everywhere.menu.donate_eff_imperative "Donate to EFF">
 <!ENTITY https-everywhere.menu.about "關於「到處HTTPS」">
 <!ENTITY https-everywhere.menu.observatory "SSL 觀測站設定">
 <!ENTITY https-everywhere.menu.globalEnable "啟用到處HTTPS">
@@ -41,3 +42,15 @@
 <!ENTITY https-everywhere.chrome.stable_rules_description "在以下網站強制使用加密連線：">
 <!ENTITY https-everywhere.chrome.experimental_rules "實驗性規則">
 <!ENTITY https-everywhere.chrome.experimental_rules_description "可能會導致警告和錯誤，預設為關閉。">
+<!ENTITY https-everywhere.chrome.add_rule "Add a rule for this site">
+<!ENTITY https-everywhere.chrome.add_new_rule "Add a new rule for this site">
+<!ENTITY https-everywhere.chrome.always_https_for_host "Always use https for this host">
+<!ENTITY https-everywhere.chrome.host "Host:">
+<!ENTITY https-everywhere.chrome.show_advanced "Show advanced">
+<!ENTITY https-everywhere.chrome.hide_advanced "Hide advanced">
+<!ENTITY https-everywhere.chrome.rule_name "Rule name">
+<!ENTITY https-everywhere.chrome.regex "Matching regex">
+<!ENTITY https-everywhere.chrome.redirect_to "Redirect to">
+<!ENTITY https-everywhere.chrome.status_cancel_button "Cancel">
+
+

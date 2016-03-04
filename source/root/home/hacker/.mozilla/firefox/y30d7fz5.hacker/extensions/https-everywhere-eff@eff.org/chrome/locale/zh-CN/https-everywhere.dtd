@@ -14,6 +14,7 @@
 <!ENTITY https-everywhere.about.or "或">
 <!ENTITY https-everywhere.about.donate_eff "捐助电子前线基金会 (EFF)">
 
+<!ENTITY https-everywhere.menu.donate_eff_imperative "捐助电子前线基金会 (EFF)">
 <!ENTITY https-everywhere.menu.about "关于 HTTPS Everywhere">
 <!ENTITY https-everywhere.menu.observatory "SSL Observatory 首选项">
 <!ENTITY https-everywhere.menu.globalEnable "启用 HTTPS Everywhere">
@@ -41,3 +42,15 @@
 <!ENTITY https-everywhere.chrome.stable_rules_description "强制对这些网站加密连接：">
 <!ENTITY https-everywhere.chrome.experimental_rules "实验规则">
 <!ENTITY https-everywhere.chrome.experimental_rules_description "可能引发警告或异常。默认被禁用。">
+<!ENTITY https-everywhere.chrome.add_rule "为此站点添加规则">
+<!ENTITY https-everywhere.chrome.add_new_rule "为此站点添加新规则">
+<!ENTITY https-everywhere.chrome.always_https_for_host "对此主机始终使用 https">
+<!ENTITY https-everywhere.chrome.host "主角:">
+<!ENTITY https-everywhere.chrome.show_advanced "显示高级选项">
+<!ENTITY https-everywhere.chrome.hide_advanced "隐藏高级选项">
+<!ENTITY https-everywhere.chrome.rule_name "规则名称">
+<!ENTITY https-everywhere.chrome.regex "正则表达式匹配">
+<!ENTITY https-everywhere.chrome.redirect_to "重定向到">
+<!ENTITY https-everywhere.chrome.status_cancel_button "取消">
+
+

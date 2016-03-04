@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<blocklist xmlns="http://www.mozilla.org/2006/addons-blocklist" lastupdate="1456184414000">
+<blocklist xmlns="http://www.mozilla.org/2006/addons-blocklist" lastupdate="1456867205000">
   <emItems>
       <emItem  blockID="i58" id="webmaster@buzzzzvideos.info">
                         <versionRange  minVersion="0" maxVersion="*">
@@ -366,6 +366,12 @@
                     <prefs>
               </prefs>
     </emItem>
+      <emItem  blockID="i1129" id="youtubeunblocker__web@unblocker.yt">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
       <emItem  blockID="i17" id="{3252b9ae-c69a-4eaf-9502-dc9c1f6c009e}">
                         <versionRange  minVersion="2.2" maxVersion="2.2">
                     </versionRange>
@@ -528,10 +534,12 @@
                     <prefs>
               </prefs>
     </emItem>
-      <emItem  blockID="i990" id="youtubeunblocker@unblocker.yt">
+      <emItem  blockID="i1128" id="youtubeunblocker@unblocker.yt">
                         <versionRange  minVersion="43.4.1" maxVersion="77.5.1" severity="3">
                     </versionRange>
                                 <versionRange  minVersion="0" maxVersion="0.6.16" severity="1">
+                    </versionRange>
+                                <versionRange  minVersion="0" maxVersion="*" severity="3">
                     </versionRange>
                     <prefs>
               </prefs>
@@ -1063,6 +1071,12 @@
     </emItem>
       <emItem  blockID="i43" id="supportaccessplugin@gmail.com">
                           <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i1126" id="{bbea93c6-64a3-4a5a-854a-9cc61c8d309e}">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
               </prefs>
     </emItem>
       <emItem  blockID="i537" id="rally_toolbar_ff@bulletmedia.com">
@@ -3400,7 +3414,7 @@
                             <infoURL>https://get.adobe.com/flashplayer/</infoURL>
           </pluginItem>
       <pluginItem  os="Linux" blockID="p1123">
-                                        <versionRange  minVersion="11.2.202.554" maxVersion="11.2.202.559" severity="0" vulnerabilitystatus="1"></versionRange>
+                  <match name="filename" exp="libflashplayer\.so" />                      <versionRange  minVersion="11.2.202.554" maxVersion="11.2.202.559" severity="0" vulnerabilitystatus="1"></versionRange>
                             <infoURL>https://get.adobe.com/flashplayer/</infoURL>
           </pluginItem>
     </pluginItems>
@@ -3704,6 +3718,31 @@
     </certItem>
         <certItem issuerName="MIGBMQswCQYDVQQGEwJCRTEZMBcGA1UEChMQR2xvYmFsU2lnbiBudi1zYTElMCMGA1UECxMcUHJpbWFyeSBPYmplY3QgUHVibGlzaGluZyBDQTEwMC4GA1UEAxMnR2xvYmFsU2lnbiBQcmltYXJ5IE9iamVjdCBQdWJsaXNoaW5nIENB">
       <serialNumber>BAAAAAABI54PryQ=</serialNumber>
+    </certItem>
+        <certItem issuerName="MGExCzAJBgNVBAYTAlVTMRIwEAYDVQQKEwlJZGVuVHJ1c3QxIDAeBgNVBAsTF0lkZW5UcnVzdCBQdWJsaWMgU2VjdG9yMRwwGgYDVQQDExNJZGVuVHJ1c3QgQUNFUyBDQSAx">
+      <serialNumber>fwAAAQAAAUrz/HmrAAAAAg==</serialNumber>
+    </certItem>
+        <certItem issuerName="MIG8MQswCQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlTaWduIFRydXN0IE5ldHdvcmsxOzA5BgNVBAsTMlRlcm1zIG9mIHVzZSBhdCBodHRwczovL3d3dy52ZXJpc2lnbi5jb20vcnBhIChjKTEwMTYwNAYDVQQDEy1WZXJpU2lnbiBDbGFzcyAzIEludGVybmF0aW9uYWwgU2VydmVyIENBIC0gRzM=
+">
+      <serialNumber>By7fBTreouRwX/qrpgSUsg==</serialNumber>
+    </certItem>
+        <certItem issuerName="MIG8MQswCQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlTaWduIFRydXN0IE5ldHdvcmsxOzA5BgNVBAsTMlRlcm1zIG9mIHVzZSBhdCBodHRwczovL3d3dy52ZXJpc2lnbi5jb20vcnBhIChjKTEwMTYwNAYDVQQDEy1WZXJpU2lnbiBDbGFzcyAzIEludGVybmF0aW9uYWwgU2VydmVyIENBIC0gRzM=">
+      <serialNumber>Gd/pPu+qLnXUdvP9sW73CQ==</serialNumber>
+    </certItem>
+        <certItem issuerName="MIG8MQswCQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlTaWduIFRydXN0IE5ldHdvcmsxOzA5BgNVBAsTMlRlcm1zIG9mIHVzZSBhdCBodHRwczovL3d3dy52ZXJpc2lnbi5jb20vcnBhIChjKTEwMTYwNAYDVQQDEy1WZXJpU2lnbiBDbGFzcyAzIEludGVybmF0aW9uYWwgU2VydmVyIENBIC0gRzM=">
+      <serialNumber>LdbnCbsA9sOgI4mkUpWXPw==</serialNumber>
+    </certItem>
+        <certItem issuerName="MIG8MQswCQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlTaWduIFRydXN0IE5ldHdvcmsxOzA5BgNVBAsTMlRlcm1zIG9mIHVzZSBhdCBodHRwczovL3d3dy52ZXJpc2lnbi5jb20vcnBhIChjKTEwMTYwNAYDVQQDEy1WZXJpU2lnbiBDbGFzcyAzIEludGVybmF0aW9uYWwgU2VydmVyIENBIC0gRzM=">
+      <serialNumber>NMpMcEnex3eXx4ohk9glcQ==</serialNumber>
+    </certItem>
+        <certItem issuerName="MIG8MQswCQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlTaWduIFRydXN0IE5ldHdvcmsxOzA5BgNVBAsTMlRlcm1zIG9mIHVzZSBhdCBodHRwczovL3d3dy52ZXJpc2lnbi5jb20vcnBhIChjKTEwMTYwNAYDVQQDEy1WZXJpU2lnbiBDbGFzcyAzIEludGVybmF0aW9uYWwgU2VydmVyIENBIC0gRzM=">
+      <serialNumber>JV/LVzSKI/wsDgg3UuZHlA==</serialNumber>
+    </certItem>
+        <certItem issuerName="MIG8MQswCQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlTaWduIFRydXN0IE5ldHdvcmsxOzA5BgNVBAsTMlRlcm1zIG9mIHVzZSBhdCBodHRwczovL3d3dy52ZXJpc2lnbi5jb20vcnBhIChjKTEwMTYwNAYDVQQDEy1WZXJpU2lnbiBDbGFzcyAzIEludGVybmF0aW9uYWwgU2VydmVyIENBIC0gRzM=">
+      <serialNumber>COwoDFvz7GD8R2K7Lo0rYQ==</serialNumber>
+    </certItem>
+        <certItem issuerName="MIG8MQswCQYDVQQGEwJVUzEXMBUGA1UEChMOVmVyaVNpZ24sIEluYy4xHzAdBgNVBAsTFlZlcmlTaWduIFRydXN0IE5ldHdvcmsxOzA5BgNVBAsTMlRlcm1zIG9mIHVzZSBhdCBodHRwczovL3d3dy52ZXJpc2lnbi5jb20vcnBhIChjKTEwMTYwNAYDVQQDEy1WZXJpU2lnbiBDbGFzcyAzIEludGVybmF0aW9uYWwgU2VydmVyIENBIC0gRzM=">
+      <serialNumber>VOcIuNbTqkpOMUyI108FOg==</serialNumber>
     </certItem>
       </certItems>
 

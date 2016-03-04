@@ -29,16 +29,17 @@ var SigDec = new function(videoParams, dataAsJSON, doc) {
 	};
 
 	this.setSandbox = function() {		
+		var options = { sandboxPrototype: this.win };
 		// if (this.sandbox && this.sandbox.hasOwnProperty("getSig")) { return; }
-		this.sandbox = new Components.utils.Sandbox(this.win);
+		this.sandbox = new Components.utils.Sandbox(this.win, options);
 		// set dummy globals - to prevent yt code from throwing exceptions
-    	this.sandbox.window = this.win;
-    	this.sandbox.document = this.win.document;
-    	this.sandbox.document.body = this.sandbox.document.body || this.win.document.createElement("body");
-    	this.sandbox.navigator = this.win.navigator;
-    	this.sandbox.console = this.win.console;
+    	// this.sandbox.window = this.win;
+    	// this.sandbox.document = this.win.document;
+    	// this.sandbox.document.body = this.sandbox.document.body || this.win.document.createElement("body");
+    	// this.sandbox.navigator = this.win.navigator;
+    	// this.sandbox.console = this.win.console;
     	// get deciphered sig function
-    	this.sandbox.getSig = null;
+    	// this.sandbox.getSig = null;
 	};
 
 	this.getParsedJSON = function(dataAsJSON) {
@@ -105,7 +106,7 @@ var SigDec = new function(videoParams, dataAsJSON, doc) {
 	            	var sigMainFuncName = self.getSigMainFuncName(this.responseText);
 	            	// var strToInsert = 'sigResult = ' + sigMainFuncName + '("' + sig + '");';
 	            	var strToInsert = 'getSig = function(sig) { return ' + sigMainFuncName + '(sig); };';
-	            	var idx = this.responseText.lastIndexOf('})();');
+	            	var idx = this.responseText.lastIndexOf('})(_yt_player);');
 	            	var rearranged = self.stringSplice(this.responseText, idx, 0, strToInsert);
 	            	Components.utils.evalInSandbox(rearranged, self.sandbox);
 	            	// MediaFile.log(this.responseText);

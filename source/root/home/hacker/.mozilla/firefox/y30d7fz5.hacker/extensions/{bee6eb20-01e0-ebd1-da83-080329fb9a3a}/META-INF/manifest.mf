@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 0nOy6r+yKLnA4KxL+Jl9Cw==
-SHA1-Digest: eAVc9mg28qkZkf7C7p2pS1iPViE=
+MD5-Digest: 5HBG0+rZKo0vgZhZ5r/64g==
+SHA1-Digest: /skW3g5nt/Y/KKXF+a0MmzmJ4I8=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
@@ -272,8 +272,8 @@ SHA1-Digest: ucHto+sCeIVenhzDbmUqXK5tCFU=
 
 Name: modules/classes/DailymotionVideoFile.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 9vtlynbrIK8luzEbQOSmVA==
-SHA1-Digest: 5CYmpGVEyxFQmnHWep6QG9V9G7M=
+MD5-Digest: I2yKVjwdAAoZhZPd/WSP3Q==
+SHA1-Digest: 2swVKcRqQ/xfW8IcNiYk/Lc++rk=
 
 Name: modules/classes/FlashFile.js
 Digest-Algorithms: MD5 SHA1
@@ -302,6 +302,6 @@ SHA1-Digest: tj44FxY0j2Vewjch+g2dwqgF48o=
 
 Name: modules/classes/youtube/SigDec.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: NkFf2WN7z8VdpM4VMMl4cQ==
-SHA1-Digest: BDZiAqV4Wxw0j5oo04Hkbpa1TIM=
+MD5-Digest: 6db5i6wYdd1sPr9KGn/tSg==
+SHA1-Digest: 4EpgojY2duTZRzR8x7NGXshiWBM=
 
