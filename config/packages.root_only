@@ -262,6 +262,7 @@ gstreamer-plugins-base
 gstreamer-plugins-good
 gstreamer-plugins-good-extra
 gstreamer-plugins-libav
+gstreamer-plugins-libav-32bit
 gstreamer-plugins-ugly
 gstreamer-plugins-ugly-orig-addon
 gstreamer-utils
