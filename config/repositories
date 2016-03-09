@@ -70,7 +70,7 @@
 	<repository type="rpm-md" imageinclude="true" priority="70" alias="GNOME_Apps">
 		<source path="opensuse://GNOME:Apps/openSUSE_Factory"/>
 	</repository>
-	<repository type="yast2" imageinclude="true" priority="69" alias="openSUSE">
+	<repository type="yast2" imageinclude="true" priority="69" alias="openSUSE" prefer-license="true">
 		<source path="http://download.opensuse.org/tumbleweed/repo/oss"/>
 	</repository>
 	<repository type="yast2" imageinclude="true" priority="69" alias="openSUSE_NonFree">
