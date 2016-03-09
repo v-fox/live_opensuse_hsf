@@ -3,11 +3,15 @@ Frames=10
 
 [Appearance]
 BackgroundColorOpacity=90
+Skin=legacy
 TerminalHighlightOnManualActivation=true
 Translucency=true
 
 [Desktop Entry]
 DefaultProfile=Shell.profile
+
+[Dialogs]
+FirstRun=false
 
 [Favorite Profiles]
 Favorites=
@@ -39,5 +43,4 @@ toggle-session-monitor-silence=Ctrl+Shift+I
 view-full-screen=Ctrl+Shift+F11
 
 [Window]
-DynamicTabTitles=true
 Height=80
