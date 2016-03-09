@@ -20,6 +20,8 @@
 	* support for OpenCL (AMD & Intel)
 	* support for high-quality midi playback via fluidsynth
 	* support for UPnP for PulseAudio
+	* support for motion-based (vapoursynth-mvtools) frame interpolation
+		and neural network (nnedi3) scaling in mpv
 	* addition of a bunch of YaST modules including Docker support
 	* addition of wine with native Gallium DirectX 9 support
 	* addition of more working gaming emulators:
