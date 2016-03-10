@@ -1,3 +1,4 @@
-tmpfs 		/dev/shm 	tmpfs 		rw,relatime,size=20% 					0 0
-tmpfs 		/tmp 		tmpfs 		rw,size=10%,mode=755 					0 0
-hugetlbfs	/dev/hugepages  hugetlbfs	rw,nosuid,nodev,noexec,noatime,x-mount.mkdir=1777	0 0
+tmpfs 		/dev/shm 		tmpfs 		defaults,rw,relatime,size=20% 			0 0
+tmpfs 		/tmp 			tmpfs 		defaults,rw,size=10%,mode=755 			0 0
+hugetlbfs 	/dev/hugepages  	hugetlbfs	defaults,rw,nosuid,noexec,x-mount.mkdir=1777	0 0
+tracefs 	/sys/kernel/tracing 	tracefs 	defaults,x-mount.mkdir=1775 			0 0
