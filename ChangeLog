@@ -56,7 +56,6 @@
 	* commencing usage of multiple dnscrypt instances
 	* systemd's automatic userland coredumps are forbidden by default
 	* Firefox and TB are unbranded in hopes to disable mandatory signing;
-		FF is built with GTK3, TB — with GTK2 due to non-compilation;
 		mozilla-kde4-integration is removed, kde4 hacks are disabled
 
 0.8.1:

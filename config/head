@@ -1,10 +1,13 @@
 	<description type="system">
 		<author>Sergey Kondakov</author>
 		<contact>virtuousfox@gmail.com</contact>
-		<specification>Big, useful desktop appliance with slim DEs</specification>
+		<specification>Feature-rich desktop appliance with a slim DE</specification>
 	</description>
 	<preferences>
-		<type image="iso" primary="true" checkprebuilt="false" boot="isoboot/suse-tumbleweed" firmware="bios" bootprofile="custom" bootkernel="HSF" fsnocheck="true" flags="overlay" hybrid="true" hybridpersistent_filesystem="exfat" kernelcmdline="kiwi_hybridpersistent=true plymouth.enable=0 splash=verbose apparmor=0">
+		<type image="iso" primary="true" checkprebuilt="false"
+		boot="isoboot/suse-tumbleweed" firmware="bios" bootprofile="custom" bootkernel="HSF"
+		fsnocheck="true" flags="overlay" hybrid="true" hybridpersistent_filesystem="exfat"
+		kernelcmdline="kiwi_hybridpersistent=true plymouth.enable=0 splash=verbose apparmor=0">
 			<split>
 				<temporary>
 					<file name="/*"/>
