@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<blocklist xmlns="http://www.mozilla.org/2006/addons-blocklist" lastupdate="1456867205000">
+<blocklist xmlns="http://www.mozilla.org/2006/addons-blocklist" lastupdate="1457114202000">
   <emItems>
       <emItem  blockID="i58" id="webmaster@buzzzzvideos.info">
                         <versionRange  minVersion="0" maxVersion="*">
@@ -812,6 +812,12 @@
                   <pref>browser.search.defaultenginename</pref>
               </prefs>
     </emItem>
+      <emItem  blockID="i1137" id="/^({d50bfa5f-291d-48a8-909c-5f1a77b31948}|{d54bc985-6e7b-46cd-ad72-a4a266ad879e}|{d89e5de3-5543-4363-b320-a98cf150f86a}|{f3465017-6f51-4980-84a5-7bee2f961eba}|{fae25f38-ff55-46ea-888f-03b49aaf8812})$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
       <emItem  blockID="i40" id="{28387537-e3f9-4ed7-860c-11e69af4a8a0}">
                         <versionRange  minVersion="0.1" maxVersion="4.3.1.00" severity="1">
                     </versionRange>
@@ -988,6 +994,12 @@
                       <targetApplication  id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}">
                               <versionRange  minVersion="9.0a1" maxVersion="9.0" />
                           </targetApplication>
+                    </versionRange>
+                    <prefs>
+              </prefs>
+    </emItem>
+      <emItem  blockID="i1136" id="/^({1f43c8af-e9e4-4e5a-b77a-f51c7a916324}|{3a3bd700-322e-440a-8a6a-37243d5c7f92}|{6a5b9fc2-733a-4964-a96a-958dd3f3878e}|{7b5d6334-8bc7-4bca-a13e-ff218d5a3f17}|{b87bca5b-2b5d-4ae8-ad53-997aa2e238d4}|{bf8e032b-150f-4656-8f2d-6b5c4a646e0d})$/">
+                        <versionRange  minVersion="0" maxVersion="*" severity="3">
                     </versionRange>
                     <prefs>
               </prefs>
