@@ -7,8 +7,7 @@
 		keeping file persistency enabled;
 		keeping documentation and locales;
 		keeping basic devel packages since OpenCL wants half of them anyway;
-		not shunning away from 32bit packages anymore;
-		openclipart is now svg instead of png
+		not shunning away from 32bit packages anymore
 	* font selection is completely overhauled in favour of Google Noto collection;
 		Terminus font is used by default in KMS&GUI terminals;
 		DejaVu-based Hack font is used in text editors;
@@ -46,9 +45,8 @@
 	* removal of toxic because we don't try to support console messaging
 	* removal of live-{fat-stick,usb-gui} because of low usefulness for our case
 	* replacement of bomi with xt7-player-mpv
-	* replacement of dropped kernel-desktop with our kernel-HSF:
-		tuned for low latency and packing almost all in-kernel drivers;
-		lzo is used by default for kernel and initrd to gain boot speed
+	* replacement of dropped kernel-desktop with our kernel-HSF
+		(tuned for low latency and packing almost all in-kernel drivers)
 	* replacement of LMT/pm-profiler/pm-utils with tuned/systemtap/powertop
 	* replacement of tc-play with veracrypt
 	* replacement of uTox with qTox
