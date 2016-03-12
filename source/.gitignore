@@ -1361,6 +1361,9 @@ root/home/hacker/.config/gambas3/xt7-Player-mpv/default.profile/SubAndOsd
 root/etc/skel/.config/gambas3/xt7-Player-mpv/default.profile/NewChains
 root/root/.config/gambas3/xt7-Player-mpv/default.profile/NewChains
 root/home/hacker/.config/gambas3/xt7-Player-mpv/default.profile/NewChains
+root/etc/skel/.config/gambas3/xt7-Player-mpv/default.profile/HotKeys_global_enabled.txt
+root/root/.config/gambas3/xt7-Player-mpv/default.profile/HotKeys_global_enabled.txt
+root/home/hacker/.config/gambas3/xt7-Player-mpv/default.profile/HotKeys_global_enabled.txt
 root/etc/skel/.config/gambas3/xt7-Player-mpv/default.profile/cachesize.file
 root/root/.config/gambas3/xt7-Player-mpv/default.profile/cachesize.file
 root/home/hacker/.config/gambas3/xt7-Player-mpv/default.profile/cachesize.file
