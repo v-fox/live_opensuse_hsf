@@ -10,9 +10,9 @@
 	<repository type="rpm-md" imageinclude="true" priority="88" alias="filesystems">
 		<source path="opensuse://filesystems/openSUSE_Tumbleweed"/>
 	</repository>
-        <repository type="rpm-md" imageinclude="true" priority="88" alias="Multilingualization_Fonts">
-                <source path="opensuse://M17N:fonts/openSUSE_Tumbleweed"/>
-        </repository>
+	<repository type="rpm-md" imageinclude="true" priority="88" alias="Multilingualization_Fonts">
+		<source path="opensuse://M17N:fonts/openSUSE_Tumbleweed"/>
+	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="88" alias="multimedia_apps">
 		<source path="opensuse://multimedia:apps/openSUSE_Tumbleweed"/>
 	</repository>
@@ -55,9 +55,6 @@
 	<repository type="rpm-md" imageinclude="true" priority="88" alias="Virtualization">
 		<source path="opensuse://Virtualization/openSUSE_Factory"/>
 	</repository>
-	<repository type="rpm-md" imageinclude="true" priority="77" alias="X11_LXQt">
-		<source path="opensuse://X11:LXQt/openSUSE_Tumbleweed"/>
-	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="77" alias="X11_Utilities">
 		<source path="opensuse://X11:Utilities/openSUSE_Factory"/>
 	</repository>
@@ -76,9 +73,12 @@
 	<repository type="yast2" imageinclude="true" priority="69" alias="openSUSE_NonFree">
 		<source path="http://download.opensuse.org/tumbleweed/repo/non-oss"/>
 	</repository>
-        <repository type="rpm-md" imageinclude="true" priority="66" alias="openSUSE_Update">
-                <source path="http://download.opensuse.org/repositories/openSUSE:/Factory:/Update/standard"/>
-        </repository>
+	<repository type="rpm-md" imageinclude="true" priority="66" alias="openSUSE_Update">
+		<source path="http://download.opensuse.org/repositories/openSUSE:/Factory:/Update/standard"/>
+	</repository>
+	<repository type="rpm-md" imageinclude="true" priority="55" alias="X11_LXQt">
+		<source path="opensuse://X11:LXQt/openSUSE_Tumbleweed"/>
+	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="55" alias="multimedia_color_management">
 		<source path="opensuse://multimedia:color_management/openSUSE_Tumbleweed"/>
 	</repository>
