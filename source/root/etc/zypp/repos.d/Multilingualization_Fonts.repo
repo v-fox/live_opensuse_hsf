@@ -1,0 +1,6 @@
+[Multilingualization_Fonts]
+enabled=0
+autorefresh=0
+baseurl=http://download.opensuse.org/repositories/M17N:fonts/openSUSE_Tumbleweed
+type=rpm-md
+priority=88
