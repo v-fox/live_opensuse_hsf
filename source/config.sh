@@ -87,7 +87,8 @@ baseInsertService spice-vdagentd
 # needed for it to run VMs
 baseInsertService libvirtd
 # avoiding debugfs in favour of tracefs (https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=681418)
-systemctl mask sys-kernel-debug.mount
+#systemctl mask sys-kernel-debug.mount
+ln -s /dev/null /etc/systemd/system/sys-kernel-debug.mount
 
 # systemd locale defaults
 localectl list-x11-keymap-models "evdev"
