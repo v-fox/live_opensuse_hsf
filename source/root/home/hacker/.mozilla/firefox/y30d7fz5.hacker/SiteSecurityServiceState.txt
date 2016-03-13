@@ -1,0 +1,1 @@
+software.opensuse.org:HSTS	0	16873	1489441291349,1,1
