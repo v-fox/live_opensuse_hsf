@@ -6,8 +6,8 @@
 	<preferences>
 		<type image="iso" primary="true" checkprebuilt="false"
 		boot="isoboot/suse-tumbleweed" firmware="uefi" bootprofile="custom" bootkernel="HSF"
-		fsnocheck="true" flags="overlay" hybrid="true" hybridpersistent_filesystem="ext4"
-		kernelcmdline="kiwi_hybridpersistent=true plymouth.enable=0 splash=verbose apparmor=0">
+		flags="overlay" hybrid="true" hybridpersistent="true" hybridpersistent_filesystem="ext4"
+		kernelcmdline="plymouth.enable=0 splash=verbose apparmor=0">
 			<split>
 				<temporary>
 					<file name="/*"/>
