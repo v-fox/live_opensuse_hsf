@@ -143,6 +143,7 @@ encfs
 enigmail
 epson-inkjet-printer-escpr
 ethtool
+evmctl
 evtest
 ext3grep
 ext4magic
