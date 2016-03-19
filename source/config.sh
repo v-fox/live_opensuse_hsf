@@ -49,6 +49,7 @@ systemctl mask wicked
 systemctl mask wickedd
 baseInsertService NetworkManager
 # we don't want it to run by default and its modules are broken anyway... or do we ?
+baseRemoveService zed
 baseRemoveService zfs
 baseRemoveService zfs-mount
 baseRemoveService zfs-share
