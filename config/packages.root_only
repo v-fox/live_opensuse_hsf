@@ -41,7 +41,7 @@ avahi-utils
 bash-completion
 bc
 bcg729-mediastreamer
-beignet
+beignet-git
 bindfs
 bind-utils
 bitmap
