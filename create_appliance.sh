@@ -71,11 +71,11 @@ HASHFILE=$(basename "${IMAGE_PROPER}" .iso).sha256
 LOGFILE=$(basename "${IMAGE_PROPER}" .iso).log
 
 # No proxy.
-echo "** Unsetting proxy variables (because kiwi otherwise shits itself)..."
-for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
-	unset "${i}" && \
-		echo "  no more '${i}'"
-done
+#echo "** Unsetting proxy variables (because kiwi otherwise shits itself)..."
+#for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
+#	unset "${i}" && \
+#		echo "  no more '${i}'"
+#done
 
 # Cleaning up #1.
 echo "** Forcefully unmounting possible chroot leftovers..."
