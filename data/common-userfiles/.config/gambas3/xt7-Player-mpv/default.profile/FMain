@@ -579,10 +579,10 @@ Scrollbar
 .visible=T
 .Value=0
 Scrollbar
-.visible=T
+.visible=
 .Value=0
 #9
-.visible=T
+.visible=
 shadeup
 .visible=T
 HBox2

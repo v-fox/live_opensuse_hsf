@@ -263,7 +263,7 @@ NOPARSEalimiter5.toolbutton
 .Value=
 alimiter6.NoparseBox
 .visible=T
-#140
+#175
 .visible=T
 NOPARSEalimiter6.CommentLabel
 .visible=T
@@ -801,7 +801,7 @@ NOPARSEdynaudnorm9.toolbutton
 .Value=
 dynaudnorm110.NoparseBox
 .visible=T
-#145
+#180
 .visible=T
 NOPARSEdynaudnorm110.CommentLabel
 .visible=T
@@ -1110,7 +1110,7 @@ NOPARSEvdpaurb0.CommentLabel
 .visible=T
 vdpaurb1.NoparseBox
 .visible=T
-#208
+#243
 .visible=T
 NOPARSEvdpaurb1.CommentLabel
 .visible=T
@@ -1964,7 +1964,7 @@ NOPARSEvdpaupp8.toolbutton
 .Value=
 vdpaupp9.NoparseBox
 .visible=T
-#252
+#287
 .visible=T
 NOPARSEvdpaupp9.CommentLabel
 .visible=T
@@ -2003,7 +2003,7 @@ NOPARSEvavpp2.toolbutton
 .Value=
 vavpp3.NoparseBox
 .visible=T
-#257
+#292
 .visible=T
 NOPARSEvavpp3.CommentLabel
 .visible=T
@@ -2097,7 +2097,7 @@ custom video
 custom video_checkbox_drivers_video_container
 .text=
 .visible=T
-.Value=0
+.Value=-1
 filter_text.custom video
 .text=custom video
 .visible=T
@@ -2257,14 +2257,14 @@ openglParseMeHBox11
 .visible=T
 CheckBox4gl
 .visible=T
-.Value=0
+.Value=-1
 openglParseMeHBox4
 .visible=T
 CheckBox3gl3
 .visible=T
 .Value=-1
 OglAddOptsTextbox
-.text=scale=ewa_lanczossharp:alpha=blend:icc-profile-auto:interpolation
+.text=scale=ewa_lanczossharp:alpha=blend:icc-profile-auto
 .visible=T
 Button1
 .visible=T
@@ -2293,7 +2293,7 @@ Label12
 HBox2
 .visible=T
 TextBox5cv
-.text=opengl-hq=scale=ewa_lanczossharp:deband-iterations=2:deband-range=64:scale-antiring=0.2:backend=x11:es=yes:alpha=blend:icc-profile-auto:interpolation:prescale=nnedi3:prescale-downscaling-threshold=1.5:nnedi3-neurons=16:prescale-passes=1:nnedi3-window=8x6:nnedi3-upload=shader
+.text=opengl-hq=backend=x11:pbo:alpha=blend:icc-profile-auto:scale=ewa_lanczossharp:deband-iterations=2:deband-range=64:scale-antiring=0.2:interpolation:interpolation-threshold=-1:tscale=robidouxsharp:tscale-clamp:tscale-radius=3:prescale=superxbr:prescale-passes=4:prescale-downscaling-threshold=1.5
 .visible=T
 HBox1
 .visible=T

@@ -1,5 +1,5 @@
 HSplit1
-.layout=454,407,
+.layout=461,414,
 .tag=
 .visible=T
 #74
@@ -45,7 +45,7 @@ FontColorAlphaLabel2
 .visible=T
 FontColorSpinBox2
 .visible=T
-.Value=20
+.Value=40
 HBox11
 .visible=T
 OutlineCHK2
@@ -68,7 +68,7 @@ BorderColorAlphaLabel3
 .visible=T
 BorderColorSpinBox2
 .visible=T
-.Value=10
+.Value=20
 HBox12
 .visible=T
 ShadowCHK2
@@ -140,7 +140,7 @@ FontColorAlphaLabel
 .visible=T
 FontColorSpinBox
 .visible=T
-.Value=10
+.Value=15
 HBox3
 .visible=T
 OutlineCHK
@@ -163,7 +163,7 @@ BorderColorAlphaLabel2
 .visible=T
 BorderColorSpinBox
 .visible=T
-.Value=20
+.Value=25
 HBox1
 .visible=T
 ShadowCHK
@@ -251,7 +251,7 @@ VBox4
 Label3
 .visible=T
 pScaleFactorComboBox
-.text=0.80
+.text=0.75
 .visible=T
 HBox2
 .visible=T
@@ -269,3 +269,5 @@ ApplyBTN
 OkBTN
 .visible=T
 .Value=
+Resize
+.visible=T

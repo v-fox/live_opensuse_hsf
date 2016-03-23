@@ -1,3 +1,3 @@
-vo=opengl:backend=x11:scale=spline36:cscale=spline36:dscale=mitchell:dither-depth=auto:correct-downscaling:sigmoid-upscaling:pbo:scale=ewa_lanczossharp:alpha=blend:icc-profile-auto:interpolation,xv
+vo=opengl-hq=backend=x11:pbo:alpha=blend:icc-profile-auto:scale=ewa_lanczossharp:deband-iterations=2:deband-range=64:scale-antiring=0.2:interpolation:interpolation-threshold=-1:tscale=robidouxsharp:tscale-clamp:tscale-radius=3:prescale=superxbr:prescale-passes=4:prescale-downscaling-threshold=1.5,opengl:backend=x11:scale=spline36:cscale=spline36:dscale=mitchell:dither-depth=auto:correct-downscaling:sigmoid-upscaling:pbo:interpolation:scale=ewa_lanczossharp:alpha=blend:icc-profile-auto,xv
 ao=jack:port=jamin,pulse:latency-hacks=yes
 af-add=scaletempo,lavfi=[dynaudnorm=1000:3:1:10:0:1:1:1:0]
