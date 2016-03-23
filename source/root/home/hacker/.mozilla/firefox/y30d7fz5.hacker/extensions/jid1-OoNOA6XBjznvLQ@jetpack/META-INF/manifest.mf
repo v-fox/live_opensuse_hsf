@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: zXMf3we1p6a0kl7OBFRojw==
-SHA1-Digest: ysZ5+0fu8yITFPghq++r0DvKxMg=
+MD5-Digest: uF5CPGIE8wIc+Dp2y83oMw==
+SHA1-Digest: DhDV9uOIH9GJBSbiZ29oJ61JdZs=
 
 Name: .jpmignore
 Digest-Algorithms: MD5 SHA1
@@ -17,18 +17,18 @@ SHA1-Digest: hBvzrYsRacNpTOCOH+GOhYBn2mE=
 
 Name: package.json
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: xHhWa7+VwsUT3pfTqrV93g==
-SHA1-Digest: 8/n1cTHaCVGp21222x5TYgNH9ms=
+MD5-Digest: oxZt6C+6naqG4+Jz/3Nzaw==
+SHA1-Digest: LtEYyy9uNCZsFClHcyidV6IEKPw=
 
 Name: lib/linux.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: u6d4VQ4tKD9zPkuGys8/Ng==
-SHA1-Digest: 1Sa48dMeglTquxZ2uwZe7RnBCUU=
+MD5-Digest: bnsveanRNja26NBhjlCntQ==
+SHA1-Digest: VKgPA8zbhcE+/PPk/FirZZR0FJ8=
 
 Name: lib/main.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: YBmdAHeFqAAO+UTSuf+n/w==
-SHA1-Digest: Dcydq/zz+VTiWccBPGjbWGwQxw0=
+MD5-Digest: r8hB5ezsu+PNbBSGLX2jxQ==
+SHA1-Digest: iJH83H+rErPXASJHnqSWl+ekjBc=
 
 Name: lib/osx.js
 Digest-Algorithms: MD5 SHA1
@@ -37,8 +37,13 @@ SHA1-Digest: qC0Du526nT8pI2DUl4hnAAHbwA4=
 
 Name: lib/thunderbird.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: Rdk0hPavtmbViAKn2qmE1w==
-SHA1-Digest: zEDzDSH8YEfNBe4TftPEAKghO04=
+MD5-Digest: 9ojyzKywhsPzfSVaAOxMdA==
+SHA1-Digest: +8snOsxpQDxbqM78OkGIXmKLNtg=
+
+Name: lib/thunderbird.js.old
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: MvBhEe09H3GX7TAs9oM6xg==
+SHA1-Digest: ZCOzFArBKwR0m4xwOzt5FNW314o=
 
 Name: lib/utils.js
 Digest-Algorithms: MD5 SHA1
@@ -85,7 +90,7 @@ Digest-Algorithms: MD5 SHA1
 MD5-Digest: nihWuJxLmYVyYIWEKjnqNA==
 SHA1-Digest: bqgQj9oDjwogksIMzW18DrU/+Ug=
 
-Name: locale/es.properties
+Name: locale/es-ES.properties
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: ZwaFSDkJQ5rSHR4L6ys28Q==
 SHA1-Digest: MRI2ZqqsqXYnKuh9F5Cne/Jt6OA=
@@ -167,8 +172,8 @@ SHA1-Digest: bfynN0ZGd9rEM4nK8xwlJZG39Go=
 
 Name: locale/ru-RU.properties
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 5tA8NWtmpQuMsWeKxsfUag==
-SHA1-Digest: hV7XQkkZhmoZa6zE6qQGCL/83A0=
+MD5-Digest: kVTxJugbHiJSY5w5af7K1A==
+SHA1-Digest: XCZ8Lhb2kwiEL9mttMtc7OJoDgY=
 
 Name: locale/sk.properties
 Digest-Algorithms: MD5 SHA1
@@ -195,15 +200,15 @@ Digest-Algorithms: MD5 SHA1
 MD5-Digest: 4qjONx9DQwSJx6LAlpqvUA==
 SHA1-Digest: TdQ5xk8Ihccyz+zz3puqslQO8Nw=
 
+Name: locale/zh-CN.properties
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 4cOt8meg6GJGvXtT2sKXdw==
+SHA1-Digest: tT1H7+E/h6VPtWRXm+binSVMPKU=
+
 Name: locale/zh-TW.properties
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: 05HKvR76ueoktbCyUJvmkw==
 SHA1-Digest: 3gEMFPl2EnGV755eiGsKaZ8x/lw=
-
-Name: locale/zn-CN.properties
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: GB5KLHHQfr+NNlpdeNy0jw==
-SHA1-Digest: C4XPB95FAQawI3P2oPqHufqQ7js=
 
 Name: resources/gnotifier/data/ToastNotification.dll
 Digest-Algorithms: MD5 SHA1

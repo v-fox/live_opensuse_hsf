@@ -1,1 +1,2 @@
-software.opensuse.org:HSTS	0	16873	1489441291349,1,1
+static.opensuse.org:HSTS	0	16883	1490236190929,1,1
+software.opensuse.org:HSTS	0	16883	1490236195617,1,1

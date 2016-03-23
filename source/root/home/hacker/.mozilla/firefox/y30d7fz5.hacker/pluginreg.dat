@@ -419,7 +419,7 @@ VLC Web Plugin:$
 libfreshwrapper-flashplayer.so:$
 /usr/lib64/browser-plugins/libfreshwrapper-flashplayer.so:$
 20.0.0.286:$
-1457904863000:0:0:0:$
+1457905716000:0:0:0:$
 Shockwave Flash 20.0 r0:$
 Shockwave Flash:$
 2
@@ -427,7 +427,7 @@ Shockwave Flash:$
 1:application/futuresplash:FutureSplash Player:spl:$
 
 [INVALID]
-/home/fox/.mozilla/plugins/libnpsoplugin.so:$
-0:$
 /home/fox/.mozilla/plugins/liblightsparkplugin.so:$
+0:$
+/home/fox/.mozilla/plugins/libnpsoplugin.so:$
 0:$
