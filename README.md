@@ -1,5 +1,5 @@
 ### [download built images at SourceForge](https://sourceforge.net/p/hackeurs-sans-frontieres)  
-![LXQt desktop](https://sourceforge.net/p/hackeurs-sans-frontieres/screenshot/screenshot_4.png)  
+![LXQt desktop](https://a.fsdn.com/con/app/proj/hackeurs-sans-frontieres/screenshots/screenshot_4.png)  
 
 This is hybrid live cd/usb openSUSE Tumbleweed rolling spin aimed to be fully functional out-of-the-box yet slim desktop system for hackers of all sorts: technical, humanitarian, artistic, social and so on. It's built on "one user-friendliest method for fulfilling every need" principle.  
 It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), [CAINE](https://www.caine-live.net) or [Whonix](https://www.whonix.org), however it should be quite adequate as an installation basis for everyday use and comes with pre-configured data proxying via [Tor](https://www.torproject.org/about/overview.html) & [DNSCrypt](http://dnscrypt.org).
@@ -162,7 +162,7 @@ Building:
  	5. waiting quite a bit
 
 * ∀ the process of development for this project is like this:
- 	01. _future_ release version is set in 'source/version'
+ 	01. _future_ release version is set in 'config/version'
  	02. desired functional changes are made
  	03. package lists are sorted via `config/sort.sh`, gitignore is generated via `data/common-userfiles_1-generate-gitignore.sh` and then changes are committed
  	04. image is build via `create_appliance.sh`
