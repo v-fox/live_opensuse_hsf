@@ -540,7 +540,7 @@ ButtonUp
 .visible=T
 .Value=
 UrlBox
-.text=~
+.text=~/Downloads/browser
 .visible=T
 ButtonRefresh
 .visible=T
@@ -551,7 +551,7 @@ ButtonHidden
 Panel16
 .visible=T
 FileView1
-.Dir=~
+.Dir=~/Downloads/browser
 .visible=T
 ScrollArea
 .visible=T

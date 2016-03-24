@@ -38,6 +38,7 @@ if not (mpix > 1 or clip.fps_num/clip.fps_den > 59):
     sup  = core.mv.Super(clip, pel=2)
     bvec = core.mv.Analyse(sup, isb=True)
     fvec = core.mv.Analyse(sup, isb=False)
+# "FlowFPS" is supposed to give better picture than "BlockFPS" for the price of performance
     clip = core.mv.BlockFPS(clip, sup, bvec, fvec, num=dst_fps_num, den=dst_fps_den)
 
 clip.set_output()
