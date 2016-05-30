@@ -80,7 +80,8 @@ baseInsertService privoxy
 baseInsertService avahi-daemon
 # linphone provides P2P SIP, so we don't need SIP Witch
 #baseInsertService sipwitch
-baseInsertService miredo-client
+# teredo tunneling enabled by default may be not a good idea since traffic may be funneled there unnecessarily
+baseRemoveService miredo-client
 baseInsertService colord
 baseInsertService xdm
 # needed for it to be properly run in VM
