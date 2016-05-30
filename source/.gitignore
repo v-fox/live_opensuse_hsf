@@ -782,6 +782,9 @@ root/home/hacker/.config/autostart/xiccd.desktop
 root/etc/skel/.config/autostart/gnome-keyring-secrets.desktop
 root/root/.config/autostart/gnome-keyring-secrets.desktop
 root/home/hacker/.config/autostart/gnome-keyring-secrets.desktop
+root/etc/skel/.config/autostart/ibus-autostart.desktop
+root/root/.config/autostart/ibus-autostart.desktop
+root/home/hacker/.config/autostart/ibus-autostart.desktop
 root/etc/skel/.config/autostart/copyq.desktop
 root/root/.config/autostart/copyq.desktop
 root/home/hacker/.config/autostart/copyq.desktop
