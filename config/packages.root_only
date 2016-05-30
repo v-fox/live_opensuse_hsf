@@ -81,6 +81,7 @@ command-not-found
 compcache
 compton
 conntrack-tools
+convmv
 coolreader3-qt
 copyq
 cpupower
@@ -227,7 +228,7 @@ gnome-keyring-pam
 gnome-media
 gnu_ddrescue
 gnu-free-fonts
-goldendict
+goldendict-git
 gpa
 gpart
 gparted
@@ -243,18 +244,6 @@ grub2
 gsettings-backend-dconf
 gsettings-desktop-schemas
 gst123
-gstreamer-0_10-libnice
-gstreamer-0_10-plugin-crystalhd
-gstreamer-0_10-plugins-bad
-gstreamer-0_10-plugins-bad-orig-addon
-gstreamer-0_10-plugins-base
-gstreamer-0_10-plugins-buzztard
-gstreamer-0_10-plugins-ffmpeg
-gstreamer-0_10-plugins-gl
-gstreamer-0_10-plugins-good-extra
-gstreamer-0_10-plugins-ugly
-gstreamer-0_10-plugins-ugly-orig-addon
-gstreamer-0_10-utils
 gstreamer-libnice
 gstreamer-plugin-gstclutter
 gstreamer-plugins-bad
@@ -543,6 +532,7 @@ libpurple-plugin-openfetion
 libpurple-plugin-pack
 libpurple-plugin-pack-extras
 libpurple-plugin-sipe
+libqt5-qttools
 libreoffice-base-drivers-mysql
 libreoffice-branding-openSUSE
 libreoffice-calc-extensions
@@ -581,6 +571,7 @@ lirc
 lirc-remotes
 lsb-invalid-mta
 lsb-release
+lshw
 lsof
 luksipc
 lxappearance
@@ -669,7 +660,6 @@ okular
 onboard
 onboard-data
 openal-soft
-openclipart-png
 opendnssec
 opengost-otf-fonts
 open-iscsi
@@ -752,7 +742,7 @@ procinfo
 proctail
 projectM-data
 projectM-jack
-proxychains
+proxychains-ng
 proxytunnel
 psmisc
 ptools
@@ -769,6 +759,7 @@ pulseaudio-utils
 pulseaudio-zsh-completion
 pure-ftpd
 pwgen
+python-gobject-Gdk
 python-plaso
 python-scapy
 python-SpiceClientGtk
@@ -979,9 +970,11 @@ xdmbgrd
 xdotool
 xev
 xf86-input-evdev
+xf86-input-libinput
 xf86-input-synaptics
 xf86-input-vmmouse
 xf86-input-wacom
+xf86-video-amdgpu
 xf86-video-ati
 xf86-video-dummy
 xf86-video-intel
