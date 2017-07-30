@@ -1,0 +1,4 @@
+# Allow GUI root programs
+Defaults env_keep += "XMODIFIERS GTK_IM_MODULE QT_IM_MODULE QT_IM_SWITCHER SUDO_ASKPASS DISPLAY XAUTHORITY XAUTHLOCALHOSTNAME"
+# Allow chrt's SCHED_DEADLINE for users
+%users ALL=(ALL) NOPASSWD: /usr/bin/chrt

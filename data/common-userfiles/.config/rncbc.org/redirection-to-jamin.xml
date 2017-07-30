@@ -1,85 +1,109 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.3.12" name="redirection-to-jamin">
+<patchbay name="redirection-to-jamin" version="0.4.3">
  <output-sockets>
-  <socket exclusive="off" client="jamin" type="jack-audio" name="Jamin output">
-   <plug>a\.master\.out_L|out_L</plug>
-   <plug>a\.master\.out_R|out_R</plug>
-  </socket>
-  <socket exclusive="off" client="PortAudio" type="jack-audio" name="portaudio (for stereo)">
-   <plug>out_[0-9]*[02468]</plug>
-   <plug>out_[0-9]*[13579]</plug>
-  </socket>
-  <socket exclusive="off" client="MPlayer \[[0-9]+\]|mpv(|-.[0-9])" type="jack-audio" name="mplayer &amp; mpv">
-   <plug>out_0</plug>
-   <plug>out_1</plug>
-  </socket>
-  <socket exclusive="off" client="Mednafen" type="jack-audio" name="Mednafen emulator">
-   <plug>output</plug>
-   <plug>output-right</plug>
-  </socket>
-  <socket exclusive="off" client="vlc_[0-9]+" type="jack-audio" name="VLC">
+  <socket exclusive="off" client="mlt[0-9]+" name="Shotcut/MLT" type="jack-audio">
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
-  <socket exclusive="off" client="TiMidity(|-.[0-9])" type="jack-audio" name="TiMidity">
+  <socket exclusive="on" client="alsoft" name="OpenAL" type="jack-audio">
+   <plug>channel_1</plug>
+   <plug>channel_2</plug>
+  </socket>
+  <socket exclusive="on" client="audacious" name="Audacious" type="jack-audio">
+   <plug>out_0</plug>
+   <plug>out_1</plug>
+  </socket>
+  <socket exclusive="on" client="RetroArch" name="RetroArch" type="jack-audio">
+   <plug>left</plug>
+   <plug>right</plug>
+  </socket>
+  <socket exclusive="off" client="jamin" name="Jamin output" type="jack-audio">
+   <plug>a\.master\.out_L|out_L</plug>
+   <plug>a\.master\.out_R|out_R</plug>
+  </socket>
+  <socket exclusive="on" client="PortAudio" name="portaudio (for stereo)" type="jack-audio">
+   <plug>out_[0-9]*[02468]</plug>
+   <plug>out_[0-9]*[13579]</plug>
+  </socket>
+  <socket exclusive="off" client="MPlayer \[[0-9]+\]|mpv(|-.[0-9])" name="mplayer &amp; mpv" type="jack-audio">
+   <plug>out_0</plug>
+   <plug>out_1</plug>
+  </socket>
+  <socket exclusive="on" client="Mednafen" name="Mednafen emulator" type="jack-audio">
+   <plug>output</plug>
+   <plug>output-right</plug>
+  </socket>
+  <socket exclusive="on" client="vlc_[0-9]+" name="VLC" type="jack-audio">
+   <plug>out_1</plug>
+   <plug>out_2</plug>
+  </socket>
+  <socket exclusive="on" client="TiMidity(|-.[0-9])" name="TiMidity" type="jack-audio">
    <plug>port_1</plug>
    <plug>port_2</plug>
   </socket>
-  <socket exclusive="off" client="fluidsynth(|-.[0-9])|qsynth" type="jack-audio" name="fluidsynth">
+  <socket exclusive="on" client="fluidsynth(|-.[0-9])|qsynth" name="fluidsynth" type="jack-audio">
    <plug>l_.*|left</plug>
    <plug>r_.*|right</plug>
   </socket>
-  <socket exclusive="off" client="alsa-jack\.jackP\.[0-9]+\.[0-9]" type="jack-audio" name="ALSA">
+  <socket exclusive="on" client="alsa-jack\.jackP\.[0-9]+\.[0-9]" name="ALSA" type="jack-audio">
    <plug>out_000</plug>
    <plug>out_001</plug>
   </socket>
-  <socket exclusive="off" client="alsa_in" type="jack-audio" name="ALSA-aloop">
+  <socket exclusive="on" client="alsa_in" name="ALSA-aloop" type="jack-audio">
    <plug>capture_1</plug>
    <plug>capture_2</plug>
   </socket>
-  <socket exclusive="off" client=".*" type="jack-audio" name="FIrefox (cubeb)">
+  <socket exclusive="on" client="Nightly|Firefox|CubebUtils" name="FIrefox (cubeb)" type="jack-audio">
    <plug>AudioStream_.*_0</plug>
    <plug>AudioStream_.*_1</plug>
   </socket>
-  <socket exclusive="off" client="PulseAudio JACK Sink" type="jack-audio" name="PA stereo output">
+  <socket exclusive="on" client="PulseAudio JACK Sink" name="PA stereo output" type="jack-audio">
    <plug>front-left</plug>
    <plug>front-right</plug>
   </socket>
-  <socket exclusive="off" client=".*" type="jack-audio" name="all GStreamer players">
+  <socket exclusive="on" client="(?!Clementine(|[\-0-9])).*" name="all GStreamer players but Clementine" type="jack-audio">
    <plug>out_.*audio(sink|out)(|[\-0-9])+_1</plug>
    <plug>out_.*audio(sink|out)(|[\-0-9])+_2</plug>
   </socket>
-  <socket exclusive="off" client="flash(|-.[0-9])|freshwrapper(|-.[0-9])" type="jack-audio" name="Adobe Flash (NPAPI &amp; PPAPI)">
+  <socket exclusive="on" client="Clementine(|[\-0-9])" name="Clementine" type="jack-audio">
+   <plug>out_.*audio(sink|out)(|[\-0-9])+_1</plug>
+   <plug>out_.*audio(sink|out)(|[\-0-9])+_2</plug>
+  </socket>
+  <socket exclusive="on" client="flash(|-.[0-9])|freshwrapper(|-.[0-9])" name="Adobe Flash (NPAPI &amp; PPAPI)" type="jack-audio">
    <plug>out1|output1</plug>
    <plug>out2|output2</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket exclusive="off" client="SimpleScreenRecorder" type="jack-audio" name="SimpleScreenRecorder">
+  <socket exclusive="off" client="SimpleScreenRecorder" name="SimpleScreenRecorder" type="jack-audio">
    <plug>in_1</plug>
    <plug>in_2</plug>
   </socket>
-  <socket exclusive="on" client="system" type="jack-audio" name="main output">
+  <socket exclusive="off" client="system" name="main output" type="jack-audio">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>
-  <socket exclusive="off" client="jamin" type="jack-audio" name="jamin volume boost">
+  <socket exclusive="off" client="jamin" name="jamin volume boost" type="jack-audio">
    <plug>in_L</plug>
    <plug>in_R</plug>
   </socket>
-  <socket exclusive="off" client="alsa_out" type="jack-audio" forward="PulseAudio Source" name="ALSA-aloop">
+  <socket exclusive="off" client="alsa_out" name="ALSA-aloop" type="jack-audio" forward="PulseAudio Source">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>
-  <socket exclusive="off" client="PulseAudio JACK Source" type="jack-audio" name="PulseAudio Source">
+  <socket exclusive="off" client="PulseAudio JACK Source" name="PulseAudio Source" type="jack-audio">
    <plug>front-left</plug>
    <plug>front-right</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
+  <cable output="Shotcut/MLT" input="main output" type="jack-audio"/>
+  <cable output="OpenAL" input="jamin volume boost" type="jack-audio"/>
+  <cable output="Audacious" input="jamin volume boost" type="jack-audio"/>
+  <cable output="RetroArch" input="jamin volume boost" type="jack-audio"/>
   <cable output="Jamin output" input="main output" type="jack-audio"/>
-  <cable output="mplayer &amp; mpv" input="jamin volume boost" type="jack-audio"/>
+  <cable output="portaudio (for stereo)" input="jamin volume boost" type="jack-audio"/>
   <cable output="Mednafen emulator" input="jamin volume boost" type="jack-audio"/>
   <cable output="VLC" input="jamin volume boost" type="jack-audio"/>
   <cable output="TiMidity" input="jamin volume boost" type="jack-audio"/>
@@ -88,9 +112,9 @@
   <cable output="ALSA-aloop" input="jamin volume boost" type="jack-audio"/>
   <cable output="FIrefox (cubeb)" input="jamin volume boost" type="jack-audio"/>
   <cable output="PA stereo output" input="jamin volume boost" type="jack-audio"/>
-  <cable output="all GStreamer players" input="jamin volume boost" type="jack-audio"/>
+  <cable output="all GStreamer players but Clementine" input="jamin volume boost" type="jack-audio"/>
+  <cable output="Clementine" input="jamin volume boost" type="jack-audio"/>
   <cable output="Adobe Flash (NPAPI &amp; PPAPI)" input="jamin volume boost" type="jack-audio"/>
-  <cable output="portaudio (for stereo)" input="jamin volume boost" type="jack-audio"/>
  </cables>
 </patchbay>
 

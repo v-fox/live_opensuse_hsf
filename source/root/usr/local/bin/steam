@@ -1,8 +1,0 @@
-#!/bin/sh
-
-# whole bunch of crutches
-xhost local:${USER}
-for i in $(find ~/.steam/steam/ubuntu12_* -name "libstdc++*" -o -name "libgcc_s*" -o -name "libxcb*"); do
-	rm -rfv "${i}"
-done
-env STEAM_RUNTIME=1 LD_LIBRARY_PATH=+"/usr/lib" /usr/bin/steam

@@ -2,5 +2,4 @@
 [Icon Theme]
 Name=Default
 Comment=Default cursor theme
-Inherits=ComixCursors-Green,crystalgreen
-Hidden=true
+Inherits=ComixCursors-Green,MIX

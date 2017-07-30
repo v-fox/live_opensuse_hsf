@@ -4,58 +4,88 @@ MaxRandomHue=340
 MaxRandomSaturation=255
 MaxRandomValue=0
 
-[BackgroundIntense]
+[BackgroundFaint]
 Color=0,0,0
+
+[BackgroundIntense]
+Color=10,10,10
 
 [Color0]
-Color=0,0,0
+Color=45,45,45
+
+[Color0Faint]
+Color=55,55,55
 
 [Color0Intense]
-Color=75,75,75
+Color=40,40,40
 
 [Color1]
-Color=190,25,25
+Color=200,23,23
+
+[Color1Faint]
+Color=240,122,122
 
 [Color1Intense]
-Color=240,79,79
+Color=250,78,78
 
 [Color2]
-Color=25,190,25
+Color=23,200,23
+
+[Color2Faint]
+Color=122,240,122
 
 [Color2Intense]
-Color=78,240,78
+Color=78,250,78
 
 [Color3]
-Color=190,110,25
+Color=200,112,23
+
+[Color3Faint]
+Color=240,181,122
 
 [Color3Intense]
-Color=240,240,76
+Color=250,164,78
 
 [Color4]
-Color=25,25,190
+Color=22,22,200
+
+[Color4Faint]
+Color=122,122,240
 
 [Color4Intense]
-Color=104,120,240
+Color=78,78,250
 
 [Color5]
-Color=190,25,190
+Color=200,22,200
+
+[Color5Faint]
+Color=240,122,240
 
 [Color5Intense]
-Color=240,99,240
+Color=250,78,250
 
 [Color6]
-Color=25,190,190
+Color=22,200,200
+
+[Color6Faint]
+Color=122,240,240
 
 [Color6Intense]
-Color=77,240,240
+Color=78,250,250
 
 [Color7]
-Color=190,190,190
+Color=200,200,200
+
+[Color7Faint]
+Color=239,231,240
 
 [Color7Intense]
 Color=250,250,250
 
 [Foreground]
+Color=255,255,255
+
+[ForegroundFaint]
 Color=255,255,255
 
 [ForegroundIntense]

@@ -1,0 +1,7 @@
+[Move calf to 3rd desktop by default]
+Description=Move calf to 3rd desktop by default
+desktop=3
+desktoprule=3
+wmclass=calfjackhost
+wmclasscomplete=false
+wmclassmatch=1

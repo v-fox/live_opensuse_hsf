@@ -1,3 +1,70 @@
+0.9.1:
+	* default realtime priorities are rebalanced to not interfere with
+		kernel and JACK's default latency is set to 32ms via 512/3 f/p
+		(16ms with 256/3 f/p config may be stable on a good machine)
+	* support for Vulkan
+	* support for audio calls is disabled in LeechCraft
+		due to upstream abandonment
+	* addition of i2pd for native I2P support
+	* addition of Performance Co-Pilot monitoring suite
+	* addition of stress-ng and gfio testers
+	* addition of XEN and UML libvirt support
+	* addition of input-libinput and video-amdgpu X drivers
+	* addition of RetroArch/libretro meta-emulator
+	* addition of purple-libsteam and steam-controller
+	* addition of dolphin file manager
+	* addition of digikam/showfoto
+	* addition of speedcrunch calculator
+	* addition of handbrake-gtk video converter
+	* addition of soundkonverter
+	* addition of quota-nfs
+	* addition of convmv, lshw, libqt5-qttools
+	* addition of forgotten libssr-glinject{-32bit}
+		needed for reliable OpenGL recording in SimpleScreenRecorder
+	* addition of rasdaemon for collecting H/W error data like MCE and CCE
+	* addition of abootimg and qdevicemonitor Android tools
+	* addition of multithreaded compressors (pigz,lbzip2,pbzip2,pixz,plzip)
+	* removal of kmscon KMS/DRM console due to its upstream abandonment
+	* removal of obsolete firmwarekit
+	* removal of openclipart
+	* removal of explicit dependency on gstreamer-0.10
+	* removal of KDE's phonon backends
+	* removal of Tano IPTV player
+	* removal of gvfs
+	* replacement of dead yast2-live-installer with calamares
+	* replacement of openbox/compton with kwin
+	* replacement of onboard with florence
+	* replacement of xt7-player-mpv with smplayer/smtube
+	* replacement of PeaZip with ark
+	* replacement of keepassx with keepassxc
+	* replacement of unbound with pdnsd
+		because of former being prone to random failures
+	* replacement of obsolete msilbc Linphone plugin with mswebrtc
+	* replacement of LinPhone's GTK GUI with Qt one
+	* switch to svn build of Desmume emulator
+	* switch to alive branch of proxychains
+	* mpv and retroarch are launched with heightened priority by default
+	* now uinput udev rules are set by Steam package
+		and no custom hacks for it are applied
+	* KDE hacks and mozilla-kde4-integration are returned for FF
+		until https://bugzilla.mozilla.org/show_bug.cgi?id=727422 is fixed
+	* creation of proper lxqt-powermanagement.conf
+		that provides ScreenSaver D-Bus interface and safer laptop defaults
+	* default user limits are set in systemd's config akin to limits.conf;
+		systemd accounting is enabled by default but without special limits;
+		default systemd start/stop timeouts are significantly decreased;
+	* maximum allowed user realtime priority decreased to 49 not to itnerfere
+		with kernel and systemd's watchdog has been enabled;
+	* important kernel changes:
+		full ticklessness / NO_HZ;
+		all CPUs are build_forced no-CBs CPUs;
+		transparent hugepages defaulted to madwise;
+		schedutil is set as default CPU scheduler/;
+		bfq-mq/kyber are set as default I/O schedulers for HDD/SSD;
+		fq-codel is set as default network scheduler;		
+		CONFIG_SCHED_AUTOGROUP is enabled (in kernel but not in system);
+		unneeded for boot third-party kernel modules are left out of initrd
+
 0.9.0:
 	* R/W support / persistency is enabled:
 		EXT4 partition is created out of redundant space of your R/W medium;

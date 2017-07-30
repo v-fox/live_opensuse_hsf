@@ -5,7 +5,7 @@ Exec=nitrogen --restore
 TryExec=nitrogen
 OnlyShowIn=LXQt;
 X-LXQt-Module=true
-
+Hidden=true
 Name[de_DE]=Desktop
 Name[lt]=Darbalaukis
 Name[ja]=デスクトップ

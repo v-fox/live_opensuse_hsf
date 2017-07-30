@@ -5,7 +5,7 @@
 		<source path="opensuse://Archiving/openSUSE_Factory"/>
 	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="88" alias="emulators">
-		<source path="opensuse://Emulators/openSUSE_Factory"/>
+		<source path="opensuse://Emulators/openSUSE_Tumbleweed"/>
 	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="88" alias="filesystems">
 		<source path="opensuse://filesystems/openSUSE_Tumbleweed"/>
@@ -56,7 +56,7 @@
 		<source path="opensuse://X11:Utilities/openSUSE_Factory"/>
 	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="77" alias="X11_XOrg">
-		<source path="opensuse://X11:XOrg/openSUSE_Factory"/>
+		<source path="opensuse://X11:XOrg/openSUSE_Tumbleweed"/>
 	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="70" alias="KDE_Extra">
 		<source path="opensuse://KDE:Extra/openSUSE_Tumbleweed"/>

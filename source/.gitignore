@@ -2,6 +2,9 @@
 root/etc/skel/.fluidsynth
 root/root/.fluidsynth
 root/home/hacker/.fluidsynth
+root/etc/skel/.calfpresets
+root/root/.calfpresets
+root/home/hacker/.calfpresets
 root/etc/skel/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/__NOTEBOOK__/index.sqlite
 root/root/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/__NOTEBOOK__/index.sqlite
 root/home/hacker/Documents/Notes/keepnote/Hackeurs\ Sans\ Frontières/__NOTEBOOK__/index.sqlite
@@ -35,6 +38,9 @@ root/home/hacker/.dmrc
 root/etc/skel/.gtkrc-2.0-jamin
 root/root/.gtkrc-2.0-jamin
 root/home/hacker/.gtkrc-2.0-jamin
+root/etc/skel/.calfrc
+root/root/.calfrc
+root/home/hacker/.calfrc
 root/etc/skel/.icons/hicolor/512x512
 root/root/.icons/hicolor/512x512
 root/home/hacker/.icons/hicolor/512x512
@@ -161,6 +167,9 @@ root/home/hacker/.icons/OxyElegantGreen/80x80
 root/etc/skel/.icons/OxyElegantGreen/48x48
 root/root/.icons/OxyElegantGreen/48x48
 root/home/hacker/.icons/OxyElegantGreen/48x48
+root/etc/skel/.icons/default/cursors
+root/root/.icons/default/cursors
+root/home/hacker/.icons/default/cursors
 root/etc/skel/.icons/default/index.theme
 root/root/.icons/default/index.theme
 root/home/hacker/.icons/default/index.theme
@@ -836,9 +845,6 @@ root/home/hacker/.config/autostart/pasystray.desktop
 root/etc/skel/.config/autostart/switchview-autostart.desktop
 root/root/.config/autostart/switchview-autostart.desktop
 root/home/hacker/.config/autostart/switchview-autostart.desktop
-root/etc/skel/.config/autostart/z-dispcalGUI-apply-profiles.desktop
-root/root/.config/autostart/z-dispcalGUI-apply-profiles.desktop
-root/home/hacker/.config/autostart/z-dispcalGUI-apply-profiles.desktop
 root/etc/skel/.config/autostart/gnome-keyring-gpg.desktop
 root/root/.config/autostart/gnome-keyring-gpg.desktop
 root/home/hacker/.config/autostart/gnome-keyring-gpg.desktop
@@ -863,6 +869,9 @@ root/home/hacker/.config/mpv/motioninterpolation_720p.vpy
 root/etc/skel/.config/krusaderrc
 root/root/.config/krusaderrc
 root/home/hacker/.config/krusaderrc
+root/etc/skel/.config/kwinrc
+root/root/.config/kwinrc
+root/home/hacker/.config/kwinrc
 root/etc/skel/.config/copyq/copyq.conf
 root/root/.config/copyq/copyq.conf
 root/home/hacker/.config/copyq/copyq.conf
@@ -956,6 +965,15 @@ root/home/hacker/.config/PCSX2/inis/spu2-x.ini
 root/etc/skel/.config/PCSX2/inis_1.4.0
 root/root/.config/PCSX2/inis_1.4.0
 root/home/hacker/.config/PCSX2/inis_1.4.0
+root/etc/skel/.config/calf/jamin_replacement_lite
+root/root/.config/calf/jamin_replacement_lite
+root/home/hacker/.config/calf/jamin_replacement_lite
+root/etc/skel/.config/calf/jamin_replacement
+root/root/.config/calf/jamin_replacement
+root/home/hacker/.config/calf/jamin_replacement
+root/etc/skel/.config/calf/calf.kwinrule
+root/root/.config/calf/calf.kwinrule
+root/home/hacker/.config/calf/calf.kwinrule
 root/etc/skel/.config/fontconfig/fonts.conf
 root/root/.config/fontconfig/fonts.conf
 root/home/hacker/.config/fontconfig/fonts.conf
@@ -971,6 +989,12 @@ root/home/hacker/.config/rncbc.org/redirection-to-jamin.xml
 root/etc/skel/.config/rncbc.org/Qsynth.conf
 root/root/.config/rncbc.org/Qsynth.conf
 root/home/hacker/.config/rncbc.org/Qsynth.conf
+root/etc/skel/.config/rncbc.org/redirection-to-calf.xml
+root/root/.config/rncbc.org/redirection-to-calf.xml
+root/home/hacker/.config/rncbc.org/redirection-to-calf.xml
+root/etc/skel/.config/kwinrulesrc
+root/root/.config/kwinrulesrc
+root/home/hacker/.config/kwinrulesrc
 root/etc/skel/.config/katescriptingrc
 root/root/.config/katescriptingrc
 root/home/hacker/.config/katescriptingrc
@@ -1241,6 +1265,9 @@ root/home/hacker/.config/nitrogen/bg-saved.cfg
 root/etc/skel/.config/nitrogen/nitrogen.cfg
 root/root/.config/nitrogen/nitrogen.cfg
 root/home/hacker/.config/nitrogen/nitrogen.cfg
+root/etc/skel/.config/kwinqtcurverc
+root/root/.config/kwinqtcurverc
+root/home/hacker/.config/kwinqtcurverc
 root/etc/skel/.config/oxygen-gtk/argb-apps.conf
 root/root/.config/oxygen-gtk/argb-apps.conf
 root/home/hacker/.config/oxygen-gtk/argb-apps.conf
@@ -1346,12 +1373,6 @@ root/home/hacker/.config/qBittorrent/qBittorrent.conf
 root/etc/skel/.config/gambas3/xt7-Player-mpv/Xt7BindKeys
 root/root/.config/gambas3/xt7-Player-mpv/Xt7BindKeys
 root/home/hacker/.config/gambas3/xt7-Player-mpv/Xt7BindKeys
-root/etc/skel/.config/gambas3/xt7-Player-mpv/.lock
-root/root/.config/gambas3/xt7-Player-mpv/.lock
-root/home/hacker/.config/gambas3/xt7-Player-mpv/.lock
-root/etc/skel/.config/gambas3/xt7-Player-mpv/.localsocket
-root/root/.config/gambas3/xt7-Player-mpv/.localsocket
-root/home/hacker/.config/gambas3/xt7-Player-mpv/.localsocket
 root/etc/skel/.config/gambas3/xt7-Player-mpv/lastprofile
 root/root/.config/gambas3/xt7-Player-mpv/lastprofile
 root/home/hacker/.config/gambas3/xt7-Player-mpv/lastprofile

@@ -60,7 +60,9 @@ baseInsertService btrfsmaintenance-refresh
 baseInsertService tuned
 baseInsertService rtkit-daemon
 baseInsertService compcache
-baseInsertService irq_balancer
+baseInsertService rtirq
+# may interfere with system's balancing
+baseRemoveService irqbalance
 baseInsertService upower
 baseInsertService gpm
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
@@ -68,13 +70,14 @@ ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.s
 #baseInsertService autofs
 # $(sensors-detect) should be launched first manually to make sure that it's safe
 #baseInsertService lm_sensors
-baseInsertService hddtemp
+# default hddtemp service can't find HDDs which makes it useless
+baseRemoveService hddtemp
 baseInsertService dkms
 baseInsertService bluetooth
 baseInsertService ModemManager
 baseInsertService ntp
-baseInsertService dnscrypt-proxy
-baseInsertService unbound
+#baseInsertService unbound
+baseInsertService pdnsd
 baseInsertService tor
 baseInsertService privoxy
 baseInsertService avahi-daemon
@@ -124,6 +127,8 @@ zypper --non-interactive --gpg-auto-import-keys refresh
 zypper --non-interactive install "google-*-fonts" || exit 1
 # and installing all forensic tools while we're at it
 zypper --non-interactive install --from security_forensics "*-tools" || exit 1
+# all digikam plugins
+zypper --non-interactive install "digikam-plugin-*" || exit 1
 # and YaST translations
 zypper --non-interactive install "yast2-trans-*" || exit 1
 # removing unwanted packages (but why we would even have them in the first place ?)

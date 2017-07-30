@@ -1,9 +1,12 @@
 [Icon Theme]
 Name=MIX
 Comment=Mega-theme from OxyElegantGreen, gnome-wise, oxygen-ionized_v1, Plataro, Sonar, Tango
-Inherits=OxyElegantGreen,gnome-wise,oxygen-ionized_v1,Plataro,Sonar,Tango,OxyElegantBase,gnome-colors-common,hicolor
-DisplayDepth=32
+Inherits=OxyElegantGreen,gnome-wise,oxygen-ionized_v1,Plataro,Sonar,Tango,OxyElegantBase,gnome-colors-common,oxygen,gnome,hicolor
 
+DisplayDepth=32
+FollowsColorScheme=true
+
+Example=folder
 LinkOverlay=link
 LockOverlay=lockoverlay
 ShareOverlay=share
@@ -21,6 +24,8 @@ PanelDefault=32
 PanelSizes=8,16,22,24,32,48,64,96,128,256,512
 DialogDefault=32
 DialogSizes=8,16,22,24,32,48,64,96,128,256,512
+
+KDE-Extensions=.svg
 
 Directories=actions/scalable,emblems/scalable,scalable/actions,scalable/emblems,scalable/categories,scalable/devices,scalable/mimetypes,scalable/notifications,scalable/places,scalable/status,scalable/apps,categories/scalable,devices/scalable,mimetypes/scalable,animations/scalable,places/scalable,status/scalable,apps/scalable,emblems/symbolic,devices/symbolic,emotes/food,emotes/faces,status/symbolic,status/weather,status/dialogs,256x256/actions,256x256/categories,256x256/devices,256x256/mimetypes,256x256/places,256x256/status,256x256/apps,128x128/actions,128x128/emblems,128x128/categories,128x128/devices,128x128/mimetypes,128x128/animations,128x128/filesystems,128x128/places,128x128/emotes,128x128/status,128x128/apps,128x128/intl,64x64/actions,64x64/emblems,64x64/categories,64x64/devices,64x64/mimetypes,64x64/animations,64x64/filesystems,64x64/places,64x64/emotes,64x64/status,64x64/apps,64x64/intl,devices/64,mimetypes/64,places/64,status/64,48x48/actions,48x48/emblems,48x48/categories,48x48/devices,48x48/mimetypes,48x48/animations,48x48/filesystems,48x48/places,48x48/emotes,48x48/status,48x48/apps,48x48/intl,actions/48,categories/48,devices/48,places/48,apps/48,categories/32,32x32/actions,32x32/emblems,32x32/categories,32x32/devices,32x32/mimetypes,32x32/animations,32x32/filesystems,32x32/places,32x32/emotes,32x32/status,32x32/apps,32x32/intl,mimetypes/32,places/32,apps/32,emblems/medium,actions/24,24x24/actions,24x24/emblems,24x24/categories,24x24/devices,24x24/mimetypes,24x24/places,24x24/status,24x24/apps,actions/22,22x22/actions,22x22/emblems,22x22/categories,22x22/devices,22x22/mimetypes,22x22/animations,22x22/filesystems,22x22/places,22x22/emotes,22x22/status,22x22/apps,22x22/intl,emblems/22,categories/22,devices/22,mimetypes/22,places/22,emotes/22,status/22,apps/22,actions/16,emblems/16,categories/16,devices/16,16x16/actions,16x16/emblems,16x16/categories,16x16/devices,16x16/mimetypes,16x16/animations,16x16/filesystems,16x16/places,16x16/emotes,16x16/status,16x16/apps,16x16/intl,mimetypes/16,places/16,status/16,apps/16,actions/small,emblems/small,mimetypes/small,status/small,8x8/emblems
 

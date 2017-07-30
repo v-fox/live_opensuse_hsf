@@ -1,0 +1,1 @@
+Defaults env_keep += "KDE_FULL_SESSION KDE_SESSION_VERSION"

@@ -2,7 +2,7 @@
 ![LXQt desktop](https://a.fsdn.com/con/app/proj/hackeurs-sans-frontieres/screenshots/screenshot_4.png)  
 
 This is hybrid live cd/usb openSUSE Tumbleweed rolling spin aimed to be fully functional out-of-the-box yet slim desktop system for hackers of all sorts: technical, humanitarian, artistic, social and so on. It's built on "one user-friendliest method for fulfilling every need" principle.  
-It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), [CAINE](https://www.caine-live.net) or [Whonix](https://www.whonix.org), however it should be quite adequate as an installation basis for everyday use and comes with pre-configured data proxying via [Tor](https://www.torproject.org/about/overview.html) & [DNSCrypt](http://dnscrypt.org).
+It DOES NOT guarantee best security defaults, so users with sensitive needs are advised to direct their attention to something like [TAILS](https://tails.boum.org), [CAINE](https://www.caine-live.net) or [Whonix](https://www.whonix.org), however it should be quite adequate as an installation basis for everyday use and comes with pre-configured data proxying via [Tor](https://www.torproject.org/about/overview.html) & [I2P](https://geti2p.net) and [DNSCrypt](http://dnscrypt.org).
 
 I recommend using smart SATA boxes and usb drives with legacy (floppy / CD / virtual partition) emulation as the replacement for disks, like:  
 ⊘ [IODD](https://iodd.co.kr) / [Zalman ZM-\*](https://www.zalman.com/global/product/CategorySecond_Pic.php) series  
@@ -20,10 +20,10 @@ to switch to bleeding edge from pontostroy (git & kernel rc's) repoes
 * international (Google Noto set) collection of fonts  
 and universal iBus input method by default
 * LibreOffice, GIMP, Okular and fresh GoldenDict;  
-CoolReader3-Qt, kchmviewer, djvulibre-djview4 and pdfcrack
+CoolReader3-Qt, kchmviewer and pdfcrack
 * codecs, font antialiasing and texture compression support  
 without artificial restrictions
-* MPV super-player and its Xt7 GUI, Tano IPTV player, VLC Firefox plugin;  
+* MPV super-player with its SMplayer GUI;  
 SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * professional sound handling with JACK  
 (PA & ALSA, both with OSS emulation, run as JACK's clients)
@@ -35,6 +35,7 @@ GStreamer with FFMPEG and JACK output by default
 and analogue video input (via tvtime) support
 * professional screencasting tool SimpleScreenRecorder with native JACK support
 * wide range of gamepad utilities such as AntiMicro and jstest-gtk;  
+RetroArch, universal meta-emulator that encompasses other "emulation cores";
 Mednafen, small yet feature-rich JACK-enabled multi-system emulator;
 emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
 * professional virtualization with libvirt & KVM / LXC  
@@ -53,7 +54,8 @@ Skype for compatibility with stubborn fools (use with extreme caution !)
 * fresh Mozilla Firefox browser and Thunderbird e-mail client;  
 fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
-* mc, zsh, kmscon, android-tools, wgetpaste/pastebinit and other console tools
+* mc, zsh, android-tools, wgetpaste/pastebinit and other console tools
+* perf, stress-ng, gfio benchmarks
 * networking tools:  
   * interconnecting: hostapd, usbip, miredo-client, minicom and rancid
   * looking: {arp-,ike-,ssl}scan, iptraf-ng, nethogs, upnp-inspector, mtr{-gtk}, lft
@@ -62,6 +64,7 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * filesystem tools:  
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype
   * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
+  * deduplication: duperemove, fslint (+ digikam's image deduplication with fingerprinting)
   * support for pretty much all filesystems known to man, in kernel or via FUSE; exFAT & ZFS kernel modules
   * rEFInd bootloader and U/EFI manipulation via efitools and UEFITool
 * security/forensics tools:  
@@ -107,6 +110,7 @@ Notes:
   * okular (useful doc viewer, integrated in Firefox via kparts-plugin)  
   * kchmviewer (MS chm viewer), because sometimes okular screws up  
   * gwenview5 + digikam5/showfoto (highly-capable image viewers)  
+  * soundkonverter (no better alternatives for batch audio conversion)  
   * k3b (rich disk burner), because some people still are into this stuff)  
 * GNOME:  
   * nm-applet (this is _the only_ NM GUI that can launch in any DE)  

@@ -1,5 +1,5 @@
 		<package name="kernel-HSF" bootinclude="true"/>
 		<package name="exfat-nofuse-kmp-HSF" bootinclude="true"/>
-		<package name="vhba-kmp-HSF" bootinclude="true"/>
-		<package name="zfsonlinux-spl-kmp-HSF" bootinclude="true"/>
-		<package name="zfsonlinux-zfs-kmp-HSF" bootinclude="true"/>
+		<package name="vhba-kmp-HSF" bootinclude="false"/>
+		<package name="spl-kmp-HSF" bootinclude="false"/>
+		<package name="zfs-kmp-HSF" bootinclude="false"/>

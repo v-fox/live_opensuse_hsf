@@ -1,0 +1,4 @@
+# use maximum allowed power management without spin-down. see 
+# https://wiki.archlinux.org/index.php/hdparm
+# https://bbs.archlinux.org/viewtopic.php?id=39258
+ACTION=="add|change", KERNEL=="sd?", ATTR{queue/rotational}=="1", RUN+="/usr/sbin/hdparm -B 128 -S 0 /dev/%k"

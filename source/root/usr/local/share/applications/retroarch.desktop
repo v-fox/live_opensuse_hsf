@@ -1,0 +1,11 @@
+[Desktop Entry]
+GenericName=retroarch
+Encoding=UTF-8
+Name=RetroArch
+Comment=A modular multi-system emulator system
+Type=Application
+Exec=retroarch.sh
+Icon=retroarch
+Terminal=false
+Categories=System;Emulator;
+

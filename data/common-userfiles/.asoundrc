@@ -1,8 +1,8 @@
-### ALSA => JACK routing (screw you, PA !)
+### ALSA => PA/JACK routing
 ## apps can use
-## 1) 'default' and 'sysdefault' that provide thinnest JACK compatibility layer
-## 2) 'pulse' which is the fat, double layered method of reaching JACK
-## 3) 'aloop' that provides the ugliest compatibility technique
+## 1) 'jack' is the thinnest JACK compatibility layer but not all apps can swallow it
+## 2) 'pulse' is fat but reliable, double layered method of reaching JACK
+## 3) 'aloop' is monstrosity that provides the ugliest compatibility technique
 ## everything else is intermediates that apps shouldn't touch
 
 pcm.jack {
@@ -12,8 +12,10 @@ pcm.jack {
         description "JACK"
     }
     playback_ports {
-        0 jamin:in_L
-        1 jamin:in_R
+        0 "Calf Studio Gear:analyzer In #1"
+#         0 system:playback_1
+        1 "Calf Studio Gear:analyzer In #2"
+#         1 system:playback_2
 #        2 system:playback_3
 #        3 system:playback_4
 #        4 system:playback_5
@@ -28,24 +30,38 @@ pcm.jack {
 }
 
 pcm.!default {
-  type plug
-  slave.pcm jack
+  type pulse
   hint {
     show on
-    description "Default ALSA Output (currently JACK)" }
+    description "Default ALSA Output (currently PA)" }
 }
 ctl.!default {
-  type hw
+  type pulse
   card 0
+  fallback "sysdefault"
 }
 
 ## crutch for stupid apps like Firefox
 pcm.!sysdefault {
-  type plug
-  slave.pcm jack
+  type jack
   hint {
     show on
     description "Crutch for stupid apps (JACK enforcement)" }
+  playback_ports {
+#    0 "Calf Studio Gear:analyzer In #1"
+    0 system:playback_1
+#    1 "Calf Studio Gear:analyzer In #2"
+    1 system:playback_2
+  }
+  capture_ports {
+        0 system:capture_1
+        1 system:capture_2
+  }
+}
+ctl.!sysdefault {
+  type hw
+  card 0
+  fallback "pulse"
 }
 
 ## additional pulse crutch for completely retarded applications like aegisub
@@ -58,12 +74,10 @@ pcm.pulse {
         show on
         description "Crutch for full-retard apps (PulseAudio redirection layer)"
     }
-    fallback "sysdefault"
 }
 
 ctl.pulse {
     type pulse
-    fallback "sysdefault"
 }
 
 ## snd-aloop crutch for insane applications

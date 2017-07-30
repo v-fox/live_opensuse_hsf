@@ -1,2 +1,2 @@
 #!/bin/sh
-nice -n -5 chrt -v -r 1 mpv "$@"
+nice -n -10 ionice -c 2 -n 1 mpv "$@"

@@ -1,0 +1,11 @@
+[General]
+BorderSize=2
+BorderlessMax=true
+CustomShadows=true
+InnerBorder=0
+OpaqueBorder=false
+OuterBorder=0
+TitleBarPad=1
+
+[InactiveShadows]
+Size=35

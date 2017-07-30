@@ -1,0 +1,3 @@
+# relaxed permissions for virtual network, so they could be used by libvirt run by regular user
+
+KERNEL=="vhost-net", GROUP="libvirt", MODE="0666"

@@ -1,0 +1,2 @@
+# access to hpet for user's realtime applications (https://forums.opensuse.org/showthread.php/466320-Problem-with-custom-udev-rule/page2)
+KERNEL=="hpet", GROUP:="users", MODE:="0640"

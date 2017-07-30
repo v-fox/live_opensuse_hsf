@@ -1,2 +1,0 @@
-# allow access to uinput interface for users
-SUBSYSTEM=="misc", KERNEL=="uinput", MODE="0660", GROUP="users"

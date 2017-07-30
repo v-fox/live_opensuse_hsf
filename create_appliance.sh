@@ -237,7 +237,7 @@ if [ -d "${dst}" ]; then
 fi
 	
 echo "** Creating appliance..."
-command="$kiwi --verbose 3 --gzip-cmd=lzop --build ${src}/ -d ${dst}"
+command="$kiwi --color-output --compat --verbose 3 --gzip-cmd=lzop --build ${src}/ -d ${dst}"
 echo "$command"
 $command
 # this should work but kiwi sometimes gives out error codes for good builds
