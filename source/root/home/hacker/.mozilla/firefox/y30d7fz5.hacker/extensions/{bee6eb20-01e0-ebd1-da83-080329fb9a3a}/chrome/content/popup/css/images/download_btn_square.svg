@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="27px" height="27px" viewBox="0 0 27 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>DOWNLOAD</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0.01460501" y="0.5" width="26" height="26" rx="1"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Dark-Theme" transform="translate(-1280.000000, -206.000000)">
+            <g id="DOWNLOAD" transform="translate(1280.000000, 206.000000)">
+                <g id="Group-8">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="Mask" fill="#E91D00" xlink:href="#path-1"></use>
+                    <path d="M7.5815735,10.2790301 C7.27012553,9.82259775 7.46392158,9.45258621 8.01343852,9.45258621 L18.9865615,9.45258621 C19.5365219,9.45258621 19.728237,9.82499747 19.4184265,10.2790301 L14.0639264,18.1261423 C13.7524785,18.5825747 13.2458841,18.5801749 12.9360736,18.1261423 L7.5815735,10.2790301 Z" id="Mask" fill="#FFFFFF" mask="url(#mask-2)"></path>
+                    <polygon id="Rectangle-246" fill="#B91700" mask="url(#mask-2)" points="19.5 9.5 31.5 22.5 22.5 29.5 12.5 17.5"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

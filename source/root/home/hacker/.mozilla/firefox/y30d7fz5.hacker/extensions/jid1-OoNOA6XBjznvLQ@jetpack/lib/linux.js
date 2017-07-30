@@ -1,8 +1,6 @@
 /**
- * GNotifier - Add-on for Firefox and Thunderbird. Integrates
- * notifications with the OS's native notification system.
- *
- * Copyright 2014 by Michal Kosciesza <michal@mkiol.net>
+ * GNotifier - Firefox/Thunderbird add-on that replaces
+ * built-in notifications with the OS native notifications
  *
  * Licensed under GNU General Public License 3.0 or later.
  * Some rights reserved. See COPYING, AUTHORS.
@@ -20,13 +18,11 @@
 // In the code, checking for "1.2" or other server versions
 // refers to the version implemented server-side.
 
-module.exports = linux = {};
-
 var { Cc, Ci, Cu, Cm, Cr } = require('chrome');
 Cu.import("resource://gre/modules/ctypes.jsm", this);
 var _ = require('sdk/l10n').get;
 
-var libc;
+var libc = null;
 var actionsCallbackFunArray = [];
 var closedCallbackFunArray = [];
 
@@ -54,12 +50,12 @@ var g_signal_connect_data;
 var notify_get_server_info;
 var notify_get_server_caps;
 var notify_notification_add_action;
+var notify_notification_get_closed_reason;
 
 var c_close_handler = callbackFunType(handleClose);
 var c_action_handle = actionFunType(handleAction);
 
-function showServerInfo() {
-
+function showServerInfo () {
     var ret_name = new ctypes.char.ptr;
     var ret_vendor = new ctypes.char.ptr;
     var ret_version = new ctypes.char.ptr;
@@ -74,8 +70,7 @@ function showServerInfo() {
     console.log("spec_version: " + ret_spec_version.readString());
 }
 
-function showServerCapabilities() {
-
+function showServerCapabilities () {
     var server_caps = ctypes.cast(notify_get_server_caps(),struct_glist.ptr);
     console.log("libnotify server capabilities:");
     while (!server_caps.isNull()) {
@@ -85,8 +80,7 @@ function showServerCapabilities() {
     }
 }
 
-function checkServerInfo() {
-
+function checkServerInfo () {
     var ret_name = new ctypes.char.ptr;
     var ret_vendor = new ctypes.char.ptr;
     var ret_version = new ctypes.char.ptr;
@@ -102,8 +96,7 @@ function checkServerInfo() {
     return serverName;
 }
 
-function checkServerCapabilities() {
-
+function checkServerCapabilities () {
     var server_caps = ctypes.cast(notify_get_server_caps(),struct_glist.ptr);
 
     var retValue = false;
@@ -118,35 +111,37 @@ function checkServerCapabilities() {
     return retValue;
 }
 
-function handleAction(notification, action, data) {
-
-  //console.log("handleAction");
-  if (!data.isNull() && !action.isNull()) {
+function handleAction (notification, action, data) {
+  if (!data.isNull()) {
     // Getting handler from actionsCallbackFunArray by action_id
     // action_id is pointer value of 'data' arg
-    // notification_id is part of 'action' arg
     var action_id = ctypes.cast(data, ctypes.uintptr_t).value.toString();
-    var notification_id = action.readString().split("_")[1];
-    var i = actionsCallbackFunArray.length
+    var notification_id; //undefined
 
-    while (i > 0 && actionsCallbackFunArray.length > 0) {
-      i--;
-      if (actionsCallbackFunArray[i]["notification_id"] === notification_id) {
-        if (actionsCallbackFunArray[i]["action_id"] === action_id) {
-          actionsCallbackFunArray[i]["handler"]();
+    for(var i = 0; i < actionsCallbackFunArray.length; i++){
+        if(actionsCallbackFunArray[i]["action_id"] == action_id){
+            notification_id = actionsCallbackFunArray[i]["notification_id"];
+            //console.log("Calling action handler...")
+            actionsCallbackFunArray[i]["handler"]();
         }
-        actionsCallbackFunArray.splice(i, 1);
+    }
+
+    // Deleting all actions with notification_id
+    if (notification_id !== undefined) {
+      for(var i = actionsCallbackFunArray.length -1; i >= 0 ; i--){
+          if(actionsCallbackFunArray[i]["notification_id"] == notification_id){
+              //console.log("Deleting action for " + notification_id)
+              actionsCallbackFunArray.splice(i, 1);
+          }
       }
     }
-  } else {
-      console.log("Action or data is null!");
-  }
 
+  } else {
+      console.log("Data is null!");
+  }
 }
 
-function handleClose(notification, data) {
-
-  //console.log("handleClose");
+function handleClose (notification, data) {
   if (!data.isNull()) {
     // Getting handler from closedCallbackFunArray by notification_id
     // notification_id is pointer value of 'data' arg
@@ -155,138 +150,138 @@ function handleClose(notification, data) {
     while (i > 0 && closedCallbackFunArray.length > 0) {
       i--;
       if (closedCallbackFunArray[i]["notification_id"] === notification_id) {
-        closedCallbackFunArray[i]["handler"]();
+        closedCallbackFunArray[i]["handler"](
+            notify_notification_get_closed_reason(notification));
         closedCallbackFunArray.splice(i, 1);
         break;
       }
     }
 
-    // Clearing actionsCallbackFunArray
-    i = actionsCallbackFunArray.length
-    while (i > 0 && actionsCallbackFunArray.length > 0) {
-      i--;
-      if (actionsCallbackFunArray[i]["notification_id"] === notification_id) {
-        actionsCallbackFunArray.splice(i, 1);
-      }
+    // Deleting all actions with notification_id
+    for(var i = actionsCallbackFunArray.length -1; i >= 0 ; i--){
+        if(actionsCallbackFunArray[i]["notification_id"] == notification_id){
+            //console.log("Deleting action for " + notification_id)
+            actionsCallbackFunArray.splice(i, 1);
+        }
     }
 
   } else {
     console.log("Data is null!");
   }
-
 }
 
-linux.checkButtonsSupported = function() {
-
+exports.checkButtonsSupported = function () {
   if (serverCapabilities.indexOf("actions")==-1)
     return false;
   return true;
-
 }
 
-linux.checkOverlayIconSupported = function() {
-
+exports.checkOverlayIconSupported = function () {
   if (serverCapabilities.indexOf("x-eventd-overlay-icon")==-1)
     return false;
   return true;
-
 }
 
-linux.checkPlasma = function() {
-
+exports.checkPlasma = function () {
   if (serverName === "Plasma")
     return true;
   return false;
 
 }
 
-linux.checkAvailable = function() {
+exports.init = function () {
+    if (libc) {
+        libc.close();
+        libc = null;
+    }
 
-    var retValue = false;
     try {
         libc = ctypes.open("libnotify.so.4");
-        retValue = true;
     } catch (e) {
         try {
             libc = ctypes.open("/usr/local/lib/libnotify.so.4");
-            retValue = true;
         } catch (e) {
-            retValue = false;
+            console.log(e);
         }
     }
 
-    if (retValue) {
-
-        // Initing data types
-        g_variant_new_string = libc.declare("g_variant_new_string",
-          ctypes.default_abi, struct_gvariant.ptr, ctypes.char.ptr);
-        notify_init = libc.declare("notify_init", ctypes.default_abi,
-          ctypes.bool, ctypes.char.ptr);
-        notify_is_initted = libc.declare("notify_is_initted",
-          ctypes.default_abi, ctypes.bool);
-        notify_notification_new = libc.declare(
-          "notify_notification_new", ctypes.default_abi,
-          struct_notification.ptr, ctypes.char.ptr,
-          ctypes.char.ptr, ctypes.char.ptr);
-        notify_notification_set_hint = libc.declare(
-          "notify_notification_set_hint", ctypes.default_abi, ctypes.void_t,
-          struct_notification.ptr, ctypes.char.ptr, struct_gvariant.ptr);
-        notify_notification_set_timeout = libc.declare(
-          "notify_notification_set_timeout", ctypes.default_abi, ctypes.bool,
-          struct_notification.ptr, ctypes.int);
-        notify_notification_show = libc.declare(
-          "notify_notification_show", ctypes.default_abi, ctypes.bool,
-          struct_notification.ptr, struct_gerror_ptr);
-        g_signal_connect_data = libc.declare("g_signal_connect_data",
-          ctypes.default_abi, ctypes.unsigned_long, ctypes.voidptr_t,
-          ctypes.char.ptr, ctypes.voidptr_t, ctypes.voidptr_t,
-          ctypes.voidptr_t, ctypes.unsigned_int);
-        notify_get_server_info = libc.declare("notify_get_server_info",
-          ctypes.default_abi,ctypes.bool,ctypes.char.ptr.ptr,
-          ctypes.char.ptr.ptr,ctypes.char.ptr.ptr,ctypes.char.ptr.ptr);
-        notify_get_server_caps = libc.declare("notify_get_server_caps",
-          ctypes.default_abi,struct_glist.ptr);
-        notify_notification_add_action = libc.declare("notify_notification_add_action",
-          ctypes.default_abi, ctypes.void_t, struct_notification.ptr,
-          ctypes.char.ptr, ctypes.char.ptr, ctypes.voidptr_t, ctypes.voidptr_t,
-          ctypes.voidptr_t);
-
-        checkServerInfo();
-        //console.log("Notify server name: " + checkServerInfo());
-        retValue = checkServerCapabilities();
-	
-        // Debug...
-        //showServerInfo();
-        //showServerCapabilities();
-	
-    } else {
-        console.log("Libnotify library not found :-(");
+    if (!libc) {
+        console.log("Libnotify library not found!");
+        return false;
     }
 
-    return retValue;
+    // Initing data types
+    g_variant_new_string = libc.declare("g_variant_new_string",
+      ctypes.default_abi, struct_gvariant.ptr, ctypes.char.ptr);
+    notify_init = libc.declare("notify_init", ctypes.default_abi,
+      ctypes.bool, ctypes.char.ptr);
+    notify_is_initted = libc.declare("notify_is_initted",
+      ctypes.default_abi, ctypes.bool);
+    notify_notification_new = libc.declare(
+      "notify_notification_new", ctypes.default_abi,
+      struct_notification.ptr, ctypes.char.ptr,
+      ctypes.char.ptr, ctypes.char.ptr);
+    notify_notification_set_hint = libc.declare(
+      "notify_notification_set_hint", ctypes.default_abi, ctypes.void_t,
+      struct_notification.ptr, ctypes.char.ptr, struct_gvariant.ptr);
+    notify_notification_set_timeout = libc.declare(
+      "notify_notification_set_timeout", ctypes.default_abi, ctypes.bool,
+      struct_notification.ptr, ctypes.int);
+    notify_notification_show = libc.declare(
+      "notify_notification_show", ctypes.default_abi, ctypes.bool,
+      struct_notification.ptr, struct_gerror_ptr);
+    g_signal_connect_data = libc.declare("g_signal_connect_data",
+      ctypes.default_abi, ctypes.unsigned_long, ctypes.voidptr_t,
+      ctypes.char.ptr, ctypes.voidptr_t, ctypes.voidptr_t,
+      ctypes.voidptr_t, ctypes.unsigned_int);
+    notify_get_server_info = libc.declare("notify_get_server_info",
+      ctypes.default_abi,ctypes.bool,ctypes.char.ptr.ptr,
+      ctypes.char.ptr.ptr,ctypes.char.ptr.ptr,ctypes.char.ptr.ptr);
+    notify_get_server_caps = libc.declare("notify_get_server_caps",
+      ctypes.default_abi,struct_glist.ptr);
+    notify_notification_add_action = libc.declare("notify_notification_add_action",
+      ctypes.default_abi, ctypes.void_t, struct_notification.ptr,
+      ctypes.char.ptr, ctypes.char.ptr, ctypes.voidptr_t, ctypes.voidptr_t,
+      ctypes.voidptr_t);
+    notify_notification_get_closed_reason = libc.declare(
+      "notify_notification_get_closed_reason",
+      ctypes.default_abi, ctypes.int, struct_notification.ptr);
+
+    checkServerInfo();
+    //console.log("Notify server name: " + checkServerInfo());
+    retValue = checkServerCapabilities();
+
+    // Debug...
+    //showServerInfo();
+    //showServerCapabilities();
+    return true;
 }
 
-linux.notify = function(iconURL, title, text, notifier, closeHandler, clickHandler) {
+exports.deInit = function() {
+  actionsCallbackFunArray = [];
+  closedCallbackFunArray = [];
 
+  if (libc)
+    libc.close();
+}
+
+exports.notify = function (iconURL, title, text, notifier, closeHandler, clickHandler) {
     // Getting input tag from text; by default is "open"
     var input = _("open");
     var _text = text.replace(/<[\/]{0,1}(input|INPUT)[^><]*>/g,function(match){
       input = / text='([^']*)'/g.exec(match)[1]; return "";
     });
-    
-    // Creating array with "open" action if actions supported
-    if (serverCapabilities.indexOf("actions") != -1) {
+
+    // Creating array with "open" action if clickHandler and actions supported
+    if (clickHandler && typeof(clickHandler)==="function" && serverCapabilities.indexOf("actions") != -1) {
         var actions = [{ label: input, handler: clickHandler }];
-        return linux.notifyWithActions(iconURL, title, _text, notifier, closeHandler, actions);
+        return exports.notifyWithActions(iconURL, title, _text, notifier, closeHandler, actions);
     }
 
-    return linux.notifyWithActions(iconURL, title, _text, notifier, closeHandler, null);
+    return exports.notifyWithActions(iconURL, title, _text, notifier, closeHandler, null);
 }
 
-linux.notifyWithActions = function(iconURL, title, text, notifier, closeHandler, actionsList) {
-  
-    //console.log("notifyWithActions:",iconURL, title, text, notifier, closeHandler, actionsList);
-  
+exports.notifyWithActions = function (iconURL, title, text, notifier, closeHandler, actionsList) {
     // Sanitization
     var utils = require("./utils.js");
     text = utils.sanitize(text);
@@ -301,7 +296,7 @@ linux.notifyWithActions = function(iconURL, title, text, notifier, closeHandler,
     var image_path_hint_name = "image-path";
     var image_path_hint = null;
 
-    if (linux.checkOverlayIconSupported()) {
+    if (exports.checkOverlayIconSupported()) {
         // This server can dispaly both an icon and an image
         // We pass it both
         switch (serverSpecVersion) {
@@ -333,7 +328,7 @@ linux.notifyWithActions = function(iconURL, title, text, notifier, closeHandler,
     if (image_path_hint) {
         notify_notification_set_hint(notification, image_path_hint_name, image_path_hint);
     }
-    
+
     var sps = require("sdk/simple-prefs").prefs;
     if (sps['timeoutExpire']) {
         if (sps['timeout'] >= 1)
@@ -343,26 +338,28 @@ linux.notifyWithActions = function(iconURL, title, text, notifier, closeHandler,
     }
 
     // Adding actions
-    //console.log("actionsList1:",actionsList.length, actionsList);
     if (actionsList) {
         for (var i in actionsList) {
             var label = actionsList[i]["label"];
             var handler = actionsList[i]["handler"];
-            //console.log("actionsList2:",handler,typeof(handler));
             if (handler && typeof(handler) === "function") {
                 // Defing callback function for action
                 var user_data_ptr = ctypes.int(i).address();
                 var action_id = ctypes.cast(user_data_ptr, ctypes.uintptr_t).value.toString();
+
+                // First action will be "default"
+                var action_name = (i == 0 ? "default" : "gnotifier_"+action_id);
+
                 actionsCallbackFunArray.push({
                     "action_id": action_id,
                     "notification_id": notification_id,
                     "handler": handler
                 });
-                notify_notification_add_action(notification, ctypes.char.array()("gnotifier_"+notification_id+"_" + i), ctypes.char.array()(label), c_action_handle, user_data_ptr, null);
+                notify_notification_add_action(notification, ctypes.char.array()(action_name), ctypes.char.array()(label), c_action_handle, user_data_ptr, null);
             }
         }
     }
-    
+
     // Showing notification
     var error = new struct_gerror_ptr;
     if (!notify_notification_show(notification, error)) {
@@ -383,5 +380,4 @@ linux.notifyWithActions = function(iconURL, title, text, notifier, closeHandler,
     }
 
     return true;
-
 }

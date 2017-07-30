@@ -2,28 +2,27 @@
 <?xml-stylesheet href="chrome://flashVideoDownload/skin/main.css" type="text/css"?>
 <!DOCTYPE window SYSTEM "chrome://flashVideoDownload/locale/flashVideoDownload.dtd">
 <overlay id="flashVideoDownload_overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">    
-    <script type="application/x-javascript" src="overlay.js"/>    
+    <script type="application/x-javascript" src="overlay.js"/> 
     
     <stringbundleset id="stringbundleset">
 	<stringbundle id="flashVideoDownload_stringbundle" src="chrome://flashVideoDownload/locale/flashVideoDownload.properties"/>
     </stringbundleset>
 
     <toolbarpalette id="BrowserToolbarPalette">
-        <toolbarbutton id="fnvfox_toolbarButton"
-	    class="chromeclass-toolbar-additional toolbarbutton-1 fnvfox_toolbarButtonIconDisabled"
+        <toolbarbutton 
+        id="fnvfox_toolbarButton"
+	    class="chromeclass-toolbar-additional toolbarbutton-1 fnvfox_toolbarButtonDisabled"
 	    label="&overlay.toolbarButton;"
-	    onclick="flashVideoDownload.buttonPressed(event);"	    
+	    onclick="flashVideoDownload.uIController.buttonPressed(event);"
 	    context="flashVideoDownloadContextMenu"
-            tooltiptext="&overlay.toolbarButton_tooltip;"/>
+        tooltiptext="&overlay.toolbarButton_tooltip;">
+		  <panel id="fnvfoxResultsPanel" type="arrow" tooltiptext="">
+		  	<iframe id="fnvfoxIframe" src="chrome://flashVideoDownload/content/popup/popup.html"></iframe>
+		  </panel>
+    	</toolbarbutton>
     </toolbarpalette>
 
     <window id="main-window">
-		<popupset>
-		    <menupopup id="flashVideoDownloadContextMenu"></menupopup>
-		    <menupopup id="flashVideoDownloadFileContextMenu" onpopupshowing="flashVideoDownload.setFileContextMenuOptions(event);">
-			<menuitem id="flashVideoDownloadFileContextMenuDownload" label="&overlay.download_contextMenu;" />
-			<menuitem id="flashVideoDownloadFileContextMenuClipboard" label="&overlay.copyUrlToClipboard_contextMenu;" />
-		    </menupopup>
-		</popupset>
+
     </window>
 </overlay>

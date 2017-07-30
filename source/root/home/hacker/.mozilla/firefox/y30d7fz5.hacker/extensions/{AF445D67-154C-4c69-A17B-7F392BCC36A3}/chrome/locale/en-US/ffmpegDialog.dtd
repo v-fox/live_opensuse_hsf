@@ -1,0 +1,15 @@
+<!ENTITY dialog.title "Complete YouTube Saver">
+<!ENTITY dialog.question "What would you like to do?">
+<!ENTITY button.ok "OK">
+<!ENTITY button.cancel "Cancel">
+<!ENTITY radio.install "Install FFmpeg (recommended)">
+<!ENTITY radio.nodash.video "I do not want to install FFmpeg. For DASH videos, CYS should download separate audio and video files and not combine them. I understand I wil not be able to convert files to MP3, WAV or extract audio from videos.">
+<!ENTITY radio.nodash.audio "I do not want to install FFmpeg. I understand I will not be able to convert files to MP3, WAV or extract audio from videos. For DASH videos, CYS should download separate audio and video files and not combine them.">
+<!ENTITY radio.no "I do not want to install FFmpeg. Do not display audio or video formats that require FFmpeg.">
+<!ENTITY label.text.video "The video you are trying to download contains seperate audio and video files (DASH files). CYS can download both files and combine them automatically, but you need to have FFmpeg installed. FFmpeg is a free, opensource, cross-platform media encoding/decoding/conversion software.">
+<!ENTITY audio.mp3 "an MP3 audio file">
+<!ENTITY audio.wav "a WAV audio file">
+<!ENTITY audio.extracted "an extracted audio file">
+<!ENTITY label.text.audio.start "The file you are trying to download is ">
+<!ENTITY label.text.audio.end ". CYS can download and convert files to MP3, WAV, and extract audio from videos but you need to have FFmpeg installed. FFmpeg is a free, open source, cross-platform media encoding/decoding/conversion software.">
+<!ENTITY label.bottom "You can adjult these settings any time in Options > FFmpeg tab">

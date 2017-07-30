@@ -1,0 +1,1 @@
+{"storageVersion":0.1,"storePersistentRnd":false,"askOnlyOnce":true,"showCompleteCallingStack":false,"blackList":"","ignoreList":"","rng":"nonPersistent","whiteList":"","enableStackList":false,"showNotifications":true,"notificationDisplayTime":30,"stackList":"","maxFakeSize":0,"blockMode":"fakeReadout","persistentRndStorage":"","showCallingFile":false}

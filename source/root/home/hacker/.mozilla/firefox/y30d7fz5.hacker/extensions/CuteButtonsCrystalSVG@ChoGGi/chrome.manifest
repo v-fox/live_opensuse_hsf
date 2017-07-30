@@ -1,57 +1,35 @@
 content cutebuttons content/
-skin cutebuttons classic/1.0 skin/
 
-#locales
-locale cutebuttons ar     jar:content/locales.jar!/ar/
-locale cutebuttons bg     jar:content/locales.jar!/bg/
-locale cutebuttons ca     jar:content/locales.jar!/ca/
-locale cutebuttons cs     jar:content/locales.jar!/cs/
-locale cutebuttons da     jar:content/locales.jar!/da/
-locale cutebuttons de     jar:content/locales.jar!/de/
-locale cutebuttons el     jar:content/locales.jar!/el/
-locale cutebuttons en     jar:content/locales.jar!/en/
-locale cutebuttons es     jar:content/locales.jar!/es/
-locale cutebuttons et-EE  jar:content/locales.jar!/et-EE/
-locale cutebuttons eu     jar:content/locales.jar!/eu/
-locale cutebuttons fi     jar:content/locales.jar!/fi/
-locale cutebuttons fr     jar:content/locales.jar!/fr/
-locale cutebuttons he-IL  jar:content/locales.jar!/he-IL/
-locale cutebuttons hr     jar:content/locales.jar!/hr/
-locale cutebuttons hu-HU  jar:content/locales.jar!/hu-HU/
-locale cutebuttons it     jar:content/locales.jar!/it/
-locale cutebuttons ja-JP  jar:content/locales.jar!/ja-JP/
-locale cutebuttons ko-KR  jar:content/locales.jar!/ko-KR/
-locale cutebuttons nl     jar:content/locales.jar!/nl/
-locale cutebuttons pl     jar:content/locales.jar!/pl/
-locale cutebuttons pt-PT  jar:content/locales.jar!/pt-PT/
-locale cutebuttons ro     jar:content/locales.jar!/ro/
-locale cutebuttons ru     jar:content/locales.jar!/ru/
-locale cutebuttons sk     jar:content/locales.jar!/sk/
-locale cutebuttons sr     jar:content/locales.jar!/sr/
-locale cutebuttons sv-SE  jar:content/locales.jar!/sv-SE/
-locale cutebuttons tr-TR  jar:content/locales.jar!/tr-TR/
-locale cutebuttons uk-UA  jar:content/locales.jar!/uk-UA/
-locale cutebuttons vi     jar:content/locales.jar!/vi/
-locale cutebuttons zh-CN  jar:content/locales.jar!/zh-CN/
-
-
-overlay chrome://browser/content/browser.xul              chrome://cutebuttons/content/overlay.xul
-#firefox
-#overlay chrome://browser/content/browser.xul             chrome://cutebuttons/content/overlay.xul application={ec8030f7-c20a-464f-9b0e-13a3a9e97384} appversion>3.6
-#pale moon
-#overlay chrome://browser/content/browser.xul             chrome://cutebuttons/content/overlay.xul application={8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4}
-#sunbird
-overlay chrome://sunbird/content/calendar.xul             chrome://cutebuttons/content/overlay.xul
-#seamonkey
-overlay chrome://navigator/content/navigator.xul          chrome://cutebuttons/content/overlay.xul
-#thunderbird
-overlay chrome://messenger/content/messenger.xul          chrome://cutebuttons/content/overlay.xul
-overlay chrome://messenger/content/mailWindowOverlay.xul  chrome://cutebuttons/content/overlay.xul
-#main menu icons (OSX)
-#doesn't seem to be needed anymore
-#overlay chrome://browser/content/browser.xul              chrome://cutebuttons/content/overlay-mainmenuicons.xul os=Darwin
-
-#startup stuff
-component   {638c4660-f72d-11de-8a39-0800200c9a66} components/cuteButtonsStartup.js
-contract    @ChoGGi/CuteButtonsSVG;1 {638c4660-f72d-11de-8a39-0800200c9a66}
-category    profile-after-change cuteButtons @ChoGGi/CuteButtonsSVG;1
+locale cutebuttons ar     jar:content/locales.zip!/ar/
+locale cutebuttons bg-BG  jar:content/locales.zip!/bg-BG/
+locale cutebuttons ca-ES  jar:content/locales.zip!/ca-ES/
+locale cutebuttons cs-CZ  jar:content/locales.zip!/cs-CZ/
+locale cutebuttons da-DK  jar:content/locales.zip!/da-DK/
+locale cutebuttons de     jar:content/locales.zip!/de/
+locale cutebuttons el-GR  jar:content/locales.zip!/el-GR/
+locale cutebuttons en     jar:content/locales.zip!/en/
+locale cutebuttons es     jar:content/locales.zip!/es/
+locale cutebuttons et-EE  jar:content/locales.zip!/et-EE/
+locale cutebuttons eu-ES  jar:content/locales.zip!/eu-ES/
+locale cutebuttons fi-FI  jar:content/locales.zip!/fi-FI/
+locale cutebuttons fr     jar:content/locales.zip!/fr/
+locale cutebuttons he-IL  jar:content/locales.zip!/he-IL/
+locale cutebuttons hi-IN  jar:content/locales.zip!/hi-IN/
+locale cutebuttons hr-HR  jar:content/locales.zip!/hr-HR/
+locale cutebuttons hu-HU  jar:content/locales.zip!/hu-HU/
+locale cutebuttons it     jar:content/locales.zip!/it/
+locale cutebuttons ja-JP  jar:content/locales.zip!/ja-JP/
+locale cutebuttons ko-KR  jar:content/locales.zip!/ko-KR/
+locale cutebuttons nl     jar:content/locales.zip!/nl/
+locale cutebuttons pl-PL  jar:content/locales.zip!/pl-PL/
+locale cutebuttons pt     jar:content/locales.zip!/pt/
+locale cutebuttons ro-RO  jar:content/locales.zip!/ro-RO/
+locale cutebuttons ru-RU  jar:content/locales.zip!/ru-RU/
+locale cutebuttons sk-SK  jar:content/locales.zip!/sk-SK/
+locale cutebuttons sr-SP  jar:content/locales.zip!/sr-SP/
+locale cutebuttons sv-SE  jar:content/locales.zip!/sv-SE/
+locale cutebuttons tr-TR  jar:content/locales.zip!/tr-TR/
+locale cutebuttons uk-UA  jar:content/locales.zip!/uk-UA/
+locale cutebuttons vi-VN  jar:content/locales.zip!/vi-VN/
+locale cutebuttons zh-CHS jar:content/locales.zip!/zh-CHS/
+locale cutebuttons zh-CHT jar:content/locales.zip!/zh-CHT/

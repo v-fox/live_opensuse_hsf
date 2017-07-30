@@ -1,0 +1,5 @@
+<!ENTITY dialog.title "Install FFmpeg">
+<!ENTITY label.caption "Download FFmpeg from the links below and follow directions">
+<!ENTITY label.windows "For Windows">
+<!ENTITY label.mac "For Max">
+<!ENTITY label.linux "For Linux">

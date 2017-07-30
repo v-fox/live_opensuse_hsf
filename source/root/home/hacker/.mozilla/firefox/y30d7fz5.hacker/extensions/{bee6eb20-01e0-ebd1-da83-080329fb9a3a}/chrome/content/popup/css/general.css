@@ -1,0 +1,385 @@
+@font-face {
+    font-family: OpenSansRegular;
+    src: url("../fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+    font-family: OpenSansSemibold;
+    src: url("../fonts/OpenSans-Semibold.ttf");
+}
+
+body {	
+	overflow: hidden;
+	margin: 0px;
+}
+
+#wrapper {
+	border-radius: 4px;
+	font-family: 'OpenSansRegular', 'Open Sans';
+	font-size: 16px;
+	padding-bottom: 10px;
+}
+
+#noFilesFoundMessage.hidden {
+	display: none;
+}
+
+#noFilesFoundMessage.shown {
+	display: block;
+}
+
+#noFilesFoundMessage {
+	width: 250px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#noFilesFoundImage {
+	margin-left: 70px;
+	height: 110px;
+	width: 110px;
+}
+
+#noFilesFoundText {
+	margin-top: 30px;
+	text-align: center;
+	font-size: 14px;
+}
+
+#contentWrapper {
+	position: relative;
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+
+#title {
+	position: relative;
+	height: 44px;
+}
+
+#titleLogo {
+	position: absolute;
+	left: 14px;
+	top: 11px;
+	background-image: url("images/header_logo.svg");
+	background-size: 10px 24px;
+	width: 10px;
+	height: 24px;
+}
+
+#titleText { 
+	position: absolute;
+	left: 36px;
+	top: 10px;
+	letter-spacing: 0.5px;
+	vertical-align: middle;
+	cursor: default;
+}
+
+#titleSettingsBtn {
+	position: absolute;
+	background-image: url("images/settings.png");
+	width: 24px;
+	height: 12px;
+	right: 4px;
+	top: 10px;
+	cursor: pointer;
+	padding: 6px;
+	background-repeat: no-repeat;
+	background-origin: content-box;
+}
+
+.titleHidden {
+	display: none;
+}
+
+#copiedToClipboardMessage {
+	height: 25px;
+	width: 100%;
+	top: 0px;
+	z-index: 10;
+	position: absolute;
+	transform-style: preserve-3d;
+}
+
+#copiedToClipboardMessage.hide {
+	height: 25px;
+	width: 100%;
+	top: 0px;
+	z-index: 10;
+	position: absolute;
+	transform-origin: 50% top;
+	transform: rotateX(-90deg);
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	transition-delay: 2s;
+}
+
+#copiedToClipboardMessage.noRotation {
+	transform: rotateX(0deg);
+}
+
+#copiedToClipboardMessage.show {
+	transform-origin: 50% top;
+	opacity: 1;
+	transform: rotateX(0deg);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#clipboardCheckmarkTextWrapper {
+	width: 142px;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 13px;
+	margin-top: 3px;
+	text-align: right;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+#clipboardCheckmark {
+	background-image: url("images/clipboard_checkmark.svg");
+	background-size: 13px 10px;
+	width: 13px;
+	height: 10px;
+	float: left;
+	margin-top: 5px;
+}
+
+#content {
+	max-height: 285px;
+	overflow-y: hidden;
+	/*margin-top: 6px;*/
+	/*margin-bottom: 6px;*/
+}
+
+/*.light .contentItem > div {
+	position: absolute;
+}*/
+
+.contentItem {
+	font-size: 14px;
+	position: relative;
+	padding: 10px 20px 5px 20px;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.contentItem.hide {
+	display: none;
+}
+
+.contentItem:hover {
+	cursor: default;
+}
+
+.contentItem:hover .itemButtons {
+	display: block;
+}
+
+.contentItem .itemType {
+	opacity: 1;
+	transition: opacity 0.15s ease-in-out;
+}
+
+.contentItem:hover .itemType {
+	opacity: 0;
+	transition: opacity 0.15s ease-in-out;
+}
+
+.contentItem:hover .itemDownloadButton {
+	animation: downloadButtonSlide 0.25s, downloadButtonOpacity 0.45s;
+	animation-timing-function: ease;
+	animation-fill-mode: forwards;
+}
+
+.contentItem:hover .itemCopyToURLButton {
+	/*opacity: 1 !important;*/
+	animation: copyToUrlButtonSlide 0.25s, downloadButtonOpacity 0.45s;
+	animation-delay: 0.13s;
+	animation-fill-mode: forwards;
+	animation-timing-function: ease;
+}
+
+.contentItem .itemTextWrapper {
+	width: 80%;
+	display: inline-block;
+}
+
+.contentItem .itemLabel {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.contentItem .itemInfo > div {
+	float: left;
+	font-size: 12px;	
+	margin-right: 10px;
+}
+
+.contentItem .itemInfo { 
+	font-family: "OpenSansSemiBold";
+	overflow: auto;
+}
+
+.contentItem .itemButtons {
+	position: relative;
+	float: right;
+	margin-top: 5px;
+	left: 7px;
+	bottom: 0px;
+	z-index: 2;
+}
+
+.contentItem .itemButtons > div {
+	transition: bottom 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	position: relative;
+	bottom: 0px;
+}
+
+.contentItem .itemButtons > div:hover {
+	cursor: pointer;
+	bottom: 2px;
+	transition: bottom 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+@keyframes downloadButtonSlide {
+	0% { right: -25px; }
+	/*30% { right: -10px; }*/
+	100% { right: 0px; }
+}
+
+@keyframes copyToUrlButtonSlide {
+	0% { right: -17px; }
+	/*30% { right: -10px; }*/
+	100% { right: 0px; }
+}
+
+@keyframes itemButtonsFadeout {
+	from { opacity: 1; }
+	to { opacity: 0; }
+}
+
+@keyframes downloadButtonOpacity {
+	0% { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+.contentItem .itemDownloadButton {
+	position: relative;
+	float: right;
+	margin-right: 8px;
+	width: 27px;
+	height: 27px;
+	opacity: 0;
+	animation: itemButtonsFadeout 0.25s ease;
+}
+
+.contentItem .itemCopyToURLButton {
+	position: relative;
+	margin-right: 7px;
+	float: right;
+	width: 27px;
+	height: 27px;
+	opacity: 0;
+	animation: itemButtonsFadeout 0.25s ease;
+}
+
+.contentItem .itemButtonsInitial {
+	visibility: hidden;
+}
+
+/* Round Icons */
+.contentItem .itemButtons .itemDownloadRoundButton {
+	background-image: url("images/download_btn_round.png");
+}
+
+.contentItem .itemButtons .itemCopyToURLRoundButton {
+	background-image: url("images/copy_url_btn_round.png");
+}
+
+/* Square Icons */
+.contentItem .itemButtons .itemDownloadSquareButton {
+	/*background-image: url("images/download_btn_square.png");*/
+	background-image: url("images/download_btn_square.svg");
+ 	background-size: 26px 26px;
+
+	width: 26px;
+	height: 26px;
+}
+
+.contentItem .itemButtons .itemCopyToURLSquareButton {
+	/*background-image: url("images/copy_url_btn_square.png");*/
+	background-image: url("images/copy_url_btn_square.svg");
+ 	background-size: 26px 26px;
+
+	width: 26px;
+	height: 26px;	
+}
+
+/*@media screen and (min-resolution: 130dpi) {
+	.contentItem .itemButtons .itemDownloadRoundButton {
+		background-image: url("images/DOWNLOAD@3x.png");
+		background-size: 27px 28px;
+	}	
+}*/
+
+#mCSB_1_container {
+	width: 100% !important;
+}
+
+/* Without Arrows */
+.scrollArrows {
+	height: 10px;
+}
+
+.mCSB_dragger_bar {
+	position: relative;
+	left: 5px;
+	width: 5px !important;
+	opacity: 0.5;
+}
+
+.mCSB_draggerRail {
+	opacity: 0;
+}
+
+/*#mCSB_1_scrollbar_vertical {
+	visibility: hidden;
+}*/
+
+/* With Arrows */
+/*.light #topArrow {
+	background-image: url("images/arr-top.png");
+}
+
+.light #bottomArrow {
+	background-image: url("images/arr-btm.png");
+}
+
+.light .scrollArrows { 
+	width: 16px;
+	height: 14px;
+	background-repeat: no-repeat;
+	margin-left: 217px;	
+	opacity: 0.5;
+	visibility: hidden;
+}*/
+
+
+
+.itemType {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	z-index: 1;
+}
+
+.itemType .itemTypeSeparator {
+	float: left;
+	margin-right: 3px;
+}
+
+.itemType .itemTypeText {
+	float: right;
+}

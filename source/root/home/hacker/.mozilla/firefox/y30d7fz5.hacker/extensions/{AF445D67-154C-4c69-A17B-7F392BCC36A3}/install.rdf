@@ -3,7 +3,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>{AF445D67-154C-4c69-A17B-7F392BCC36A3}</em:id>
         <!-- -Don't forget to change version in cysCommons.js -->
-        <em:version>5.6.53</em:version>
+        <em:version>5.7.36</em:version>
         <em:type>2</em:type>
         <em:unpack>true</em:unpack>
         <em:name>Complete YouTube Saver</em:name>
@@ -14,21 +14,41 @@
         <em:developer></em:developer>
         <em:contributor>mletsdoit</em:contributor>
         <em:contributor>tvholic</em:contributor>
-        <em:contributor>Poke (Patron)</em:contributor>
+        <em:contributor>*********SPECIAL THANKS TO PATREON SUPPORTERS*******</em:contributor>
+        <em:contributor>Poke</em:contributor>
+		<em:contributor>Henk Jonas</em:contributor>
+		<!-- -Clalat -DC -->
+		<em:contributor>Kristian Thorsen</em:contributor>
+		<em:contributor>Understackx</em:contributor>  <!-- -Understackx -6 mon -->
+		<em:contributor>Devin Holscher</em:contributor>
+		<em:contributor>Max Dahlenborg</em:contributor>
+		<em:contributor>Paul Cowan</em:contributor>
+		<em:contributor>Ned Riley</em:contributor>
+		<em:contributor>Braythiner Guimaraes</em:contributor>
+		<em:contributor>Chiron Ch</em:contributor>
+		<em:contributor>Robert Surles</em:contributor>
+		<em:contributor>Movie Studio Zen</em:contributor>
+		<em:contributor>Morten Thomsen</em:contributor>		
+		<em:contributor>CM</em:contributor>
+		<em:contributor>Maksim Mukhammedov</em:contributor>
+		<em:contributor>Ross Payton</em:contributor>
+		<em:contributor>AdultClubDJs.com</em:contributor>
+		<em:contributor>****************************************************************</em:contributor> 
         <em:homepageURL>http://www.cys-audiovideodownloader.com</em:homepageURL>
         <em:optionsURL>chrome://completeyoutubesaver/content/prefopen.xul</em:optionsURL>
         <em:iconURL>chrome://completeyoutubesaver/skin/cys_32.png</em:iconURL>
+		<em:multiprocessCompatible>true</em:multiprocessCompatible>
         <!-- Firefox -->
         <em:targetApplication>
                 <Description>
                         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
                         <em:minVersion>3.0</em:minVersion>
-                        <em:maxVersion>44.0</em:maxVersion>
+                        <em:maxVersion>50.0</em:maxVersion>
                 </Description>
         </em:targetApplication>
 
         <!-- SeaMonkey -->
-        <em:targetApplication> 
+        <em:targetApplication>
            <Description>
                   <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
                   <em:minVersion>2.0</em:minVersion>

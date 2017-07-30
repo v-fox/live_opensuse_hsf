@@ -3,6 +3,11 @@
 
     <!-- General Pane -->
     <!ENTITY options.general.title "Általános">
+
+    <!-- General.Themes -->
+    <!ENTITY options.general.themes.title "Színtémák">
+    <!ENTITY options.general.themes.dark "Sötét">
+    <!ENTITY options.general.themes.light "Világos">
     
     <!-- General.Interface -->
     <!ENTITY options.general.interface.title "Felhasználói felület">
@@ -38,7 +43,7 @@
     
     <!-- Youtube.Embedded Videos -->
     <!ENTITY options.yt.embeddedVideos.label "Beágyazott Videók:">
-    <!ENTITY options.yt.embeddedVideos.enhancedDetection.label "Enhanced Videos Detection">
+    <!ENTITY options.yt.embeddedVideos.enhancedDetection.label "Kiterjesztett videoérzékelés">
     <!ENTITY options.yt.embeddedVideos.enhancedDetection.label1 "Csak akkor engedélyezze, ha némelyik videó nem lett észlelve.">
     <!ENTITY options.yt.embeddedVideos.enhancedDetection.label2 "Engedélyezése lassíthatja weboldalak betöltését, ezért győződjön meg róla, hogy le legyen tiltva, ha nincs rá szükség!">        
     

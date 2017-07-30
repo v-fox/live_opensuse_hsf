@@ -3,366 +3,535 @@
 <?xml-stylesheet href="chrome://completeyoutubesaver/skin/cysOverlay.css"?>
 <!DOCTYPE window SYSTEM "chrome://completeyoutubesaver/locale/cysOverlay.dtd">
 <prefwindow id="cys-pref-window" title="&options.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-   buttons="accept,cancel"
+        buttons="accept,cancel"
 	onbeforeaccept = "cysPrefDialog.cys_savePrefs();"
 	ondialogaccept = "return;"
-   ondialogcancel = "if (window.arguments) {window.arguments[0].v = 0;} return;"
+        ondialogcancel = "if (window.arguments) {window.arguments[0].v = 0;}; cysPrefDialog.resetPrefs(); return;"
 	onload="cysPrefDialog.onLoad();"
-   onresize="cysPrefDialog.resizeLists();" >
+        onresize="cysPrefDialog.resizeLists();"
+        width="560" height="560">
 	<script src="cysCommons.js" type="application/x-javascript"/>
 	<script>
 	<![CDATA[
-   if ('undefined' == typeof Cc) var Cc = Components.classes;
-   if ('undefined' == typeof Ci) var Ci = Components.interfaces;
-	if ("undefined" == typeof(cysPrefDialog))
+            var onloadCallback = window.onload;
+            var oldProperties = {};
+            window.onload = function () {
+                function fillDataLabel(){
+                    var id = 'data_format_id' + String(cysCommons.cysPrefs.getIntPref('tagoptions.dates'));
+                    var label = document.getElementById(id).getAttribute('label');
+                    if(label){
+                        cysPrefDialog.setNewDate(label);
+                    }
+                }
+                function fillDurationLabel(){
+                    var id = 'duration_format_id' + String(cysCommons.cysPrefs.getIntPref('tagoptions.duration'));
+                    var label = document.getElementById(id).getAttribute('label');
+                    if(label){
+                        cysPrefDialog.setNewDuration(label);
+                    }
+                }
+
+                var props = cysCommons.cysPrefs.getChildList('');
+                for (var i in props) {
+                    var type = cysCommons.cysPrefs.getPrefType(props[i]);
+                    var value = null;
+                    if (type === 32) {
+                        value = cysCommons.cysPrefs.getCharPref(props[i]);
+                    } else if (type === 64) {
+                        value = cysCommons.cysPrefs.getIntPref(props[i]);
+                    } else if (type === 128) {
+                        value = cysCommons.cysPrefs.getBoolPref(props[i]);
+                    }
+                    oldProperties[props[i]] = {type:type, value:value};
+                }
+
+                var ffmpegInstall = -1;
+                try {
+                    ffmpegInstall = cysCommons.cysPrefs.getIntPref('ffmpeg.install.status');
+                } catch(ex){}
+                if (ffmpegInstall === -1) {
+                    cysCommons.cysPrefs.setIntPref('ffmpeg.install.status', 1);
+                }
+
+                fillDataLabel();
+                fillDurationLabel();
+                onloadCallback();
+            }
+            if ('undefined' == typeof Cc) var Cc = Components.classes;
+            if ('undefined' == typeof Ci) var Ci = Components.interfaces;
+            if ("undefined" == typeof(cysPrefDialog))
 		var cysPrefDialog = {
-			defaultSaveDir : "Complete YouTube Saver",
-			onLoad : function (){
-            cysPrefDialog.maxfolders = cysCommons.getmaxfolders()
-            cysPrefDialog.check_ffmpeg();
-            if (!cysCommons.cysPrefs.getBoolPref('menu.dropdown.dash480p.hqaudio')) {var r = cysCommons.dashVideo; r[135] = 1; r[244] = 4;} // 480p DASH audio
-            var dir = cysCommons.getDefaultDir(cysPrefDialog.defaultSaveDir,true);
-				if (dir != null){
-					document.getElementById("savedir").value = dir;
-               document.getElementById("savedir").setAttribute('tooltiptext', dir);
-				}
-            var folders = decodeURIComponent(cysCommons.cysPrefs.getCharPref("folders.list.custom")), i;
-            if (folders != null && folders != '') {
-               var fl = document.getElementById('folderlist'), f = folders.split('**', cysPrefDialog.maxfolders), fi;
-               for (i=0;i<f.length;i++) {
-                  if (!f[i]) break;
-                  fl.appendItem();
-                  fi = fl.getItemAtIndex(fl.itemCount-1);
-                  fi.setAttribute('label', f[i]);
-                  fi.setAttribute('crop', 'center');
-                  fi.setAttribute('tooltiptext', f[i]);
-               }
-            }
-            cysPrefDialog.win = document.getElementById('cys-pref-window');
-            cysPrefDialog.sbox1 = document.getElementById('sbox1');
-            cysPrefDialog.sbox2 = document.getElementById('sbox2');
-            cysPrefDialog.sbox3 = document.getElementById('sbox3');
-            
-            var lh = parseInt(cysPrefDialog.sbox3.style.height), hpref = cysCommons.cysPrefs.getIntPref('detailedlist.height');
-            if (lh != hpref) {for (i=3;i>0;i--) cysPrefDialog['sbox'+i].style.height = ((i==3)?hpref:hpref-3) + 'em';}
-            cysPrefDialog.fillScrollBox('quickmenurows', cysCommons.getFormats(1));
-            cysPrefDialog.fillScrollBox('submenurows', cysCommons.getSubMenu());
-            cysPrefDialog.fillScrollBox('detailrows', cysCommons.getFormats(), 1);
-             
-            cysPrefDialog.fillFilenamingHistoryBox();
-            cysPrefDialog.check_advanced_input_enabled();
-            cysPrefDialog.check_subtitle_pref();
-            if (cysCommons.DTAstatus()) {                      // DTA option
-               document.getElementById('cys-save-dta').hidden = false;
-               document.getElementById('cys-save-dta-sep').hidden = false;
-            }
-            if (cysCommons.OS=='WINNT') document.getElementById('tab0.ffmpeg.hideconsole').hidden = false;
-			},
-
-         resizeLists : function () {    // re-size scrolboxes when window is resized
-            var wh = cysPrefDialog.win.getBoundingClientRect().height, d = wh - cysPrefDialog.winheight;
-            if (!cysPrefDialog.winheight) {cysPrefDialog.winheight = wh; return;}
-            if (d) {
-               for (i=3;i>0;i--) cysPrefDialog['sbox'+i].height = cysPrefDialog['sbox'+i].getBoundingClientRect().height + d;
-               cysPrefDialog.winheight = wh;
-            }
-         },
-         check_subtitle_pref : function(){
-            if(cysCommons.cysPrefs.getBoolPref('download.subtitles')==true){
-                document.getElementById('cys-ignore-auto-subtitles').hidden = false;
-                document.getElementById('cys-subtitle-language').hidden = false;
-            }else{
-                document.getElementById('cys-ignore-auto-subtitles').hidden = true;
-                document.getElementById('cys-subtitle-language').hidden = true;
-            }
-         },
-         toggle_subtitle_related_elem : function(){
-            if(document.getElementById('cys-save-subtitle').hasAttribute('checked')){
-                document.getElementById('cys-ignore-auto-subtitles').hidden = false;
-                document.getElementById('cys-subtitle-language').hidden = false;
-            }else{
-                document.getElementById('cys-ignore-auto-subtitles').hidden = true;
-                document.getElementById('cys-subtitle-language').hidden = true;
-            }
-         },
-         check_advanced_input_enabled : function(){
-            var advanced_input_enabled = cysCommons.cysPrefs.getBoolPref('ffmpeg.advanced.input.enable');
-            if(advanced_input_enabled){
-                document.getElementById('advanced-input-enabled').hidden = false;
-            }else{
-                document.getElementById('advanced-input-enabled').hidden = true;
-            }
-         },
-         fillFilenamingHistoryBox : function (){
-            var hlist = document.getElementById("filenaminghistorybox");
-            hlist.removeAllItems();
-            var selectedtag = cysCommons.cysPrefs.getCharPref('filenaming.tags');
-            var itemlist = cysPrefDialog.rearrangeHistory(selectedtag);
-            var i;
-            if(itemlist.length > 0){
-                for(i=0;i<itemlist.length;i++){
-                    if(itemlist[i] != "" && itemlist[i] != null && typeof itemlist[i] != 'undefined'){
-                        hlist.appendItem(itemlist[i],itemlist[i]);
-                        var currentItem = hlist.getItemAtIndex(i);
-                        cysPrefDialog.manageToolTip(currentItem,itemlist[i]);
-                        if(selectedtag == itemlist[i]){
-                            hlist.selectedIndex = i;
-                            cysPrefDialog.manageToolTip(hlist,itemlist[i]);
+                    defaultSaveDir : "Complete YouTube Saver",
+                    onLoad : function (){
+                        cysPrefDialog.maxfolders = cysCommons.getmaxfolders()
+                        cysPrefDialog.check_ffmpeg();
+                        if (!cysCommons.cysPrefs.getBoolPref('menu.dropdown.dash480p.hqaudio')) {var r = cysCommons.dashVideo; r[135] = 1; r[244] = 4;} // 480p DASH audio
+                        var dir = cysCommons.getDefaultDir(cysPrefDialog.defaultSaveDir,true);
+                        if (dir != null){
+                            document.getElementById("savedir").value = dir;
+                            document.getElementById("savedir").setAttribute('tooltiptext', dir);
                         }
-                    }
-                }
-            }
-         },
-         rearrangeHistory : function(selectedtag){
-            var i,j;
-            var historystr = cysCommons.cysPrefs.getCharPref('filenaming.tags.history');
-            var itemlist = historystr.split("|__|");
-            var newitemlist = [];
-            var itemlen = itemlist.length;
-            if(selectedtag !="" && selectedtag != null && typeof selectedtag != 'undefined'){
-                newitemlist[0] = selectedtag;
-                j=1;
-            }else{
-                j=0;
-            }
-            if(itemlen > 15) itemlen = 15;
-            if(itemlen > 0){
-                for(i=0;i<itemlen;i++){
-                    if(typeof itemlist[i] != 'undefined' && selectedtag != itemlist[i]){
-                        if(j>14) break;
-                        newitemlist[j] = itemlist[i];
-                        j++;
-                    }
-                }
-            }
-            cysCommons.cysPrefs.setCharPref('filenaming.tags.history',newitemlist.join("|__|"));
-            return newitemlist;
-         },
-         setFileNameBoxText: function(e){
-            var bValue = e.originalTarget.getAttribute('label');
-            var hlist = document.getElementById("filenaminghistorybox");
-            var pos = hlist.inputField.selectionStart;
-            hlist.value = hlist.value.substring(0, pos)
-					+ bValue
-					+ hlist.value.substring(hlist.inputField.selectionEnd, hlist.value.length);
-				hlist.inputField.setSelectionRange(pos + bValue.length, pos + bValue.length);
-            cysPrefDialog.manageToolTip(hlist,hlist.value);
-            cysCommons.cysPrefs.setCharPref('filenaming.tags',hlist.value);
-         },
-         manageToolTip: function(elem,val){
-            if(typeof elem =='undefined'){
-                var elem = document.getElementById("filenaminghistorybox");
-                val = elem.value; 
-            }
-            elem.setAttribute('tooltiptext', val);
-            elem.setAttribute('crop', 'center'); 
-         },
-         fillScrollBox : function (el, formats, toprow) {                      // build menu settings grid
-            var dList = document.getElementById(el), grow, gcell, quick, k, i, t, toprow = toprow || 0, da, daf, p, s;
-            if (el=='quickmenurows') quick = 1;
-            while (dList.childNodes.length > toprow) dList.removeChild(dList.childNodes.length-1);
-            var FF, pre, act, fmt;
-            for (i=0;i<formats.length;i++) {
-               FF = formats[i], grow = act = fmt = daf = null; da = ''; p = '     ';
-               pre = (FF.substr(0,1)=='-');
-               if (pre) FF = FF.substr(1);
-               if (FF.length>2) {act = FF.substr(0,3); fmt = FF.substr(3);}
-               if ((act=='Cnv' || cysCommons.convertOutputs.indexOf(act)>-1) && !cysCommons.canConvert) continue;
-               if (act=='sep') {
-                  grow = document.createElement('separator');
-                  grow.orient = 'horizontal';
-                  grow.contextMenu = 'sbox_sep_context';
-                  grow.className = 'listsep';
-               } else {
-                  if (cysCommons.canConvert && fmt in cysCommons.dashVideo) {da = '1'; p = '— '; if (['135','244'].indexOf(fmt) > -1) {daf = cysCommons.dashAudio[cysCommons.dashVideo[fmt]];}}
-                  grow = document.createElement('row');
-                  grow.contextMenu = 'sbox_item_context';
-                  gcell = document.createElement('checkbox');
-                  gcell.setAttribute('checked',!pre);
-                  gcell.style.cursor = 'pointer';
-                  grow.appendChild(gcell);
-                  gcell = document.createElement('label');
-                  //dump('\n'+act+'\n'+fmt+'\n'+FF+'\n'+da+'\n'+daf+'\n\n');
-                  if (act) {
-                     if (quick && (act=='Fmt' || act=='Cnv')) {
-                        gcell.setAttribute('value', p + cysCommons.getCysString(FF+".2")+'   ('+cysCommons.getCysString(FF+'.1'+da)+')');
-                        gcell.setAttribute('ovalue',FF);
-                     } else {
-                        gcell.setAttribute('value', p + FF);
-                     }
-                  } else {
-                     gcell.setAttribute('value',cysCommons.getCysString('right.click.'+FF));
-                     gcell.setAttribute('ovalue',FF);
-                  }
-                  gcell.className += ' dragdrop';
-                  grow.appendChild(gcell);
-                  if (act && !quick) {
-                     for each(k in [1,2,5,3,4,6]) {
-                        gcell = document.createElement('label'); t = '';
-                        if (k<6) {
-                           if ((k==1 || k==4) && da) t = '1';
-                           s = cysCommons.getCysString(FF+'.'+k+t);
-                           if (k==4 && daf) {t = cysCommons.getCysString(act+daf+'.4'); s = s.substr(0, s.indexOf('/')) + t.substr(t.indexOf('/'));}
-                           gcell.setAttribute('value', s);
+                        var folders = decodeURIComponent(cysCommons.cysPrefs.getCharPref("folders.list.custom")), i;
+                        if (folders != null && folders != '') {
+                            var fl = document.getElementById('folderlist'), f = folders.split('**', cysPrefDialog.maxfolders), fi;
+                            for (i=0;i<f.length;i++) {
+                               if (!f[i]) break;
+                               fl.appendItem();
+                               fi = fl.getItemAtIndex(fl.itemCount-1);
+                               fi.setAttribute('label', f[i]);
+                               fi.setAttribute('crop', 'center');
+                               fi.setAttribute('tooltiptext', f[i]);
+                            }
+                        }
+                        cysPrefDialog.win = document.getElementById('cys-pref-window');
+                        cysPrefDialog.sbox1 = document.getElementById('sbox1');
+                        cysPrefDialog.sbox2 = document.getElementById('sbox2');
+                        cysPrefDialog.sbox3 = document.getElementById('sbox3');
+                        cysPrefDialog.sbox4 = document.getElementById('sbox4');
+
+                        var lh = parseInt(cysPrefDialog.sbox3.style.height), hpref = cysCommons.cysPrefs.getIntPref('detailedlist.height');
+                        if (lh != hpref) {
+                            for (i=4;i>0;i--) {
+                                cysPrefDialog['sbox'+i].style.height = ((i==3)?hpref:hpref-3) + 'em';
+                            }
+                        }
+
+                        cysPrefDialog.fillFilenamingHistoryBox();
+
+                        this.reinitData();
+                        if (!cysPrefDialog.firstLoaded) {
+                            cysPrefDialog.firstLoaded = true;
+                        }
+                    },
+                    blockElement: function(elemId, block){
+                        if (block) {
+                            document.getElementById(elemId).classList.add('disabled');
                         } else {
-                           gcell.setAttribute('value','... '+cysCommons.getCysString('filesizein'));
+                            document.getElementById(elemId).classList.remove('disabled');
                         }
-                        if (k==3 || k>=5) gcell.className += ' rjust';
-                        gcell.className += ' dragdrop';
-                        grow.appendChild(gcell);
-                     }
-                  }
-               }
-               if (grow) {
-                  grow.className += ' dragdrop';
-                  cysPrefDialog.addDragdropHandlers(grow);
-                  dList.appendChild(grow);
-               }
-            }
-         },
+                        document.getElementById(elemId).setAttribute('disabled', block);
+                    },
+                    reinitData: function(){
+                        cysPrefDialog.fillScrollBox('quickmenurows', cysCommons.getFormats(1));
+                        cysPrefDialog.fillScrollBox('submenurows', cysCommons.getSubMenu());
+                        cysPrefDialog.fillScrollBox('detailrows', cysCommons.getFormats(), 1);
 
-         addDragdropHandlers : function (el) {
-            var h = ['dragstart', 'dragenter', 'dragover', 'dragleave', 'drop'], i;
-            for each (i in h) el.addEventListener(i, cysPrefDialog.dragdrop, true);
-            return el;
-         },
+                        cysPrefDialog.check_advanced_input_enabled();
+                        cysPrefDialog.check_subtitle_pref();
+                        if (cysCommons.DTAstatus()) {// DTA option
+                           document.getElementById('cys-save-dta').hidden = false;
+                           document.getElementById('cys-save-dta-sep').hidden = false;
+                        }
+                        if (cysCommons.OS=='WINNT') document.getElementById('tab7.ffmpeg.hideconsole').hidden = false;
 
-         dragdrop : function (e) {
-            var dt = e.dataTransfer, ec = e.currentTarget, p = ec.parentNode, s = ec.style, a = e.type;
-            if (a=='dragover'){
-               if (dt.types.contains('text/moz-cys-id')){
-                  e.preventDefault(); dt.dropeffect = 'move';
-                  p = p.parentNode.parentNode; var pb = p.boxObject, eb = ec.boxObject, h = 25;
-                  if (ec==ec.parentNode.lastChild) {
-                     if (e.screenY<eb.screenY+0.5*eb.height) {
-                        s.borderTop = '2px inset -moz-dialog';
-                     } else {
-                        s.borderTop = 'none';
-                     }
-                  } else if (e.clientY<pb.y+h){
-                     try{
-                        //in firefox 36 and later below code will work
-                        pb.scrollBy(0,-5);
-                     }catch(ex){
-                        //before firefox 36 below code will work
-                        pb.QueryInterface(Ci.nsIScrollBoxObject).scrollBy(0,-5);
-                     }
-                     cysCommons.cysDump("dragdrop:afterelseif-5");
-                  } else if (e.clientY>pb.y+pb.height-h){
-                     try{
-                        //in firefox 36 and later below code will work
-                        pb.scrollBy(0,5);
-                     }catch(ex){
-                        //before firefox 36 below code will work
-                        pb.QueryInterface(Ci.nsIScrollBoxObject).scrollBy(0,5);
-                     }
-                  }
-               }
-            } else if (a=='dragenter'){
-               if (dt.types.contains('text/moz-cys-id')){
-                  e.preventDefault(); dt.dropeffect = 'move'; s.borderTop = '2px inset -moz-dialog'; s.opacity = '0.4';
-                  p = p.parentNode.parentNode; var pb = p.boxObject, h = 25;
-                  if (e.clientY<pb.y+h){
-                     try{
-                        pb.scrollBy(0,-5);
-                     }catch(ex){
-                        pb.QueryInterface(Ci.nsIScrollBoxObject).scrollBy(0,-5);
-                     }
-                  } else if (e.clientY>pb.y+pb.height-h){
-                     try{
-                        pb.scrollBy(0,5);
-                     }catch(ex){
-                        pb.QueryInterface(Ci.nsIScrollBoxObject).scrollBy(0,5);
-                     }
-                  }
-               }
-            } else if (a=='dragleave'){
-               var b = ec.boxObject; //dump('\n'+e.clientY+'  -  '+b.y+'+'+b.height);
-               if (e.screenY<b.screenY || e.screenY>b.screenY+b.height-5){s.borderTop = 'none'; s.opacity = '1';}
-            } else if (a=='dragstart'){
-               dt.setData('text/moz-cys-id', Array.prototype.indexOf.call(ec.parentNode.childNodes, ec)); dt.effectAllowed='move';
-            } else if (a=='drop'){
-               if (dt.types.contains('text/moz-cys-id')){
-                  var o = dt.getData('text/moz-cys-id'), t = Array.prototype.indexOf.call(p.childNodes, ec), eb = ec.boxObject;
-                  //alert(o + ' - ' + t);
-                  if (ec==ec.parentNode.lastChild && e.screenY>=eb.screenY+0.5*eb.height) {
-                     p.insertBefore(p.childNodes[o],null);
-                  } else {
-                     p.insertBefore(p.childNodes[o],p.childNodes[t]);
-                  }
-                  for (var i=0;i<p.childNodes.length;i++){var s = p.childNodes[i].style; s.borderTop = 'none'; s.opacity = '1';}
-               }
-            }
-         },
+                        document.getElementById('tab6.warn').hidden = cysCommons.canConvert;
+                        try {
+                            var ffmpegInstall = cysCommons.cysPrefs.getIntPref("ffmpeg.install.status");
+                            document.getElementById('tab6.audioPanel').setAttribute('disabled', !cysCommons.canConvert && ffmpegInstall !== 2);
+                            var ffmpegAudioOnly = false;
+                            try {
+                                ffmpegAudioOnly = cysCommons.cysPrefs.getBoolPref("ffmpeg.install.audio.only");
+                            } catch (ex) {
+                            }
+                            document.getElementById('aacm4a').hidden = !cysCommons.canConvert || (ffmpegInstall === 0 || (ffmpegInstall === 2 && !ffmpegAudioOnly));
+                        } catch (ex) {}
+                    },
+                    resizeLists : function () {
+                        // re-size scrolboxes when window is resized
+                        /*var wh = cysPrefDialog.win.getBoundingClientRect().height, d = wh - cysPrefDialog.winheight;
+                        if (!cysPrefDialog.winheight) {cysPrefDialog.winheight = wh; return;}
+                        if (d) {
+                           for (i=3;i>0;i--) cysPrefDialog['sbox'+i].height = cysPrefDialog['sbox'+i].getBoundingClientRect().height + d;
+                           cysPrefDialog.winheight = wh;
+                        }*/
+                    },
+                    check_subtitle_pref : function(){
+                       if(cysCommons.cysPrefs.getBoolPref('download.subtitles')==true){
+                           document.getElementById('cys-ignore-auto-subtitles').hidden = false;
+                           document.getElementById('cys-subtitle-language').hidden = false;
+                       }else{
+                           document.getElementById('cys-ignore-auto-subtitles').hidden = true;
+                           document.getElementById('cys-subtitle-language').hidden = true;
+                       }
+                    },
+                    toggle_subtitle_related_elem : function(){
+                       if(document.getElementById('cys-save-subtitle').hasAttribute('checked')){
+                           document.getElementById('cys-ignore-auto-subtitles').hidden = false;
+                           document.getElementById('cys-subtitle-language').hidden = false;
+                       }else{
+                           document.getElementById('cys-ignore-auto-subtitles').hidden = true;
+                           document.getElementById('cys-subtitle-language').hidden = true;
+                       }
+                    },
+                    check_advanced_input_enabled : function(){
+                       var advanced_input_enabled = cysCommons.cysPrefs.getBoolPref('ffmpeg.advanced.input.enable');
+                       if(advanced_input_enabled){
+                           document.getElementById('advanced-input-enabled').hidden = false;
+                       }else{
+                           document.getElementById('advanced-input-enabled').hidden = true;
+                       }
+                    },
+                    fillFilenamingHistoryBox : function (){
+                       var hlist = document.getElementById("filenaminghistorybox");
+                       hlist.removeAllItems();
+                       var selectedtag = cysCommons.cysPrefs.getCharPref('filenaming.tags');
+                       var itemlist = cysPrefDialog.rearrangeHistory(selectedtag);
+                       var i;
+                       if(itemlist.length > 0){
+                           for(i=0;i<itemlist.length;i++){
+                               if(itemlist[i] != "" && itemlist[i] != null && typeof itemlist[i] != 'undefined'){
+                                   hlist.appendItem(itemlist[i],itemlist[i]);
+                                   var currentItem = hlist.getItemAtIndex(i);
+                                   cysPrefDialog.manageToolTip(currentItem,itemlist[i]);
+                                   if(selectedtag == itemlist[i]){
+                                       hlist.selectedIndex = i;
+                                       cysPrefDialog.manageToolTip(hlist,itemlist[i]);
+                                   }
+                               }
+                           }
+                       }
+                    },
+                    rearrangeHistory : function(selectedtag){
+                       var i,j;
+                       var historystr = cysCommons.cysPrefs.getCharPref('filenaming.tags.history');
+                       var itemlist = historystr.split("|__|");
+                       var newitemlist = [];
+                       var itemlen = itemlist.length;
+                       if(selectedtag !="" && selectedtag != null && typeof selectedtag != 'undefined'){
+                           newitemlist[0] = selectedtag;
+                           j=1;
+                       }else{
+                           j=0;
+                       }
+                       if(itemlen > 15) itemlen = 15;
+                       if(itemlen > 0){
+                           for(i=0;i<itemlen;i++){
+                               if(typeof itemlist[i] != 'undefined' && selectedtag != itemlist[i]){
+                                   if(j>14) break;
+                                   newitemlist[j] = itemlist[i];
+                                   j++;
+                               }
+                           }
+                       }
+                       cysCommons.cysPrefs.setCharPref('filenaming.tags.history',newitemlist.join("|__|"));
+                       return newitemlist;
+                    },
+                    setFileNameBoxText: function(e){
+                       var bValue = e.originalTarget.getAttribute('label');
+                       var hlist = document.getElementById("filenaminghistorybox");
+                       var pos = hlist.inputField.selectionStart;
+                       hlist.value = hlist.value.substring(0, pos)
+                                                   + bValue
+                                                   + hlist.value.substring(hlist.inputField.selectionEnd, hlist.value.length);
+                                           hlist.inputField.setSelectionRange(pos + bValue.length, pos + bValue.length);
+                       cysPrefDialog.manageToolTip(hlist,hlist.value);
+                       cysCommons.cysPrefs.setCharPref('filenaming.tags',hlist.value);
+                    },
+                    manageToolTip: function(elem,val){
+                       if(typeof elem =='undefined'){
+                           var elem = document.getElementById("filenaminghistorybox");
+                           val = elem.value;
+                       }
+                       elem.setAttribute('tooltiptext', val);
+                       elem.setAttribute('crop', 'center');
+                    },
+                    fillScrollBox : function (el, formats, toprow) {
+                        // build menu settings grid
+                        var dList = document.getElementById(el), grow, gcell, quick, k, i, t, toprow = toprow || 0, da, daf, p, s, ll;
+                        if (el=='quickmenurows') quick = 1;
+                        while (dList.childNodes.length > toprow) {
+                            dList.removeChild(dList.childNodes[dList.childNodes.length-1]);
+                        }
+                        var FF, pre, act, fmt;
+                        var ffmpegInstall = -1;
+                        try {
+                            ffmpegInstall = cysCommons.cysPrefs.getIntPref("ffmpeg.install.status");
+                        } catch (ex) {
+                            cysCommons.cysPrefs.setIntPref('ffmpeg.install.status', -1);
+                        }
+                        var ffmpegAudioOnly = false;
+                        try {
+                            ffmpegAudioOnly = cysCommons.cysPrefs.getBoolPref("ffmpeg.install.audio.only");
+                        } catch (ex) {
+                        }
 
-         sboxContextClick : function (e) {
-            var ec = document.popupNode, n = ec, s;
-            if (ec.nodeName=='separator'){
-               ec.parentNode.removeChild(ec);
-            } else {
-               while (n.nodeName!='row') n = n.parentNode;
-               s = n.parentNode.insertBefore(document.createElement('separator'), n);
-               s.orient = 'horizontal';
-               s.contextMenu = 'sbox_sep_context';
-               s.className = 'listsep dragdrop';
-               cysPrefDialog.addDragdropHandlers(s);
-            }
-         },
+                        var prevSep = false;
+                        for (i=0;i<formats.length;i++) {
+                            FF = formats[i], grow = act = fmt = daf = null; da = ''; p = '     ';
+                            pre = (FF.substr(0,1)=='-');
+                            if (pre) FF = FF.substr(1);
+                            if (FF.length>2) {act = FF.substr(0,3); fmt = FF.substr(3);}
+                            if (act==='sep' && prevSep) {
+                                continue;
+                            }
+                            if (ffmpegInstall===0 && ((act==='Fmt' &&  cysCommons.videoIsDash(fmt)) || (act==='Cnv' && cysCommons.requiredFFmpeg(fmt)))) {
+                                continue;
+                            }
+                            prevSep = false;
+                            if (act=='sep') {
+                                prevSep = true;
+                                grow = document.createElement('separator');
+                                grow.orient = 'horizontal';
+                                grow.contextMenu = 'sbox_sep_context';
+                                grow.className = 'listsep';
+                            } else {
 
-         check_ffmpeg : function () {
-            cysCommons.getConverterPath();
-            if (!cysCommons.canConvert) return false;
-            if (cysCommons.canConvert) {
-               document.getElementById('conversion-enabled').hidden = false;
-               document.getElementById('conversion-disabled').hidden = true;
-               document.getElementById('showbestonly').hidden = false;
-               document.getElementById('aacm4a').hidden = false;
-               document.getElementById('cys-show-dashaudio').hidden = false;
-               document.getElementById('ffmpeginstalled').setAttribute('tooltiptext', 'FFmpeg folder:\n'+cysCommons.convertPath.parent.path);
-               document.getElementById('ffmpegchange').setAttribute('tooltiptext', 'FFmpeg folder:\n'+cysCommons.convertPath.parent.path);
-            }else {
-               document.getElementById('conversion-enabled').hidden = true;
-               document.getElementById('conversion-disabled').hidden = false;
-               document.getElementById('showbestonly').hidden = true;
-               document.getElementById('aacm4a').hidden = true;
-               document.getElementById('cys-show-dashaudio').hidden = true;
-            }
-         },
+                            if (fmt in cysCommons.dashVideo) {
+                                da = '1';
+                                if (['135','244'].indexOf(fmt) > -1) {
+                                    daf = cysCommons.dashAudio[cysCommons.dashVideo[fmt]];
+                                }
+                            }
 
-         locate_ffmpeg : function() {
-            var tt = decodeURIComponent(cysCommons.cysPrefs.getCharPref('ffmpeg.dir')) || cysCommons.getDefaultDir(cysPrefDialog.defaultSaveDir,true);
-            var dir = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
-            dir.initWithPath(tt);
-            var ffdir = cysPrefDialog.showDirPicker(dir);
-            if (typeof ffdir != 'undefined') cysCommons.cysPrefs.setCharPref("ffmpeg.dir",encodeURIComponent(ffdir));
-            return cysPrefDialog.check_ffmpeg();
-         },
+                            if (cysCommons.videoIsDash(fmt) || act === 'Cnv' && cysCommons.audioIsDash(fmt, true) && cysCommons.cysPrefs.getBoolPref("menu.dropdown.showdashaudio")) {
+                                p = '— ';
+                            }
 
-         resetMenus : function () {
-            if (cysCommons.cysConfirm('resetmenus')) {
-               cysCommons.cysPrefs.setCharPref('menu.quickmenu.order','');
-               cysCommons.cysPrefs.setCharPref('menu.dropdown.submenu.order','');
-               cysCommons.cysPrefs.setCharPref('menu.dropdown.order','');
-               cysPrefDialog.resetFileNameHistoryBox();
-               cysPrefDialog.resetFFmpegAdvancedInput();
-               return true;
-            }
-         },
-         resetFFmpegAdvancedInput: function(){
-            cysCommons.cysPrefs.setCharPref('ffmpeg.advanced.input','');
-            return true;
-         },
-         resetFileNameHistoryBox: function(){
-            //cysCommons.cysPrefs.setCharPref('filenaming.tags.history','');
-            //cysCommons.cysPrefs.setCharPref('filenaming.tags','');
-            var hlist = document.getElementById("filenaminghistorybox");
-            hlist.removeAllItems();
-            hlist.value = "";
-            hlist.setAttribute('tooltiptext','');
-            return true;
-         },
+                            grow = document.createElement('row');
+                            grow.contextMenu = 'sbox_item_context';
+                            gcell = document.createElement('checkbox');
+                            gcell.setAttribute('checked',!pre);
 
-			cys_savePrefs : function () {
+                            gcell.style.cursor = 'pointer';
+                            grow.appendChild(gcell);
+                            gcell = document.createElement('hbox');
+                            if (toprow) {
+                                ll = document.createElement('label');
+                                ll.setAttribute('value', p);
+
+                                if(cysCommons.audioIsDash(fmt, true)) {
+                                    ll.classList.add('clrdash');
+                                }
+
+                                if (cysCommons.videoIsDash(fmt)) {
+                                    if (ffmpegInstall === 2) {
+                                        ll.classList.add("cys-text");
+                                        ll.classList.add("warning");
+                                    } else if(!cysCommons.canConvert || ffmpegInstall === 0) {
+                                        ll.classList.add("cys-icon");
+                                        ll.classList.add("warning");
+                                        ll.setAttribute("width", 16);
+                                        ll.setAttribute("value", "\u2003");
+                                    }
+                                } else if (cysCommons.requiredFFmpeg(fmt) && act=='Cnv') {
+                                    if (!cysCommons.canConvert || ffmpegInstall === 0 || (ffmpegInstall === 2 && !ffmpegAudioOnly)) {
+                                        ll.classList.add("cys-icon");
+                                        ll.classList.add("danger");
+                                        ll.setAttribute("width", 16);
+                                        ll.setAttribute("value", "\u2003");
+                                    }
+                                }
+
+                                gcell.appendChild(ll);
+                            }
+
+                            ll = document.createElement('label');
+                            //dump('\n'+act+'\n'+fmt+'\n'+FF+'\n'+da+'\n'+daf+'\n\n');
+                            if (act) {
+                                if (quick && (act=='Fmt' || act=='Cnv')) {
+                                   ll.setAttribute('value', cysCommons.getCysString(FF+".2")+'   ('+cysCommons.getCysString(FF+'.1'+da)+')');
+                                } else {
+                                   ll.setAttribute('value', FF);
+                                }
+                                gcell.setAttribute('ovalue',FF);
+                            } else {
+                                ll.setAttribute('value',cysCommons.getCysString('right.click.'+FF));
+                                gcell.setAttribute('ovalue',FF);
+                            }
+                            ll.className += ' dragdrop';
+                            gcell.appendChild(ll);
+                            grow.appendChild(gcell);
+
+                            if (act && !quick) {
+                                for (k in [1,2,5,3,4,6]) {
+                                    gcell = document.createElement('label'); t = '';
+                                    if (k<6) {
+                                        if ((k==1 || k==4) && da) {
+                                            t = '1';
+                                        }
+                                        s = cysCommons.getCysString(FF + '.' + k + t);
+                                        if (k==4 && daf) {
+                                            t = cysCommons.getCysString(act + daf + '.4');
+                                            s = s.substr(0, s.indexOf('/')) + t.substr(t.indexOf('/'));
+                                        }
+                                        gcell.setAttribute('value', s);
+                                    } else {
+                                        gcell.setAttribute('value','... '+cysCommons.getCysString('filesizein'));
+                                    }
+                                   if (k==3 || k>=5) gcell.className += ' rjust';
+                                   gcell.className += ' dragdrop';
+                                   grow.appendChild(gcell);
+                                }
+                             }
+                          }
+                            if (el === 'submenurows' && FF >=6 && (!cysCommons.canConvert || ffmpegInstall === 0 || (ffmpegInstall === 2 && !ffmpegAudioOnly))) {
+                                grow.classList.add('disabled');
+                                grow.setAttribute('disabled', true);
+                            }
+
+                            if (grow) {
+                                grow.className += ' dragdrop';
+                                cysPrefDialog.addDragdropHandlers(grow);
+                                dList.appendChild(grow);
+                            }
+                       }
+                    },
+
+                    addDragdropHandlers : function (el) {
+                       var h = ['dragstart', 'dragenter', 'dragover', 'dragleave', 'drop'], i;
+                       for (i in h) el.addEventListener(i, cysPrefDialog.dragdrop, true);
+                       return el;
+                    },
+
+                    dragdrop : function (e) {
+                       var dt = e.dataTransfer, ec = e.currentTarget, p = ec.parentNode, s = ec.style, a = e.type;
+                       if (a=='dragover'){
+                          if (dt.types.contains('text/moz-cys-id')){
+                             e.preventDefault(); dt.dropeffect = 'move';
+                             p = p.parentNode.parentNode; var pb = p.boxObject, eb = ec.boxObject, h = 25;
+                             if (ec==ec.parentNode.lastChild) {
+                                if (e.screenY<eb.screenY+0.5*eb.height) {
+                                   s.borderTop = '2px inset -moz-dialog';
+                                } else {
+                                   s.borderTop = 'none';
+                                }
+                             } else if (e.clientY<pb.y+h){
+                                try{
+                                   //in firefox 36 and later below code will work
+                                   pb.scrollBy(0,-5);
+                                }catch(ex){
+                                   //before firefox 36 below code will work
+                                   pb.QueryInterface(Ci.nsIScrollBoxObject).scrollBy(0,-5);
+                                }
+                                cysCommons.cysDump("dragdrop:afterelseif-5");
+                             } else if (e.clientY>pb.y+pb.height-h){
+                                try{
+                                   //in firefox 36 and later below code will work
+                                   pb.scrollBy(0,5);
+                                }catch(ex){
+                                   //before firefox 36 below code will work
+                                   pb.QueryInterface(Ci.nsIScrollBoxObject).scrollBy(0,5);
+                                }
+                             }
+                          }
+                       } else if (a=='dragenter'){
+                          if (dt.types.contains('text/moz-cys-id')){
+                             e.preventDefault(); dt.dropeffect = 'move'; s.borderTop = '2px inset -moz-dialog'; s.opacity = '0.4';
+                             p = p.parentNode.parentNode; var pb = p.boxObject, h = 25;
+                             if (e.clientY<pb.y+h){
+                                try{
+                                   pb.scrollBy(0,-5);
+                                }catch(ex){
+                                   pb.QueryInterface(Ci.nsIScrollBoxObject).scrollBy(0,-5);
+                                }
+                             } else if (e.clientY>pb.y+pb.height-h){
+                                try{
+                                   pb.scrollBy(0,5);
+                                }catch(ex){
+                                   pb.QueryInterface(Ci.nsIScrollBoxObject).scrollBy(0,5);
+                                }
+                             }
+                          }
+                       } else if (a=='dragleave'){
+                          var b = ec.boxObject; //dump('\n'+e.clientY+'  -  '+b.y+'+'+b.height);
+                          if (e.screenY<b.screenY || e.screenY>b.screenY+b.height-5){s.borderTop = 'none'; s.opacity = '1';}
+                       } else if (a=='dragstart'){
+                          dt.setData('text/moz-cys-id', Array.prototype.indexOf.call(ec.parentNode.childNodes, ec)); dt.effectAllowed='move';
+                       } else if (a=='drop'){
+                          if (dt.types.contains('text/moz-cys-id')){
+                             var o = dt.getData('text/moz-cys-id'), t = Array.prototype.indexOf.call(p.childNodes, ec), eb = ec.boxObject;
+                             //alert(o + ' - ' + t);
+                             if (ec==ec.parentNode.lastChild && e.screenY>=eb.screenY+0.5*eb.height) {
+                                p.insertBefore(p.childNodes[o],null);
+                             } else {
+                                p.insertBefore(p.childNodes[o],p.childNodes[t]);
+                             }
+                             for (var i=0;i<p.childNodes.length;i++){var s = p.childNodes[i].style; s.borderTop = 'none'; s.opacity = '1';}
+                          }
+                       }
+                    },
+
+                    sboxContextClick : function (e) {
+                       var ec = document.popupNode, n = ec, s;
+                       if (ec.nodeName=='separator'){
+                          ec.parentNode.removeChild(ec);
+                       } else {
+                          while (n.nodeName!='row') n = n.parentNode;
+                          s = n.parentNode.insertBefore(document.createElement('separator'), n);
+                          s.orient = 'horizontal';
+                          s.contextMenu = 'sbox_sep_context';
+                          s.className = 'listsep dragdrop';
+                          cysPrefDialog.addDragdropHandlers(s);
+                       }
+                    },
+
+                    check_ffmpeg : function () {
+                        cysCommons.getConverterPath();
+                        cysPrefDialog.setFFmpegInstall(cysCommons.cysPrefs.getCharPref('ffmpeg.dir'));
+                        if (!cysCommons.canConvert) return false;
+                        if (cysCommons.canConvert) {
+                            document.getElementById('aacm4a').hidden = false;
+                            document.getElementById('cys-show-dashaudio').hidden = false;
+                            //document.getElementById('ffmpeginstalled').setAttribute('tooltiptext', 'FFmpeg folder:\n'+cysCommons.convertPath.parent.path);
+                            //document.getElementById('ffmpegchange').setAttribute('tooltiptext', 'FFmpeg folder:\n'+cysCommons.convertPath.parent.path);
+                        }else {
+                            document.getElementById('aacm4a').hidden = true;
+                            document.getElementById('cys-show-dashaudio').hidden = true;
+                        }
+                    },
+
+                    locate_ffmpeg : function() {
+                       var tt = decodeURIComponent(cysCommons.cysPrefs.getCharPref('ffmpeg.dir')) || cysCommons.getDefaultDir(cysPrefDialog.defaultSaveDir,true);
+                       var dir = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
+                       dir.initWithPath(tt);
+                       var ffdir = cysPrefDialog.showDirPicker(dir);
+                       if (typeof ffdir != 'undefined') cysCommons.cysPrefs.setCharPref("ffmpeg.dir",ffdir);
+                       return cysPrefDialog.check_ffmpeg();
+                    },
+
+                    resetMenus : function () {
+                        if (cysCommons.cysConfirm('resetmenus')) {
+                            cysCommons.cysPrefs.setCharPref('menu.quickmenu.order.0','');
+                            cysCommons.cysPrefs.setCharPref('menu.quickmenu.order.1','');
+                            cysCommons.cysPrefs.setCharPref('menu.dropdown.submenu.order.0','');
+                            cysCommons.cysPrefs.setCharPref('menu.dropdown.submenu.order.1','');
+                            cysCommons.cysPrefs.setCharPref('menu.dropdown.order.0','');
+                            cysCommons.cysPrefs.setCharPref('menu.dropdown.order.1','');
+                            cysPrefDialog.resetFileNameHistoryBox();
+                            cysPrefDialog.resetFFmpegAdvancedInput();
+                            return true;
+                        }
+                    },
+                    resetFFmpeg : function () {
+                        var params = {ok: false};
+
+                        if (!cysCommons.cysPrefs.getBoolPref('ffmpeg.info.dialog.hide')) {
+                            openDialog("chrome://completeyoutubesaver/content/infoDialog.xul", "", "chrome,modal,centerscreen,dialog", params);
+                        } else {
+                            params.ok = true;
+                        }
+
+                        if (params.ok) {
+                            return true;
+                        }
+                        return false;
+                    },
+                    resetFFmpegAdvancedInput: function(){
+                       cysCommons.cysPrefs.setCharPref('ffmpeg.advanced.input','');
+                       document.getElementById('ffmpegadvancedinput').value = '';
+                       return true;
+                    },
+                    resetFileNameHistoryBox: function(){
+                       //cysCommons.cysPrefs.setCharPref('filenaming.tags.history','');
+                       //cysCommons.cysPrefs.setCharPref('filenaming.tags','');
+                       var hlist = document.getElementById("filenaminghistorybox");
+                       hlist.removeAllItems();
+                       hlist.value = "";
+                       hlist.setAttribute('tooltiptext','');
+                       return true;
+                    },
+
+                    cys_savePrefs : function () {
                         /*file naming history*/
                         var hlist = document.getElementById("filenaminghistorybox");
                         if(hlist.itemCount==0){
@@ -370,169 +539,258 @@
                         }
                         if(hlist.value==''){
                             cysCommons.cysPrefs.setCharPref('filenaming.tags','');
-                        }               
+                        }
 
-            document.getElementById("savedir").value = document.getElementById("savedir").value.trim();
-				try{
-					var dir = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
-					dir.initWithPath(document.getElementById("savedir").value);
-					if( !dir.exists() || !dir.isDirectory() ) {
-						dir.create(Ci.nsIFile.DIRECTORY_TYPE, parseInt("0777", 8));
-					}
-				}catch(ex){
-					cysCommons.cysDump(ex);
-					cysCommons.cysAlert("wrong.savedir");
-					document.getElementById("tabs").selectedIndex = 2;
-					document.getElementById("savedir").focus();
-					document.getElementById("savedir").select();
-					return false;
-				}
-				if (!document.getElementById("pCol").checked && !document.getElementById("soundCol").checked && !document.getElementById("resolutionCol").checked &&
-					!document.getElementById("typenameCol").checked && !document.getElementById("typeCol").checked && !document.getElementById("fmtCol").checked){
-                  cysCommons.cysAlert("cols.checked");                    // assert min. 1 column selected in detailed menu
-					   document.getElementById("tabs").selectedIndex = 2;
-					   return false;
-				}
-            // *****
-            var rowsdata = cysPrefDialog.enumRows('quickmenurows');   // save quickmenu options
-            if (!rowsdata){cysCommons.cysAlert("rows.checked"); document.getElementById("tabs").selectedIndex = 1; return false;}
-            cysCommons.cysPrefs.setCharPref('menu.quickmenu.order','');
-            if (cysCommons.getFormats(1).join(',')!=rowsdata) cysCommons.cysPrefs.setCharPref('menu.quickmenu.order',rowsdata);
-            var rowsdata = cysPrefDialog.enumRows('submenurows');   // save submenu options
-            if (!rowsdata){cysCommons.cysAlert("rows.checked"); document.getElementById("tabs").selectedIndex = 1; return false;}
-            cysCommons.cysPrefs.setCharPref('menu.dropdown.submenu.order','');
-            if (cysCommons.getSubMenu().join(',')!=rowsdata) cysCommons.cysPrefs.setCharPref('menu.dropdown.submenu.order',rowsdata);
-            var rowsdata = cysPrefDialog.enumRows('detailrows', 1);   // save detailed menu options
-            if (!rowsdata){cysCommons.cysAlert("rows.checked"); document.getElementById("tabs").selectedIndex = 2; return false;}
-            cysCommons.cysPrefs.setCharPref('menu.dropdown.order','');
-            if (cysCommons.getFormats().join(',')!=rowsdata) cysCommons.cysPrefs.setCharPref('menu.dropdown.order',rowsdata);
-				// *****
-            cysCommons.cysPrefs.setCharPref("default.download.dir",encodeURIComponent(document.getElementById("savedir").value.trim()));
-				var fl = document.getElementById('folderlist');
-            if (fl.itemCount > 0) {
-               var a="", i;
-               for (i=0;i<fl.itemCount;i++) {
-                  a += fl.getItemAtIndex(i).getAttribute('label') + '**';
-               }
-               cysCommons.cysPrefs.setCharPref("folders.list.custom", encodeURIComponent(a));
-            }
-            else {
-               cysCommons.cysPrefs.setCharPref("folders.list.custom", '');
-            }
-            if (window.arguments) window.arguments[0].v = 1;
-			},
+                        document.getElementById("savedir").value = document.getElementById("savedir").value.trim();
+                        try{
+                                var dir = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
+                                dir.initWithPath(document.getElementById("savedir").value);
+                                if( !dir.exists() || !dir.isDirectory() ) {
+                                        dir.create(Ci.nsIFile.DIRECTORY_TYPE, parseInt("0777", 8));
+                                }
+                        }catch(ex){
+                                cysCommons.cysDump(ex);
+                                cysCommons.cysAlert("wrong.savedir");
+                                document.getElementById("tabs").selectedIndex = 3;
+                                document.getElementById("savedir").focus();
+                                document.getElementById("savedir").select();
+                                return false;
+                        }
+                        if (!document.getElementById("pCol").checked && !document.getElementById("soundCol").checked && !document.getElementById("resolutionCol").checked &&
+                            !document.getElementById("typenameCol").checked && !document.getElementById("typeCol").checked && !document.getElementById("fmtCol").checked){
+                                cysCommons.cysAlert("cols.checked");                    // assert min. 1 column selected in detailed menu
+                                document.getElementById("tabs").selectedIndex = 3;
+                                return false;
+                        }
+                        // *****
+                        var rowsdata = cysPrefDialog.enumRows('quickmenurows');   // save quickmenu options
+                        var ffmpeginstall = -1;
+                        try {
+                            ffmpeginstall = cysCommons.cysPrefs.getIntPref('ffmpeg.install.status') > 0 ? 1 : 0;
+                        } catch(ex) {
+                            cysCommons.cysPrefs.setIntPref('ffmpeg.install.status', -1);
+                        }
+                        if (!rowsdata){cysCommons.cysAlert("rows.checked"); document.getElementById("tabs").selectedIndex = 1; return false;}
+                        cysCommons.cysPrefs.setCharPref('menu.quickmenu.order.' + ffmpeginstall,'');
+                        if (cysCommons.getFormats(1).join(',')!=rowsdata) cysCommons.cysPrefs.setCharPref('menu.quickmenu.order.' + ffmpeginstall,rowsdata);
+                        var rowsdata = cysPrefDialog.enumRows('submenurows');   // save submenu options
+                        if (!rowsdata){cysCommons.cysAlert("rows.checked"); document.getElementById("tabs").selectedIndex = 1; return false;}
+                        cysCommons.cysPrefs.setCharPref('menu.dropdown.submenu.order.' + ffmpeginstall, '');
+                        if (cysCommons.getSubMenu().join(',')!=rowsdata) cysCommons.cysPrefs.setCharPref('menu.dropdown.submenu.order.' + ffmpeginstall, rowsdata);
+                        var rowsdata = cysPrefDialog.enumRows('detailrows', 1);   // save detailed menu options
+                        if (!rowsdata){cysCommons.cysAlert("rows.checked"); document.getElementById("tabs").selectedIndex = 3; return false;}
+                        cysCommons.cysPrefs.setCharPref('menu.dropdown.order.' + ffmpeginstall,'');
+                        if (cysCommons.getFormats().join(',')!=rowsdata) cysCommons.cysPrefs.setCharPref('menu.dropdown.order.' + ffmpeginstall,rowsdata);
+                        // *****
+                        cysCommons.cysPrefs.setCharPref("default.download.dir",encodeURIComponent(document.getElementById("savedir").value.trim()));
+                        var fl = document.getElementById('folderlist');
+                        if (fl.itemCount > 0) {
+                           var a="", i;
+                           for (i=0;i<fl.itemCount;i++) {
+                              a += fl.getItemAtIndex(i).getAttribute('label') + '**';
+                           }
+                           cysCommons.cysPrefs.setCharPref("folders.list.custom", encodeURIComponent(a));
+                        }
+                        else {
+                           cysCommons.cysPrefs.setCharPref("folders.list.custom", '');
+                        }
+                        if (window.arguments) window.arguments[0].v = 1;
+                    },
 
-         enumRows : function (id, start) {
-				var drows = document.getElementById(id).childNodes, drow, rows_checked, i, t, formats='', start = start || 0;
-            for (i=start;i<drows.length;i++){
-               drow = drows[i]; t = '';
-               if (drow.tagName=='row') {
-                  try {
-                     if (drow.childNodes[1].hasAttribute('ovalue')) {
-                        t = drow.childNodes[1].getAttribute('ovalue');
-                     } else {
-                        t = drow.childNodes[1].value.replace('—','').trim();
-                     }
-                     if (drow.childNodes[0].checked){
-      						rows_checked = 1;                                   // make sure at least 1 checkbox checked for detailed list
-      					} else {
-                        if (t) t = '-'+t;
-                     }
-                  } catch (e) {}
-                  if (t) formats+=t+',';
-               } else if (drow.tagName=='separator') {
-                  formats+='sep,'
-               }
-				}
-            if (!rows_checked) return false;
-            if (formats) formats = formats.substr(0,formats.length-1);
-            return formats;
-         },
-         
-         getsaveDir : function (){
-				var dir = null;
-				document.getElementById('savedir').value = document.getElementById('savedir').value.trim();
-				var path = document.getElementById('savedir').value;
-				if (path != ""){
-					try{
-						dir = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
-						dir.initWithPath(path);
-					}catch(ex){
-						dir = null;
-						cysCommons.cysDump(ex);
-					}
-				}
-            var targetpath = cysPrefDialog.showDirPicker(dir);
-            if (targetpath) {
-               document.getElementById('savedir').value = targetpath;
-               document.getElementById('savedir').setAttribute('label', targetpath);
-               document.getElementById('savedir').setAttribute('tooltiptext', targetpath);
-            }
-			},
+                    enumRows : function (id, start) {
+                        var drows = document.getElementById(id).childNodes, drow, rows_checked = false, i, t, formats='', start = start || 0, val = '';
 
-         showDirPicker : function (dir){
-				const nsIFilePicker = Ci.nsIFilePicker;
-				var fp = Cc["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
-				fp.init(window, cysPrefDialog.defaultSaveDir, nsIFilePicker.modeGetFolder);
-				fp.displayDirectory = dir;
-				var rv = fp.show();
-				if (rv == nsIFilePicker.returnOK || rv == nsIFilePicker.returnReplace) {
-					var file = fp.file;
-					var targetpath = fp.file.path;
-					return targetpath;
-				}
-			},
+                        for (i=start;i<drows.length;i++){
+                            drow = drows[i]; t = '';
+                            if (drow.tagName=='row') {
+                                try {
+                                    if (drow.childNodes[1].hasAttribute('ovalue')) {
+                                        t = drow.childNodes[1].getAttribute('ovalue');
+                                    } else {
+                                        val = drow.childNodes[1].value || drow.childNodes[1].getAttribute('value');
+                                        t = val.replace('—', '').trim();
+                                    }
+                                    if (drow.childNodes[0].checked || drow.childNodes[0].getAttribute('checked') === 'true') {
+                                        rows_checked = true; // make sure at least 1 checkbox checked for detailed list
+                                    } else {
+                                        if (t) t = '-'+t;
+                                    }
+                                } catch (e) {}
+                                if (t) formats+=t+',';
+                            } else if (drow.tagName=='separator') {
+                                formats+='sep,'
+                            }
+                        }
+                        if (!rows_checked) return false;
+                        if (formats) formats = formats.substr(0,formats.length-1);
+                        return formats;
+                    },
 
-         manageFlist : function (act){
-            var fl = document.getElementById('folderlist');
-            var sel = fl.selectedIndex;
-            if (act == '+') {
-               if (fl.itemCount+1 > cysPrefDialog.maxfolders) {
-                  cysCommons.cysAlert('maxfolders', cysPrefDialog.maxfolders);
-                  return;
-               }
-               var dir = cysPrefDialog.showDirPicker(dir);
-               if (dir != null && dir != '') {
-                  for (var i=0;i<fl.itemCount;i++) {
-                     if (dir==fl.getItemAtIndex(i).getAttribute('label')) {
-                        cysCommons.cysAlert('folderinlist');
-                        return;
-                     }
-                  }
-                  fl.appendItem();
-                  fl.getItemAtIndex(fl.itemCount-1).setAttribute('label', dir);
-                  fl.getItemAtIndex(fl.itemCount-1).setAttribute('crop', 'center');
-                  fl.getItemAtIndex(fl.itemCount-1).setAttribute('tooltiptext', dir);
-               }
-               return;
-            }
-            else if (sel > -1) {
-               var cit = fl.selectedItem
-               var cl = cit.getAttribute('label');
-               if (act == '-') {
-                  fl.removeItemAt(fl.selectedIndex);
-                  return;
-               }
-               else {
-                  var offs = parseInt(act);
-                  if ((sel == 0 && offs == -1) || (sel == (fl.itemCount-1) && offs == 1)) {
-                     return;
-                  }
-                  var nit =  fl.getItemAtIndex(sel+offs);
-                  var nl = nit.getAttribute('label');
-                  cit.setAttribute('label', nl);
-                  cit.setAttribute('tooltiptext', nl);
-                  nit.setAttribute('label', cl);
-                  nit.setAttribute('tooltiptext', cl);
-                  fl.moveByOffset(offs, true, false);
-                  return;
-               }
-            }
-         }
+                    getsaveDir : function (){
+                        var dir = null;
+                        document.getElementById('savedir').value = document.getElementById('savedir').value.trim();
+                        var path = document.getElementById('savedir').value;
+                        if (path != ""){
+                                try{
+                                        dir = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsILocalFile);
+                                        dir.initWithPath(path);
+                                }catch(ex){
+                                        dir = null;
+                                        cysCommons.cysDump(ex);
+                                }
+                        }
+                        var targetpath = cysPrefDialog.showDirPicker(dir);
+                        if (targetpath) {
+                           document.getElementById('savedir').value = targetpath;
+                           document.getElementById('savedir').setAttribute('label', targetpath);
+                           document.getElementById('savedir').setAttribute('tooltiptext', targetpath);
+                        }
+                    },
+
+                    showDirPicker : function (dir){
+                        const nsIFilePicker = Ci.nsIFilePicker;
+                        var fp = Cc["@mozilla.org/filepicker;1"].createInstance(nsIFilePicker);
+                        fp.init(window, cysPrefDialog.defaultSaveDir, nsIFilePicker.modeGetFolder);
+                        fp.displayDirectory = dir;
+                        var rv = fp.show();
+                        if (rv == nsIFilePicker.returnOK || rv == nsIFilePicker.returnReplace) {
+                                var file = fp.file;
+                                var targetpath = fp.file.path;
+                                return targetpath;
+                        }
+                    },
+
+                    manageFlist : function (act){
+                       var fl = document.getElementById('folderlist');
+                       var sel = fl.selectedIndex;
+                       if (act == '+') {
+                          if (fl.itemCount+1 > cysPrefDialog.maxfolders) {
+                             cysCommons.cysAlert('maxfolders', cysPrefDialog.maxfolders);
+                             return;
+                          }
+                          var dir = cysPrefDialog.showDirPicker(dir);
+                          if (dir != null && dir != '') {
+                             for (var i=0;i<fl.itemCount;i++) {
+                                if (dir==fl.getItemAtIndex(i).getAttribute('label')) {
+                                   cysCommons.cysAlert('folderinlist');
+                                   return;
+                                }
+                             }
+                             fl.appendItem();
+                             fl.getItemAtIndex(fl.itemCount-1).setAttribute('label', dir);
+                             fl.getItemAtIndex(fl.itemCount-1).setAttribute('crop', 'center');
+                             fl.getItemAtIndex(fl.itemCount-1).setAttribute('tooltiptext', dir);
+                          }
+                          return;
+                       }
+                       else if (sel > -1) {
+                          var cit = fl.selectedItem
+                          var cl = cit.getAttribute('label');
+                          if (act == '-') {
+                             fl.removeItemAt(fl.selectedIndex);
+                             return;
+                          }
+                          else {
+                             var offs = parseInt(act);
+                             if ((sel == 0 && offs == -1) || (sel == (fl.itemCount-1) && offs == 1)) {
+                                return;
+                             }
+                             var nit =  fl.getItemAtIndex(sel+offs);
+                             var nl = nit.getAttribute('label');
+                             cit.setAttribute('label', nl);
+                             cit.setAttribute('tooltiptext', nl);
+                             nit.setAttribute('label', cl);
+                             nit.setAttribute('tooltiptext', cl);
+                             fl.moveByOffset(offs, true, false);
+                             return;
+                          }
+                       }
+                    },
+                    setNewDate : function(label) {
+                        var arrayDate = label.split('-');
+                        var i;
+                        for(i=1; i<=8; i++){
+                            document.getElementById('month_format_id' + i).setAttribute('value', arrayDate[0]);
+                            document.getElementById('day_format_id' + i).setAttribute('value', arrayDate[1]);
+                        }
+                        for(i=1; i<=6; i++){
+                            document.getElementById('year_format_id' + i).setAttribute('value', arrayDate[2]);
+                        }
+                    },
+                    setNewDuration : function(label) {
+                        document.getElementById('duration_label_id').setAttribute('value', label);
+                    },
+                    setFFmpegInstall: function(install) {
+                        if (install) {
+                            document.getElementById('ffmpegnotinst').setAttribute('hidden', true);
+                            document.getElementById('ffmpeginst').setAttribute('hidden', false);
+                            document.getElementById('ffmpegradiofornotinstall').setAttribute('hidden', true);
+                            document.getElementById('ffmpegradioforinstall').setAttribute('hidden', false);
+                            document.getElementById('ffrequired').setAttribute('hidden', true);
+                        } else {
+                            document.getElementById('ffmpegnotinst').setAttribute('hidden', false);
+                            document.getElementById('ffmpeginst').setAttribute('hidden', true);
+                            document.getElementById('ffmpegradiofornotinstall').setAttribute('hidden', false);
+                            document.getElementById('ffmpegradioforinstall').setAttribute('hidden', true);
+                            document.getElementById('ffrequired').setAttribute('hidden', false);
+                        }
+                    },
+                    installDialog: function() {
+                        var params = {};
+                        window.openDialog("chrome://completeyoutubesaver/content/installDialog.xul", "", "chrome,modal,centerscreen", params);
+                        if (params.golink) {
+                            window.arguments[0].golink = params.link;
+                            cysPrefDialog.win.cancelDialog();
+                        }
+                    },
+                    dataUpdate: function(timeout) {
+                        if (timeout) {
+                            if (cysPrefDialog.uTimeout) {
+                                clearTimeout(cysPrefDialog.uTimeout);
+                            }
+
+                            cysPrefDialog.uTimeout = setTimeout(function() {
+                                cysPrefDialog.blockElement('ffmpegpanel-radio', true);
+                                cysPrefDialog.reinitData();
+                                cysPrefDialog.blockElement('ffmpegpanel-radio', false);
+                            }, 100);
+                        } else {
+                            cysPrefDialog.reinitData();
+                        }
+                    },
+                    refreshFormats: function(audio) {
+                        if (!cysPrefDialog.firstLoaded) {
+                            return true;
+                        }
+                        var auCheck = document.getElementById('showdashaudio');
+                        cysCommons.cysPrefs.setBoolPref('menu.dropdown.showdashaudio', auCheck.getAttribute('checked') === 'true');
+                        var el = document.getElementById('ffmpeg');
+                        cysCommons.cysPrefs.setIntPref('ffmpeg.install.status', el.value || el.getAttribute('value'));
+
+                        if (audio) {
+                            el = document.getElementById('tab7.ffmpeg.install.audio.only');
+                            cysCommons.cysPrefs.setBoolPref('ffmpeg.install.audio.only', (el.checked || el.getAttribute('checked')) ? true : false);
+                        }
+
+                        this.dataUpdate(true);
+                        return true;
+                    },
+                    resetPrefs: function() {
+                        for (var key in oldProperties) {
+                            var prop = oldProperties[key];
+                            if (prop.type === 32) {
+                                cysCommons.cysPrefs.setCharPref(key, prop.value);
+                            } else if (prop.type === 64) {
+                                cysCommons.cysPrefs.setIntPref(key, prop.value);
+                            } else if (prop.type === 128) {
+                                cysCommons.cysPrefs.setBoolPref(key, prop.value);
+                            }
+                        }
+                    }
 		}
 	]]>
 	</script>
-	<prefpane id="cys-pref-pane" label="&options.title;">     
+	<prefpane id="cys-pref-pane" label="&options.title;" flex="1">
 		<preferences>
                     <preference id="icon.show.always" name="extensions.cys.icon.show.always" type="bool" />
                     <preference id="detect.embedded.youtube.onnonyoutube" name="extensions.cys.detect.embedded.youtube" type="bool" />
@@ -553,6 +811,7 @@
                     <preference id="save.comments.count" name="extensions.cys.save.comments.count" type="string" />
                     <preference id="dropdown.left.click.save.as" name="extensions.cys.menu.dropdown.left.click.save.as" type="int" />
                     <preference id="dropdown.showbestonly" name="extensions.cys.menu.dropdown.showbestonly" type="bool" />
+                    <preference id="dropdown.showdashaudio" name="extensions.cys.menu.dropdown.showdashaudio" type="bool" />
                     <preference id="dropdown.fullvideotitle" name="extensions.cys.menu.dropdown.fullvideotitle" type="bool" />
                     <preference id="dropdown.right.click.save.as.visible" name="extensions.cys.menu.dropdown.right.click.save.as.visible" type="bool" />
                     <preference id="dropdown.right.click.save.default.visible" name="extensions.cys.menu.dropdown.right.click.save.default.visible" type="bool" />
@@ -577,6 +836,8 @@
                     <preference id="open.target.folder" name="extensions.cys.open.target.folder" type="bool" />
                     <preference id="ffmpeg.advanced.input" name="extensions.cys.ffmpeg.advanced.input" type="string" />
                     <preference id="ffmpeg.advanced.input.enable" name="extensions.cys.ffmpeg.advanced.input.enable" type="bool" />
+                    <preference id="tagoptions.dates" name="extensions.cys.tagoptions.dates" type="int" />
+                    <preference id="tagoptions.duration" name="extensions.cys.tagoptions.duration" type="int" />
                     <preference id="forreplaced.character" name="extensions.cys.forreplaced.character" type="int" />
                     <preference id="filenaming.tags" name="extensions.cys.filenaming.tags" type="string" />
                     <preference id="filenaming.tags.history" name="extensions.cys.filenaming.tags.history" type="string" />
@@ -584,12 +845,20 @@
                     <preference id="savefolders.custom" name="extensions.cys.folders.custom" type="int" />
                     <preference id="savefolders.custom.track" name="extensions.cys.folders.custom.track" type="bool" />
                     <preference id="save2last.useprojectname" name="extensions.cys.save2last.useprojectname" type="bool" />
-                    <preference id="signature.decryption.code" name="extensions.cys.signature.decryption.code" type="string" />
                     <preference id="mux.opus.audio.vp9" name="extensions.cys.mux.opus.audio.vp9" type="bool" />
+                    <preference id="mux.opus.audio.vp9.all" name="extensions.cys.mux.opus.audio.vp9.all" type="bool" />
+                    <preference id="mux.dash.video.highest.audio" name="extensions.cys.mux.dash.video.highest.audio" type="bool" />
+                    <preference id="mux.dash.video.highest.audio.all" name="extensions.cys.mux.dash.video.highest.audio.all" type="bool" />
+                    <preference id="ffmpeg.install.status" name="extensions.cys.ffmpeg.install.status" type="int" />
+                    <preference id="ffmpeg.advanced.input.enable" name="extensions.cys.ffmpeg.advanced.input.enable" type="string" />
+                    <preference id="ffmpeg.install.audio.only" name="extensions.cys.ffmpeg.install.audio.only" type="bool" />
+                    <preference id="ffmpeg.dir" name="extensions.cys.ffmpeg.dir" type="string"/>
 		</preferences>
-		<tabbox>
-                    <tabs id="tabs">
+		<tabbox flex="1">
+                    <arrowscrollbox orient="horizontal" flex="0">
+                    <tabs id="tabs" handleCtrlTab="true" flex="0" handleCtrlPageUpDown="true" orient="horizontal">
                         <tab label="&tab0.title;"/>
+                        <tab label="&tab7.title;"/>
                         <tab label="&tab1.title;"/>
                         <tab label="&tab2.title;"/>
                         <tab label="&tab3.title;"/>
@@ -597,7 +866,8 @@
                         <tab label="&tab5.title;"/>
                         <tab label="&tab6.title;"/>
                     </tabs>
-                    <tabpanels>
+                    </arrowscrollbox>
+                    <tabpanels flex="1">
                         <tabpanel orient="vertical">
                             <groupbox orient="horizontal">
                                 <caption label="&tab0.icon;"/>
@@ -620,17 +890,19 @@
                                                     <spacer width="20"/>
                                                     <vbox>
                                                         <menulist preference="button.left.click.open">
-                                                           <menupopup>
-                                                              <menuitem label="&tab0.button.click.open.details;" value="1"/>
-                                                              <menuitem label="&tab0.button.click.open.simple;" value="3"/>
-                                                           </menupopup>
+                                                            <menupopup>
+                                                                <menuitem label="&tab0.button.click.open.details;" value="1"/>
+                                                                <!-- <menuitem label="&tab0.button.click.open.simple;" value="3" hidden="true"/> -->
+                                                                <menuitem label="&tab0.button.click.open.options;" value="2"/>
+                                                            </menupopup>
                                                         </menulist>
                                                         <hbox></hbox>
                                                         <menulist preference="arrow.left.click.open">
-                                                           <menupopup>
-                                                              <menuitem label="&tab0.button.click.open.details;" value="1"/>
-                                                              <menuitem label="&tab0.button.click.open.simple;" value="3"/>
-                                                           </menupopup>
+                                                            <menupopup>
+                                                                <menuitem label="&tab0.button.click.open.details;" value="1" />
+                                                                <!-- <menuitem label="&tab0.button.click.open.simple;" value="3" hidden="true"/> -->
+                                                                <menuitem label="&tab0.button.click.open.options;" value="2"/>
+                                                            </menupopup>
                                                         </menulist>
                                                     </vbox>
                                                 </hbox>
@@ -647,51 +919,8 @@
                                     <vbox>
                                         <checkbox preference="icon.show.always" label="&tab0.icon.always;"/>
                                     </vbox>
-                                    <!--<spacer height="3"/>
-                                    <vbox>
-                                        <checkbox preference="icon.show.always" label="&tab0.icon.always;"/>
-                                        <spacer height="3"/>
-                                        <checkbox preference="detect.embedded.youtube.onnonyoutube" label="&tab0.detect.embedded.youtube;"/>
-                                    </vbox>-->
                                     </vbox>
 				</groupbox>
-                            <groupbox orient="vertical">
-						<caption label="&tab0.conversioncaption;"/>
-                  <vbox id="conversion-enabled" hidden="true">
-                     <spacer height="3"/>
-                     <hbox>
-                        <spacer flex="1"/><description id="ffmpeginstalled" class="header">&tab0.conversionenabled;</description><spacer flex="1"/>
-                        <button id="ffmpegchange" label="&tab0.ffmpeg-change;" oncommand="if (cysPrefDialog.resetMenus()){cysPrefDialog.locate_ffmpeg();window.location.reload(true);}"/><spacer flex="1"/>
-                        <checkbox id="tab0.ffmpeg.hideconsole" hidden="true" preference="ffmpeg.hideconsole" label="&tab0.ffmpeg.hideconsole;"/>
-                     </hbox>
-                     <spacer height="3"/>
-                     <vbox id="advanced-input-enabled" hidden="true">
-                     <description>&tab0.ffmpeg-advanced-input;</description>
-                     <spacer height="1"/>
-                     <hbox>
-                         <spacer flex="1"/>
-                         <textbox id="ffmpegadvancedinput" preference="ffmpeg.advanced.input"  placeholder="&tab0.ffmpeg-advanced-input-value;" size="45"/>
-                         <spacer flex="1"/>
-                         <button id="ffmpegadvancedinputreset" label="&ff.reset;" oncommand="if (cysPrefDialog.resetFFmpegAdvancedInput()){window.location.reload(true);}"/>
-                     </hbox>
-                     <spacer height="3"/>
-                     </vbox>
-                     <description>&tab0.converts0;</description>
-                     <spacer height="3"/>
-                     <description style="white-space:pre;">&tab0.converts1;</description>
-                  </vbox>
-                  <vbox id="conversion-disabled">
-                     <spacer height="5"/>
-                     <description class="header">&tab0.conversiondisabled;</description>
-                     <spacer height="5"/>
-                     <button label="&tab0.ffmpeg-locate;" oncommand="if (cysPrefDialog.resetMenus()){cysPrefDialog.locate_ffmpeg();window.location.reload(true);}"/>
-                     <spacer height="5"/>
-                     <separator orient="horizontal" class="groove-thin" />
-                     <vbox align="center">
-                        <label value="&tab0.ffmpeg-dl;" class="text-link" onclick="window.close();cysCommons.openUrl(cysCommons.getCysString('homepage',null)+cysCommons.getCysString('converterpage',null));" />
-                     </vbox>
-                  </vbox>
-					</groupbox>
                <spacer height="5" flex="1" />
                <hbox>
                   <!--<spacer width="10" /><checkbox preference="scan.hiddenformats" label="&tab0.scanhiddenformats;" />-->
@@ -700,126 +929,269 @@
                   <spacer flex="1" />
                   <!--<spacer width="10" />-->
                </hbox>
-				</tabpanel>
-				<tabpanel orient="vertical">
-               <grid flex="0">
-                  <columns><column flex="1"/><column flex="1"/></columns>
-                  <rows>
-                     <row>
-                        <label value="&tab1.click.file.title;"/>
-                        <menulist preference="dropdown.left.click.save.as">
-                           <menupopup>
-                              <menuitem label="&tab1.click.file.save.default;" value="1"/>
-                              <menuitem label="&tab1.click.file.save.as;" value="0"/>
-                           </menupopup>
-                        </menulist>
-                     </row>
-                     <row><spacer height="5"/><spacer height="5"/></row>
-                     <row align="top">
-         					<groupbox orient="vertical">
-         						<caption label="&tab1.quickmenu;"/>
-         						<scrollbox id="sbox1" flex="0" class="dragdroplist" style="width:19.2em; height:16em;">
-                              <grid flex="0">
-                                 <columns><column /><column flex="0" /></columns>
-                                 <rows id="quickmenurows"></rows>
-            						</grid>
-                           </scrollbox>
-                           <spacer height="5"/>
-                           <hbox class="centered">
-                              <label value="&tab1.qm.quality;" class="dtext"/>
-                              <menulist preference="quality.highest">
-                                 <menupopup>
-                                    <menuitem label="&tab1.qm.highest;" value="1"/>
-                                    <menuitem label="&tab1.qm.lowest;" value="0"/>
-                                 </menupopup>
-                              </menulist>
-                           </hbox>
-         					</groupbox>
-         					<groupbox orient="vertical">
-         						<caption label="&tab1.right.click.title;"/>
-         						<scrollbox id="sbox2" flex="0" class="dragdroplist" style="width:19.2em; height:16em;">
-                              <grid flex="0">
-                                 <columns><column flex="0" /></columns>
-                                 <rows id="submenurows"></rows>
-            						</grid>
-                           </scrollbox>
-                           <spacer height="5"/>
-                           <hbox id="aacm4a" class="centered" hidden="true">
-                              <label value="&tab1.aac;" class="dtext"/>
-                              <spacer flex="1"/>
-                              <menulist preference="aac.as.m4a">
-                                 <menupopup>
-                                    <menuitem label="&tab1.aac.m4a;" value="true"/>
-                                    <menuitem label="&tab1.aac.aac;" value="false"/>
-                                 </menupopup>
-                              </menulist>
-                           </hbox>
-         					</groupbox>
-                     </row>
-                  </rows>
-               </grid>
-               <hbox pack="center">
-                  <label class="slanted dtext" value="&tab2.dragdrophelp;" />
-               </hbox>
-				</tabpanel>
+            </tabpanel>
+            <tabpanel orient="vertical" id="ffmpegpanel">
+                <groupbox orient="vertical">
+                    <caption label="&tab7.icon;"/>
+                    <vbox flex="1">
+                        <hbox align="top" pack="center">
+                            <spacer flex="1"/>
+                            <row id="ffmpegnotinst" hidden="false">
+                                <image src="chrome://completeyoutubesaver/skin/cys-warning-color.png"/>
+                                <spacer width="20"/>
+                                <label>&tab7.label.notinstalled;</label>
+                            </row>
+                            <row id="ffmpeginst" hidden="true">
+                                <image src="chrome://completeyoutubesaver/skin/sign-check-icon.png"/>
+                                <spacer width="20"/>
+                                <label>&tab7.label.installed;</label>
+                            </row>
+                            <spacer flex="1"/>
+                        </hbox>
+                        <spacer height="8"/>
+                        <label style="text-align:justify">&tab7.info;</label>
+                        <spacer height="8"/>
+                        <label>&tab7.question;</label>
+                        <spacer height="8"/>
+                        <vbox id="ffmpegpanel-radio">
+                            <vbox id="ffmpegradiofornotinstall" hidden="false">
+                                <radiogroup id="ffmpeg" preference="ffmpeg.install.status">
+                                    <radio valign="top" class="topped" label="&tab7.radio.install;" value="1"/>
+                                    <hbox flex="0" pack="center">
+                                        <vbox>
+                                            <button align="center" pack="center" label="&tab7.button.downloaded;" oncommand="if (cysPrefDialog.resetFFmpeg()){cysPrefDialog.locate_ffmpeg();cysPrefDialog.dataUpdate();}"/>
+                                            <button align="center" pack="center" label="&tab7.button.need;" oncommand="cysPrefDialog.installDialog();"/>
+                                        </vbox>
+                                    </hbox>
+                                    <spacer height="8"/>
+                                    <radio valign="top" class="topped" label="&tab7.radio.nodash;" value="2"/>
+                                    <spacer height="8"/>
+                                    <radio valign="top" class="topped" label="&tab7.radio.no;" value="0"/>
+                                </radiogroup>
+                            </vbox>
+                            <vbox id="ffmpegradioforinstall" hidden="true">
+                                <radiogroup id="ffmpeg" preference="ffmpeg.install.status" onselect="cysPrefDialog.refreshFormats();">
+                                    <radio valign="top" class="topped" label="&tab7.radio.enable;" value="1"/>
+                                    <hbox>
+                                        <spacer width="40"/>
+                                        <vbox flex="1" pack="center">
+                                            <hbox  flex="1">
+                                                <vbox align="center">
+                                                    <spacer flex="1"/>
+                                                    <label>&tab7.label.location;:</label>
+                                                    <spacer flex="1"/>
+                                                </vbox>
+                                                <spacer width="8"/>
+                                                <textbox preference="ffmpeg.dir" type="text" flex="1" readonly="true"/>
+                                                <spacer width="8"/>
+                                                <hbox flex="0">
+                                                    <button id="ffmpegbrowse" label="" tooltiptext="&tab3.browse;" oncommand="if (cysPrefDialog.resetFFmpeg()){cysPrefDialog.locate_ffmpeg();cysPrefDialog.dataUpdate();}"/>
+                                                </hbox>
+                                            </hbox>
+                                            <hbox>
+                                                <checkbox id="tab7.ffmpeg.hideconsole" hidden="false" preference="ffmpeg.hideconsole" label="&tab0.ffmpeg.hideconsole;"/>
+                                                <image src="chrome://completeyoutubesaver/skin/i-icon.png" width='15px' height='20px' vspace="3px" tooltiptext='Unhide console window to see FFmpeg progress'/>
+                                            </hbox>
+                                        </vbox>
+                                    </hbox>
+                                    <spacer height="8"/>
+                                    <vbox>
+                                        <radio valign="top" class="topped" label="&tab7.radio.disabledash;" value="2"/>
+                                        <hbox>
+                                            <spacer width="40"/>
+                                            <checkbox id="tab7.ffmpeg.install.audio.only" hidden="false" preference="ffmpeg.install.audio.only" label="&tab7.checkbox.audio.only;" oncommand="cysPrefDialog.refreshFormats(true);"/>
+                                        </hbox>
+                                    </vbox>
+                                    <spacer height="8"/>
+                                    <radio valign="top" class="topped" label="&tab7.radio.disable;" value="0"/>
+                                </radiogroup>
+                            </vbox>
+                        </vbox>
+                    </vbox>
+                </groupbox>
+                <groupbox orient="vertical" hidden="true" id="advanced-input-enabled">
+                    <caption label="&tab7.label.arguments;:"/>
+                    <hbox flex="1">
+                        <spacer width="40"/>
+                        <textbox id="ffmpegadvancedinput" preference="ffmpeg.advanced.input" placeholder="&tab7.placeholder.arguments;" size="45" flex="1"/>
+                        <spacer width="40"/>
+                        <button label="&tab7.button.reset;" oncommand="if (cysPrefDialog.resetFFmpegAdvancedInput()){return true;}"/>
+                    </hbox>
+                </groupbox>
+            </tabpanel>
+	    <tabpanel orient="vertical">
+                <vbox flex="0">
+                    <hbox flex="1">
+                        <vbox flex="1">
+                            <label value="&tab1.click.file.title;"/>
+                            <spacer height="5"/>
+                            <groupbox orient="vertical" flex="1">
+                                <caption label="&tab1.right.click.title;"/>
+                                <scrollbox id="sbox2" flex="1" class="dragdroplist" >
+                                    <grid flex="1">
+                                        <columns><column flex="0" /></columns>
+                                        <rows id="submenurows"></rows>
+                                    </grid>
+                                </scrollbox>
+                                <spacer height="5"/>
+                                <hbox id="aacm4a" class="centered" hidden="true">
+                                    <label value="&tab1.aac;" class="dtext"/>
+                                    <spacer flex="1"/>
+                                    <menulist preference="aac.as.m4a">
+                                        <menupopup>
+                                            <menuitem label="&tab1.aac.m4a;" value="true"/>
+                                            <menuitem label="&tab1.aac.aac;" value="false"/>
+                                        </menupopup>
+                                    </menulist>
+                                </hbox>
+                            </groupbox>
+                        </vbox>
+                        <vbox flex="1" width="270">
+                            <menulist preference="dropdown.left.click.save.as" style="width:30%; max-width: 30%">
+                                <menupopup>
+                                    <menuitem label="&tab1.click.file.save.default;" value="1"/>
+                                    <menuitem label="&tab1.click.file.save.as;" value="0"/>
+                                </menupopup>
+                            </menulist>
+                            <spacer height="5"/>
+                            <groupbox orient="vertical" flex="1" style="-moz-appearance:none;-moz-border:0;border:0;max-width:30%">
+                                <caption label=""/>
+                                <label style="font-style:italic;">&tab1.text;<label id="ffrequired"> &tab1.ffrequired;</label>.</label>
+                            </groupbox>
+                        </vbox>
+                    </hbox>
+                </vbox>
+                <grid flex="1" hidden="true">
+                    <columns flex="1">
+                        <column flex="1"/>
+                        <column style="max-width:40%"/>
+                    </columns>
+                    <rows flex="1">
+                        <row flex="0">
+                            <label value="&tab1.click.file.title;"/>
+                            <menulist preference="dropdown.left.click.save.as" style="width:30%; max-width: 30%">
+                                <menupopup>
+                                    <menuitem label="&tab1.click.file.save.default;" value="1"/>
+                                    <menuitem label="&tab1.click.file.save.as;" value="0"/>
+                                </menupopup>
+                            </menulist>
+                        </row>
+                        <row flex="0">
+                            <spacer height="5"/>
+                            <spacer height="5"/>
+                        </row>
+                        <row align="top" flex="1">
+                            <groupbox orient="vertical" hidden="true" flex="1">
+                                <caption label="&tab1.quickmenu;"/>
+                                <scrollbox id="sbox1" flex="0" class="dragdroplist" style="width:19.2em; height:16em;">
+                                    <grid flex="0">
+                                        <columns><column /><column flex="0" /></columns>
+                                        <rows id="quickmenurows"></rows>
+                                    </grid>
+                                </scrollbox>
+                                <spacer height="5"/>
+                                <hbox class="centered">
+                                    <label value="&tab1.qm.quality;" class="dtext"/>
+                                    <menulist preference="quality.highest">
+                                        <menupopup>
+                                            <menuitem label="&tab1.qm.highest;" value="1"/>
+                                            <menuitem label="&tab1.qm.lowest;" value="0"/>
+                                        </menupopup>
+                                    </menulist>
+                                </hbox>
+                            </groupbox>
+                            <groupbox orient="vertical" flex="1">
+                                <caption label="&tab1.right.click.title;"/>
+                                <scrollbox id="sbox2" flex="1" class="dragdroplist" >
+                                    <grid flex="1">
+                                        <columns><column flex="0" /></columns>
+                                        <rows id="submenurows"></rows>
+                                    </grid>
+                                </scrollbox>
+                                <spacer height="5"/>
+                                <hbox id="aacm4a" class="centered" hidden="true">
+                                    <label value="&tab1.aac;" class="dtext"/>
+                                    <spacer flex="1"/>
+                                    <menulist preference="aac.as.m4a">
+                                        <menupopup>
+                                            <menuitem label="&tab1.aac.m4a;" value="true"/>
+                                            <menuitem label="&tab1.aac.aac;" value="false"/>
+                                        </menupopup>
+                                    </menulist>
+                                </hbox>
+                            </groupbox>
+                            <groupbox orient="vertical" flex="1" style="-moz-appearance:none;-moz-border:0;border:0;max-width:30%">
+                                <caption label=""/>
+                                <label style="font-style:italic;">&tab1.text;<label id="ffrequired"> &tab1.ffrequired;</label>.</label>
+                            </groupbox>
+                        </row>
+                    </rows>
+                </grid>
+                <hbox pack="center">
+                    <label class="slanted dtext" value="&tab2.dragdrophelp;" />
+                </hbox>
+            </tabpanel>
             <tabpanel orient="vertical" flex="1">
-					<groupbox orient="vertical" flex="1">
-                  <caption label="&tab2.detailed;"/>
-						<scrollbox id="sbox3" class="dragdroplist" flex="0" style="height:19em;">
+                <groupbox orient="vertical" flex="1">
+                    <caption label="&tab2.detailed;"/>
+                    <scrollbox id="sbox3" class="dragdroplist" flex="1" style="height:19em;">
                      <grid flex="1">
                         <columns>
-   								<column />
-   								<column flex="1" />
-                           <column flex="1" />
-                           <column flex="1" />
-   								<column flex="1" />
-                           <column flex="1" />
-                           <column flex="1" />                        
+                            <column />
+                            <column flex="1" />
+                            <column flex="1" />
+                            <column flex="1" />
+                            <column flex="1" />
+                            <column flex="1" />
+                            <column flex="1" />
                         </columns>
                         <rows id="detailrows" flex="1">
                            <row>
-                              <hbox/>
-   									<hbox>
-   										<hbox flex="1"/>
-   										   <checkbox id="fmtCol" preference="fmt.col.enabled" tooltiptext="&tab2.fmtcol;"/>
-   										<hbox flex="1"/>
-   									</hbox>
-   									<hbox>
-   										<hbox flex="1"/>
-   										   <checkbox id="typeCol" preference="type.col.enabled" tooltiptext="&tab2.typecol;"/>
-   										<hbox flex="1"/>
-   									</hbox>
-   									<hbox>
-   										<hbox flex="1"/>
-   										   <checkbox id="typenameCol" preference="typename.col.enabled" tooltiptext="&tab2.typenamecol;"/>
-   										<hbox flex="1"/>
-   									</hbox>
-   									<hbox>
-   										<hbox flex="1"/>
-   										   <checkbox id="pCol" preference="p.col.enabled" tooltiptext="&tab2.pcol;"/>
-   										<hbox flex="1"/>
-   									</hbox>
-   									<hbox>
-   										<hbox flex="1"/>
-   										   <checkbox id="resolutionCol" preference="resolution.col.enabled" tooltiptext="&tab2.resolutioncol;"/>
-   										<hbox flex="1"/>
-   									</hbox>
-   									<hbox>
-   										<hbox flex="1"/>
-   										   <checkbox id="soundCol" preference="sound.col.enabled" tooltiptext="&tab2.soundcol;"/>
-   										<hbox flex="1"/>
-   									</hbox>
-   									<hbox>
-   										<hbox flex="1"/>
-   										   <checkbox id="sizeCol" preference="size.col.enabled" tooltiptext="&tab2.sizecol;"/>
-   										<hbox flex="1"/>
-   									</hbox>
+                                <hbox/>
+                                <hbox>
+                                    <hbox flex="1"/>
+                                       <checkbox id="fmtCol" preference="fmt.col.enabled" tooltiptext="&tab2.fmtcol;"/>
+                                    <hbox flex="1"/>
+                                </hbox>
+                                <hbox>
+                                    <hbox flex="1"/>
+                                       <checkbox id="typeCol" preference="type.col.enabled" tooltiptext="&tab2.typecol;"/>
+                                    <hbox flex="1"/>
+                                </hbox>
+                                <hbox>
+                                    <hbox flex="1"/>
+                                       <checkbox id="typenameCol" preference="typename.col.enabled" tooltiptext="&tab2.typenamecol;"/>
+                                    <hbox flex="1"/>
+                                </hbox>
+                                <hbox>
+                                    <hbox flex="1"/>
+                                       <checkbox id="pCol" preference="p.col.enabled" tooltiptext="&tab2.pcol;"/>
+                                    <hbox flex="1"/>
+                                </hbox>
+                                <hbox>
+                                    <hbox flex="1"/>
+                                       <checkbox id="resolutionCol" preference="resolution.col.enabled" tooltiptext="&tab2.resolutioncol;"/>
+                                    <hbox flex="1"/>
+                                </hbox>
+                                <hbox>
+                                    <hbox flex="1"/>
+                                       <checkbox id="soundCol" preference="sound.col.enabled" tooltiptext="&tab2.soundcol;"/>
+                                    <hbox flex="1"/>
+                                </hbox>
+                                <hbox>
+                                    <hbox flex="1"/>
+                                       <checkbox id="sizeCol" preference="size.col.enabled" tooltiptext="&tab2.sizecol;"/>
+                                    <hbox flex="1"/>
+                                </hbox>
                            </row>
                         </rows>
-   						</grid>
-                  </scrollbox>
-                  <spacer height="5px"/>
-                  <checkbox id="showbestonly" preference="dropdown.showbestonly" label="&tab2.showbestonly;" hidden="true"/>
+                     </grid>
+                    </scrollbox>
+                    <spacer height="5px"/>
+                    <hbox>
+                        <checkbox id="showbestonly" preference="dropdown.showbestonly" label="&tab2.showbestonly;"/>
+                        <checkbox id="showdashaudio" preference="dropdown.showdashaudio" label="&tab2.dashaudio;" oncommand="return cysPrefDialog.refreshFormats();"/>
+                    </hbox>
                   <!--<spacer height="5px"/>
                   <checkbox id="fullvideotitle" preference="dropdown.fullvideotitle" label="&tab2.fullvideotitle;" hidden="false"/>-->
                   <spacer height="5px"/>
@@ -831,25 +1203,25 @@
                      <label class="slanted header" value="&tab2.noteforaudio2;"/>
                   </hbox>
 		</groupbox>
-               <hbox pack="center">
-                  <label class="slanted dtext" value="&tab2.dragdrophelp;"/>
-               </hbox>
-				</tabpanel>
-				<tabpanel orient="vertical">
-					<groupbox orient="horizontal">
-						<caption label="&tab3.save.in;"/>
-						<hbox flex="1">
-                     <textbox preference="default.download.dir" type="text" flex="1" id="savedir"/>
-                  </hbox>
-                  <hbox flex="0">
-						   <button id="fbrowse" label="..." tooltiptext="&tab3.browse;" oncommand="cysPrefDialog.getsaveDir();"/>
-                  </hbox>
-					</groupbox>
-					<groupbox orient="vertical">
+                <hbox pack="center">
+                   <label class="slanted dtext" value="&tab2.dragdrophelp;"/>
+                </hbox>
+            </tabpanel>
+            <tabpanel orient="vertical">
+                <groupbox orient="horizontal">
+                        <caption label="&tab3.save.in;"/>
+                        <hbox flex="1">
+                            <textbox preference="default.download.dir" type="text" flex="1" id="savedir"/>
+                        </hbox>
+                        <hbox flex="0">
+                           <button id="fbrowse" label="..." tooltiptext="&tab3.browse;" oncommand="cysPrefDialog.getsaveDir();"/>
+                        </hbox>
+                </groupbox>
+		<groupbox orient="vertical">
                   <caption label="&tab3.download.misc;"/>
                     <hbox>
-                        <vbox>  
-                            <spacer height="2"/>                    
+                        <vbox>
+                            <spacer height="2"/>
                         <checkbox preference="save.subtitles" label="&tab3.save.subtitles;" id="cys-save-subtitle" hidden="false" oncommand="cysPrefDialog.toggle_subtitle_related_elem();"/>
                         </vbox>
                       <spacer width="10"/>
@@ -888,11 +1260,8 @@
                              <menuitem label="Urdu" value="ur"/>
                           </menupopup>
                       </menulist>
-                      
-                      
                       </vbox>
                     </hbox>
-                  
                     <hbox>
                         <spacer width="19" /><checkbox preference="ignore.auto.subtitles" label="&tab3.ignore.auto.subtitles;" id="cys-ignore-auto-subtitles" hidden="true"/>
                     </hbox>
@@ -903,22 +1272,23 @@
                   <checkbox preference="save.dta" label="&tab3.save.dta;" id="cys-save-dta" hidden="true"/>
                   <!-- DTA!!!    -->
                </groupbox>
-					<groupbox orient="vertical">
+		<groupbox orient="vertical">
+				
                   <caption label="&tab3.download.options;"/>
                   <!--<hbox>
                   <checkbox preference="save.stats" label="&tab3.save.stats;" />
                   </hbox>-->
-                  <hbox>
+                  <hbox >
                       <hbox align="center">
-                     <checkbox preference="save.comments" label="&tab3.save.comments;" />
-                     <image src="chrome://completeyoutubesaver/skin/i-icon.png" width='15px' height='20px' vspace="3px" tooltiptext='To quickly resave comments viewed, right click the page and select "Save Comments Viewed to Last Project Folder". If CYS hangs, lower the amount of comments saved.'/>
+					 <checkbox preference="save.comments" label="&tab3.save.comments;" />
+					 <image src="chrome://completeyoutubesaver/skin/i-icon.png" width='15px' height='20px' vspace="3px" tooltiptext='To quickly resave comments viewed, right click the page and select "Save More Comments to Last Project Folder". If CYS hangs, lower the amount of comments saved.'/>
                       </hbox>
                       <spacer width="1px"/>
-                      <hbox align="center">
-                     <label value="Max: "/>
-                     <textbox type="number" preference="save.comments.count" label="Max: " increment="50" min="50" max="2000" width="60px" />
+                      <hbox align="center" >
+					  <label value="Max: "/>
+                     <textbox type="number" preference="save.comments.count" label="Max: " increment="50" min="100" max="2000" width="60px" />
                       </hbox>
-                     
+
                      <!--<spacer flex="1"/>
                      <radiogroup orient="horizontal" preference="save.comments.relevant">
                         <radio label="&tab3.save.comments.relevant;" value="true"/>
@@ -932,193 +1302,439 @@
                      <spacer flex="1"/>
                      <hbox flex="0">
 
-                     </hbox>
-                     <hbox flex="0">
-                        <vbox>
-                           <spacer flex="1"/>
-                           <textbox preference="save.comments.numpages" type="number" size="3" min="1" max="9999" flex="0"/>
-                        </vbox>
-                     </hbox>
-                     <spacer flex="8"/>
-                  </hbox>
-                  <separator class="thin" />
-                  <hbox>
-                     <spacer flex="1"/>
-                     <vbox>
-                        <spacer flex="1"/>
-                        <label value="&tab3.save.comments.threads;" class="dtext"/>
-                        <spacer flex="1"/>
-                     </vbox>
-                     <textbox preference="save.comments.threads" type="number" size="1" min="1" max="10" flex="0"/>
-                     <spacer flex="4"/>
-                  </hbox>
-                  -->
-                  <checkbox preference="save2last.useprojectname" label="&tab3.save2last.useprojectname;" />
-               </groupbox>
-            </tabpanel>
-				<tabpanel orient="vertical">
-					<groupbox orient="vertical">
-                  <caption label="&tab4.folders;"/>
-                  <radiogroup preference="savefolders.custom">				      
-                     <radio label="&tab4.folders.custom;" value="1"/>
-                     <hbox>
-                        <spacer flex="1" width="16"/>
-                        <hbox flex="4">
-                           <listbox rows="10" id="folderlist" flex="1" style="width:28em;" >
-                           </listbox>
+                           </hbox>
                            <hbox flex="0">
                               <vbox>
-                                 <button class="folderbutton" label="+" tooltiptext="&tab4.flist.add;" oncommand="cysPrefDialog.manageFlist('+');"/>                            
-                                 <button class="folderbutton" label="–" tooltiptext="&tab4.flist.del;" oncommand="cysPrefDialog.manageFlist('-');"/>
-                                 <button class="folderbutton" id="flistup" tooltiptext="&tab4.flist.up;" oncommand="cysPrefDialog.manageFlist('-1');"/>                            
-                                 <button class="folderbutton" id="flistdown" tooltiptext="&tab4.flist.down;" oncommand="cysPrefDialog.manageFlist('1');"/>                                                                                       
+                                 <spacer flex="1"/>
+                                 <textbox preference="save.comments.numpages" type="number" size="3" min="1" max="9999" flex="0"/>
                               </vbox>
                            </hbox>
-                        </hbox> 
-                     </hbox>
- 				         <vbox>
-                        <label value=" " />
-                     </vbox>
-                     <hbox>
-                        <radio label="&tab4.folders.recent;" value="0"/>
-                        <spacer width="16"/>
-                        <button label="&tab4.folders.reset;" oncommand="cysCommons.cysPrefs.setCharPref('folders.list.history', '');"/>
-                     </hbox>
-                     <hbox>
-                        <spacer width="16"/>
-                        <checkbox preference="savefolders.custom.track" label="&tab4.folders.custom.track;" />
-                     </hbox>
-                  </radiogroup>
-				   </groupbox>
-            </tabpanel>
-            <tabpanel orient="vertical">
-                <groupbox orient="vertical">
-                    <caption label="&tab5.format;"/>
-                    <hbox flex="1">
-                        <menulist id="filenaminghistorybox" editable="true" preference="filenaming.tags"  oncommand="cysPrefDialog.manageToolTip();" oninput="cysPrefDialog.manageToolTip();" flex="20" placeholder="&tab5.filenaming.tags.placeholder;">
-                           <menupopup/>
+                           <spacer flex="8"/>
+                        </hbox>
+                        <separator class="thin" />
+                        <hbox>
+                           <spacer flex="1"/>
+                           <vbox>
+                              <spacer flex="1"/>
+                              <label value="&tab3.save.comments.threads;" class="dtext"/>
+                              <spacer flex="1"/>
+                           </vbox>
+                           <textbox preference="save.comments.threads" type="number" size="1" min="1" max="10" flex="0"/>
+                           <spacer flex="4"/>
+                        </hbox>
+                        -->
+                        <checkbox preference="save2last.useprojectname" label="&tab3.save2last.useprojectname;" />
+                    </groupbox>
+                </tabpanel>
+                <tabpanel orient="vertical">
+                    <groupbox orient="vertical">
+                        <caption label="&tab4.folders;"/>
+                        <radiogroup preference="savefolders.custom">
+                            <radio label="&tab4.folders.custom;" value="1"/>
+                            <hbox>
+                                <spacer flex="1" width="16"/>
+                                <hbox flex="4">
+                                    <listbox rows="10" id="folderlist" flex="1" style="width:28em;" >
+                                    </listbox>
+                                    <hbox flex="0">
+                                        <vbox>
+                                            <button class="folderbutton" label="+" tooltiptext="&tab4.flist.add;" oncommand="cysPrefDialog.manageFlist('+');"/>
+                                            <button class="folderbutton" label="–" tooltiptext="&tab4.flist.del;" oncommand="cysPrefDialog.manageFlist('-');"/>
+                                            <button class="folderbutton" id="flistup" tooltiptext="&tab4.flist.up;" oncommand="cysPrefDialog.manageFlist('-1');"/>
+                                            <button class="folderbutton" id="flistdown" tooltiptext="&tab4.flist.down;" oncommand="cysPrefDialog.manageFlist('1');"/>
+                                        </vbox>
+                                    </hbox>
+                                </hbox>
+                            </hbox>
+                            <vbox>
+                                <label value=" " />
+                            </vbox>
+                            <hbox>
+                                <radio label="&tab4.folders.recent;" value="0"/>
+                                <spacer width="16"/>
+                                <button label="&tab4.folders.reset;" oncommand="cysCommons.cysPrefs.setCharPref('folders.list.history', '');"/>
+                            </hbox>
+                            <hbox>
+                                <spacer width="16"/>
+                                <checkbox preference="savefolders.custom.track" label="&tab4.folders.custom.track;" />
+                            </hbox>
+                        </radiogroup>
+                    </groupbox>
+                </tabpanel>
+                <tabpanel orient="vertical" flex="1">
+                    <groupbox orient="vertical" flex="1">
+                        <caption label="&tab5.format;"/>
+                        <scrollbox orient="vertical" id="sbox4" flex="1">
+                            <hbox flex="0">
+                                <menulist id="filenaminghistorybox" editable="true" preference="filenaming.tags"  oncommand="cysPrefDialog.manageToolTip();" oninput="cysPrefDialog.manageToolTip();" flex="20" placeholder="&tab5.filenaming.tags.placeholder;">
+                                    <menupopup/>
+                                </menulist>
+                                <button id="resetfilenamehistorybox" label="&ff.reset;" flex="1" tooltiptext="&tab5.filenaming.button.tooltip;" oncommand="cysPrefDialog.resetFileNameHistoryBox();"/>
+                            </hbox>
+                            <spacer height="5"/>
+                            <vbox flex="1">
+                                <grid flex="1" style="overflow:auto; height:40vh;">
+                                    <columns>
+                                        <column flex="1"/>
+                                        <column flex="1"/>
+                                        <column flex="1"/>
+                                        <column flex="1"/>
+                                        <column flex="1"/>
+                                        <column flex="1"/>
+                                        <column flex="1"/>
+                                    </columns>
+                                    <rows>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <label value="Tag" class="headingoftag" />
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Example" class="headingoftag" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <label value="Tag" class="headingoftag" />
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Example" class="headingoftag" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[filename]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Filename" class="header filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[fmt_code]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Fmt299" class="remove_right_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[video_id]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Video ID" class="header boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[audio_bitrate]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="192K" class="remove_right_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[author]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Author Name" class="header boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[resolution]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="1080p" class="remove_right_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[duration]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label id="duration_label_id" value="1h04m03s" class="header boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[browser]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="FF" class="remove_right_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[channel_id]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="UC_5Xxxxxxxxxxx" class="header filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[cys_version]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="v5635" class="remove_right_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[dash_video]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="DASH" class="header filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[60fps]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="60fps" class="remove_right_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[pub-mmm]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Fri" class="remove_right_margin_padding filenaming_label" />
+                                                <label value=" Jan " class="remove_all_margin_padding boldfont filenaming_label" />
+                                                <label class="remove_left_margin_padding filenaming_label" value="01 2016" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[mmm]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Fri" class="remove_right_margin_padding filenaming_label" />
+                                                <label value=" Jan " class="remove_all_margin_padding boldfont filenaming_label" />
+                                                <label class="remove_left_margin_padding filenaming_label" value="01 2016" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[pub-mm]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label id="month_format_id1" class="remove_right_margin_padding boldfont filenaming_label" value="1" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="day_format_id1" class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="01" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="year_format_id1" class="remove_left_margin_padding filenaming_label" value="16" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[mm]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label id="month_format_id2" class="remove_right_margin_padding boldfont filenaming_label" value="1" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="day_format_id2" class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="01" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="year_format_id2" class="remove_left_margin_padding filenaming_label" value="16" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[pub-ddd]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Fri" class="remove_right_margin_padding boldfont filenaming_label" />
+                                                <label value=" Jan " class="remove_all_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding filenaming_label" value="01 2016" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[ddd]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label value="Fri" class="remove_right_margin_padding boldfont filenaming_label" />
+                                                <label value=" Jan " class="remove_all_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding filenaming_label" value="01 2016" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[pub-dd]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label id="month_format_id3" value="1" class="remove_right_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="day_format_id3" value="01" class="remove_all_margin_padding boldfont filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="year_format_id3" class="remove_left_margin_padding filenaming_label" value="16" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[dd]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label id="month_format_id4" value="1" class="remove_right_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="day_format_id4" value="01" class="remove_all_margin_padding boldfont filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="year_format_id4" class="remove_left_margin_padding filenaming_label" value="16" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[pub-yyyy]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label id="month_format_id7" value="1" class="remove_right_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="day_format_id7" value="01" class="remove_left_margin_padding remove_right_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label value="2016" class="remove_all_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[yyyy]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label id="month_format_id8" value="1" class="remove_right_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="day_format_id8" value="01" class="remove_all_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label value="2016" class="remove_all_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                        <row>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[pub-yy]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label id="month_format_id5" value="1" class="remove_right_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="day_format_id5" value="01" class="remove_all_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="year_format_id5" value="16" class="remove_all_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                            <hbox>
+                                                <button flex="1" label="[yy]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/>
+                                            </hbox>
+                                            <hbox>
+                                                <label id="month_format_id6" value="1" class="remove_right_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="day_format_id6" value="01" class="remove_all_margin_padding filenaming_label" />
+                                                <label class="remove_left_margin_padding remove_right_margin_padding filenaming_label" value="-" />
+                                                <label id="year_format_id6" value="16" class="remove_all_margin_padding boldfont filenaming_label" />
+                                            </hbox>
+                                            <hbox></hbox>
+                                        </row>
+                                    </rows>
+                                </grid>
+                            </vbox>
+                        </scrollbox>
+                    </groupbox>
+                    <groupbox orient="horizontal" align="baseline">
+                        <caption label="&tab5.tagoptions;"/>
+                        <label value="&tab5.tagoptions.dates;"/>
+                        <menulist preference="tagoptions.dates" flex="1">
+                            <menupopup>
+                                <menuitem id="data_format_id1" label="01-01-16" value="1" oncommand="cysPrefDialog.setNewDate('01-01-16')"/>
+                                <menuitem id="data_format_id2" label="1-01-16" value="2" oncommand="cysPrefDialog.setNewDate('1-01-16')"/>
+                                <menuitem id="data_format_id3" label="1-1-16" value="3" oncommand="cysPrefDialog.setNewDate('1-1-16')"/>
+                            </menupopup>
                         </menulist>
-                        <button id="resetfilenamehistorybox" label="&ff.reset;" flex="1" tooltiptext="&tab5.filenaming.button.tooltip;" oncommand="cysPrefDialog.resetFileNameHistoryBox();"/>
-                    </hbox>
-                    <spacer height="5"/>
-                    <vbox >
-                        <grid flex="1"> 
-                           <columns>
-                              <column flex="1"/>
-                              <column flex="1"/>
-                              <column flex="1"/>
-                              <column flex="1"/>
-                              <column flex="1"/>
-                              <column flex="1"/>
-                              <column flex="1"/>
-                           </columns>
-                           <rows>
-                              <row>
-                                 <hbox></hbox>
-                                 <hbox><label value="Tag" class="headingoftag" /></hbox>
-                                 <hbox><label value="Example" class="headingoftag" /></hbox>
-                                 <hbox></hbox>
-                                 <hbox><label value="Tag" class="headingoftag" /></hbox>
-                                 <hbox><label value="Example" class="headingoftag" /></hbox>
-                                 <hbox></hbox>
-                              </row>
-                              <row>
-                                 <hbox></hbox>
-                                 <hbox><button label="[filename]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="Filename" class="header filenaming_label" /></hbox>
-                                 <hbox></hbox>
-                                 <hbox><button label="[day-abrv]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="Mon" class="remove_right_margin_padding boldfont filenaming_label" /><label class="remove_left_margin_padding filenaming_label" value=" Nov 30 2014" /></hbox>
-                                 <hbox></hbox>
-                              </row>
-                              <row>
-                                 <hbox></hbox>
-                                 <hbox><button label="[video_id]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="Video ID" class="header filenaming_label" /></hbox>
-                                 <hbox></hbox>
-                                 <hbox><button label="[day]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="11-" class="remove_right_margin_padding filenaming_label" /><label value="30" class="remove_all_margin_padding boldfont filenaming_label" /><label class="remove_left_margin_padding filenaming_label" value="-2014" /></hbox>
-                                 <hbox></hbox>
-                              </row>
-                              <row>
-                                 <hbox></hbox>
-                                 <hbox><button label="[author]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="Author Name" class="header filenaming_label" /></hbox>
-                                 <hbox></hbox>
-                                 <hbox><button label="[year-xxxx]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="11-30-" class="remove_right_margin_padding filenaming_label" /><label value="2014" class="remove_all_margin_padding boldfont filenaming_label" /></hbox>
-                                 <hbox></hbox>
-                              </row>
-                              <row>
-                                 <hbox></hbox>
-                                 <hbox><button label="[published_date]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="Apr 12, 2014" class="header filenaming_label" /></hbox>
-                                 <hbox></hbox>
-                                 <hbox><button label="[year-xx]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="11-30-" class="remove_right_margin_padding filenaming_label" /><label value="14" class="remove_all_margin_padding boldfont filenaming_label" /></hbox>
-                                 <hbox></hbox>
-                              </row>
-                              <row>
-                                 <hbox></hbox>
-                                 <hbox><button label="[month-abrv]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="Mon" class="remove_right_margin_padding filenaming_label" /><label value=" Nov " class="remove_all_margin_padding boldfont filenaming_label" /><label class="remove_left_margin_padding filenaming_label" value="30 2014" /></hbox>
-                                 <hbox></hbox>
-                                 <hbox><button label="[duration]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="1h04m03s" class="header filenaming_label" /></hbox>
-                                 <hbox></hbox>
-                              </row>
-                              <row>
-                                 <hbox></hbox>
-                                 <hbox><button label="[month]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="11" class="remove_right_margin_padding boldfont filenaming_label" /><label class="remove_left_margin_padding filenaming_label" value="-30-2014"  /></hbox>
-                                 <hbox></hbox>
-                                 <hbox><button label="[channel_id]" class="remove_all_margin_padding filebutton" oncommand="cysPrefDialog.setFileNameBoxText(event);"/></hbox>
-                                 <hbox><label value="UC_5Xxxxxxxxxxx" class="header filenaming_label" /></hbox>
-                                 <hbox></hbox>
-                              </row>
-                           </rows>
-                        </grid>
-                    </vbox>
-                </groupbox>
-                <groupbox orient="vertical">
-                    <caption label="&tab5.forreplaced; &tab5.forreplaced.use;"/>
-                    <radiogroup preference="forreplaced.character">
+                        <label value="&tab5.tagoptions.duration;"/>
+                        <menulist preference="tagoptions.duration" flex="1">
+                            <menupopup>
+                                <menuitem id="duration_format_id1" label="01h04m03s" value="1" oncommand="cysPrefDialog.setNewDuration('01h04m03s')"/>
+                                <menuitem id="duration_format_id2" label="1h04m03s" value="2" oncommand="cysPrefDialog.setNewDuration('1h04m03s')"/>
+                                <menuitem id="duration_format_id3" label="1h4m3s" value="3" oncommand="cysPrefDialog.setNewDuration('1h4m3s')"/>
+                                <menuitem id="duration_format_id4" label="01h04m" value="4" oncommand="cysPrefDialog.setNewDuration('01h04m')"/>
+                                <menuitem id="duration_format_id5" label="1h04m" value="5" oncommand="cysPrefDialog.setNewDuration('1h04m')"/>
+                                <menuitem id="duration_format_id6" label="1h4m" value="6" oncommand="cysPrefDialog.setNewDuration('1h4m')"/>
+                            </menupopup>
+                        </menulist>
+                    </groupbox>
+                    <groupbox orient="vertical">
+                        <caption label="&tab5.forreplaced; &tab5.forreplaced.use;"/>
+                        <menulist preference="forreplaced.character">
+                            <menupopup>
+                                <menuitem label="&tab5.forreplaced.option1; &tab5.forreplaced.option1.example;" value="1"/>
+                                <menuitem label="&tab5.forreplaced.option2; &tab5.forreplaced.option2.example;" value="2"/>
+                                <menuitem label="&tab5.forreplaced.option3; &tab5.forreplaced.option3.example;" value="3"/>
+                            </menupopup>
+                        </menulist>
+                    </groupbox>
+                </tabpanel>
+                <tabpanel orient="vertical">
+                    <groupbox orient="vertical" id="tab6.audioPanel">
+                        <caption label="&tab6.audio.options;"/>
                         <hbox flex="1">
                             <vbox>
-                                <radio label="&tab5.forreplaced.option1;" value="1"/>
-                                <radio label="&tab5.forreplaced.option2;" value="2"/>
-                                <radio label="&tab5.forreplaced.option3;" value="3"/>
+                                <checkbox preference="mux.opus.audio.vp9" label="&tab6.mux.opus.audio.vp9;" />
                             </vbox>
-                            <spacer width="20" />
                             <vbox>
-                                <label value="&tab5.forreplaced.option1.example;" />
-                                <spacer height="9" />    
-                                <label value="&tab5.forreplaced.option2.example;" />
-                                <spacer height="9" />
-                                <label value="&tab5.forreplaced.option3.example;" />
+                                <image src="chrome://completeyoutubesaver/skin/i-icon.png" width='15px' max-height='20px' vspace="3px" tooltiptext='For Fmt251 OPUS audio, 165k is the max bitrate available. The actual audio bitrate may vary.'/>
                             </vbox>
                         </hbox>
-                    </radiogroup>
-                </groupbox>
-            </tabpanel>
-            <tabpanel orient="vertical">
-                <groupbox orient="vertical">
-                    <caption label="&tab6.audio.options;"/>
-                    <hbox flex="1">
-                        <checkbox preference="mux.opus.audio.vp9" label="&tab6.mux.opus.audio.vp9;" />
+                        <hbox style="padding-left: 18px;">
+                            <radiogroup preference="mux.opus.audio.vp9.all">
+                                <radio label="&tab6.save.opus.hd;" value="false"/>
+                                <radio label="&tab6.save.opus.all;" value="true"/>
+                            </radiogroup>
+                        </hbox>
+                        <hbox flex="1">
+                            <vbox>
+                                <checkbox preference="mux.dash.video.highest.audio" valign="top" class="topped" type="checkbox" width="423" label="&tab6.mux.dash.video.highest.audio;" id="mux-dash-video-highest-audio" oncommand="cysPrefDialog.toggle_mux_highest_audio_webm();" />
+                            </vbox>
+                            <vbox>
+                                <image src="chrome://completeyoutubesaver/skin/i-icon.png" width='15px' max-height='20px' vspace="3px" tooltiptext='For Fmt22 audio, 192k is the max bitrate available. The actual audio bitrate may vary.'/>
+                            </vbox>
+                        </hbox>
+                        <hbox style="padding-left: 18px;">
+                            <radiogroup preference="mux.dash.video.highest.audio.all">
+                                <radio label="&tab6.apply.hd.video;" value="false"/>
+                                <radio label="&tab6.apply.all.video;" value="true"/>
+                            </radiogroup>
+                        </hbox>
+                        <!--                    <hbox flex="1">
+                            <spacer width="19" />
+                            <description width="450" class="dtext slanted">&tab6.mux.dash.video.highest.audio.note;</description>
+                        </hbox>-->
+                    </groupbox>
+                    <hbox>
+                        <spacer width="20"/>
+                        <label id="tab6.warn" hidden="true" style="font-style:italic;">&tab6.warn;</label>
                     </hbox>
-                </groupbox>
-            </tabpanel>
-        </tabpanels>
-    </tabbox>
-      <popupset>
-      	<menupopup id="sbox_item_context">
-            <menuitem id="sbox_item_contextmenu" label="&options.sbox.item.context;" oncommand="cysPrefDialog.sboxContextClick(event);"/>
-         </menupopup>
-         <menupopup id="sbox_sep_context">
-            <menuitem id="sbox_sep_contextmenu" label="&options.sbox.sep.context;" oncommand="cysPrefDialog.sboxContextClick(event);"/>
-      	</menupopup>
-      </popupset>
-	</prefpane>
+                </tabpanel>
+            </tabpanels>
+        </tabbox>
+        <spacer height="10" flex="0"/>
+        <popupset>
+            <menupopup id="sbox_item_context">
+                <menuitem id="sbox_item_contextmenu" label="&options.sbox.item.context;" oncommand="cysPrefDialog.sboxContextClick(event);"/>
+            </menupopup>
+            <menupopup id="sbox_sep_context">
+                <menuitem id="sbox_sep_contextmenu" label="&options.sbox.sep.context;" oncommand="cysPrefDialog.sboxContextClick(event);"/>
+            </menupopup>
+        </popupset>
+    </prefpane>
 </prefwindow>
 <!--Copyright (c) 2016, Carlos Garcia. All rights reserved.-->

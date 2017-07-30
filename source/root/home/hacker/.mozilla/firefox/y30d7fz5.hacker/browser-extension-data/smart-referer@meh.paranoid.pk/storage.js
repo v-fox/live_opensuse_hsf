@@ -1,0 +1,1 @@
+{"enable":true,"strict":false,"mode":"self","referer":"","allow":"","whitelist":"http://meh.github.io/smart-referer/whitelist.txt","migrated":true}

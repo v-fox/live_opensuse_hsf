@@ -5,7 +5,7 @@
 <!ENTITY less "Less...">
 <!ENTITY pname "Project Name:">
 <!ENTITY savedir "Save in:">
-<!ENTITY savecomments "Save Comments Viewed">
+<!ENTITY savecomments "Save Comments">
 <!ENTITY savecomments.all "All">
 <!ENTITY savecomments.pages "Pages:">
 <!ENTITY savecomments.count "(max 700 / ?)">

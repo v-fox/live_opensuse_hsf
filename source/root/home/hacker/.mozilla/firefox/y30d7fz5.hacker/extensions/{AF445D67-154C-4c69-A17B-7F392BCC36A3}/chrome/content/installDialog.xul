@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://completeyoutubesaver/skin/cysOverlay.css"?>
+<!DOCTYPE dialog SYSTEM "chrome://completeyoutubesaver/locale/installDialog.dtd">
+<dialog id="cys-dialog"
+        title="&dialog.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept,cancel" buttonalign="center" buttonpack="center"
+        onload="InstallDialog.onLoad();"
+        ondialogaccept = "if (window.arguments) {window.arguments[0].ok = true;} return;"
+        ondialogcancel = "return;">
+    <script src="installDialog.js" type="application/x-javascript"/>
+    <vbox id="cys-zone">
+        <hbox>
+            <label style="text-align:justify">
+                &label.caption;:
+            </label>
+        </hbox>
+        <spacer height="16"/>
+        <vbox>
+            <label class="header boldfont">
+                &label.windows;:
+            </label>
+            <label href="http://www.cys-audiovideodownloader.com/Converter.html" class="text-link" onclick="InstallDialog.goLink('http://www.cys-audiovideodownloader.com/Converter.html')">
+                http://www.cys-audiovideodownloader.com/Converter.html
+            </label>
+        </vbox>
+        <spacer height="16"/>
+        <vbox>
+            <label class="header boldfont">
+                &label.mac;:
+            </label>
+            <label href="http://www.cys-audiovideodownloader.com/ConverterMac.html" class="text-link" onclick="InstallDialog.goLink('http://www.cys-audiovideodownloader.com/ConverterMac.html')">
+                http://www.cys-audiovideodownloader.com/ConverterMac.html
+            </label>
+        </vbox>
+        <spacer height="16"/>
+        <vbox>
+            <label class="header boldfont">
+                &label.linux;:
+            </label>
+            <label href="http://www.cys-audiovideodownloader.com/ConverterLinux.html" class="text-link" onclick="InstallDialog.goLink('http://www.cys-audiovideodownloader.com/ConverterLinux.html')">
+                http://www.cys-audiovideodownloader.com/ConverterLinux.html
+            </label>
+        </vbox>
+        <spacer height="16"/>
+    </vbox>
+</dialog>
+<!--Copyright (c) 2016, Carlos Garcia. All rights reserved.-->
+

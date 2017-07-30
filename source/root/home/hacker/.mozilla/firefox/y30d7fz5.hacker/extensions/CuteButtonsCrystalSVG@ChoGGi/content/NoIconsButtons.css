@@ -1,4 +1,7 @@
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
-button>.button-box>.button-icon{display:none!important}
-button[type="radio"]>.button-box>.button-icon,
-button.mini-button>.button-box>.button-icon{display:-moz-box!important}
+.dialog-button:not([icon])>.button-box>.button-icon,
+button:not([type="radio"]):not(.mini-button):not(.searchbar-engine-one-off-item)>.button-box>.button-icon{display:none!important}
+/*
+button.mini-button>.button-box>.button-icon,
+button[type="radio"]>.button-icon{display:-moz-box!important}
+*/

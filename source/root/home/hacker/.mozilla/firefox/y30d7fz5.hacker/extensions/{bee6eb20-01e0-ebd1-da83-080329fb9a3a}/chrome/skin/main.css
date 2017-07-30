@@ -1,71 +1,137 @@
-.fnvfox_swfMenuItem {
-	list-style-image: url("chrome://flashVideoDownload/skin/icons/flash_icon.png")
+.fnvfox_toolbarButtonEnabled {
+   list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_blue_16.png");
 }
 
-/* applies to the status bar button as well */
-.fnvfox_toolbarButtonIconEnabled, [iconsize="small"].fnvfox_toolbarButtonIconEnabled {
-	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_enabled.png") !important;
+.fnvfox_toolbarButtonEnabled[cui-areatype="menu-panel"] {
+   list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_blue_32.png")
 }
 
-/* applies to the status bar button as well */
-.fnvfox_toolbarButtonIconEnabled:hover, [iconsize="small"].fnvfox_toolbarButtonIconEnabled:hover {
-	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_enabled_over.png");
+/*.fnvfox_toolbarButtonEnabled:hover {
+	list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_blue_16.png");
+}*/
+
+.fnvfox_toolbarButtonDisabled {
+   list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_grey_16.png");
 }
 
-/* applies to the status bar button as well */
-.fnvfox_toolbarButtonIconDisabled, [iconsize="small"].fnvfox_toolbarButtonIconDisabled {
-	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_disabled.png") !important;
+.fnvfox_toolbarButtonDisabled[cui-areatype="menu-panel"] {
+   list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_grey_32.png")
 }
 
-/* applies to the status bar button as well */
-.fnvfox_toolbarButtonIconEnabledVideo, [iconsize="small"].fnvfox_toolbarButtonIconEnabledVideo {
-	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_enabled_video.png") !important;
+.fnvfox_toolbarButtonEnabledVideo {
+   list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_red_16.png");
 }
 
-/* applies to the status bar button as well */
-.fnvfox_toolbarButtonIconEnabledVideo:hover, [iconsize="small"].fnvfox_toolbarButtonIconEnabledVideo:hover {
-	list-style-image: url("chrome://flashVideoDownload/skin/icons/icon_enabled_video_over.png");
+/*.fnvfox_toolbarButtonEnabledVideo:hover {
+   list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_red_16.png");
+}*/
+
+.fnvfox_toolbarButtonEnabledVideo[cui-areatype="menu-panel"],
+toolbarpaletteitem[place="palette"] > #fnvfox_toolbarButton {
+   list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_red_32.png") !important;
 }
 
+/* high resolution displays */
 
+/* 1.4dppx = 134.4dpi (1dppx = 96dpi) */
+@media (min-resolution: 1.4dppx) {
+   .fnvfox_toolbarButtonEnabled {
+      list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_blue_32.png");
+   }
 
-/* version 3.6 (or older) support */
-.fnvfox_statusBarIconEnabled {
-   background-image:url(chrome://flashVideoDownload/skin/icons/icon_enabled.png);
-   background-repeat:no-repeat;
-   width:16px;
-   height:16px;
-   cursor:pointer;
+   .fnvfox_toolbarButtonEnabled[cui-areatype="menu-panel"] {
+      list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_blue_64.png")
+   }
+
+   .fnvfox_toolbarButtonDisabled {
+      list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_grey_32.png");
+   }
+
+   .fnvfox_toolbarButtonDisabled[cui-areatype="menu-panel"] {
+      list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_grey_64.png")
+   }
+
+   .fnvfox_toolbarButtonEnabledVideo {
+      list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_red_32.png");
+   }
+
+   .fnvfox_toolbarButtonEnabledVideo[cui-areatype="menu-panel"],
+   toolbarpaletteitem[place="palette"] > #fnvfox_toolbarButton {
+      list-style-image: url("chrome://flashVideoDownload/skin/icons/btn_red_64.png") !important;
+   }
 }
 
-.fnvfox_statusBarIconDisabled {
-   background-image:url(chrome://flashVideoDownload/skin/icons/icon_disabled.png);
-   background-repeat:no-repeat;
-   width:16px;
-   height:16px;
-   cursor:pointer;
+#fnvfoxResultsPanel .panel-arrowcontent {
+   padding: 0px;
+   border-radius: 5px;
+   opacity: 0.97;
 }
 
-.fnvfox_statusBarIconEnabled:hover {
-   background-image:url(chrome://flashVideoDownload/skin/icons/icon_enabled_over.png);
-   background-repeat:no-repeat;
-   width:16px;
-   height:16px;
-   cursor:pointer;
+#fnvfoxIframe {
+   border-radius: 5px;
 }
 
-.fnvfox_statusBarIconEnabledVideo {
-   background-image:url(chrome://flashVideoDownload/skin/icons/icon_enabled_video.png);
-   background-repeat:no-repeat;
-   width:30px;
-   height:16px;
-   cursor:pointer;
+/* PREVIOUS DESIGN BELOW */
+
+/*
+#fnvfoxResultsPanel {
+   margin: -8px 0px 0px;
+   padding: 0px;
+   border: 0px;
+   margin-right: 2px;
 }
 
-.fnvfox_statusBarIconEnabledVideo:hover {
-   background-image:url(chrome://flashVideoDownload/skin/icons/icon_enabled_video_over.png);
-   background-repeat:no-repeat;
-   width:30px;
-   height:16px;
-   cursor:pointer;
+#fnvfoxResultsPanel .panel-arrowcontent {
+   box-shadow: none;
+   padding: 0px;
+   border: 0px;
+   --panel-arrowcontent-background: none;
+}*/
+
+/* 
+   Panel explanation:
+   The "panel-arrowcontainer" is the entire panel and it is built of two elements:
+   1. "panel-arrowbox", which has inside of it the "panel-arrow" which is the little arrow we see
+      when tha panel is open.
+   2. "panel-arrowcontent", which is the panel itself without the arrow.
+*/
+
+/* default popup open position should be "after_end" for the following to work fine */
+
+/* when the window is top-right and there is no room for it to open to the left ("after_end"), it
+   will open to the right */
+/*#fnvfoxResultsPanel[arrowposition="after_end"] .panel-arrow[side="top"] {
+   margin-right: 14px;
 }
+
+#fnvfoxResultsPanel[arrowposition="after_end"] .panel-arrowcontent[side="top"] {
+   margin-left: 13px;
+}
+*/
+/* when the window is top-left and there is no room for it to open to the left ("after_end"), it
+   will open to the right */
+/*#fnvfoxResultsPanel[arrowposition="after_start"] .panel-arrowcontainer[side="top"] {
+   margin-left: -3px;
+}
+
+#fnvfoxResultsPanel[arrowposition="after_start"] .panel-arrowcontent[side="top"] {
+   margin-left: -30px;
+}
+
+#fnvfoxResultsPanel[arrowposition="before_start"][side="bottom"] {
+   margin-right: -2px !important;
+}
+
+#fnvfoxResultsPanel[arrowposition="before_start"][side="bottom"] .panel-arrowcontent {
+   margin-left: -29px;
+   margin-top: 32px;
+}
+
+#fnvfoxResultsPanel[arrowposition="before_end"][side="bottom"] .panel-arrowcontent {
+   margin-left: 13px;
+   margin-top: 32px;
+}
+
+#fnvfoxResultsPanel[arrowposition="before_end"][side="bottom"] .panel-arrow {
+   margin-right: 15px;
+}*/

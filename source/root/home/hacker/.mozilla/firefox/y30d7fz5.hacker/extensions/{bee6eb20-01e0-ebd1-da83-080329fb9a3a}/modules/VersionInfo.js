@@ -1,18 +1,28 @@
 var EXPORTED_SYMBOLS = ["VersionInfo"];
+var { classes: Cc, interfaces: Ci, utils: Cu, results: Cr } = Components;
+
+Cu.import("resource://flashVideoDownload/log.js");
+
+var log;    // module
 
 var VersionInfo = new function() {
 	this.version = null;
 	this.versionChecker = null;
 
+    this.init = function() {
+        this.setVersion();
+        this.setVersionChecker();
+    };    
+
     this.setVersion = function() {
-        var appInfo = Components.classes["@mozilla.org/xre/app-info;1"]
-            .getService(Components.interfaces.nsIXULAppInfo);
+        var appInfo = Cc["@mozilla.org/xre/app-info;1"]
+            .getService(Ci.nsIXULAppInfo);
         this.version = appInfo.version;
     };
 
     this.setVersionChecker = function() {
-        this.versionChecker = Components.classes["@mozilla.org/xpcom/version-comparator;1"]
-            .getService(Components.interfaces.nsIVersionComparator);    	
+        this.versionChecker = Cc["@mozilla.org/xpcom/version-comparator;1"]
+            .getService(Ci.nsIVersionComparator);    	
     };
 
     this.getVersion = function() {
@@ -37,12 +47,7 @@ var VersionInfo = new function() {
 
     this.isVersion29 = function() {
         return this.isVersionBiggerOrEqual("29");
-    };    
+    };
 
-    this.init = function() {
-    	this.setVersion();
-    	this.setVersionChecker();
-    };    
-}
-
-VersionInfo.init();
+    this.init();
+};

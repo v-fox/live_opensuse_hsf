@@ -1,100 +1,207 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 
-<!DOCTYPE dialog [
-  <!ENTITY % optionsDTD SYSTEM "chrome://cutebuttons/locale/options.dtd">
-  %optionsDTD;
-]>
+<!DOCTYPE window SYSTEM "chrome://cutebuttons/locale/global.dtd">
 
-<dialog
+  <prefwindow
   id="cutebuttons"
   title="&CuteButtons; &Options;"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  windowtype="cutebuttonsOptionsWindow"
+  persist="screenX screenY height width"
+  onunload="cbOptions.uninit()"
   onload="cbOptions.init()"
-  windowtype="cutebuttonsOptions"
-  style="padding:0"
   buttons="accept"
-  ondialogaccept="return true"
-  persist="screenX screenY width height sizemode">
+  ondialogaccept="return true">
 
-  <script type="application/x-javascript" src="chrome://cutebuttons/content/options.js"/>
-
-  <vbox flex="1" style="overflow-y:auto">
+  <prefpane label="&Icons;" orient="vertical" id="prefpaneIcons">
+    <preferences>
+      <preference id="pref-checkboxiconsbutton"
+    name="extensions.cutebuttons.checkboxiconsbutton" type="bool"/>
+      <preference id="pref-checkboxiconsbuttonhover"
+    name="extensions.cutebuttons.checkboxiconsbuttonhover" type="bool"/>
+      <preference id="pref-checkboxiconsmenu"
+    name="extensions.cutebuttons.checkboxiconsmenu" type="bool"/>
+      <preference id="pref-checkboxiconsmenuhover"
+    name="extensions.cutebuttons.checkboxiconsmenuhover" type="bool"/>
+      <preference id="pref-radioiconsbutton"
+    name="extensions.cutebuttons.radioiconsbutton" type="bool"/>
+      <preference id="pref-radioiconsbuttonhover"
+    name="extensions.cutebuttons.radioiconsbuttonhover" type="bool"/>
+      <preference id="pref-radioiconsmenu"
+    name="extensions.cutebuttons.radioiconsmenu" type="bool"/>
+      <preference id="pref-radioiconsmenuhover"
+    name="extensions.cutebuttons.radioiconsmenuhover" type="bool"/>
+      <preference id="pref-icons"
+    name="extensions.cutebuttons.icons" type="bool"/>
+      <preference id="pref-iconshover"
+    name="extensions.cutebuttons.iconshover" type="bool"/>
+      <preference id="pref-mosaicnormal"
+    name="extensions.cutebuttons.mosaicnormal" type="int"/>
+      <preference id="pref-mosaichover"
+    name="extensions.cutebuttons.mosaichover" type="int"/>
+    </preferences>
 
     <groupbox>
-      <caption label="&CuteButtons; &Icons;"/>
-        <radiogroup id="IconsRadio" orient="horizontal" value="">
-            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'icons',this,1)"/>
-            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'icons',this,0)"/>
-        </radiogroup>
+      <caption label="&Icons;"/>
+      <hbox>
+        <checkbox id="Icons"
+    label="&Normal;"
+    preference="pref-icons"
+    oncommand="cbOptions.checkboxToggle('IconsHover',this,'iconshover','icons')"/>
+        <checkbox id="IconsHover"
+    label="&Hover;"
+    preference="pref-iconshover"
+    oncommand="cbOptions.applyCSS('iconshover',this.checked)"/>
+      </hbox>
     </groupbox>
-<!--
+
     <groupbox>
-      <caption label="&Menu; &Icons;"/>
-        <radiogroup id="MenuRadio" orient="horizontal" value="">
-            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(false,'menuicons',this,1)"/>
-            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(true,'menuicons',this,0)"/>
-        </radiogroup>
-    </groupbox>
--->
-    <groupbox>
-      <caption label="&Button; &Icons;"/>
-        <radiogroup id="ButtonRadio" orient="horizontal" value="">
-            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(false,'buttonicons',this,1)"/>
-            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(true,'buttonicons',this,0)"/>
-        </radiogroup>
+        <caption label="&Mosaic;" tooltiptext="&MosaicTip;"/>
+      <hbox>
+        <groupbox>
+          <caption label="&Normal;" tooltiptext="&MosaicTip;"/>
+            <radiogroup id="MosaicNormal" orient="vertical" preference="pref-mosaicnormal" tooltiptext="&MosaicTip;">
+                <radio label="&Default;" value="0"/>
+                <radio label="&Faded;" value="1"/>
+                <radio label="&Brighter;" value="2"/>
+                <radio label="&Gray;" value="3"/>
+            </radiogroup>
+        </groupbox>
+
+        <groupbox>
+          <caption label="&Hover;" tooltiptext="&MosaicTip;"/>
+            <radiogroup id="MosaicHover" orient="vertical" preference="pref-mosaichover" tooltiptext="&MosaicTip;">
+                <radio label="&Default;" value="0"/>
+                <radio label="&Faded;" value="1"/>
+                <radio label="&Brighter;" value="2"/>
+                <radio label="&Gray;" value="3"/>
+            </radiogroup>
+        </groupbox>
+      </hbox>
     </groupbox>
 
     <groupbox>
       <caption label="&Checkbox; &Icons;"/>
-        <radiogroup id="CheckboxIconsRadio" orient="horizontal" value="">
-            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'checkboxicons',this,1)"/>
-            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'checkboxicons',this,0)"/>
+      <hbox>
+        <vbox>
+          <checkbox id="CheckboxButtonNormal"
+      label="&Button;"
+      preference="pref-checkboxiconsbutton"
+      oncommand="cbOptions.checkboxToggle('CheckboxButtonHover',this,'checkboxiconsbuttonhover','checkboxiconsbutton')"/>
+          <checkbox id="CheckboxButtonHover"
+      label="&Button; &Hover;"
+      preference="pref-checkboxiconsbuttonhover"
+      oncommand="cbOptions.applyCSS('checkboxiconsbuttonhover',this.checked)"/>
+        </vbox>
+
+        <vbox>
+          <checkbox id="CheckboxMenuNormal"
+      label="&Menu;"
+      preference="pref-checkboxiconsmenu"
+      oncommand="cbOptions.checkboxToggle('CheckboxMenuHover',this,'checkboxiconsmenuhover','checkboxiconsmenu')"/>
+          <checkbox id="CheckboxMenuHover"
+      label="&Menu; &Hover;"
+      preference="pref-checkboxiconsmenuhover"
+      oncommand="cbOptions.applyCSS('checkboxiconsmenuhover',this.checked)"/>
+        </vbox>
+      </hbox>
+    </groupbox>
+
+    <groupbox>
+      <caption label="&Radio; &Button; &Icons;"/>
+      <hbox>
+        <vbox>
+          <checkbox id="RadioButtonNormal"
+      label="&Button;"
+      preference="pref-radioiconsbutton"
+      oncommand="cbOptions.checkboxToggle('RadioButtonHover',this,'radioiconsbuttonhover','radioiconsbutton')"/>
+          <checkbox id="RadioButtonHover"
+      label="&Button; &Hover;"
+      preference="pref-radioiconsbuttonhover"
+      oncommand="cbOptions.applyCSS('radioiconsbuttonhover',this.checked)"/>
+        </vbox>
+
+        <vbox>
+          <checkbox id="RadioMenuNormal"
+      label="&Menu;"
+      preference="pref-radioiconsmenu"
+      oncommand="cbOptions.checkboxToggle('RadioMenuHover',this,'radioiconsmenuhover','radioiconsmenu')"/>
+          <checkbox id="RadioMenuHover"
+      label="&Menu; &Hover;"
+      preference="pref-radioiconsmenuhover"
+      oncommand="cbOptions.applyCSS('radioiconsmenuhover',this.checked)"/>
+        </vbox>
+      </hbox>
+    </groupbox>
+  </prefpane>
+
+  <prefpane label="&Options;" orient="vertical" id="prefpaneOptions">
+    <preferences>
+      <preference id="pref-blurdisabled"
+    name="extensions.cutebuttons.blurdisabled" type="bool"/>
+      <preference id="pref-buttonicons"
+    name="extensions.cutebuttons.buttonicons" type="bool"/>
+      <preference id="pref-menuicons"
+    name="extensions.cutebuttons.menuicons" type="bool"/>
+      <preference id="pref-mainmenubaricons"
+    name="extensions.cutebuttons.mainmenubaricons" type="bool"/>
+      <preference id="pref-rotateicons"
+    name="extensions.cutebuttons.rotateicons" type="bool"/>
+      <preference id="pref-statusbar"
+    name="extensions.cutebuttons.statusbar" type="bool"/>
+      <preference id="pref-toolbarbutton"
+    name="extensions.cutebuttons.toolbarbutton" type="bool"/>
+    </preferences>
+
+    <groupbox>
+      <caption label="&Button; &Icons;"/>
+        <radiogroup id="ButtonRadio" orient="horizontal" preference="pref-buttonicons">
+            <radio label="&Enable;" onmousedown="cbOptions.applyCSS('buttonicons',false)" value="true"/>
+            <radio label="&Disable;" onmousedown="cbOptions.applyCSS('buttonicons',true)" value="false"/>
         </radiogroup>
     </groupbox>
 
     <groupbox>
-      <caption label="&Radio; &Icons;"/>
-        <radiogroup id="RadioIconsRadio" orient="horizontal" value="">
-            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'radioicons',this,1)"/>
-            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'radioicons',this,0)"/>
+      <caption label="&Menu; &Icons;"/>
+        <radiogroup id="MenuRadio" orient="horizontal" preference="pref-menuicons">
+            <radio label="&Enable;" onmousedown="cbOptions.applyCSS('menuicons',false)" value="true"/>
+            <radio label="&Disable;" onmousedown="cbOptions.applyCSS('menuicons',true)" value="false"/>
         </radiogroup>
     </groupbox>
 
     <groupbox>
       <caption label="&Rotate; &Icons;"/>
-        <radiogroup id="RotateIconsRadio" orient="horizontal" value="">
-            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'rotateicons',this,1)"/>
-            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'rotateicons',this,0)"/>
+        <radiogroup id="RotateIconsRadio" orient="horizontal" value="" preference="pref-rotateicons">
+            <radio label="&Enable;" onmousedown="cbOptions.applyCSS('rotateicons',true)" value="true"/>
+            <radio label="&Disable;" onmousedown="cbOptions.applyCSS('rotateicons',false)" value="false"/>
         </radiogroup>
     </groupbox>
 
     <groupbox>
       <caption label="&BlurDisabled;"/>
-        <radiogroup id="BlurDisabledRadio" orient="horizontal" value="">
-            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'blurdisabled',this,1)"/>
-            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'blurdisabled',this,0)"/>
+        <radiogroup id="BlurDisabledRadio" orient="horizontal" value="" preference="pref-blurdisabled">
+            <radio label="&Enable;" onmousedown="cbOptions.applyCSS('blurdisabled',true)" value="true"/>
+            <radio label="&Disable;" onmousedown="cbOptions.applyCSS('blurdisabled',false)" value="false"/>
         </radiogroup>
     </groupbox>
 
     <groupbox>
       <caption label="&StatusBar;"/>
-        <radiogroup id="StatusbarRadio" orient="horizontal" value="">
-            <radio label="&Enable;" value="1" onmousedown="cbOptions.radioChange(true,'statusbar',this,1)"/>
-            <radio label="&Disable;" value="0" onmousedown="cbOptions.radioChange(false,'statusbar',this,0)"/>
+        <radiogroup id="StatusbarRadio" orient="horizontal" value="" preference="pref-statusbar">
+            <radio label="&Enable;" onmousedown="cbOptions.applyCSS('statusbar',true)" value="true"/>
+            <radio label="&Disable;" onmousedown="cbOptions.applyCSS('statusbar',false)" value="false"/>
         </radiogroup>
     </groupbox>
 
     <groupbox>
-      <caption label="&Mosaic;" tooltiptext="&MosaicTip;"/>
-        <radiogroup id="MosaicRadio" orient="vertical" value="" tooltiptext="&MosaicTip;">
-            <radio label="&Default;" value="0" onmousedown="cbOptions.mosaic(0,this)"/>
-            <radio label="&Normal;" value="4" onmousedown="cbOptions.mosaic(4,this)"/>
-            <radio label="&Brighter;" value="1" onmousedown="cbOptions.mosaic(1,this)"/>
-            <radio label="&BrighterReversed;" value="2" onmousedown="cbOptions.mosaic(2,this)"/>
-            <radio label="&Gray;" value="3" onmousedown="cbOptions.mosaic(3,this)"/>
+      <caption label="&Toolbar; &Button;"/>
+        <radiogroup id="ToolbarButtonRadio" orient="horizontal" value="" preference="pref-toolbarbutton">
+            <radio label="&Enable;" onmousedown="cbOptions.toolbarButtonToggle(true)" value="true"/>
+            <radio label="&Disable;" onmousedown="cbOptions.toolbarButtonToggle(false)" value="false"/>
         </radiogroup>
     </groupbox>
 
-  </vbox>
-</dialog>
+  </prefpane>
+  <script type="application/x-javascript" src="chrome://cutebuttons/content/options.js"/>
+</prefwindow>

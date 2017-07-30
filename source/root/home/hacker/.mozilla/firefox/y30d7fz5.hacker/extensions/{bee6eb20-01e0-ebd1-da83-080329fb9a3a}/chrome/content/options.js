@@ -1,50 +1,55 @@
-var options = new function() {
-    var self = this;
+var { classes: Cc, interfaces: Ci, utils: Cu, results: Cr } = Components;
 
+Cu.import("resource://flashVideoDownload/FileDownloadManager/DownloadManagers.js");
+Cu.import("resource://flashVideoDownload/PrefManager.js");
+Cu.import("resource://flashVideoDownload/VersionInfo.js");
+Cu.import("resource://flashVideoDownload/log.js");
+
+// ff modules
+Cu.import("resource://gre/modules/AddonManager.jsm");
+
+var log;                // module
+var PrefManager;        // module
+var DownloadManagers;   // module
+var VersionInfo;        // module
+var AddonManager;       // module
+
+var options = new function() {
     // consts
-    const TOOLBAR_BUTTON      = "fnvfox_toolbarButton";
-    const STATUSBAR_BUTTON    = "fnvfox_statusbarButton";
-    
-    // properties
-    this.PrefManager         = null;
-    this.DownloadManagers    = null;     // will be imported from a module
-    this.Classes             = null;     // will be imported from a module
-    this.VersionInfo         = null;     // will be imported from a module
+    this.ADDON_ID            = "{bee6eb20-01e0-ebd1-da83-080329fb9a3a}";
+    this.TOOLBAR_BUTTON      = "fnvfox_toolbarButton";
+    this.STATUSBAR_BUTTON    = "fnvfox_statusbarButton";
+
+    this.downloadManagers = null;
     
     // methods
-    this.initialization = function() {                        
-        this.loadModules();
-        
-        window.addEventListener("load", this.onLoad, false);
-        window.addEventListener("unload", this.onUnload, false);
-    };
-    
-    this.loadModules = function() {
-        Components.utils.import("resource://flashVideoDownload/DownloadManagers.js", this);
-        Components.utils.import("resource://flashVideoDownload/Classes.js", this);
-        Components.utils.import("resource://flashVideoDownload/PrefManager.js", this);
-        Components.utils.import("resource://flashVideoDownload/VersionInfo.js", this);
+    this.init = function() {
+        this.downloadManagers = new DownloadManagers();
+
+        window.addEventListener("load", this.onload.bind(this), false);
+        window.addEventListener("unload", this.onUnload.bind(this), false);
     };
 
-    this.onLoad = function() {
-        self.PrefManager.startup();
-        self.setStartupOptions();
-        self.setLabelVersionNumber();
+    this.onload = function() {
+        this.setLabelVersionNumber();
+        this.setStartupOptions();
     };
 
     this.onUnload = function() {
-        self.PrefManager.shutdown();
+        PrefManager.shutdown();
     };
     
     this.setLabelVersionNumber = function() {
-        document.getElementById("about_versionValue").setAttribute("value", this.Classes.main.addonVersion);
+        AddonManager.getAddonByID(this.ADDON_ID, function(addon) {
+            document.getElementById("about_versionValue").setAttribute("value", addon.version);
+        });
     };
     
     // prevents unchecking an option for 2 sets options, if that's the only one left checked
     this.checkPrefChange = function(optionElement, secondOptionElement) {            
         if (!optionElement.checked && !secondOptionElement.checked) {
             optionElement.checked = true;
-        }  
+        }
     };
     
     this.browseDownloadsFolder = function() {
@@ -52,7 +57,7 @@ var options = new function() {
         filePicker.init(window, "Select Downloads Folder", filePicker.modeGetFolder);
         var result = filePicker.show(); // returnOK / returnCancel / returnReplace
         if (result == filePicker.returnOK) {
-            document.getElementById("fnvfox_downloadsFolderTextbox").value = " " + filePicker.file.path; // sets the textbox's value to the selected folder
+            document.getElementById("downloadsFolderTextbox").value = " " + filePicker.file.path; // sets the textbox's value to the selected folder
             
             this.setDownloadFolderImage(filePicker.file);
         }
@@ -60,61 +65,70 @@ var options = new function() {
     
     // save preferences manually for elements without a preference id (such as textboxes that change via javascript)
     this.save = function() {
-        var downloadsFolder = document.getElementById("fnvfox_downloadsFolderTextbox").value.substring(1); // 'substring' to remove the first space char
-        downloadsFolder = encodeURI(downloadsFolder);
-        this.PrefManager.setPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.DOWNLOADS_FOLDER, downloadsFolder);
+        var downloadsFolder = document.getElementById("downloadsFolderTextbox").value.substring(1); // 'substring' to remove the first space char        
+        PrefManager.setPref(PrefManager.PREFS.GENERAL.DOWNLOADS.DOWNLOADS_FOLDER, downloadsFolder);
         this.saveDownloadsFolderRadiogroupSelectedOption();
+        this.saveColorThemeRadiogroupSelectedOption();
     };
     
     // reads preferences and sets the option elements accordingly
     // also checks for anything that might affect the default state of to options when they are loaded (such as checking if "dta" is installed)
     this.setStartupOptions = function() {
-        if (!this.VersionInfo.isVersion29()) {
-            if (this.VersionInfo.isVersion4()) { this.setToolbarButtonOptionCheckbox(STATUSBAR_BUTTON, "fnvfox_statusbarButtonOption", this.PrefManager.PREFS.GENERAL.INTERFACE.STATUSBAR_BUTTON); }
-            else { this.setToolbarButtonOptionCheckboxOldVer(STATUSBAR_BUTTON, "fnvfox_statusbarButtonOption", this.PrefManager.PREFS.GENERAL.INTERFACE.STATUSBAR_BUTTON); }
+        if (!VersionInfo.isVersion29()) {
+            if (VersionInfo.isVersion4()) { this.setToolbarButtonOptionCheckbox(this.STATUSBAR_BUTTON, "statusbarButtonOption", PrefManager.PREFS.GENERAL.INTERFACE.STATUSBAR_BUTTON); }
+            else { this.setToolbarButtonOptionCheckboxOldVer(this.STATUSBAR_BUTTON, "statusbarButtonOption", PrefManager.PREFS.GENERAL.INTERFACE.STATUSBAR_BUTTON); }
             
-            this.setToolbarButtonOptionCheckbox(TOOLBAR_BUTTON, "fnvfox_toolbarButtonOption", this.PrefManager.PREFS.GENERAL.INTERFACE.TOOLBAR_BUTTON);
+            this.setToolbarButtonOptionCheckbox(this.TOOLBAR_BUTTON, "toolbarButtonOption", PrefManager.PREFS.GENERAL.INTERFACE.TOOLBAR_BUTTON);
         }
-        this.setDtaOptionCheckbox();        
+        this.setDtaOptionCheckbox();
         this.setDownloadsFolderTextbox();
         this.setDownloadsFolderRadiogroup();
         this.setDownloadsGroupbox();
         this.setRadioGroupListener();
+        this.setColorThemeRadiogroup();
         //var general = document.getElementById("general");
         //document.getElementById("fnvOptions").showPane(general);
     };
     
     this.downloadsGroupboxEnabled = function(enabled) {
-        document.getElementById("fnvfox_downloadsRadiogroup").disabled = !enabled;
-        document.getElementById("fnvfox_downloadsStart").disabled = !enabled;
-        document.getElementById("fnvfox_downloadsBrowseButton").disabled = !enabled;
-        document.getElementById("fnvfox_downloadsFolderTextbox").disabled = !enabled;
+        document.getElementById("downloadsRadiogroup").disabled = !enabled;
+        document.getElementById("downloadsStart").disabled = !enabled;
+        document.getElementById("downloadsBrowseButton").disabled = !enabled;
+        document.getElementById("downloadsFolderTextbox").disabled = !enabled;
         
         if (enabled && this.isLastSavedFolderSelected()) {                 
             this.enabledStartDownlodsImmediately(false);
         }
     };
+
+    this.setColorThemeRadiogroup = function() {
+        if (PrefManager.getPref(PrefManager.PREFS.GENERAL.THEME.DARK)) {
+            var colorThemeRadiogroup = document.getElementById("colorThemeRadiogroup");
+            var colorThemeDarkOptionRadio = document.getElementById("colorThemeDarkOptionRadio");
+            colorThemeRadiogroup.selectedItem = colorThemeDarkOptionRadio;
+        }
+    };
     
     this.setDownloadsGroupbox = function() {
-        var dtaOptionCheckbox = document.getElementById("fnvfox_dtaOptionCheckbox");
+        var dtaOptionCheckbox = document.getElementById("dtaOptionCheckbox");
         if (dtaOptionCheckbox.checked) {
             this.downloadsGroupboxEnabled(false);           
         }
         else {
             this.downloadsGroupboxEnabled(true);          
-        }    
+        }
     };
     
     this.setDownloadsFolderRadiogroup = function() {
-        var downloadsRadiogroup = document.getElementById("fnvfox_downloadsRadiogroup");
-        var lastSavedFolder = document.getElementById("fnvfox_lastSavedFolder");
-        var firefoxDownloadsFolder = document.getElementById("fnvfox_firefoxDownloadsFolderOptionRadio");
-        var saveToDownloadsFolder = document.getElementById("fnvfox_saveToOptionRadio");
+        var downloadsRadiogroup = document.getElementById("downloadsRadiogroup");
+        var lastSavedFolder = document.getElementById("lastSavedFolder");
+        var firefoxDownloadsFolder = document.getElementById("firefoxDownloadsFolderOptionRadio");
+        var saveToDownloadsFolder = document.getElementById("saveToOptionRadio");
         
-        if (this.PrefManager.getPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.USE_FIREFOX_DOWNLOADS_FOLDER)) {
+        if (PrefManager.getPref(PrefManager.PREFS.GENERAL.DOWNLOADS.USE_FIREFOX_DOWNLOADS_FOLDER)) {
             downloadsRadiogroup.selectedItem = firefoxDownloadsFolder;
         }
-        else if(this.PrefManager.getPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.LAST_SAVED_FOLDER)) {
+        else if(PrefManager.getPref(PrefManager.PREFS.GENERAL.DOWNLOADS.LAST_SAVED_FOLDER)) {
             downloadsRadiogroup.selectedItem = lastSavedFolder;
         }
         else {
@@ -123,18 +137,18 @@ var options = new function() {
     };
     
     this.saveDownloadsFolderRadiogroupSelectedOption = function() {
-        var downloadsRadiogroup = document.getElementById("fnvfox_downloadsRadiogroup");
-        var lastSavedFolder = document.getElementById("fnvfox_lastSavedFolder");
-        var firefoxDownloadsFolder = document.getElementById("fnvfox_firefoxDownloadsFolderOptionRadio");
+        var downloadsRadiogroup = document.getElementById("downloadsRadiogroup");
+        var lastSavedFolder = document.getElementById("lastSavedFolder");
+        var firefoxDownloadsFolder = document.getElementById("firefoxDownloadsFolderOptionRadio");
         
-        this.PrefManager.setPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.USE_FIREFOX_DOWNLOADS_FOLDER, false);
-        this.PrefManager.setPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.LAST_SAVED_FOLDER, false);
+        PrefManager.setPref(PrefManager.PREFS.GENERAL.DOWNLOADS.USE_FIREFOX_DOWNLOADS_FOLDER, false);
+        PrefManager.setPref(PrefManager.PREFS.GENERAL.DOWNLOADS.LAST_SAVED_FOLDER, false);
         
         if (downloadsRadiogroup.selectedItem == lastSavedFolder) {
-            this.PrefManager.setPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.LAST_SAVED_FOLDER, true);            
+            PrefManager.setPref(PrefManager.PREFS.GENERAL.DOWNLOADS.LAST_SAVED_FOLDER, true);            
         }
         else if (downloadsRadiogroup.selectedItem == firefoxDownloadsFolder) {
-            this.PrefManager.setPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.USE_FIREFOX_DOWNLOADS_FOLDER, true);            
+            PrefManager.setPref(PrefManager.PREFS.GENERAL.DOWNLOADS.USE_FIREFOX_DOWNLOADS_FOLDER, true);            
         }
     };
     
@@ -149,7 +163,7 @@ var options = new function() {
         if (win.document.getElementById(buttonName)) { var isSet = true; }
         
         // updating the preference is necessary because the user could have removed it manually
-        this.PrefManager.setPref(prefName, isSet);
+        PrefManager.setPref(prefName, isSet);
         document.getElementById(optionName).value = isSet;
     };
     
@@ -161,30 +175,30 @@ var options = new function() {
         var isSet = false;        
         if (!win.document.getElementById(buttonName).parentNode.hidden) { var isSet = true; }
         // updating the preference is necessary because the user could have removed it manually
-        this.PrefManager.setPref(prefName, isSet);
+        PrefManager.setPref(prefName, isSet);
         document.getElementById(optionName).value = isSet;            
     };
     
     // checks if DownThemAll is installed and sets the option checkbox accordingly
     // (if not installed, then the checkbox is disabled, otherwise enabled)
     this.setDtaOptionCheckbox = function() {
-        var dtaOptionCheckbox = document.getElementById("fnvfox_dtaOptionCheckbox");
-        dtaOptionCheckbox.disabled = !this.DownloadManagers.dta.isAddonInstalled;
+        var dtaOptionCheckbox = document.getElementById("dtaOptionCheckbox");
+        log(this.downloadManagers.DTA)
+        dtaOptionCheckbox.disabled = !this.downloadManagers.DTA.isAddonInstalled;
         if (dtaOptionCheckbox.disabled) {
             dtaOptionCheckbox.checked = false;
-        }        
+        }
     };
     
     // sets the downloads folder when the Options window loads.
     // it checks its preference and set downloads folder textbox accordingly with its path
     this.setDownloadsFolderTextbox = function() {
-        var downloadsFolder = this.PrefManager.getPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.DOWNLOADS_FOLDER);
-        downloadsFolder = decodeURI(downloadsFolder);
+        var downloadsFolder = PrefManager.getPref(PrefManager.PREFS.GENERAL.DOWNLOADS.DOWNLOADS_FOLDER);
         if (downloadsFolder == "") { // no location selected
             // gets firefox downloads location instead
-            downloadsFolder = this.PrefManager.getFirefoxDownloadsLocation();
+            downloadsFolder = PrefManager.getFirefoxDownloadsLocation();
         }
-        document.getElementById("fnvfox_downloadsFolderTextbox").value = " " + downloadsFolder;
+        document.getElementById("downloadsFolderTextbox").value = " " + downloadsFolder;
         
         // sets the image for the folder
         var localFile = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
@@ -196,12 +210,12 @@ var options = new function() {
     this.setDownloadFolderImage = function(nsIFile) {        
         var iOService = Components.classes["@mozilla.org/network/io-service;1"].getService(Components.interfaces.nsIIOService);
         var fileProtocolHandler = iOService.getProtocolHandler('file').QueryInterface(Components.interfaces.nsIFileProtocolHandler);            
-        var textboxImage = document.getElementById("fnvfox_downloadsFolderTextboxImage");
+        var textboxImage = document.getElementById("downloadsFolderTextboxImage");
         textboxImage.setAttribute('src', 'moz-icon://' + fileProtocolHandler.getURLSpecFromFile(nsIFile));        
     };
 
     this.enabledDownloadsStartCheckBox = function(enabled) {
-        document.getElementById("fnvfox_downloadsStart").disabled = !enabled;
+        document.getElementById("downloadsStart").disabled = !enabled;
     };
     
     this.setRadioGroupListener = function() {        
@@ -212,25 +226,37 @@ var options = new function() {
             this.enabledStartDownlodsImmediately(false);
         }
         
-        document.getElementById("fnvfox_downloadsRadiogroup").addEventListener("command", function(event) {
-            if (self.isLastSavedFolderSelected()) {
-                self.enabledStartDownlodsImmediately(false);
+        document.getElementById("downloadsRadiogroup").addEventListener("command", function(event) {
+            if (this.isLastSavedFolderSelected()) {
+                this.enabledStartDownlodsImmediately(false);
             }
             else {
-                self.enabledDownloadsStartCheckBox(true);
+                this.enabledDownloadsStartCheckBox(true);
             }
-        }, false);
+        }.bind(this), false);
     };
     
     this.isLastSavedFolderSelected = function() {                
-        return document.getElementById("fnvfox_lastSavedFolder").selected;
+        return document.getElementById("lastSavedFolder").selected;
     };
     
     this.enabledStartDownlodsImmediately = function(enabled) {
-        document.getElementById("fnvfox_downloadsStart").checked = enabled;                
-        this.PrefManager.setPref(this.PrefManager.PREFS.GENERAL.DOWNLOADS.DOWNLOAD_IMMEDIATELY, enabled);
+        document.getElementById("downloadsStart").checked = enabled;                
+        PrefManager.setPref(PrefManager.PREFS.GENERAL.DOWNLOADS.DOWNLOAD_IMMEDIATELY, enabled);
         this.enabledDownloadsStartCheckBox(enabled);
     };
-}
 
-options.initialization();
+    this.saveColorThemeRadiogroupSelectedOption = function() {
+        var colorThemeRadiogroup = document.getElementById("colorThemeRadiogroup");
+        var colorThemeLightOptionRadio = document.getElementById("colorThemeLightOptionRadio");
+        if (colorThemeRadiogroup.selectedItem == colorThemeLightOptionRadio) {
+            PrefManager.setPref(PrefManager.PREFS.GENERAL.THEME.LIGHT, true);
+            PrefManager.setPref(PrefManager.PREFS.GENERAL.THEME.DARK, false);
+        } else {
+            PrefManager.setPref(PrefManager.PREFS.GENERAL.THEME.LIGHT, false);
+            PrefManager.setPref(PrefManager.PREFS.GENERAL.THEME.DARK, true);            
+        }
+    };
+
+    this.init();
+};

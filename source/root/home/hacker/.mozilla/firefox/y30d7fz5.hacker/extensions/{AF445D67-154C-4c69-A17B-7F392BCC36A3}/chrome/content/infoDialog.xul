@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://completeyoutubesaver/skin/cysOverlay.css"?>
+<!DOCTYPE dialog SYSTEM "chrome://completeyoutubesaver/locale/infoDialog.dtd">
+<dialog id="cys-dialog"
+        title="&dialog.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept,cancel" buttonalign="center" buttonpack="center"
+        ondialogaccept = "cysInfoDialog.savePref();window.arguments[0].ok = true"
+        ondialogcancel = "return;">
+    <script src="cysCommons.js" type="application/x-javascript"/>
+    <script>
+	<![CDATA[
+            if ('undefined' == typeof Cc) var Cc = Components.classes;
+            if ('undefined' == typeof Ci) var Ci = Components.interfaces;
+            if ("undefined" == typeof(cysInfoDialog)) {
+		var cysInfoDialog = {
+                    savePref: function(){
+                        var el = document.getElementById('dialog.hide');
+                        console.log((el.checked || el.getAttribute('checked')));
+                        cysCommons.cysPrefs.setBoolPref('ffmpeg.info.dialog.hide', (el.checked || el.getAttribute('checked')) ? true : false);
+                        return true;
+                    }
+		}
+            }
+	]]>
+    </script>
+    <prefpane id="cys-pref-pane" flex="1">
+        <preferences>
+            <preference id="ffmpeg.info.dialog.hide" name="extensions.cys.ffmpeg.info.dialog.hide" type="bool"/>
+        </preferences>
+        <hbox align="center">
+            <image src="chrome://global/skin/icons/information-32.png"/>
+            <label style="text-align:justify">
+            &label.caption;
+            </label>
+            <spacer height="16"/>
+        </hbox>
+        <hbox>
+            <spacer width="30"/>
+            <checkbox id="dialog.hide" preference="ffmpeg.info.dialog.hide" type="checkbox" label="&checkbox.label;"/>
+        </hbox>
+    </prefpane>
+</dialog>
+<!--Copyright (c) 2016, Carlos Garcia. All rights reserved.-->
+

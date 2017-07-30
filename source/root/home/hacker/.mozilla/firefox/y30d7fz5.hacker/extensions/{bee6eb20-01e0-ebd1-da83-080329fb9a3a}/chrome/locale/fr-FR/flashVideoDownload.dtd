@@ -3,6 +3,11 @@
 
     <!-- General Pane -->
     <!ENTITY options.general.title "Général">
+
+    <!-- General.Themes -->
+    <!ENTITY options.general.themes.title "Thème de couleur">
+    <!ENTITY options.general.themes.dark "Sombre">
+    <!ENTITY options.general.themes.light "Lumière">    
     
     <!-- General.Interface -->
     <!ENTITY options.general.interface.title "Interface">
@@ -37,7 +42,7 @@
     <!ENTITY options.yt.qualities.title "Qualités affichées (sélectionnez quelles qualités seront listées) :">
     
     <!-- Youtube.Embedded Videos -->
-    <!ENTITY options.yt.embeddedVideos.label "Embedded Videos:">
+    <!ENTITY options.yt.embeddedVideos.label "Vidéos incorporées :">
     <!ENTITY options.yt.embeddedVideos.enhancedDetection.label "Détection de vidéos améliorée">
     <!ENTITY options.yt.embeddedVideos.enhancedDetection.label1 "N’activez cette option que si certaines vidéos ne sont pas détectée.">
     <!ENTITY options.yt.embeddedVideos.enhancedDetection.label2 "L’activation de cette option peut ralentir le chargement des pages. Pensez à la désactiver lorsque vous n’en n’avez pas besoin !">

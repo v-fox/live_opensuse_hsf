@@ -1,4 +1,0 @@
-# Ignore any zip or xpi files
-*.zip
-*.xpi
-.directory

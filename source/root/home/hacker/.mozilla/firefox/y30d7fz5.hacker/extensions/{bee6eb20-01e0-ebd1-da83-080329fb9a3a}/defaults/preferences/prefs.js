@@ -1,3 +1,7 @@
+pref("extensions.fnvfox.other.firstRun", true);
+pref("extensions.fnvfox.other.version", "");
+pref("extensions.fnvfox.general.theme.light", false);
+pref("extensions.fnvfox.general.theme.dark", true);
 pref("extensions.fnvfox.general.interface.toolbarButton", true);
 pref("extensions.fnvfox.general.interface.statusbarButton", true);
 pref("extensions.fnvfox.general.flashAndVideoFiles.showFlashFiles", true);
@@ -7,6 +11,7 @@ pref("extensions.fnvfox.general.downloads.downloadsFolder", "");
 pref("extensions.fnvfox.general.downloads.useLastSavedFolder", true);
 pref("extensions.fnvfox.general.downloads.useFirefoxDownloadsFolder", false);
 pref("extensions.fnvfox.general.downloads.downloadImmediately", false);
+pref("extensions.fnvfox.general.downloads.suggestAlternativeFilenames", true);
 pref("extensions.fnvfox.yt.formats.mp4", true);
 pref("extensions.fnvfox.yt.formats.webm", true);
 pref("extensions.fnvfox.yt.formats.flv", true);

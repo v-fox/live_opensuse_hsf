@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://completeyoutubesaver/skin/cysOverlay.css"?>
+<!DOCTYPE dialog SYSTEM "chrome://completeyoutubesaver/locale/ffmpegDialog.dtd">
+<dialog id="cys-ffmpeg-dash"
+        title="&dialog.title;" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        onload="ffmpegDialogAudio.dialog_onload()"
+        buttons="-" buttonalign="center">
+    <script src="ffmpegDialogAudio.js" type="application/x-javascript"/>
+    <vbox>
+        <label style="text-align:justify">
+            &label.text.audio.start;<span id="audio_mp3">&audio.mp3;</span><span id="audio_wav">&audio.wav;</span><span id="audio_ext">&audio.extracted;</span>&label.text.audio.end;
+        </label>
+    </vbox>
+    <spacer height="16"/>
+    <vbox>
+        <caption label="&dialog.question;"/>
+    </vbox>
+    <spacer height="8"/>
+    <vbox style="padding-left: 18px;">
+        <radiogroup id="ffmpeg">
+            <radio valign="top" class="topped" label="&radio.install;" value="1"/>
+            <radio valign="top" class="topped" label="&radio.nodash.audio;" value="2"/>
+            <radio valign="top" class="topped" label="&radio.no;" value="0"/>
+        </radiogroup>
+    </vbox>
+    <spacer height="16"/>
+    <vbox>
+        <label style="text-align:center">
+            &label.bottom;
+        </label>
+    </vbox>
+    <spacer height="16"/>
+    <vbox>
+        <box flex="1" align="center" pack="center">
+            <button label="&button.ok;" onclick="ffmpegDialogAudio.doOK()"/>
+            <button label="&button.cancel;" onclick="ffmpegDialogAudio.doCancel()"/>
+        </box>
+    </vbox>
+</dialog>
+<!--Copyright (c) 2016, Carlos Garcia. All rights reserved.-->
+

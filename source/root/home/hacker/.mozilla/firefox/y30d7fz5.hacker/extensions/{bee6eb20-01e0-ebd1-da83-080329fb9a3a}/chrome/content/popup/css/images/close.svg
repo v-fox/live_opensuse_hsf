@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Close copy link@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="11.9923311 1.3350712 11.6500406 0.992241683 6.49240889 6.14953038 1.33512019 0.992241683 0.992486667 1.3350712 6.14977536 6.4923109 0.992486667 11.6495996 1.33512019 11.9925761 6.49240889 6.83460145 11.6500406 11.9925761 11.9923311 11.6495996 6.83504242 6.4923109"></polygon>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-1" y="-1" width="12.9998444" height="13.0003344">
+            <rect x="-0.00751333333" y="-0.00775831655" width="12.9998444" height="13.0003344" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="WHITE-SHARE" transform="translate(-1321.000000, -272.000000)">
+            <g id="Close-copy-link" transform="translate(1322.000000, 273.000000)">
+                <g id="Capa_1">
+                    <g id="Shape">
+                        <use fill="#F1F1F1" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <use stroke="#F1F1F1" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

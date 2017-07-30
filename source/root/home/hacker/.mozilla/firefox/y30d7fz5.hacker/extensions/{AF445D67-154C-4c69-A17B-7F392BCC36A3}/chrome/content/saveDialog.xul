@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://completeyoutubesaver/skin/cysOverlay.css"?>
 <!DOCTYPE dialog SYSTEM "chrome://completeyoutubesaver/locale/saveDialog.dtd">
 
@@ -8,208 +8,209 @@
 		ondialogaccept="return cysSaveDialog.doOK();"
 		ondialogcancel="return cysSaveDialog.doCancel();"
 		title="&title;">
-	<script src="cysCommons.js" type="application/x-javascript"/>
-	<script src="saveDialog.js" type="application/x-javascript"/>
-	<!--<script src="cysSniffer.js" type="application/x-javascript"/>-->
-	<groupbox>
-		<caption label="&settings;"/>
-		<grid>
-			<columns>
-				<column flex="0"/>
-				<column width="400"/>
-				<column flex="0"/>
-			</columns>
-			<rows>
-				<row align="center">
-					<hbox align="end">
-   					<hbox flex="1"/>
-   						<label value="&pname;" control="pname"/>
-   					</hbox>
-   					<textbox id="pname" type="text"/>
-					<hbox/>
-				</row>
-				<row align="center">
-					<hbox align="end">
-					<hbox flex="1"/>
-                  <button id="cys-dirlist-2history" label="&savedir;" tooltiptext="&switch2history;" hidden="false" oncommand="cysSaveDialog.setFolderList('history', true)" />
-                  <button id="cys-dirlist-2custom" label="&savedir;" tooltiptext="&switch2custom;" hidden="true" oncommand="cysSaveDialog.setFolderList('custom', true)" />
-               </hbox>
-               <menulist id="folderlist" crop="center" editable="true" flex="1" oncommand="cysSaveDialog.setTooltip();">
-                  <menupopup >
-                  </menupopup>
-               </menulist>
-					<button id="fbrowse" label="..." tooltiptext="&btnbrowse;" oncommand="cysSaveDialog.showDirPicker();" />
-				</row>
-            <separator class="thin" />
-				<row align="top">
-					<spacer />
-					<vbox flex="1">
-                  <hbox align="center">
-                     <vbox>
-                        <checkbox id="savevideo" label="&savevideo;" checked="true"/>
-                     </vbox>
-                     <!--<spacer width="10px"/>-->
-                     <vbox>
-                        <checkbox id="savestats" label="&savestats;" checked="true" hidden="true"/>
-                     </vbox>
-                     <spacer width="10px"/>
-                     <vbox>
-                      <hbox align="center">
-                        <checkbox id="savecomments" label="&savecomments;" checked="true"/>
-                       <spacer width="1px"/>
-                        <image src="chrome://completeyoutubesaver/skin/i-icon.png" width='15px' height='20px' vspace="3px" tooltiptext='To quickly resave comments viewed, right click the page and select "Save Comments Viewed to Last Project Folder". If CYS hangs, lower the amount of comments saved.'/>
-                        <spacer width="1px"/>
-                        <label value="Max: "/>
-                        <textbox type="number" id="savecommentscount" label="Max: " increment="50" min="50" max="2000" width="60px" />
-                        
-                      </hbox>
-                     </vbox>
-                  </hbox>
-                    <spacer height="8px"/>
-                  <hbox>
-                     <!--<vbox>
-                        <checkbox id="savecomments" label="&savecomments;" checked="true"/>
-                        <spacer flex="1"/>
-                     </vbox>
-                     <spacer flex="1"/>
-                     <hbox>
-                        <radiogroup id="savecommentstype" orient="horizontal">
-                           <radio label="&comments.relevant;" value="true"/>
-                           <radio label="&comments.latest;" value="false"/>
-                        </radiogroup>
-                        <spacer flex="1"/>
-                        <vbox>
-                           <spacer flex="1"/>
-                           <label id="numcomments" value="&savecomments.count;"/>
-                           <spacer flex="1"/>
+                
+    <script src="cysCommons.js" type="application/x-javascript"/>
+    <script src="cysOverlay.js" type="application/x-javascript"/>
+    <script src="saveDialog.js" type="application/x-javascript"/>
+    <!--<script src="cysSniffer.js" type="application/x-javascript"/>-->
+    <groupbox>
+        <caption label="&settings;"/>
+        <grid>
+            <columns>
+                <column flex="0"/>
+                <column width="400"/>
+                <column flex="0"/>
+            </columns>
+            <rows>
+                <row align="center">
+                    <hbox align="end">
+                    <hbox flex="1"/>
+                    <label value="&pname;" control="pname"/>
+                    </hbox>
+                    <textbox id="pname" type="text"/>
+                    <hbox/>
+                </row>
+                <row align="center">
+                    <hbox align="end">
+                        <hbox flex="1"/>
+                        <button id="cys-dirlist-2history" label="&savedir;" tooltiptext="&switch2history;" hidden="false" oncommand="cysSaveDialog.setFolderList('history', true)" />
+                        <button id="cys-dirlist-2custom" label="&savedir;" tooltiptext="&switch2custom;" hidden="true" oncommand="cysSaveDialog.setFolderList('custom', true)" />
+                    </hbox>
+                    <menulist id="folderlist" crop="center" editable="true" flex="1" oncommand="cysSaveDialog.setTooltip();">
+                        <menupopup >
+                        </menupopup>
+                    </menulist>
+                    <button id="fbrowse" label="..." tooltiptext="&btnbrowse;" oncommand="cysSaveDialog.showDirPicker();" />
+                </row>
+                <separator class="thin" />
+                    <row align="top">
+                        <spacer />
+                        <vbox flex="1">
+                            <hbox align="center">
+                                <vbox>
+                                   <checkbox id="savevideo" label="&savevideo;" checked="true"/>
+                                </vbox>
+                                <!--<spacer width="10px"/>-->
+                                <vbox>
+                                   <checkbox id="savestats" label="&savestats;" checked="true" hidden="true"/>
+                                </vbox>
+                                <spacer width="10px"/>
+                                <vbox>
+                                    <hbox align="center" >
+                                        <checkbox id="savecomments" label="&savecomments;" checked="true"/>
+                                        <spacer width="1px"/>
+                                        <image src="chrome://completeyoutubesaver/skin/i-icon.png" width='15px' height='20px' vspace="3px" tooltiptext='To quickly resave comments viewed, right click the page and select "Save More Comments to Last Project Folder". If CYS hangs, lower the amount of comments saved.'/>
+                                        <spacer width="1px"/>
+                                        <label hidden="true" value="Max: "/>
+                                        <textbox hidden="true" type="number" id="savecommentscount" label="Max: " increment="50" min="50" max="2000" width="60px" />
+                                    </hbox>
+                                </vbox>
+                            </hbox>
+                            <spacer height="8px"/>
+                            <hbox>
+                            <!--<vbox>
+                               <checkbox id="savecomments" label="&savecomments;" checked="true"/>
+                               <spacer flex="1"/>
+                            </vbox>
+                            <spacer flex="1"/>
+                            <hbox>
+                               <radiogroup id="savecommentstype" orient="horizontal">
+                                  <radio label="&comments.relevant;" value="true"/>
+                                  <radio label="&comments.latest;" value="false"/>
+                               </radiogroup>
+                               <spacer flex="1"/>
+                               <vbox>
+                                  <spacer flex="1"/>
+                                  <label id="numcomments" value="&savecomments.count;"/>
+                                  <spacer flex="1"/>
+                               </vbox>
+                               <spacer width="10px"/>
+                               <checkbox id="saveavatars" label="&comments.avatars;" checked="false"/>
+                            </hbox>
+                            <spacer flex="1"/>
+                            -->
+                            <!--
+                            <hbox>
+                               <radiogroup id="savecommentsall" orient="horizontal">
+                                  <radio label="&savecomments.all;" />
+                                  <radio label="&savecomments.pages;" />
+                               </radiogroup>
+                               <vbox>
+                                  <spacer flex="1"/>
+                                  <hbox>
+                                     <textbox id="commentpages" type="number" size="1" min="1" max="99" flex="0"/>
+                                     <vbox>
+                                        <spacer flex="1"/>
+                                        <label id="numpages" value="/  ?"/>
+                                        <spacer flex="1"/>
+                                     </vbox>
+                                  </hbox>
+                               </vbox>
+                            </hbox>
+                            -->
+                            </hbox>
+                            <spacer height="8"/>
+                            <hbox>
+                                <vbox>
+                                    <spacer height="2"/>
+                                   <checkbox id="savesubtitles" label="&savesubtitles;" checked="true" onclick="cysSaveDialog.toggleSubtitleElem();"/>
+                                </vbox>
+                                <spacer width="10"/>
+                                <vbox>
+                                    <menulist id="cys-subtitle-language" hidden="true">
+                                     <menupopup>
+                                        <menuitem label="English" value="en"/>
+                                        <!--<menuitem label="English (United Kingdom)" value="en-GB"/>-->
+                                        <menuitem label="Afrikaans" value="af" />
+                                        <menuitem label="Albanian" value="sq" />
+                                        <menuitem label="Arabic" value="ar" />
+                                        <menuitem label="Armenian" value="hy" />
+                                        <menuitem label="Azerbaijani" value="az" />
+                                        <menuitem label="Basque" value="eu" />
+                                        <menuitem label="Belarusian" value="be" />
+                                        <menuitem label="Bengali" value="bn" />
+                                        <menuitem label="Chinese (Simplified)" value="zh-CN"/>
+                                        <menuitem label="Chinese (Traditional)" value="zh-TW"/>
+                                        <menuitem label="Danish" value="da" />
+                                        <menuitem label="Dutch" value="nl" />
+                                        <menuitem label="French" value="fr"/>
+                                        <menuitem label="German" value="de"/>
+                                        <menuitem label="Gujarati" value="gu"/>
+                                        <menuitem label="Hindi" value="hi"/>
+                                        <menuitem label="Interlingue" value="ie"/>
+                                        <menuitem label="Italian" value="it"/>
+                                        <menuitem label="Japanese" value="ja"/>
+                                        <menuitem label="Kannada" value="kn"/>
+                                        <menuitem label="Malayalam" value="ml"/>
+                                        <menuitem label="Marathi" value="mr"/>
+                                        <menuitem label="Polish" value="pl" />
+                                        <menuitem label="Russian" value="ru"/>
+                                        <menuitem label="Tamil" value="ta"/>
+                                        <menuitem label="Telugu" value="te"/>
+                                        <menuitem label="Spanish" value="es"/>
+                                        <menuitem label="Urdu" value="ur"/>
+                                     </menupopup>
+                                 </menulist>
+                                </vbox>
+                            </hbox>
+                            <hbox>
+                                <spacer width="19" /><checkbox id="ignoreautosubtitles" label="&ignoreautosubtitles;" checked="true" hidden="true"/>
+                            </hbox>
                         </vbox>
-                        <spacer width="10px"/>
-                        <checkbox id="saveavatars" label="&comments.avatars;" checked="false"/>
-                     </hbox>
-                     <spacer flex="1"/>
-                     -->
-                     <!--
-                     <hbox>
-                        <radiogroup id="savecommentsall" orient="horizontal">
-                           <radio label="&savecomments.all;" />
-                           <radio label="&savecomments.pages;" />
-                        </radiogroup>
-                        <vbox>
-                           <spacer flex="1"/>
-                           <hbox>
-                              <textbox id="commentpages" type="number" size="1" min="1" max="99" flex="0"/>
-                              <vbox>
-                                 <spacer flex="1"/>
-                                 <label id="numpages" value="/  ?"/>
-                                 <spacer flex="1"/>
-                              </vbox>
-                           </hbox>
-                        </vbox>
-                     </hbox>
-                     -->
-                  </hbox>
-                  <spacer height="8"/>
-                  <hbox>
-                     <vbox>
-                         <spacer height="2"/>
-                        <checkbox id="savesubtitles" label="&savesubtitles;" checked="true" onclick="cysSaveDialog.toggleSubtitleElem();"/>
-                     </vbox>
-                     <spacer width="10"/>
-                     <vbox>
-                         <menulist id="cys-subtitle-language" hidden="true">
-                          <menupopup>
-                             <menuitem label="English" value="en"/>
-                             <!--<menuitem label="English (United Kingdom)" value="en-GB"/>-->
-                             <menuitem label="Afrikaans" value="af" />
-                             <menuitem label="Albanian" value="sq" />
-                             <menuitem label="Arabic" value="ar" />
-                             <menuitem label="Armenian" value="hy" />
-                             <menuitem label="Azerbaijani" value="az" />
-                             <menuitem label="Basque" value="eu" />
-                             <menuitem label="Belarusian" value="be" />
-                             <menuitem label="Bengali" value="bn" />
-                             <menuitem label="Chinese (Simplified)" value="zh-CN"/>
-                             <menuitem label="Chinese (Traditional)" value="zh-TW"/>
-                             <menuitem label="Danish" value="da" />
-                             <menuitem label="Dutch" value="nl" />
-                             <menuitem label="French" value="fr"/>
-                             <menuitem label="German" value="de"/>
-                             <menuitem label="Gujarati" value="gu"/>
-                             <menuitem label="Hindi" value="hi"/>
-                             <menuitem label="Interlingue" value="ie"/>
-                             <menuitem label="Italian" value="it"/>
-                             <menuitem label="Japanese" value="ja"/>
-                             <menuitem label="Kannada" value="kn"/>
-                             <menuitem label="Malayalam" value="ml"/>
-                             <menuitem label="Marathi" value="mr"/>
-                             <menuitem label="Polish" value="pl" />
-                             <menuitem label="Russian" value="ru"/>
-                             <menuitem label="Tamil" value="ta"/>
-                             <menuitem label="Telugu" value="te"/>
-                             <menuitem label="Spanish" value="es"/>
-                             <menuitem label="Urdu" value="ur"/>
-                          </menupopup>
-                      </menulist>
-                     </vbox>
-                  </hbox>
-                  <hbox>
-                      <spacer width="19" /><checkbox id="ignoreautosubtitles" label="&ignoreautosubtitles;" checked="true" hidden="true"/>
-                  </hbox>
-                </vbox>
-               <spacer />
-				</row>
-            <!-- DTA   -->
-            <separator id="dta-row-sep" hidden="true" class="thin"/>
-            <row id="dta-row" hidden="true">
-               <spacer />
-               <checkbox label="&save.dta;" id="save-dta"/>
-               <spacer /> 
-            </row>
-            <!-- DTA   -->
-            <separator class="thin" />
-				<row align="center">
-					<hbox align="end">
-   					<hbox flex="1"/>
-                     <label id="cys-format-label" value="&format;" control="url"/>
-   					</hbox>
-					   <textbox id="format" type="text" readonly="true"/>
-					<hbox/>
-				</row>                
-            <separator class="thin" />
-			</rows>
-		</grid>
-	</groupbox>
-	<groupbox id="cys-save-details">
-		<caption label="&details;"/>
-		<grid>
-			<columns>
-				<column flex="0"/>
-				<column flex="1"/>
-			</columns>
-			<rows>
-            <row align="center">
-					<hbox align="end">
-						<hbox flex="1"/>
-						<label value="&pageurl;" control="url"/>
-					</hbox>
-					<textbox id="pageurl" type="text" readonly="true"/>
-					<hbox/>
-				</row>
-            <row align="center">
-					<hbox align="end">
-						<hbox flex="1"/>
-						<label value="&videourl;" control="url"/>
-					</hbox>
-					<textbox id="videourl" type="text" readonly="true"/>
-					<hbox/>
-				</row>                     
-			</rows>
-		</grid>
-	</groupbox>
-   <hbox>
-      <button id="cys-save-toggle" class="cys-toggle-down" type="radio" oncommand="cysSaveDialog.toggleDetails()" />
-      <label id="cys-save-toggle-more" class="cys-toggle-label" value="&more;" hidden="false" onclick="cysSaveDialog.toggleDetails()"/>
-      <label id="cys-save-toggle-less" class="cys-toggle-label" value="&less;" hidden="true" onclick="cysSaveDialog.toggleDetails()"/>
-   </hbox>
+                        <spacer />
+                    </row>
+                    <!-- DTA   -->
+                    <separator id="dta-row-sep" hidden="true" class="thin"/>
+                    <row id="dta-row" hidden="true">
+                       <spacer />
+                       <checkbox label="&save.dta;" id="save-dta"/>
+                       <spacer />
+                    </row>
+                    <!-- DTA   -->
+                    <separator class="thin" />
+                    <row align="center">
+                        <hbox align="end">
+                            <hbox flex="1"/>
+                            <label id="cys-format-label" value="&format;" control="url"/>
+                        </hbox>
+                        <textbox id="format" type="text" readonly="true"/>
+                        <hbox/>
+                    </row>
+                    <separator class="thin" />
+            </rows>
+	</grid>
+    </groupbox>
+    <groupbox id="cys-save-details">
+        <caption label="&details;"/>
+        <grid>
+            <columns>
+                <column flex="0"/>
+                <column flex="1"/>
+            </columns>
+            <rows>
+                <row align="center">
+                    <hbox align="end">
+                        <hbox flex="1"/>
+                        <label value="&pageurl;" control="url"/>
+                    </hbox>
+                    <textbox id="pageurl" type="text" readonly="true"/>
+                    <hbox/>
+                </row>
+                <row align="center">
+                    <hbox align="end">
+                        <hbox flex="1"/>
+                        <label value="&videourl;" control="url"/>
+                    </hbox>
+                    <textbox id="videourl" type="text" readonly="true"/>
+                    <hbox/>
+                </row>
+            </rows>
+        </grid>
+    </groupbox>
+    <hbox>
+        <button id="cys-save-toggle" class="cys-toggle-down" type="radio" oncommand="cysSaveDialog.toggleDetails()" />
+        <label id="cys-save-toggle-more" class="cys-toggle-label" value="&more;" hidden="false" onclick="cysSaveDialog.toggleDetails()"/>
+        <label id="cys-save-toggle-less" class="cys-toggle-label" value="&less;" hidden="true" onclick="cysSaveDialog.toggleDetails()"/>
+    </hbox>
 </dialog>
 <!--Copyright (c) 2016, Carlos Garcia. All rights reserved.-->

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="10px" height="24px" viewBox="0 0 10 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>header icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M14.3125,36.8491379 L23.6875,36.8491379 L19,43.71875 L14.3125,36.8491379 Z M14.3125,28.8076509 L23.6875,28.8076509 L19,35.6772629 L14.3125,28.8076509 Z M14.3125,20.28125 L23.6875,20.28125 L19,27.1508621 L14.3125,20.28125 Z" id="path-1"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="WHITE" transform="translate(-957.000000, -91.000000)">
+            <g id="Rectangle-248" transform="translate(943.000000, 71.000000)">
+                <g id="Group-6">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <use id="header-icon" fill="#FFFFFF" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

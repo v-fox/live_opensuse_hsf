@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?> 
+<?xml-stylesheet href="chrome://completeyoutubesaver/skin/cysOverlay.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://completeyoutubesaver/locale/popup.dtd">
+<dialog id="cys-popup" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+		onload="cysPopup.popup_onload()"
+		buttons="cancel,accept"
+		ondialogaccept="return cysPopup.doOK();"
+		title="CYS Development Ends Nov 2, 2016"
+		width="290" height="150">
+	<script src="popup.js" type="application/x-javascript"/>
+	<script src="cysCommons.js" type="application/x-javascript"/>
+	<script src="smallSaveDialog.js" type="application/x-javascript"/>
+	<vbox>
+  <!--  <hbox>
+	<spacer width="10"/>
+	<image src="chrome://completeyoutubesaver/skin/cys_32.png"/>
+	<spacer width="10"/></hbox> -->
+			<vbox>
+			<label value="Due to lack of funding, we can no lonnger afford to"/>
+			<label value="maintain this add-on. If you would like to see"/>
+			<label value="development continue please consider supporting us on"/>
+			<label value="Patreon" class="text-link" onclick="cysPopup.openUrl();"/>
+			</vbox>
+		<spacer height="3"/>
+		
+	<hbox>
+	<spacer width="5"/>
+		<button id="cys_DND" label="Do not show again" onclick="cysPopup.setDND()" dlgtype="cancel" />
+		<button id="cys_Remind" label="Remind me later" onclick="cysPopup.setRemind()" dlgtype="accept" />
+	</hbox>
+	 
+	</vbox>
+  </dialog>

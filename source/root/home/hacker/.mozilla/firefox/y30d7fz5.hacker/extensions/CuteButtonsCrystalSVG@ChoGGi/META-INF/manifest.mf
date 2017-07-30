@@ -2,186 +2,206 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: XiUedvEIozuokB60KKf7bQ==
-SHA1-Digest: m3EgtdDoBuZiyv34uKjQINdhYrM=
+MD5-Digest: REumYn02MVGHjeAjbAHc9w==
+SHA1-Digest: qEILWuG5Dqmn7NRESnjnSXnWkyA=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: Xwoo5YDv3iQqY2fSUhricw==
-SHA1-Digest: NkZjnQ/9dCNskjIc6FQ1T5jFur0=
+MD5-Digest: jMRUNYT8ac4GZiCxCfqE8A==
+SHA1-Digest: jcK0cQiHrqEW8nqEMnIQreRyNJE=
 
-Name: chrome/icons/default/cutebuttons.ico
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: oHve7Vk62uvm0krHgfh3aw==
-SHA1-Digest: +7RdrJGmulCNfr/Z8eJtbb/E3CI=
-
-Name: chrome/icons/default/cutebuttons.xpm
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: IlCLhDZojcIYcYa6xrM1mA==
-SHA1-Digest: jidDctWylpqNHFhlYFZ/whUx/as=
-
-Name: components/cuteButtonsStartup.js
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: q0NO5ETIYS741WGaufxpKg==
-SHA1-Digest: V18WavL3B7b0sc/ojer2A+h4sCI=
-
-Name: content/bindings.xml
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: aPgLI8sQVnOaSQuQGJtVcQ==
-SHA1-Digest: YHSJsjpnfaFsDr+Gj7sfcRK8yrw=
-
-Name: content/BlurDisabled.css
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: 6JVZzV6GtciYsdEZ18VUow==
-SHA1-Digest: P8W0UrfSPJIRQ9Qv/KUehyIMAvY=
-
-Name: content/CheckmarkIcons.css
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: HY1uKKrY3Ww4j75OrhMcxw==
-SHA1-Digest: j5GX7CTyOnMizl+29hGWkh32FD0=
-
-Name: content/common.jsm
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: NldC8MbxBzFZn63frO6Teg==
-SHA1-Digest: guq1b4+WRiu2yf1N3Z2ZiCkK51U=
-
-Name: content/cutebuttons.png
+Name: icon.png
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: nWcJ0mvD1aOtGSev08kzKg==
 SHA1-Digest: DLbvQrRYOmoFz5Gz1EhDlme1XpA=
+
+Name: bootstrap.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: PszXyyE+tPcX+pT6ec3EUQ==
+SHA1-Digest: ktLE2MJQO57Q7ORSRoyBh9QovwY=
+
+Name: content/BlurDisabledIcons.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: XFuWtJPvznfrsYlXJU0VGg==
+SHA1-Digest: VuYKgVBBBoRIsOM+IUYWGOCb/dQ=
+
+Name: content/CheckmarkButtonUglyFix.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: fQAkQb3bySDqyWS6WRcAhg==
+SHA1-Digest: VzzVUQtr9p5M6MrcR/a3q5YcEPM=
+
+Name: content/common.jsm
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 6QbvebUTdzFOLP1ciG747A==
+SHA1-Digest: qD6CEIgr30wa2XyfIjPzctM0krw=
+
+Name: content/Crystal Project License.txt
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: eztXTi1ViUv8ioiOb0qMaA==
+SHA1-Digest: 9ABdgLeX4mUkgwoLvMa6QDYvPEM=
 
 Name: content/cutebuttons16.png
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: lVs+BurwSa/jQXA9r+L7Dw==
 SHA1-Digest: k0j/sI1zaRlK3syhwZWlf43Se1k=
 
-Name: content/DOMi.css
+Name: content/cutebuttons32.png
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: rOMDgpAU1LvppkQqjwwxtQ==
-SHA1-Digest: ydTMswNfhTfy5zvpu7D7HgUn6sw=
+MD5-Digest: nWcJ0mvD1aOtGSev08kzKg==
+SHA1-Digest: DLbvQrRYOmoFz5Gz1EhDlme1XpA=
 
-Name: content/Icons.css
+Name: content/Icons.CheckmarkButton.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: ZxaZy9K2MgetMUMCq4k8QQ==
-SHA1-Digest: 9ZHgFawVB50SIt+idGL9SNz+HjI=
+MD5-Digest: 4jWKD/wO9DgGSDOzlzLsZw==
+SHA1-Digest: 6qQ49PLUIv1eKWWbCzKIKBCo7pE=
 
-Name: content/LinuxFix.css
+Name: content/Icons.CheckmarkButtonHover.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: auQkp4vJ4OWTuAfAW3oeYw==
-SHA1-Digest: gmZgX/KsXAOH+sFjBQjpciRHxTM=
+MD5-Digest: hR9RAIbwhzv9eGJLURCRCw==
+SHA1-Digest: jqLe4rU9O28GETh30qaWZlaOg7Y=
 
-Name: content/locales.jar
+Name: content/Icons.CheckmarkMenu.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: MXE0a/92nOWu3uRf9cEBvQ==
-SHA1-Digest: acoImXQCMZ6ZF0hqUfr+qWwAlJU=
+MD5-Digest: UnDkJqZjiWNoTmH9cfqvyQ==
+SHA1-Digest: ycX4jDRmZIIYlESLhBMtt4XS2OM=
 
-Name: content/Menubar.css
+Name: content/Icons.CheckmarkMenuHover.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: H4NccAaqdDvLtaRyy5UrWg==
-SHA1-Digest: edp7P2VB+IfS4S0bdI6/gNWdO/8=
+MD5-Digest: qHRz4p5WZ54Z+iWZgK2FJw==
+SHA1-Digest: yztyCr1+FWP0vFyJyEZROqyqe0s=
 
-Name: content/MenubarIcons.css
+Name: content/Icons.Hover.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: M280OBeyk8JxMPtr9FgNJg==
-SHA1-Digest: ygrG7KvWqEOZ8X+YFv/R42k4leI=
+MD5-Digest: FsKXAEihfkfz+BLbgAjxFw==
+SHA1-Digest: +UFs60JTPvpk9vF/lH5UXqehABA=
 
-Name: content/MenubarText.css
+Name: content/Icons.Normal.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: G7r8EsLBo4ONId3YZ5Y09g==
-SHA1-Digest: Men2AQwEgHl5iywX3r7Cyt6K8VA=
+MD5-Digest: EBhXctsP4g+k5BJKn2Zgfw==
+SHA1-Digest: tViZ13zF3giL2FYPTr2qod+i3zM=
 
-Name: content/mosaic license.txt
+Name: content/Icons.png
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: KjAc2FXz9Om4gqJaU3VTrg==
-SHA1-Digest: 6/UXEOS9MhXdE0atozcFWy/flkM=
+MD5-Digest: RlfbP4fuN+PivBsrtT5pow==
+SHA1-Digest: nqMmndPSDePM7Dz6ZvmzMyNIO3Y=
+
+Name: content/Icons.RadioButton.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: DH5YtIPYw0fSlZlnA5KAuA==
+SHA1-Digest: yKY1smawFilZQpJ+L4Bp8cfgBMI=
+
+Name: content/Icons.RadioButtonHover.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: 7Unf4JiNDB8E+MBWhvyfzQ==
+SHA1-Digest: qNJ/Uswgzq8WjQ61BNSRP7eHpBM=
+
+Name: content/Icons.RadioMenu.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: K5SQi/s024WtNOi++EkQig==
+SHA1-Digest: bDIiYXwik03pIyMDknQGK8Pm4gk=
+
+Name: content/Icons.RadioMenuHover.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: uNh4J5/YPn0td0vwkkSAjQ==
+SHA1-Digest: jCDIic3KV9lh78YuZUn+OlFgbMo=
+
+Name: content/locales.zip
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: D2azM/Ma/BkNuM8aOTsMgg==
+SHA1-Digest: 2BVfJqwWqGdgdKwRDTxUvXLlEps=
 
 Name: content/mosaic.brighter.png
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 2gPL80o3d6USDW4umICbiQ==
-SHA1-Digest: Kgv3ngwR4pfc0ynEca6UzRXCS1s=
+MD5-Digest: HhEMHREgrqmQ/0IOFw46uw==
+SHA1-Digest: BmugkjeJ8jgLUHVCqbfOlEoCmDo=
 
-Name: content/mosaic.brighterreversed.png
+Name: content/mosaic.faded.png
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 79aeaVQzumc5VM4i9FcmWw==
-SHA1-Digest: dlVueFdz5sXCv3/RvpbPlH2dQ4s=
+MD5-Digest: LIg4qL2WBpnmW0ntP75D8w==
+SHA1-Digest: AoqSdgD99eJ6AOO3LXpf7IAz994=
 
 Name: content/mosaic.gray.png
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: NAEdTaJaZ0OFGLsRfJ2TZg==
-SHA1-Digest: BMOlDEaSDQnXN9k2DK7NgZQMquo=
-
-Name: content/mosaic.jsm
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: HU1iE7Hslr+vBMGvDYT1jA==
-SHA1-Digest: KM6owAi5oRJSO5CPSyVMUDgwldA=
+MD5-Digest: dvDdkaV/ik4R8TGc7L/2lA==
+SHA1-Digest: QrdVZashqC6yHJqAZvVhe6EnDIg=
 
 Name: content/mosaic.normal.png
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 49a7rRJDlMdCu5scpbD7iw==
-SHA1-Digest: xVZmnlpzPfUFcwAXx+ixuttGNZg=
-
-Name: content/mosaic.png
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: W+VC85bH3CoJak6s1EY86A==
-SHA1-Digest: 8ovBenxqOQtzFBBJU7LHnQmEKhs=
+MD5-Digest: OCJaDMXuOq9D4Fqk6I1vCQ==
+SHA1-Digest: rTZbGgykSD7RZA9bfj/2v54qhvI=
 
 Name: content/NoIconsButtons.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 1Ib8XaDHjvW077kVisnPuw==
-SHA1-Digest: 3kNwJiQwEoxaBwSBwi3g5tqQ5HY=
+MD5-Digest: 2KdY1DKj+J1IACFaNxa4aQ==
+SHA1-Digest: ujYYliFtD71bexVL+BVD0ZNs1rE=
 
 Name: content/NoIconsMenus.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: adcwZzWIQFODXKKT1Kyonw==
-SHA1-Digest: Ed7RvRNt5jCBjTP/lMd3oMpA/qo=
+MD5-Digest: eG9YxQ5D3trdihydTRNpgA==
+SHA1-Digest: 7QlVLsqon1gPhfqey7g5Cw2hN8Y=
 
 Name: content/options.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 3R/X0DGfeAKCp1lyDfcwXw==
-SHA1-Digest: uLrucrgBJ0ZEdPTtEBERhPe2H2I=
+MD5-Digest: NEu6gyC0n5FVI4jsyOLksg==
+SHA1-Digest: w92v17phj5aPmjvuxOPATG2es2M=
 
 Name: content/options.xul
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: eyvsLRKcu2De1uCzgiLzuw==
-SHA1-Digest: KZ/5x0v4j+kUCI6p1Ww0Yp20z+4=
+MD5-Digest: 3CLIkpJjMVIQwqwrtrZwOg==
+SHA1-Digest: 5LhN4+jxn19LSTt1FXpXkIQtFN4=
 
-Name: content/overlay.js
+Name: content/OSXFix.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: lKe6sS9jaSJSKZXiqWSgpg==
-SHA1-Digest: 5iajvzkwa8xHhZa+ClyjtDB6rEw=
+MD5-Digest: aBteSXcdOcC21ppNb1vdYA==
+SHA1-Digest: EeWe+USyFVMzgzP79+47ifLeyUk=
 
-Name: content/overlay.xul
+Name: content/overlay.jsm
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: TN88hmnTLicWiDnh3SNrPA==
-SHA1-Digest: WkfvaEqqeVePpz41dGuWUkd+EU4=
+MD5-Digest: UzgO1UNEunKU+REMGlnxiA==
+SHA1-Digest: eUF7Z833UuDF4PK1OLc6kv+F+2Q=
 
-Name: content/RadioIcons.css
+Name: content/RadioButtonUglyFix.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: SEzFnzl4ra7OI3z9OnNqIg==
-SHA1-Digest: 9pTvap4AilxwTMMXXp2QIm37LZM=
+MD5-Digest: l4vd3QV7i8ibkHQ0s2Uumw==
+SHA1-Digest: Mucj3wExKXJlawcRxi1HlbuRecY=
 
 Name: content/RotateIcons.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: YYPbOFQTWzvQ7EzPBuHRaA==
-SHA1-Digest: cUfxzu9XW3bL2VQv5HBljqa5ezo=
+MD5-Digest: g7xllHSbH1VproV1Siviiw==
+SHA1-Digest: jLbExBhCuPzpoHVa4ZIEfQ5BJYM=
 
 Name: content/Statusbar-4evar.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 6j6Kr1cKuhqtcPaVGjPC3Q==
-SHA1-Digest: 4RMrQQ11eQfuiJTmdfcMBVgaMUo=
+MD5-Digest: +ZD6IepFNwVaPGB5bXlTXg==
+SHA1-Digest: wMbJ/8wcahzv8hoXSaXONSOpHqA=
 
 Name: content/Statusbar.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: SPCurw8aObz7ca/1+0+pGQ==
-SHA1-Digest: In/mnEQw6uuDOvwsB25Sfxe1YE8=
+MD5-Digest: jsOTP31WIqjNCzmxy+NGJA==
+SHA1-Digest: fOJ3B/7fz2Vx8iCeFSJvpfpKvvQ=
 
 Name: content/statusbar.png
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: jNK8ObXttgn7/uagIYfWQQ==
-SHA1-Digest: SZAVVh1aFYSB1fgZXV3kLiFd08k=
+MD5-Digest: lLgs5m7yqk8wqCCK7izZpg==
+SHA1-Digest: 85rdtA7xDUjoMQJawaT12bIXfBQ=
 
-Name: defaults/preferences/cutebuttons.js
+Name: content/toolbarbutton.css
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: KGVPyCPjvGk+96YtB2Kc4Q==
-SHA1-Digest: 0yUinrlANAKz/Cdyx9j5wyVvo2k=
+MD5-Digest: e72FMSfsZyf704L6LlKT/w==
+SHA1-Digest: y//6KnywHJxt43E2+H5pqhJB6eU=
+
+Name: content/UnixFix.css
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: xKeTWwEn43OgZ7WSGYFnNg==
+SHA1-Digest: XSA3VycLPrb9h1bgJ0vfdc8jGU4=
+
+Name: includes/buttons.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: XELreE+jBTALPpzSXCuD+g==
+SHA1-Digest: xHv6BK7p1BAQtkabBPiOlBfWOZI=
+
+Name: includes/LICENSE
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: XoSS8h/OjqjXBi23g9LN/w==
+SHA1-Digest: fMkWXpDqV8yMlACnj27DI19zlF8=
 

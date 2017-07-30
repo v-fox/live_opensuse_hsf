@@ -1,0 +1,3 @@
+<!ENTITY dialog.title "Complete YouTube Saver">
+<!ENTITY label.caption "Please select the folder where ffmpeg is located. You do not need to select the actual ffmpeg file.">
+<!ENTITY checkbox.label "Do not show this again.">

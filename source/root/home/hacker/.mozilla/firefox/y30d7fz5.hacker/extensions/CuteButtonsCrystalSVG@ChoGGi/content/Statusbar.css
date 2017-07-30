@@ -1,3 +1,4 @@
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 /*
 change how the statusbar looks
 change the default in the line below @namespace
@@ -18,7 +19,7 @@ toolbarbutton.xml#menu-vertical
 */
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 @-moz-document url-prefix("chrome://browser/content/browser.xul"),url-prefix("chrome://navigator/content/navigator.xul"),url-prefix("chrome://messenger/content/mailWindowOverlay.xul"){
-#statusbar-display[label]{margin:4px 0 0 4px!important;-moz-binding:url("chrome://global/content/bindings/general.xml#statusbarpanel-iconic-text")!important;-moz-box-pack:start!important;overflow:hidden!important;list-style-image:url("mosaic.png")!important;-moz-image-region:rect(160px 32px 176px 16px)!important}
+#statusbar-display[label]{margin:4px 0 0 4px!important;-moz-binding:url("chrome://global/content/bindings/general.xml#statusbarpanel-iconic-text")!important;-moz-box-pack:start!important;overflow:hidden!important;list-style-image:url("mosaic.hover.png")!important;-moz-image-region:rect(160px 32px 176px 16px)!important}
 #statusbar-display .button-menubutton-dropmarker,#statusbar-display .toolbarbutton-menu-dropmarker{display:none!important}
 #statusbar-display[label] .listcell-label,#statusbar-display .statusbarpanel-text,#statusbar-display[label] .toolbarbutton-text,#statusbar-display[label] .button-text,#statusbar-display[label] .button-menubutton-button{padding:1pt 0 0 2pt!important}
 #statusbar-display[label]>image{max-height:16px!important}
@@ -93,7 +94,7 @@ toolbarbutton.xml#menu-vertical
 @-moz-document url-prefix(chrome://chromelist){
 #status-text[label]{-moz-binding:url("chrome://global/content/bindings/general.xml#statusbarpanel-iconic-text")!important;-moz-box-pack:start!important}
 #status-text .button-menubutton-dropmarker,#status-text .toolbarbutton-menu-dropmarker{display:none!important}
-#status-text[label]{list-style-image:url("mosaic.png")!important;-moz-image-region:rect(160px 48px 176px 32px)!important}
+#status-text[label]{list-style-image:url("mosaic.hover.png")!important;-moz-image-region:rect(160px 48px 176px 32px)!important}
 #status-text[label] .listcell-label,#status-text[label] .statusbarpanel-text,#status-text[label] .toolbarbutton-text,#status-text[label] .button-text,#status-text[label] .button-menubutton-button{padding-left:2pt!important}
 #status-text[label="Reading Manifests..."]{-moz-image-region:rect(80px 16px 96px 0)!important}
 #status-text[label="Mapping Chrome URLs..."]{list-style-image:url("chrome://global/skin/throbber/Throbber-small.gif")!important;-moz-image-region:auto!important}
