@@ -1,5 +1,6 @@
 source/root/etc/os-release
 source/root/home/hacker/*.tar*
+source/root/home/hacker/*.tpxz
 source/root/home/hacker/ChangeLog
 source/root/home/hacker/README.md
 source/config.xml

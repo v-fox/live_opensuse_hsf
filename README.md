@@ -44,7 +44,7 @@ emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
 Steam installer/launcher is present
 * professional networking tools and rich connectivity options
 * OpenVAS/ex-Nessus and ClamAV security systems are present (inactive)
-* anti-censorship kit: Tor/Privoxy, DNSCrypt-proxy/Unbound, proxychains-ng and VPN  
+* anti-censorship kit: Tor&I2P/Privoxy, DNSCrypt-proxy/pdnsd, proxychains-ng and VPN  
 (Privoxy is also I2P-aware, all i2p-links will be proxy-chained into it;  
 Unbound uses multiple DNSSEC-capable DNSCrypt instances for different resolvers)
 * LeechCraft modular system stripped for only IM and socializing

@@ -42,7 +42,6 @@ avahi-autoipd
 avahi-utils
 bash-completion
 bc
-bcg729-mediastreamer
 beignet
 bindfs
 bind-utils
@@ -100,7 +99,6 @@ Crystalcursors
 cups-backend-kerberized-smb
 cups-backends
 cups-filters
-cups-filters-cups-browsed
 cups-pdf
 curlftpfs
 curlwwwfs
@@ -116,7 +114,7 @@ dejavu-fonts
 delayacct-utils
 deltarpm
 desktop-translations
-desmume-svn
+desmume-git
 dictd
 digikam
 dispcalGUI
@@ -129,7 +127,7 @@ docker-compose
 docker-distribution-registry
 docker-zsh-completion
 dolphin
-dolphin-emu
+dolphin-emu-git
 dos2unix
 dosbox
 dpkg
@@ -180,7 +178,6 @@ foo2zjs
 foremost
 fping
 fprintd-pam
-freenx-client
 free-ttf-fonts
 freetype-tools
 freshplayerplugin
@@ -189,7 +186,6 @@ fsarchiver-qt4
 fslint
 fslsfonts
 ftop
-fusecompress
 fuse-lessfs
 fusepod
 fuse-sfs
@@ -233,7 +229,6 @@ gnome-icon-theme-extras
 gnome-icon-theme-symbolic
 gnome-keyring
 gnome-keyring-pam
-gnome-media
 gnu_ddrescue
 gnu-free-fonts
 goldendict
@@ -360,8 +355,6 @@ ibus-table-yawerty
 ibus-table-ziranma
 ibus-unikey
 icc-profiles-all
-icc-profiles-scp-argyll
-icc-profiles-scp-yamma
 iceWMCP-addons
 icewm-default
 ifplugd
@@ -408,7 +401,6 @@ kdnssd
 keepassxc
 keepnote-extensions
 keepnote-git
-kfilemetadata
 kglobalaccel5
 khotkeys5
 killswitch-applet
@@ -423,7 +415,6 @@ kiwi-tools
 kmid
 konsole
 konsole4-part
-kparts-plugin
 krename
 krusader
 kscreen5
@@ -514,7 +505,6 @@ libcanberra-gtk-module-common
 libcap-ng-utils
 libcap-progs
 libcgroup-tools
-libclutter-gst-2_0-0
 libcryptsetup4-hmac
 liberation-fonts
 libflashsupport
@@ -530,7 +520,6 @@ libpoppler-glib8
 libpoppler-qt4-4
 libprojectM-libvisual
 libpurple-meanwhile
-libpurple-plugin-facebookchat
 libpurple-plugin-mrim
 libpurple-plugin-openfetion
 libpurple-plugin-pack
@@ -565,7 +554,6 @@ libvirt-daemon-qemu
 libvirt-daemon-uml
 libvirt-daemon-xen
 libvirt-nss
-libvisual-plugins
 libXaw3d8
 libXRes1
 libXTrap6
@@ -767,7 +755,7 @@ pcp-pmda-trace
 pcp-pmda-zswap
 pcp-system-tools
 pcp-testsuite
-pcsx2
+pcsx2-git
 pcsxr
 pdfcrack-multithread
 pdnsd
@@ -808,7 +796,6 @@ product-builder-plugin-Tumbleweed
 projectM-data
 projectM-jack
 proxychains-ng
-proxytunnel
 psmisc
 ptools
 ptunnel
@@ -843,7 +830,6 @@ qsynth
 qtcurve-gtk2
 qtcurve-kde4
 qtcurve-qt5
-qt-mobility-pulseaudio
 qtox
 quota-nfs
 qv4l2
@@ -858,6 +844,7 @@ redis
 refind
 reiser4progs
 remmina-plugin-rdp
+remmina-plugin-spice
 remmina-plugin-vnc
 remmina-plugin-xdmcp
 retroarch
@@ -909,10 +896,8 @@ soundkonverter
 sox
 spax
 speedcrunch
-spice-client
 spice-gtk
 spice-vdagent
-splashy-mkinitrd
 splix
 srm
 ssdeep
@@ -1091,7 +1076,6 @@ xsetmode
 xsetpointer
 xvinfo
 yabause
-yagf
 yakuake
 yast2-apparmor
 yast2-audit-laf

@@ -5,15 +5,9 @@
 	</description>
 	<preferences>
 		<type image="iso" primary="true" checkprebuilt="false"
-		boot="isoboot/suse-tumbleweed" firmware="uefi" bootprofile="custom" bootkernel="HSF"
+		boot="isoboot/suse-tumbleweed" firmware="uefi" bootprofile="custom"
 		flags="overlay" hybrid="true" hybridpersistent="true" hybridpersistent_filesystem="ext4"
-		kernelcmdline="plymouth.enable=0 splash=verbose apparmor=0">
-			<split>
-				<temporary>
-					<file name="/*"/>
-				</temporary>
-			</split>
-		</type>
+		kernelcmdline="plymouth.enable=0 splash=verbose apparmor=0"></type>
 		<packagemanager>zypper</packagemanager>
 		<rpm-check-signatures>false</rpm-check-signatures>
 		<rpm-force>false</rpm-force>

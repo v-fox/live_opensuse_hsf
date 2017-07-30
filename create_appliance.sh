@@ -195,7 +195,7 @@ else
 fi
 # adding generated config.xml into snapshot too, just as example
 tar rpf "${SNAPSHOT}" --transform "s:^:/${NAME_PREFIX}/:" ${CONFIG}
-xz -vv -9 -f "${SNAPSHOT}" || exit 1
+pixz -9 "${SNAPSHOT}" || exit 1
 
 # putting README into image
 echo "** Making copies of README.md and ChangeLog in user's home: "
@@ -237,9 +237,11 @@ if [ -d "${dst}" ]; then
 fi
 	
 echo "** Creating appliance..."
-command="$kiwi --color-output --compat --verbose 3 --gzip-cmd=lzop --build ${src}/ -d ${dst}"
-echo "$command"
+command="${kiwi} --debug --color-output --type iso system build --description ${src} --target-dir ${dst}"
+#cd "${src}"
+echo "${command}"
 $command
+#cd "${dir}"
 # this should work but kiwi sometimes gives out error codes for good builds
 #if [ $? -ne 0 ]; then
 #	echo "** Appliance creation failed!"
