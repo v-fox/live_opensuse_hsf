@@ -119,7 +119,7 @@ alias wget="wget --no-proxy"
 # staying fresh even in deeper places
 update-ca-certificates
 update-pciids
-update-usbids.sh
+#update-usbids.sh
 update-smart-drivedb
 
 # force-installing Google-fonts from crapload of packages here instead of the proper place
@@ -127,8 +127,6 @@ zypper --non-interactive --gpg-auto-import-keys refresh
 zypper --non-interactive install "google-*-fonts" || exit 1
 # and installing all forensic tools while we're at it
 zypper --non-interactive install --from security_forensics "*-tools" || exit 1
-# all digikam plugins
-zypper --non-interactive install "digikam-plugin-*" || exit 1
 # and YaST translations
 zypper --non-interactive install "yast2-trans-*" || exit 1
 # removing unwanted packages (but why we would even have them in the first place ?)

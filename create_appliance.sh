@@ -29,7 +29,7 @@ if [ $? -ne 0 ]; then
   echo "Kiwi is required but not found on your system."
   echo "Run the following command to install kiwi:"
   echo
-  echo "  zypper install kiwi kiwi-tools kiwi-desc-isoboot kiwi-doc"
+  echo "  zypper install python-kiwi kiwi-tools"
   echo
   exit 1
 fi
@@ -237,7 +237,7 @@ if [ -d "${dst}" ]; then
 fi
 	
 echo "** Creating appliance..."
-command="${kiwi} --debug --color-output --type iso system build --description ${src} --target-dir ${dst}"
+command="${kiwi} --debug --color-output --type iso system build --description ${src} --target-dir ${dst} $@"
 #cd "${src}"
 echo "${command}"
 $command
