@@ -49,6 +49,13 @@ elif [ "${image_arch}" = 'x86_64' ] && [ "${sys_arch}" = 'i686' ]; then
   exit 1
 fi
 
+# variable for deleting root of previous build before attempting a new one
+clean_pan=yes
+for parameter in $@; do
+        if [ "${paremeter}" == "--allow-existing-root" ]; then
+                clean_pan=no
+done
+
 # Variables.
 echo "** Setting up versioning variables..."
 VERSION_DIST="Tumbleweed"
@@ -231,11 +238,15 @@ sed 	-e "/BUILD_ID=/s:=.*$:=\"${BUILD_DATE}\":" \
 	-e "/CPE_NAME=/s:=.*$:=\"cpe\:/o\:opensuse\:opensuse\:${VERSION_DIST}\":" \
 	data/os-release > source/root/etc/os-release
 
-echo "** Cleaning up building directory..."
-if [ -d "${dst}" ]; then
-	rm -rf "${dst}"/*
+if [ "${clean_pan}" == "yes" ]; then
+	echo "** Cleaning up building directory..."
+	if [ -d "${dst}" ]; then
+		rm -rf "${dst}"/*
+	fi
+else
+	echo "** NOT cleaning up building directory..."
 fi
-	
+
 echo "** Creating appliance..."
 command="${kiwi} --debug --color-output --type iso system build --description ${src} --target-dir ${dst} $@"
 #cd "${src}"
