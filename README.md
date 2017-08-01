@@ -71,7 +71,7 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
   * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis, volatility
 * encryption tools:  
   * YaST partitioner's built-in crypt{setup,config} / LUKS encryption capabilities
-  * veracrypt (TrueCrypt fork), aespipe, emount/zuluCrypt, seahorse/gnome-keyring, keepassx
+  * veracrypt (TrueCrypt fork), aespipe, emount/zuluCrypt, seahorse/gnome-keyring, keepassxc
 * bunch of repos pre-configured (but disabled) for recent though mostly stable updates
 * useful things that I've put there but forgot to mention
 
