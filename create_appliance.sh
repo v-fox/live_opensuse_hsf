@@ -138,6 +138,9 @@ cat config/head >> "${CONFIG}"
 cat >> "${CONFIG}" <<EOF
 		<version>${VERSION_CONFIG}</version>
 	</preferences>
+	<drivers profiles="custom">
+		<file name="*"/>
+	</drivers>
 EOF
 # users
 cat config/users >> "${CONFIG}"
