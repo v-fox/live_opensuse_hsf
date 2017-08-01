@@ -23,7 +23,7 @@ baseSetupBuildDay
 #==========================================
 # {iso/sys}linux graphical theme
 #------------------------------------------
-gfxboot --update-theme HSF
+#gfxboot --update-theme HSF
 
 #==========================================
 # remove unneded kernel files

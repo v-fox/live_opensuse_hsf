@@ -8,8 +8,6 @@ disktype
 dosfstools
 efibootmgr
 exfat-utils
-gfxboot-branding-HSF
-grub2-branding-HSF
 grub2-i386-pc
 grub2-x86_64-efi
 ipw-firmware
@@ -21,7 +19,6 @@ mokutil
 mpt-firmware
 nano
 os-prober
-plymouth-branding-HSF
 technisat-usb2-firmware
 ucode-amd
 util-linux
