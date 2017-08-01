@@ -54,6 +54,7 @@ clean_pan=yes
 for parameter in $@; do
         if [ "${paremeter}" == "--allow-existing-root" ]; then
                 clean_pan=no
+	fi
 done
 
 # Variables.
