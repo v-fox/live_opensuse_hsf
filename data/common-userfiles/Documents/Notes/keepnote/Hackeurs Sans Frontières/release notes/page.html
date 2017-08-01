@@ -7,7 +7,7 @@
 <li>hacker's example pgp passphrase: "unsafe for work". DON'T actually USE IT</li>
 <li>if you would put HSF on <span style="background-color: #4b4b10">R/W medium</span>&nbsp;such as USB flash stick, it will create a partition for storing changes witn overlayfs:squashfs/ext4 combination out of all the redundant space instead of usual tmpfs as is the case with R/O medium</li>
 </span></ul>
-<ul><li><span style="font-family: DejaVu Sans">use `</span><span style="background-color: #4b4b10">hardinfo</span>`(GUI), <span style="font-family: DejaVu Sans">`<span style="background-color: #4b4b10">hwinfo</span>` and `<span style="background-color: #4b4b10">inxi</span>` (CLI) for getting nice hardware summaries</span></li>
+<ul><li><span style="font-family: DejaVu Sans">use `</span><span style="background-color: #4b4b10">hardinfo</span>`(GUI), `<span style="background-color: #4b4b10"><span style="font-family: DejaVu Sans">lshw</span></span>` , <span style="font-family: DejaVu Sans">`<span style="background-color: #4b4b10">hwinfo</span>` and `<span style="background-color: #4b4b10">inxi</span>` (CLI) for getting nice hardware summaries</span></li>
 <span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ `i-nex` is the best looking hw info gathering tool available but it has insane dependencies, so we have to do without</li>
 <li>before using package manager, you may need to do:</li>
 <li style="list-style-type: none">∘ `<span style="background-color: #4b4b10">sudo zypper --gpg-auto-import-keys refresh</span>` in terminal to get repo-caches and import/update all their keys</li>
@@ -51,19 +51,19 @@
 </li>
 <li><span style="font-family: DejaVu Sans">you might want to also uncheck Options-&gt;'<span style="background-color: #4b4b10">Install Recommended Packages</span>' in YaST Package Manager to achieve same effect as with 'installRecommends' for zypper and prevent it from installing loads of unnecessary crap (but only for already installed packages)</span></li>
 </ul>
-<ul><li><span style="font-family: DejaVu Sans">this spin contains only English language by default.</span></li>
+</span><ul><span style="font-size: 10pt"><li><span style="font-family: DejaVu Sans">this spin contains only English language by default.</span></li>
 <span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ add your language in `<span style="background-color: #4b4b10">yast2 language</span>` and `<span style="background-color: #4b4b10">yast2 sw_single</span>` (you may have to allow installing 'recommended' packages for that to work)</li>
 <li style="list-style-type: none">∘ <span style="background-color: #4b4b10">ibus</span>&nbsp;input method daemon is launched on user session start, you can access its preferences via system tray icon and add your keyboard settings there</li>
 </span><li style="list-style-type: none"><span style="font-family: DejaVu Sans">∘ to set up non-ibus input you, probably, has to use systemd's new "bicycle" named `<span style="background-color: #4b4b10">localectl</span>` (when those assholes would learn to put functional part, like "ctl", of the name first ?)</span></li>
-</ul>
-<ul><li><span style="font-family: DejaVu Sans">`<span style="background-color: #4b4b10">yast2 fonts</span>` settings are used for font antialiasing &amp; hinting.</span></li>
+</span></ul>
+<ul><span style="font-size: 10pt"><li><span style="font-family: DejaVu Sans">`<span style="background-color: #4b4b10">yast2 fonts</span>` settings are used for font antialiasing &amp; hinting.</span></li>
 <span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ so select "system defaults / don't change" in your DE's font settings</li>
 <li style="list-style-type: none">∘ or set default '<span style="background-color: #4b4b10">aa: enable, hinting: slight, subpixel geometry: rgb</span>' if your font rendering is inexplicably garbled</li>
 </span><li><span style="background-color: #4b4b10"><span style="font-family: DejaVu Sans">colord</span></span><span style="font-family: DejaVu Sans">, <span style="background-color: #4b4b10">xiccd</span>, &nbsp;</span><span style="background-color: #4b4b10"><span style="font-family: Verdana">argyllcms</span></span><span style="font-family: DejaVu Sans">&nbsp;and <span style="font-family: Verdana"><span style="background-color: #4b4b10">dispcalGUI</span>&nbsp;are installed for full-scale colour management, they should be able to automatically export EDID-based colour profiles for your monitors</span></span></li>
 <li style="list-style-type: none"><span style="font-family: DejaVu Sans">∘ </span>but they may fail, so to make sure it's done launch dispcalGUI and select Options-&gt;'<span style="background-color: #4b4b10">Create profile from extended display identification data...</span>'</li>
 <li style="list-style-type: none"><span style="font-family: DejaVu Sans">∘ </span>then fire up KDE's <span style="background-color: #4b4b10"><span style="font-family: DejaVu Sans">systemsettings</span></span>, make sure that correct profile is used under 'Hardware-&gt;Color'</li>
-</ul>
-<ul><span style="font-family: DejaVu Sans"><li><span style="background-color: #4b4b10">JACK</span>&nbsp;is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality</li>
+</span></ul>
+<ul><span style="font-size: 10pt"><span style="font-family: DejaVu Sans"><li><span style="background-color: #4b4b10">JACK</span>&nbsp;is in full control of your sound output, PulseAudio is launched only as a compatibility layer to route sound to it and to use networking functionality</li>
 <li style="list-style-type: none">∘ note <span style="background-color: #4b4b10">QJackCtl</span>, JACK configurator, <span style="background-color: #4b4b10">QasMixer</span>, ALSA volume configurator and <span style="background-color: #4b4b10">PASysTray</span>, advanced PA configurator, and in your tray</li>
 <li style="list-style-type: none">∘ please, set all your multimedia apps to use JACK with '<span style="background-color: #4b4b10">jamin</span>' port by default or disable it and then use naked PA (remove <a href="~/.config/pulse">~/.config/pulse</a>&nbsp;&amp; /etc/profile.d/zzz-jack.*). note that Firefox uses PA shim because its ALSA and JACK support is broken.</li>
 <li style="list-style-type: none"><ul><li style="list-style-type: none">‣ ALSA-only apps should use '<span style="background-color: #4b4b10">default</span>' or '<span style="background-color: #4b4b10">sysdefault</span>' ALSA/JACK devices</li>
@@ -84,28 +84,27 @@
 </li>
 </ul>
 </li>
-<li style="list-style-type: none">∘ tired of volume jumps (especially in flash videos and alike) and muffled sound ? well, i sure do. this is why QJackCtl has custom patchbay for automatic output redirection to JAMin where it's equalized, compressed and limited from exceeding 0dB. if your app is outputting directly to JACK playback, you should add redirection to it there. DO NOT CLOSE IT, or all sound redirected to it will be lost, instead disable the patchbay and change Mplayer's and VLC's settings to default ports.</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ JAMin is started on the second desktop for not to mess with your primary activities</li>
-<li style="list-style-type: none">‣ if you have good, expensive output setup with granular hardware control, then you should probably disable some or all JAMIn's features. or just not directing audio players to it would be a good idea (GStreamer's output is directed by default)</li>
-<li style="list-style-type: none">‣ you should put bass &amp; treble and such switches on your speakers on "zero change" position (min, max or neutral, depending on implementation) and set hardware volume as high as you can tolerate. then control volume and wave form with JAMin</li>
+<li style="list-style-type: none">∘ tired of volume jumps (especially in flash videos and alike) and muffled sound ? well, i sure do. this is why QJackCtl has custom patchbay for automatic output redirection to CALF Studio where it's equalized, compressed and limited from exceeding 0dB. if your app is outputting directly to JACK playback, you should add redirection to it there. DO NOT CLOSE IT, or all sound redirected to it will be lost, instead disable the patchbay.</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ CALF Studio is started on the third desktop for not to mess with your primary activities</li>
+<li style="list-style-type: none">‣ if you have good, expensive output setup with granular hardware control, then you should probably disable some or all CALF Studio's features. or just not directing audio players to it would be a good idea</li>
+<li style="list-style-type: none">‣ you should put bass &amp; treble and such switches on your speakers on "zero change" position (min, max or neutral, depending on implementation) and set hardware volume as high as you can tolerate. then control volume and wave form with CALF Studio</li>
 <li style="list-style-type: none">‣ if sound has too much distortion, first try decreasing "limiter, input" in range from 20 to 0. then fiddle with the equalizer. you may want to disable sound boost anyway since it negates subtle volume transitions in music</li>
-<li style="list-style-type: none">‣ JAMin has been caught in the act of putting garbage in direct rendering surfaces such as paused video players, LibreOffice and Firefox UIs. It seems to be a bug in sound spectre rendering code. To workaround that, <span style="background-color: #4b4b10">try selecting any tab other than "HDEQ"</span></li>
-<li style="list-style-type: none">‣ sometimes when QtCurve theme is used with JAMin its tabs wouldn't be switchable, in that case either restart sound system via qjackctl until they do or change theme in <a href="~/.gtkrc-2.0-jamin">~/.gtkrc-2.0-jamin</a>&nbsp;(all other themes have black-on-dark text with dark colour styling)</li>
-</ul>
-</li>
-<li style="list-style-type: none">∘ for <span style="background-color: #4b4b10">better realtime</span>&nbsp;it's recommended to:</li>
-<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ set CPU governor from "ondemand" to "performance" in profile <a href="/etc/tuned/latency-balanced/tuned.conf">/etc/tuned/latency-balanced/tuned.conf </a></li>
 </ul>
 </li>
 <li style="list-style-type: none">∘ on systems with HDMI a sound driver for it can load before your main one and QJackCtl will fail. to fix that simply open its settings and select proper card manually</li>
-<li style="list-style-type: none">∘ if JACK gets a lot of XRUNs, try first increasing period size starting from 1024</li>
-<li style="list-style-type: none">∘ if you have an old sound chip and JACK outright doesn't work, try "forcing 16bit" for it and don't forget to set sample format to 's16ne' in PA config too</li>
-</span></ul>
-<ul><li><span style="font-family: DejaVu Sans"><span style="background-color: #4b4b10">xt7-player-mpv</span></span>'s default settings are balanced for decent quality and speed, achievable even by low-power modern systems, however you can improve upon them by</li>
-<span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ &nbsp;enabling nnedi3 prescale filter (super power-hungry): video drivers -&gt; custom video -&gt; add something like 'prescale=nnedi3:prescale-downscaling-threshold=1.5:nnedi3-neurons=32:prescale-passes=1:nnedi3-window=8x6:nnedi3-upload=shader'</li>
-</span><li style="list-style-type: none"><span style="font-family: DejaVu Sans">∘ &nbsp;</span>enabling motion-based interpolation (EXTREMELY power-hungry): general options -&gt; user options -&gt; add something like 'vf' = 'format=yuv420p,vapoursynth=~/.config/mpv/motioninterpolation.vpy:60'</li>
+<li style="list-style-type: none">∘ if JACK gets <b>XRUNs</b>, try first increasing fragment, or "period", size ("frames/period" in QJackCtl) in detriment of latency.</li>
+<li style="list-style-type: none"><ul><li style="list-style-type: none">‣ 1024 should be a safe value for any load on any system, however, for sound recording jamin and all unneded programs should be disabled and fragment size and fragments per buffer set to be as minimal as possible (like 128/3)</li>
 </ul>
-</span><ul><span style="font-size: 10pt"><li><span style="font-family: DejaVu Sans">To monitor GPU driver performance in your GPU-accelerated apps your can use Gallium HUD by launching them with special envvar, like this:</span></li>
+</li>
+<li style="list-style-type: none">∘ you may want to <a href="http://kxstudio.linuxaudio.org/Documentation:Manual:latency">use</a>&nbsp;<span style="background-color: #4b4b10">jack_iodelay</span>&nbsp;to find correct "extra I/O latency" for your hardware</li>
+<li style="list-style-type: none">∘ if you have an old sound chip and JACK outright doesn't work, try "forcing 16bit" for it and don't forget to set sample format to 's16ne' in PA config too</li>
+</span></span></ul>
+<ul><span style="font-size: 10pt"><li><span style="font-family: DejaVu Sans"><span style="background-color: #4b4b10">mpv</span></span>'s default settings are balanced for decent quality and speed, achievable even by low-power modern systems, however you can improve upon them by editing <a href="~/.config/mpv/mpv.conf">~/.config/mpv/mpv.conf</a></li>
+</span><li style="list-style-type: none"><ul><span style="font-size: 10pt"><li>to load vapoursynth scripts for nnedi3 scaling and motion interpolation to 60 fps.</li>
+</span></ul>
+</li>
+</ul>
+<ul><span style="font-size: 10pt"><li><span style="font-family: DejaVu Sans">To monitor GPU driver performance in your GPU-accelerated apps your can use Gallium HUD by launching them with special envvar, like this:</span></li>
 <span style="font-family: DejaVu Sans"><li style="list-style-type: none">∘ &nbsp;`<span style="background-color: #4b4b10">env GALLIUM_HUD=".c120.dfps,cpu,GPU-load;requested-VRAM+VRAM-usage,requested-GTT+GTT-usage,primitives-generated+clipper-primitives-generated;draw-calls,buffer-wait-time" glxgears</span>`</li>
 <li style="list-style-type: none">∘ get all available options by running `<span style="background-color: #4b4b10">env GALLIUM_HUD=help &lt;any DRI-using app&gt;</span>`</li>
 <li style="list-style-type: none">∘ for AMD cards also `<span style="background-color: #4b4b10">radeontop</span>` and `<span style="background-color: #4b4b10">radeon-profile</span>` tools are available</li>
