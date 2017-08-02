@@ -11,6 +11,4 @@
 		<packagemanager>zypper</packagemanager>
 		<rpm-check-signatures>false</rpm-check-signatures>
 		<rpm-force>false</rpm-force>
-		<bootsplash-theme>HSF</bootsplash-theme>
-		<bootloader-theme>HSF</bootloader-theme>
 		<locale>en_GB</locale>
