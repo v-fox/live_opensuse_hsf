@@ -52,7 +52,7 @@ fi
 # variable for deleting root of previous build before attempting a new one
 clean_pan=yes
 for parameter in $@; do
-        if [ "${paremeter}" == "--allow-existing-root" ]; then
+        if [ "${parameter}" == "--allow-existing-root" ]; then
                 clean_pan=no
 	fi
 done
