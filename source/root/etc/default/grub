@@ -12,9 +12,9 @@ GRUB_DEFAULT=saved_entry
 GRUB_HIDDEN_TIMEOUT=0
 GRUB_HIDDEN_TIMEOUT_QUIET=false
 GRUB_TIMEOUT=10
-GRUB_CMDLINE_LINUX_DEFAULT="plymouth.enable=0 splash=verbose showopts apparmor=0"
+GRUB_CMDLINE_LINUX_DEFAULT="splash=verbose showopts apparmor=0"
 # kernel command line options for failsafe mode
-GRUB_CMDLINE_LINUX_RECOVERY="showopts apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe usbcore.autosuspend=-1 floppy.allowed_drive_mask=0 pcie_aspm=off pci=nomsi,nommconf"
+GRUB_CMDLINE_LINUX_RECOVERY="showopts plymouth.enable=0 apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe usbcore.autosuspend=-1 floppy.allowed_drive_mask=0 pcie_aspm=off pci=nomsi,nommconf"
 GRUB_CMDLINE_LINUX=""
 # Uncomment to enable BadRAM filtering, modify to suit your needs
 # This works with Linux (no patch required) and with any kernel that obtains
@@ -37,6 +37,6 @@ GRUB_TERMINAL=gfxterm
 GRUB_DISABLE_OS_PROBER=false
 # Set to 'y' for grub to be installed on an encrypted partition
 #GRUB_ENABLE_CRYPTODISK=n
-GRUB_THEME=/boot/grub2/themes/HSF/theme.txt
+GRUB_THEME=/boot/grub2/themes/openSUSE/theme.txt
 #SUSE_BTRFS_SNAPSHOT_BOOTING=false
-GRUB_BACKGROUND=/boot/grub2/themes/HSF/background.png
+GRUB_BACKGROUND=/boot/grub2/themes/openSUSE/background.png

@@ -24,6 +24,7 @@
 	* addition of rasdaemon for collecting H/W error data like MCE and CCE
 	* addition of abootimg and qdevicemonitor Android tools
 	* addition of multithreaded compressors (pigz,lbzip2,pbzip2,pixz,plzip)
+	* removal of supposedly unnecessary and obsolete usbip userspace package
 	* removal of kmscon KMS/DRM console due to its upstream abandonment
 	* removal of obsolete firmwarekit
 	* removal of openclipart

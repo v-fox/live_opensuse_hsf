@@ -21,7 +21,7 @@ LOADER_TYPE="grub2-efi"
 # take effect on any other firmware type.
 #
 #
-SECURE_BOOT="no"
+SECURE_BOOT="yes"
 
 ## Path:	System/Bootloader
 ## Description:	Bootloader configuration
@@ -32,7 +32,7 @@ SECURE_BOOT="no"
 # If the options is commented perl-Bootloader uses his default arguments
 # for kernel.
 #
-DEFAULT_APPEND="splash=verbose showopts"
+DEFAULT_APPEND=" splash=verbose showopts"
 
 ## Path:	System/Bootloader
 ## Description:	Bootloader configuration
@@ -54,7 +54,7 @@ DEFAULT_VGA=""
 # If the options is commented perl-Bootloader uses his default arguments
 # for kernel.
 #
-FAILSAFE_APPEND="showopts apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe"
+FAILSAFE_APPEND=" showopts apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe"
 
 ## Path:	System/Bootloader
 ## Description:	Bootloader configuration
@@ -76,7 +76,7 @@ FAILSAFE_VGA=""
 # If the options is commented perl-Bootloader uses his default arguments
 # for XEN kernel.
 #
-XEN_KERNEL_APPEND="   splash=silent quiet showopts"
+XEN_KERNEL_APPEND=" splash=verbose showopts"
 
 ## Path:	System/Bootloader
 ## Description:	Bootloader configuration
