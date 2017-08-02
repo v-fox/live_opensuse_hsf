@@ -10,3 +10,4 @@ Exec=sh -c "sleep 10; xiccd"
 Icon=preferences-system
 StartupNotify=false
 NoDisplay=true
+Hidden=True

@@ -10,4 +10,4 @@ OnlyShowIn=LXQt;
 TryExec=compton
 Type=Application
 X-LXQt-Module=true
-Hidden=false
+Hidden=true
