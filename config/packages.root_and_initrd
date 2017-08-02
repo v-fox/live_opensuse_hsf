@@ -9,6 +9,7 @@ dosfstools
 efibootmgr
 exfat-utils
 grub2-i386-pc
+grub2-systemd-sleep-plugin
 grub2-x86_64-efi
 ipw-firmware
 kernel-firmware
