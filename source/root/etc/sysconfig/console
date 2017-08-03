@@ -11,7 +11,7 @@
 # Load this console font on bootup:
 # (/usr/share/kbd/consolefonts/)
 # 
-CONSOLE_FONT="ter-v16v.psfu"
+CONSOLE_FONT="ter-v16b.psfu"
 
 ## Type:	string
 ## Default:	""
@@ -36,7 +36,7 @@ CONSOLE_UNICODEMAP=""
 # the translation via unicode, but load a map which directly maps
 # 8 bit output of your program to a font position.
 #
-CONSOLE_SCREENMAP="trivial"
+CONSOLE_SCREENMAP=""
 
 ## Type:	string
 ## Default:	""
@@ -45,7 +45,7 @@ CONSOLE_SCREENMAP="trivial"
 # CONSOLE_MAGIC can be empty or have the values "(B", ")B", "(K" or ")K".
 # Normally not needed (automatically handled by setfont).
 #
-CONSOLE_MAGIC="(K"
+CONSOLE_MAGIC=""
 
 # Encoding used for output of non-ascii characters.
 #
