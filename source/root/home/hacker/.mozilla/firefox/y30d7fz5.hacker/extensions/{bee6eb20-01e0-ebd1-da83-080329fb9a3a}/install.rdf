@@ -26,7 +26,7 @@
 		<em:creator>Vicente Amor</em:creator>
 		<em:name>Flash and Video Download</em:name>
 		<em:description>Download flash games and videos with a single click.</em:description>
-		<em:version>2.06</em:version>
+		<em:version>2.07</em:version>
 		<em:id>{bee6eb20-01e0-ebd1-da83-080329fb9a3a}</em:id>
 		<em:iconURL>chrome://flashVideoDownload/skin/icons/main_128.svg</em:iconURL>
 		<em:icon64URL>chrome://flashVideoDownload/skin/icons/main_128.svg</em:icon64URL>

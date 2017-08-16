@@ -26,6 +26,7 @@ function FileLabelMaker() {
 	var FILENAME_FORMAT_AS_TITLE = "{{docTitle}}.{{fileExt}}";
 
 	this.init = function() {
+		log("29");
 		log(PrefManager);
 		// log(this.filena)
 	};
@@ -34,6 +35,8 @@ function FileLabelMaker() {
 		var suggestAltFilenames = PrefManager.getPref(
 			PrefManager.PREFS.GENERAL.DOWNLOADS.SUGGEST_ALTERNATIVE_FILENAMES
 		);
+
+		log(suggestAltFilenames);
 
 		return suggestAltFilenames ? 
 			FILENAME_FORMAT_AS_TITLE : DEFAULT_FILENAME_FORMAT;
@@ -106,15 +109,19 @@ function FileLabelMaker() {
 	// creates a video filename label from a filename format
 	this.getVideoFilenameLabel = function(fileData) {
 		var format = this.getVideoFilenameFormat(fileData);
+		log(this.createLabel(format, fileData));
 
 		return this.createLabel(format, fileData);
 	};
 
 	// creates a video filename format
 	this.getVideoFilenameFormat = function(fileData) {
+		log(117);
+		log(fileData);
 		if (fileData.DownloadWindowFilenameFormatString) {
 			return (new FileLabel(fileData.DownloadWindowFilenameFormatString)).Format;
 		}
+		log(this.getFilenameFormat());
 		return this.getFilenameFormat();
 	};
 

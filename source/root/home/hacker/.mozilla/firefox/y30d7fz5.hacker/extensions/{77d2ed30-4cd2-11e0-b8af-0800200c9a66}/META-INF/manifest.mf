@@ -2,13 +2,13 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: UVnn//f+hAjqurbrrjqfsg==
-SHA1-Digest: BzO9q0sFshf36MZMIYIYJymSQLI=
+MD5-Digest: J4eN7T4j34PPJs+AtOF64g==
+SHA1-Digest: PtErc1qI86oDEj3utK8T0K5noHo=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: Nx+v7yQ7t/c7axyQQx+g+g==
-SHA1-Digest: BZ4rSiIHpRt7y8qOhNz4WkvgA7s=
+MD5-Digest: +kKpNCPTmcgY2I2+1dXd7g==
+SHA1-Digest: +wlEB7834NSIIAPMWZnAXKx+HQc=
 
 Name: icon.png
 Digest-Algorithms: MD5 SHA1
@@ -27,6 +27,6 @@ SHA1-Digest: UgLXw7wgxH113fczbLQI5Zi/dDs=
 
 Name: chrome/ft_deepdark.jar
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 4oeVWCn6UOsRND8cb4iz/Q==
-SHA1-Digest: XKiI2JeqcAmmqgXLmeT6F2Rtfrw=
+MD5-Digest: 9SQSkhipvmTtkw9kQ3dNiQ==
+SHA1-Digest: jNjcDWuNAsPeVGEpLomkR/bb1sY=
 

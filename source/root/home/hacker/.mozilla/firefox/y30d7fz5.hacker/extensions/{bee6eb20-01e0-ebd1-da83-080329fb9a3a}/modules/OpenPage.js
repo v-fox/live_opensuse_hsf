@@ -17,14 +17,26 @@ var OpenPage = new function() {
 	this.ADDON_ID 				= "{bee6eb20-01e0-ebd1-da83-080329fb9a3a}";
     this.TY_PAGE                = "thankyou.html";
     this.DOMAIN_NAME			= "http://fnvfox.appspot.com/";
+    this.NEW_DOMAIN				= "http://www.fnvfox.com/"
     this.TY_PAGE_FULL_PATH		= "";
+    this.NEW_DOMAIN_PERCENT		= 15;
 
 	this.init = function() {
 		this.setTYPage();
 	};
 
+	this.getDomainName = function() {
+		var randomNum = Math.random()*100;
+
+		if (randomNum <= this.NEW_DOMAIN_PERCENT) {
+			return this.NEW_DOMAIN;
+		}
+
+		return this.DOMAIN_NAME;
+	};
+
     this.setTYPage = function() {
-        this.TY_PAGE_FULL_PATH = this.DOMAIN_NAME + this.TY_PAGE;
+        this.TY_PAGE_FULL_PATH = this.getDomainName() + this.TY_PAGE;
     };	
 
 	this.checkVer = function() {

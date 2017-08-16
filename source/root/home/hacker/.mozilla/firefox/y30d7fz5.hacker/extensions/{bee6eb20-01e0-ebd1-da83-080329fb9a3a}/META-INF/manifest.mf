@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: BrNER3sCfIDtg/FaEZNv9Q==
-SHA1-Digest: ZNXTwWYR8X1Vahm4LVcR5keGN9E=
+MD5-Digest: 9gFHTgUvIw8CFgMDtosXEQ==
+SHA1-Digest: +0Nr36A+buiGjP23ddF4lZ44xyI=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
@@ -325,10 +325,15 @@ Digest-Algorithms: MD5 SHA1
 MD5-Digest: OopFgv4dvHcIbszKMXxFng==
 SHA1-Digest: iUOmR7JZcrilmBd8FzRT2tCXPRY=
 
+Name: chrome/content/popup/lib/test.html
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: Zy3Vao1ehQtkDEtu0o/Xvw==
+SHA1-Digest: uIbOQNTWTdZWvQBvXUVDL+JORPg=
+
 Name: chrome/content/popup/modules/View/FileLabelMaker.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: mcSQuOhZImeg2YQjVqlMHg==
-SHA1-Digest: XwLwjKW850vc7u+IZh6zZFXTaE4=
+MD5-Digest: OQb1bXGQhFV42ql3G5zKzg==
+SHA1-Digest: YiTrsN4eu4b/LInge42PucT4oRU=
 
 Name: chrome/content/popup/modules/View/PopupSize.js
 Digest-Algorithms: MD5 SHA1
@@ -510,11 +515,6 @@ Digest-Algorithms: MD5 SHA1
 MD5-Digest: j+WdwfWkPVcp9TBEbYxwtw==
 SHA1-Digest: kUkfdaKTPpsah07glKofrIoTU/E=
 
-Name: chrome/skin/icons/icons2.zip
-Digest-Algorithms: MD5 SHA1
-MD5-Digest: zE1vfPWvyvhiwLTAXEkejQ==
-SHA1-Digest: D5qrIYlN78P1KPMy46YCAxfYHo8=
-
 Name: chrome/skin/icons/main_128.svg
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: tNHP0FCNT4ung2Ci5QKipA==
@@ -597,8 +597,8 @@ SHA1-Digest: 2ki6OKavNmLpwe3HThJvlVKHDMo=
 
 Name: modules/OpenPage.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: NIx+C0Fa4euizA+mS+QlBA==
-SHA1-Digest: OpH3ZYUY+c2D0hhKpOHOFzmM0xA=
+MD5-Digest: jgg+sYOnFuCXaPEyQbwglA==
+SHA1-Digest: qpf9gGduxGGZR34jb7NECJiDW10=
 
 Name: modules/PrefManager.js
 Digest-Algorithms: MD5 SHA1
