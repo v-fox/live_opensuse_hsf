@@ -54,8 +54,9 @@
 	* default user limits are set in systemd's config akin to limits.conf;
 		systemd accounting is enabled by default but without special limits;
 		default systemd start/stop timeouts are significantly decreased;
-	* maximum allowed user realtime priority decreased to 49 not to itnerfere
+	* maximum allowed user realtime priority decreased to 49 not to interfere
 		with kernel and systemd's watchdog has been enabled;
+	* ZRAM is disabled by default in hope for better OOM Killer's performance
 	* important kernel changes:
 		full ticklessness / NO_HZ;
 		all CPUs are build_forced no-CBs CPUs;

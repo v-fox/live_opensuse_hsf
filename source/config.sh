@@ -59,7 +59,8 @@ baseRemoveService zfs-import-cache
 baseInsertService btrfsmaintenance-refresh
 baseInsertService tuned
 baseInsertService rtkit-daemon
-baseInsertService compcache
+# unfortunately, it messes up OOM killer
+baseRemoveService compcache
 baseInsertService rtirq
 # may interfere with system's balancing
 baseRemoveService irqbalance
