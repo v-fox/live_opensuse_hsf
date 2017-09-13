@@ -20,7 +20,7 @@ Color=55,55,55
 Color=40,40,40
 
 [Color1]
-Color=200,23,23
+Color=250,28,28
 
 [Color1Faint]
 Color=240,122,122
@@ -29,7 +29,7 @@ Color=240,122,122
 Color=250,78,78
 
 [Color2]
-Color=23,200,23
+Color=28,250,28
 
 [Color2Faint]
 Color=122,240,122
@@ -38,7 +38,7 @@ Color=122,240,122
 Color=78,250,78
 
 [Color3]
-Color=200,112,23
+Color=250,139,28
 
 [Color3Faint]
 Color=240,181,122
@@ -47,7 +47,7 @@ Color=240,181,122
 Color=250,164,78
 
 [Color4]
-Color=22,22,200
+Color=24,24,250
 
 [Color4Faint]
 Color=122,122,240
@@ -56,7 +56,7 @@ Color=122,122,240
 Color=78,78,250
 
 [Color5]
-Color=200,22,200
+Color=250,27,250
 
 [Color5Faint]
 Color=240,122,240
@@ -65,7 +65,7 @@ Color=240,122,240
 Color=250,78,250
 
 [Color6]
-Color=22,200,200
+Color=27,250,250
 
 [Color6Faint]
 Color=122,240,240
@@ -74,7 +74,7 @@ Color=122,240,240
 Color=78,250,250
 
 [Color7]
-Color=200,200,200
+Color=230,230,230
 
 [Color7Faint]
 Color=239,231,240
