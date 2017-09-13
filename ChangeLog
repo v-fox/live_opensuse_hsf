@@ -17,6 +17,8 @@
 	* addition of speedcrunch calculator
 	* addition of handbrake-gtk video converter
 	* addition of soundkonverter
+	* addition of sonic-visualiser
+	* addition of Vamp plugins for SV and Audacity
 	* addition of quota-nfs
 	* addition of convmv, lshw, libqt5-qttools
 	* addition of forgotten libssr-glinject{-32bit}

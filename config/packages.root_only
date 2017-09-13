@@ -855,6 +855,7 @@ rpm
 rp-pppoe
 rsync
 rtmpdump
+rubberband-vamp
 samba-client
 sane-backends
 sane-backends-autoconfig
@@ -892,6 +893,7 @@ snapper-zypp-plugin
 snmp-mibs
 softhsm
 sonar-icon-theme
+sonic-visualiser
 soundkonverter
 sox
 spax
@@ -974,6 +976,10 @@ v4l-tools
 v4l-utils
 vaapi-intel-driver
 vaapi-tools
+vamp-aubio-plugins
+vamp-libxtract-plugins
+vamp-mazurka-plugins
+vamp-qm-plugins
 vapoursynth-mvtools
 vbindiff
 vde2
