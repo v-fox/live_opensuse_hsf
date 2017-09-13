@@ -59,8 +59,8 @@
 <plugin type="eq12" instance-name="eq12" input-index="23" output-index="23">
 <preset bank="0" program="0" plugin="eq12" name="">
   <param name="bypass" value="0" />
-  <param name="level_in" value="0.792235" />
-  <param name="level_out" value="0.706861" />
+  <param name="level_in" value="0.445" />
+  <param name="level_out" value="1" />
   <param name="meter_inL" value="0" />
   <param name="meter_inR" value="0" />
   <param name="meter_outL" value="0" />

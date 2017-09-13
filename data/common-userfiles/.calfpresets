@@ -1,12 +1,12 @@
 <presets>
-<preset bank="0" program="1" plugin="eq12" name="monitor headphones">
+<preset bank="0" program="0" plugin="eq12" name="monitor headphones">
   <param name="bypass" value="0" />
-  <param name="level_in" value="0.792235" />
-  <param name="level_out" value="0.706861" />
-  <param name="meter_inL" value="0.733815" />
-  <param name="meter_inR" value="0.608945" />
-  <param name="meter_outL" value="0.560702" />
-  <param name="meter_outR" value="0.472796" />
+  <param name="level_in" value="0.445" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0.438095" />
+  <param name="meter_inR" value="0.444563" />
+  <param name="meter_outL" value="0.610327" />
+  <param name="meter_outR" value="0.605174" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
@@ -14,15 +14,19 @@
   <param name="hp_active" value="1" />
   <param name="hp_freq" value="20" />
   <param name="hp_mode" value="0" />
+  <param name="hp_q" value="0.707" />
   <param name="lp_active" value="1" />
   <param name="lp_freq" value="18000" />
   <param name="lp_mode" value="0" />
+  <param name="lp_q" value="0.707" />
   <param name="ls_active" value="1" />
   <param name="ls_level" value="1.28343" />
   <param name="ls_freq" value="50" />
+  <param name="ls_q" value="0.707" />
   <param name="hs_active" value="1" />
   <param name="hs_level" value="1.08673" />
   <param name="hs_freq" value="16000" />
+  <param name="hs_q" value="0.707" />
   <param name="p1_active" value="1" />
   <param name="p1_level" value="1.08673" />
   <param name="p1_freq" value="80" />
@@ -161,7 +165,7 @@
   <param name="solo3" value="0" />
   <param name="notebook" value="0" />
 </preset>
-<preset bank="0" program="0" plugin="multibandlimiter" name="monitor headphones">
+<preset bank="0" program="1" plugin="multibandlimiter" name="monitor headphones">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
