@@ -412,6 +412,8 @@ kismet
 kiwi-pxeboot
 kiwi-tools
 kmid
+konqueror
+konqueror-plugins
 konsole
 konsole4-part
 krename
@@ -508,6 +510,8 @@ libcryptsetup4-hmac
 liberation-fonts
 libflashsupport
 libgcrypt20-hmac
+libgstvdpau
+libgstvdpau-32bit
 libhmac-tools
 libiscsi-utils
 libomxil-bellagio
@@ -539,6 +543,7 @@ libssr-glinject-32bit
 libtxc_dxtn
 libva-egl1
 libva-glx1
+libva-vdpau-driver
 libvdpau_nouveau
 libvdpau_r300
 libvdpau_r600
@@ -763,6 +768,7 @@ pgpdump
 photorec
 pigz
 pixz
+plasma5-desktop
 plasma5-integration-plugin
 plasma-theme-oxygen
 plataro-icon-theme
@@ -1004,6 +1010,7 @@ wdfs
 wdiff
 webcore-fonts
 webcore-fonts-vista
+webenginepart
 wget
 which
 whois
@@ -1123,6 +1130,7 @@ yast2-x11
 zenmap
 zerofree
 zfs
+zramcfg
 zsh
 zuluCrypt
 zypper

@@ -26,7 +26,7 @@ INPUT_METHOD="ibus"
 # as long as $LC_ALL is not set, which overrides all $LC_-variables.
 # Root uses this variable only if ROOT_USES_LANG is set to "yes".
 #
-RC_LANG="en_GB.UTF-8"
+RC_LANG="en_DK.UTF-8"
 
 ## Type:	string
 ## Default:	""
@@ -45,7 +45,7 @@ RC_LC_ALL=""
 # message catalog for the library or the program is installed.
 # This also provides localized yes/no answers.
 #
-RC_LC_MESSAGES=""
+RC_LC_MESSAGES="en_GB.UTF-8"
 
 ## Type:	string
 ## Default:	""
@@ -54,7 +54,7 @@ RC_LC_MESSAGES=""
 # The libc uses this value in language dependent function calls, such
 # as e.g. uppercase/lowercase mapping of foreign characters.
 #
-RC_LC_CTYPE=""
+RC_LC_CTYPE="en_GB.UTF-8"
 
 ## Type:	string
 ## Default:	""
@@ -63,7 +63,7 @@ RC_LC_CTYPE=""
 # It is used by the libc to obtain the alphabetical order of characters
 # (e.g. for string comparisons).
 #
-RC_LC_COLLATE=""
+RC_LC_COLLATE="en_GB.UTF-8"
 
 ## Type:	string
 ## Default:	""
@@ -71,7 +71,7 @@ RC_LC_COLLATE=""
 # This defines the locale for date and time output formats.
 # i.e.: 06/09/1999 vs. 09.06.1999
 #
-RC_LC_TIME=""
+RC_LC_TIME="en_DK.UTF-8"
 
 ## Type:	string
 ## Default:	""
@@ -79,21 +79,21 @@ RC_LC_TIME=""
 # This defines the locale for formatting and reading numbers.
 # i.e.: 1,234.56 vs. 1.234,56
 #
-RC_LC_NUMERIC=""
+RC_LC_NUMERIC="en_DK.UTF-8"
 
 ## Type:	string
 ## Default:	""
 #
 # This defines the locale for formatting and reading money values.
 #
-RC_LC_MONETARY=""
+RC_LC_MONETARY="en_US.UTF-8"
 
 ## Type:	string
 ## Default:	""
 #
 # This defines the locale for format of paper.
 #
-RC_LC_PAPER=""
+RC_LC_PAPER="en_DK.UTF-8"
 
 ## Type:	string(ctype)
 ## Default:	ctype
@@ -117,4 +117,4 @@ AUTO_DETECT_UTF8="yes"
 #
 # List of installed language supports, use by YaST2
 #
-INSTALLED_LANGUAGES="en_GB"
+INSTALLED_LANGUAGES="en_GB,en_DK,en_US"

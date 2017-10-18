@@ -59,8 +59,10 @@ baseRemoveService zfs-import-cache
 baseInsertService btrfsmaintenance-refresh
 baseInsertService tuned
 baseInsertService rtkit-daemon
-# unfortunately, it messes up OOM killer
-baseRemoveService compcache
+# compcache/zram may mess up OOM killer but it's already batshit insane
+# zswap (configured via kernel cmd) is cache for real swap, in addition to zram
+# https://askubuntu.com/questions/471912/zram-vs-zswap-vs-zcache-ultimate-guide-when-to-use-which-one
+baseInsertService compcache
 baseInsertService rtirq
 # may interfere with system's balancing
 baseRemoveService irqbalance
@@ -117,6 +119,8 @@ for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
 done
 alias wget="wget --no-proxy"
 
+# that is used instead of /etc/sysconfig/windowmanager
+update-alternatives --install /usr/share/xsessions/default.desktop default-xsession.desktop /usr/share/xsessions/lxqt.desktop 20
 # staying fresh even in deeper places
 update-ca-certificates
 update-pciids
