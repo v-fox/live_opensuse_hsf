@@ -2,5 +2,5 @@
 		<user name="hacker" pwd="" pwdformat="plain" home="/home/hacker" shell="/usr/bin/zsh"/>
 	</users>
 	<users group="root">
-		<user name="root" pwd="linux" pwdformat="plain" home="/root" shell="/bin/bash"/>
+		<user name="root" pwd="linux" pwdformat="plain" home="/root" shell="/usr/bin/zsh"/>
 	</users>

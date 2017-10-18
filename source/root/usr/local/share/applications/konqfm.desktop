@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=konqueror %U
+Icon=konqueror
+Name=Konqueror in FM mode
+GenericName=File Manager
+Categories=Qt;KDE;FileManager;Utility;Core;

@@ -1,8 +1,10 @@
 0.9.1:
 	* default realtime priorities are rebalanced to not interfere with
-		kernel and JACK's default latency is set to 32ms via 512/3 f/p
-		(16ms with 256/3 f/p config may be stable on a good machine)
+		kernel and JACK's default latency is set to 16ms via 256/3 f/p
+		(8ms with 128/3 f/p and '--sync' may be stable on a good machine)
+	* by default en_GB locale is used for messages and en_DK - for measurements
 	* support for Vulkan
+	* support for VDPAU/VA in latest AMD GPUs
 	* support for audio calls is disabled in LeechCraft
 		due to upstream abandonment
 	* addition of i2pd for native I2P support
@@ -12,7 +14,8 @@
 	* addition of input-libinput and video-amdgpu X drivers
 	* addition of RetroArch/libretro meta-emulator
 	* addition of purple-libsteam and steam-controller
-	* addition of dolphin file manager
+	* addition of plasma5-desktop for KDE's systemsettings5 modules
+	* addition of dolphin FM and konqueror FM/WB with sessions
 	* addition of digikam/showfoto
 	* addition of speedcrunch calculator
 	* addition of handbrake-gtk video converter
@@ -58,7 +61,6 @@
 		default systemd start/stop timeouts are significantly decreased;
 	* maximum allowed user realtime priority decreased to 49 not to interfere
 		with kernel and systemd's watchdog has been enabled;
-	* ZRAM is disabled by default in hope for better OOM Killer's performance
 	* important kernel changes:
 		full ticklessness / NO_HZ;
 		all CPUs are build_forced no-CBs CPUs;
@@ -67,6 +69,8 @@
 		bfq-mq/kyber are set as default I/O schedulers for HDD/SSD;
 		fq-codel is set as default network scheduler;		
 		CONFIG_SCHED_AUTOGROUP is enabled (in kernel but not in system);
+		lz4 is the default compression algorithm for kernel and initrd;
+		lz4/25% zswap is enabled in addition to lz4hc zram swap;
 		unneeded for boot third-party kernel modules are left out of initrd
 
 0.9.0:

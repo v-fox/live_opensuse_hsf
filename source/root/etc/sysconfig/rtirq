@@ -31,10 +31,10 @@
 RTIRQ_NAME_LIST="rtc snd drm amdgpu radeon i915 nvidia ahci usb i8042"
 
 # Highest priority.
-RTIRQ_PRIO_HIGH=90
+RTIRQ_PRIO_HIGH=80
 
 # Priority decrease step.
-RTIRQ_PRIO_DECR=4
+RTIRQ_PRIO_DECR=2
 
 # Lowest priority.
 RTIRQ_PRIO_LOW=50
@@ -45,9 +45,9 @@ RTIRQ_RESET_ALL=0
 # On kernel configurations that support it,
 # which services should be NOT threaded 
 # (space separated list).
-# RTIRQ_NON_THREADED="rtc snd"
+RTIRQ_NON_THREADED=""
 
 # Process names which will be forced to the
 # highest realtime priority range (99-91)
 # (space separated list, from highest to lower priority).
-RTIRQ_HIGH_LIST="watchdogd oom_reaper rcu_sched rcu_preempt rcu_bh"
+RTIRQ_HIGH_LIST="watchdogd oom_reaper rcu_preempt rcu_sched rcu_bh kthrotld ksoftirqd kthreadd dbus-daemon"
