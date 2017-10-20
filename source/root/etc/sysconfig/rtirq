@@ -50,4 +50,4 @@ RTIRQ_NON_THREADED=""
 # Process names which will be forced to the
 # highest realtime priority range (99-91)
 # (space separated list, from highest to lower priority).
-RTIRQ_HIGH_LIST="watchdogd oom_reaper rcu_preempt rcu_sched rcu_bh kthrotld ksoftirqd kthreadd dbus-daemon"
+RTIRQ_HIGH_LIST="watchdogd oom_reaper ksoftirqd"
