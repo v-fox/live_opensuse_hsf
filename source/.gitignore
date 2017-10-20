@@ -1382,9 +1382,6 @@ root/home/hacker/.config/mpv/lua-settings/osc.conf
 root/etc/skel/.config/mpv/lua-settings/stats.conf
 root/root/.config/mpv/lua-settings/stats.conf
 root/home/hacker/.config/mpv/lua-settings/stats.conf
-root/etc/skel/.config/mpv/vapoursynth/edi_rpow2.py
-root/root/.config/mpv/vapoursynth/edi_rpow2.py
-root/home/hacker/.config/mpv/vapoursynth/edi_rpow2.py
 root/etc/skel/.config/mpv/vapoursynth/eedi3.vpy
 root/root/.config/mpv/vapoursynth/eedi3.vpy
 root/home/hacker/.config/mpv/vapoursynth/eedi3.vpy
@@ -1394,9 +1391,6 @@ root/home/hacker/.config/mpv/vapoursynth/motioninterpolation_1080p.vpy
 root/etc/skel/.config/mpv/vapoursynth/motioninterpolation_720p.vpy
 root/root/.config/mpv/vapoursynth/motioninterpolation_720p.vpy
 root/home/hacker/.config/mpv/vapoursynth/motioninterpolation_720p.vpy
-root/etc/skel/.config/mpv/vapoursynth/motioninterpolation_tweaked.vpy
-root/root/.config/mpv/vapoursynth/motioninterpolation_tweaked.vpy
-root/home/hacker/.config/mpv/vapoursynth/motioninterpolation_tweaked.vpy
 root/etc/skel/.config/mpv/vapoursynth/nnedi3.vpy
 root/root/.config/mpv/vapoursynth/nnedi3.vpy
 root/home/hacker/.config/mpv/vapoursynth/nnedi3.vpy
