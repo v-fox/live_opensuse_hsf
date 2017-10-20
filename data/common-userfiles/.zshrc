@@ -74,7 +74,7 @@ zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
 zstyle ':completion:*' completer _complete _list _oldlist _expand _ignored _match _correct _approximate _prefix
 ## root completion
 #zstyle ':completion:*:sudo:*' command-path prepend /usr/local/sbin /usr/sbin /sbin
-zstyle ':completion:*:sudo:*' command-path `echo ${PATH//:/ }` /usr/local/sbin /usr/sbin /sbin
+zstyle ':completion:*:sudo:*' command-path $(echo ${PATH//:/ }) /usr/local/sbin /usr/sbin /sbin
 ## common hostnames
 local _etc_hosts _known_hosts _ssh_hosts
 [ -f /etc/hosts ] && \
