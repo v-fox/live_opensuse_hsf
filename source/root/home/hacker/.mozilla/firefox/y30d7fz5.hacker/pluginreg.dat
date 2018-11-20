@@ -7,9 +7,9 @@ Arch:x86_64-gcc3:$
 [PLUGINS]
 libfreshwrapper-flashplayer.so:$
 /usr/lib64/browser-plugins/libfreshwrapper-flashplayer.so:$
-26.0.0.137:$
-1501981977000:0:0:0:$
-Shockwave Flash 26.0 r0:$
+27.0.0.170:$
+1507364957000:0:0:0:$
+Shockwave Flash 27.0 r0:$
 Shockwave Flash:$
 2
 0:application/x-shockwave-flash:Shockwave Flash:swf:$

@@ -1,0 +1,1 @@
+{"global":{"paused":false,"hideIcon":false,"cachedPos":{},"fixedPos":{"latitude":-4.448784,"longitude":-171.24832},"fixedPosNoAPI":true,"updateAccuracy":true,"epsilon":2,"levels":{"low":{"radius":200,"cacheTime":10},"medium":{"radius":500,"cacheTime":30},"high":{"radius":2000,"cacheTime":60}},"defaultLevel":"fixed","domainLevel":{}}}

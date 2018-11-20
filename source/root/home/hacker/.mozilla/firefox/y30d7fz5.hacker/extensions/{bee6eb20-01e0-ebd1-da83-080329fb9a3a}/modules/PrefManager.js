@@ -85,7 +85,7 @@ var PrefManager = new function() {
     this.init = function() {
         // Register to receive notifications of preference changes      
         this.prefs = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService).getBranch(PREFS_BRANCH);  
-        this.prefs.QueryInterface(Ci.nsIPrefBranch2);  
+        try { this.prefs.QueryInterface(Ci.nsIPrefBranch2); } catch(ex) { this.prefs.QueryInterface(Ci.nsIPrefBranch); }
         this.prefs.addObserver("", this, false);
         this.children = this.getPrefsChildren();
         this.setFirstRunDownloadsFolderPref();

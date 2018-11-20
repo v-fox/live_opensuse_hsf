@@ -1,6 +1,124 @@
 {
   "data": [
     {
+      "versionRange": [
+        {
+          "severity": 1,
+          "maxVersion": "3.16.1",
+          "targetApplication": [
+            {
+              "guid": "{ec8030f7-c20a-464f-9b0e-13a3a9e97384}",
+              "maxVersion": "*",
+              "minVersion": "56.0a1"
+            }
+          ],
+          "minVersion": "0"
+        }
+      ],
+      "details": {
+        "name": "Mega.nz",
+        "why": "Add-on is causing tabs to load blank.",
+        "bug": "https://bugzilla.mozilla.org/show_bug.cgi?id=1404290"
+      },
+      "last_modified": 1506963401477,
+      "schema": 1506800496781,
+      "guid": "firefox@mega.co.nz",
+      "id": "a84e6eba-4bc1-4416-b481-9b837d39f9f0",
+      "prefs": [],
+      "enabled": true,
+      "_status": "synced"
+    },
+    {
+      "versionRange": [
+        {
+          "severity": 1,
+          "maxVersion": "*",
+          "minVersion": "0"
+        }
+      ],
+      "details": {
+        "name": "SearchAssist Incognito",
+        "why": "Misleads users into thinking this is a security and privacy tool (also distributed on a site that makes it look like an official Mozilla product).",
+        "bug": "https://bugzilla.mozilla.org/show_bug.cgi?id=1398905"
+      },
+      "last_modified": 1505211411253,
+      "schema": 1505072496256,
+      "guid": "@68eba425-7a05-4d62-82b1-1d6d5a51716b",
+      "id": "595e0e53-b76b-4188-a160-66f29c636094",
+      "prefs": [],
+      "enabled": true,
+      "_status": "synced"
+    },
+    {
+      "versionRange": [
+        {
+          "severity": 1,
+          "maxVersion": "0.8.17.2",
+          "minVersion": "0"
+        }
+      ],
+      "details": {
+        "name": "Smart Referer",
+        "why": "Add-on injects remote code into privileged scope.",
+        "bug": "https://bugzilla.mozilla.org/show_bug.cgi?id=1392625"
+      },
+      "last_modified": 1503411102265,
+      "schema": 1503344500341,
+      "guid": "{efda3854-2bd9-45a1-9766-49d7ff18931d}",
+      "id": "d83011de-67a4-479b-a778-916a7232095b",
+      "prefs": [],
+      "enabled": true,
+      "_status": "synced"
+    },
+    {
+      "id": "17a2bf85-b44a-4745-1b48-8be0c151d697",
+      "deleted": true,
+      "last_modified": 1503099129454,
+      "_status": "synced"
+    },
+    {
+      "versionRange": [
+        {
+          "severity": 3,
+          "maxVersion": "*",
+          "minVersion": "0"
+        }
+      ],
+      "details": {
+        "name": "FF Adr (malware)",
+        "why": "This is a malicious add-on that is being installed silently.",
+        "bug": "https://bugzilla.mozilla.org/show_bug.cgi?id=1340877"
+      },
+      "last_modified": 1502483601731,
+      "schema": 1502483549048,
+      "guid": "@H99KV4DO-UCCF-9PFO-9ZLK-8RRP4FVOKD9O",
+      "id": "5df16afc-c804-43c9-9de5-f1835403e5fb",
+      "prefs": [],
+      "enabled": true,
+      "_status": "synced"
+    },
+    {
+      "versionRange": [
+        {
+          "severity": 3,
+          "maxVersion": "*",
+          "minVersion": "0"
+        }
+      ],
+      "details": {
+        "name": "SimilarWeb (malware)",
+        "why": "This is a malicious add-on that is being installed silently into users' systems.",
+        "bug": "https://bugzilla.mozilla.org/show_bug.cgi?id=1340877"
+      },
+      "last_modified": 1502483549043,
+      "schema": 1502480491460,
+      "guid": "@DA3566E2-F709-11E5-8E87-A604BC8E7F8B",
+      "id": "0a47a2f7-f07c-489b-bd39-88122a2dfe6a",
+      "prefs": [],
+      "enabled": true,
+      "_status": "synced"
+    },
+    {
       "enabled": true,
       "last_modified": 1501187580933,
       "prefs": [],
@@ -6176,30 +6294,6 @@
       ],
       "prefs": [],
       "id": "f7986b7b-9b5a-d372-8147-8b4bd6f5a29b",
-      "schema": 1480349193877
-    },
-    {
-      "guid": "/^brasilescape.*\\@facebook\\.com$//",
-      "blockID": "i485",
-      "enabled": true,
-      "last_modified": 1480349207424,
-      "details": {
-        "who": "All Firefox users who have this add-on installed.",
-        "created": "2013-11-14T15:57:03Z",
-        "bug": "https://bugzilla.mozilla.org/show_bug.cgi?id=938835",
-        "name": "Facebook Video Pack (malware)",
-        "why": "This add-on is malware that hijacks Facebook accounts."
-      },
-      "versionRange": [
-        {
-          "targetApplication": [],
-          "minVersion": "0",
-          "maxVersion": "*",
-          "severity": 3
-        }
-      ],
-      "prefs": [],
-      "id": "17a2bf85-b44a-4745-1b48-8be0c151d697",
       "schema": 1480349193877
     },
     {

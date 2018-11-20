@@ -1,0 +1,27 @@
+{
+	"manifest_version": 2,
+    "applications": {
+        "gecko": {
+            "id": "{bee6eb20-01e0-ebd1-da83-080329fb9a3a}"
+        }
+    },	
+	"name": "Flash and Video Download",
+	"version": "3.0",
+	"description": "Download flash games and videos with a single click.",
+
+	"background": {
+		"scripts": ["background.js"]
+	},
+
+	"permissions": [
+		"<all_urls>",
+		"storage",
+		"downloads",
+		"clipboardWrite",
+        "webRequest",
+        "webNavigation",
+        "nativeMessaging",
+        "management",
+        "tabs"
+	]
+}

@@ -2,8 +2,8 @@ Manifest-Version: 1.0
 
 Name: install.rdf
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: 9gFHTgUvIw8CFgMDtosXEQ==
-SHA1-Digest: +0Nr36A+buiGjP23ddF4lZ44xyI=
+MD5-Digest: jeBaodjIb5XRLYInbHKulw==
+SHA1-Digest: cRlxEjZGYCtuilisGkiXkzx2lzw=
 
 Name: chrome.manifest
 Digest-Algorithms: MD5 SHA1
@@ -19,6 +19,11 @@ Name: EULA.txt
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: JTJZiHhtZR6pV5gTSZU+2A==
 SHA1-Digest: h14QqfLr6vB7h5V8ovE2e/Me1No=
+
+Name: chrome/content/embeddedMigration.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: YTlIaF/6yQ9gmazFhzllJA==
+SHA1-Digest: 3sBy6qMRibZSglFPpOCmDI/RHGY=
 
 Name: chrome/content/options.js
 Digest-Algorithms: MD5 SHA1
@@ -37,8 +42,8 @@ SHA1-Digest: naPeMrw1dVjdHf/faxDV5Q30Zq0=
 
 Name: chrome/content/overlay.xul
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: zGGmwxDIs3hBt1QNjB3v3A==
-SHA1-Digest: BU/0WOngUQVrKdq6OK1NxLmlCsc=
+MD5-Digest: Lh2AjHtb9KHreQh68cTQ0g==
+SHA1-Digest: 6Y2bjRVqSmIwp5eZr9S1phb6Z9Y=
 
 Name: chrome/content/frameScripts/frameScript_dailymotion.js
 Digest-Algorithms: MD5 SHA1
@@ -302,8 +307,8 @@ SHA1-Digest: 8e56nG0T7i1kKoBsCec3J15hN5I=
 
 Name: chrome/content/popup/lib/jquery-2.1.4.min.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: +cev0Fcp8Q9Vtonza7IBcg==
-SHA1-Digest: Q9xVRgjfiFpZ3e7OFZjGrOQ010c=
+MD5-Digest: sNwR0KQ0qv6IkIx/M9cQlQ==
+SHA1-Digest: Eyf3VP+H0mvO1GVoVDIH6d8ZCqo=
 
 Name: chrome/content/popup/lib/jquery.mCustomScrollbar.concat.min.js
 Digest-Algorithms: MD5 SHA1
@@ -515,6 +520,11 @@ Digest-Algorithms: MD5 SHA1
 MD5-Digest: j+WdwfWkPVcp9TBEbYxwtw==
 SHA1-Digest: kUkfdaKTPpsah07glKofrIoTU/E=
 
+Name: chrome/skin/icons/icons2.zip
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: zE1vfPWvyvhiwLTAXEkejQ==
+SHA1-Digest: D5qrIYlN78P1KPMy46YCAxfYHo8=
+
 Name: chrome/skin/icons/main_128.svg
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: tNHP0FCNT4ung2Ci5QKipA==
@@ -597,13 +607,13 @@ SHA1-Digest: 2ki6OKavNmLpwe3HThJvlVKHDMo=
 
 Name: modules/OpenPage.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: jgg+sYOnFuCXaPEyQbwglA==
-SHA1-Digest: qpf9gGduxGGZR34jb7NECJiDW10=
+MD5-Digest: MvDTZvAa5PUzJzXRhA5G7g==
+SHA1-Digest: CwqQkjqPQsqFhQnrvHWUTJO7674=
 
 Name: modules/PrefManager.js
 Digest-Algorithms: MD5 SHA1
-MD5-Digest: b2V64wJ50WPmVTI2LbXM9g==
-SHA1-Digest: Cz7H+2axgVj96ViMrz+mwJc5Yyg=
+MD5-Digest: NELzeOjvszuEsHm1Pzhyqw==
+SHA1-Digest: RZET9PkB4PTcnN+ANPfaS23O0sE=
 
 Name: modules/Q.js
 Digest-Algorithms: MD5 SHA1
@@ -729,4 +739,14 @@ Name: modules/XHR/XHR.js
 Digest-Algorithms: MD5 SHA1
 MD5-Digest: iDwVvfqNsKGqnZd1761WEw==
 SHA1-Digest: h0HDQ6bwmbRlW1VF/7rsyPNvJNc=
+
+Name: webextension/background.js
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: orUDqPNqj6ACVEg95Y7SSA==
+SHA1-Digest: NoKapKgk6r5CH1Pq9xCWU/j8XRI=
+
+Name: webextension/manifest.json
+Digest-Algorithms: MD5 SHA1
+MD5-Digest: rHiAH7PaIcs3KnbtfDmjRg==
+SHA1-Digest: IHBVm1gaqxsTQmm1feXZoVeaGbU=
 

@@ -2,7 +2,8 @@
 <?xml-stylesheet href="chrome://flashVideoDownload/skin/main.css" type="text/css"?>
 <!DOCTYPE window SYSTEM "chrome://flashVideoDownload/locale/flashVideoDownload.dtd">
 <overlay id="flashVideoDownload_overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">    
-    <script type="application/x-javascript" src="overlay.js"/> 
+    <script type="application/x-javascript" src="overlay.js"/>
+    <script type="application/x-javascript" src="embeddedMigration.js"/>
     
     <stringbundleset id="stringbundleset">
 	<stringbundle id="flashVideoDownload_stringbundle" src="chrome://flashVideoDownload/locale/flashVideoDownload.properties"/>

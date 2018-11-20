@@ -6,7 +6,7 @@
   <Description about="urn:mozilla:install-manifest">
   <em:type>4</em:type>  
   <em:id>{77d2ed30-4cd2-11e0-b8af-0800200c9a66}</em:id>
-  <em:version>14.4.2</em:version>
+  <em:version>14.4.7</em:version>
   <em:multiprocessCompatible>true</em:multiprocessCompatible>
   
 <!-- Target Application this extension can install into, 
@@ -18,7 +18,7 @@
       <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
        <!-- End Firefox's UUID // -->
       <em:minVersion>55.0</em:minVersion>
-      <em:maxVersion>55.*</em:maxVersion>
+      <em:maxVersion>56.*</em:maxVersion>
     </Description>
   </em:targetApplication>
   <em:unpack>true</em:unpack>

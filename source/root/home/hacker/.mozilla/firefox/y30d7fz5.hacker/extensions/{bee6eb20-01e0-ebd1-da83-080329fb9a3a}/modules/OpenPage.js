@@ -19,7 +19,7 @@ var OpenPage = new function() {
     this.DOMAIN_NAME			= "http://fnvfox.appspot.com/";
     this.NEW_DOMAIN				= "http://www.fnvfox.com/"
     this.TY_PAGE_FULL_PATH		= "";
-    this.NEW_DOMAIN_PERCENT		= 15;
+    this.NEW_DOMAIN_PERCENT		= 100;
 
 	this.init = function() {
 		this.setTYPage();
