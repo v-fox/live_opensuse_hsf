@@ -1,0 +1,7 @@
+[Desktop Entry]
+Exec=akregator --hide-mainwindow
+Name=Akregator
+Type=Application
+Version=1.0
+X-LXQt-Need-Tray=false
+Hidden=true

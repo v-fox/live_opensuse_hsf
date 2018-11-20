@@ -8,6 +8,7 @@ disktype
 dosfstools
 efibootmgr
 exfat-utils
+f2fs-tools
 grub2-i386-pc
 grub2-systemd-sleep-plugin
 grub2-x86_64-efi
@@ -19,8 +20,11 @@ midisport-firmware
 mokutil
 mpt-firmware
 nano
+ndctl
+nvme-cli
 os-prober
 technisat-usb2-firmware
 ucode-amd
 util-linux
+xfsprogs
 zd1211-firmware

@@ -31,26 +31,47 @@ pidof ssh-agent &>/dev/null || \
 ssh-add &> /dev/null
 
 # options
-# you may or may not want to add "correctall" option
+## you may or may not want to add "CORRECT_ALL" option
 setopt \
- autocd \
- extendedglob \
- completeinword
-
-unsetopt promptcr
+ AUTO_CD \
+ AUTO_LIST \
+ AUTO_MENU \
+ AUTO_NAME_DIRS \
+ EXTENDED_GLOB \
+ COMPLETE_IN_WORD \
+ COMPLETE_ALIASES \
+ GLOB \
+ GLOB_COMPLETE \
+ GLOB_SUBST \
+ LIST_PACKED \
+ LIST_TYPES \
+ MULTIBYTE \
+ NUMERIC_GLOB_SORT
+## unwanted options
+unsetopt \
+ ALWAYS_TO_END \
+ BASH_AUTO_LIST \
+ NOMATCH \
+ BEEP \
+ LIST_AMBIGUOUS \
+ LIST_BEEP \
+ LIST_ROWS_FIRST \
+ MENU_COMPLETE \
+ PROMPT_CR \
+ REC_EXACT
 
 ## history
-setopt HIST_EXPIRE_DUPS_FIRST
 HISTSIZE=15000
 SAVEHIST=10000
 setopt \
- appendhistory \
- incappendhistory \
- extendedhistory \
- histfindnodups \
- histreduceblanks \
- histignorealldups \
- histsavenodups \
+ APPEND_HISTORY \
+ SHARE_HISTORY \
+ EXTENDED_HISTORY \
+ HIST_FIND_NO_DUPS \
+ HIST_EXPIRE_DUPS_FIRST \
+ HIST_REDUCE_BLANKS \
+ HIST_IGNORE_ALL_DUPS \
+ HIST_SAVE_NO_DUPS \
  HIST_REDUCE_BLANKS \
  HIST_IGNORE_SPACE
 
@@ -65,6 +86,7 @@ LISTMAX=0    # Only ask if line would scroll off screen
 
 # completion defaults
 autoload -U compinit
+autoload -U bashcompinit
 autoload -U zstyle+
 autoload _have_glob_qual
 ## enable caching
@@ -74,8 +96,9 @@ zstyle ':completion::complete:*' cache-path ~/.zsh/cache/$HOST
 zstyle ':completion:*' completer _complete _list _oldlist _expand _ignored _match _correct _approximate _prefix
 ## root completion
 #zstyle ':completion:*:sudo:*' command-path prepend /usr/local/sbin /usr/sbin /sbin
-zstyle ':completion:*:sudo:*' command-path $(echo ${PATH//:/ }) /usr/local/sbin /usr/sbin /sbin
+zstyle ':completion:*:sudo:*' command-path `echo ${PATH//:/ }` /usr/local/sbin /usr/sbin /sbin
 ## common hostnames
+zstyle ':completion:*' use-ip 'true'
 local _etc_hosts _known_hosts _ssh_hosts
 [ -f /etc/hosts ] && \
 	_etc_hosts=( ${${${(f)"$(</etc/hosts)"}/\#*}#*[\t ]} )
@@ -89,42 +112,57 @@ unset _etc_hosts _known_hosts _ssh_hosts
 ## kill completion
 zstyle ':completion:*:process' command 'ps xauwww -U $USER -u $USER'
 zstyle ':completion:*:processes' command 'ps xcu -U $USER -u $USER'
-zstyle ':completion:*:*:*:*:processes' menu yes select
+zstyle ':completion:*:*:*:*:processes' menu 'true' select
 zstyle ':completion:*:*:*:*:processes' force-list always
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:*:killall:*:process' list-colors '=(#b) #([0-9]#)*=0=01;31'
-# ignore line with rm
-zstyle ':completion:*:rm:*' ignore-line yes
+## ignore line with rm
+zstyle ':completion:*:rm:*' ignore-line 'true'
 
 # output formatting
+## add colors to completions
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+## always put directories first
+zstyle ':completion:*' list-dirs-first 'true'
 ## fancy menu selection when there's ambiguity
-#zstyle ':completion:*' menu yes select interactive
-#zstyle ':completion:*' menu yes=long select=long interactive
-zstyle ':completion:*' menu yes select=long interactive
+#zstyle ':completion:*' menu 'true' select interactive
+#zstyle ':completion:*' menu 'yes=long' select=long interactive
+zstyle ':completion:*' menu 'true' select=long interactive
+zstyle ':completion:*' show-ambiguity 'true'
 ## expand partial paths
-zstyle ':completion:*' expand 'yes'
+zstyle ':completion:*' expand 'true'
 zstyle ':completion:*:expand:*' tag-order all-expansions
-zstyle ':completion:*' squeeze-slashes 'yes'
+zstyle ':completion:*' squeeze-slashes 'true'
 ## separate matches into groups
-zstyle ':completion:*:matches' group 'yes'
+zstyle ':completion:*:matches' group 'true'
+## make manuals pretty
+zstyle ':completion:*:manuals' separate-sections true
+zstyle ':completion:*:manuals.(^1*)' insert-sections true
+zstyle ':completion:*:man:*' menu yes select
 ## describe each match group.
-zstyle ':completion:*' verbose yes
+zstyle ':completion:*' verbose 'true'
 zstyle ':completion:*:descriptions' format $'%U%B%d%b%u'
 ## messages/warnings/corrections format
+zstyle ':completion:*:default' list-prompt '%S%M matches%s'
 zstyle ':completion:*:messages' format $'%B%U---- %d%u%b'
 zstyle ':completion:*:warnings' format $'%BSorry, no matches for: %d%b'
 zstyle ':completion:*:corrections' format $'%d (errors: %e)'
 zstyle ':completion:*' group-name ''
 ## describe options in full
-zstyle ':completion:*:options' description 'yes'
+zstyle ':completion:*:options' description 'true'
 zstyle ':completion:*:options' auto-description '%d'
 ## when completing inside array or association subscripts, the array
 ## elements are more useful than parameters so complete them first:
-zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters 
-## add colors to completions
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*:*:-subscript-:*' tag-order indexes parameters
+## guesses ?
+zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX + $#SUFFIX) / 3 )) )'
+zstyle ':completion::approximate*:*' prefix-needed false
+#zstyle ':completion::(^approximate*):*:functions' ignored-patterns '_*'
+## show completion progress. useful with long and hard completions
+zstyle ':completion:*' show-completer 'true'
 
 compinit -C
+bashcompinit -C
 autoload -U promptinit
 
 # failure prompt
@@ -144,8 +182,16 @@ if [ "`id -u`" = "0" ]; then
 else
 	PROMPT="${GREEN}%n${NORM}@${GREEN}%m${NORM} (${YELLOW}%*${NORM}) [ ${BLUE}%~${NORM} ] ${BLUE}%#${NORM} ";
 #	PS1='%n@%m (%T) [ %~ ] %# ';
-	PATH="${PATH}:/usr/local/sbin:/usr/sbin:/sbin"
+	PATH="${PATH}:/usr/local/sbin:/usr/sbin:/sbin:${HOME}/.local/bin"
 fi
+
+# force some useful default options with aliases
+alias ip='ip -c -d -h'
+alias tc='tc -ts -s -d -p -g -iec -nm'
+alias lspci-tree='lspci -t -PP -q -k -v'
+alias lsusb-tree='lsusb -t -v'
+# prefer wine that can launch all Windows binaries
+alias wine=wine64
 
 # INITIALISE
 #autoload -U zed # what, your shell can't edit files?

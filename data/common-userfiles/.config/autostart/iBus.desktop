@@ -1,7 +1,0 @@
-[Desktop Entry]
-Exec=ibus-daemon --xim -d -r -R --desktop=lxqt
-Name=iBus input method
-Type=Application
-Version=1.0
-X-LXQt-Need-Tray=true
-X-Razor-Need-Tray=true

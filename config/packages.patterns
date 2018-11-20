@@ -1,10 +1,11 @@
 apparmor
 devel_basis
+devel_osc_build
 devel_rpm_build
 enhanced_base
 enhanced_base_opt
 kvm_server
-LXQT
+lxqt
 office
 sw_management
 x11

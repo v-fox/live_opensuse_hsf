@@ -7,12 +7,18 @@ fi
 if [ -z "$WAYLAND_DISPLAY" ]; then
 	export WINDOWMANAGER=kwin_x11
 	# load KDE5 services for kwin
-	env KDE_SESSION_VERSION=5 kded5 &
-	qdbus org.kde.kded5 /kded loadModule colord &
+	kded5 &
+	kglobalaccel5 &
+	sleep 1
+	#qdbus org.kde.kded5 /kded loadModule keyboard &
 	qdbus org.kde.kded5 /kded loadModule khotkeys &
-	exec kwin_x11 $KWIN_OPTIONS
-	sleep 10
-	kactivitymanagerd stop &
+	qdbus org.kde.kded5 /kded loadModule kscreen &
+        qdbus org.kde.kded5 /kded loadModule colord &
+        qdbus org.kde.kded5 /kded loadModule colorcorrectlocationupdater &
+	sleep 1
+	exec env mesa_glthread=true EQAA=8,4,2 pp_jimenezmlaa=32 kwin_x11 $KWIN_OPTIONS
+	#sleep 5
+	#exec kactivitymanagerd stop
 	return 0
 else
 	export WINDOWMANAGER=kwin_wayland

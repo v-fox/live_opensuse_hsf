@@ -3,23 +3,36 @@
 		kernel and JACK's default latency is set to 16ms via 256/3 f/p
 		(8ms with 128/3 f/p and '--sync' may be stable on a good machine)
 	* by default en_GB locale is used for messages and en_DK - for measurements
+	* support for NVMe
+	* support for Wayland (sddm may be used to launch W-sessions)
 	* support for Vulkan
-	* support for VDPAU/VA in latest AMD GPUs
-	* support for audio calls is disabled in LeechCraft
-		due to upstream abandonment
+	* support for VDPAU/VA
+	* support for multiple CPU threads in Mesa's OpenGL implementation
+	* support for correct DPI is patched in xorg-x11-server (#23705 and #41115)
+	* support for DRI_PRIME is enabled by default
+	* support for newer Nvidia cards via closed driver
+	* addition of all translations via ugly hack
 	* addition of i2pd for native I2P support
+	* addition of RetroShare for encrypted P2P communication & filesharing
 	* addition of Performance Co-Pilot monitoring suite
-	* addition of stress-ng and gfio testers
+	* addition of stress-ng, sysbench, bandwidth and gfio testers
+	* addition of nftables, netsniff-ng and BCC for NF and BPF support
 	* addition of XEN and UML libvirt support
 	* addition of input-libinput and video-amdgpu X drivers
 	* addition of RetroArch/libretro meta-emulator
-	* addition of purple-libsteam and steam-controller
+	* addition of newest standalone emulators:
+		Citra for Nintendo© 3DS®
+		Decaf-Emu for Nintendo© Wii U®
+		RPCS3 for Sony© PlayStation® 3
+	* addition of purple-libsteam, steam-controller and sc-controller
 	* addition of plasma5-desktop for KDE's systemsettings5 modules
-	* addition of dolphin FM and konqueror FM/WB with sessions
+		and plasma5 X & W sessions, just for completeness
+	* addition of dolphin FM
 	* addition of digikam/showfoto
 	* addition of speedcrunch calculator
 	* addition of handbrake-gtk video converter
-	* addition of soundkonverter
+	* addition of openmpt123 console tracker module player
+	* addition of soundconverter and flacon
 	* addition of sonic-visualiser
 	* addition of Vamp plugins for SV and Audacity
 	* addition of quota-nfs
@@ -27,26 +40,31 @@
 	* addition of forgotten libssr-glinject{-32bit}
 		needed for reliable OpenGL recording in SimpleScreenRecorder
 	* addition of rasdaemon for collecting H/W error data like MCE and CCE
-	* addition of abootimg and qdevicemonitor Android tools
 	* addition of multithreaded compressors (pigz,lbzip2,pbzip2,pixz,plzip)
+	* removal of snapper, btrfs snapshotting crutch
 	* removal of supposedly unnecessary and obsolete usbip userspace package
 	* removal of kmscon KMS/DRM console due to its upstream abandonment
 	* removal of obsolete firmwarekit
 	* removal of openclipart
 	* removal of explicit dependency on gstreamer-0.10
 	* removal of KDE's phonon backends
-	* removal of Tano IPTV player
+	* removal of abandoned Tano IPTV player
+	* removal of abandoned OMX video decoding API
 	* removal of gvfs
 	* replacement of dead yast2-live-installer with calamares
 	* replacement of openbox/compton with kwin
+	* replacement of LeechCraft with WeeChat / Vacuum-IM
+		MultiProtocol / Matrix / XMPP clients and Akregator RSS reader
 	* replacement of onboard with florence
 	* replacement of xt7-player-mpv with smplayer/smtube
 	* replacement of PeaZip with ark
 	* replacement of keepassx with keepassxc
 	* replacement of unbound with pdnsd
 		because of former being prone to random failures
+	* replacement of ntp with chrony
 	* replacement of obsolete msilbc Linphone plugin with mswebrtc
 	* replacement of LinPhone's GTK GUI with Qt one
+	* switch to Qt5 git branch of Clementine
 	* switch to svn build of Desmume emulator
 	* switch to alive branch of proxychains
 	* mpv and retroarch are launched with heightened priority by default
@@ -64,13 +82,19 @@
 	* important kernel changes:
 		full ticklessness / NO_HZ;
 		all CPUs are build_forced no-CBs CPUs;
-		transparent hugepages defaulted to madwise;
-		schedutil is set as default CPU scheduler/;
-		bfq-mq/kyber are set as default I/O schedulers for HDD/SSD;
-		fq-codel is set as default network scheduler;		
-		CONFIG_SCHED_AUTOGROUP is enabled (in kernel but not in system);
-		lz4 is the default compression algorithm for kernel and initrd;
+		schedutil is set as default CPU scheduler;
+		old SLAB memory allocator is preffered;
+		transparent hugepages are prompted to be used more liberally;
+		deadline/kyber are set as default I/O schedulers for HDD/SSD;
+		fq-codel is set as default network scheduler and BBR — as TCP CCA;
+		IPv4 MTU Discovery and ECN are fully enabled by default;
+		network buffers are set to be sufficient for up to 10G of traffic;
+		CONFIG_SCHED_AUTOGROUP is usable but not enabled by default;
+		zstd is the default compression algorithm for kernel and initrd;
 		lz4/25% zswap is enabled in addition to lz4hc zram swap;
+		USB mice and "joysticks" are forced to 1000Hz/1ms rate by default;
+		audio and video drivers are set to have highest realtime priority;
+		amdgpu, pci and iommu tweaks to maximize utilization of AMD's GPUs;
 		unneeded for boot third-party kernel modules are left out of initrd
 
 0.9.0:

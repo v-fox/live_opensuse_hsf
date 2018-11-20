@@ -43,6 +43,9 @@ suseImportBuildKey
 baseRemoveService rsyslog
 baseRemoveService apparmor
 baseRemoveService SuSEfirewall2
+# prefer chrony over ntp
+baseRemoveService ntp
+baseInsertService chronyd
 # get rid of systemd's NM knock-off... with extreme prejudice
 baseRemoveService wicked.service
 systemctl mask wicked
@@ -78,7 +81,6 @@ baseRemoveService hddtemp
 baseInsertService dkms
 baseInsertService bluetooth
 baseInsertService ModemManager
-baseInsertService ntp
 #baseInsertService unbound
 baseInsertService pdnsd
 baseInsertService tor
@@ -96,7 +98,10 @@ baseInsertService spice-vdagentd
 baseInsertService libvirtd
 # avoiding debugfs in favour of tracefs (https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=681418)
 #systemctl mask sys-kernel-debug.mount
-ln -s /dev/null /etc/systemd/system/sys-kernel-debug.mount
+#ln -s /dev/null /etc/systemd/system/sys-kernel-debug.mount
+#systemctl enable sys-kernel-tracing.mount
+systemctl enable dev-shm.mount
+systemctl enable tmp.mount
 
 # systemd locale defaults
 localectl list-x11-keymap-models "evdev"
@@ -121,6 +126,8 @@ alias wget="wget --no-proxy"
 
 # that is used instead of /etc/sysconfig/windowmanager
 update-alternatives --install /usr/share/xsessions/default.desktop default-xsession.desktop /usr/share/xsessions/lxqt.desktop 20
+# sddm is too glitchy in general despite working with Wayland
+update-alternatives --set default-displaymanager /usr/lib/X11/displaymanagers/lightdm
 # staying fresh even in deeper places
 update-ca-certificates
 update-pciids
@@ -129,11 +136,24 @@ update-smart-drivedb
 
 # force-installing Google-fonts from crapload of packages here instead of the proper place
 zypper --non-interactive --gpg-auto-import-keys refresh
-zypper --non-interactive install "google-*-fonts" || exit 1
+zypper --non-interactive install "google-*-fonts" "noto-sans-cjk-fonts" || exit 1
 # and installing all forensic tools while we're at it
 zypper --non-interactive install --from security_forensics "*-tools" || exit 1
+# and retroarch's cores
+zypper --non-interactive install "libretro-*" || exit 1
+# all NetworkManager addons for KDE
+zypper --non-interactive install "plasma-nm5-*" || exit 1
 # and YaST translations
 zypper --non-interactive install "yast2-trans-*" || exit 1
+# OBS tools
+zypper --non-interactive install "obs-service-*" "osc-plugin-*" || exit 1
+# install translations via ass-backwards means to avoid "recommended" garbage
+rpm -q --qf '%{NAME} ' -a | sort -fu > /tmp/package.list
+sed -i -e 's: :-lang :g' /tmp/package.list
+zypper --non-interactive --force-resolution install $(cat /tmp/package.list) || exit 1
+rm -v /tmp/package.list$
+# make sure that previous step did not pull packages from wrong repositories
+zypper --non-interactive --force-resolution --allow-downgrade --allow-vendor-change dist-upgrade
 # removing unwanted packages (but why we would even have them in the first place ?)
 suseRemovePackagesMarkedForDeletion
 rm -rf /var/{cache,log}/zypp/*

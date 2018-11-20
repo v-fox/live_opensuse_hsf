@@ -1,5 +1,6 @@
 # forcing default multi-queue I/O schedulers: bfq for HDDs and kyber (said to be similar to fq-codel network scheduler) for the rest
 # https://lwn.net/Articles/720675/
 
-ACTION=="add|change", KERNEL=="sd*[!0-9]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
+# bfq can't be trusted after its ridiculous 4.15 fail
+#ACTION=="add|change", KERNEL=="sd*[!0-9]", ATTR{queue/rotational}=="1", ATTR{queue/scheduler}="bfq"
 ACTION=="add|change", KERNEL=="sd*[!0-9]", ATTR{queue/rotational}=="0", ATTR{queue/scheduler}="kyber"

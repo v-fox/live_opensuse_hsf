@@ -19,10 +19,14 @@ EDITOR=nano
 HUGETLB_PATH=/dev/hugepages
 # for enca/enconv
 DEFAULT_CHARSET=UTF-8
+# make sure that DPI is honored
+# https://wiki.archlinux.org/index.php/HiDPI
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+# GTK3 and X itself needs patching to remove hardcoding for 96 dpi
 # input method
-QT_IM_MODULE=ibus
-GTK_IM_MODULE=ibus
-XMODIFIERS=@im=ibus
+#QT_IM_MODULE=ibus
+#GTK_IM_MODULE=ibus
+#XMODIFIERS=@im=ibus
 # for QT
 #QT_GRAPHICSSYSTEM=raster
 #QT_STYLE_OVERRIDE=GTK+
@@ -37,11 +41,14 @@ OOO_FORCE_DESKTOP="kde4"
 SUDO_ASKPASS=/usr/bin/lxqt-openssh-askpass
 SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
 GIT_ASKPASS=/usr/bin/lxqt-openssh-askpass
+# enabling multi-threaded OpenGL in Mesa
+# https://www.gamingonlinux.com/wiki/Performance_impact_of_Mesa_glthread
+mesa_glthread=true
 # enabling texture compression support
 #force_s3tc_enable=true
 # for dual-GPU bullshit, forcing the usage of non-shitty card
 # may lead to unintended consequences, like having artifacts or no vsync
-#DRI_PRIME=1
+DRI_PRIME=1
 # SDL tuning
 SDL_VIDEO_YUV_HWACCEL=1
 # kmix crutch to prevent it from fiddling with PA

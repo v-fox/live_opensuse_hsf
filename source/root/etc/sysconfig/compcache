@@ -17,7 +17,7 @@ COMPCACHE_SIZE_KB="0"
 # The devices are named as /dev/ramzswapX where X starts from 0.
 # 0 means to use the default number (number of processor cores).
 #
-COMPCACHE_NUM_DEVICES="0"
+COMPCACHE_NUM_DEVICES="1"
 
 ## Type:		string
 ## Default:		lz4
@@ -25,4 +25,4 @@ COMPCACHE_NUM_DEVICES="0"
 # Default compression algorithm for zram. Kernel's default is lzo.
 # Our default is lz4. See complete list in /sys/block/zram*/comp_algorithm
 #
-COMPCACHE_COMP_ALGORITHM="lz4hc"
+COMPCACHE_COMP_ALGORITHM="zstd"

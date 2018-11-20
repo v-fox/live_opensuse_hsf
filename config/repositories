@@ -53,7 +53,7 @@
 		<source path="obs://Virtualization/openSUSE_Factory"/>
 	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="77" alias="X11_Utilities">
-		<source path="obs://X11:Utilities/openSUSE_Factory"/>
+		<source path="obs://X11:Utilities/openSUSE_Tumbleweed"/>
 	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="77" alias="X11_XOrg">
 		<source path="obs://X11:XOrg/openSUSE_Tumbleweed"/>

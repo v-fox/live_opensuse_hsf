@@ -27,8 +27,7 @@
 
 # IRQ thread service names
 # (space separated list, from higher to lower priority).
-# RTIRQ_NAME_LIST="rtc snd usb i8042" # old
-RTIRQ_NAME_LIST="rtc snd drm amdgpu radeon i915 nvidia ahci usb i8042"
+RTIRQ_NAME_LIST="timer rtc snd drm amdgpu radeon i915 nvidia usb i8042 ahci"
 
 # Highest priority.
 RTIRQ_PRIO_HIGH=80
@@ -50,4 +49,4 @@ RTIRQ_NON_THREADED=""
 # Process names which will be forced to the
 # highest realtime priority range (99-91)
 # (space separated list, from highest to lower priority).
-RTIRQ_HIGH_LIST="watchdogd oom_reaper ksoftirqd"
+RTIRQ_HIGH_LIST="watchdogd oom_reaper rcu_preempt rcu_sched rcu_bh rcub rcuc gfx sdma ksoftirqd khugepaged"

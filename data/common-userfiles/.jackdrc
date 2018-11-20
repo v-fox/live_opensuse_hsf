@@ -1,1 +1,1 @@
-/usr/bin/nice -n -14 ionice -c 2 -n 0 -t chrt -v -r 30 jackd --sync -P45 -t2500 -dalsa -dhw:0 -r48000 -p256 -n3 -m -H -M -Xseq -zs -I22 -O22
+/usr/bin/nice -n -14 ionice -c 2 -n 0 -t chrt -v -r 30 jackd --sync -P45 -t1000 -dalsa -dhw:0 -r48000 -p256 -n3 -m -H -M -Xseq -i2 -o2 -zs -I22 -O22

@@ -1,0 +1,5 @@
+# allowing "Heterogenous System Architecture" device access to all users for OpenCL to properly work out-of-the-box
+# https://community.amd.com/thread/170292
+# https://ubuntuforums.org/showthread.php?t=2275207
+
+ACTION=="add|change", KERNEL=="kfd", MODE="0660", GROUP="users"

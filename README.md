@@ -47,21 +47,24 @@ Steam installer/launcher is present
 * anti-censorship kit: Tor&I2P/Privoxy, DNSCrypt-proxy/pdnsd, proxychains-ng and VPN  
 (Privoxy is also I2P-aware, all i2p-links will be proxy-chained into it;  
 Unbound uses multiple DNSSEC-capable DNSCrypt instances for different resolvers)
-* LeechCraft modular system stripped for only IM and socializing
-* LinPhone for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
+* WeeChat CLI multiprotocol and Vacuum XMPP IM clients;  
+LinPhone for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
 Tox network client for Tor/BitTorrent-like P2P A/V telephony (or so they say);  
+RetroShare client for P2P GPG-enabled communication and filesharing;  
 Skype for compatibility with stubborn fools (use with extreme caution !)
 * fresh Mozilla Firefox browser and Thunderbird e-mail client;  
 fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
 * mc, zsh, android-tools, wgetpaste/pastebinit and other console tools
-* perf, stress-ng, gfio benchmarks
+* perf, stress-ng, sysbench, bandwidth, gfio benchmarks
 * networking tools:  
   * interconnecting: hostapd, miredo-client, minicom and rancid
   * looking: {arp-,ike-,ssl}scan, iptraf-ng, nethogs, upnp-inspector, mtr{-gtk}, lft
   * touching: wireshark-qt, {ze}nmap, wapiti, xprobe2, scapy & {f,h,n}ping, aircrack-ng, kismet, reaver
-  * filesharing: nfs-kernel-server, pure-ftpd, samba
+  * filesharing: retroshare, nfs-kernel-server, pure-ftpd, samba
+  * controlling: nftables, netsniff-ng and BCC for NF and BPF firewalling and performance tracing
 * filesystem tools:  
+  * SCSI/PATA/SATA/NVMe hardware access: lsscsi & sg3_utils, hdparm & hddtemp, sdparm, nvme-cli & ndctl
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype
   * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
   * deduplication: duperemove, fslint (+ digikam's image deduplication with fingerprinting)
@@ -77,12 +80,7 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 
 It does NOT provide:
 --------------------
-— proprietary video drivers (because they suck and are pain in the ass).  
-  or video driver support for anything without KMS, for that matter  
 — whole KDE or Gnome (because of how fat the former and how ugly the later are)  
-— any language translation packages (for space conservation and due to lack of  
-  ability in zypper & YaST to install them without all "recommended" garbage)  
-— Wayland packages (because it's too raw yet)  
 — accessibility features (because I have no idea how to setup them right)  
   but there is `onboard` virtual keyboard  
 — security hardening (because it requires strict and thorough testing  
@@ -110,7 +108,6 @@ Notes:
   * okular (useful doc viewer, integrated in Firefox via kparts-plugin)  
   * kchmviewer (MS chm viewer), because sometimes okular screws up  
   * gwenview5 + digikam5/showfoto (highly-capable image viewers)  
-  * soundkonverter (no better alternatives for batch audio conversion)  
   * k3b (rich disk burner), because some people still are into this stuff)  
 * GNOME:  
   * nm-applet (this is _the only_ NM GUI that can launch in any DE)  

@@ -1,0 +1,24 @@
+#  This file is part of systemd.
+#
+#  systemd is free software; you can redistribute it and/or modify it
+#  under the terms of the GNU Lesser General Public License as published by
+#  the Free Software Foundation; either version 2.1 of the License, or
+#  (at your option) any later version.
+
+[Unit]
+Description=Shared memory
+Documentation=man:hier(7)
+Documentation=http://www.freedesktop.org/wiki/Software/systemd/APIFileSystems
+DefaultDependencies=no
+ConditionPathExists=/dev/shm
+ConditionCapability=CAP_SYS_RAWIO
+Before=sysinit.target
+
+[Mount]
+What=tmpfs
+Where=/dev/shm
+Type=tmpfs
+Options=mode=1777,strictatime,size=25%,huge=within_size
+
+[Install]
+WantedBy=sysinit.target

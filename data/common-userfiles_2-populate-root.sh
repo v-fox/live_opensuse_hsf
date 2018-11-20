@@ -12,3 +12,6 @@ for i in etc/skel root home/hacker; do
 	# cleaning up files useless for building
 	find "${DESTINATION}" -type f -name ".gitignore" -delete
 done
+
+# ALSA loses its shit if root has ALSA config with defined PA output
+rm -v ../../${FILE_OVERLAY}/root/.asoundr

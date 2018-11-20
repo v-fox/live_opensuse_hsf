@@ -7,7 +7,7 @@
 		<type image="iso" primary="true" checkprebuilt="false"
 		boot="isoboot/suse-tumbleweed" firmware="uefi" bootprofile="custom" bootkernel="custom"
 		flags="overlay" hybrid="true" hybridpersistent="true" hybridpersistent_filesystem="ext4"
-		kernelcmdline="splash=verbose apparmor=0"></type>
+		kernelcmdline="splash=verbose apparmor=0 gbpages reboot=cold pci=big_root_window clocksource=hpet nvme.io_queue_depth=16384 nvme.max_host_mem_size_mb=1024 nvme_core.admin_timeout=900 nvme_core.io_timeout=600 nvme_core.shutdown_timeout=30 nvme_core.streams=1"></type>
 		<packagemanager>zypper</packagemanager>
 		<rpm-check-signatures>false</rpm-check-signatures>
 		<rpm-force>false</rpm-force>

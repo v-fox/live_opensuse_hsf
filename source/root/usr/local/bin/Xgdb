@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# https://www.x.org/wiki/Development/Documentation/ServerDebugging/
+#GDB=...
+#XSERVER=...
+
+ARGS=$*
+PID=$$
+
+test -z "$GDB" && GDB=gdb
+test -z "$XSERVER" && XSERVER=/usr/bin/X
+
+cat > "/tmp/.dbgfile.$PID" << HERE
+file $XSERVER
+set confirm off
+set args $ARGS
+handle SIGUSR1 nostop
+handle SIGUSR2 nostop
+handle SIGPIPE nostop
+run
+bt full
+cont
+quit
+HERE
+
+$GDB --quiet --command=/tmp/.dbgfile.$PID &> /var/log/Xorg.pid-${PID}.gdb.log
+
+rm -fv "/tmp/.dbgfile.$PID"
+echo "Log written to: /var/log/Xorg.pid-${PID}.gdb.log"

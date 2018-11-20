@@ -1,6 +1,5 @@
 [1]
-Description=Move calf to 3rd desktop by default
-desktop=3
+Description=Move calf by default
 desktoprule=3
 wmclass=calfjackhost
 wmclasscomplete=false
@@ -42,10 +41,10 @@ placement=Maximizing
 placementrule=2
 types=1
 windowrole=browser
-windowrolematch=1
-wmclass=navigator firefox
+windowrolematch=2
+wmclass=navigator nightly|Firefox
 wmclasscomplete=true
-wmclassmatch=1
+wmclassmatch=3
 
 [General]
 count=4

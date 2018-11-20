@@ -1,21 +1,28 @@
-# Modified by YaST2. Last modification on Ср фев 18 23:15:23 YEKT 2015
+# Modified by YaST2. Last modification on Вс мар 13 12:23:21 YEKT 2016
 # THIS FILE WILL BE PARTIALLY OVERWRITTEN by perl-Bootloader
 # For the new kernel it try to figure out old parameters. In case we are not able to recognize it (e.g. change of flavor or strange install order ) it it use as fallback installation parameters from /etc/sysconfig/bootloader
 
 # If you change this file, run 'grub2-mkconfig -o /boot/grub2/grub.cfg' afterwards to update
 # /boot/grub2/grub.cfg.
-#GRUB_DISTRIBUTOR=
+# Uncomment to set your own custom distributor. If you leave it unset or empty, the default
+# policy is to determine the value from /etc/os-release
+#GRUB_DISTRIBUTOR=""
+#GRUB_DEFAULT=0
+#GRUB_HIDDEN_TIMEOUT=0
+#GRUB_HIDDEN_TIMEOUT_QUIET=true
+#GRUB_TIMEOUT=6
+# 'notsc' or 'tsc=unstable' to avoid unreliable clock ? but thit will force HPET which may cause increased latencies
+# 'pci=big_root_window" may be benefitial for AMD CPUs & GPUs when your firmware doesn't do its job which is almost always: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=f32ab7547161b9fa7ebfbc4f18ea1eb3fd49fe25 and https://patchwork.kernel.org/patch/10151641/
+# combine it with 'add_efi_memmap' for extra lazy and unmaintained firmwares: https://unix.stackexchange.com/questions/150090/when-do-i-need-to-specify-add-efi-memmap-as-kernel-argument-in-uefi-efi-boot
+GRUB_CMDLINE_LINUX_DEFAULT="showopts apparmor=0 gbpages reboot=cold pci=big_root_window"
+# example of XFS options to enable all desktop-related functions if dracut and grub don't cooperate in setting those automatically
+#GRUB_CMDLINE_LINUX="rootflags=defaults,lazytime,uqnoenforce,gqnoenforce,pqnoenforce,filestreams,largeio,logbsize=256k,swalloc"
+#GRUB_CMDLINE_LINUX_RECOVERY="showopts plymouth.enable=0 apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe usbcore.autosuspend=-1 floppy.allowed_drive_mask=0 pcie_aspm=off pci=nomsi,nommconf"
+# DON'T screw up rootfs mount parameters!
+SUSE_REMOVE_LINUX_ROOT_PARAM=false
 # Uncomment to automatically save last booted menu entry in GRUB2 environment
 # variable `saved_entry'
-GRUB_SAVEDEFAULT="true"
-GRUB_DEFAULT=saved_entry
-GRUB_HIDDEN_TIMEOUT=0
-GRUB_HIDDEN_TIMEOUT_QUIET=false
-GRUB_TIMEOUT=10
-GRUB_CMDLINE_LINUX_DEFAULT="splash=verbose showopts apparmor=0"
-# kernel command line options for failsafe mode
-GRUB_CMDLINE_LINUX_RECOVERY="showopts plymouth.enable=0 apm=off noresume edd=off powersaved=off nohz=off highres=off processor.max_cstate=1 nomodeset x11failsafe usbcore.autosuspend=-1 floppy.allowed_drive_mask=0 pcie_aspm=off pci=nomsi,nommconf"
-GRUB_CMDLINE_LINUX=""
+#GRUB_SAVEDEFAULT=true
 # Uncomment to enable BadRAM filtering, modify to suit your needs
 # This works with Linux (no patch required) and with any kernel that obtains
 # the memory map information from GRUB (GNU Mach, kernel of FreeBSD ...)
@@ -32,11 +39,11 @@ GRUB_TERMINAL=gfxterm
 #GRUB_DISABLE_LINUX_RECOVERY=true
 # Uncomment to get a beep at grub start
 #GRUB_INIT_TUNE="480 440 1"
-# Skip 30_os-prober if you experienced very slow in probing them
-# WARNING foregin OS menu entries will be lost if set true here
-GRUB_DISABLE_OS_PROBER=false
-# Set to 'y' for grub to be installed on an encrypted partition
-#GRUB_ENABLE_CRYPTODISK=n
 GRUB_THEME=/boot/grub2/themes/openSUSE/theme.txt
-#SUSE_BTRFS_SNAPSHOT_BOOTING=false
-GRUB_BACKGROUND=/boot/grub2/themes/openSUSE/background.png
+#GRUB_DISABLE_RECOVERY=true
+GRUB_DISABLE_OS_PROBER=false
+#SUSE_BTRFS_SNAPSHOT_BOOTING=true
+GRUB_ENABLE_CRYPTODISK=y
+#GRUB_BACKGROUND=/boot/grub2/themes/openSUSE/background.png
+GRUB_CMDLINE_LINUX_DEFAULT="${GRUB_CMDLINE_LINUX_DEFAULT:+$GRUB_CMDLINE_LINUX_DEFAULT }${LINUX_ROOT_DEVICE} \$tuned_params"
+GRUB_INITRD_OVERLAY="${GRUB_INITRD_OVERLAY:+$GRUB_INITRD_OVERLAY }\$tuned_initrd"

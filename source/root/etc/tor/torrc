@@ -108,8 +108,9 @@ Nickname HSF
 ## be at least 20 KB.
 ## Note that units for these config options are bytes per second, not bits
 ## per second, and that prefixes are binary prefixes, i.e. 2^10, 2^20, etc.
-RelayBandwidthRate 2 MB  # Throttle traffic to 100KB/s (800Kbps)
-RelayBandwidthBurst 2.5 MB # But allow bursts up to 200KB/s (1600Kbps)
+RelayBandwidthRate 2 MB  # Throttle traffic
+RelayBandwidthBurst 3 MB # But allow higher bursts
+MaxAdvertisedBandwidth 1 MB
 
 ## Use these to restrict the maximum traffic per day, week, or month.
 ## Note that this threshold applies separately to sent and received bytes,
@@ -191,3 +192,9 @@ ExitPolicy reject *:* # no exits allowed
 ## address manually to your friends, uncomment this line:
 #PublishServerDescriptor 0
 
+# HALF of all RAM by default ?! Are they nuts ?
+MaxMemInQueues 384 MB
+# And all CPUs ?!
+NumCPUs 2
+ConnLimit 2048
+AvoidDiskWrites 1

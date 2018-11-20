@@ -5,6 +5,11 @@
 ## 3) 'aloop' is monstrosity that provides the ugliest compatibility technique
 ## everything else is intermediates that apps shouldn't touch
 
+# https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture#High_quality_resampling
+# "speexrate_medium" is equivalent for PA's "speex-float-5" and "speexrate_best"="speex-float-10"
+# ffmpeg's "lavcrate_high" is equivalent for mpv's "audio-resample-filter-size=32"
+defaults.pcm.rate_converter "speexrate_medium"
+
 pcm.jack {
     type jack
     hint {
@@ -37,8 +42,8 @@ pcm.!default {
 }
 ctl.!default {
   type pulse
-  card 0
-  fallback "sysdefault"
+#  card 0
+#  fallback "sysdefault"
 }
 
 ## crutch for stupid apps like Firefox
@@ -61,23 +66,7 @@ pcm.!sysdefault {
 ctl.!sysdefault {
   type hw
   card 0
-  fallback "pulse"
-}
-
-## additional pulse crutch for completely retarded applications like aegisub
-## that can't handle neither ALSA or Pulse directly and can't even dream of JACK.
-## also, some apps with hyper-lazy authors may rely on ALSA/PA emulation because
-## they didn't code PA support but realised that ALSA is inaccessible now
-pcm.pulse {
-    type pulse
-    hint {
-        show on
-        description "Crutch for full-retard apps (PulseAudio redirection layer)"
-    }
-}
-
-ctl.pulse {
-    type pulse
+#  fallback "pulse"
 }
 
 ## snd-aloop crutch for insane applications
@@ -124,4 +113,35 @@ pcm.aloop {
   hint {
     show on
     description "Crutch for insane apps (ass-backwards JACK enforcement)" }
+}
+
+# allow native DSD on XMOS DACs
+# https://github.com/lintweaker/xmos-native-dsd
+audio_output {
+  type "alsa"
+  name "USB XMOS DAC"
+  device "hw:x20"
+  # Enable native DSD playback
+  dsd_native "yes"
+  # Disable DSD-over-PCM conversion
+  dsd_usb "no"
+  # Select 32-bit DSD_U32_BE output format
+  dsd_native_type "2"
+}
+
+## ! PROVIDED in /usr/share/alsa/alsa.conf.d !
+## additional pulse crutch for completely retarded applications like aegisub
+## that can't handle neither ALSA or Pulse directly and can't even dream of JACK.
+## also, some apps with hyper-lazy authors may rely on ALSA/PA emulation because
+## they didn't code PA support but realised that ALSA is inaccessible now
+pcm.pulse {
+    type pulse
+    hint {
+        show on
+        description "Crutch for full-retard apps (PulseAudio redirection layer)"
+    }
+}
+
+ctl.pulse {
+    type pulse
 }
