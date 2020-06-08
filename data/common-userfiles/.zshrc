@@ -1,5 +1,9 @@
 #!/bin/zsh
 
+# for no reason SUSE decided to not do this by default anymore
+source /etc/bash.bashrc
+source /etc/zshrc
+
 # make everything prettier
 autoload -U colors
 eval $(dircolors)
@@ -186,12 +190,24 @@ else
 fi
 
 # force some useful default options with aliases
+#alias ls='ls --color=yes'
 alias ip='ip -c -d -h'
 alias tc='tc -ts -s -d -p -g -iec -nm'
 alias lspci-tree='lspci -t -PP -q -k -v'
 alias lsusb-tree='lsusb -t -v'
 # prefer wine that can launch all Windows binaries
-alias wine=wine64
+#alias wine="wine64"
+alias winetricks="env WINEARCH=win64 winetricks"
+# prevent wine from shitting in /home,especially if it's on small SSD partition
+# (something has to be done too with its tendency to create file-associations with its monstrous crap)
+[ -d "/var/cache/WINE/$USER/x86" ] || mkdir -p "/var/cache/WINE/$USER/x86" 2> /dev/null
+[ -d "/var/cache/WINE/$USER/x86_64" ] || mkdir -p "/var/cache/WINE/$USER/x86_64" 2> /dev/null
+[ -e ~/.wine ] || ln -s "/var/cache/WINE/$USER/x86" ~/.wine 2> /dev/null
+[ -e ~/.wine64 ] || ln -s "/var/cache/WINE/$USER/x86_64" ~/.wine64 2> /dev/null
+[ -e ~/.local/share ] || mkdir -p ~/.local/share 2> /dev/null
+[ -e ~/.local/share/wineprefixes ] || ln -s "/var/cache/WINE/$USER" ~/.local/share/wineprefixes 2> /dev/null
+export WINEARCH=win64
+export WINEPREFIX="/var/cache/WINE/$USER/x86_64"
 
 # INITIALISE
 #autoload -U zed # what, your shell can't edit files?

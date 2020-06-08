@@ -1,12 +1,12 @@
 [Unit]
 Description=Discard unused blocks once a day
 Documentation=man:fstrim
-Unit=fstrim.service
 
 [Timer]
 OnCalendar=daily
 AccuracySec=1h
 Persistent=true
+Unit=fstrim.service
 
 [Install]
 WantedBy=timers.target

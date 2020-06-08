@@ -1,0 +1,133 @@
+# defaults for all network interfaces !
+
+[Match]
+Name=*
+
+[Link]
+# enable local DNS self-discovery via multicast !
+Multicast=true
+AllMulticast=true
+# DO NOT mess with NetworkManager ?
+# but in that case, resolved does not abide by its configuration
+# and before login networking is almost guaranteed not to work
+# networkd incorrectly puts equal metric on WiFi and Ethernet
+# unlike NM, that preffers wired connections
+Unmanaged=yes
+
+[Network]
+# is it really necessary ?
+#Address=0.0.0.0/8
+#Address=::/64
+# always keep configured with these defaults, regardless of state
+#ConfigureWithoutCarrier=yes
+# don't wipe addresses on link's loss ? 
+#IgnoreCarrierLoss=yes
+# always probe for address or set one by itself !
+DHCP=yes
+LinkLocalAddressing=yes
+IPv4LLRoute=yes
+# 'no' is for kernel's RA implementation
+IPv6AcceptRA=yes
+IPv6PrefixDelegation=yes
+# 'prefer-public' is for trusted networks
+# 'kernel' may be wiser but where exactly is it set ?
+# 'yes' is for untrusted networks
+IPv6PrivacyExtensions=prefer-public
+LLMNR=yes
+# has to be also enabled in resolved
+MulticastDNS=yes
+DNSOverTLS=opportunistic
+# as good as it is in theory, it is completely broken by design in practice
+# enable it with 'allow-downgrade' and pray
+DNSSEC=no
+# why the hell this is not always enabled when supported ?
+LLDP=yes
+EmitLLDP=customer-bridge
+# turn system into a router (L3 forwarder) ?
+#IPForward=yes
+# route with NAT ?
+#IPMasquerade=yes
+# act as a switch (L2 forwarder) ?
+#IPv4ProxyARP=yes
+#IPv6ProxyNDP=yes
+
+[DHCP]
+# we have our own global local caching DNS server with DNSCrypt & DNS-over-TLS tunnels and plain fallbacks !
+# however, it may be needed in LANs with their internal authoritative DNS
+UseDNS=no
+# we also have default NTP in timesyncd but LANs may have better ones
+UseNTP=yes
+# kernel's probing may be preffered over DHCP's MTU advertisement though
+UseMTU=yes
+# paranoia ?
+#Anonymize=yes
+SendHostname=yes
+# enforce local hostname or take one from DHCP ?
+UseHostname=yes
+# this allows getting LAN domain from DHCP router
+# use 'route' or 'no' on untrusted network
+UseDomains=yes
+UseRoutes=yes
+# misconfigured DHCP server may break system time with this 
+UseTimezone=yes
+# ignore the end of lease-time ?
+#CriticalConnection=yes
+# 'mac' is most explicit but leaks L2 hw address;
+# 'duid-only' hides MAC behind completely software-based "machine-id";
+# 'duid' is mix of both
+ClientIdentifier=duid
+UserClass=computer hacker
+# what's the downside ?
+RequestBroadcast=yes
+# take it slow !
+RapidCommit=no
+ForceDHCPv6PDOtherInformation=yes
+
+[IPv6AcceptRA]
+# that is one thing that auto-configuration should NOT do !
+UseDNS=no
+UseDomains=yes
+# prefer subnet from RA over manual ?
+UseAutonomousPrefix=yes
+UseOnLinkPrefix=yes
+
+[DHCPServer]
+EmitDNS=no
+EmitNTP=no
+EmitRouter=yes
+EmitTimezone=yes
+
+[IPv6PrefixDelegation]
+Managed=yes
+OtherInformation=yes
+EmitDNS=no
+EmitDomains=yes
+
+[Bridge]
+MulticastToUnicast=yes
+Learning=yes
+HairPin=no
+UseBPDU=yes
+
+[CAN]
+# it's the only way to be sure…
+TripleSampling=yes
+
+# is it really necessary ?
+#[Address]
+#Address=0.0.0.0/8
+# explicitly request multicast traffic for itself
+#AutoJoin=yes
+
+#[Address]
+#Address=::/64
+#DuplicateAddressDetection=yes
+#ManageTemporaryAddress=yes
+#PrefixRoute=yes
+# explicitly request multicast traffic for itself
+#AutoJoin=yes
+
+#[IPv6Prefix]
+#AddressAutoconfiguration=yes
+#OnLink=yes
+#Prefix=::/64

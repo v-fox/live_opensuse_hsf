@@ -1,6 +1,6 @@
 [Desktop]
-Session=lxqt
+Session=Plasma
 
 [User]
-XSession=lxqt
+XSession=Plasma
 SystemAccount=false

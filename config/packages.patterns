@@ -4,9 +4,10 @@ devel_osc_build
 devel_rpm_build
 enhanced_base
 enhanced_base_opt
+kde
 kvm_server
-lxqt
 office
+sway
 sw_management
 x11
 x11_yast

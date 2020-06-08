@@ -1,4 +1,4 @@
 #!/bin/sh
 
 # run ordinary X server with high priority
-nice -n -10 ionice -c 2 -n 0 X "$@"
+exec nice -n -10 ionice -c 2 -n 0 -t chrt -v -f 10 X "$@"

@@ -20,7 +20,7 @@ AVAHI_AUTOIPD_ENABLE="yes"
 # "no", IPv4LL will be usable only if no routable address is configured.
 # See http://avahi.org/wiki/AvahiAutoipd#ModesofOperation for more.
 #
-AVAHI_AUTOIPD_FORCE_BIND="no"
+AVAHI_AUTOIPD_FORCE_BIND="yes"
 ## Path:	System/Zeroconf
 ## Description:	Zeroconf (Bonjour, Rendezvous) options
 ## Type:        yesno
@@ -29,4 +29,4 @@ AVAHI_AUTOIPD_FORCE_BIND="no"
 # Detect unicast DNS .local domain and temporarily disable avahi in such case.
 # For more read http://avahi.org/wiki/AvahiAndUnicastDotLocal
 #
-AVAHI_DAEMON_DETECT_LOCAL="yes"
+AVAHI_DAEMON_DETECT_LOCAL="no"

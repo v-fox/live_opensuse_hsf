@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<direct>
+  <chain table="filter" ipv="ipv4" chain="REMOVE_CENSORSHIP"/>
+  <rule priority="0" table="filter" ipv="ipv4" chain="REMOVE_CENSORSHIP">-p tcp --sport 80 -m string --string 'Location: http://warning.rt.ru' --algo bm -j DROP</rule>
+  <rule priority="0" table="filter" ipv="ipv4" chain="REMOVE_CENSORSHIP">-p tcp --sport 443 --tcp-flags RST RST -j DROP</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-s 224.0.0.0/4 -j ACCEPT</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-d 224.0.0.0/4 -j ACCEPT</rule>
+  <rule priority="2" table="filter" ipv="ipv4" chain="INPUT">-s 240.0.0.0/5 -j ACCEPT</rule>
+  <rule priority="1" table="filter" ipv="ipv6" chain="INPUT">-s fe80::/10 -j ACCEPT</rule>
+  <rule priority="2" table="filter" ipv="ipv6" chain="INPUT">-d ff00::/8 -j ACCEPT</rule>
+  <rule priority="0" table="filter" ipv="ipv6" chain="INPUT">-p icmpv6 -j ACCEPT</rule>
+  <rule priority="0" table="filter" ipv="ipv6" chain="FORWARD">-p icmpv6 -j ACCEPT</rule>
+  <rule priority="1" table="filter" ipv="ipv6" chain="OUTPUT">-s fe80::/10 -j ACCEPT</rule>
+  <rule priority="2" table="filter" ipv="ipv6" chain="OUTPUT">-d ff00::/8 -j ACCEPT</rule>
+  <rule priority="0" table="filter" ipv="ipv6" chain="OUTPUT">-p icmpv6 -j ACCEPT</rule>
+  <passthrough ipv="ipv4">-I INPUT 1 -p tcp -j REMOVE_CENSORSHIP</passthrough>
+  <passthrough ipv="ipv4">-I INPUT 2 -m pkttype --pkt-type multicast -j ACCEPT</passthrough>
+  <passthrough ipv="ipv4">-I INPUT 2 -m pkttype --pkt-type broadcast -j ACCEPT</passthrough>
+  <passthrough ipv="ipv6">-I INPUT 2 -m pkttype --pkt-type multicast -j ACCEPT</passthrough>
+  <passthrough ipv="ipv6">-I INPUT 2 -m pkttype --pkt-type broadcast -j ACCEPT</passthrough>
+</direct>

@@ -5,3 +5,16 @@ bring_main_window_to_top=none,none,Bring Main Window to Top
 [yakuake]
 _k_friendly_name=Yakuake
 toggle-window-state=Ctrl+`,F12,Open/Retract Yakuake
+
+[org.kde.spectacle.desktop]
+ActiveWindowScreenShot=Shift+Print,none,Capture Active Window
+CurrentMonitorScreenShot=none,none,Capture Current Monitor
+FullScreenScreenShot=Print,none,Capture Entire Desktop
+RectangularRegionScreenShot=,none,Capture Rectangular Region
+_k_friendly_name=Launch Spectacle
+_launch=none,none,Launch Spectacle
+
+[khotkeys]
+_k_friendly_name=KDE Daemon
+{a77320be-2bf4-4f79-87fe-65ed45af07a9}=,none,Automatic fullscreen screenshot with ImageMagick
+{e2f4473a-d9c5-408a-b421-913612c03d7b}=,none,Automatic window screenshot with ImageMagick

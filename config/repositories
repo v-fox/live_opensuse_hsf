@@ -1,3 +1,6 @@
+        <repository type="rpm-md" imageinclude="true" priority="90" alias="Trinity (KDE3)">
+                <source path="obs://home:PunisherHD:Trinity:stable/openSUSE_Tumbleweed"/>
+        </repository>
 	<repository type="rpm-md" imageinclude="true" priority="90" alias="home_Lazy_Kent">
 		<source path="obs://home:Lazy_Kent/openSUSE_Tumbleweed"/>
 	</repository>

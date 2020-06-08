@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Exec=dbus-launch --exit-with-session kwin_wayland --xwayland --exit-with-session --no-kactivities startlxqt
+TryExec=startlxqt
+Name=LXQt Desktop under KWin/Wayland
+Comment=Lightweight Qt Desktop in Wayland mode

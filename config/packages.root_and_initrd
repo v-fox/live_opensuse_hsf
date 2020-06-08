@@ -9,6 +9,7 @@ dosfstools
 efibootmgr
 exfat-utils
 f2fs-tools
+f2fs-tools-compat
 grub2-i386-pc
 grub2-systemd-sleep-plugin
 grub2-x86_64-efi
@@ -23,6 +24,7 @@ nano
 ndctl
 nvme-cli
 os-prober
+system-group-wheel
 technisat-usb2-firmware
 ucode-amd
 util-linux

@@ -5,29 +5,29 @@
   <param name="meter_R" value="0" />
   <param name="clip_L" value="0" />
   <param name="clip_R" value="0" />
-  <param name="analyzer_level" value="2" />
-  <param name="analyzer_mode" value="3" />
+  <param name="analyzer_level" value="1.5" />
+  <param name="analyzer_mode" value="4" />
   <param name="analyzer_scale" value="0" />
   <param name="analyzer_post" value="0" />
-  <param name="analyzer_view" value="0" />
+  <param name="analyzer_view" value="1" />
   <param name="analyzer_smoothing" value="2" />
   <param name="analyzer_windowing" value="11" />
-  <param name="analyzer_accuracy" value="7" />
-  <param name="analyzer_speed" value="13" />
+  <param name="analyzer_accuracy" value="8" />
+  <param name="analyzer_speed" value="15" />
   <param name="analyzer_display" value="1" />
   <param name="analyzer_hold" value="0" />
   <param name="analyzer_freeze" value="0" />
   <param name="gonio_mode" value="2" />
   <param name="gonio_use_fade" value="0" />
   <param name="gonio_fade" value="0.5" />
-  <param name="gonio_accuracy" value="3" />
+  <param name="gonio_accuracy" value="4" />
   <param name="gonio_display" value="1" />
 </preset>
 </plugin>
 <plugin type="stereo" instance-name="stereo tools" input-index="23" output-index="23">
 <preset bank="0" program="0" plugin="stereo" name="">
   <param name="bypass" value="0" />
-  <param name="level_in" value="0.356506" />
+  <param name="level_in" value="0.177828" />
   <param name="level_out" value="1" />
   <param name="meter_inL" value="0" />
   <param name="meter_inR" value="0" />
@@ -58,7 +58,7 @@
 </plugin>
 <plugin type="eq12" instance-name="12-band equalizer" input-index="23" output-index="23">
 <preset bank="0" program="0" plugin="eq12" name="">
-  <param name="bypass" value="0" />
+  <param name="bypass" value="1" />
   <param name="level_in" value="1" />
   <param name="level_out" value="1" />
   <param name="meter_inL" value="0" />
@@ -91,11 +91,11 @@
   <param name="p1_q" value="0.60256" />
   <param name="p2_active" value="1" />
   <param name="p2_level" value="1" />
-  <param name="p2_freq" value="50" />
+  <param name="p2_freq" value="80" />
   <param name="p2_q" value="1" />
   <param name="p3_active" value="1" />
   <param name="p3_level" value="1" />
-  <param name="p3_freq" value="80" />
+  <param name="p3_freq" value="125" />
   <param name="p3_q" value="1" />
   <param name="p4_active" value="1" />
   <param name="p4_level" value="1" />
@@ -115,7 +115,7 @@
   <param name="p7_q" value="1" />
   <param name="p8_active" value="1" />
   <param name="p8_level" value="1" />
-  <param name="p8_freq" value="18000" />
+  <param name="p8_freq" value="15000" />
   <param name="p8_q" value="1" />
   <param name="individuals" value="0" />
   <param name="zoom" value="1" />
@@ -126,8 +126,8 @@
 <plugin type="multibandcompressor" instance-name="multiband compressor" input-index="15" output-index="15">
 <preset bank="0" program="0" plugin="multibandcompressor" name="">
   <param name="bypass" value="0" />
-  <param name="level_in" value="0.630957" />
-  <param name="level_out" value="0.630957" />
+  <param name="level_in" value="0.0794328" />
+  <param name="level_out" value="0.398107" />
   <param name="meter_inL" value="0" />
   <param name="meter_inR" value="0" />
   <param name="meter_outL" value="0" />
@@ -140,64 +140,64 @@
   <param name="freq1" value="650" />
   <param name="freq2" value="3675" />
   <param name="mode" value="1" />
-  <param name="threshold0" value="0.0891251" />
+  <param name="threshold0" value="0.00562341" />
   <param name="ratio0" value="4" />
   <param name="attack0" value="600" />
   <param name="release0" value="1800" />
-  <param name="makeup0" value="1.58489" />
+  <param name="makeup0" value="39.8107" />
   <param name="knee0" value="2.52001" />
   <param name="detection0" value="1" />
   <param name="compression0" value="1" />
   <param name="output0" value="0" />
   <param name="bypass0" value="0" />
   <param name="solo0" value="0" />
-  <param name="threshold1" value="0.0891251" />
+  <param name="threshold1" value="0.00562341" />
   <param name="ratio1" value="4" />
   <param name="attack1" value="400" />
   <param name="release1" value="1200" />
-  <param name="makeup1" value="1.58489" />
+  <param name="makeup1" value="39.8107" />
   <param name="knee1" value="2.51751" />
   <param name="detection1" value="1" />
   <param name="compression1" value="1" />
   <param name="output1" value="0" />
   <param name="bypass1" value="0" />
   <param name="solo1" value="0" />
-  <param name="threshold2" value="0.0891251" />
+  <param name="threshold2" value="0.00562341" />
   <param name="ratio2" value="4" />
   <param name="attack2" value="250" />
   <param name="release2" value="750" />
-  <param name="makeup2" value="1.58489" />
+  <param name="makeup2" value="39.8107" />
   <param name="knee2" value="2.51751" />
   <param name="detection2" value="1" />
   <param name="compression2" value="1" />
   <param name="output2" value="0" />
   <param name="bypass2" value="0" />
   <param name="solo2" value="0" />
-  <param name="threshold3" value="0.0630957" />
+  <param name="threshold3" value="0.00398107" />
   <param name="ratio3" value="4" />
   <param name="attack3" value="150" />
   <param name="release3" value="450" />
-  <param name="makeup3" value="1.58489" />
+  <param name="makeup3" value="39.8107" />
   <param name="knee3" value="2.50707" />
   <param name="detection3" value="1" />
   <param name="compression3" value="1" />
   <param name="output3" value="0" />
   <param name="bypass3" value="0" />
   <param name="solo3" value="0" />
-  <param name="notebook" value="3" />
+  <param name="notebook" value="2" />
 </preset>
 </plugin>
 <plugin type="bassenhancer" instance-name="bass enhancer" input-index="25" output-index="25">
 <preset bank="0" program="0" plugin="bassenhancer" name="">
   <param name="bypass" value="0" />
-  <param name="level_in" value="1.58489" />
-  <param name="level_out" value="0.630957" />
-  <param name="amount" value="1.58489" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="1" />
+  <param name="amount" value="2.51189" />
   <param name="meter_in" value="0" />
   <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
-  <param name="drive" value="2" />
+  <param name="drive" value="6" />
   <param name="blend" value="0" />
   <param name="meter_drive" value="0" />
   <param name="freq" value="80" />
@@ -245,7 +245,7 @@
 <preset bank="0" program="0" plugin="multibandlimiter" name="">
   <param name="bypass" value="0" />
   <param name="level_in" value="1" />
-  <param name="level_out" value="1" />
+  <param name="level_out" value="0.998849" />
   <param name="meter_inL" value="0" />
   <param name="meter_inR" value="0" />
   <param name="meter_outL" value="0" />
@@ -258,7 +258,7 @@
   <param name="freq1" value="650" />
   <param name="freq2" value="3675" />
   <param name="mode" value="1" />
-  <param name="limit" value="0.398107" />
+  <param name="limit" value="0.630957" />
   <param name="attack" value="1" />
   <param name="release" value="256" />
   <param name="minrel" value="1" />
@@ -296,14 +296,14 @@
   <param name="clip_L" value="0" />
   <param name="clip_R" value="0" />
   <param name="analyzer_level" value="2" />
-  <param name="analyzer_mode" value="3" />
+  <param name="analyzer_mode" value="4" />
   <param name="analyzer_scale" value="0" />
   <param name="analyzer_post" value="0" />
-  <param name="analyzer_view" value="0" />
+  <param name="analyzer_view" value="1" />
   <param name="analyzer_smoothing" value="2" />
   <param name="analyzer_windowing" value="11" />
-  <param name="analyzer_accuracy" value="7" />
-  <param name="analyzer_speed" value="12" />
+  <param name="analyzer_accuracy" value="8" />
+  <param name="analyzer_speed" value="15" />
   <param name="analyzer_display" value="1" />
   <param name="analyzer_hold" value="0" />
   <param name="analyzer_freeze" value="0" />

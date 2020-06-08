@@ -3,28 +3,47 @@
 		kernel and JACK's default latency is set to 16ms via 256/3 f/p
 		(8ms with 128/3 f/p and '--sync' may be stable on a good machine)
 	* by default en_GB locale is used for messages and en_DK - for measurements
+	* migration back fron LXQt to KDE5/Plasma due to lack of development
 	* support for NVMe
 	* support for Wayland (sddm may be used to launch W-sessions)
 	* support for Vulkan
-	* support for VDPAU/VA
+	* support for GPU video codec acceleration via VA & VDPAU
 	* support for multiple CPU threads in Mesa's OpenGL implementation
 	* support for correct DPI is patched in xorg-x11-server (#23705 and #41115)
 	* support for DRI_PRIME is enabled by default
 	* support for newer Nvidia cards via closed driver
+	* support for PipeWire (with optional PulseAudio and JACK emulation)
+	* support for USB device access management via usbauth or usbguard
+	* support for Thunderbolt
+	* support for DNSSEC (explicitly disabled by default) and DNS-over-TLS
+	* support for LLDP/SNMP+Avahi on NM and LLDP+LLMNR on networkd
+	* addition of default ~/.drirc with all bleeding edge features and
+		adriconf as replacement for unmaintained driconf
+	* addition of KDE5 Plasma with kwin-lowlatency fork for X11 sessions only
+	* addition of sway/mako/waybar & weston Wayland sessions
+	* addition of suse-prime intel+nvidia laptop GPU hack
 	* addition of all translations via ugly hack
 	* addition of i2pd for native I2P support
+	* addition of systemd-resolved (for NSS, LLMNR, mDNS and TLS) to unbound
+	* addition of Quaternion Matrix client
+	* addition of QSyncthingTray & Syncthing-GTK for P2P directory sync
 	* addition of RetroShare for encrypted P2P communication & filesharing
+	* addition of mosh (mobile shell) ssh helper for roaming & echo buffering
 	* addition of Performance Co-Pilot monitoring suite
 	* addition of stress-ng, sysbench, bandwidth and gfio testers
 	* addition of nftables, netsniff-ng and BCC for NF and BPF support
 	* addition of XEN and UML libvirt support
 	* addition of input-libinput and video-amdgpu X drivers
-	* addition of RetroArch/libretro meta-emulator
+	* addition of python3-ds4drv Sony DualShock 4 gamepad userspace driver
+	* addition of RetroArch/libretro meta-emulator with emulation cores
 	* addition of newest standalone emulators:
+		melonDS for Nintendo© DS®
 		Citra for Nintendo© 3DS®
-		Decaf-Emu for Nintendo© Wii U®
+		yuzu for Nintendo© Switch®
 		RPCS3 for Sony© PlayStation® 3
+	* addition of mono for better native Windows C# apps support than wine's
 	* addition of purple-libsteam, steam-controller and sc-controller
+	* addition of repository for Trinity (KDE3)
 	* addition of plasma5-desktop for KDE's systemsettings5 modules
 		and plasma5 X & W sessions, just for completeness
 	* addition of dolphin FM
@@ -34,13 +53,18 @@
 	* addition of openmpt123 console tracker module player
 	* addition of soundconverter and flacon
 	* addition of sonic-visualiser
+	* addition of Carla (advanced JACK patchbay manager)
+	* addition of LSP and ZAM JACK/LV2 plugins
 	* addition of Vamp plugins for SV and Audacity
+	* addition of pulseeffects for LV2-processing in PA as well as JACK
 	* addition of quota-nfs
 	* addition of convmv, lshw, libqt5-qttools
 	* addition of forgotten libssr-glinject{-32bit}
 		needed for reliable OpenGL recording in SimpleScreenRecorder
 	* addition of rasdaemon for collecting H/W error data like MCE and CCE
 	* addition of multithreaded compressors (pigz,lbzip2,pbzip2,pixz,plzip)
+	* removal of Qt4 and all dependant apps
+	* removal of plymouth boot-splash garbage
 	* removal of snapper, btrfs snapshotting crutch
 	* removal of supposedly unnecessary and obsolete usbip userspace package
 	* removal of kmscon KMS/DRM console due to its upstream abandonment
@@ -48,23 +72,28 @@
 	* removal of openclipart
 	* removal of explicit dependency on gstreamer-0.10
 	* removal of KDE's phonon backends
+	* removal of abandoned Skype and skyperious
 	* removal of abandoned Tano IPTV player
-	* removal of abandoned OMX video decoding API
-	* removal of gvfs
+	* removal of abandoned wineasio
+	* removal of guymager for being broken mess
+	* removal of gvfs for screwing user mounts
 	* replacement of dead yast2-live-installer with calamares
-	* replacement of openbox/compton with kwin
-	* replacement of LeechCraft with WeeChat / Vacuum-IM
-		MultiProtocol / Matrix / XMPP clients and Akregator RSS reader
-	* replacement of onboard with florence
+	* replacement of openbox/compton with kwin-lowlatency
+	* replacement of JAMin with Calf & LSP
+	* replacement of Clementine with its fork Strawberry
+	* replacement of LeechCraft with WeeChat / Gajim
+		MultiProtocol / XMPP clients and Akregator RSS reader
+	* replacement of wine-nine with vanilla wine + wine-nine-standalone
 	* replacement of xt7-player-mpv with smplayer/smtube
+	* replacement of qv4l2 (now it segfaults) back with {l,g}uvcview[-qt5]
 	* replacement of PeaZip with ark
 	* replacement of keepassx with keepassxc
-	* replacement of unbound with pdnsd
-		because of former being prone to random failures
+	* replacement of antimicro key-binder with qjoypad
 	* replacement of ntp with chrony
-	* replacement of obsolete msilbc Linphone plugin with mswebrtc
 	* replacement of LinPhone's GTK GUI with Qt one
-	* switch to Qt5 git branch of Clementine
+	* replacement of dead NPAPI/PPAPI Firefox Flash shim with standalone player
+		and LightSpark open implementation
+	* replacement of Volatility v2 with v3 rewrite for python3
 	* switch to svn build of Desmume emulator
 	* switch to alive branch of proxychains
 	* mpv and retroarch are launched with heightened priority by default
@@ -72,8 +101,7 @@
 		and no custom hacks for it are applied
 	* KDE hacks and mozilla-kde4-integration are returned for FF
 		until https://bugzilla.mozilla.org/show_bug.cgi?id=727422 is fixed
-	* creation of proper lxqt-powermanagement.conf
-		that provides ScreenSaver D-Bus interface and safer laptop defaults
+	* addition of PrintScreen shortcuts for Spectacle, KDE screenshotter
 	* default user limits are set in systemd's config akin to limits.conf;
 		systemd accounting is enabled by default but without special limits;
 		default systemd start/stop timeouts are significantly decreased;
@@ -86,7 +114,8 @@
 		old SLAB memory allocator is preffered;
 		transparent hugepages are prompted to be used more liberally;
 		deadline/kyber are set as default I/O schedulers for HDD/SSD;
-		fq-codel is set as default network scheduler and BBR — as TCP CCA;
+		SFQ is set as default network scheduler and BBR — as TCP CCA;
+		CAKE is redefined as default network scheduler/shaper on boot;
 		IPv4 MTU Discovery and ECN are fully enabled by default;
 		network buffers are set to be sufficient for up to 10G of traffic;
 		CONFIG_SCHED_AUTOGROUP is usable but not enabled by default;
@@ -125,7 +154,6 @@
 		DOSBox for IBM© PC/DOS
 		OpenMSX for MSX®
 		PPSSPP for Sony© PSP®
-		PCSX-R for Sony© PlayStation®
 		PCSX 2 for Sony© PlayStation® 2
 		Dolphin-Emu for Nintendo© Gamecube® & Wii®
 		Desmume for Nintendo© DS®

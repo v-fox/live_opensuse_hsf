@@ -1,0 +1,5 @@
+#!/bin/sh
+
+WINEARCH=win64 \
+WINEPREFIX=/var/cache/WINE/$USER/x86_64 \
+/usr/bin/winetricks $@

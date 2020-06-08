@@ -1,0 +1,9 @@
+[Mouse]
+Acceleration=0
+MouseButtonMapping=RightHanded
+ReverseScrollPolarity=false
+Threshold=0
+XLbInptAccelProfileFlat=false
+XLbInptPointerAcceleration=0.0
+cursorSize=40
+cursorTheme=ComixCursors-Green

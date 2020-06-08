@@ -1364,7 +1364,8 @@ enable-proxy-authentication-forwarding 0
 #
 # funnel everything but local and i2p to Tor
 forward-socks5t / 127.0.0.1:9050 .
-forward                 .i2p     127.0.0.1:4444
+forward-socks5t          .i2p    127.0.0.1:4447
+#forward                 .i2p     127.0.0.1:4444
 forward         192.168.*.*/     .
 forward    172.16.[16-31].*/     .
 forward            10.*.*.*/     .

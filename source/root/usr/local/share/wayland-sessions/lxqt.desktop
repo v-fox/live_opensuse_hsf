@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=LXQt (Wayland)
+Comment=LXQt on KWin/Wayland
+Exec=env mesa_glthread=true nice -n -5 ionice -c 2 -n 0 -t chrt -v -r 5 kwin_wayland --xwayland --exit-with-session --no-kactivities startlxqt
+Type=Application

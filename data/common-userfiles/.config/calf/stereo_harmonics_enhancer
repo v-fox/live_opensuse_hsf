@@ -1,0 +1,88 @@
+<?xml version="1.1" encoding="utf-8"?>
+<rack><plugin type="stereo" instance-name="stereo tools" input-index="23" output-index="23">
+<preset bank="0" program="0" plugin="stereo" name="">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.707946" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="balance_in" value="0" />
+  <param name="balance_out" value="0" />
+  <param name="softclip" value="1" />
+  <param name="mutel" value="0" />
+  <param name="muter" value="0" />
+  <param name="phasel" value="0" />
+  <param name="phaser" value="0" />
+  <param name="mode" value="0" />
+  <param name="slev" value="1" />
+  <param name="sbal" value="0" />
+  <param name="mlev" value="1" />
+  <param name="mpan" value="0" />
+  <param name="stereo_base" value="0" />
+  <param name="delay" value="0" />
+  <param name="meter_phase" value="0" />
+  <param name="sc_level" value="1" />
+  <param name="stereo_phase" value="0" />
+</preset>
+</plugin>
+<plugin type="bassenhancer" instance-name="bass enhancer" input-index="25" output-index="25">
+<preset bank="0" program="0" plugin="bassenhancer" name="">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.398107" />
+  <param name="level_out" value="1" />
+  <param name="amount" value="2.51189" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="drive" value="6" />
+  <param name="blend" value="0" />
+  <param name="meter_drive" value="0" />
+  <param name="freq" value="80" />
+  <param name="listen" value="0" />
+  <param name="floor_active" value="1" />
+  <param name="floor" value="20" />
+</preset>
+</plugin>
+<plugin type="multibandenhancer" instance-name="harmonic enhancer" input-index="23" output-index="23">
+<preset bank="0" program="0" plugin="multibandenhancer" name="">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.630957" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="freq0" value="115" />
+  <param name="freq1" value="650" />
+  <param name="freq2" value="3675" />
+  <param name="mode" value="1" />
+  <param name="base0" value="0.248" />
+  <param name="base1" value="0" />
+  <param name="base2" value="0" />
+  <param name="base3" value="0" />
+  <param name="drive0" value="2" />
+  <param name="drive1" value="2" />
+  <param name="drive2" value="1" />
+  <param name="drive3" value="4" />
+  <param name="blend0" value="0" />
+  <param name="blend1" value="0" />
+  <param name="blend2" value="0" />
+  <param name="blend3" value="0" />
+  <param name="solo0" value="0" />
+  <param name="solo1" value="0" />
+  <param name="solo2" value="0" />
+  <param name="solo3" value="0" />
+</preset>
+</plugin>
+</rack>

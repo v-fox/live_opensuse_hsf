@@ -1,0 +1,8 @@
+#%PAM-1.0
+#
+# Session-related modules common to all services
+#
+session include 	common-session-pc
+session	required	pam_unix.so		nodelay try_first_pass
+-session optional	pam_gnome_keyring.so	only_if=gdm,gdm-password,lxdm,lightdm,lightdm-autologin,lightdm-greeter
+#-session optional	pam_kwallet5.so 	auto_start

@@ -1,11 +1,86 @@
 [1]
-Description=Move calf by default
+Description=LSP plugins
+clientmachine=localhost
+clientmachinematch=0
+desktop=2
 desktoprule=3
+minimize=true
+minimizerule=3
+opacityactive=95
+opacityactiverule=2
+opacityinactive=95
+opacityinactiverule=2
+placement=Smart
+placementrule=2
+position=2872,26
+positionrule=4
+screen=1
+screenrule=3
+title=LSP Latency Meter - Latenzmessgerät (Client ID: latency_meter)
+titlematch=0
+types=1
+windowrole=audio-plugin
+windowrolematch=2
+wmclass=lsp-plugins
+wmclasscomplete=false
+wmclassmatch=2
+
+[2]
+Description=Calf plugins
+clientmachine=localhost
+clientmachinematch=0
+desktop=1
+desktoprule=4
+minimize=false
+minimizerule=4
+opacityactive=95
+opacityactiverule=2
+opacityinactive=95
+opacityinactiverule=2
+position=1920,0
+positionrule=4
+screen=0
+screenrule=4
+title=Calf JACK Host - session: Calf Studio Gear
+titlematch=0
+types=1
+windowrole=calf_rack
+windowrolematch=2
 wmclass=calfjackhost
+wmclasscomplete=false
+wmclassmatch=2
+
+[3]
+Description=plasma transparency
+clientmachine=localhost
+clientmachinematch=0
+opacityactive=75
+opacityactiverule=1
+opacityinactive=75
+opacityinactiverule=1
+title=Plasma
+titlematch=0
+types=4
+wmclass=plasmashell
+wmclasscomplete=false
+wmclassmatch=2
+
+[4]
+Description=gkrellm transparency
+clientmachine=localhost
+clientmachinematch=0
+opacityactive=80
+opacityactiverule=2
+opacityinactive=80
+opacityinactiverule=2
+title=gkrellm-storage
+titlematch=0
+types=1
+wmclass=gkrellm
 wmclasscomplete=false
 wmclassmatch=1
 
-[2]
+[5]
 Description=Move Thunderbird to 2rd desktop by default
 maximizehoriz=true
 maximizehorizrule=3
@@ -15,7 +90,7 @@ wmclass=mail thunderbird
 wmclasscomplete=true
 wmclassmatch=1
 
-[3]
+[6]
 Description=Move jamin to 3rd desktop by default
 desktop=3
 desktoprule=3
@@ -29,7 +104,7 @@ wmclass=jamin
 wmclasscomplete=false
 wmclassmatch=1
 
-[4]
+[7]
 Description=Remove Firefox's borders and maximize it
 maximizehoriz=true
 maximizehorizrule=2
@@ -42,9 +117,44 @@ placementrule=2
 types=1
 windowrole=browser
 windowrolematch=2
-wmclass=navigator nightly|Firefox
+wmclass=navigator nightly|firefox
 wmclasscomplete=true
 wmclassmatch=3
 
+[Directories]
+dir_pixmap[$d]
+
 [General]
-count=4
+BrowserApplication[$d]
+count=7
+desktopFont[$d]
+fixed[$d]
+font[$d]
+menuFont[$d]
+shadeSortColumn[$d]
+smallestReadableFont[$d]
+taskbarFont[$d]
+toolBarFont[$d]
+
+[Icons]
+Theme[$d]
+
+[KDE]
+ChangeCursor[$d]
+LookAndFeelPackage[$d]
+contrast[$d]
+
+[KDE URL Restrictions]
+rule_1[$d]
+rule_count[$d]
+
+[KFileDialog Settings]
+Breadcrumb Navigation[$d]
+
+[Paths]
+Trash[$d]
+
+[PreviewSettings]
+camera[$d]
+file[$d]
+fonts[$d]

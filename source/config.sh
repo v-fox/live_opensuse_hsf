@@ -51,6 +51,8 @@ baseRemoveService wicked.service
 systemctl mask wicked
 systemctl mask wickedd
 baseInsertService NetworkManager
+# atop wastes system resources and sometimes even hangs in 100% load
+systemctl mask atop
 # we don't want it to run by default and its modules are broken anyway... or do we ?
 baseRemoveService zed
 baseRemoveService zfs
@@ -67,7 +69,7 @@ baseInsertService rtkit-daemon
 # https://askubuntu.com/questions/471912/zram-vs-zswap-vs-zcache-ultimate-guide-when-to-use-which-one
 baseInsertService compcache
 baseInsertService rtirq
-# may interfere with system's balancing
+# may interfere with kernel's and system's balancing
 baseRemoveService irqbalance
 baseInsertService upower
 baseInsertService gpm
@@ -81,11 +83,24 @@ baseRemoveService hddtemp
 baseInsertService dkms
 baseInsertService bluetooth
 baseInsertService ModemManager
-#baseInsertService unbound
-baseInsertService pdnsd
+# Unbound or PDNSd ? Unbound shits the bed with DNSSEC-over-DNSCrypt and opportunistic DNS-over-TLS but PDNSd is unmaintained trash
+baseInsertService unbound
+baseRemoveService pdnsd
+# screw both and use systemd's built-in resolved instead ? or together ?
+baseInsertService systemd-resolved
 baseInsertService tor
+baseInsertService i2pd
 baseInsertService privoxy
+# mDNS in resolved, used networkd, conflicts with raw avahi
+# BUT networkd breaks proper wired/wireless metrics and NM does nt seem to use resolved's implementation
 baseInsertService avahi-daemon
+# Windows' mDNS conflicts with Apple's more advanced avahi
+# https://www.eiman.tv/blog/posts/lannames/
+baseRemoveService llmnrd
+# should be enabled when networkd's implementation is NOT used
+baseInsertService lldpd
+# used by lldpd and can be useful in exploring networks
+baseInsertService snmpd
 # linphone provides P2P SIP, so we don't need SIP Witch
 #baseInsertService sipwitch
 # teredo tunneling enabled by default may be not a good idea since traffic may be funneled there unnecessarily
@@ -116,7 +131,7 @@ pam-config -a --unix-nodelay
 netconfig update
 
 # updating gtk icon cache in hopes that it'll help with missing icons
-find /usr/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -f "{}" \;
+find /usr/share/icons /usr/local/share/icons -mindepth 1 -maxdepth 1 -type d -exec gtk-update-icon-cache -f "{}" \;
 
 # making sure that proxy is not used
 for i in {http,https,ftp,no}_proxy {HTTP,HTTPS,FTP,NO}_PROXY; do
@@ -126,8 +141,8 @@ alias wget="wget --no-proxy"
 
 # that is used instead of /etc/sysconfig/windowmanager
 update-alternatives --install /usr/share/xsessions/default.desktop default-xsession.desktop /usr/share/xsessions/lxqt.desktop 20
-# sddm is too glitchy in general despite working with Wayland
-update-alternatives --set default-displaymanager /usr/lib/X11/displaymanagers/lightdm
+# sddm is too glitchy in general despite working with Wayland but lightdm also just fails to work at all
+#update-alternatives --set default-displaymanager /usr/lib/X11/displaymanagers/lightdm
 # staying fresh even in deeper places
 update-ca-certificates
 update-pciids
@@ -136,7 +151,7 @@ update-smart-drivedb
 
 # force-installing Google-fonts from crapload of packages here instead of the proper place
 zypper --non-interactive --gpg-auto-import-keys refresh
-zypper --non-interactive install "google-*-fonts" "noto-sans-cjk-fonts" || exit 1
+zypper --non-interactive install "google-*-fonts" "noto-sans-cjk-fonts" "noto-coloremoji-fonts" || exit 1
 # and installing all forensic tools while we're at it
 zypper --non-interactive install --from security_forensics "*-tools" || exit 1
 # and retroarch's cores

@@ -27,34 +27,34 @@ without artificial restrictions
 SubtitleComposer and Aegisub subtitle editors, Trackma anime/manga tracker
 * professional sound handling with JACK  
 (PA & ALSA, both with OSS emulation, run as JACK's clients)
-* Clementine audio player, Audacity audio editor/recorder;  
+* Strawberry (Clementine/Amarok fork) audio player, Audacity audio editor/recorder;  
 GStreamer with FFMPEG and JACK output by default
 * professional colour management facilities  
 (consisting of colord{-kde}, xiccd, argyllCMS and dispcalGUI)
 * printer (via cups), scanner (via x/sane)  
 and analogue video input (via tvtime) support
 * professional screencasting tool SimpleScreenRecorder with native JACK support
-* wide range of gamepad utilities such as AntiMicro and jstest-gtk;  
+* wide range of gamepad utilities such as qjoypad and jstest-gtk;  
 RetroArch, universal meta-emulator that encompasses other "emulation cores";
 Mednafen, small yet feature-rich JACK-enabled multi-system emulator;
 emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
 * professional virtualization with libvirt & KVM / LXC  
 (featuring userland virt-manager, Docker and SPICE flowing out-of-the-box)
-* Windows® compatibility through Wine 32 & 64 with native Gallium DirectX 9;  
+* Windows® compatibility through Wine 32 & 64 with DXVK & VKD3D for DX9-12 on VK;  
 Steam installer/launcher is present
 * professional networking tools and rich connectivity options
 * OpenVAS/ex-Nessus and ClamAV security systems are present (inactive)
-* anti-censorship kit: Tor&I2P/Privoxy, DNSCrypt-proxy/pdnsd, proxychains-ng and VPN  
+* anti-censorship kit: Tor&I2P/Privoxy, DNSCrypt-proxy/Unbound, proxychains-ng and VPN  
 (Privoxy is also I2P-aware, all i2p-links will be proxy-chained into it;  
 Unbound uses multiple DNSSEC-capable DNSCrypt instances for different resolvers)
-* WeeChat CLI multiprotocol and Vacuum XMPP IM clients;  
+* WeeChat CLI multiprotocol and Gajim XMPP IM clients;  
 LinPhone for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
 Tox network client for Tor/BitTorrent-like P2P A/V telephony (or so they say);  
-RetroShare client for P2P GPG-enabled communication and filesharing;  
-Skype for compatibility with stubborn fools (use with extreme caution !)
+RetroShare client for P2P GPG-enabled communication and filesharing & GNUnet;  
 * fresh Mozilla Firefox browser and Thunderbird e-mail client;  
 fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
+* Syncthing-GTK & QSyncthingTray for encrypted P2P directory synchronization
 * mc, zsh, android-tools, wgetpaste/pastebinit and other console tools
 * perf, stress-ng, sysbench, bandwidth, gfio benchmarks
 * networking tools:  
@@ -66,12 +66,12 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * filesystem tools:  
   * SCSI/PATA/SATA/NVMe hardware access: lsscsi & sg3_utils, hdparm & hddtemp, sdparm, nvme-cli & ndctl
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype
-  * recovery/imaging: fsarchiver{-qt4}, guymager, xmount, ddrescue, testdisk, photorec, foremost, ext4magic
+  * recovery/imaging: fsarchiver{-qt4}, ddrescue, testdisk, photorec, foremost, ext4magic
   * deduplication: duperemove, fslint (+ digikam's image deduplication with fingerprinting)
   * support for pretty much all filesystems known to man, in kernel or via FUSE; exFAT & ZFS kernel modules
   * rEFInd bootloader and U/EFI manipulation via efitools and UEFITool
 * security/forensics tools:  
-  * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis, volatility
+  * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), volatility3, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis
 * encryption tools:  
   * YaST partitioner's built-in crypt{setup,config} / LUKS encryption capabilities
   * veracrypt (TrueCrypt fork), aespipe, emount/zuluCrypt, seahorse/gnome-keyring, keepassxc

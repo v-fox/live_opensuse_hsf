@@ -1,0 +1,24 @@
+
+type: package
+match_type: exact
+case_sensitive: on
+solvable_name: ant
+
+
+type: package
+match_type: exact
+case_sensitive: on
+solvable_name: r8168-kmp-HSF
+
+
+type: package
+match_type: exact
+case_sensitive: on
+solvable_name: r8168-blacklist-r8169
+
+
+type: package
+match_type: exact
+case_sensitive: on
+solvable_name: kernel-default
+

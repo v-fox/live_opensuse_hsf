@@ -5,70 +5,130 @@
 #
 # avoiding vi
 EDITOR=nano
+SUDO_EDITOR=kate
+
 ## we want to set it in $(yast2 proxy)
 # Tor Proxy
-#http_proxy="localhost:8080"
-#https_proxy="localhost:8080"
-#ftp_proxy="localhost:8080"
+#http_proxy=127.0.0.1:8080
+#https_proxy=127.0.0.1:8080
+#ftp_proxy=127.0.0.1:8080
 #no_proxy="localhost,127.0.0.1/8,10.0.0.0/8,192.168.0.0/16,localaddress,.localdomain.com"
-#HTTP_PROXY="localhost:8080"
-#HTTPS_PROXY="localhost:8080"
-#FTP_PROXY="localhost:8080"
+
+#HTTP_PROXY=127.0.0.1:8080
+#HTTPS_PROXY=127.0.0.1:8080
+#FTP_PROXY=127.0.0.1:8080
 #NO_PROXY="localhost,127.0.0.1/8,10.0.0.0/8,192.168.0.0/16,localaddress,.localdomain.com"
+
 # for hugetlbfs usage
 HUGETLB_PATH=/dev/hugepages
+
 # for enca/enconv
 DEFAULT_CHARSET=UTF-8
+
 # make sure that DPI is honored
 # https://wiki.archlinux.org/index.php/HiDPI
 QT_AUTO_SCREEN_SCALE_FACTOR=1
+
 # GTK3 and X itself needs patching to remove hardcoding for 96 dpi
 # input method
 #QT_IM_MODULE=ibus
 #GTK_IM_MODULE=ibus
 #XMODIFIERS=@im=ibus
+
 # for QT
 #QT_GRAPHICSSYSTEM=raster
-#QT_STYLE_OVERRIDE=GTK+
+
 # for GTK/Cairo
 GTKCAIRO_BACKEND=gl
+
 # Libre/OO stuff
 OOO_FORCE_DESKTOP="kde4"
+
 # atk/gtk missing accessibility crutch. http://debbugs.gnu.org/cgi/bugreport.cgi?bug=15154#11
-#NO_AT_BRIDGE=1
+NO_AT_BRIDGE=1
+
 # enabling pretty password prompter
 # LXQt:'/usr/bin/lxqt-openssh-askpass', GNOME:'/usr/lib64/seahorse/seahorse-ssh-askpass', KDE:'/usr/lib/ssh/ksshaskpass'
-SUDO_ASKPASS=/usr/bin/lxqt-openssh-askpass
-SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
-GIT_ASKPASS=/usr/bin/lxqt-openssh-askpass
-# enabling multi-threaded OpenGL in Mesa
+#SUDO_ASKPASS=/usr/bin/lxqt-openssh-askpass
+#SSH_ASKPASS=/usr/bin/lxqt-openssh-askpass
+#GIT_ASKPASS=/usr/bin/lxqt-openssh-askpass
+
+# https://www.mesa3d.org/envvars.html
+# force software rendering ? should be used if hardware one id broken but
+# video output is still active or if you use USB video output dongles
+#LIBGL_ALWAYS_SOFTWARE=1
+# use 'swr' for fast AVX backend or 'llvmpipe' for generic backend
+# 'swrast' is obsolete but may also exist
+#GALLIUM_DRIVER=swr
+# this should be in ~/.drirc made by `driconf`
+# enabling multi-threaded OpenGL in Mesa but it may fail on old hardware
 # https://www.gamingonlinux.com/wiki/Performance_impact_of_Mesa_glthread
-mesa_glthread=true
+#mesa_glthread=true
 # enabling texture compression support
 #force_s3tc_enable=true
-# for dual-GPU bullshit, forcing the usage of non-shitty card
+# MLAA & MSAA in Mesa
+# https://patchwork.freedesktop.org/patch/219866/
+#EQAA=8,4,2
+#pp_jimenezmlaa=16
+# open radeon driver goodness
+#R600_STREAMOUT=1
+#R600_GLSL130=1
+#R600_HYPERZ=1
+#R600_TILING=1
+#R600_SURF=1
+# for OpenCL support on pre-HD7xxx cards with LLVM backend (brakes rendering)
+#R600_DEBUG=llvm
+# for better shader rendering but without OpenCL
+#R600_DEBUG=sb
+# experimental shader compiler for Vulkan Radeon framework
+# somehow it breaks display timings on mpv when fullscreened
+#RADV_PERFTEST=aco
+# for dual-GPU bullshit
 # may lead to unintended consequences, like having artifacts or no vsync
 DRI_PRIME=1
+
 # SDL tuning
 SDL_VIDEO_YUV_HWACCEL=1
+
 # kmix crutch to prevent it from fiddling with PA
-#KMIX_PULSEAUDIO_DISABLE=1
-# for dynamic usage of PA echo cancellation, may not work and that's why we have static configuration in ~/.config/pulse/default.pa
+KMIX_PULSEAUDIO_DISABLE=1
+
+# PA echo cancellation
 #PULSE_PROP="filter.want=echo-cancel"
-## hardware video decoding stuff. READ NOTES before changing !
-# LIBVA is VERY TROUBLESOME: GStreamer apps are always trying to initialize HVD through it even when they clearly can't and fail miserably
+
+# gstreamer audio processing quality
+# https://gstreamer.freedesktop.org/data/doc/gstreamer/head/gst-plugins-base-libs/html/gst-plugins-base-libs-GstAudio.html
+#GST_AUDIO_DEF_RATE=48000
+#GST_AUDIO_DEF_FORMAT=F32
+GST_AUDIO_RESAMPLER_OPT_FILTER_MODE=GST_AUDIO_RESAMPLER_FILTER_MODE_FULL
+GST_AUDIO_RESAMPLER_OPT_CUTOFF=1.0
+GST_AUDIO_RESAMPLER_QUALITY_MIN=6
+GST_AUDIO_RESAMPLER_QUALITY_DEFAULT=9
+GST_AUDIO_RESAMPLER_OPT_FILTER_MODE_THRESHOLD=335544320
+
+# target PW latency in fractions of a second, has to be sufficient for entire software pipeline
+#PIPEWIRE_LATENCY=384/48000
+
+# supposedly, this is disabled by default for some reason
+VAAPI_MPEG4_ENABLED=1
+# hardware video decoding stuff. READ gnote NOTES before changing !
 #LIBVA_DRIVER_NAME=gallium
-# vdpau driver auto-identification tends to work well... unless libvdpau_va_gl1 screws it up
-#VDPAU_DRIVER=va_gl
+#VDPAU_DRIVER=r600
+
 # needed for LADSPA-using programs
 LADSPA_PATH=/usr/lib64/ladspa
 # steam crutches. read up on http://en.opensuse.org/Steam
-#STEAM_RUNTIME=0
+STEAM_RUNTIME=1
 STEAM_FRAME_FORCE_CLOSE=1
+
 # Firefox: GPU acceleration
 MOZ_USE_OMTC=1
 # Firefox: proper input
 MOZ_USE_XINPUT2=1
 # making root apps obey
-XCURSOR_THEME=ComixCursors-Green
-XCURSOR_SIZE=40
+#XCURSOR_THEME=ComixCursors-Green
+#XCURSOR_SIZE=40
+
+# secret wine crutches
+WINEESYNC=1
+WINEFSYNC=1

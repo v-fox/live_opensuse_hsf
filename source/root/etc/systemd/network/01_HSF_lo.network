@@ -1,0 +1,92 @@
+# defaults for localhost
+
+[Match]
+Name=lo
+
+[Link]
+# enable local DNS self-discovery via multicast !
+Multicast=true
+AllMulticast=true
+# DO NOT mess with NetworkManager !
+Unmanaged=yes
+
+[Network]
+# is it really necessary ?
+Address=127.0.0.1/8
+Address=::1/128
+Address=127.1.0.1/8
+Address=127.1.0.2/8
+Address=127.1.0.3/8
+Address=127.1.0.4/8
+Address=127.1.0.5/8
+Address=127.1.0.6/8
+# always keep configured with these defaults, regardless of state
+ConfigureWithoutCarrier=yes
+# don't wipe addresses on link's loss ? 
+IgnoreCarrierLoss=yes
+# always probe for address or set one by itself !
+#DHCP=yes
+LinkLocalAddressing=yes
+#IPv4LLRoute=yes
+# 'no' is for kernel's RA implementation
+#IPv6AcceptRA=yes
+#IPv6PrefixDelegation=yes
+# 'prefer-public' is for trusted networks
+# 'kernel' may be wiser but where exactly is it set ?
+# 'yes' is for untrusted networks
+#IPv6PrivacyExtensions=prefer-public
+LLMNR=yes
+MulticastDNS=yes
+DNSOverTLS=opportunistic
+DNSSEC=allow-downgrade
+# why the hell this is not always enabled when supported ?
+LLDP=yes
+#EmitLLDP=customer-bridge
+# turn system into a router (L3 forwarder) ?
+#IPForward=yes
+# route with NAT ?
+#IPMasquerade=yes
+# act as a switch (L2 forwarder) ?
+#IPv4ProxyARP=yes
+#IPv6ProxyNDP=yes
+
+[Address]
+Address=127.0.0.1/8
+Label=localhost
+Scope=host
+
+[Address]
+Address=::1/128
+Label=localhost-ipv6
+Scope=host
+
+# systemd-resolved
+[Address]
+Address=127.0.0.53/8
+Label=resolved
+Scope=host
+
+# DNSCrypt interfaces for stupid cachers that can't handle non-53 DNS ports
+[Address]
+Address=127.1.0.1/8
+Label=dnscrypt-1
+
+[Address]
+Address=127.1.0.2/8
+Label=dnscrypt-2
+
+[Address]
+Address=127.1.0.3/8
+Label=dnscrypt-3
+
+[Address]
+Address=127.1.0.4/8
+Label=dnscrypt-4
+
+[Address]
+Address=127.1.0.5/8
+Label=dnscrypt-5
+
+[Address]
+Address=127.1.0.6/8
+Label=dnscrypt-6

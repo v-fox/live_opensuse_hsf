@@ -1,4 +1,4 @@
-## Path:        System/Kernel/IRQ Balancing
+]## Path:        System/Kernel/IRQ Balancing
 ## Description: IRQ Balancing configuration
 ## Type:	string
 ## Default:	""
@@ -27,4 +27,4 @@ IRQBALANCE_BANNED_INTERRUPTS=""
 # systemctl. For example --debug will show additional output via
 # systemctl status irqbalance
 #
-IRQBALANCE_ARGS="--powerthresh=1 --hintpolicy=subset --deepestcache=1 --interval=1"
+IRQBALANCE_ARGS="--powerthresh=2 --deepestcache=3 --interval=1"

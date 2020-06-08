@@ -1,0 +1,6 @@
+#%PAM-1.0
+#
+# Account-related modules common to all services
+#
+account 	include 	common-account-pc
+account 	required 	pam_unix.so 		nodelay try_first_pass
