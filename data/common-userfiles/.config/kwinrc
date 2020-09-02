@@ -8,13 +8,13 @@ GLPreferBufferSwap=c
 GLTextureFilter=2
 HiddenPreviews=5
 LatencyControl=2
-MaxLatency=6
-MinLatency=1
+MaxLatency=4
+MinLatency=0
 OpenGLIsUnsafe=false
 UnredirectFullscreen=false
-VSyncMechanism=0
+VSyncMechanism=2
 WindowsBlockCompositing=false
-XRenderSmoothScale=false
+XRenderSmoothScale=True
 
 [Desktops]
 Name_1=Primary
@@ -90,6 +90,9 @@ Right=None
 Top=None
 TopLeft=None
 TopRight=None
+
+[ModifierOnlyShortcuts]
+Meta=
 
 [MouseBindings]
 CommandActiveTitlebar1=Raise
@@ -198,8 +201,9 @@ WindowSnapZone=10
 
 [org.kde.kdecoration2]
 BorderSize=Tiny
-ButtonsOnLeft=MS
-ButtonsOnRight=HIAX
-CloseOnDoubleClickOnMenu=false
+BorderSizeAuto=false
+ButtonsOnLeft=MBSF
+ButtonsOnRight=IHA
+ShowToolTips=true
 library=org.kde.oxygen
 theme=Oxygen

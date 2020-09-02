@@ -19,6 +19,8 @@ handle SIGUSR2 nostop
 handle SIGPIPE nostop
 run
 bt full
+x/i \$pc
+disas
 cont
 quit
 HERE

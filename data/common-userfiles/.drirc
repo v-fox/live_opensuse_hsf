@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <driconf>
 <!-- https://dri.freedesktop.org/wiki/ConfigurationOptions/ -->
 <!-- run `xdriinfo options <driver_or_screen>` for drivers in `rpm -q -l Mesa-dri` -->
@@ -15,28 +16,32 @@
 	    <option name="allow_higher_compat_version" value="true" />
 	    <option name="allow_fp16_configs" value="true" />
 	    <option name="allow_rgb10_configs" value="true" />
+	    <option name="force_integer_tex_nearest" value="true`" />
+	    <option name="glsl_zero_init" value="true" />
+	    <option name="mesa_glthread" value="true" />
+	    <option name="radeonsi_assume_no_z_fights" value="true" />
+	    <option name="radeonsi_aux_debug" value="false" />
+	    <option name="radeonsi_commutative_blend_add" value="true" />
+	    <option name="radeonsi_enable_nir" value="true" />
+	    <option name="radeonsi_enable_sisched" value="true" />
+	    <option name="force_glsl_version" value="460" />
+	    <!-- avoid overriding app-specific hacks
 	    <option name="always_have_depth_buffer" value="false" />
+	    <option name="disable_arb_gpu_shader5" value="false" />
 	    <option name="disable_blend_func_extended" value="false" />
 	    <option name="disable_glsl_line_continuations" value="false" />
 	    <option name="force_compat_profile" value="false" />
 	    <option name="force_glsl_abs_sqrt" value="false" />
 	    <option name="force_glsl_extensions_warn" value="false" />
 	    <option name="glsl_correct_derivatives_after_discard" value="false" />
-	    <option name="glsl_zero_init" value="true" />
 	    <option name="glx_disable_ext_buffer_age" value="false" />
 	    <option name="glx_disable_oml_sync_control" value="false" />
 	    <option name="glx_disable_sgi_video_sync" value="false" />
-	    <option name="mesa_glthread" value="true" />
 	    <option name="mesa_no_error" value="false" />
-	    <option name="radeonsi_assume_no_z_fights" value="true" />
-	    <option name="radeonsi_aux_debug" value="false" />
 	    <option name="radeonsi_clear_db_cache_before_clear" value="false" />
-	    <option name="radeonsi_commutative_blend_add" value="true" />
-	    <option name="radeonsi_enable_nir" value="true" />
-	    <option name="radeonsi_enable_sisched" value="true" />
 	    <option name="radeonsi_sync_compile" value="false" />
 	    <option name="radeonsi_zerovram" value="false" />
-	    <option name="force_glsl_version" value="460" />
+	    -->
 	</application>
     </device>
     <device screen="0" driver="r600">
@@ -50,8 +55,6 @@
 	    <option name="allow_higher_compat_version" value="true" />
 	    <option name="allow_fp16_configs" value="true" />
 	    <option name="allow_rgb10_configs" value="true" />
-	    <option name="force_glsl_abs_sqrt" value="false" />
-	    <option name="force_glsl_extensions_warn" value="false" />
 	    <option name="glsl_zero_init" value="true" />
 	    <option name="mesa_glthread" value="true" />
 	    <option name="force_glsl_version" value="450" />
@@ -68,8 +71,6 @@
 	    <option name="allow_higher_compat_version" value="true" />
 	    <option name="allow_fp16_configs" value="true" />
 	    <option name="allow_rgb10_configs" value="true" />
-	    <option name="force_glsl_abs_sqrt" value="false" />
-	    <option name="force_glsl_extensions_warn" value="false" />
 	    <option name="glsl_zero_init" value="true" />
 	    <option name="mesa_glthread" value="true" />
 	    <option name="force_glsl_version" value="120" />
@@ -104,6 +105,7 @@
     </device>
     <device screen="0" driver="iris">
 	<application name="Default">
+	    <option name="allow_draw_out_of_order" value="true" />
 	    <option name="allow_glsl_builtin_const_expression" value="true" />
 	    <option name="allow_glsl_builtin_variable_redeclaration" value="true" />
 	    <option name="allow_glsl_cross_stage_interpolation_mismatch" value="true" />
@@ -113,8 +115,8 @@
 	    <option name="allow_higher_compat_version" value="true" />
 	    <option name="allow_fp16_configs" value="true" />
 	    <option name="allow_rgb10_configs" value="true" />
-	    <option name="force_glsl_abs_sqrt" value="false" />
-	    <option name="force_glsl_extensions_warn" value="false" />
+	    <option name="bo_reuse" value="1" />
+	    <option name="force_integer_tex_nearest" value="true" />
 	    <option name="glsl_zero_init" value="true" />
 	    <option name="mesa_glthread" value="true" />
 	    <option name="force_glsl_version" value="460" />
@@ -123,7 +125,6 @@
     <device screen="0" driver="i915">
 	<application name="Default">
 	    <option name="bo_reuse" value="1" />
-	    <option name="force_glsl_extensions_warn" value="false" />
 	    <option name="fragment_shader" value="true" />
 	    <option name="shader_precompile" value="true" />
 	    <option name="stub_occlusion_query" value="true" />
@@ -140,8 +141,7 @@
 	    <option name="allow_rgb10_configs" value="true" />
 	    <option name="allow_rgb565_configs" value="true" />
 	    <option name="bo_reuse" value="1" />
-	    <option name="force_glsl_abs_sqrt" value="false" />
-	    <option name="force_glsl_extensions_warn" value="false" />
+	    <option name="fragment_shader" value="true" />
 	    <option name="glsl_zero_init" value="true" />
 	    <option name="mesa_glthread" value="true" />
 	    <option name="force_glsl_version" value="460" />
@@ -149,6 +149,7 @@
     </device>
     <device screen="0" driver="nouveau">
 	<application name="Default">
+	    <option name="allow_draw_out_of_order" value="true" />
 	    <option name="allow_glsl_builtin_const_expression" value="true" />
 	    <option name="allow_glsl_builtin_variable_redeclaration" value="true" />
 	    <option name="allow_glsl_cross_stage_interpolation_mismatch" value="true" />
@@ -158,14 +159,14 @@
 	    <option name="allow_higher_compat_version" value="true" />
 	    <option name="allow_fp16_configs" value="true" />
 	    <option name="allow_rgb10_configs" value="true" />
-	    <option name="force_glsl_abs_sqrt" value="false" />
-	    <option name="force_glsl_extensions_warn" value="false" />
+	    <option name="force_integer_tex_nearest" value="true" />
 	    <option name="glsl_zero_init" value="true" />
 	    <option name="mesa_glthread" value="true" />
 	</application>
     </device>
     <device screen="0" driver="virtio_gpu">
 	<application name="Default">
+	    <option name="allow_draw_out_of_order" value="true" />
 	    <option name="allow_glsl_builtin_const_expression" value="true" />
 	    <option name="allow_glsl_builtin_variable_redeclaration" value="true" />
 	    <option name="allow_glsl_cross_stage_interpolation_mismatch" value="true" />
@@ -175,8 +176,8 @@
 	    <option name="allow_higher_compat_version" value="true" />
 	    <option name="allow_fp16_configs" value="true" />
 	    <option name="allow_rgb10_configs" value="true" />
-	    <option name="force_glsl_abs_sqrt" value="false" />
-	    <option name="force_glsl_extensions_warn" value="false" />
+	    <option name="force_integer_tex_nearest" value="true" />
+	    <option name="gles_emulate_bgra" value="true" />
 	    <option name="glsl_zero_init" value="true" />
 	    <option name="mesa_glthread" value="true" />
 	    <option name="force_glsl_version" value="430" />
@@ -184,6 +185,7 @@
     </device>
     <device screen="0" driver="vmwgfx">
 	<application name="Default">
+	    <option name="allow_draw_out_of_order" value="true" />
 	    <option name="allow_glsl_builtin_const_expression" value="true" />
 	    <option name="allow_glsl_builtin_variable_redeclaration" value="true" />
 	    <option name="allow_glsl_cross_stage_interpolation_mismatch" value="true" />
@@ -193,8 +195,7 @@
 	    <option name="allow_higher_compat_version" value="true" />
 	    <option name="allow_fp16_configs" value="true" />
 	    <option name="allow_rgb10_configs" value="true" />
-	    <option name="force_glsl_abs_sqrt" value="false" />
-	    <option name="force_glsl_extensions_warn" value="false" />
+	    <option name="force_integer_tex_nearest" value="true" />
 	    <option name="glsl_zero_init" value="true" />
 	    <option name="mesa_glthread" value="true" />
 	    <option name="force_glsl_version" value="330" />

@@ -1255,24 +1255,24 @@
   <param name="asc" value="1" />
   <param name="asc_led" value="0" />
   <param name="asc_coeff" value="1" />
-  <param name="oversampling" value="4" />
+  <param name="oversampling" value="2" />
   <param name="auto_level" value="1" />
 </preset>
 <preset bank="0" program="3" plugin="stereo" name="monitor headphones v3 - for LSP presets">
   <param name="bypass" value="0" />
   <param name="level_in" value="0.707946" />
   <param name="level_out" value="1" />
-  <param name="meter_inL" value="0.727468" />
-  <param name="meter_inR" value="0.620431" />
-  <param name="meter_outL" value="0.727468" />
-  <param name="meter_outR" value="0.620431" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="0" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
   <param name="clip_inL" value="0" />
   <param name="clip_inR" value="0" />
   <param name="clip_outL" value="0" />
   <param name="clip_outR" value="0" />
   <param name="balance_in" value="0" />
   <param name="balance_out" value="0" />
-  <param name="softclip" value="1" />
+  <param name="softclip" value="0" />
   <param name="mutel" value="0" />
   <param name="muter" value="0" />
   <param name="phasel" value="0" />
@@ -1290,24 +1290,24 @@
 </preset>
 <preset bank="0" program="3" plugin="bassenhancer" name="monitor headphones v3 - decrease input to avoid overloading output">
   <param name="bypass" value="0" />
-  <param name="level_in" value="0.398107" />
+  <param name="level_in" value="0.501187" />
   <param name="level_out" value="1" />
   <param name="amount" value="2.51189" />
-  <param name="meter_in" value="0.0390528" />
-  <param name="meter_out" value="0.0495824" />
+  <param name="meter_in" value="0" />
+  <param name="meter_out" value="0" />
   <param name="clip_in" value="0" />
   <param name="clip_out" value="0" />
   <param name="drive" value="6" />
   <param name="blend" value="0" />
-  <param name="meter_drive" value="0.0500321" />
+  <param name="meter_drive" value="0" />
   <param name="freq" value="80" />
   <param name="listen" value="0" />
   <param name="floor_active" value="1" />
-  <param name="floor" value="20" />
+  <param name="floor" value="30" />
 </preset>
-<preset bank="0" program="0" plugin="multibandenhancer" name="monitor headphones v3 - decrease input to avoid overloading output">
+<preset bank="0" program="3" plugin="multibandenhancer" name="monitor headphones v3 - decrease input to avoid overloading output">
   <param name="bypass" value="0" />
-  <param name="level_in" value="0.630957" />
+  <param name="level_in" value="0.707946" />
   <param name="level_out" value="1" />
   <param name="meter_inL" value="0" />
   <param name="meter_inR" value="0" />
@@ -1329,6 +1329,148 @@
   <param name="drive1" value="2" />
   <param name="drive2" value="1" />
   <param name="drive3" value="4" />
+  <param name="blend0" value="0" />
+  <param name="blend1" value="0" />
+  <param name="blend2" value="0" />
+  <param name="blend3" value="0" />
+  <param name="solo0" value="0" />
+  <param name="solo1" value="0" />
+  <param name="solo2" value="0" />
+  <param name="solo3" value="0" />
+</preset>
+<preset bank="0" program="9" plugin="multibandlimiter" name="monitor headphones v9 - for LSP pipeline">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="0.998849" />
+  <param name="meter_inL" value="1.23037e-36" />
+  <param name="meter_inR" value="8.5796e-37" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="freq0" value="115" />
+  <param name="freq1" value="650" />
+  <param name="freq2" value="3675" />
+  <param name="mode" value="1" />
+  <param name="limit" value="0.158489" />
+  <param name="attack" value="1" />
+  <param name="release" value="64" />
+  <param name="minrel" value="1" />
+  <param name="att0" value="1" />
+  <param name="att1" value="1" />
+  <param name="att2" value="1" />
+  <param name="att3" value="1" />
+  <param name="weight0" value="0.15" />
+  <param name="weight1" value="0.1" />
+  <param name="weight2" value="-0.25" />
+  <param name="weight3" value="0.25" />
+  <param name="release0" value="0.5" />
+  <param name="release1" value="0.2" />
+  <param name="release2" value="-0.2" />
+  <param name="release3" value="-0.5" />
+  <param name="solo0" value="0" />
+  <param name="solo1" value="0" />
+  <param name="solo2" value="0" />
+  <param name="solo3" value="0" />
+  <param name="effrelease0" value="128" />
+  <param name="effrelease1" value="84.4485" />
+  <param name="effrelease2" value="48.5029" />
+  <param name="effrelease3" value="32" />
+  <param name="asc" value="1" />
+  <param name="asc_led" value="0" />
+  <param name="asc_coeff" value="1" />
+  <param name="oversampling" value="2" />
+  <param name="auto_level" value="1" />
+</preset>
+<preset bank="0" program="0" plugin="multibandlimiter" name="monitor headphones v10 - de-peak and equalize after LSP compressor">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="1" />
+  <param name="level_out" value="0.998849" />
+  <param name="meter_inL" value="5.21909e-37" />
+  <param name="meter_inR" value="1.62312e-36" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="freq0" value="115" />
+  <param name="freq1" value="650" />
+  <param name="freq2" value="3675" />
+  <param name="mode" value="1" />
+  <param name="limit" value="0.707946" />
+  <param name="attack" value="1" />
+  <param name="release" value="64" />
+  <param name="minrel" value="1" />
+  <param name="att0" value="1" />
+  <param name="att1" value="1" />
+  <param name="att2" value="1" />
+  <param name="att3" value="1" />
+  <param name="weight0" value="0.15" />
+  <param name="weight1" value="0.05" />
+  <param name="weight2" value="-0.05" />
+  <param name="weight3" value="0.1" />
+  <param name="release0" value="0.5" />
+  <param name="release1" value="0.2" />
+  <param name="release2" value="-0.2" />
+  <param name="release3" value="-0.5" />
+  <param name="solo0" value="0" />
+  <param name="solo1" value="0" />
+  <param name="solo2" value="0" />
+  <param name="solo3" value="0" />
+  <param name="effrelease0" value="128" />
+  <param name="effrelease1" value="84.4485" />
+  <param name="effrelease2" value="48.5029" />
+  <param name="effrelease3" value="32" />
+  <param name="asc" value="1" />
+  <param name="asc_led" value="0" />
+  <param name="asc_coeff" value="1" />
+  <param name="oversampling" value="4" />
+  <param name="auto_level" value="1" />
+</preset>
+<preset bank="0" program="4" plugin="bassenhancer" name="monitor headphones v4 - decrease boost to account for equalization">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.707946" />
+  <param name="level_out" value="1" />
+  <param name="amount" value="1.41254" />
+  <param name="meter_in" value="2.09111e-36" />
+  <param name="meter_out" value="2.09111e-36" />
+  <param name="clip_in" value="0" />
+  <param name="clip_out" value="0" />
+  <param name="drive" value="6" />
+  <param name="blend" value="0" />
+  <param name="meter_drive" value="0" />
+  <param name="freq" value="80" />
+  <param name="listen" value="0" />
+  <param name="floor_active" value="1" />
+  <param name="floor" value="30" />
+</preset>
+<preset bank="0" program="4" plugin="multibandenhancer" name="monitor headphones v4 - rebalance">
+  <param name="bypass" value="0" />
+  <param name="level_in" value="0.707946" />
+  <param name="level_out" value="1" />
+  <param name="meter_inL" value="0" />
+  <param name="meter_inR" value="2.54261e-36" />
+  <param name="meter_outL" value="0" />
+  <param name="meter_outR" value="0" />
+  <param name="clip_inL" value="0" />
+  <param name="clip_inR" value="0" />
+  <param name="clip_outL" value="0" />
+  <param name="clip_outR" value="0" />
+  <param name="freq0" value="115" />
+  <param name="freq1" value="650" />
+  <param name="freq2" value="3675" />
+  <param name="mode" value="1" />
+  <param name="base0" value="0.504" />
+  <param name="base1" value="0.248" />
+  <param name="base2" value="0.1" />
+  <param name="base3" value="0.0519999" />
+  <param name="drive0" value="4" />
+  <param name="drive1" value="1.5" />
+  <param name="drive2" value="3" />
+  <param name="drive3" value="6" />
   <param name="blend0" value="0" />
   <param name="blend1" value="0" />
   <param name="blend2" value="0" />

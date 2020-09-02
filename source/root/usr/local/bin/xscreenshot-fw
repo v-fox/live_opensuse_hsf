@@ -4,4 +4,4 @@
 SS_PATH="${HOME}/ScreenShots"
 FWINDOW_ID="$(xdotool getwindowfocus -f)"
 FWINDOW_NAME="$(xdotool getwindowname ${FWINDOW_ID})"
-import -window "${FWINDOW_ID}" "${SS_PATH}/Window - ${FWINDOW_NAME} - $(date +%Y-%m-%d_%T)".jpg
+nice -n 20 import -window "${FWINDOW_ID}" "${SS_PATH}/Window - ${FWINDOW_NAME} - $(date +%Y-%m-%d_%T)".png

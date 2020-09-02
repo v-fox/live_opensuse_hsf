@@ -334,7 +334,6 @@ guvcview
 guvcview-qt5
 gwenview5
 hack-fonts
-handbrake-gtk
 hardinfo
 hashdeep
 hddtemp
@@ -346,11 +345,11 @@ highlighting-kate
 hmaccalc
 hostapd
 hostap-utils
-hping
 hplip
 hplip-hpijs
 hplip-sane
 HSAIL-Tools
+hsphfpd
 htop
 httrack
 hunspell
@@ -428,6 +427,7 @@ innoextract
 intel-cmt-cat
 intel-hybrid-driver
 intel-media-driver
+intel-opencl-devel
 intel-vaapi-driver
 inxi
 iodine
@@ -657,6 +657,7 @@ Mesa-libOpenCL-32bit
 Mesa-libva
 minicom
 miniupnpc
+miraclecast
 miredo-client
 mjpegtools
 mkcomposecache
@@ -851,12 +852,12 @@ pipewire-modules-pulse
 pipewire-modules-pulse-32bit
 pipewire-spa-plugins
 pipewire-spa-plugins-32bit
-pixz
 plasma5-addons
 plasma5-applet-suse-prime
 plasma5-desktop
 plasma5-integration-plugin
 plasma5-pa
+plasma5-session-wayland
 plasma5-theme-openSUSE
 plasma5-thunderbolt
 plasma-browser-integration
@@ -933,6 +934,7 @@ qemu-ui-gtk
 qemu-ui-sdl
 qjackctl
 qjoypad
+QMPlay2
 qps
 qsyncthingtray
 qsynth
@@ -1051,7 +1053,6 @@ swayidle-zsh-completion
 swaylock
 swaylock-bash-completion
 swaylock-zsh-completion
-syncthing-gtk-lang
 syncthing-relaysrv
 sysbench
 sysconfig-netconfig
@@ -1076,6 +1077,8 @@ terminus-bitmap-fonts
 terminus-ttf-fonts
 testdisk
 tftp
+thermald
+thermal-monitor
 thunderbolt-user-space
 timezone
 tmpwatch
@@ -1083,7 +1086,8 @@ tor
 torrentinfo
 torsocks
 traceroute
-trackma-qt
+trackma-curses
+trackma-gtk
 translation-update
 tree
 tunctl
@@ -1146,6 +1150,7 @@ vorbis-tools
 vpx-tools
 vtun
 vulkan
+waifu2x-converter-cpp
 wallpaper-branding-HSF
 wapiti
 wavpack
@@ -1217,6 +1222,7 @@ xkeyboard-config-lang
 xkill
 xl2tpd
 xlsfonts
+xmount
 xorg-scripts
 xorg-x11
 xorg-x11-driver-input
@@ -1281,7 +1287,6 @@ yast2-x11
 yuzu
 zenmap
 zerofree
-zfs
 zramcfg
 zsh
 zstd

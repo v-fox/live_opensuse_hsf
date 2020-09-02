@@ -4,6 +4,7 @@
 		(8ms with 128/3 f/p and '--sync' may be stable on a good machine)
 	* by default en_GB locale is used for messages and en_DK - for measurements
 	* migration back fron LXQt to KDE5/Plasma due to lack of development
+	* migration to DNSCrypt-Proxy v2 with multi-tunnel balancing and caching
 	* support for NVMe
 	* support for Wayland (sddm may be used to launch W-sessions)
 	* support for Vulkan
@@ -15,18 +16,18 @@
 	* support for PipeWire (with optional PulseAudio and JACK emulation)
 	* support for USB device access management via usbauth or usbguard
 	* support for Thunderbolt
-	* support for DNSSEC (explicitly disabled by default) and DNS-over-TLS
 	* support for LLDP/SNMP+Avahi on NM and LLDP+LLMNR on networkd
+	* support for Miracast / Wi-Fi Direct via miraclecast
 	* addition of default ~/.drirc with all bleeding edge features and
 		adriconf as replacement for unmaintained driconf
-	* addition of KDE5 Plasma with kwin-lowlatency fork for X11 sessions only
+	* addition of KDE5 Plasma with kwin-lowlatency fork for X11 & W sessions
 	* addition of sway/mako/waybar & weston Wayland sessions
 	* addition of suse-prime intel+nvidia laptop GPU hack
 	* addition of all translations via ugly hack
 	* addition of i2pd for native I2P support
-	* addition of systemd-resolved (for NSS, LLMNR, mDNS and TLS) to unbound
+	* addition of systemd-resolved (for NSS, LLMNR, mDNS and TLS) to DNSCrypt
 	* addition of Quaternion Matrix client
-	* addition of QSyncthingTray & Syncthing-GTK for P2P directory sync
+	* addition of QSyncthingTray for P2P directory sync
 	* addition of RetroShare for encrypted P2P communication & filesharing
 	* addition of mosh (mobile shell) ssh helper for roaming & echo buffering
 	* addition of Performance Co-Pilot monitoring suite
@@ -48,8 +49,8 @@
 		and plasma5 X & W sessions, just for completeness
 	* addition of dolphin FM
 	* addition of digikam/showfoto
+	* addition of waifu2x-converter-cpp with OpenCL acceleration
 	* addition of speedcrunch calculator
-	* addition of handbrake-gtk video converter
 	* addition of openmpt123 console tracker module player
 	* addition of soundconverter and flacon
 	* addition of sonic-visualiser
@@ -57,6 +58,7 @@
 	* addition of LSP and ZAM JACK/LV2 plugins
 	* addition of Vamp plugins for SV and Audacity
 	* addition of pulseeffects for LV2-processing in PA as well as JACK
+	* addition of hsphfpd BT headset daemon with PipeWire support for it
 	* addition of quota-nfs
 	* addition of convmv, lshw, libqt5-qttools
 	* addition of forgotten libssr-glinject{-32bit}
@@ -65,6 +67,7 @@
 	* addition of multithreaded compressors (pigz,lbzip2,pbzip2,pixz,plzip)
 	* removal of Qt4 and all dependant apps
 	* removal of plymouth boot-splash garbage
+	* removal of ZFS support due to unmaintained kernel module
 	* removal of snapper, btrfs snapshotting crutch
 	* removal of supposedly unnecessary and obsolete usbip userspace package
 	* removal of kmscon KMS/DRM console due to its upstream abandonment
@@ -107,9 +110,13 @@
 		default systemd start/stop timeouts are significantly decreased;
 	* maximum allowed user realtime priority decreased to 49 not to interfere
 		with kernel and systemd's watchdog has been enabled;
+	* intel_pstate is forced to replace acpi_cpufreq and
+		thermald is forced to replace intel_pstate where it's applicable;
+		only AMD CPUs seem to be able to use schedutil or ondemand
 	* important kernel changes:
 		full ticklessness / NO_HZ;
-		all CPUs are build_forced no-CBs CPUs;
+		hidden CONFIG_PREEMPT_RT is activated;
+		first 32 CPU cores/threads are forced for no-CBs by default;
 		schedutil is set as default CPU scheduler;
 		old SLAB memory allocator is preffered;
 		transparent hugepages are prompted to be used more liberally;

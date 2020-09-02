@@ -152,18 +152,19 @@ parseMode=2
 
 [General]
 BrowserApplication=firefox
+dbfile=/home/hacker/.mozilla/firefox/y30d7fz5.hacker/places.sqlite
 ColorScheme=RevealedDarkGreenHSF
 Name=RevealedDarkGreenHSF
 TerminalApplication=konsole
-desktopFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
-fixed=DejaVu Sans Mono,10,-1,5,50,0,0,0,0,0
-font=DejaVu Sans,10,-1,5,50,0,0,0,0,0
-menuFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
+desktopFont=DejaVu Sans,11,-1,5,50,0,0,0,0,0
+fixed=DejaVu Sans Mono,11,-1,5,50,0,0,0,0,0
+font=DejaVu Sans,11,-1,5,50,0,0,0,0,0
+menuFont=DejaVu Sans,11,-1,5,50,0,0,0,0,0
 shadeSortColumn=true
 smallestReadableFont=DejaVu Sans,9,-1,5,50,0,0,0,0,0
-taskbarFont=DejaVu Sans,9,-1,5,75,0,0,0,0,0
+taskbarFont=DejaVu Sans,10,-1,5,75,0,0,0,0,0
 toolBarFont=DejaVu Sans,10,-1,5,50,0,0,0,0,0
-widgetStyle=breeze
+widgetStyle=QtCurve
 
 [Icons]
 Theme=MIX
@@ -182,7 +183,7 @@ StartDragDist=2
 StartDragTime=100
 WheelScrollLines=3
 contrast=4
-widgetStyle=breeze
+widgetStyle=QtCurve
 
 [KDE-Global GUI Settings]
 GraphicEffectsLevel=3

@@ -40,13 +40,13 @@ Mednafen, small yet feature-rich JACK-enabled multi-system emulator;
 emulator pack of OpenMSX, PPSSPP, PCSX-R, PCSX 2, Dolphin, Mupen64Plus, Yabause
 * professional virtualization with libvirt & KVM / LXC  
 (featuring userland virt-manager, Docker and SPICE flowing out-of-the-box)
-* Windows® compatibility through Wine 32 & 64 with DXVK & VKD3D for DX9-12 on VK;  
+* Windows® compatibility through Wine 32 & 64 with VKD3D & DXVK for DX9-12 on VK;  
 Steam installer/launcher is present
 * professional networking tools and rich connectivity options
 * OpenVAS/ex-Nessus and ClamAV security systems are present (inactive)
 * anti-censorship kit: Tor&I2P/Privoxy, DNSCrypt-proxy/Unbound, proxychains-ng and VPN  
 (Privoxy is also I2P-aware, all i2p-links will be proxy-chained into it;  
-Unbound uses multiple DNSSEC-capable DNSCrypt instances for different resolvers)
+Unbound and/or DNSCrypt use multiple DNSSEC-capable instances for different resolvers)
 * WeeChat CLI multiprotocol and Gajim XMPP IM clients;  
 LinPhone for P2P HD A/V multiuser {S/Z}RTP-encrypted telephony;  
 Tox network client for Tor/BitTorrent-like P2P A/V telephony (or so they say);  
@@ -54,7 +54,7 @@ RetroShare client for P2P GPG-enabled communication and filesharing & GNUnet;
 * fresh Mozilla Firefox browser and Thunderbird e-mail client;  
 fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
 * qBitTorrent, aMule, Filezilla & lftp, wget & aria2/fe and httrack for file transfer
-* Syncthing-GTK & QSyncthingTray for encrypted P2P directory synchronization
+* QSyncthingTray for encrypted P2P directory synchronization
 * mc, zsh, android-tools, wgetpaste/pastebinit and other console tools
 * perf, stress-ng, sysbench, bandwidth, gfio benchmarks
 * networking tools:  
@@ -68,7 +68,7 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
   * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype
   * recovery/imaging: fsarchiver{-qt4}, ddrescue, testdisk, photorec, foremost, ext4magic
   * deduplication: duperemove, fslint (+ digikam's image deduplication with fingerprinting)
-  * support for pretty much all filesystems known to man, in kernel or via FUSE; exFAT & ZFS kernel modules
+  * support for pretty much all filesystems known to man, in kernel or via FUSE
   * rEFInd bootloader and U/EFI manipulation via efitools and UEFITool
 * security/forensics tools:  
   * autopsy/sleuthkit, scalpel, [plaso/log2timeline](http://plaso.kiddaland.net) & [Windows®-gutting toolkit](https://github.com/libyal), volatility3, chkrootkit/rkhunter, ntpassw/dchntpw/ophcrack, lynis

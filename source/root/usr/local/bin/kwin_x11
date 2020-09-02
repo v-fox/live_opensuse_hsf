@@ -1,3 +1,3 @@
 #!/bin/sh
 
-nice -n -5 ionice -c 2 -n 0 -t chrt -v -f 5 /usr/bin/kwin_x11 "$@"
+nice -n -5 ionice -c 2 -n 0 -t /usr/bin/kwin_x11 "$@"

@@ -72,6 +72,8 @@ baseInsertService rtirq
 # may interfere with kernel's and system's balancing
 baseRemoveService irqbalance
 baseInsertService upower
+# Intel's "modern" replacement for intel_pstate because reinventing the wheel one time, instead of developing schedutil, wasn't enough
+# needs https://github.com/intel/dptfxtract blob for generating actual system-specific config
 baseInsertService gpm
 ln -s '/usr/lib/systemd/system/kmsconvt@.service' '/etc/systemd/system/autovt@.service'
 # greatly slows down boot up
@@ -84,10 +86,15 @@ baseInsertService dkms
 baseInsertService bluetooth
 baseInsertService ModemManager
 # Unbound or PDNSd ? Unbound shits the bed with DNSSEC-over-DNSCrypt and opportunistic DNS-over-TLS but PDNSd is unmaintained trash
-baseInsertService unbound
+baseRemoveService unbound
+systemctl mask unbound
 baseRemoveService pdnsd
+systemctl mask pdnsd
 # screw both and use systemd's built-in resolved instead ? or together ?
 baseInsertService systemd-resolved
+# or use DNSCrypt-Proxy v2 as cacher and balancer ? then unbound and pdnsd must be disabled and systemd-resolved forced to not use 127.0.0.1:53
+#baseRemoveService dnscrypt-proxy.socket
+baseInsertService dnscrypt-proxy.service
 baseInsertService tor
 baseInsertService i2pd
 baseInsertService privoxy

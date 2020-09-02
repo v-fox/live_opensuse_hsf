@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# crutches for Wayland and KDE to force X11 backend and Gnome keyring
+GDK_BACKEND=x11 \
+PYTHON_KEYRING_BACKEND=keyring.backends.SecretService.Keyring \
+/usr/bin/gajim $@

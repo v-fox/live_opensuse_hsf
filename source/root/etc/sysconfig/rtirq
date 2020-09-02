@@ -49,4 +49,5 @@ RTIRQ_NON_THREADED=""
 # Process names which will be forced to the
 # highest realtime priority range (99-91)
 # (space separated list, from highest to lower priority).
-RTIRQ_HIGH_LIST="watchdogd oom_reaper rcu_preempt rcu_sched rcu_bh rcub rcuc gfx sdma ksoftirqd khugepaged"
+# these may not be needed on PREEMPT_RT kernel, especially with rcutree.* boot parameters: rcu_preempt rcu_sched rcu_bh rcub rcuc
+RTIRQ_HIGH_LIST="watchdogd oom_reaper rcu_preempt rcu_sched gfx sdma ksoftirqd khugepaged"

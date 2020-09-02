@@ -1,4 +1,3 @@
 		<package name="kernel-HSF" bootinclude="true"/>
 		<package name="vhba-kmp-HSF" bootinclude="false"/>
-		<package name="zfs-kmp-HSF" bootinclude="false"/>
 		<package name="nvidia-driver-kmp-HSF" bootinclude="false"/>

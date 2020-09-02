@@ -4,6 +4,10 @@
 source /etc/bash.bashrc
 source /etc/zshrc
 
+if [ -f ~/.profile ]; then
+	source ~/.profile
+fi
+
 # make everything prettier
 autoload -U colors
 eval $(dircolors)
@@ -190,11 +194,14 @@ else
 fi
 
 # force some useful default options with aliases
-#alias ls='ls --color=yes'
+alias ls='ls --group-directories-first --color=yes'
 alias ip='ip -c -d -h'
 alias tc='tc -ts -s -d -p -g -iec -nm'
 alias lspci-tree='lspci -t -PP -q -k -v'
 alias lsusb-tree='lsusb -t -v'
+# compression shims
+$(which pigz > /dev/null) && alias gzip='pigz'
+$(which pbzip2 > /dev/null) && alias bzip2='pbzip2'
 # prefer wine that can launch all Windows binaries
 #alias wine="wine64"
 alias winetricks="env WINEARCH=win64 winetricks"

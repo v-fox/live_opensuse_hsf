@@ -1,9 +1,7 @@
 #!/bin/sh
-TMP=/tmp
-TEMP="${TMP}"
-TMPDIR="${TMP}"
+
 if [ -f "${1}" ]; then
-exec /usr/bin/qbittorrent "${1}"
+	TMP=/tmp TEMP="${TMP}" TMPDIR="${TMP}" /usr/bin/qbittorrent "${1}" &
 else
-exec /usr/bin/qbittorrent "$@"
+	TMP=/tmp TEMP="${TMP}" TMPDIR="${TMP}" /usr/bin/qbittorrent "$@" &
 fi

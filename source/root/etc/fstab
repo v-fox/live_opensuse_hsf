@@ -2,5 +2,5 @@ hugetlbfs 	/dev/hugepages  	hugetlbfs	defaults,rw,nosuid,noexec,mode=1777,x-moun
 tmpfs 		/dev/shm 		tmpfs 		mode=1777,strictatime,size=25%,huge=within_size 	0 0
 tmpfs 		/run 			tmpfs 		mode=1777,strictatime,size=1%,huge=within_size 		0 0
 # done in systemd's .mount-files
-#tmpfs 		/tmp 			tmpfs 		mode=1777,strictatime,size=1%,huge=within_size,nosuid 	0 0
+tmpfs 		/tmp 			tmpfs 		mode=1777,strictatime,size=5%,huge=within_size,nosuid 	0 0
 #tracefs 	/sys/kernel/tracing 	tracefs 	defaults 						0 0

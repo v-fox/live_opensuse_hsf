@@ -1,98 +1,110 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.6.1.5git.bff6f9" name="redirection-to-lsp">
+<patchbay name="redirection-to-lsp" version="0.6.1.7git.bfacc1">
  <output-sockets>
-  <socket client="spectrum_analyzer_x4" type="jack-audio" name="LSP-analyzer-input" exclusive="off">
+  <socket name="LSP-analyzer-input" type="jack-audio" exclusive="off" client="spectrum_analyzer_x4">
    <plug>out0</plug>
    <plug>out1</plug>
   </socket>
-  <socket client="latency_meter" type="jack-audio" name="LSP-latency" exclusive="off">
-   <plug>out</plug>
-  </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-stereo_tools (for equalizer)" exclusive="off">
-   <plug>stereo Out #1|stereo tools Out #1</plug>
-   <plug>stereo Out #2|stereo tools Out #2</plug>
-  </socket>
-  <socket client="para_equalizer_x16_stereo" type="jack-audio" name="LSP-equilizer" exclusive="off">
-   <plug>out_l</plug>
-   <plug>out_r</plug>
-  </socket>
-  <socket client="mb_compressor_stereo" type="jack-audio" name="LSP-compressor" exclusive="off">
-   <plug>out_l</plug>
-   <plug>out_r</plug>
-  </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-bass_enhancer (for harmonic_enhancer)" exclusive="off">
-   <plug>Bass Enhancer Out #1|bass enhancer Out #1</plug>
-   <plug>Bass Enhancer Out #2|bass enhancer Out #2</plug>
-  </socket>
-  <socket client="Calf Studio Gear" type="jack-audio" name="Calf-harmonic_enhancer (for limiter)" exclusive="off">
-   <plug>Multiband Enhancer Out #1|harmonic enhancer Out #1</plug>
-   <plug>Multiband Enhancer Out #2|harmonic enhancer Out #2</plug>
-  </socket>
-  <socket client="limiter_stereo" type="jack-audio" name="LSP-limiter" exclusive="off">
-   <plug>out_l</plug>
-   <plug>out_r</plug>
-  </socket>
-  <socket client="spectrum_analyzer_x4" type="jack-audio" name="LSP-analyzer-output" exclusive="off">
-   <plug>out2</plug>
-   <plug>out3</plug>
-  </socket>
-  <socket client="system" type="jack-midi" name="MIDI capture" exclusive="off">
-   <plug>midi_capture_1</plug>
-   <plug>midi_capture_2</plug>
-  </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-midi" name="Calf-MIDI" exclusive="off">
-   <plug>Automation MIDI Out|Automation MIDI Out #1</plug>
-   <plug>Automation MIDI Out #2</plug>
-  </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-input (analyzer#1)" exclusive="off">
+  <socket name="Calf-input (analyzer#1)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
    <plug>analyzer Out #1|input analyzer Out #1</plug>
    <plug>analyzer Out #2|input analyzer Out #2</plug>
   </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-equalizer (for compressor)" exclusive="off">
-   <plug>eq12 Out #1|12-band equalizer Out #1</plug>
-   <plug>eq12 Out #2|12-band equalizer Out #2</plug>
+  <socket name="LSP-latency" type="jack-audio" exclusive="off" client="latency_meter">
+   <plug>out</plug>
   </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-compressor (for bass_enhancer)" exclusive="off">
+  <socket name="Calf-stereo_tools (for equalizer)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
+   <plug>stereo Out #1|stereo tools Out #1</plug>
+   <plug>stereo Out #2|stereo tools Out #2</plug>
+  </socket>
+  <socket name="LSP-equalizer" type="jack-audio" exclusive="off" client="para_equalizer_x16_stereo">
+   <plug>out_l</plug>
+   <plug>out_r</plug>
+  </socket>
+  <socket name="Calf-bass_enhancer (for harmonic_enhancer)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
+   <plug>Bass Enhancer Out #1|bass enhancer Out #1</plug>
+   <plug>Bass Enhancer Out #2|bass enhancer Out #2</plug>
+  </socket>
+  <socket name="Calf-harmonic_enhancer (for gate)" type="jack-audio" exclusive="off" client="Calf Studio Gear">
+   <plug>Multiband Enhancer Out #1|harmonic enhancer Out #1</plug>
+   <plug>Multiband Enhancer Out #2|harmonic enhancer Out #2</plug>
+  </socket>
+  <socket name="LSP-gate (for compressor)" type="jack-audio" exclusive="off" client="gate_stereo">
+   <plug>out_l</plug>
+   <plug>out_r</plug>
+  </socket>
+  <socket name="LSP-antisurge (for compressor)" type="jack-audio" exclusive="off" client="surge_filter_stereo">
+   <plug>out_l</plug>
+   <plug>out_r</plug>
+  </socket>
+  <socket name="LSP-compressor (for limiter or loudness_equalizer)" type="jack-audio" exclusive="off" client="mb_compressor_stereo">
+   <plug>out_l</plug>
+   <plug>out_r</plug>
+  </socket>
+  <socket name="Calf-compressor (for limiter or loudness_equalizer)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
    <plug>multibandcompressor Out #1|multiband compressor Out #1</plug>
    <plug>multibandcompressor Out #2|multiband compressor Out #2</plug>
   </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-limiter (for harmonic_enhancer)" exclusive="off">
+  <socket name="LSP-loudness_equalizer (for limiter)" type="jack-audio" exclusive="off" client="loud_comp_stereo">
+   <plug>out_l</plug>
+   <plug>out_r</plug>
+  </socket>
+  <socket name="LSP-limiter (for output)" type="jack-audio" exclusive="off" client="limiter_stereo">
+   <plug>out_l</plug>
+   <plug>out_r</plug>
+  </socket>
+  <socket name="Calf-limiter (for harmonic_enhancer)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
    <plug>multibandlimiter Out #1|multiband limiter Out #1</plug>
    <plug>multibandlimiter Out #2|multiband limiter Out #2</plug>
   </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-output (analyzer#2)" exclusive="off">
+  <socket name="LSP-analyzer-output" type="jack-audio" exclusive="off" client="spectrum_analyzer_x4">
+   <plug>out2</plug>
+   <plug>out3</plug>
+  </socket>
+  <socket name="Calf-output (analyzer#2)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
    <plug>analyzer \(2\) Out #1|output analyzer Out #1</plug>
    <plug>analyzer \(2\) Out #2|output analyzer Out #2</plug>
   </socket>
-  <socket client="alsoft" type="jack-audio" name="OpenAL" exclusive="on">
+  <socket name="MIDI capture" type="jack-midi" exclusive="off" client="system">
+   <plug>midi_capture_1</plug>
+   <plug>midi_capture_2</plug>
+  </socket>
+  <socket name="Calf-MIDI" type="jack-midi" exclusive="off" client="Calf Studio Gear(|.*)">
+   <plug>Automation MIDI Out|Automation MIDI Out #1</plug>
+   <plug>Automation MIDI Out #2</plug>
+  </socket>
+  <socket name="Calf-equalizer (for compressor)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
+   <plug>eq12 Out #1|12-band equalizer Out #1</plug>
+   <plug>eq12 Out #2|12-band equalizer Out #2</plug>
+  </socket>
+  <socket name="OpenAL" type="jack-audio" exclusive="on" client="alsoft">
    <plug>channel_1</plug>
    <plug>channel_2</plug>
   </socket>
-  <socket client="audacious" type="jack-audio" name="Audacious" exclusive="on">
+  <socket name="Audacious" type="jack-audio" exclusive="on" client="audacious">
    <plug>out_0</plug>
    <plug>out_1</plug>
   </socket>
-  <socket client="RetroArch" type="jack-audio" name="RetroArch" exclusive="on">
+  <socket name="RetroArch" type="jack-audio" exclusive="on" client="RetroArch">
    <plug>left</plug>
    <plug>right</plug>
   </socket>
-  <socket client="mlt[0-9]+" type="jack-audio" name="Shotcut/MLT" exclusive="off">
+  <socket name="Shotcut/MLT" type="jack-audio" exclusive="off" client="mlt[0-9]+">
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
-  <socket client="jamin" type="jack-audio" name="Jamin output" exclusive="off">
+  <socket name="Jamin output" type="jack-audio" exclusive="off" client="jamin">
    <plug>a\.master\.out_L|out_L</plug>
    <plug>a\.master\.out_R|out_R</plug>
   </socket>
-  <socket client="PortAudio" type="jack-audio" name="portaudio (for stereo)" exclusive="on">
+  <socket name="portaudio (for stereo)" type="jack-audio" exclusive="on" client="PortAudio">
    <plug>out_[0-9]*[02468]</plug>
    <plug>out_[0-9]*[13579]</plug>
   </socket>
-  <socket client="MPlayer \[[0-9]+\]|mpv(|-.[0-9])|mpc-qt(|-.[0-9])" type="jack-audio" name="mplayer &amp; mpv - stereo" exclusive="on">
+  <socket name="mplayer &amp; mpv - stereo" type="jack-audio" exclusive="on" client="MPlayer \[[0-9]+\]|mpv(|-.[0-9])|mpc-qt(|-.[0-9])">
    <plug>out_0</plug>
    <plug>out_1</plug>
   </socket>
-  <socket client="MPlayer \[[0-9]+\]|mpv(|-.[0-9])|mpc-qt(|-.[0-9])" type="jack-audio" name="mplayer &amp; mpv - surround" exclusive="on">
+  <socket name="mplayer &amp; mpv - surround" type="jack-audio" exclusive="on" client="MPlayer \[[0-9]+\]|mpv(|-.[0-9])|mpc-qt(|-.[0-9])">
    <plug>out_2</plug>
    <plug>out_3</plug>
    <plug>out_4</plug>
@@ -100,124 +112,136 @@
    <plug>out_6</plug>
    <plug>out_7</plug>
   </socket>
-  <socket client="Mednafen" type="jack-audio" name="Mednafen emulator" exclusive="on">
+  <socket name="Mednafen emulator" type="jack-audio" exclusive="on" client="Mednafen">
    <plug>output</plug>
    <plug>output-right</plug>
   </socket>
-  <socket client="vlc_[0-9]+" type="jack-audio" name="VLC" exclusive="on">
+  <socket name="VLC" type="jack-audio" exclusive="on" client="vlc_[0-9]+">
    <plug>out_1</plug>
    <plug>out_2</plug>
   </socket>
-  <socket client="TiMidity(|-.[0-9])" type="jack-audio" name="TiMidity" exclusive="on">
+  <socket name="TiMidity" type="jack-audio" exclusive="on" client="TiMidity(|-.[0-9])">
    <plug>port_1</plug>
    <plug>port_2</plug>
   </socket>
-  <socket client="fluidsynth(|-.[0-9])|qsynth" type="jack-audio" name="fluidsynth" exclusive="on">
+  <socket name="fluidsynth" type="jack-audio" exclusive="on" client="fluidsynth(|-.[0-9])|qsynth">
    <plug>l_.*|left</plug>
    <plug>r_.*|right</plug>
   </socket>
-  <socket client="alsa-jack\.jackP\.[0-9]+\.[0-9]" type="jack-audio" name="ALSA" exclusive="on">
+  <socket name="ALSA" type="jack-audio" exclusive="on" client="alsa-jack\.jackP\.[0-9]+\.[0-9]">
    <plug>out_000</plug>
    <plug>out_001</plug>
   </socket>
-  <socket client="alsa_in" type="jack-audio" name="ALSA-aloop" exclusive="on">
+  <socket name="ALSA-aloop" type="jack-audio" exclusive="on" client="alsa_in">
    <plug>capture_1</plug>
    <plug>capture_2</plug>
   </socket>
-  <socket client="Nightly|Firefox|CubebUtils" type="jack-audio" name="FIrefox (cubeb)" exclusive="on">
+  <socket name="FIrefox (cubeb)" type="jack-audio" exclusive="on" client="Nightly|Firefox|CubebUtils">
    <plug>AudioStream_.*_0</plug>
    <plug>AudioStream_.*_1</plug>
   </socket>
-  <socket client="PulseAudio JACK Sink" type="jack-audio" name="PA stereo output" exclusive="on">
+  <socket name="PA stereo output" type="jack-audio" exclusive="on" client="PulseAudio JACK Sink">
    <plug>front-left</plug>
    <plug>front-right</plug>
   </socket>
-  <socket client="Clementine.*" type="jack-audio" name="Clementine" exclusive="on">
+  <socket name="Clementine" type="jack-audio" exclusive="on" client="Clementine.*">
    <plug>out_.*audio(sink|out)(|[\-0-9])+_1</plug>
    <plug>out_.*audio(sink|out)(|[\-0-9])+_2</plug>
   </socket>
-  <socket client="(?!Clementine.*).*" type="jack-audio" name="all GStreamer players but Clementine" exclusive="on">
+  <socket name="all GStreamer players but Clementine" type="jack-audio" exclusive="on" client="(?!Clementine.*).*">
    <plug>out_.*audio(sink|out)(|[\-0-9])+_1</plug>
    <plug>out_.*audio(sink|out)(|[\-0-9])+_2</plug>
   </socket>
-  <socket client="Sonic Visualiser" type="jack-audio" name="Sonic Visualiser" exclusive="on">
+  <socket name="Sonic Visualiser" type="jack-audio" exclusive="on" client="Sonic Visualiser">
    <plug>out 1</plug>
    <plug>out 2</plug>
   </socket>
-  <socket client="flash(|-.[0-9])|freshwrapper(|-.[0-9])" type="jack-audio" name="Adobe Flash (NPAPI &amp; PPAPI)" exclusive="on">
+  <socket name="Adobe Flash (NPAPI &amp; PPAPI)" type="jack-audio" exclusive="on" client="flash(|-.[0-9])|freshwrapper(|-.[0-9])">
    <plug>out1|output1</plug>
    <plug>out2|output2</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket client="spectrum_analyzer_x4" type="jack-audio" name="LSP-analyzer-input" exclusive="off">
+  <socket name="LSP-analyzer-input" type="jack-audio" exclusive="off" client="spectrum_analyzer_x4">
    <plug>in0</plug>
    <plug>in1</plug>
   </socket>
-  <socket client="latency_meter" type="jack-audio" name="LSP-latency" exclusive="off">
-   <plug>in</plug>
-  </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-stereo_tools (for analyzer#1)" exclusive="off">
-   <plug>stereo In #1|stereo tools In #1</plug>
-   <plug>stereo In #2|stereo tools In #2</plug>
-  </socket>
-  <socket client="para_equalizer_x16_stereo" type="jack-audio" name="LSP-equalizer" exclusive="off">
-   <plug>in_l</plug>
-   <plug>in_r</plug>
-  </socket>
-  <socket client="mb_compressor_stereo" type="jack-audio" name="LSP-compressor" exclusive="off">
-   <plug>in_l</plug>
-   <plug>in_r</plug>
-  </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-bass_enhancer (for bass_enhancer)" exclusive="off">
-   <plug>Bass Enhancer In #1|bass enhancer In #1</plug>
-   <plug>Bass Enhancer In #2|bass enhancer In #2</plug>
-  </socket>
-  <socket client="Calf Studio Gear" type="jack-audio" name="Calf-harmonic_enhancer (for compressor)" exclusive="off">
-   <plug>Multiband Enhancer In #1|harmonic enhancer In #1</plug>
-   <plug>Multiband Enhancer In #2|harmonic enhancer In #2</plug>
-  </socket>
-  <socket client="limiter_stereo" type="jack-audio" name="LSP-limiter" exclusive="off">
-   <plug>in_l</plug>
-   <plug>in_r</plug>
-  </socket>
-  <socket client="spectrum_analyzer_x4" type="jack-audio" name="LSP-analyzer-output" exclusive="off">
-   <plug>in2</plug>
-   <plug>in3</plug>
-  </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-input (analyzer#1)" exclusive="off">
+  <socket name="Calf-input (analyzer#1)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
    <plug>analyzer In #1|input analyzer In #1</plug>
    <plug>analyzer In #2|input analyzer In #2</plug>
   </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-midi" name="Calf-MIDI" exclusive="off">
-   <plug>Automation MIDI In|Automation MIDI In #1</plug>
-   <plug>Automation MIDI In #2</plug>
+  <socket name="LSP-latency" type="jack-audio" exclusive="off" client="latency_meter">
+   <plug>in</plug>
   </socket>
-  <socket client="system" type="jack-midi" name="MIDI playback" exclusive="off">
-   <plug>midi_playback_1</plug>
-   <plug>midi_playback_2</plug>
+  <socket name="Calf-stereo_tools (for analyzer#1)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
+   <plug>stereo In #1|stereo tools In #1</plug>
+   <plug>stereo In #2|stereo tools In #2</plug>
   </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-equalizer (for stereo_tools)" exclusive="off">
-   <plug>eq12 In #1|12-band equalizer In #1</plug>
-   <plug>eq12 In #2|12-band equalizer In #2</plug>
+  <socket name="LSP-equalizer" type="jack-audio" exclusive="off" client="para_equalizer_x16_stereo">
+   <plug>in_l</plug>
+   <plug>in_r</plug>
   </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-compressor (for equalizer)" exclusive="off">
+  <socket name="Calf-bass_enhancer (for equalizer)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
+   <plug>Bass Enhancer In #1|bass enhancer In #1</plug>
+   <plug>Bass Enhancer In #2|bass enhancer In #2</plug>
+  </socket>
+  <socket name="Calf-harmonic_enhancer (for bass_enhancer)" type="jack-audio" exclusive="off" client="Calf Studio Gear">
+   <plug>Multiband Enhancer In #1|harmonic enhancer In #1</plug>
+   <plug>Multiband Enhancer In #2|harmonic enhancer In #2</plug>
+  </socket>
+  <socket name="Calf-compressor (for equalizer)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
    <plug>multibandcompressor In #1|multiband compressor In #1</plug>
    <plug>multibandcompressor In #2|multiband compressor In #2</plug>
   </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-limiter (for harmonic_enhancer)" exclusive="off">
+  <socket name="LSP-gate (for harmonic_enhancer)" type="jack-audio" exclusive="off" client="gate_stereo">
+   <plug>in_l</plug>
+   <plug>in_r</plug>
+  </socket>
+  <socket name="LSP-antisurge (for harmonic_enhancer) 2" type="jack-audio" exclusive="off" client="surge_filter_stereo">
+   <plug>in_l</plug>
+   <plug>in_r</plug>
+  </socket>
+  <socket name="LSP-compressor (for antisurge or gate)" type="jack-audio" exclusive="off" client="mb_compressor_stereo">
+   <plug>in_l</plug>
+   <plug>in_r</plug>
+  </socket>
+  <socket name="LSP-loudness_equalizer (for compressor)" type="jack-audio" exclusive="off" client="loud_comp_stereo">
+   <plug>in_l</plug>
+   <plug>in_r</plug>
+  </socket>
+  <socket name="Calf-limiter (for compressor or loudness_equalizer)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
    <plug>multibandlimiter In #1|multiband limiter In #1</plug>
    <plug>multibandlimiter In #2|multiband limiter In #2</plug>
   </socket>
-  <socket client="Calf Studio Gear(|.*)" type="jack-audio" name="Calf-output (analyzer#2)" exclusive="off">
+  <socket name="LSP-limiter (for compressor or loudness_equalizer)" type="jack-audio" exclusive="off" client="limiter_stereo">
+   <plug>in_l</plug>
+   <plug>in_r</plug>
+  </socket>
+  <socket name="LSP-analyzer-output" type="jack-audio" exclusive="off" client="spectrum_analyzer_x4">
+   <plug>in2</plug>
+   <plug>in3</plug>
+  </socket>
+  <socket name="Calf-MIDI" type="jack-midi" exclusive="off" client="Calf Studio Gear(|.*)">
+   <plug>Automation MIDI In|Automation MIDI In #1</plug>
+   <plug>Automation MIDI In #2</plug>
+  </socket>
+  <socket name="MIDI playback" type="jack-midi" exclusive="off" client="system">
+   <plug>midi_playback_1</plug>
+   <plug>midi_playback_2</plug>
+  </socket>
+  <socket name="Calf-equalizer (for stereo_tools)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
+   <plug>eq12 In #1|12-band equalizer In #1</plug>
+   <plug>eq12 In #2|12-band equalizer In #2</plug>
+  </socket>
+  <socket name="Calf-output (analyzer#2)" type="jack-audio" exclusive="off" client="Calf Studio Gear(|.*)">
    <plug>analyzer \(2\) In #1|output analyzer In #1</plug>
    <plug>analyzer \(2\) In #2|output analyzer In #2</plug>
   </socket>
-  <socket client="system" type="jack-audio" name="main output - stereo" exclusive="off">
+  <socket name="main output - stereo" type="jack-audio" exclusive="off" client="system">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>
-  <socket client="system" type="jack-audio" name="main output - surround" exclusive="off">
+  <socket name="main output - surround" type="jack-audio" exclusive="off" client="system">
    <plug>playback_3</plug>
    <plug>playback_4</plug>
    <plug>playback_5</plug>
@@ -225,64 +249,68 @@
    <plug>playback_7</plug>
    <plug>playback_8</plug>
   </socket>
-  <socket client="jamin" type="jack-audio" name="jamin volume boost" exclusive="off">
+  <socket name="jamin volume boost" type="jack-audio" exclusive="off" client="jamin">
    <plug>in_L</plug>
    <plug>in_R</plug>
   </socket>
-  <socket client="alsa_out" type="jack-audio" forward="PulseAudio Source" name="ALSA-aloop" exclusive="off">
+  <socket forward="PulseAudio Source" name="ALSA-aloop" type="jack-audio" exclusive="off" client="alsa_out">
    <plug>playback_1</plug>
    <plug>playback_2</plug>
   </socket>
-  <socket client="PulseAudio JACK Source" type="jack-audio" name="PulseAudio Source" exclusive="off">
+  <socket name="PulseAudio Source" type="jack-audio" exclusive="off" client="PulseAudio JACK Source">
    <plug>front-left</plug>
    <plug>front-right</plug>
   </socket>
-  <socket client="SimpleScreenRecorder" type="jack-audio" name="SimpleScreenRecorder" exclusive="off">
+  <socket name="SimpleScreenRecorder" type="jack-audio" exclusive="off" client="SimpleScreenRecorder">
    <plug>in_1</plug>
    <plug>in_2</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
-  <cable input="Calf-stereo_tools (for analyzer#1)" type="jack-audio" output="LSP-analyzer-input"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="LSP-latency"/>
-  <cable input="Calf-equalizer (for stereo_tools)" type="jack-audio" output="Calf-stereo_tools (for equalizer)"/>
-  <cable input="LSP-equalizer" type="jack-audio" output="Calf-stereo_tools (for equalizer)"/>
-  <cable input="LSP-compressor" type="jack-audio" output="LSP-equilizer"/>
-  <cable input="Calf-bass_enhancer (for bass_enhancer)" type="jack-audio" output="LSP-compressor"/>
-  <cable input="Calf-harmonic_enhancer (for compressor)" type="jack-audio" output="Calf-bass_enhancer (for harmonic_enhancer)"/>
-  <cable input="Calf-limiter (for harmonic_enhancer)" type="jack-audio" output="Calf-harmonic_enhancer (for limiter)"/>
-  <cable input="LSP-limiter" type="jack-audio" output="Calf-harmonic_enhancer (for limiter)"/>
-  <cable input="LSP-analyzer-output" type="jack-audio" output="LSP-limiter"/>
-  <cable input="main output - stereo" type="jack-audio" output="LSP-analyzer-output"/>
-  <cable input="LSP-latency" type="jack-audio" output="LSP-analyzer-output"/>
-  <cable input="Calf-MIDI" type="jack-midi" output="MIDI capture"/>
-  <cable input="MIDI playback" type="jack-midi" output="Calf-MIDI"/>
-  <cable input="Calf-stereo_tools (for analyzer#1)" type="jack-audio" output="Calf-input (analyzer#1)"/>
-  <cable input="Calf-compressor (for equalizer)" type="jack-audio" output="Calf-equalizer (for compressor)"/>
-  <cable input="Calf-bass_enhancer (for bass_enhancer)" type="jack-audio" output="Calf-compressor (for bass_enhancer)"/>
-  <cable input="Calf-output (analyzer#2)" type="jack-audio" output="Calf-limiter (for harmonic_enhancer)"/>
-  <cable input="PulseAudio Source" type="jack-audio" output="Calf-output (analyzer#2)"/>
-  <cable input="main output - stereo" type="jack-audio" output="Calf-output (analyzer#2)"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="OpenAL"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="Audacious"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="RetroArch"/>
-  <cable input="main output - stereo" type="jack-audio" output="Shotcut/MLT"/>
-  <cable input="main output - stereo" type="jack-audio" output="Jamin output"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="mplayer &amp; mpv - stereo"/>
-  <cable input="main output - surround" type="jack-audio" output="mplayer &amp; mpv - surround"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="Mednafen emulator"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="VLC"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="TiMidity"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="fluidsynth"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="ALSA"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="ALSA-aloop"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="FIrefox (cubeb)"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="PA stereo output"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="Clementine"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="all GStreamer players but Clementine"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="Sonic Visualiser"/>
-  <cable input="LSP-analyzer-input" type="jack-audio" output="Adobe Flash (NPAPI &amp; PPAPI)"/>
+  <cable type="jack-audio" input="Calf-stereo_tools (for analyzer#1)" output="LSP-analyzer-input"/>
+  <cable type="jack-audio" input="Calf-stereo_tools (for analyzer#1)" output="Calf-input (analyzer#1)"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="LSP-latency"/>
+  <cable type="jack-audio" input="Calf-equalizer (for stereo_tools)" output="Calf-stereo_tools (for equalizer)"/>
+  <cable type="jack-audio" input="LSP-equalizer" output="Calf-stereo_tools (for equalizer)"/>
+  <cable type="jack-audio" input="Calf-bass_enhancer (for equalizer)" output="LSP-equalizer"/>
+  <cable type="jack-audio" input="Calf-harmonic_enhancer (for bass_enhancer)" output="Calf-bass_enhancer (for harmonic_enhancer)"/>
+  <cable type="jack-audio" input="LSP-gate (for harmonic_enhancer)" output="Calf-harmonic_enhancer (for gate)"/>
+  <cable type="jack-audio" input="LSP-antisurge (for harmonic_enhancer) 2" output="Calf-harmonic_enhancer (for gate)"/>
+  <cable type="jack-audio" input="LSP-compressor (for antisurge or gate)" output="LSP-gate (for compressor)"/>
+  <cable type="jack-audio" input="LSP-compressor (for antisurge or gate)" output="LSP-antisurge (for compressor)"/>
+  <cable type="jack-audio" input="Calf-limiter (for compressor or loudness_equalizer)" output="LSP-compressor (for limiter or loudness_equalizer)"/>
+  <cable type="jack-audio" input="LSP-limiter (for compressor or loudness_equalizer)" output="LSP-compressor (for limiter or loudness_equalizer)"/>
+  <cable type="jack-audio" input="Calf-limiter (for compressor or loudness_equalizer)" output="Calf-compressor (for limiter or loudness_equalizer)"/>
+  <cable type="jack-audio" input="LSP-limiter (for compressor or loudness_equalizer)" output="Calf-compressor (for limiter or loudness_equalizer)"/>
+  <cable type="jack-audio" input="LSP-analyzer-output" output="LSP-limiter (for output)"/>
+  <cable type="jack-audio" input="LSP-analyzer-output" output="Calf-limiter (for harmonic_enhancer)"/>
+  <cable type="jack-audio" input="main output - stereo" output="LSP-analyzer-output"/>
+  <cable type="jack-audio" input="LSP-latency" output="LSP-analyzer-output"/>
+  <cable type="jack-audio" input="PulseAudio Source" output="Calf-output (analyzer#2)"/>
+  <cable type="jack-audio" input="main output - stereo" output="Calf-output (analyzer#2)"/>
+  <cable type="jack-midi" input="Calf-MIDI" output="MIDI capture"/>
+  <cable type="jack-midi" input="MIDI playback" output="Calf-MIDI"/>
+  <cable type="jack-audio" input="Calf-compressor (for equalizer)" output="Calf-equalizer (for compressor)"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="OpenAL"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="Audacious"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="RetroArch"/>
+  <cable type="jack-audio" input="main output - stereo" output="Shotcut/MLT"/>
+  <cable type="jack-audio" input="main output - stereo" output="Jamin output"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="mplayer &amp; mpv - stereo"/>
+  <cable type="jack-audio" input="main output - surround" output="mplayer &amp; mpv - surround"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="Mednafen emulator"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="VLC"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="TiMidity"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="fluidsynth"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="ALSA"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="ALSA-aloop"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="FIrefox (cubeb)"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="PA stereo output"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="Clementine"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="all GStreamer players but Clementine"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="Sonic Visualiser"/>
+  <cable type="jack-audio" input="LSP-analyzer-input" output="Adobe Flash (NPAPI &amp; PPAPI)"/>
  </cables>
 </patchbay>
 
