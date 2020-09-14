@@ -352,8 +352,6 @@ HSAIL-Tools
 hsphfpd
 htop
 httrack
-hunspell
-hunspell-tools
 hwinfo
 hwloc
 hydra
@@ -454,9 +452,7 @@ kbd
 kcharselect
 kchmviewer
 kcm_tablet
-kde4-filesystem
 kde_cdemu
-kdelibs4support
 kdenlive
 kdnssd
 keepassxc
@@ -464,7 +460,6 @@ keepnote-extensions
 keepnote-git
 kglobalaccel5
 khotkeys5
-killswitch-applet
 kinit
 kio_audiocd
 kio-extras5
@@ -838,7 +833,7 @@ pcp-pmda-trace
 pcp-pmda-zswap
 pcp-system-tools
 pcp-testsuite
-pcsx2
+pcsx2-git
 pdfcrack-multithread
 perf
 pgpdump
@@ -921,6 +916,7 @@ python-volatility
 q4wine
 qasmixer
 qbittorrent
+qdirstat
 qemu-audio-alsa
 qemu-audio-pa
 qemu-audio-sdl

@@ -1,3 +1,2 @@
 # PSM Certificate Override Settings file
 # This is a generated file!  Do not edit.
-pmbs.links2linux.org:443	OID.2.16.840.1.101.3.4.2.1	C6:39:A1:16:F2:66:DD:C7:E0:7F:93:99:24:8A:4B:82:18:0B:14:31:E2:95:3D:75:E6:57:80:8D:2E:24:DF:B3	U	AAAAAAAAAAAAAAADAAAAVgJi0jBUMRQwEgYDVQQKEwtDQWNlcnQgSW5jLjEeMBwG  A1UECxMVaHR0cDovL3d3dy5DQWNlcnQub3JnMRwwGgYDVQQDExNDQWNlcnQgQ2xh  c3MgMyBSb290

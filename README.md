@@ -65,8 +65,8 @@ fresh PPAPI Flash abomination with excellent NPAPI shim, all JACK-ready
   * controlling: nftables, netsniff-ng and BCC for NF and BPF firewalling and performance tracing
 * filesystem tools:  
   * SCSI/PATA/SATA/NVMe hardware access: lsscsi & sg3_utils, hdparm & hddtemp, sdparm, nvme-cli & ndctl
-  * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype
-  * recovery/imaging: fsarchiver{-qt4}, ddrescue, testdisk, photorec, foremost, ext4magic
+  * management: gparted, {f/g}disk, gptfdisk-fixparts, guestfs-tools, snapper, disktype, qdirstat
+  * recovery/imaging: fsarchiver, ddrescue, testdisk, photorec, foremost, ext4magic
   * deduplication: duperemove, fslint (+ digikam's image deduplication with fingerprinting)
   * support for pretty much all filesystems known to man, in kernel or via FUSE
   * rEFInd bootloader and U/EFI manipulation via efitools and UEFITool

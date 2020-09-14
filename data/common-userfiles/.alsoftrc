@@ -71,7 +71,7 @@ frequency = 48000
 ## period_size:
 #  Sets the update period size, in frames. This is the number of frames needed
 #  for each mixing update. Acceptable values range between 64 and 8192.
-period_size = 256
+period_size = 3072
 
 ## periods:
 #  Sets the number of update periods. Higher values create a larger mix ahead,
@@ -279,14 +279,14 @@ fix-rate = true
 #  consumption). If mmap isn't available, it will automatically fall back to
 #  non-mmap mode. True, yes, on, and non-0 values will attempt to use mmap. 0
 #  and anything else will force mmap off.
-#mmap = true
+mmap = true
 
 ## allow-resampler:
 #  Specifies whether to allow ALSA's built-in resampler. Enabling this will
 #  allow the playback device to be set to a different sample rate than the
 #  actual output, causing ALSA to apply its own resampling pass after OpenAL
 #  Soft resamples and mixes the sources and effects for output.
-#allow-resampler = false
+allow-resampler = true
 
 ##
 ## OSS backend stuff
@@ -332,7 +332,7 @@ spawn-server = false
 #  less than JACK's buffer update size, it will be clamped. This option may
 #  be useful in case the server's update size is too small and doesn't give the
 #  mixer time to keep enough audio available for the processing requests.
-buffer-size = 1024
+buffer-size = 3072
 
 ##
 ## MMDevApi backend stuff
@@ -378,4 +378,4 @@ buffer-size = 1024
 ## bformat: (global)
 #  Creates AMB format files using first-order ambisonics instead of a standard
 #  single- or multi-channel .wav file.
-#bformat = false
+bformat = true

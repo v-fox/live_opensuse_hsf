@@ -5,6 +5,7 @@
 	* by default en_GB locale is used for messages and en_DK - for measurements
 	* migration back fron LXQt to KDE5/Plasma due to lack of development
 	* migration to DNSCrypt-Proxy v2 with multi-tunnel balancing and caching
+	* migration of /etc/environment envvars to ~/.profile
 	* support for NVMe
 	* support for Wayland (sddm may be used to launch W-sessions)
 	* support for Vulkan

@@ -344,6 +344,9 @@ root/home/hacker/.asoundrc
 root/etc/skel/.gitconfig
 root/root/.gitconfig
 root/home/hacker/.gitconfig
+root/etc/skel/bin/infinality-settings.sh
+root/root/bin/infinality-settings.sh
+root/home/hacker/bin/infinality-settings.sh
 root/etc/skel/bin/pipewire-jack-session-calf.sh
 root/root/bin/pipewire-jack-session-calf.sh
 root/home/hacker/bin/pipewire-jack-session-calf.sh

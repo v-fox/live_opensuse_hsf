@@ -16,3 +16,51 @@
 {
 	min-height: 400px !important;
 }
+
+/* Remove horizontal tabs */
+#tabbrowser-tabs {
+visibility: collapse;
+}
+
+/* Remove sidebar header */
+/*
+#sidebar-header {
+visibility: collapse;
+}
+*/
+
+/* Menu on the left 
+ https://www.reddit.com/r/firefox/comments/brte28/userchromecss_no_longer_working_in_nightly_690a1/eogf1vx/ */
+@-moz-document url("chrome://browser/content/browser.xhtml") {
+  #PanelUI-button, #customization-panel-container,
+  #customization-panelWrapper .panel-arrow,
+  #ctr_panelui-button,
+  #wrapper-ctr_panelui-button {
+    -moz-box-ordinal-group: 0
+  }
+
+  #PanelUI-button {
+    background-position: 100% 0, calc(100% - 1px) 0, calc(100% - 2px) 0;
+  }
+}
+
+/* Change tab height */
+.tab {
+height: 24px;
+}
+
+/* Disable "List all Tabs" Button */
+.tabs-alltabs-button {
+display: none !important;
+}
+
+/* Disable Container box for "List all Tabs" Button */
+.tabs-alltabs-box {
+display: none !important;
+}
+
+/* don't display click-to-play notification for disabled hidden plugins */
+notification[value="plugin-hidden"]
+{
+	display: none !important;
+}

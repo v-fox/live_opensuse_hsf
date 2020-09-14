@@ -1,0 +1,16 @@
+[Remove Firefox's borders and maximize it]
+Description=Remove Firefox's borders and maximize it
+maximizehoriz=true
+maximizehorizrule=2
+maximizevert=true
+maximizevertrule=2
+noborder=true
+noborderrule=2
+placement=Maximizing
+placementrule=2
+types=1
+windowrole=browser
+windowrolematch=2
+wmclass=navigator nightly|firefox
+wmclasscomplete=true
+wmclassmatch=3

@@ -1,0 +1,25 @@
+#! /bin/sh
+#
+# Copyright (c) 2010 SuSE LINUX Products GmbH, Germany.  All rights reserved.
+#
+# Author: Werner Fink, 2010
+#
+# /etc/init.d/after.local
+#
+# script with local commands to be executed from init after all scripts
+# of a runlevel have been executed.
+#
+# Here you should add things, that should happen directly after
+# runlevel has been reached.
+#
+# Please note that the use of this script is deprecated and should be
+# avoided for starting commands. You should consider creating a dedicated
+# systemd service instead.
+#
+
+## update custom meta-theme to account for changes in system themes
+if [ -x /usr/local/share/icons/update-icon-cache ]; then
+	cd /usr/local/share/icons && \
+		./update-icon-cache > /dev/null
+	cd ~
+fi
