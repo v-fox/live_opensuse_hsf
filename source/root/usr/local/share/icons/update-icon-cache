@@ -3,3 +3,8 @@
 for dir in $(find . -mindepth 1 -maxdepth 1 -type d); do
 	gtk-update-icon-cache-3.0 $@ "${dir}"
 done
+
+if [ -d "MIX" ]; then
+	cd MIX
+	rcc-qt5 -o MIX-icons.rcc MIX-icons.qrc
+fi

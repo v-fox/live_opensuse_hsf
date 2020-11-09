@@ -28,6 +28,7 @@
 	* addition of i2pd for native I2P support
 	* addition of systemd-resolved (for NSS, LLMNR, mDNS and TLS) to DNSCrypt
 	* addition of Quaternion Matrix client
+	* addition of Telegram client
 	* addition of QSyncthingTray for P2P directory sync
 	* addition of RetroShare for encrypted P2P communication & filesharing
 	* addition of mosh (mobile shell) ssh helper for roaming & echo buffering

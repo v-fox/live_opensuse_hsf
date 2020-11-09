@@ -1,0 +1,1 @@
+../../.config/plasma-workspace/env/default.sh

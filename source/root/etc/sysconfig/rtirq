@@ -27,7 +27,7 @@
 
 # IRQ thread service names
 # (space separated list, from higher to lower priority).
-RTIRQ_NAME_LIST="timer rtc snd drm amdgpu radeon i915 nvidia usb i8042 ahci"
+RTIRQ_NAME_LIST="timer rtc snd drm amdgpu radeon i915 nvidia usb i8042 nvme ahci ioat-msi"
 
 # Highest priority.
 RTIRQ_PRIO_HIGH=80

@@ -19,9 +19,7 @@ alsa-oss
 alsa-plugins
 alsa-plugins-a52
 alsa-plugins-dca
-alsa-plugins-jack
 alsa-plugins-lavcrate
-alsa-plugins-pulse
 alsa-plugins-samplerate
 alsa-plugins-speex
 alsa-tools
@@ -176,7 +174,6 @@ efivar
 emount
 enca
 encfs
-enigmail
 epson-inkjet-printer-escpr
 etckeeper-cron
 etckeeper-zypp-plugin
@@ -470,7 +467,6 @@ kismet
 kiwi-pxeboot
 kiwi-tools
 kmix
-kmozillahelper
 konsole
 krename
 krusader
@@ -989,6 +985,7 @@ selinux-tools
 sensors
 setserial
 sg3_utils
+shadow-icon-theme-git
 shim
 showfoto
 sil-charis-fonts
@@ -1038,6 +1035,7 @@ subtitlecomposer
 subversion
 subversion-bash-completion
 sudo
+super_flat_remix-icon-theme-git
 SuSEfirewall2
 suse-prime
 svgcleaner
@@ -1067,6 +1065,7 @@ tango-icon-theme
 tarix
 tcpdump
 tcpreen
+telegram-desktop
 telnet
 terminfo
 terminus-bitmap-fonts

@@ -31,7 +31,17 @@ case "${2}" in
 	# should be net.core.rps_sock_flow_entries divided by number of hardware queues (rx-*) which is 0 (single) for SOHO chips
 	SYSTEM_FLOWS=$(sysctl -n net.core.rps_sock_flow_entries)
 	INTERFACE_QUEUES=$(ls -d /sys/class/net/"${1}"/queues/rx-*/ | wc -l)
-	echo "$[ ${SYSTEM_FLOWS%.*} / ${INTERFACE_QUEUES%.*} ]" > /sys/class/net/${1}/queues/rx-*/rps_flow_cnt
+	for rxq in /sys/class/net/${1}/queues/rx-*; do
+		echo "$[ ${SYSTEM_FLOWS%.*} / ${INTERFACE_QUEUES%.*} ]" > ${rxq}/rps_flow_cnt
+	done
+	# https://www.coverfire.com/articles/queueing-in-the-linux-network-stack/
+	# 48*1500 to 65536*9194 ? 
+	for txq in /sys/class/net/${1}/queues/tx-*; do
+		echo "42" > ${txq}/byte_queue_limits/limit_min
+		echo "65536" > ${txq}/byte_queue_limits/limit_max
+	done
+	echo "4999" > /sys/class/net/${1}/gro_flush_timeout
+	echo "1" > /sys/class/net/${1}/napi_defer_hard_irqs
 	case "${1}" in
 		# loopback
 		lo)
@@ -57,7 +67,7 @@ case "${2}" in
 			# FQ_CODEL
 			#tc qdisc replace dev "${1}" root fq_codel limit 16384 flows 5120 target 20ms interval 125ms quantum 2327 ecn
 			# CAKE
-			tc qdisc replace dev "${1}" root cake rtt 80ms flows diffserv4 no-split-gso
+			tc qdisc replace dev "${1}" root cake rtt 100ms flows diffserv4 no-split-gso
 		;;
 		# Ethernet
 		e*)
@@ -84,7 +94,7 @@ case "${2}" in
 			# FQ_CODEL
 			#tc qdisc replace dev "${1}" root fq_codel limit 16384 flows 32768 target 15ms interval 100ms quantum 3028 ecn
 			# CAKE
-			tc qdisc replace dev "${1}" root cake ethernet ether-vlan rtt 60ms flows diffserv4 no-split-gso ack-filter
+			tc qdisc replace dev "${1}" root cake ethernet ether-vlan rtt 80ms flows diffserv4 no-split-gso ack-filter
 			# SFQ
 			#tc qdisc replace dev "${1}" root sfq divisor 4096 limit 16384 redflowlimit 2097152 perturb 86400 flows 1024 ecn
 		;;

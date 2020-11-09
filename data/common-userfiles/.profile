@@ -9,6 +9,7 @@ export SUDO_EDITOR=kate
 #export GZIP=pigz
 #export BZIP2=pbzip2
 export XZ_OPT="--threads=0 -8 --memlimit-compress=75%"
+export ZSTD_CLEVEL="6" ZSTD_THREADS="0"
 
 ## we want to set it in $(yast2 proxy)
 # Tor Proxy
@@ -58,20 +59,20 @@ export GST_AUDIO_RESAMPLER_QUALITY_MIN=6
 export GST_AUDIO_RESAMPLER_QUALITY_DEFAULT=9
 export GST_AUDIO_RESAMPLER_OPT_FILTER_MODE_THRESHOLD=335544320
 # target PW latency in fractions of a second, has to be sufficient for entire software pipeline
-#export PIPEWIRE_LATENCY=384/48000
+export PIPEWIRE_LATENCY=384/48000
 export PIPEWIRE_LINK_PASSIVE=true
 ## needed for LADSPA-using programs
 export LADSPA_PATH=/usr/lib64/ladspa
 
 ## set-uo wayland
 if [ -n "$WAYLAND_DISPLAY" ]; then
+	export XDG_SESSION_TYPE=wayland
 	# KDE should figure this out on its own
-	#export QT_QPA_PLATFORM=wayland-egl
+	export QT_QPA_PLATFORM=wayland-egl
+	export QT_WEBENGINE_DISABLE_WAYLAND_WORKAROUND=1
 	export GDK_BACKEND=wayland
 	export CLUTTER_BACKEND=wayland
 	export SDL_VIDEODRIVER=wayland
-	# educate Firefox on where to draw
-	export MOZ_ENABLE_WAYLAND=1
 fi
 
 # https://unix.stackexchange.com/questions/199891/invalid-mit-magic-cookie-1-key-when-trying-to-run-program-remotely
@@ -113,10 +114,11 @@ export __GL_YIELD=USLEEP
 #export KWIN_TRIPLE_BUFFER=0
 export KWIN_USE_INTEL_SWAP_EVENT=1
 export KWIN_USE_BUFFER_AGE=3
-#export KWIN_OPENGL_INTERFACE=egl
+export KWIN_OPENGL_INTERFACE=egl
+export KWIN_DRM_USE_EGL_STREAMS=1
 #export KWIN_DIRECT_GL=1
-#export KWIN_FORCE_LANCZOS=1
 export KWIN_PERSISTENT_VBO=1
+#export KWIN_FORCE_LANCZOS=1
 #export KWIN_EFFECTS_FORCE_ANIMATIONS=1
 
 ## enabling pretty password prompter
@@ -126,27 +128,32 @@ export KWIN_PERSISTENT_VBO=1
 #export GIT_ASKPASS=/usr/lib64/seahorse/seahorse-ssh-askpass
 
 ## https://www.mesa3d.org/envvars.html
-PP_DEBUG=1
-GALLIUM_PRINT_OPTIONS=1
-GALLIUM_DUMP_CPU=1
-#AMD_DEBUG="${AMD_DEBUG}info,"
-#RADV_DEBUG="${RADV_DEBUG}info,"
+export LIBGL_DEBUG=verbose
+export PP_DEBUG=1
+export GALLIUM_PRINT_OPTIONS=1
+export GALLIUM_DUMP_CPU=1
+#export AMD_DEBUG="${AMD_DEBUG}info,"
+#export RADV_DEBUG="${RADV_DEBUG}info,"
 # some sweet overlay debug-info
-GALLIUM_HUD_VISIBLE=false
+export GALLIUM_HUD_VISIBLE=false
 # SIGUSR1, use `kill -10 $(pidof <name>)`
-GALLIUM_HUD_TOGGLE_SIGNAL=10
-GALLIUM_HUD_PERIOD=0
+export GALLIUM_HUD_TOGGLE_SIGNAL=10
+# use '0' for "immediate" and integers for seconds. it seems that Mesa does that even when invisible which wastes CPU power
+export GALLIUM_HUD_PERIOD=1
 # stupid thing also don't bother with DPI ?
 #GALLIUM_HUD_SCALE=1
 # use `GALLIUM_HUD=help glxgears` for options
-GALLIUM_HUD="cpu+GPU-load,.dfps+.dframetime,.dbuffer-wait-time;requested-VRAM+VRAM-vis-usage+mapped-VRAM+requested-GTT+GTT-usage+GFX-IB-size,GPU-shaders-busy+GPU-ta-busy+GPU-vgt-busy+GPU-sx-busy+GPU-wd-busy+GPU-sc-busy+GPU-pa-busy+GPU-db-busy+GPU-cp-busy+GPU-cb-busy;.dprimitives-generated+.dclipper-primitives-generated+.ddraw-calls,.dsamples-passed+.dps-invocations"
+export GALLIUM_HUD="cpu+GPU-load+gallium-thread-busy,.dfps+.dframetime,.dbuffer-wait-time;requested-VRAM+VRAM-vis-usage+mapped-VRAM+requested-GTT+GTT-usage+GFX-IB-size,GPU-shaders-busy+GPU-ta-busy+GPU-vgt-busy+GPU-sx-busy+GPU-wd-busy+GPU-sc-busy+GPU-pa-busy+GPU-db-busy+GPU-cp-busy+GPU-cb-busy;.dprimitives-generated+.dclipper-primitives-generated+.ddraw-calls,.dsamples-passed+.dps-invocations"
 # for dual-GPU bullshit
 # may lead to unintended consequences, like having artifacts or no vsync
 export DRI_PRIME=1
+# force OpenGL over Vulkan ?
+#MESA_LOADER_DRIVER_OVERRIDE=zink
 # force software rendering ? should be used if hardware one id broken but
 # video output is still active or if you use USB video output dongles
 #export LIBGL_ALWAYS_SOFTWARE=1
 export SOFTPIPE_DEBUG=use_llvm
+export LP_CL=1
 # use 'swr' for fast AVX backend or 'llvmpipe' for generic backend
 # 'swrast' is obsolete but may also exist
 #export GALLIUM_DRIVER=swr
@@ -169,9 +176,9 @@ export SOFTPIPE_DEBUG=use_llvm
 #    *   EQAA  4s 4z 4f = 4x MSAA
 #    *   EQAA  4s 4z 2f - might look the same as 4x MSAA with low-density geometry
 #    *   EQAA  2s 2z 2f = 2x MSAA
-export EQAA=8,4,4
+export EQAA=8,8,4
 # MLAA is better to be set in ~/.drirc but it blurs heavily
-#export pp_jimenezmlaa=16
+#export pp_jimenezmlaa=0
 # playing with fire
 export MESA_BACK_BUFFER=pixmap
 #export MESA_GLX_DEPTH_BITS=24
@@ -180,7 +187,7 @@ export MESA_BACK_BUFFER=pixmap
 export R600_DEBUG="${R600_DEBUG}sbcl,switch_on_eop,precompile,hyperz,sisched,"
 #export R600_DEBUG="${R600_DEBUG}forcedma,"
 # for OpenCL support on pre-HD7xxx cards with LLVM backend (brakes rendering)
-export R600_DEBUG="${R600_DEBUG}llvm,"
+#export R600_DEBUG="${R600_DEBUG}llvm,"
 # for better shader rendering but without OpenCL
 export R600_DEBUG="${R600_DEBUG}sb,"
 # for GL on post-r600 GPUs
@@ -193,9 +200,9 @@ export AMD_DEBUG="${AMD_DEBUG}w64ge,w64ps,w64cs,"
 #export AMD_DEBUG="${AMD_DEBUG}forcedma,"
 # for Vulkan on AMD GPUs
 export RADV_TEX_ANISO=16
-export RADV_DEBUG="${RADV_DEBUG}llvm,dccmsaa,"
-# experimental shader compiler to replace nir, known for breaking display timings on mpv when fullscreened
-#export RADV_PERFTEST="${RADV_PERFTEST}aco,"
+#export RADV_DEBUG="${RADV_DEBUG}dccmsaa,"
+# "faster" ACO backend from Valve or "stable" legacy LLVM backend from AMD ?
+#export RADV_DEBUG="${RADV_DEBUG}llvm,"
 export RADV_PERFTEST="${RADV_PERFTEST}bolist,localbos,"
 # this is known for breaking geometry
 export RADV_PERFTEST="${RADV_PERFTEST}dfsm,"

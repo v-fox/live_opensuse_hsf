@@ -15,12 +15,12 @@
 	    <option name="allow_fp16_configs" value="true" />
 	    <option name="allow_rgb10_configs" value="true" />
 	    <option name="allow_rgb565_configs" value="true" />
-	    <option name="force_integer_tex_nearest" value="true`" />
+	    <option name="force_integer_tex_nearest" value="true" />
 	    <option name="mesa_glthread" value="true" />
 	    <!-- blurry but cheap AA type that goes from 0 to 32, pp_jimenezmlaa_color forces that for 2D surfaces which is bad for video players
 	    see https://gitlab.freedesktop.org/mesa/mesa/-/blob/master/src/gallium/drivers/radeonsi/si_state.c
 	    for MSAA settings via EQAA envvar -->
-	    <option name="pp_jimenezmlaa" value="12" />
+	    <option name="pp_jimenezmlaa" value="16" />
 	    <!-- avoid overriding app-specific hacks
 	    <option name="glsl_zero_init" value="true" />
 	    <option name="always_have_depth_buffer" value="false" />

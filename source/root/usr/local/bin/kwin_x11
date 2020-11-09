@@ -1,3 +1,4 @@
 #!/bin/sh
 
-nice -n -5 ionice -c 2 -n 0 -t /usr/bin/kwin_x11 "$@"
+GALLIUM_HUD_PERIOD=1 GALLIUM_HUD=''
+exec nice -n -5 ionice -c 2 -n 1 -t chrt -v -f 6 /usr/bin/kwin_x11 "$@" &

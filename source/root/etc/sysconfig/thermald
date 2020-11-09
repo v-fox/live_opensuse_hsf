@@ -19,7 +19,7 @@
 #    --disable-active-power
 #        Disable active power management. This will not set active power limits.
 #
-THERMALD_OPTS="--ignore-cpuid-check --workaround-enabled --disable-active-power"
+THERMALD_OPTS="--ignore-cpuid-check --workaround-enabled"
 
 ## Type:        string
 ## Default:     "/etc/thermald/thermal-conf.xml"
