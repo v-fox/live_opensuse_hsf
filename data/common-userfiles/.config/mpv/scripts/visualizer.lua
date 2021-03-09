@@ -1,7 +1,7 @@
 -- various audio visualization
 
 local opts = {
-    mode = "novideo",
+    mode = "noalbumart",
     -- off              disable visualization
     -- noalbumart       enable visualization when no albumart and no video
     -- novideo          enable visualization when no video
@@ -15,7 +15,7 @@ local opts = {
     -- showcqtbar
     -- showwaves
 
-    quality = "medium",
+    quality = "high",
     -- verylow
     -- low
     -- medium

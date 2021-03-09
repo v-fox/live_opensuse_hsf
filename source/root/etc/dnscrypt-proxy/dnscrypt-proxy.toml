@@ -38,9 +38,7 @@
 
 # setting it does NOT work, systemd denies access !
 # https://github.com/DNSCrypt/dnscrypt-proxy/wiki/Installation-on-Arch-Linux
-#listen_addresses = ['127.0.0.1:53', '[::1]:53', '127.1.0.1:53']
 listen_addresses = []
-
 
 ## Maximum number of simultaneous client connections to accept
 
@@ -52,8 +50,7 @@ max_clients = 250
 ## Note (2): this feature is not compatible with systemd socket activation.
 ## Note (3): when using -pidfile, the PID file directory must be writable by the new user
 
-# user_name = 'nobody'
-
+# user_name = 'dnscrypt'
 
 ## Require servers (from static + remote sources) to satisfy specific properties
 
@@ -61,7 +58,7 @@ max_clients = 250
 ipv4_servers = true
 
 # Use servers reachable over IPv6 -- Do not enable if you don't have IPv6 connectivity
-ipv6_servers = true
+ipv6_servers = false
 
 # Use servers implementing the DNSCrypt protocol
 dnscrypt_servers = true
@@ -125,7 +122,7 @@ keepalive = 29
 ## Using the `hinfo` option means that some responses will be lies.
 ## Unfortunately, the `hinfo` option appears to be required for Android 8+
 
-# blocked_query_response = 'refused'
+blocked_query_response = 'refused'
 
 
 ## Load-balancing strategy: 'p2' (default), 'ph', 'first' or 'random'

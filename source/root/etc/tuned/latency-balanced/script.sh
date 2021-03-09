@@ -33,18 +33,20 @@ for interface in $(ls --color=never /sys/class/net/); do
 	# https://www.kernel.org/doc/Documentation/networking/scaling.txt
 	# https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/performance_tuning_guide/sect-red_hat_enterprise_linux-performance_tuning_guide-networking-configuration_tools#sect-Red_Hat_Enterprise_Linux-Performance_Tuning_Guide-Configuration_tools-Configuring_Receive_Packet_Steering_RPS
 	# should be net.core.rps_sock_flow_entries divided by number of hardware queues (rx-*) which is 0 (single) for SOHO chips
-	local SYSTEM_FLOWS=$(sysctl -n net.core.rps_sock_flow_entries)
+	local SYSTEM_FLOWS="$(sysctl -n net.core.rps_sock_flow_entries)"
 	local INTERFACE_QUEUES=$(ls -d /sys/class/net/"${interface}"/queues/rx-*/ | wc -l)
 	for rxq in /sys/class/net/${interface}/queues/rx-*; do
 		echo "$[ ${SYSTEM_FLOWS%.*} / ${INTERFACE_QUEUES%.*} ]" > ${rxq}/rps_flow_cnt
 	done
 	# https://www.coverfire.com/articles/queueing-in-the-linux-network-stack/
-	# 48*1500 to 65536*9194 ? 
+	# 42 to 65536 ? 1480 to 2097152 ? 48*1500 to 65536*9194 ? 
 	for txq in /sys/class/net/${interface}/queues/tx-*; do
 		echo "42" > ${txq}/byte_queue_limits/limit_min
 		echo "65536" > ${txq}/byte_queue_limits/limit_max
 	done
-	echo "4999" > /sys/class/net/${interface}/gro_flush_timeout
+	# 999 to 4999 ?
+	echo "9999" > /sys/class/net/${interface}/gro_flush_timeout
+	# could deference provoke Ethernet driver hangs ?
 	echo "1" > /sys/class/net/${interface}/napi_defer_hard_irqs
 	case "${interface}" in
 		# loopback
@@ -71,12 +73,18 @@ for interface in $(ls --color=never /sys/class/net/); do
 			# FQ_CODEL
 			#tc qdisc replace dev "${interface}" root fq_codel limit 16384 flows 5120 target 20ms interval 125ms quantum 2327 ecn
 			# CAKE
-			tc qdisc replace dev "${interface}" root cake rtt 100ms flows diffserv4 no-split-gso
+			tc qdisc replace dev "${interface}" root cake rtt 100ms flows diffserv4
 		;;
 		# Ethernet
 		e*)
+			#for txq in /sys/class/net/${interface}/queues/tx-*; do
+			#	echo "1480" > ${txq}/byte_queue_limits/limit_min
+			#	echo "3000" > ${txq}/byte_queue_limits/limit_max
+			#done
+			#echo "999" > /sys/class/net/${interface}/gro_flush_timeout
+			#echo "0" > /sys/class/net/${interface}/napi_defer_hard_irqs
 			# force conservative (for less load on gate) or aggressive (less load on host) MTU ?
-			ip l set "${interface}" gso_max_size 8192 gso_max_segs 8 multicast on txqueuelen 1024
+			ip l set "${interface}" gso_max_size 8192 gso_max_segs 8 multicast on txqueuelen 256
 			ip l set "${interface}" mtu 9194 || ip l set "${interface}" mtu 9000 || ip l set "${interface}" mtu 1480
 			# TSO may be broken on some chips
 			# CAKE doesn't like GSO
@@ -98,7 +106,7 @@ for interface in $(ls --color=never /sys/class/net/); do
 			# FQ_CODEL
 			#tc qdisc replace dev "${interface}" root fq_codel limit 16384 flows 32768 target 15ms interval 100ms quantum 3028 ecn
 			# CAKE
-			tc qdisc replace dev "${interface}" root cake ethernet ether-vlan rtt 80ms flows diffserv4 no-split-gso ack-filter
+			tc qdisc replace dev "${interface}" root cake ethernet ether-vlan rtt 80ms flows diffserv4 no-split-gso
 			# SFQ
 			#tc qdisc replace dev "${interface}" root sfq divisor 4096 limit 16384 redflowlimit 2097152 perturb 86400 flows 1024 ecn
 		;;

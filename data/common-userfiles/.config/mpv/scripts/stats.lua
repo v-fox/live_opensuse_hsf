@@ -1,1 +1,0 @@
-mpv-stats/stats.lua

@@ -146,7 +146,6 @@ digikam
 dispcalGUI
 dmidecode
 dnscrypt-proxy
-dnstop
 docker-bash-completion
 docker-bench-security
 docker-compose
@@ -188,6 +187,7 @@ fakeroot
 fatattr
 fatsort
 fbcat
+fdk-aac
 ffmpeg
 file
 filesystem
@@ -278,7 +278,6 @@ gpm
 gpsd
 gptfdisk
 gptfdisk-fixparts
-greenbone-security-assistant
 grub2
 gsettings-backend-dconf
 gsettings-desktop-schemas
@@ -370,7 +369,6 @@ ibus-m17n
 ibus-mozc
 ibus-mozc-candidate-window
 ibus-pinyin
-ibus-rime
 ibus-skk
 ibus-sunpinyin
 ibus-table
@@ -410,7 +408,6 @@ iceWMCP-addons
 icewm-default
 ifplugd
 iftop
-ifuse
 ike-scan
 ImageMagick
 ImageMagick-extra
@@ -495,6 +492,8 @@ libcgroup-tools
 libcryptsetup4-hmac
 liberation-fonts
 libfallocate0
+libfdk-aac2
+libfdk-aac2-32bit
 libflashsupport
 libgcrypt20-hmac
 libglvnd
@@ -506,8 +505,6 @@ libinput-tools
 libiscsi-utils
 libnss_usrfiles2
 libopenssl1_0_0-hmac
-libopenvas
-libOSMesa9
 libpocl2
 libpocl2-32bit
 libpoppler-glib8
@@ -747,9 +744,6 @@ openobex-apps
 OpenPrintingPPDs-postscript
 openssh
 openssh-helpers
-openvas-cli
-openvas-manager
-openvas-scanner
 opus-tools
 ovmf
 oxy_elegant-icon-theme
@@ -839,11 +833,11 @@ pipewire
 pipewire-modules-32bit
 pipewire-modules-jack
 pipewire-modules-jack-32bit
+pipewire-modules-jack-override
 pipewire-modules-pulse
 pipewire-modules-pulse-32bit
 pipewire-spa-plugins
 pipewire-spa-plugins-32bit
-plasma5-addons
 plasma5-applet-suse-prime
 plasma5-desktop
 plasma5-integration-plugin
@@ -944,6 +938,7 @@ radvd
 rancid
 rar
 rasdaemon
+realtime-lowlatency-limits
 reaver
 redis
 refind
@@ -1053,6 +1048,7 @@ sysconfig-netconfig
 syslinux
 system-config-printer-applet
 systemd-bash-completion
+systemd-coredump
 systemdgenie
 systemd-logger
 systemd-ui
@@ -1082,7 +1078,7 @@ torrentinfo
 torsocks
 traceroute
 trackma-curses
-trackma-gtk
+trackma-qt
 translation-update
 tree
 tunctl
@@ -1178,6 +1174,7 @@ wminput
 wmutils
 wol
 wpa_supplicant-gui
+x264
 x265
 xar
 xarchiver

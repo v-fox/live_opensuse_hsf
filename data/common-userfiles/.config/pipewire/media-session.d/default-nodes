@@ -1,0 +1,3 @@
+{ 
+ "default.configured.audio.sink": { "name": "PipeLine-IN" }
+}

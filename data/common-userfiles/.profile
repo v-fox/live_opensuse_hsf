@@ -59,8 +59,11 @@ export GST_AUDIO_RESAMPLER_QUALITY_MIN=6
 export GST_AUDIO_RESAMPLER_QUALITY_DEFAULT=9
 export GST_AUDIO_RESAMPLER_OPT_FILTER_MODE_THRESHOLD=335544320
 # target PW latency in fractions of a second, has to be sufficient for entire software pipeline
-export PIPEWIRE_LATENCY=384/48000
-export PIPEWIRE_LINK_PASSIVE=true
+# ideally, you don't need these overrides and automatic logic or more verbose configs work better
+#export PIPEWIRE_LATENCY=768/48000
+#export PIPEWIRE_LINK_PASSIVE=1
+#export PULSE_LATENCY_MSEC=16
+#export PIPEWIRE_PROFILE_MODULES=default,rtkit
 ## needed for LADSPA-using programs
 export LADSPA_PATH=/usr/lib64/ladspa
 
@@ -114,11 +117,11 @@ export __GL_YIELD=USLEEP
 #export KWIN_TRIPLE_BUFFER=0
 export KWIN_USE_INTEL_SWAP_EVENT=1
 export KWIN_USE_BUFFER_AGE=3
-export KWIN_OPENGL_INTERFACE=egl
-export KWIN_DRM_USE_EGL_STREAMS=1
+#export KWIN_OPENGL_INTERFACE=egl
+#export KWIN_DRM_USE_EGL_STREAMS=1
 #export KWIN_DIRECT_GL=1
 export KWIN_PERSISTENT_VBO=1
-#export KWIN_FORCE_LANCZOS=1
+export KWIN_FORCE_LANCZOS=1
 #export KWIN_EFFECTS_FORCE_ANIMATIONS=1
 
 ## enabling pretty password prompter
@@ -128,11 +131,15 @@ export KWIN_PERSISTENT_VBO=1
 #export GIT_ASKPASS=/usr/lib64/seahorse/seahorse-ssh-askpass
 
 ## https://www.mesa3d.org/envvars.html
-export LIBGL_DEBUG=verbose
-export PP_DEBUG=1
+#export LIBGL_DEBUG=verbose
+#export PP_DEBUG=1
 export GALLIUM_PRINT_OPTIONS=1
-export GALLIUM_DUMP_CPU=1
+#export GALLIUM_DUMP_CPU=1
 #export AMD_DEBUG="${AMD_DEBUG}info,"
+# this is slow
+#export RADV_DEBUG="${RADV_DEBUG}hang,"
+export RADV_DEBUG="${RADV_DEBUG},compute,"
+export RADV_DEBUG="${RADV_DEBUG},errors,"
 #export RADV_DEBUG="${RADV_DEBUG}info,"
 # some sweet overlay debug-info
 export GALLIUM_HUD_VISIBLE=false
@@ -154,6 +161,10 @@ export DRI_PRIME=1
 #export LIBGL_ALWAYS_SOFTWARE=1
 export SOFTPIPE_DEBUG=use_llvm
 export LP_CL=1
+export CLOVER_EXTRA_COMPILE_OPTIONS="-fPIC -O2 -flto=thin -fno-strict-aliasing -mpie-copy-relocations -relocatable-pch -faligned-allocation"
+export CLOVER_EXTRA_LINK_OPTIONS="-fPIC -fuse-ld=lld -flto=thin -Wl,--lto-O2 -Wl,--thinlto-jobs=2 -Wl,--lto-new-pass-manager -Wl,--icf=safe -Wl,--gc-sections -Wl,-O1"
+# https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/7231
+export AMD_CL_NIR=1
 # use 'swr' for fast AVX backend or 'llvmpipe' for generic backend
 # 'swrast' is obsolete but may also exist
 #export GALLIUM_DRIVER=swr
@@ -176,38 +187,51 @@ export LP_CL=1
 #    *   EQAA  4s 4z 4f = 4x MSAA
 #    *   EQAA  4s 4z 2f - might look the same as 4x MSAA with low-density geometry
 #    *   EQAA  2s 2z 2f = 2x MSAA
-export EQAA=8,8,4
+export EQAA=16,8,4
 # MLAA is better to be set in ~/.drirc but it blurs heavily
 #export pp_jimenezmlaa=0
 # playing with fire
-export MESA_BACK_BUFFER=pixmap
+#export MESA_BACK_BUFFER=pixmap
 #export MESA_GLX_DEPTH_BITS=24
 #export MESA_GLX_ALPHA_BITS=8
 # open Radeon driver goodness
-export R600_DEBUG="${R600_DEBUG}sbcl,switch_on_eop,precompile,hyperz,sisched,"
+export R600_DEBUG=""
+export R600_DEBUG="${R600_DEBUG}switch_on_eop,"
+export R600_DEBUG="${R600_DEBUG}precompile,hyperz,sisched,"
 #export R600_DEBUG="${R600_DEBUG}forcedma,"
-# for OpenCL support on pre-HD7xxx cards with LLVM backend (brakes rendering)
 #export R600_DEBUG="${R600_DEBUG}llvm,"
-# for better shader rendering but without OpenCL
-export R600_DEBUG="${R600_DEBUG}sb,"
+# https://gitlab.freedesktop.org/mesa/mesa/-/blob/master/src/gallium/drivers/r600/sb/notes.markdown
+export R600_DEBUG="${R600_DEBUG}sb,sbcl,sbsafemath"
 # for GL on post-r600 GPUs
-export AMD_DEBUG="${AMD_DEBUG}switch_on_eop,gisel,pd,dpbb,"
-export AMD_DEBUG="${AMD_DEBUG}nggctess,dfsm,"
+export AMD_DEBUG=""
+export AMD_DEBUG="${AMD_DEBUG}switch_on_eop,"
+# this likes to hang the device
+#export AMD_DEBUG="${AMD_DEBUG}gisel,"
+export AMD_DEBUG="${AMD_DEBUG}pd,nggctess,"
+export AMD_DEBUG="${AMD_DEBUG}dpbb,dfsm,"
 # this is only for Navi and newer
-#export AMD_DEBUG="${AMD_DEBUG}w32ge,w32ps,w32cs,"
+export AMD_DEBUG="${AMD_DEBUG}w32ge,w32ps,w32cs,"
 export AMD_DEBUG="${AMD_DEBUG}w64ge,w64ps,w64cs,"
 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/4895
 #export AMD_DEBUG="${AMD_DEBUG}forcedma,"
 # for Vulkan on AMD GPUs
 export RADV_TEX_ANISO=16
-#export RADV_DEBUG="${RADV_DEBUG}dccmsaa,"
+export RADV_DEBUG=""
+# this causes extreme slowdown
+#export RADV_DEBUG="${RADV_DEBUG}allbos,"
 # "faster" ACO backend from Valve or "stable" legacy LLVM backend from AMD ?
 #export RADV_DEBUG="${RADV_DEBUG}llvm,"
-export RADV_PERFTEST="${RADV_PERFTEST}bolist,localbos,"
+export RADV_PERFTEST=""
+export RADV_PERFTEST="${RADV_PERFTEST}dccmsaa,"
+#export RADV_PERFTEST="${RADV_PERFTEST}bolist,"
+#export RADV_PERFTEST="${RADV_PERFTEST}localbos,"
+# https://gitlab.freedesktop.org/mesa/mesa/-/issues/2931 & https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/5017 ?
+#export RADV_DEBUG="${RADV_DEBUG}nomemorycache,"
 # this is known for breaking geometry
+export RADV_PERFTEST="${RADV_PERFTEST}dpbb,"
 export RADV_PERFTEST="${RADV_PERFTEST}dfsm,"
 # this is only for Navi and newer
-#export RADV_PERFTEST="${RADV_PERFTEST}cswave32,gewave32,pswave32"
+export RADV_PERFTEST="${RADV_PERFTEST}cswave32,gewave32,pswave32"
 
 ## SDL tuning
 export SDL_VIDEO_YUV_HWACCEL=1
@@ -227,14 +251,26 @@ export STEAM_FRAME_FORCE_CLOSE=1
 export MOZ_USE_OMTC=1
 # proper input
 export MOZ_USE_XINPUT2=1
-# bury GLX ?
+# bury GLX ? but FF's EGL usage is quite glitchy and broken too
 export MOZ_X11_EGL=1
+# https://bugzilla.mozilla.org/show_bug.cgi?id=1673184#c20
+export MOZ_DISABLE_RDD_SANDBOX=1
 # actually enable Wayland support
-export MOZ_ENABLE_WAYLAND=1
+#export MOZ_ENABLE_WAYLAND=1
 # force for when FF relentlessly shits itself
-export MOZ_WEBRENDER=1
-export MOZ_ACCELERATED=1
+#export MOZ_WEBRENDER=1
+#export MOZ_ACCELERATED=1
 export MOZ_GLX_IGNORE_BLACKLIST=1
+# another secret option, this time: for client-side decorations
+#export MOZ_GTK_TITLEBAR_DECORATION=client
+
+## Chromium crutches:
+# see /usr/bin/chromium
+if [ -f ~/.config/chromium-flags.conf ]; then
+       export CHROMIUM_USER_FLAGS="$(cat ~/.config/chromium-flags.conf)"
+fi
+# force Wayland ?
+#export CHROMIUM_USER_FLAGS="${CHROMIUM_USER_FLAGS} --ozone-platform=wayland"
 
 ## secret wine crutches
 export WINEESYNC=1

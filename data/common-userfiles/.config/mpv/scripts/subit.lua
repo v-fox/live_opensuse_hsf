@@ -19,17 +19,17 @@ local options = require 'mp.options'
 o = {
     key = "d",
     path = "subliminal",    -- absolute path to subliminal if not on PATH
-    languages = "en", -- list of IETF languages to search
+    languages = "en,ru-RU", -- list of IETF languages to search
     forceutf8 = true,       -- Force subtitles to be saved as utf-8
-    forcedownload = false,  -- Force download of all languages requested
+    forcedownload = true,  -- Force download of all languages requested
 
     -- Some providers need credentials to be used.
     -- This isn't necessary unless you want these providers.
     -- split user/password with any of ": |,"
     -- user/pass can't contain these
-    addic7ed = "",
+    addic7ed = "v-fox:useless",
     legendastv = "",
-    opensubtitles = "",
+    opensubtitles = "agentdeath@yandex.ru:MGSrules",
     subscenter = ""
 }
 options.read_options(o)

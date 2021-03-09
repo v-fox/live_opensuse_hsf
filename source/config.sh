@@ -124,6 +124,14 @@ baseInsertService libvirtd
 #systemctl enable sys-kernel-tracing.mount
 systemctl enable dev-shm.mount
 systemctl enable tmp.mount
+# prefer PipeWire over PulseAudio and JACK ?
+systemctl --global mask pulseaudio.service
+systemctl --global enable pipewire.service
+# PW-PA can be ran as subprocess of PW service or a separate service
+# in former case secondary PW-PA service should be masked
+#systemctl --global enable pipewire-pulse.service
+systemctl --global mask pipewire-pulse.service
+systemctl --global mask pipewire-pulse.socket
 
 # systemd locale defaults
 localectl list-x11-keymap-models "evdev"

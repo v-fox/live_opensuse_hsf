@@ -3,6 +3,7 @@
 		kernel and JACK's default latency is set to 16ms via 256/3 f/p
 		(8ms with 128/3 f/p and '--sync' may be stable on a good machine)
 	* by default en_GB locale is used for messages and en_DK - for measurements
+	* migration to PipeWire from deprecated PulseAudio & JACK
 	* migration back fron LXQt to KDE5/Plasma due to lack of development
 	* migration to DNSCrypt-Proxy v2 with multi-tunnel balancing and caching
 	* migration of /etc/environment envvars to ~/.profile
@@ -14,7 +15,6 @@
 	* support for correct DPI is patched in xorg-x11-server (#23705 and #41115)
 	* support for DRI_PRIME is enabled by default
 	* support for newer Nvidia cards via closed driver
-	* support for PipeWire (with optional PulseAudio and JACK emulation)
 	* support for USB device access management via usbauth or usbguard
 	* support for Thunderbolt
 	* support for LLDP/SNMP+Avahi on NM and LLDP+LLMNR on networkd
@@ -82,6 +82,9 @@
 	* removal of abandoned wineasio
 	* removal of guymager for being broken mess
 	* removal of gvfs for screwing user mounts
+	* removal of staled OpenVAS
+	* replacement of stray /etc/security/limits.d/HSF.conf
+		with realtime-lowlatency-limits package
 	* replacement of dead yast2-live-installer with calamares
 	* replacement of openbox/compton with kwin-lowlatency
 	* replacement of JAMin with Calf & LSP
@@ -114,7 +117,7 @@
 		with kernel and systemd's watchdog has been enabled;
 	* intel_pstate is forced to replace acpi_cpufreq and
 		thermald is forced to replace intel_pstate where it's applicable;
-		only AMD CPUs seem to be able to use schedutil or ondemand
+		only AMD CPUs seem to be able to use schedutil properly
 	* important kernel changes:
 		full ticklessness / NO_HZ;
 		hidden CONFIG_PREEMPT_RT is activated;

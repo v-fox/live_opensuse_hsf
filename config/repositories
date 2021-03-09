@@ -88,6 +88,9 @@
 	<repository type="rpm-md" imageinclude="true" priority="33" alias="Mozilla_Factory">
 		<source path="obs://mozilla:Factory/openSUSE_Factory"/>
 	</repository>
+	<repository type="rpm-md" imageinclude="true" priority="7" alias="encumbered_dependencies">
+		<source path="obs://home:X0F:DEPS/openSUSE_Tumbleweed"/>
+	</repository>
 	<repository type="rpm-md" imageinclude="true" priority="6" alias="home_X0F">
 		<source path="obs://home:X0F/openSUSE_Tumbleweed"/>
 	</repository>
